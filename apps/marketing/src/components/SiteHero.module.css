@@ -15,6 +15,14 @@
   max-width: 54rem;
 }
 
+.wordmark {
+  display: block;
+  width: clamp(10rem, 18vw, 16rem);
+  max-width: 100%;
+  height: auto;
+  margin: 0 0 clamp(1rem, 2vw, 1.75rem);
+}
+
 .eyebrow,
 .panelLabel,
 .panelMeta {
