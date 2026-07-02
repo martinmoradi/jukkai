@@ -98,7 +98,7 @@ It is generated from `docs/foundation.md`, which remains the canonical source of
 **Key differentiators:**
 
 - One umbrella: Jukkai covers the architecture practice, art shop, and place.
-- Public brand: Jukkai by Crystelle Terrasson, preserving her referral equity.
+- Public brand: Jukkai by Crystelle Terrasson, preserving her referral equity. The compound is a three-layer system: full form in the machine/legal layer (titles, meta, GBP, schema, NAP, signage, citations); a visually subordinate, removable lockup line at trust moments only (site header, once in the homepage hero); never in running copy, where "Jukkai" and "Crystelle" are woven separately. The "by" connector is generic on purpose and freezes at signage lock.
 - Two centers with a clear tiebreak rule: architecture owns structure, SEO, and conversion; Jukkai owns emotional register and differentiation.
 - Premium inversion: a décor mission by an architecte d'intérieur is the premium version of décor, not diluted architecture.
 - Physical shop scene: art, sculpture, iconic furniture, architects visible at work, coffee, and a real door to push open.
@@ -158,14 +158,14 @@ It is generated from `docs/foundation.md`, which remains the canonical source of
 
 **Words to use:** Jukkai by Crystelle Terrasson; architecte d'intérieur; Rennes; Châteaugiron; région rennaise; Ille-et-Vilaine; L'art shop; mission déco; transformation ciblée; rénovation complète; espaces professionnels; Parlons de votre projet; venez pousser la porte; démocratiser l'art.
 
-**Words to avoid:** Galerie, boutique, magasin, objets for the shop; influenceuse registers; untranslated art-world or architecture jargon; eco-responsible label; art as investment; art prices pre-opening; event promises; artist lineup promises; art-and-architecture bridge as past track record.
+**Words to avoid:** Galerie, boutique, magasin, objets for the shop; influenceuse registers; untranslated art-world or architecture jargon; eco-responsible label; art as investment; art prices pre-opening; event promises; artist lineup promises; art-and-architecture bridge as past track record; the full "Jukkai by Crystelle Terrasson" compound in running copy, section headings, CTAs, or as a repeated social-caption motif (machine/legal layer and lockup only).
 
 **Glossary:**
 
 | Term | Meaning |
 |------|---------|
 | Jukkai | Umbrella for the architecture practice, art shop, and place. |
-| Jukkai by Crystelle Terrasson | Public launch brand, preserving Crystelle's referral equity. |
+| Jukkai by Crystelle Terrasson | Public launch brand, preserving Crystelle's referral equity. Full form lives in the machine/legal layer and the logo lockup (subordinate, removable line); running copy uses "Jukkai" and "Crystelle" separately, never the compound. |
 | L'art shop | The shop referent in nav and running copy. Not galerie, boutique, magasin, or objets. |
 | Architecte d'intérieur | The identity that never changes, even when mission size varies. |
 | Mission déco | Entry-level / décor mission performed with the standards of an architecte d'intérieur. Exact naming and scope need Crystelle's validation. |
@@ -230,7 +230,8 @@ It is generated from `docs/foundation.md`, which remains the canonical source of
 
 ## Open Items From Foundation
 
-- Physical signage text for the Google Business Profile name match.
+- Signage brief must include "by Crystelle Terrasson" in small lettering somewhere on the frontage (door vitrine, hours plaque, window lettering); the main sign may be the Jukkai wordmark alone. The GBP name is the full compound regardless of the sign and never waits on it.
+- Crystelle's veto window on the "by" connector closes at signage lock; after the sign is ordered the connector never changes.
 - Crystelle validation of exact shop French: "L'art shop" and "Ni galerie, ni boutique déco. Un art shop."
 - Exact conseil / mission déco name, price, scope, and whether the entry offer is fixed-price.
 - Which projects, photos, locations, and permissions can be published.
