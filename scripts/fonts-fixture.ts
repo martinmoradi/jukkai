@@ -1,10 +1,9 @@
 import { createHash } from 'node:crypto';
 
 import {
+  APPROVED_MARKETING_FONT_SET,
   buildGeneratedFontOutputPath,
   DEFAULT_GENERATED_FONTS_OUTPUT_DIR_ABSOLUTE,
-  EXPECTED_GENERATED_FONTS_SET,
-  EXPECTED_GENERATED_FONTS_VERSION,
   writeGeneratedFontAssets,
 } from './generated-font-assets';
 
@@ -27,9 +26,9 @@ export async function writeGeneratedFontFixture(options?: {
       },
     ],
     outputDir,
-    set: EXPECTED_GENERATED_FONTS_SET,
+    set: APPROVED_MARKETING_FONT_SET.slug,
     snapshotDigest: digest,
-    version: EXPECTED_GENERATED_FONTS_VERSION,
+    version: APPROVED_MARKETING_FONT_SET.version,
   });
 }
 

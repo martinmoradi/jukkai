@@ -9,7 +9,7 @@ source-of-truth decision.
 
 ## Pipeline Contract
 
-- Pin a Set slug and Set version through environment variables.
+- Pin the approved marketing Set slug and version in repo-owned code.
 - Prefetch the pinned Set before the marketing app needs font files.
 - Write generated cache and served output directories to gitignored paths.
 - Serve generated font files from Jukkai-owned assets.
@@ -29,6 +29,9 @@ The starter Set is intentionally broad while typography is exploratory:
 - Snapshot count: `1927` Fonts
 
 Issue #20 owns the later narrowed Set version after typography is locked.
+The repo-owned source of truth is `APPROVED_MARKETING_FONT_SET` in
+`scripts/generated-font-assets.ts`; both `fonts:prefetch` and `fonts:check`
+consume that contract.
 
 ## Environment
 
@@ -38,10 +41,12 @@ The font prefetch path reads configuration from `MM_FONTS_*` variables:
 - `MM_FONTS_FETCH_TOKEN`
 - `MM_FONTS_ACCESS_CLIENT_ID`
 - `MM_FONTS_ACCESS_CLIENT_SECRET`
-- `MM_FONTS_SET`
-- `MM_FONTS_SET_VERSION`
 - `MM_FONTS_CACHE_DIR`
 - `MM_FONTS_OUTPUT_DIR`
+
+The approved Set slug and version are not operator environment variables. They
+live in `scripts/generated-font-assets.ts` so font Set changes happen through a
+reviewable repo change.
 
 Real values must stay outside git. On Martin's machine, the canonical local
 secret files are:
@@ -209,9 +214,10 @@ the secret store that uses it:
 - Production build credentials live in Cloudflare Pages.
 
 When typography changes but the Set slug stays the same, publish a new Set
-version in `@mm/fonts`, update `MM_FONTS_SET_VERSION`, prefetch again, and
-verify local and deployed font URLs. If the Set slug changes, also check whether
-Consumer Authorization or token rotation is required.
+version in `@mm/fonts`, update `APPROVED_MARKETING_FONT_SET` in
+`scripts/generated-font-assets.ts`, prefetch again, and verify local and
+deployed font URLs. If the Set slug changes, also check whether Consumer
+Authorization or token rotation is required.
 
 Do not narrow the Set only because the pipeline works. Issue #20 should remain
 blocked until the actual marketing typography direction is locked. The broad

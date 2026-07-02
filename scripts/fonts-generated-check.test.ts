@@ -5,10 +5,7 @@ import { afterEach, describe, expect, it } from 'bun:test';
 
 import { writeGeneratedFontFixture } from './fonts-fixture';
 import { ensureGeneratedFonts } from './fonts-generated-check';
-import {
-  EXPECTED_GENERATED_FONTS_SET,
-  EXPECTED_GENERATED_FONTS_VERSION,
-} from './generated-font-assets';
+import { APPROVED_MARKETING_FONT_SET } from './generated-font-assets';
 
 const workspaces: string[] = [];
 
@@ -57,8 +54,8 @@ describe('generated font check', () => {
       join(outputDir, 'manifest.json'),
       JSON.stringify({
         fonts: [{ outputPath: 'fonts/demo.woff2' }],
-        set: EXPECTED_GENERATED_FONTS_SET,
-        version: EXPECTED_GENERATED_FONTS_VERSION,
+        set: APPROVED_MARKETING_FONT_SET.slug,
+        version: APPROVED_MARKETING_FONT_SET.version,
       }),
     );
     await writeFile(join(outputDir, 'fonts', 'demo.woff2'), 'fake-font');

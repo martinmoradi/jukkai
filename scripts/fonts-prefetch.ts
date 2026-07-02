@@ -3,6 +3,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, isAbsolute, join, normalize, relative } from 'node:path';
 
 import {
+  APPROVED_MARKETING_FONT_SET,
   DEFAULT_GENERATED_FONTS_OUTPUT_DIR,
   type GeneratedFontAxis,
   writeGeneratedFontAssets,
@@ -17,8 +18,6 @@ const REQUIRED_ENV_KEYS = [
   'MM_FONTS_FETCH_TOKEN',
   'MM_FONTS_ACCESS_CLIENT_ID',
   'MM_FONTS_ACCESS_CLIENT_SECRET',
-  'MM_FONTS_SET',
-  'MM_FONTS_SET_VERSION',
 ] as const;
 
 type RequiredEnvKey = (typeof REQUIRED_ENV_KEYS)[number];
@@ -249,14 +248,6 @@ function readConfig(env: FontsPrefetchEnv): FontsPrefetchConfig {
     );
   }
 
-  const version = Number(env.MM_FONTS_SET_VERSION);
-
-  if (!Number.isInteger(version) || version < 1) {
-    throw new FontsPrefetchError(
-      'MM_FONTS_SET_VERSION must be a positive integer.',
-    );
-  }
-
   return {
     accessClientId: env.MM_FONTS_ACCESS_CLIENT_ID!,
     accessClientSecret: env.MM_FONTS_ACCESS_CLIENT_SECRET!,
@@ -265,8 +256,8 @@ function readConfig(env: FontsPrefetchEnv): FontsPrefetchConfig {
     outputDir:
       env.MM_FONTS_OUTPUT_DIR?.trim() || DEFAULT_GENERATED_FONTS_OUTPUT_DIR,
     serviceUrl: env.MM_FONTS_SERVICE_URL!,
-    set: env.MM_FONTS_SET!,
-    version,
+    set: APPROVED_MARKETING_FONT_SET.slug,
+    version: APPROVED_MARKETING_FONT_SET.version,
   };
 }
 

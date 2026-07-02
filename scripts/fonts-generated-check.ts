@@ -1,9 +1,8 @@
 import { access, readdir } from 'node:fs/promises';
 
 import {
+  APPROVED_MARKETING_FONT_SET,
   DEFAULT_GENERATED_FONTS_OUTPUT_DIR_ABSOLUTE,
-  EXPECTED_GENERATED_FONTS_SET,
-  EXPECTED_GENERATED_FONTS_VERSION,
   getGeneratedFontAssetPath,
   getGeneratedFontCssPath,
   getGeneratedFontFilesDir,
@@ -27,11 +26,11 @@ export async function ensureGeneratedFonts(options?: {
     const fonts = manifest.fonts ?? [];
 
     if (
-      manifest.set !== EXPECTED_GENERATED_FONTS_SET ||
-      manifest.version !== EXPECTED_GENERATED_FONTS_VERSION
+      manifest.set !== APPROVED_MARKETING_FONT_SET.slug ||
+      manifest.version !== APPROVED_MARKETING_FONT_SET.version
     ) {
       throw new GeneratedFontsError(
-        `Generated fonts must be prefetched from ${EXPECTED_GENERATED_FONTS_SET}@${EXPECTED_GENERATED_FONTS_VERSION}.`,
+        `Generated fonts must be prefetched from ${APPROVED_MARKETING_FONT_SET.slug}@${APPROVED_MARKETING_FONT_SET.version}.`,
       );
     }
 
