@@ -10,8 +10,8 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "build": "astro build",
-    "dev": "astro dev --host 0.0.0.0",
+    "build": "bun ../../scripts/fonts-generated-check.ts && astro build",
+    "dev": "bun ../../scripts/fonts-generated-check.ts && astro dev --host 0.0.0.0",
     "lint": "eslint . --ext .js,.mjs,.cjs,.ts,.astro && stylelint \"src/**/*.css\"",
     "lint:fix": "eslint . --ext .js,.mjs,.cjs,.ts,.astro --fix && stylelint \"src/**/*.css\" --fix",
     "preview": "astro preview --host 0.0.0.0",
