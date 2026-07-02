@@ -193,6 +193,9 @@ jobs:
         with:
           bun-version: ${{ env.BUN_VERSION }}
 
+      - name: Generate font fixture
+        run: bun run fonts:fixture
+
       - name: Build
         run: bun run build
 

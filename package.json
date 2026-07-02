@@ -15,6 +15,7 @@
     "dev": "turbo run dev",
     "dev:marketing": "bun run --cwd apps/marketing dev",
     "fonts:check": "bun scripts/fonts-generated-check.ts",
+    "fonts:fixture": "bun scripts/fonts-fixture.ts",
     "fonts:prefetch": "bun scripts/fonts-prefetch.ts",
     "format": "prettier --write --ignore-unknown README.md package.json turbo.json eslint.config.mjs stylelint.config.mjs commitlint.config.mjs \".github/**/*\" \"apps/**/*\" \"docs/operations/fonts.md\" \"scripts/**/*\" \".env.example\"",
     "format:check": "prettier --check --ignore-unknown README.md package.json turbo.json eslint.config.mjs stylelint.config.mjs commitlint.config.mjs \".github/**/*\" \"apps/**/*\" \"docs/operations/fonts.md\" \"scripts/**/*\" \".env.example\"",
