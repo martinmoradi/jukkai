@@ -102,6 +102,10 @@ The marketing app's local dev and build commands run this check before Astro
 starts. If generated files are absent, they fail with an actionable message to
 run `bun run fonts:prefetch`.
 
+PR CI uses `bun run fonts:fixture` before the build job. That command writes a
+tiny generated fixture for hermetic build verification only; production and
+local typography checks should use `bun run fonts:prefetch`.
+
 Issue #12 should consume `fonts.css` or `manifest.json` rather than scan the
 generated directory or guess font filenames.
 

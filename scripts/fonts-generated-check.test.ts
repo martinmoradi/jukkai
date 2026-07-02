@@ -3,6 +3,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterEach, describe, expect, it } from 'bun:test';
 
+import { writeGeneratedFontFixture } from './fonts-fixture';
 import { ensureGeneratedFonts } from './fonts-generated-check';
 
 const workspaces: string[] = [];
@@ -55,6 +56,22 @@ describe('generated font check', () => {
       }),
     );
     await writeFile(join(outputDir, 'fonts', 'demo.woff2'), 'fake-font');
+
+    await expect(ensureGeneratedFonts({ outputDir })).resolves.toBeUndefined();
+  });
+
+  it('accepts the generated CI font fixture', async () => {
+    const workspace = await createWorkspace();
+    const outputDir = join(
+      workspace,
+      'apps',
+      'marketing',
+      'public',
+      'fonts',
+      'generated',
+    );
+
+    await writeGeneratedFontFixture({ outputDir });
 
     await expect(ensureGeneratedFonts({ outputDir })).resolves.toBeUndefined();
   });
