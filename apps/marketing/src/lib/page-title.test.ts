@@ -13,7 +13,7 @@ describe('formatPageTitle', () => {
 
     expect(
       getByRole(document.body, 'heading', {
-        name: 'Accueil | Jukkai by Crystelle Terrasson',
+        name: 'Accueil — Jukkai by Crystelle Terrasson',
       }),
     ).toBeInTheDocument();
   });

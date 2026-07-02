@@ -4,12 +4,17 @@ import styles from './SiteHero.module.css';
 interface Props {
   eyebrow?: string;
   lead?: string;
+  primaryCta?: {
+    href: string;
+    label: string;
+  } | null;
   title?: string;
 }
 
 const {
   eyebrow = 'Jukkai by Crystelle Terrasson',
   lead = 'Architecture intérieure, art et lieu vivant à Châteaugiron. Le site complet arrive bientôt.',
+  primaryCta,
   title = "Architecte d'intérieur à Rennes & Châteaugiron",
 } = Astro.props;
 ---
@@ -19,6 +24,13 @@ const {
     <p class={styles.eyebrow}>{eyebrow}</p>
     <h1 class={styles.title}>{title}</h1>
     <p class={styles.lead}>{lead}</p>
+    {
+      primaryCta ? (
+        <a class={styles.cta} href={primaryCta.href}>
+          {primaryCta.label}
+        </a>
+      ) : null
+    }
   </div>
   <div class={styles.panel} aria-hidden='true'>
     <span class={styles.panelLabel}>Jukkai</span>

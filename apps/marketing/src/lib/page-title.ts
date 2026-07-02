@@ -6,5 +6,5 @@ export function formatPageTitle(pageTitle?: string): string {
   if (normalizedTitle === SITE_METADATA.name) return SITE_METADATA.brandName;
   if (normalizedTitle === SITE_METADATA.brandName)
     return SITE_METADATA.brandName;
-  return `${normalizedTitle} | ${SITE_METADATA.brandName}`;
+  return `${normalizedTitle} — ${SITE_METADATA.brandName}`;
 }
