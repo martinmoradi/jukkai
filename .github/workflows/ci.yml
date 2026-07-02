@@ -1,0 +1,256 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - ready_for_review
+      - reopened
+      - synchronize
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+env:
+  ACTIONLINT_VERSION: 1.7.12
+  BUN_VERSION: 1.3.13
+  CI: 'true'
+  HUSKY: '0'
+  TURBO_TELEMETRY_DISABLED: '1'
+
+jobs:
+  changes:
+    name: ci / changes
+    if: ${{ github.event.pull_request.draft == false }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      code_changed: ${{ steps.filter.outputs.code_changed }}
+    steps:
+      - name: Classify changed files
+        id: filter
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+
+          mapfile -t changed_files < <(
+            gh api --paginate \
+              "repos/${REPOSITORY}/pulls/${PR_NUMBER}/files" \
+              --jq '.[].filename'
+          )
+
+          code_changed=false
+
+          for file in "${changed_files[@]}"; do
+            case "$file" in
+              .github/actions/** | \
+              .github/workflows/** | \
+              .husky/** | \
+              .prettierignore | \
+              .prettierrc.json | \
+              apps/** | \
+              packages/** | \
+              bun.lock | \
+              commitlint.config.mjs | \
+              eslint.config.mjs | \
+              package.json | \
+              stylelint.config.mjs | \
+              turbo.json)
+                code_changed=true
+                ;;
+            esac
+          done
+
+          {
+            echo "### Changed-file classification"
+            echo
+
+            if [ "$code_changed" = "true" ]; then
+              echo "Code-affecting files changed. Full CI will run."
+            else
+              echo "No code-affecting files changed. Heavy CI jobs will be skipped."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          echo "code_changed=${code_changed}" >> "$GITHUB_OUTPUT"
+
+  format:
+    name: ci / format
+    needs:
+      - changes
+    if: ${{ needs.changes.outputs.code_changed == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup
+        uses: ./.github/actions/setup-bun-turbo
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+
+      - name: Check formatting
+        run: bun run format:check
+
+  lint:
+    name: ci / lint
+    needs:
+      - changes
+    if: ${{ needs.changes.outputs.code_changed == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Lint GitHub Actions workflows
+        id: get_actionlint
+        run: |
+          set -euo pipefail
+
+          bash <(
+            curl \
+              --fail \
+              --location \
+              --silent \
+              --show-error \
+              "https://raw.githubusercontent.com/rhysd/actionlint/v${ACTIONLINT_VERSION}/scripts/download-actionlint.bash"
+          ) "${ACTIONLINT_VERSION}"
+
+          ./actionlint -color
+        shell: bash
+
+      - name: Setup
+        uses: ./.github/actions/setup-bun-turbo
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+
+      - name: Lint
+        run: bun run lint
+
+  typecheck:
+    name: ci / typecheck
+    needs:
+      - changes
+    if: ${{ needs.changes.outputs.code_changed == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup
+        uses: ./.github/actions/setup-bun-turbo
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+
+      - name: Typecheck
+        run: bun run typecheck
+
+  unit_tests:
+    name: ci / unit tests
+    needs:
+      - changes
+    if: ${{ needs.changes.outputs.code_changed == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup
+        uses: ./.github/actions/setup-bun-turbo
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+
+      - name: Run unit tests
+        run: bun run test
+
+  build:
+    name: ci / build
+    needs:
+      - changes
+    if: ${{ needs.changes.outputs.code_changed == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup
+        uses: ./.github/actions/setup-bun-turbo
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+
+      - name: Build
+        run: bun run build
+
+  required:
+    name: ci / required
+    needs:
+      - changes
+      - format
+      - lint
+      - typecheck
+      - unit_tests
+      - build
+    if: ${{ always() && github.event.pull_request.draft == false }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check CI result
+        env:
+          BUILD_RESULT: ${{ needs.build.result }}
+          CHANGES_RESULT: ${{ needs.changes.result }}
+          CODE_CHANGED: ${{ needs.changes.outputs.code_changed }}
+          FORMAT_RESULT: ${{ needs.format.result }}
+          LINT_RESULT: ${{ needs.lint.result }}
+          TEST_RESULT: ${{ needs.unit_tests.result }}
+          TYPECHECK_RESULT: ${{ needs.typecheck.result }}
+        run: |
+          set -euo pipefail
+
+          if [ "$CHANGES_RESULT" != "success" ]; then
+            echo "Changed-file classification did not complete successfully."
+            exit 1
+          fi
+
+          if [ "$CODE_CHANGED" != "true" ]; then
+            echo "No code-affecting changes detected. Required gate is satisfied."
+            exit 0
+          fi
+
+          failed=false
+
+          check_result() {
+            local job_name="$1"
+            local result="$2"
+
+            if [ "$result" != "success" ]; then
+              echo "${job_name} result was ${result}."
+              failed=true
+            fi
+          }
+
+          check_result "format" "$FORMAT_RESULT"
+          check_result "lint" "$LINT_RESULT"
+          check_result "typecheck" "$TYPECHECK_RESULT"
+          check_result "unit tests" "$TEST_RESULT"
+          check_result "build" "$BUILD_RESULT"
+
+          if [ "$failed" = "true" ]; then
+            exit 1
+          fi
+
+          echo "All required CI jobs passed."
