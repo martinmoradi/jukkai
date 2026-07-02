@@ -98,6 +98,10 @@ The generated output can be checked without contacting `@mm/fonts`:
 bun run fonts:check
 ```
 
+That check verifies the generated manifest is for `jukkai-starter@1`, then
+checks that `fonts.css`, `manifest.json`, and the referenced `.woff2` files are
+present.
+
 The marketing app's local dev and build commands run this check before Astro
 starts. If generated files are absent, they fail with an actionable message to
 run `bun run fonts:prefetch`.

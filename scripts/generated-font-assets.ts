@@ -10,6 +10,8 @@ export const GENERATED_FONT_FAMILY_CSS_VARIABLE =
   '--jukkai-generated-font-family';
 export const DEFAULT_GENERATED_FONTS_OUTPUT_DIR =
   'apps/marketing/public/fonts/generated';
+export const EXPECTED_GENERATED_FONTS_SET = 'jukkai-starter';
+export const EXPECTED_GENERATED_FONTS_VERSION = 1;
 
 const REPO_ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 
