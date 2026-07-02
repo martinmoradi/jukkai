@@ -1,31 +1,27 @@
-import { access, readdir, readFile } from 'node:fs/promises';
-import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { access, readdir } from 'node:fs/promises';
 
-const REPO_ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
-const DEFAULT_OUTPUT_DIR = join(
-  REPO_ROOT,
-  'apps',
-  'marketing',
-  'public',
-  'fonts',
-  'generated',
-);
+import {
+  DEFAULT_GENERATED_FONTS_OUTPUT_DIR_ABSOLUTE,
+  getGeneratedFontAssetPath,
+  getGeneratedFontCssPath,
+  getGeneratedFontFilesDir,
+  getGeneratedFontManifestPath,
+  readGeneratedFontsManifest,
+} from './generated-font-assets';
 
 export class GeneratedFontsError extends Error {}
 
 export async function ensureGeneratedFonts(options?: {
   outputDir?: string;
 }): Promise<void> {
-  const outputDir = options?.outputDir ?? DEFAULT_OUTPUT_DIR;
+  const outputDir =
+    options?.outputDir ?? DEFAULT_GENERATED_FONTS_OUTPUT_DIR_ABSOLUTE;
 
   try {
-    await access(join(outputDir, 'fonts.css'));
-    await access(join(outputDir, 'manifest.json'));
+    await access(getGeneratedFontCssPath(outputDir));
+    await access(getGeneratedFontManifestPath(outputDir));
 
-    const manifest = JSON.parse(
-      await readFile(join(outputDir, 'manifest.json'), 'utf8'),
-    ) as { fonts?: { outputPath?: unknown }[] };
+    const manifest = await readGeneratedFontsManifest(outputDir);
     const fonts = manifest.fonts ?? [];
 
     if (fonts.length === 0) {
@@ -40,11 +36,11 @@ export async function ensureGeneratedFonts(options?: {
           );
         }
 
-        await access(join(outputDir, font.outputPath));
+        await access(getGeneratedFontAssetPath(outputDir, font.outputPath));
       }),
     );
 
-    const fontFiles = await readdir(join(outputDir, 'fonts'));
+    const fontFiles = await readdir(getGeneratedFontFilesDir(outputDir));
 
     if (!fontFiles.some((file) => file.endsWith('.woff2'))) {
       throw new GeneratedFontsError('Generated font directory is empty.');

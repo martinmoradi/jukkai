@@ -2,8 +2,13 @@ import { createHash } from 'node:crypto';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, isAbsolute, join, normalize, relative } from 'node:path';
 
+import {
+  DEFAULT_GENERATED_FONTS_OUTPUT_DIR,
+  type GeneratedFontAxis,
+  writeGeneratedFontAssets,
+} from './generated-font-assets';
+
 const DEFAULT_CACHE_DIR = '.cache/mm-fonts';
-const DEFAULT_OUTPUT_DIR = 'apps/marketing/public/fonts/generated';
 const SNAPSHOT_FONT_DIGEST_PATTERN = /^sha256:(?<digest>[a-f0-9]{64})$/;
 
 const REQUIRED_ENV_KEYS = [
@@ -24,15 +29,8 @@ interface FontsPrefetchEnv extends Partial<
   MM_FONTS_OUTPUT_DIR?: string | undefined;
 }
 
-interface FontAxis {
-  def: number;
-  max: number;
-  min: number;
-  tag: string;
-}
-
 interface SnapshotFont {
-  axes: FontAxis[];
+  axes: GeneratedFontAxis[];
   familySlug: string;
   fontDigest: string;
   sourcePath: string;
@@ -73,7 +71,6 @@ export async function runFontsPrefetch(options: {
   const snapshot = await fetchSnapshot({ config, fetcher });
 
   await mkdir(config.cacheDir, { recursive: true });
-  await mkdir(config.outputDir, { recursive: true });
 
   const fonts = await Promise.all(
     snapshot.manifest.fonts.map(async (font) => {
@@ -94,30 +91,20 @@ export async function runFontsPrefetch(options: {
 
       return {
         axes: font.axes,
+        bytes,
         familySlug: font.familySlug,
         outputPath: sourcePath,
       };
     }),
   );
 
-  await writeFile(
-    join(config.outputDir, 'fonts.css'),
-    buildFontsCss({ fonts, outputDir: config.outputDir }),
-  );
-  await writeFile(
-    join(config.outputDir, 'manifest.json'),
-    `${JSON.stringify(
-      {
-        fontCount: fonts.length,
-        fonts,
-        set: snapshot.set.slug,
-        snapshotDigest: snapshot.digest,
-        version: snapshot.setVersion,
-      },
-      null,
-      2,
-    )}\n`,
-  );
+  await writeGeneratedFontAssets({
+    fonts,
+    outputDir: config.outputDir,
+    set: snapshot.set.slug,
+    snapshotDigest: snapshot.digest,
+    version: snapshot.setVersion,
+  });
 
   return {
     cacheDir: config.cacheDir,
@@ -242,38 +229,6 @@ function parseSnapshotFontDigest(value: string) {
   return digest;
 }
 
-function buildFontsCss(params: {
-  fonts: { axes: FontAxis[]; familySlug: string; outputPath: string }[];
-  outputDir: string;
-}) {
-  return `${params.fonts
-    .map((font) => {
-      const weightAxis = font.axes.find((axis) => axis.tag === 'wght');
-      const fontWeight = weightAxis
-        ? `${weightAxis.min} ${weightAxis.max}`
-        : '400';
-
-      return [
-        '@font-face {',
-        `  font-family: "${escapeCssString(font.familySlug)}";`,
-        `  src: url("${buildPublicFontUrl(font.outputPath)}") format("woff2");`,
-        `  font-weight: ${fontWeight};`,
-        '  font-style: normal;',
-        '  font-display: swap;',
-        '}',
-      ].join('\n');
-    })
-    .join('\n\n')}\n`;
-}
-
-function buildPublicFontUrl(outputPath: string) {
-  return `/fonts/generated/${outputPath.split('/').map(encodeURIComponent).join('/')}`;
-}
-
-function escapeCssString(value: string) {
-  return value.replaceAll('\\', '\\\\').replaceAll('"', '\\"');
-}
-
 interface FontsPrefetchConfig {
   accessClientId: string;
   accessClientSecret: string;
@@ -307,7 +262,8 @@ function readConfig(env: FontsPrefetchEnv): FontsPrefetchConfig {
     accessClientSecret: env.MM_FONTS_ACCESS_CLIENT_SECRET!,
     cacheDir: env.MM_FONTS_CACHE_DIR?.trim() || DEFAULT_CACHE_DIR,
     fetchToken: env.MM_FONTS_FETCH_TOKEN!,
-    outputDir: env.MM_FONTS_OUTPUT_DIR?.trim() || DEFAULT_OUTPUT_DIR,
+    outputDir:
+      env.MM_FONTS_OUTPUT_DIR?.trim() || DEFAULT_GENERATED_FONTS_OUTPUT_DIR,
     serviceUrl: env.MM_FONTS_SERVICE_URL!,
     set: env.MM_FONTS_SET!,
     version,
