@@ -127,7 +127,7 @@ export default tseslint.config(
   },
 
   {
-    files: ['**/*.{js,mjs,cjs,ts}'],
+    files: ['**/*.{astro,js,mjs,cjs,ts}'],
     plugins: {
       'simple-import-sort': simpleImportSort,
       'unused-imports': unusedImports,
