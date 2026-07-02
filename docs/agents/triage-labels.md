@@ -13,3 +13,9 @@ The skills speak in terms of five canonical triage roles. This file maps those r
 When a skill mentions a role, use the corresponding label string from this table.
 
 Edit the right-hand column to match whatever vocabulary this repo actually uses.
+
+## Additional Workflow Labels
+
+| Label              | Meaning                                                                  |
+| ------------------ | ------------------------------------------------------------------------ |
+| `blocked:decision` | Waiting on a product, design, or operator decision before implementation |
