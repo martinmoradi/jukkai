@@ -26,6 +26,7 @@ type RequiredEnvKey = (typeof REQUIRED_ENV_KEYS)[number];
 interface FontsPrefetchEnv extends Partial<
   Record<RequiredEnvKey, string | undefined>
 > {
+  [key: string]: string | undefined;
   MM_FONTS_CACHE_DIR?: string | undefined;
   MM_FONTS_OUTPUT_DIR?: string | undefined;
 }

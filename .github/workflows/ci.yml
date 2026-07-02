@@ -64,7 +64,9 @@ jobs:
               commitlint.config.mjs | \
               eslint.config.mjs | \
               package.json | \
+              scripts/** | \
               stylelint.config.mjs | \
+              tsconfig*.json | \
               turbo.json)
                 code_changed=true
                 ;;
