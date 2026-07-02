@@ -119,6 +119,7 @@ It is generated from `docs/foundation.md`, which remains the canonical source of
 | "Is Jukkai an architecture studio or an art shop?" | Jukkai is the umbrella. Architecture is the website's primary conversion job; L'art shop is part of the place and brand experience. |
 | "Does mission déco make the brand feel less qualified?" | No. The frame is "une mission déco avec l'exigence d'une architecte d'intérieur." The credential and 30 ans de métier protect the premium identity. |
 | "Is my project too small?" | There is a full ladder of mission sizes, including conseil / mission déco and transformation ciblée. The enquiry form has no budget floor and includes "je ne sais pas encore." |
+| "Will the mission be clear before paid design work begins?" | Yes. Architecture work is framed by a clear contrat de mission or lettre de mission before paid design work begins. |
 | "Why are there no art prices or catalogue?" | Pre-opening art prices are intentionally absent because the entry point is not guaranteed, artist consent is not secured, and Jukkai is not an ecommerce catalogue. |
 | "Is Châteaugiron too far from Rennes?" | Rennes is the commercial claim; Châteaugiron is the physical anchor, about 20 minutes from Rennes. |
 
@@ -210,10 +211,10 @@ It is generated from `docs/foundation.md`, which remains the canonical source of
 | Trust and qualification | UNAID qualification, 30 ans de métier, 2 architectes, depuis 2012. |
 | Local relevance | Rennes as commercial claim; Châteaugiron as physical anchor; regional vocabulary. |
 | Emotional differentiation | Jukkai world, art shop scene, "Chaque contrainte est un terrain de jeu." |
-| Conversion clarity | Enquiry form as primary conversion, Calendly as post-submission accelerator. |
+| Conversion clarity | Enquiry form as primary conversion, Calendly as post-submission accelerator, clear contrat de mission or lettre de mission before paid design work. |
 | Proof discipline | No unverified eco label, no art-as-investment, no art-and-architecture track-record claim before proof exists. |
 
-**Source:** Sections 1, 2, 3, 8, 10, 11.
+**Source:** Sections 1, 2, 3, 7, 8, 10, 11.
 
 ## Goals
 
@@ -223,7 +224,9 @@ It is generated from `docs/foundation.md`, which remains the canonical source of
 
 **Current metrics:** 93% branded search clicks on the current site. Secondary tracked events for the new site: click-to-call, click-to-email, itinerary click on the shop page, outbound Instagram click.
 
-**Source:** Sections 1, 3, 5, 8, 9.
+**Title pattern:** Brand-first titles by default. Keyword-first titles are reserved for acquisition surfaces: the Rennes service page, the cost guide, and the B2B page.
+
+**Source:** Sections 1, 3, 4, 5, 7, 8, 9.
 
 ## Open Items From Foundation
 
@@ -234,5 +237,6 @@ It is generated from `docs/foundation.md`, which remains the canonical source of
 - Which projects, photos, locations, and permissions can be published.
 - 3-5 written testimonials with first name, commune, and project type.
 - Crystelle workflow preference after form submission: instant booking or personal reply first.
+- Artist dépôt / commission terms for the artist block: no fee to exhibit, written contract / bon de dépôt, commission logic, insurance / responsibility for works, and named contact.
 
 **Source:** Sections 1, 3, 4, 7, 9, 10, 11, 13, Amendments.

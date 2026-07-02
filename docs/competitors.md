@@ -450,12 +450,13 @@ section 7; Jukkai world as emotional register, section 5).
    This validates foundation section 3's qualifying form (project type, commune,
    budget band with "je ne sais pas encore"); nobody else will capture
    qualification data plus a booking accelerator.
-5. **Châteaugiron is winnable with honest local content.** The commune is contested
-   by SAAC's 19 doorway-style pages (real address, real projects, but no interior
-   specialty story, no reviews, dated stack), one Olivia Ballet programmatic page,
-   and a Notes de Styles mention. A physically present, interior-first,
-   review-backed Jukkai page ("à Châteaugiron, à 20 minutes de Rennes") attacks all
-   three on authenticity. SAAC will keep the full-architect (permits, extensions)
+5. **Châteaugiron is winnable with honest local proof, but not through launch-page
+   sprawl.** The commune is contested by SAAC's 19 doorway-style pages (real
+   address, real projects, but no interior specialty story, no reviews, dated
+   stack), one Olivia Ballet programmatic page, and a Notes de Styles mention. At
+   launch, the move is GBP, citations, and physical-anchor copy across the real
+   pages. The first dedicated Châteaugiron page belongs post-launch, once it can
+   carry a real project. SAAC will keep the full-architect (permits, extensions)
    demand; that segment is not Jukkai's fight.
 6. **B2B has room beside one strong incumbent.** Nolwenn Kevell owns institutional
    B2B proof; IDKREA's B2B surface is offline. A Jukkai espaces-professionnels page
@@ -466,6 +467,20 @@ section 7; Jukkai world as emotional register, section 5).
    authentic players barely publish. Foundation section 8's "local content only"
    posture (case studies with location, cost FAQ, a few honest commune pages) is the
    right wedge; it does not need to match anyone's volume.
+
+## Phase 2/3 handoff
+
+- **Messaging:** occupy the empty upper-right quadrant: a designed Jukkai world,
+  public architecture pricing, and a proof layer competitors do not combine.
+- **Messaging:** do not make "art" carry acquisition. Competitors leave the
+  art-world position open, but the competitor and keyword evidence both say the
+  searchable demand is architecture, pricing, and B2B.
+- **Sitemap:** protect three launch commercial surfaces: the Rennes architecture
+  service page, the cost guide, and the espaces-professionnels page. The shop page is
+  a brand/place surface, not an SEO acquisition page.
+- **Sitemap:** treat Châteaugiron as a launch GBP/citation win and a later honest
+  commune page, not as a launch page network. This aligns the competitor findings
+  with `keywords.md`.
 
 ## Threats to track
 
@@ -484,8 +499,8 @@ section 7; Jukkai world as emotional register, section 5).
 
 ## Implications for foundation.md
 
-Nothing found overturns the frozen foundation; no amendment required. Three
-confirmations worth recording:
+Nothing found overturns the frozen foundation's business, audience, or positioning
+truth. Three confirmations worth recording:
 
 - The competitor-practice claim in foundation section 8 ("matches documented
   competitor practice (Le Rheu, Cesson)") is confirmed live: Nolwenn Kevell operates
@@ -497,6 +512,10 @@ confirmations worth recording:
   cluster, and the incumbents holding it are all proof-thin.
 - The "30 ans de métier" claim (section 2) outranks every experience claim in the
   profiled field. Worth displaying exactly as canonized.
+
+One non-overturning title-pattern issue from `keywords.md` is now recorded in
+foundation v1.2: cost and B2B surfaces may use keyword-first titles because they
+compete in acquisition SERPs. This is not a change to the business or audience truth.
 
 ## Sources
 

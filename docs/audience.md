@@ -5,8 +5,8 @@ frozen `foundation.md` (v1.1) plus live online research run the same day.**
 
 `docs/foundation.md` stays canonical. This document turns its section 6 audience
 list into evidence-backed segments for Phase 2 (messaging) and Phase 3 (IA/sitemap).
-It does not amend the foundation; candidate amendments are flagged in the final
-section for an explicit, dated decision.
+It does not amend the foundation; amendment candidates and accepted post-research
+updates are tracked in the final section.
 
 ---
 
@@ -73,6 +73,20 @@ The foundation order stands: private architecture clients, then B2B, then art
 visitors, then artists. **[F]** Nothing in the live evidence argues for reordering;
 the searchable, priced, high-intent demand is all on the architecture side, and
 the art-visitor conversation barely exists in public text. **[E/I]**
+
+### Phase 2/3 handoff
+
+- **Messaging:** make "écoute" and trust-in-her-eye proof themes, not unsupported
+  slogans. The audience evidence repeatedly rewards listening, projection, budget
+  respect, and transformation.
+- **Messaging:** use price clarity as a trust move for architecture, while keeping
+  pre-opening art prices inside the foundation's no-numbers rule until inventory is
+  real.
+- **Sitemap:** the segment order maps cleanly to the Phase 3 structure: architecture
+  service and cost surfaces first, B2B as its own commercial page under Prestations,
+  shop as visitability and artist-contact surface, artists inside the shop page.
+- **Sitemap:** no audience evidence supports a top-level art-buyer branch, a
+  standalone artist page, or reordering the primary nav away from architecture.
 
 ---
 
@@ -461,8 +475,9 @@ Conversion here is a visit, a follow, or a newsletter signup, not a purchase. **
    working. That is the documented antidote to pains 1 and 4. **[E/F]**
 3. A register that gives permission to the néophyte: coup-de-cœur framing, no art
    jargon (already a banned-vocabulary rule). **[E/F]**
-4. Price-fear handling within the foundation's no-prices rule: see amendment
-   candidate A1 below; this is the one real tension the research surfaced. **[E]**
+4. Price-fear handling within the foundation's no-numbers pre-opening art rule: see
+   amendment candidate A1 below; this is the one real tension the research surfaced.
+   **[E]**
 
 Segment confidence overall: **Medium** (consistent multi-source narrative, but
 seller-voice; no first-person buyer verbatims; local evidence absent).
@@ -575,10 +590,9 @@ evidence; slight population mismatch between créateurs and fine artists).
 
 ---
 
-## Contradictions and candidate foundation amendments
+## Contradictions and foundation amendment status
 
-Flagged for decision, per the amendment rule. **Nothing here edits
-`foundation.md`.**
+Flagged per the amendment rule. **Nothing here edits `foundation.md` directly.**
 
 ### A1. Tension: art price silence vs the documented anti-intimidation lever
 
@@ -588,7 +602,7 @@ live evidence says visible fixed prices are the single clearest documented
 antidote to gallery intimidation, and « prix disponible sur demande » is the
 exact behavior that marks a venue as intimidating. **The ban's rationale is
 sound and the evidence does not overturn it; the tension is real but pre-opening
-only.** Two implications, no amendment required yet:
+only.** Two implications, no amendment required before launch:
 
 - The "later" bucket item on post-opening price display should be treated as
   high-priority once inventory is real, not as a nice-to-have.
@@ -596,15 +610,18 @@ only.** Two implications, no amendment required yet:
   printing numbers (in-shop visible pricing as part of the scene description).
   That wording choice belongs to Phase 2 within Crystelle's validation of shop
   French. **[E/I]**
+  If foundation is amended later, the dated note should say that the no-numbers rule
+  was a pre-opening inventory constraint, not a permanent anti-transparency stance.
 
-### A2. Candidate addition: contrat de mission as a trust signal
+### A2. Accepted addition (foundation v1.2): contrat de mission as a trust signal
 
 Foundation §3/§7 define the conversion and offer ladder but say nothing about
 contractual framing. The worst documented private-client story (billed on
 abandoned devis, no signed mission) and the professional norm ("never work
 without a signed contrat de mission") suggest the process/prestations content
-should name the contrat de mission explicitly. Suggested handling: Phase 2/3
-implication, or a one-line §7 amendment if Martin wants it canonical. **[E]**
+should name the contrat de mission explicitly. Martin accepted this as canonical on
+July 2, 2026; foundation v1.2 now includes a process trust signal for a contrat de
+mission or lettre de mission before paid design work begins. **[E]**
 
 ### A3. Candidate enrichment: the artist block's minimum credibility set
 
@@ -612,9 +629,9 @@ Foundation §9 specifies the block and route but not its content posture. Artist
 evidence is unusually crisp: no fee to exhibit, written contract, commission
 clarity, named human, visible place. If the pre-opening artist courting is a real
 near-term job (it is, per §3), this belongs in the block's copy brief. Also flags
-a possible questions-file addition: Crystelle's intended commission/dépôt terms
-are currently in no bucket, but the block cannot fully deliver credibility
-without at least knowing them internally. **[E/I]**
+the questions-file addition made after reconciliation: Crystelle's intended
+commission/dépôt terms are now blocking-for-copy, because the block cannot fully
+deliver credibility without at least knowing them internally. **[E/I]**
 
 ### A4. Confirmations (no change needed, recorded as evidence)
 
