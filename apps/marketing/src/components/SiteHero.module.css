@@ -31,18 +31,18 @@
 }
 
 .title {
-  max-width: 10ch;
+  max-width: 14ch;
   margin: 1rem 0 0;
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(4.5rem, 14vw, 12rem);
+  font-size: 4.5rem;
   font-weight: 500;
-  line-height: 0.85;
+  line-height: 0.95;
 }
 
 .lead {
   max-width: 42rem;
   margin: 1.5rem 0 0;
-  font-size: clamp(1.125rem, 2vw, 1.55rem);
+  font-size: 1.25rem;
   line-height: 1.45;
   color: #4f463c;
 }
@@ -77,7 +77,25 @@
     padding: 2rem;
   }
 
+  .title {
+    font-size: 3rem;
+  }
+
+  .lead {
+    font-size: 1.125rem;
+  }
+
   .panel {
     min-height: 12rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .title {
+    font-size: 6rem;
+  }
+
+  .lead {
+    font-size: 1.45rem;
   }
 }

@@ -1,18 +1,16 @@
 ---
+import SeoHead from '../components/SeoHead.astro';
 import SiteHero from '../components/SiteHero.astro';
-import { formatPageTitle } from '../lib/page-title';
+import { SITE_METADATA } from '../lib/site-metadata';
 import styles from './index.module.css';
 
-const pageTitle = formatPageTitle('Jukkai');
+const pageTitle = SITE_METADATA.defaultTitle;
 ---
 
 <!doctype html>
 <html lang='fr'>
   <head>
-    <meta charset='UTF-8' />
-    <meta name='description' content='Site marketing Jukkai.' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <title>{pageTitle}</title>
+    <SeoHead title={pageTitle} canonicalPath='/' />
   </head>
   <body class={styles.page}>
     <main>
