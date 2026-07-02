@@ -8,6 +8,10 @@ node_modules/
 dist/
 .astro/
 
+# generated font assets
+.cache/mm-fonts/
+apps/marketing/public/fonts/generated/
+
 # env / secrets
 .env
 .env.*
