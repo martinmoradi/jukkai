@@ -5,12 +5,16 @@
 ## Adapter Contract
 
 This file is an adapter for marketing skills that expect `.agents/product-marketing.md`.
-It is generated from `docs/foundation.md`, which remains the canonical source of truth.
+It is generated from `docs/strategy/foundation.md`, which remains the canonical source
+of truth.
 
-- If this file conflicts with `docs/foundation.md`, `docs/foundation.md` wins.
-- Do not add standalone positioning facts here. Amend `docs/foundation.md` with a dated note, then regenerate this adapter.
-- Treat unresolved items, launch blockers, and Crystelle-validation items as unresolved. Do not smooth them over in downstream work.
-- Source references below point to `docs/foundation.md` sections.
+- If this file conflicts with `docs/strategy/foundation.md`,
+  `docs/strategy/foundation.md` wins.
+- Do not add standalone positioning facts here. Amend
+  `docs/strategy/foundation.md` with a dated note, then regenerate this adapter.
+- Treat unresolved items, launch blockers, and Crystelle-validation items as
+  unresolved. Do not smooth them over in downstream work.
+- Source references below point to `docs/strategy/foundation.md` sections.
 
 ## Product Overview
 

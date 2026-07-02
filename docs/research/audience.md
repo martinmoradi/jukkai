@@ -1,9 +1,9 @@
 # Jukkai audience segments
 
 **Phase 1 (research refresh), audience deliverable. Produced July 2, 2026 from the
-frozen `foundation.md` (v1.1) plus live online research run the same day.**
+frozen `docs/strategy/foundation.md` (v1.1) plus live online research run the same day.**
 
-`docs/foundation.md` stays canonical. This document turns its section 6 audience
+`docs/strategy/foundation.md` stays canonical. This document turns its section 6 audience
 list into evidence-backed segments for Phase 2 (messaging) and Phase 3 (IA/sitemap).
 It does not amend the foundation; amendment candidates and accepted post-research
 updates are tracked in the final section.
@@ -14,18 +14,18 @@ updates are tracked in the final section.
 
 Every claim carries one of three labels:
 
-- **[F]** Confirmed foundation fact. Canonical, from `foundation.md`.
+- **[F]** Confirmed foundation fact. Canonical, from `docs/strategy/foundation.md`.
 - **[E]** Live evidence, gathered July 2, 2026. Source and date given. Quotes are
   verbatim French unless marked otherwise.
 - **[I]** Inference. Reasoned from evidence or context, not directly verified.
 
 Confidence rubric (per the customer-research method):
 
-| Confidence | Criteria |
-|---|---|
-| High | 3+ independent sources, unprompted, consistent across segments |
-| Medium | 2 sources, or prompted, or limited to one segment or one voice type |
-| Low | Single source, possible outlier, needs validation |
+| Confidence | Criteria                                                            |
+| ---------- | ------------------------------------------------------------------- |
+| High       | 3+ independent sources, unprompted, consistent across segments      |
+| Medium     | 2 sources, or prompted, or limited to one segment or one voice type |
+| Low        | Single source, possible outlier, needs validation                   |
 
 ### What the live research covered
 
@@ -265,12 +265,12 @@ vous faire économiser de l'argent ? », « architecte d'intérieur ou décorate
 
 ### Sub-persona deltas (evidence-mapped)
 
-| Sub-persona **[F]** | What the evidence adds **[E/I]** |
-|---|---|
-| Isabelle (full renovation, ~150k) | Triggered by "can't optimize / can't project"; needs 3D, écoute, transformation story. Fee frame: 8-15% des travaux. |
-| Bernard (modernisation, ~100k) | Reliability register: process, délais, suivi de chantier, vetted artisans, « professionnalisme ». Devis-shock is the project-killer to preempt. |
-| Young couple (constrained) | Fee opacity hits hardest; décoratrice-is-cheaper objection lives here; fixed-price entry offer and budget-respect proof are the levers. |
-| Déco client (~40-50k) | « Un truc clochait... par quoi commencer »; fears being too small; premium-inversion frame answers it. Entry-offer market benchmark exists (120€ visite conseil locally). |
+| Sub-persona **[F]**               | What the evidence adds **[E/I]**                                                                                                                                          |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Isabelle (full renovation, ~150k) | Triggered by "can't optimize / can't project"; needs 3D, écoute, transformation story. Fee frame: 8-15% des travaux.                                                      |
+| Bernard (modernisation, ~100k)    | Reliability register: process, délais, suivi de chantier, vetted artisans, « professionnalisme ». Devis-shock is the project-killer to preempt.                           |
+| Young couple (constrained)        | Fee opacity hits hardest; décoratrice-is-cheaper objection lives here; fixed-price entry offer and budget-respect proof are the levers.                                   |
+| Déco client (~40-50k)             | « Un truc clochait... par quoi commencer »; fears being too small; premium-inversion frame answers it. Entry-offer market benchmark exists (120€ visite conseil locally). |
 
 Segment confidence overall: **High** on shared psychology and vocabulary (mixed
 local and national, many sources), **Medium** on triggers (dated forum evidence),
@@ -592,7 +592,7 @@ evidence; slight population mismatch between créateurs and fine artists).
 
 ## Contradictions and foundation amendment status
 
-Flagged per the amendment rule. **Nothing here edits `foundation.md` directly.**
+Flagged per the amendment rule. **Nothing here edits `docs/strategy/foundation.md` directly.**
 
 ### A1. Tension: art price silence vs the documented anti-intimidation lever
 

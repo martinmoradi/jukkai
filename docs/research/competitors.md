@@ -2,8 +2,8 @@
 
 **Phase 1 research refresh. Researched live on July 2, 2026.**
 
-Produced per `docs/method.md` (Phase 1, derive mode) using the `competitor-profiling`
-skill adapted for a local service business. Reads `docs/foundation.md` v1.1 as frozen
+Produced per `docs/operations/method.md` (Phase 1, derive mode) using the `competitor-profiling`
+skill adapted for a local service business. Reads `docs/strategy/foundation.md` v1.1 as frozen
 truth; nothing here amends it (a short "implications for foundation" note at the end
 confirms consistency). Downstream consumers: Phase 3 (IA/sitemap), Phase 4 (SEO spec,
 content matrix).
@@ -153,8 +153,8 @@ Rennes" and the tarif cluster (appeared in three of our six searches).
 - **Local SEO posture:** aggressive. Dedicated `/architecte-interieur-rennes/` page
   with cost and "architecte vs décorateur" FAQ; blog posting every 2-3 days, every
   post Rennes-keyworded at root-level slugs. Content reads templated/AI-cadenced.
-- **Title/meta pattern:** keyword-first (`Architecte d'intérieur Rennes | Rénovation
-  & Design | Atelier LŌ`), "Devis gratuit" in metas.
+- **Title/meta pattern:** keyword-first, for example `Architecte d'intérieur Rennes |
+Rénovation & Design | Atelier LŌ`; "Devis gratuit" in metas.
 - **Strengths:** pricing transparency moat (public rates plus simulator); relentless
   local content cadence; clear technical/3D differentiation; full-spectrum offer.
 - **Weaknesses:** zero displayed social proof and an unverifiable satisfaction claim;
@@ -370,17 +370,17 @@ commune.**
 
 ## Comparison matrix
 
-| | Base | Claims Rennes | Châteaugiron presence | Public pricing | Credential shown | Proof on site | B2B offer | Local SEO play | Art/deco crossover |
-|---|---|---|---|---|---|---|---|---|---|
-| **Le Coup de Crayon** | Rennes (no address) | Yes, every page | None | None | None | Testimonials (homepage) | No | Tight single-city, ~7 pages | None |
-| **Alchimie d'intérieur** | Andouillé-Neuville | Service-area page | None | None | Insurance only | 11+ testimonials, press | Yes (minor) | 15 keyword x city landers | None |
-| **Atelier LŌ** | Rennes (address) | Yes, keyword-first | None | High (rates + simulator) | None | Stat blocks only | No | Dedicated page + blog every 2-3 days | None |
-| **IDKREA** (site down) | Rennes showroom | Yes | None | None | None | Showroom, 1 testimonial | Yes (deep) | Keyword slugs, no communes | Closest: curated design objects |
-| **Gaëlle Boutaud** | Rennes (address) | Yes | Never mentioned | High (forfaits + €/m²) | None | 16 named projects | ERP compliance | Cost-intent content machine | None |
-| **Nolwenn Kevell** | Le Rheu | Yes, every title | None | None | ENSAAMA/ENSAD, 2006 | 8-12 testimonials/page, named B2B refs | Yes (deep) | Titles + album naming | Discourse only |
-| **SAAC** | **Châteaugiron** | Yes | **Home commune, 19 pages, 9 real projects** | None | Ordre des Architectes | Credentials only, no reviews | No | ~1,500 programmatic commune pages | None |
-| Notes de Styles | Network | Yes | Named in copy | Floors ("à partir de") | Certified (claimed) | Budgeted case studies | Yes | National city tree | None |
-| Olivia Ballet | Rennes | Yes | **Commune page exists** | High (own rates) | Not seen | Not assessed | No | 52 commune pages + tariff editorial | None |
+|                          | Base                | Claims Rennes      | Châteaugiron presence                       | Public pricing           | Credential shown      | Proof on site                          | B2B offer      | Local SEO play                       | Art/deco crossover              |
+| ------------------------ | ------------------- | ------------------ | ------------------------------------------- | ------------------------ | --------------------- | -------------------------------------- | -------------- | ------------------------------------ | ------------------------------- |
+| **Le Coup de Crayon**    | Rennes (no address) | Yes, every page    | None                                        | None                     | None                  | Testimonials (homepage)                | No             | Tight single-city, ~7 pages          | None                            |
+| **Alchimie d'intérieur** | Andouillé-Neuville  | Service-area page  | None                                        | None                     | Insurance only        | 11+ testimonials, press                | Yes (minor)    | 15 keyword x city landers            | None                            |
+| **Atelier LŌ**           | Rennes (address)    | Yes, keyword-first | None                                        | High (rates + simulator) | None                  | Stat blocks only                       | No             | Dedicated page + blog every 2-3 days | None                            |
+| **IDKREA** (site down)   | Rennes showroom     | Yes                | None                                        | None                     | None                  | Showroom, 1 testimonial                | Yes (deep)     | Keyword slugs, no communes           | Closest: curated design objects |
+| **Gaëlle Boutaud**       | Rennes (address)    | Yes                | Never mentioned                             | High (forfaits + €/m²)   | None                  | 16 named projects                      | ERP compliance | Cost-intent content machine          | None                            |
+| **Nolwenn Kevell**       | Le Rheu             | Yes, every title   | None                                        | None                     | ENSAAMA/ENSAD, 2006   | 8-12 testimonials/page, named B2B refs | Yes (deep)     | Titles + album naming                | Discourse only                  |
+| **SAAC**                 | **Châteaugiron**    | Yes                | **Home commune, 19 pages, 9 real projects** | None                     | Ordre des Architectes | Credentials only, no reviews           | No             | ~1,500 programmatic commune pages    | None                            |
+| Notes de Styles          | Network             | Yes                | Named in copy                               | Floors ("à partir de")   | Certified (claimed)   | Budgeted case studies                  | Yes            | National city tree                   | None                            |
+| Olivia Ballet            | Rennes              | Yes                | **Commune page exists**                     | High (own rates)         | Not seen              | Not assessed                           | No             | 52 commune pages + tariff editorial  | None                            |
 
 Reading of the matrix: **no competitor combines public pricing with strong proof**;
 the two transparent players (Atelier LŌ, Gaëlle Boutaud) are the two with the
@@ -417,8 +417,8 @@ pricing).
 
 The upper-right quadrant is empty. Every emotionally differentiated player is opaque
 on price; every transparent player is functional and proof-thin. That empty quadrant
-is exactly where foundation.md already points Jukkai (public architecture pricing,
-section 7; Jukkai world as emotional register, section 5).
+is exactly where `docs/strategy/foundation.md` already points Jukkai (public
+architecture pricing, section 7; Jukkai world as emotional register, section 5).
 
 ## Opportunities for Jukkai
 
@@ -480,7 +480,7 @@ section 7; Jukkai world as emotional register, section 5).
   a brand/place surface, not an SEO acquisition page.
 - **Sitemap:** treat Châteaugiron as a launch GBP/citation win and a later honest
   commune page, not as a launch page network. This aligns the competitor findings
-  with `keywords.md`.
+  with `docs/research/keywords.md`.
 
 ## Threats to track
 
@@ -497,7 +497,7 @@ section 7; Jukkai world as emotional register, section 5).
   Boutaud both publish rates), public pricing alone stops differentiating; the
   pairing with proof is what stays defensible.
 
-## Implications for foundation.md
+## Foundation implications
 
 Nothing found overturns the frozen foundation's business, audience, or positioning
 truth. Three confirmations worth recording:
@@ -513,9 +513,10 @@ truth. Three confirmations worth recording:
 - The "30 ans de métier" claim (section 2) outranks every experience claim in the
   profiled field. Worth displaying exactly as canonized.
 
-One non-overturning title-pattern issue from `keywords.md` is now recorded in
-foundation v1.2: cost and B2B surfaces may use keyword-first titles because they
-compete in acquisition SERPs. This is not a change to the business or audience truth.
+One non-overturning title-pattern issue from `docs/research/keywords.md` is now
+recorded in foundation v1.2: cost and B2B surfaces may use keyword-first titles
+because they compete in acquisition SERPs. This is not a change to the business or
+audience truth.
 
 ## Sources
 

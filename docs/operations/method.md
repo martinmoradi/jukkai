@@ -57,15 +57,15 @@ inlined facts plus the decision log; do not open the crawl for it.
 
 ## Canonical truth and the skill adapter
 
-`docs/foundation.md` is the single canonical source of truth. It is **versioned and
+`docs/strategy/foundation.md` is the single canonical source of truth. It is **versioned and
 amendable**, not entombed: "freeze" means "stable enough for the next phase to
 depend on," and a later phase may amend it with an explicit, dated note (see the
 Phase 1 rule below).
 
-The `marketingskills` repo expects its shared context at `.agents/product-marketing.md`.
-Generate that file as a **derived adapter** from `foundation.md`: never hand-edit it,
-and regenerate it whenever `foundation.md` changes. Foundation is truth; the adapter
-is a projection for the tools.
+The `marketingskills` repo expects its shared context at
+`.agents/product-marketing.md`. Generate that file as a **derived adapter** from
+`docs/strategy/foundation.md`: never hand-edit it, and regenerate it whenever the
+foundation changes. Foundation is truth; the adapter is a projection for the tools.
 
 ## The strategic joint this method must force
 
@@ -97,7 +97,7 @@ choice is a Phase 0 gap, not a Phase 3+ detail.
 ### Phase 0 decides (the grill agenda)
 
 Resolve each explicitly. Anything only Crystelle can answer goes to
-`questions-for-crystelle.md`, **bucketed** by what it blocks: blocking-for-sitemap,
+`docs/strategy/questions-for-crystelle.md`, **bucketed** by what it blocks: blocking-for-sitemap,
 blocking-for-copy, blocking-for-launch, later. Not a junk drawer.
 
 1. **Primary website job** — the evidence points to qualified architecture enquiries.
@@ -118,41 +118,40 @@ blocking-for-copy, blocking-for-launch, later. Not a junk drawer.
    implying ecommerce or a confirmed event program.
 
 **Does not block the sitemap — defer to the "later" bucket in
-`questions-for-crystelle.md`:** exact art-buyer persona, three-year art-shop
-economics, full event calendar, full artist lineup, the future client portal. Phase 0
-must not stall on these.
+`docs/strategy/questions-for-crystelle.md`:** exact art-buyer persona, three-year
+art-shop economics, full event calendar, full artist lineup, the future client
+portal. Phase 0 must not stall on these.
 
 ### How Phase 0 runs
 
-Phase 0 is **custom and decision-led**, driven by the grill prompt against the five
-source docs, not by a template. The exact kickoff prompt lives in
-`docs/prompts/phase-0-foundation.md`; open a fresh strong-model context with that
-prompt, this method, and the five source docs, nothing else. The external
-`product-marketing` skill is an output *adapter*, not the driver: it is too
-SaaS-shaped and too tidy to adjudicate this contradiction. Let the decision agenda
-above lead; borrow the skill only to shape the resulting doc if useful.
+Phase 0 is **custom and decision-led**, driven by the agenda above against the five
+source docs, not by a template. Open a fresh strong-model context with this method
+and the five source docs, nothing else. The external `product-marketing` skill is an
+output _adapter_, not the driver: it is too SaaS-shaped and too tidy to adjudicate
+this contradiction. Let the decision agenda above lead; borrow the skill only to
+shape the resulting doc if useful.
 
 ## Phase map
 
 Order is top to bottom. "Grill" = human in the loop. "Derive" = autonomous, reads
 docs and produces. Model tiers and roles are defined in the next section.
 
-| Phase | Reads | Skills | Produces | Mode |
-|---|---|---|---|---|
-| 0. Foundation | the 5 source docs | `product-marketing` (adapter only) | `foundation.md` + `questions-for-crystelle.md` (bucketed) | grill |
-| 1. Research refresh | frozen foundation | `customer-research`, `competitor-profiling`, live SERP | `audience.md`, `competitors.md`, `keywords.md` | derive |
-| 2. Messaging | foundation, audience | (part of `product-marketing`) | `messaging.md` (two registers: archi / Jukkai) | derive |
-| 3. IA / Sitemap (the hinge) | foundation, audience, keywords, competitors | `site-architecture`, `marketing-plan` | `sitemap.md` + content-matrix skeleton | short grill |
-| 4. Execution (parallel) | everything above | `content-strategy`, `copywriting`, `copy-editing`, `ai-seo`, `schema`, `analytics`, local-citations/GBP checklist, (`programmatic-seo` if constrained) | content matrix, SEO spec, schema, redirect map, tracking plan | derive |
-| 5. Launch / growth (later) | the built site | `launch`, `public-relations`, `social`, `cro`, `referrals`, `video`, `ab-testing` | ongoing | derive |
+| Phase                       | Reads                                       | Skills                                                                                                                                                 | Produces                                                                                 | Mode        |
+| --------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- | ----------- |
+| 0. Foundation               | the 5 source docs                           | `product-marketing` (adapter only)                                                                                                                     | `docs/strategy/foundation.md` + `docs/strategy/questions-for-crystelle.md`               | grill       |
+| 1. Research refresh         | frozen foundation                           | `customer-research`, `competitor-profiling`, live SERP                                                                                                 | `docs/research/audience.md`, `docs/research/competitors.md`, `docs/research/keywords.md` | derive      |
+| 2. Messaging                | foundation, audience                        | (part of `product-marketing`)                                                                                                                          | `docs/strategy/messaging.md`                                                             | derive      |
+| 3. IA / Sitemap (the hinge) | foundation, audience, keywords, competitors | `site-architecture`, `marketing-plan`                                                                                                                  | `docs/strategy/sitemap.md` + `docs/strategy/content-matrix.md`                           | short grill |
+| 4. Execution (parallel)     | everything above                            | `content-strategy`, `copywriting`, `copy-editing`, `ai-seo`, `schema`, `analytics`, local-citations/GBP checklist, (`programmatic-seo` if constrained) | content matrix, SEO spec, schema, redirect map, tracking plan                            | derive      |
+| 5. Launch / growth (later)  | the built site                              | `launch`, `public-relations`, `social`, `cro`, `referrals`, `video`, `ab-testing`                                                                      | ongoing                                                                                  | derive      |
 
 Notes:
 
 - **Phase 0 before Phase 1, strictly. Do not overlap them.** Phase 0 decides from the
-  existing evidence and freezes `foundation.md`. Phase 1 then refreshes research; if
-  it overturns something, it amends `foundation.md` with an explicit dated note. Never
-  let research "run alongside and get folded in" — that dissolves the freeze boundary
-  the whole method depends on.
+  existing evidence and freezes `docs/strategy/foundation.md`. Phase 1 then refreshes
+  research; if it overturns something, it amends the foundation with an explicit
+  dated note. Never let research "run alongside and get folded in" — that dissolves
+  the freeze boundary the whole method depends on.
 - **Phase 1 does live checks.** Competitor and keyword reality drifts; the 2025 audit
   is a baseline, not current truth. Re-verify SERP and competitors live.
 - **Phase 3 has two co-equal outputs: the sitemap and the content-matrix skeleton.**
@@ -218,7 +217,7 @@ Cross-model (a second family such as GPT-5.5) buys divergent blind spots, not mo
 capability. Spend it only on the two hinges:
 
 - Foundation: two divergent critics (e.g. Fable 5 and GPT-5.5) reading
-  `foundation.md` cold, then reconcile. Best defense against a papered-over
+  `docs/strategy/foundation.md` cold, then reconcile. Best defense against a papered-over
   center-of-gravity decision. This is the `crossed-review` pattern applied to a
   strategy doc.
 - Sitemap: one divergent critic attacking the IA.

@@ -1,9 +1,9 @@
 # Jukkai messaging system
 
 **Phase 2 (messaging) deliverable. Produced July 2, 2026 from the frozen
-`docs/foundation.md` (v1.2) and `docs/audience.md`.**
+`docs/strategy/foundation.md` (v1.2) and `docs/research/audience.md`.**
 
-`docs/foundation.md` stays canonical; where this document restates a foundation
+`docs/strategy/foundation.md` stays canonical; where this document restates a foundation
 ruling, the foundation wins. This document is the reusable messaging contract for
 Phase 3 (IA/sitemap) and Phase 4 (execution). It is not final page copy and not
 information architecture. Anything marked **[VALIDATION-NEEDED]** is canonical
@@ -15,19 +15,19 @@ direction awaiting Crystelle's sign-off and must not ship as frozen public copy.
 
 Every message on the site answers one buyer question, in a segment-specific form:
 
-| Segment | The live question |
-|---|---|
-| Private clients | « Est-ce que je peux faire confiance à son œil ? » |
-| B2B | "Can this studio carry a fit-out without surprises on budget and délais?" |
-| Art visitors | "Is this place for someone like me?" |
-| Artists | "Is this venue serious?" |
+| Segment         | The live question                                                         |
+| --------------- | ------------------------------------------------------------------------- |
+| Private clients | « Est-ce que je peux faire confiance à son œil ? »                        |
+| B2B             | "Can this studio carry a fit-out without surprises on budget and délais?" |
+| Art visitors    | "Is this place for someone like me?"                                      |
+| Artists         | "Is this venue serious?"                                                  |
 
 The strategy that answers them, in priority order:
 
 1. **Trust through proof, not assertion.** The audience evidence is unambiguous:
    « à l'écoute » is the universal praise currency, and credentials qualify while
-   references persuade. So écoute, budget respect, and transformation are *proof
-   themes* delivered through testimonials, case studies, and process description.
+   references persuade. So écoute, budget respect, and transformation are _proof
+   themes_ delivered through testimonials, case studies, and process description.
    They are never claimed as slogans ("nous sommes à votre écoute" is banned as a
    self-description; a client saying it is the whole point).
 2. **Clarity as a trust move.** Price and fee opacity is the shared enemy across
@@ -39,9 +39,9 @@ The strategy that answers them, in priority order:
    the structural, SEO, or conversion slot (foundation §5 tiebreak).
 
 One spine sentence holds it together (internal formulation, not public copy):
-*a qualified architecte d'intérieur with 30 years of craft, who listens and
+_a qualified architecte d'intérieur with 30 years of craft, who listens and
 respects your budget, working from Jukkai, a colourful place in Châteaugiron
-where the same eye chooses artworks and designs spaces.* The bridge clause is
+where the same eye chooses artworks and designs spaces._ The bridge clause is
 vision framing only (foundation §10): never past tense, never track record,
 until a first documented placement exists.
 
@@ -109,17 +109,17 @@ The foundation's tiebreak rule, applied to messaging:
 
 Register assignment per surface (binds Phase 3 page briefs):
 
-| Surface | Lead register | Guest moments |
-|---|---|---|
-| Homepage | Fusion: Jukkai frame, architecture anchor | Both, per the hero ruling |
-| Service page (Rennes) | Architecture | One Jukkai closing note at most |
-| Prestations + offer pages | Architecture | Art woven into offer descriptions |
-| Espaces professionnels (B2B) | Architecture, rational path leads | Jukkai present but secondary |
-| Projets / case studies | Architecture structure, dual naming | Creative titles and the closing art move are Jukkai |
-| L'art shop | Jukkai | Structural blocks: visit info, artist block, studio solidity |
-| À propos | Blend: her story in Jukkai warmth, credentials in architecture precision | « anciennement Studio Crystelle Terrasson » transition line; neuro-architecture as a narrative lens only |
-| Contact / form | Architecture, warm | None |
-| Cost guide / FAQ content | Architecture | None |
+| Surface                      | Lead register                                                            | Guest moments                                                                                            |
+| ---------------------------- | ------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------- |
+| Homepage                     | Fusion: Jukkai frame, architecture anchor                                | Both, per the hero ruling                                                                                |
+| Service page (Rennes)        | Architecture                                                             | One Jukkai closing note at most                                                                          |
+| Prestations + offer pages    | Architecture                                                             | Art woven into offer descriptions                                                                        |
+| Espaces professionnels (B2B) | Architecture, rational path leads                                        | Jukkai present but secondary                                                                             |
+| Projets / case studies       | Architecture structure, dual naming                                      | Creative titles and the closing art move are Jukkai                                                      |
+| L'art shop                   | Jukkai                                                                   | Structural blocks: visit info, artist block, studio solidity                                             |
+| À propos                     | Blend: her story in Jukkai warmth, credentials in architecture precision | « anciennement Studio Crystelle Terrasson » transition line; neuro-architecture as a narrative lens only |
+| Contact / form               | Architecture, warm                                                       | None                                                                                                     |
+| Cost guide / FAQ content     | Architecture                                                             | None                                                                                                     |
 
 ## 4. Audience-specific messaging
 
@@ -206,35 +206,35 @@ Register assignment per surface (binds Phase 3 page briefs):
 
 ## 5. Proof themes and where they belong
 
-| Proof theme | What carries it | Where it lives |
-|---|---|---|
-| Écoute (the universal currency) | Client testimonials in the « à l'écoute » / « respecté nos goûts » register; process description that starts from listening | Service page trust block, case studies, Prestations |
-| Transformation | Before/after, 3D perspectives, « le résultat est bluffant » client language | Projets pages, case studies, homepage proof cue |
-| Price clarity | Public ranges per offer in the market's numeric frame; the cost guide | Prestations, cost-guide content, B2B fee section |
-| Process cleanliness | The contrat de mission / lettre de mission named plainly; phases; suivi | Prestations process section, B2B page |
-| Qualification | UNAID, 30 ans de métier, 2 architectes, depuis 2012 | Near conversion points and in the à-propos; qualifies, never persuades: keep it compact, spend the space on proof stories |
-| Local anchoring | Rennes commercial claim, Châteaugiron physical anchor, Google reviews, testimonials attributed first name + commune + project type | Service page, footer/NAP, GBP, case-study locations |
-| The place | Space photos/renders, the scene description, visit basics | Shop page, homepage atmosphere, à propos |
-| The art×architecture bridge | Vision framing only (« le même œil choisit les œuvres et dessine les espaces ») | Inside offer descriptions and as case-study closing moves; upgrades to a named claim only after a first documented placement |
+| Proof theme                     | What carries it                                                                                                                    | Where it lives                                                                                                               |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Écoute (the universal currency) | Client testimonials in the « à l'écoute » / « respecté nos goûts » register; process description that starts from listening        | Service page trust block, case studies, Prestations                                                                          |
+| Transformation                  | Before/after, 3D perspectives, « le résultat est bluffant » client language                                                        | Projets pages, case studies, homepage proof cue                                                                              |
+| Price clarity                   | Public ranges per offer in the market's numeric frame; the cost guide                                                              | Prestations, cost-guide content, B2B fee section                                                                             |
+| Process cleanliness             | The contrat de mission / lettre de mission named plainly; phases; suivi                                                            | Prestations process section, B2B page                                                                                        |
+| Qualification                   | UNAID, 30 ans de métier, 2 architectes, depuis 2012                                                                                | Near conversion points and in the à-propos; qualifies, never persuades: keep it compact, spend the space on proof stories    |
+| Local anchoring                 | Rennes commercial claim, Châteaugiron physical anchor, Google reviews, testimonials attributed first name + commune + project type | Service page, footer/NAP, GBP, case-study locations                                                                          |
+| The place                       | Space photos/renders, the scene description, visit basics                                                                          | Shop page, homepage atmosphere, à propos                                                                                     |
+| The art×architecture bridge     | Vision framing only (« le même œil choisit les œuvres et dessine les espaces »)                                                    | Inside offer descriptions and as case-study closing moves; upgrades to a named claim only after a first documented placement |
 
 Placement rule (from the audience evidence): credentials qualify, references
 persuade. The credential sits close to the form; the stories fill the pages.
 
 ## 6. Key objections and responses
 
-| Objection | Response posture | Where |
-|---|---|---|
-| "What will it actually cost me?" (dominant) | Public ranges per mission type, Crystelle-validated entry-offer pricing, the cost guide; the form's budget bands with « je ne sais pas encore » | Prestations, cost guide, form |
-| "Will I get billed without a clear agreement?" | Name the contrat de mission / lettre de mission before paid design work, plainly | Process sections |
-| "A décoratrice is cheaper and maybe enough" | Premium inversion: « une mission déco avec l'exigence d'une architecte d'intérieur »; the « architecte d'intérieur ou décorateur ? » FAQ answers the real fork | Offer pages, FAQ content |
-| "For structural work I need a real architect" | Honest scoping; a factual line on the 150 m² / Ordre threshold where relevant | B2B and process content |
-| "Is this person even qualified?" (unregulated title) | UNAID + 30 ans de métier + 2 architectes, visible near the conversion point | Service page, à propos, form vicinity |
-| "Is my project too small for her?" | The full mission ladder down to conseil / mission déco; no budget floor in the form | Prestations, form |
-| "Is Jukkai an architecture studio or an art shop?" | Jukkai is the umbrella: the practice, the shop, the place. Architecture is the site's job; the shop is the world | Homepage, à propos |
-| "Is Châteaugiron too far?" | « à Châteaugiron, à 20 minutes de Rennes »; Rennes et sa région is the working territory | Service page, contact, footer |
-| "Art is not for someone like me" | The scene, coup-de-cœur permission, « adepte ou néophyte » welcome; never a jargon test | Shop page |
-| "I probably can't afford it" (art) | Pre-opening: accessibility carried by scene and gift-register framing, no numbers, no « prix sur demande » register; in-shop price visibility promise is **[VALIDATION-NEEDED]** | Shop page |
-| "Is this venue serious?" (artists) | Pre-answer the credibility tests: no fee to exhibit, clear artist-by-artist terms, named contact, come see the place | Artist block on shop page |
+| Objection                                            | Response posture                                                                                                                                                                 | Where                                 |
+| ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| "What will it actually cost me?" (dominant)          | Public ranges per mission type, Crystelle-validated entry-offer pricing, the cost guide; the form's budget bands with « je ne sais pas encore »                                  | Prestations, cost guide, form         |
+| "Will I get billed without a clear agreement?"       | Name the contrat de mission / lettre de mission before paid design work, plainly                                                                                                 | Process sections                      |
+| "A décoratrice is cheaper and maybe enough"          | Premium inversion: « une mission déco avec l'exigence d'une architecte d'intérieur »; the « architecte d'intérieur ou décorateur ? » FAQ answers the real fork                   | Offer pages, FAQ content              |
+| "For structural work I need a real architect"        | Honest scoping; a factual line on the 150 m² / Ordre threshold where relevant                                                                                                    | B2B and process content               |
+| "Is this person even qualified?" (unregulated title) | UNAID + 30 ans de métier + 2 architectes, visible near the conversion point                                                                                                      | Service page, à propos, form vicinity |
+| "Is my project too small for her?"                   | The full mission ladder down to conseil / mission déco; no budget floor in the form                                                                                              | Prestations, form                     |
+| "Is Jukkai an architecture studio or an art shop?"   | Jukkai is the umbrella: the practice, the shop, the place. Architecture is the site's job; the shop is the world                                                                 | Homepage, à propos                    |
+| "Is Châteaugiron too far?"                           | « à Châteaugiron, à 20 minutes de Rennes »; Rennes et sa région is the working territory                                                                                         | Service page, contact, footer         |
+| "Art is not for someone like me"                     | The scene, coup-de-cœur permission, « adepte ou néophyte » welcome; never a jargon test                                                                                          | Shop page                             |
+| "I probably can't afford it" (art)                   | Pre-opening: accessibility carried by scene and gift-register framing, no numbers, no « prix sur demande » register; in-shop price visibility promise is **[VALIDATION-NEEDED]** | Shop page                             |
+| "Is this venue serious?" (artists)                   | Pre-answer the credibility tests: no fee to exhibit, clear artist-by-artist terms, named contact, come see the place                                                             | Artist block on shop page             |
 
 ## 7. Words and phrases to use
 
@@ -342,7 +342,7 @@ ruling; flag to Crystelle with the batch below rather than blocking on it.
    artist-by-artist public wording, commission/dépôt mechanics, duration,
    insurance / responsibility, and named contact.
 
-**Research-quote hygiene:** the French verbatims in `docs/audience.md` came
+**Research-quote hygiene:** the French verbatims in `docs/research/audience.md` came
 through a fetch-and-summarize pipeline. Any quote or near-quote used in public
 copy must be spot-checked at source first; client testimonials additionally need
 documented permission.

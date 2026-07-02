@@ -1,7 +1,7 @@
 # Questions for Crystelle
 
 Bucketed by what each answer blocks. Produced by Phase 0 on July 2, 2026, alongside
-`foundation.md`. Each question ships with a proposed default where one exists, so a
+`docs/strategy/foundation.md`. Each question ships with a proposed default where one exists, so a
 "yes, fine" answer is cheap for her.
 
 ---
@@ -99,7 +99,7 @@ Bucketed by what each answer blocks. Produced by Phase 0 on July 2, 2026, alongs
 4. **Artist lineup and naming consent.** No artist names on the site until both the
    artist and Crystelle confirm (Emmery, Bonneville, and whoever follows).
 5. **Post-opening prices on the shop page.** Once inventory is real, add honest
-   ranges as a dated amendment to `foundation.md`.
+   ranges as a dated amendment to `docs/strategy/foundation.md`.
 6. **Furniture partnerships / kickbacks.** Business-model exploration only; stays off
    the site.
 7. **Client portal.** Parked until after the marketing launch; needs its own PRD.

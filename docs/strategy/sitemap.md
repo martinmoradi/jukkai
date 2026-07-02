@@ -1,12 +1,12 @@
 # Jukkai sitemap (Phase 3, IA)
 
-**Phase 3 deliverable, produced July 2, 2026.** Reads the frozen `docs/foundation.md`
-(v1.5), `docs/audience.md`, `docs/messaging.md`, `docs/keywords.md`,
-`docs/competitors.md`, and `docs/questions-for-crystelle.md`. Mines the old-site
+**Phase 3 deliverable, produced July 2, 2026.** Reads the frozen `docs/strategy/foundation.md`
+(v1.5), `docs/research/audience.md`, `docs/strategy/messaging.md`, `docs/research/keywords.md`,
+`docs/research/competitors.md`, and `docs/strategy/questions-for-crystelle.md`. Mines the old-site
 crawl (`docs/reference/studioterrasson/`) and the March 2026 SEO audit as
 provisional inventory only, never as independent truth.
 
-Companion deliverable: `docs/content-matrix.md` (the per-page skeleton Phase 4
+Companion deliverable: `docs/strategy/content-matrix.md` (the per-page skeleton Phase 4
 executes against). This document decides structure; the matrix carries the rows.
 
 Status: **draft pending the Phase 3 short grill** (Martin review, then the critic
@@ -17,10 +17,10 @@ proof rows, not structural pillars.
 
 Rules inherited and applied throughout:
 
-- `foundation.md` is truth; the §5 tiebreak rule decides every contested slot:
+- `docs/strategy/foundation.md` is truth; the §5 tiebreak rule decides every contested slot:
   architecture owns structure, SEO, conversion paths, primary CTA, measurement;
   Jukkai owns the emotional opening, the visual world, place, differentiation.
-- `messaging.md` §3 register assignments bind each page brief; its
+- `docs/strategy/messaging.md` §3 register assignments bind each page brief; its
   [VALIDATION-NEEDED] items never freeze silently.
 - No final page copy here. Title patterns and H1 territories are patterns, not
   strings.
@@ -33,7 +33,7 @@ Rules inherited and applied throughout:
 
 Ten real pages at launch. Three of them are keyword-bearing commercial surfaces
 (the Rennes service page, the cost guide, the espaces-professionnels page), which
-is exactly what `keywords.md` §6 says the launch demands, and no more. The
+is exactly what `docs/research/keywords.md` §6 says the launch demands, and no more. The
 homepage serves the branded searcher, the service page serves the stranger; both
 exist, neither does the other's job (foundation §8). The shop page is a brand and
 place surface, not an SEO acquisition page. Portfolio is one hub plus modular
@@ -257,7 +257,7 @@ of rows is Crystelle's (S1) and may be kept, merged, renamed, extended, or cut i
 later phases without touching the IA.
 
 - Old-site inventory: 12 residential + 13 professional project pages, all
-  catalogued with proof value and redirect notes in `docs/content-matrix.md`
+  catalogued with proof value and redirect notes in `docs/strategy/content-matrix.md`
   (provisional inventory table). Every one is **provisional: publication
   permission and representativeness are validation-needed** with Crystelle.
 - Recommended launch slate shape (not a list of names): 6-10 projects total.
