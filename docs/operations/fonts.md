@@ -54,12 +54,25 @@ variables, but never real secret values.
 
 ## Local Development
 
-Issue #11 owns the first documented prefetch command and generated directory
-layout. The default operator command is:
+The default operator command is:
 
 ```sh
 bun run fonts:prefetch
 ```
+
+On Martin's workstation, source the canonical local secret files first:
+
+```sh
+set -a
+source ~/.config/fonts/jukkai.env
+source ~/.config/fonts/jukkai-cloudflare-access.env
+set +a
+bun run fonts:prefetch
+```
+
+The repo also contains `.env.example` with variable names and non-secret
+defaults. Real token values must stay in `~/.config/fonts/`, local secret
+stores, or deployment secrets.
 
 The default generated paths are:
 
@@ -78,6 +91,16 @@ apps/marketing/public/fonts/generated/
 |-- fonts.css
 `-- manifest.json
 ```
+
+The generated output can be checked without contacting `@mm/fonts`:
+
+```sh
+bun run fonts:check
+```
+
+The marketing app's local dev and build commands run this check before Astro
+starts. If generated files are absent, they fail with an actionable message to
+run `bun run fonts:prefetch`.
 
 Issue #12 should consume `fonts.css` or `manifest.json` rather than scan the
 generated directory or guess font filenames.

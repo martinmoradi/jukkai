@@ -14,12 +14,14 @@
     "check": "bun run format:check && bun run lint && bun run typecheck && bun run test",
     "dev": "turbo run dev",
     "dev:marketing": "bun run --cwd apps/marketing dev",
-    "format": "prettier --write --ignore-unknown README.md package.json turbo.json eslint.config.mjs stylelint.config.mjs commitlint.config.mjs \".github/**/*\" \"apps/**/*\"",
-    "format:check": "prettier --check --ignore-unknown README.md package.json turbo.json eslint.config.mjs stylelint.config.mjs commitlint.config.mjs \".github/**/*\" \"apps/**/*\"",
-    "lint": "turbo run lint",
+    "fonts:check": "bun scripts/fonts-generated-check.ts",
+    "fonts:prefetch": "bun scripts/fonts-prefetch.ts",
+    "format": "prettier --write --ignore-unknown README.md package.json turbo.json eslint.config.mjs stylelint.config.mjs commitlint.config.mjs \".github/**/*\" \"apps/**/*\" \"docs/operations/fonts.md\" \"scripts/**/*\" \".env.example\"",
+    "format:check": "prettier --check --ignore-unknown README.md package.json turbo.json eslint.config.mjs stylelint.config.mjs commitlint.config.mjs \".github/**/*\" \"apps/**/*\" \"docs/operations/fonts.md\" \"scripts/**/*\" \".env.example\"",
+    "lint": "eslint scripts --ext .ts && turbo run lint",
     "lint:fix": "turbo run lint:fix",
     "prepare": "husky",
-    "test": "turbo run test",
+    "test": "bun test ./scripts && turbo run test",
     "typecheck": "turbo run typecheck"
   },
   "lint-staged": {

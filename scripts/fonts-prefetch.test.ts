@@ -1,0 +1,264 @@
+import { createHash } from 'node:crypto';
+import { mkdtemp, readFile, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { afterEach, describe, expect, it } from 'bun:test';
+
+import { runFontsPrefetch } from './fonts-prefetch';
+
+const workspaces: string[] = [];
+
+afterEach(async () => {
+  await Promise.all(
+    workspaces
+      .splice(0)
+      .map((workspace) => rm(workspace, { force: true, recursive: true })),
+  );
+});
+
+describe('fonts prefetch command', () => {
+  it('fails clearly when required environment variables are missing', async () => {
+    await expect(
+      runFontsPrefetch({
+        env: {
+          MM_FONTS_CACHE_DIR: '/tmp/cache',
+          MM_FONTS_OUTPUT_DIR: '/tmp/output',
+        },
+      }),
+    ).rejects.toThrow(
+      'Missing required font prefetch environment variables: MM_FONTS_SERVICE_URL, MM_FONTS_FETCH_TOKEN, MM_FONTS_ACCESS_CLIENT_ID, MM_FONTS_ACCESS_CLIENT_SECRET, MM_FONTS_SET, MM_FONTS_SET_VERSION. Source ~/.config/fonts/jukkai.env and ~/.config/fonts/jukkai-cloudflare-access.env, then run `bun run fonts:prefetch`.',
+    );
+  });
+
+  it('prefetches a pinned Set into generated CSS, manifest, and cache files', async () => {
+    const workspace = await createWorkspace();
+    const fontBytes = new TextEncoder().encode('fake-woff2-bytes');
+    const digest = createHash('sha256').update(fontBytes).digest('hex');
+    const token = 'secret-fetch-token';
+    const accessClientId = 'secret-access-client-id';
+    const accessClientSecret = 'secret-access-client-secret';
+    const requests: Request[] = [];
+
+    const server = Bun.serve({
+      fetch(request) {
+        requests.push(request.clone());
+
+        expect(request.headers.get('authorization')).toBe(`Bearer ${token}`);
+        expect(request.headers.get('cf-access-client-id')).toBe(accessClientId);
+        expect(request.headers.get('cf-access-client-secret')).toBe(
+          accessClientSecret,
+        );
+
+        const url = new URL(request.url);
+
+        if (url.pathname === '/api/sets/jukkai-starter/versions/1/snapshot') {
+          return Response.json({
+            snapshot: {
+              digest: 'snapshot-digest',
+              manifest: {
+                count: 1,
+                emitterVersion: 2,
+                fonts: [
+                  {
+                    axes: [{ def: 400, max: 700, min: 300, tag: 'wght' }],
+                    cutIndex: 0,
+                    familySlug: 'demo-sans',
+                    fontDigest: `sha256:${digest}`,
+                    sourcePath: `fonts/${digest}.woff2`,
+                  },
+                ],
+                version: 1,
+              },
+              set: {
+                name: 'Jukkai Starter',
+                slug: 'jukkai-starter',
+              },
+              setVersion: 1,
+            },
+          });
+        }
+
+        if (
+          url.pathname ===
+          `/api/sets/jukkai-starter/versions/1/fonts/${digest}.woff2`
+        ) {
+          return new Response(fontBytes, {
+            headers: { 'content-type': 'font/woff2' },
+          });
+        }
+
+        return new Response('not found', { status: 404 });
+      },
+      port: 0,
+    });
+
+    try {
+      const result = await runFontsPrefetch({
+        env: {
+          MM_FONTS_ACCESS_CLIENT_ID: accessClientId,
+          MM_FONTS_ACCESS_CLIENT_SECRET: accessClientSecret,
+          MM_FONTS_CACHE_DIR: join(workspace, 'cache'),
+          MM_FONTS_FETCH_TOKEN: token,
+          MM_FONTS_OUTPUT_DIR: join(workspace, 'public', 'fonts', 'generated'),
+          MM_FONTS_SERVICE_URL: server.url.origin,
+          MM_FONTS_SET: 'jukkai-starter',
+          MM_FONTS_SET_VERSION: '1',
+        },
+      });
+
+      expect(result).toEqual({
+        cacheDir: join(workspace, 'cache'),
+        fontCount: 1,
+        outputDir: join(workspace, 'public', 'fonts', 'generated'),
+        set: 'jukkai-starter',
+        version: 1,
+      });
+
+      const outputFontPath = join(
+        workspace,
+        'public',
+        'fonts',
+        'generated',
+        'fonts',
+        `${digest}.woff2`,
+      );
+      const cacheFontPath = join(
+        workspace,
+        'cache',
+        'fonts',
+        `${digest}.woff2`,
+      );
+
+      await expect(readFile(outputFontPath)).resolves.toEqual(fontBytes);
+      await expect(readFile(cacheFontPath)).resolves.toEqual(fontBytes);
+
+      const css = await readFile(
+        join(workspace, 'public', 'fonts', 'generated', 'fonts.css'),
+        'utf8',
+      );
+      expect(css).toContain('@font-face');
+      expect(css).toContain('font-family: "demo-sans"');
+      expect(css).toContain(`url("/fonts/generated/fonts/${digest}.woff2")`);
+
+      const manifest = JSON.parse(
+        await readFile(
+          join(workspace, 'public', 'fonts', 'generated', 'manifest.json'),
+          'utf8',
+        ),
+      );
+      expect(manifest).toEqual({
+        fontCount: 1,
+        fonts: [
+          {
+            axes: [{ def: 400, max: 700, min: 300, tag: 'wght' }],
+            familySlug: 'demo-sans',
+            outputPath: `fonts/${digest}.woff2`,
+          },
+        ],
+        set: 'jukkai-starter',
+        snapshotDigest: 'snapshot-digest',
+        version: 1,
+      });
+
+      expect(requests).toHaveLength(2);
+    } finally {
+      await server.stop(true);
+    }
+  });
+
+  it('does not print fetch or access credentials from the CLI', async () => {
+    const workspace = await createWorkspace();
+    const fontBytes = new TextEncoder().encode('fake-cli-woff2-bytes');
+    const digest = createHash('sha256').update(fontBytes).digest('hex');
+    const token = 'cli-secret-fetch-token';
+    const accessClientId = 'cli-secret-access-client-id';
+    const accessClientSecret = 'cli-secret-access-client-secret';
+
+    const server = Bun.serve({
+      fetch(request) {
+        const url = new URL(request.url);
+
+        if (url.pathname === '/api/sets/jukkai-starter/versions/1/snapshot') {
+          return Response.json({
+            snapshot: {
+              digest: 'snapshot-digest',
+              manifest: {
+                count: 1,
+                emitterVersion: 2,
+                fonts: [
+                  {
+                    axes: [],
+                    cutIndex: 0,
+                    familySlug: 'demo-sans',
+                    fontDigest: `sha256:${digest}`,
+                    sourcePath: `fonts/${digest}.woff2`,
+                  },
+                ],
+                version: 1,
+              },
+              set: {
+                name: 'Jukkai Starter',
+                slug: 'jukkai-starter',
+              },
+              setVersion: 1,
+            },
+          });
+        }
+
+        if (
+          url.pathname ===
+          `/api/sets/jukkai-starter/versions/1/fonts/${digest}.woff2`
+        ) {
+          return new Response(fontBytes, {
+            headers: { 'content-type': 'font/woff2' },
+          });
+        }
+
+        return new Response('not found', { status: 404 });
+      },
+      port: 0,
+    });
+
+    try {
+      const child = Bun.spawn({
+        cmd: [process.execPath, 'scripts/fonts-prefetch.ts'],
+        cwd: process.cwd(),
+        env: {
+          ...process.env,
+          MM_FONTS_ACCESS_CLIENT_ID: accessClientId,
+          MM_FONTS_ACCESS_CLIENT_SECRET: accessClientSecret,
+          MM_FONTS_CACHE_DIR: join(workspace, 'cache'),
+          MM_FONTS_FETCH_TOKEN: token,
+          MM_FONTS_OUTPUT_DIR: join(workspace, 'public', 'fonts', 'generated'),
+          MM_FONTS_SERVICE_URL: server.url.origin,
+          MM_FONTS_SET: 'jukkai-starter',
+          MM_FONTS_SET_VERSION: '1',
+        },
+        stderr: 'pipe',
+        stdout: 'pipe',
+      });
+      const [exitCode, stdout, stderr] = await Promise.all([
+        child.exited,
+        new Response(child.stdout).text(),
+        new Response(child.stderr).text(),
+      ]);
+      const output = `${stdout}\n${stderr}`;
+
+      expect(exitCode).toBe(0);
+      expect(stdout).toContain(
+        'Prefetched 1 @mm/fonts Fonts for jukkai-starter@1',
+      );
+      expect(output).not.toContain(token);
+      expect(output).not.toContain(accessClientId);
+      expect(output).not.toContain(accessClientSecret);
+    } finally {
+      await server.stop(true);
+    }
+  });
+});
+
+async function createWorkspace() {
+  const workspace = await mkdtemp(join(tmpdir(), 'jukkai-fonts-prefetch-'));
+  workspaces.push(workspace);
+  return workspace;
+}
