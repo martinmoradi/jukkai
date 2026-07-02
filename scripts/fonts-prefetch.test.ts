@@ -26,7 +26,7 @@ describe('fonts prefetch command', () => {
         },
       }),
     ).rejects.toThrow(
-      'Missing required font prefetch environment variables: MM_FONTS_SERVICE_URL, MM_FONTS_FETCH_TOKEN, MM_FONTS_ACCESS_CLIENT_ID, MM_FONTS_ACCESS_CLIENT_SECRET, MM_FONTS_SET, MM_FONTS_SET_VERSION. Source ~/.config/fonts/jukkai.env and ~/.config/fonts/jukkai-cloudflare-access.env, then run `bun run fonts:prefetch`.',
+      'Missing required font prefetch environment variables: MM_FONTS_SERVICE_URL, MM_FONTS_FETCH_TOKEN, MM_FONTS_ACCESS_CLIENT_ID, MM_FONTS_ACCESS_CLIENT_SECRET. Source ~/.config/fonts/jukkai.env and ~/.config/fonts/jukkai-cloudflare-access.env, then run `bun run fonts:prefetch`.',
     );
   });
 
@@ -101,8 +101,6 @@ describe('fonts prefetch command', () => {
           MM_FONTS_FETCH_TOKEN: token,
           MM_FONTS_OUTPUT_DIR: join(workspace, 'public', 'fonts', 'generated'),
           MM_FONTS_SERVICE_URL: server.url.origin,
-          MM_FONTS_SET: 'jukkai-starter',
-          MM_FONTS_SET_VERSION: '1',
         },
       });
 
@@ -245,8 +243,6 @@ describe('fonts prefetch command', () => {
           MM_FONTS_FETCH_TOKEN: 'fetch-token',
           MM_FONTS_OUTPUT_DIR: join(workspace, 'public', 'fonts', 'generated'),
           MM_FONTS_SERVICE_URL: server.url.origin,
-          MM_FONTS_SET: 'jukkai-starter',
-          MM_FONTS_SET_VERSION: '1',
         },
       });
 
@@ -323,8 +319,6 @@ describe('fonts prefetch command', () => {
           MM_FONTS_FETCH_TOKEN: token,
           MM_FONTS_OUTPUT_DIR: join(workspace, 'public', 'fonts', 'generated'),
           MM_FONTS_SERVICE_URL: server.url.origin,
-          MM_FONTS_SET: 'jukkai-starter',
-          MM_FONTS_SET_VERSION: '1',
         },
         stderr: 'pipe',
         stdout: 'pipe',
