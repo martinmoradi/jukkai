@@ -135,7 +135,7 @@ It is generated from `docs/foundation.md`, which remains the canonical source of
 
 **Habit:** Existing word of mouth, the old Studio Crystelle Terrasson identity, generic architecture-site patterns, Instagram as the easy art surface, and prospects' default assumptions about galleries, decorators, or renovation workflows.
 
-**Anxiety:** Budget uncertainty, whether the art shop weakens architecture seriousness, whether "déco" dilutes the credential, whether the October 2026 opening timing holds, and whether claims have enough proof.
+**Anxiety:** Budget uncertainty, whether the art shop weakens architecture seriousness, whether "déco" dilutes the credential, whether the fixed October 1, 2026 opening deadline is met, and whether claims have enough proof.
 
 **Source:** Sections 1, 3, 4, 5, 7, 9, 10, 13.
 
@@ -230,13 +230,12 @@ It is generated from `docs/foundation.md`, which remains the canonical source of
 
 ## Open Items From Foundation
 
-- Final opening date confirmation for around October 1, 2026.
 - Physical signage text for the Google Business Profile name match.
 - Crystelle validation of exact shop French: "L'art shop" and "Ni galerie, ni boutique déco. Un art shop."
-- Exact conseil / mission déco name, price, and scope.
+- Exact conseil / mission déco name, price, scope, and whether the entry offer is fixed-price.
 - Which projects, photos, locations, and permissions can be published.
 - 3-5 written testimonials with first name, commune, and project type.
 - Crystelle workflow preference after form submission: instant booking or personal reply first.
-- Artist dépôt / commission terms for the artist block: no fee to exhibit, written contract / bon de dépôt, commission logic, insurance / responsibility for works, and named contact.
+- Artist dépôt / commission mechanics for the artist block: no fee to exhibit is settled; still need purchase/resale vs time-bound sale or dépôt contract, commission logic, insurance / responsibility for works, and named contact.
 
 **Source:** Sections 1, 3, 4, 7, 9, 10, 11, 13, Amendments.
