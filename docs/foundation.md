@@ -1,8 +1,9 @@
 # Jukkai marketing foundation
 
-**Version 1.3. Frozen July 2, 2026 (v1.0), amended same day after the cross-model
-critic pass (v1.1), Phase 1 research reconciliation (v1.2), and Martin's Phase 2
-clarifications (v1.3).**
+**Version 1.5. Frozen July 2, 2026 (v1.0), amended same day after the cross-model
+critic pass (v1.1), Phase 1 research reconciliation (v1.2), Martin's Phase 2
+clarifications (v1.3), the name-weight ruling (v1.4), and the GBP/signage
+decoupling (v1.5).**
 
 This is the canonical source of truth for all marketing phases (see `docs/method.md`).
 It was produced in Phase 0 from the five source docs plus the July 2, 2026 grilling
@@ -33,12 +34,12 @@ adapter is generated from this file and regenerated on every change, never hand-
 
 The only experience and identity numbers allowed in public copy:
 
-| Claim | Basis | Rule |
-|---|---|---|
-| "2 architectes" | Crystelle + Laura Corbel | Canonical |
-| "30 ans de métier" | Crystelle's total personal career | Hers alone; survives staffing changes; never phrased as studio age |
-| "depuis 2012" / "14 ans de studio" | Studio founding | Prefer the founding-year form so it doesn't rot |
-| "ouverture le 1er octobre 2026" / "ouverture octobre 2026" | Confirmed opening deadline | Allowed on the shop page; downgrade only if the date actually moves |
+| Claim                                                      | Basis                             | Rule                                                                |
+| ---------------------------------------------------------- | --------------------------------- | ------------------------------------------------------------------- |
+| "2 architectes"                                            | Crystelle + Laura Corbel          | Canonical                                                           |
+| "30 ans de métier"                                         | Crystelle's total personal career | Hers alone; survives staffing changes; never phrased as studio age  |
+| "depuis 2012" / "14 ans de studio"                         | Studio founding                   | Prefer the founding-year form so it doesn't rot                     |
+| "ouverture le 1er octobre 2026" / "ouverture octobre 2026" | Confirmed opening deadline        | Allowed on the shop page; downgrade only if the date actually moves |
 
 The two experience numbers must never blur: 30 is her career, 14 is the studio. The
 old site's "30 années" survives only in the career framing above.
@@ -86,6 +87,35 @@ personal reply first is her workflow call (logged, launch bucket).
   model is. The shop therefore needs its own referent (see below).
 - Public brand at launch: **Jukkai by Crystelle Terrasson** (closed decision). The "by"
   can quietly drop in about three years once Jukkai has its own equity.
+- **The connector is "by", generic on purpose (v1.4).** Its only job is transferring
+  Crystelle's name equity onto "Jukkai"; a cleverer construction would build equity in
+  the phrase itself, which is exactly what the three-year drop must avoid. "par" reads
+  as a byline, not a brand; bare juxtaposition loses the endorsement meaning; the
+  anglicism matches the "L'art shop" register. The connector freezes at signage lock
+  (the GBP name must match the signage and citations must stay byte-identical), so any
+  change happens before the sign is ordered, with Crystelle's veto, and never after.
+  Cleverer French phrasings ("le studio de Crystelle Terrasson", "fondé par Crystelle
+  Terrasson") belong in the woven copy layer, where they can vary freely.
+- **Name-weight rule: the compound is a three-layer system (v1.4).** The docs before
+  this ruling fixed the canonical noun but not its visual weight; this fixes the weight.
+  1. _Machine/legal layer, full form everywhere_: title tags, meta descriptions, GBP,
+     schema, footer NAP block, signage, social bios, directory citations.
+     Byte-identical, non-negotiable.
+  2. _Lockup layer, trust moments only_: the logo is the Jukkai wordmark with "by
+     Crystelle Terrasson" as a visually subordinate line, designed so the line can be
+     deleted without the wordmark changing. It appears in the site header and once in
+     the homepage hero's first viewport, and it never gains weight beyond that.
+  3. _Woven layer, running copy_: body copy says "Jukkai" and "Crystelle", never the
+     full compound. Her name appears as a person at conversion trust moments: the
+     à-propos narrative, near the enquiry form, project-story context.
+- **Never, on any surface (v1.4)**: the compound next to every wordmark instance, in
+  section headings, in CTAs, or as a repeated social-caption motif. Rationale:
+  familiarity accrues to whatever string repeats most; "Jukkai" alone must be that
+  string, or the drop becomes a rebrand instead of a simplification.
+- **The three-year drop is a layered retreat, in reverse order (v1.4)**: running copy
+  never carried the compound, the lockup line goes first, titles and GBP go last,
+  because branded search demand for her name outlives everything else. The removable
+  lockup line is what makes the retreat a non-event.
 - **"Studio Crystelle Terrasson" retires publicly.** Transition handling: "anciennement
   Studio Crystelle Terrasson" appears in the à-propos page and in meta descriptions
   during the migration window, then fades. Her personal name, which is what referrals
@@ -93,10 +123,25 @@ personal reply first is her workflow call (logged, launch bucket).
 - **The shop is called "L'art shop"** in the nav and in running copy (Crystelle's own
   spontaneous word). Banned shop words: galerie, boutique, magasin, objets.
 - **Google Business Profile**: one profile, not two. Name "Jukkai by Crystelle
-  Terrasson" (must match the physical signage; signage text is a launch question).
-  Primary category: Architecte d'intérieur. Secondary: art gallery / art store
-  equivalent. Address: Châteaugiron. Applying the tiebreak rule: the map-pack slot for
-  "architecte d'intérieur rennes" is a conversion asset; art discovery is not.
+  Terrasson", full compound, regardless of what the main sign says (v1.5). The name
+  evidence Google actually weighs is the real-world identity as consistently
+  represented across website, citations, social bios, and frontage together; all the
+  machine/legal-layer surfaces carry the full compound, so they carry the GBP name.
+  The rename continuity matters most: the existing profile ("Studio Crystelle
+  Terrasson", with its reviews) keeps "Crystelle Terrasson" as the recognizable
+  thread in the map pack, where 93%-branded demand looks for her name. The name is
+  not keyword-stuffed (no city or category terms; "Architecte d'intérieur" lives in
+  the category field). Primary category: Architecte d'intérieur. Secondary: art
+  gallery / art store equivalent. Address: Châteaugiron. Applying the tiebreak rule:
+  the map-pack slot for "architecte d'intérieur rennes" is a conversion asset; art
+  discovery is not.
+- **Signage carries the lockup, not necessarily the compound on the main sign
+  (v1.5).** The main sign may be the Jukkai wordmark alone; "by Crystelle Terrasson"
+  must appear somewhere on the physical frontage in small lettering (door vitrine,
+  hours plaque, window lettering). That satisfies the real-world name evidence and
+  does the credibility-bridge job for foot traffic in Châteaugiron, where her name is
+  known and "Jukkai" is not. Launch task: the signage brief includes this line;
+  exact placement is a design decision, its presence is not.
 - **Title pattern**: `{Page} — Jukkai by Crystelle Terrasson` sitewide. Keyword-first
   titles only on acquisition surfaces: the Rennes service page, the cost guide, and
   the B2B page. Brand-first everywhere else.
@@ -118,14 +163,14 @@ physical space and the voice, not the site structure.
 
 The rule applied to the six contested slots (all ruled, none deferred):
 
-| Slot | Ruling |
-|---|---|
-| Homepage title tag | Brand-first with keyword: "Jukkai by Crystelle Terrasson — Architecte d'intérieur, Rennes & Châteaugiron". The service page carries the keyword-first title. |
-| Homepage H1 | The architecture claim ("Architecte d'intérieur à Rennes & Châteaugiron", natural variant), rendered as the hero's kicker line. The visually dominant emotional headline is display text, not a heading. The old site died on this exact hill; not again. |
-| Homepage hero | Fusion in one frame: the Jukkai world sets the register (colour, art, alive), with the architecture kicker, the primary CTA, and a proof cue anchored in the same viewport. |
-| Primary nav | Projets / Prestations / L'art shop / À propos / Contact. Architecture owns two items; the shop comes immediately after. |
-| Primary CTA | The architecture enquiry, warm register ("Parlons de votre projet" territory), sitewide. The shop's "venez pousser la porte" is secondary and never competes at the same visual weight. |
-| Primary tracked event | Architecture enquiry form submission. One number defines success. |
+| Slot                  | Ruling                                                                                                                                                                                                                                                    |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Homepage title tag    | Brand-first with keyword: "Jukkai by Crystelle Terrasson — Architecte d'intérieur, Rennes & Châteaugiron". The service page carries the keyword-first title.                                                                                              |
+| Homepage H1           | The architecture claim ("Architecte d'intérieur à Rennes & Châteaugiron", natural variant), rendered as the hero's kicker line. The visually dominant emotional headline is display text, not a heading. The old site died on this exact hill; not again. |
+| Homepage hero         | Fusion in one frame: the Jukkai world sets the register (colour, art, alive), with the architecture kicker, the primary CTA, and a proof cue anchored in the same viewport.                                                                               |
+| Primary nav           | Projets / Prestations / L'art shop / À propos / Contact. Architecture owns two items; the shop comes immediately after.                                                                                                                                   |
+| Primary CTA           | The architecture enquiry, warm register ("Parlons de votre projet" territory), sitewide. The shop's "venez pousser la porte" is secondary and never competes at the same visual weight.                                                                   |
+| Primary tracked event | Architecture enquiry form submission. One number defines success.                                                                                                                                                                                         |
 
 Implementation guardrail on the H1 ruling (from the critic pass): the architecture
 kicker must be real, visible, styled text in normal document order, a legitimate part
@@ -324,16 +369,16 @@ Language rulings from this phase:
 Explicit deltas versus the source material, per the method's "newer conversations win"
 rule:
 
-| Was (source material) | Now (this document) |
-|---|---|
-| Art prices: 100€ entry, heart at 300-400€, top 2-3k | Entry ~200-350€ not guaranteed, core 500-800€, up to multiple thousands, under 10k (section 9) |
-| "Eco-responsible label" as trust signal (audit Tier 2.1) | No label exists; no eco claim (section 10) |
-| Neuro-architecture on the service page (audit Tier 2.1) | À-propos lens only, never a trust-block credential (section 10) |
-| Bridge "has already happened a few times" implying track record | Aspirational; vision framing only (section 10) |
-| "14 years" as a hardcoded age | Founding-year form ("depuis 2012"); "30 ans" is her career, distinct |
-| Live site's "30 années" unexplained | Reconciled: Crystelle's total career; usable only in that framing |
-| Audit's "new Next.js build" | Stale; tech stack decided outside this document |
-| "Studio Crystelle Terrasson" ambient survival | Retired publicly with "anciennement" transition (section 4) |
+| Was (source material)                                           | Now (this document)                                                                            |
+| --------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Art prices: 100€ entry, heart at 300-400€, top 2-3k             | Entry ~200-350€ not guaranteed, core 500-800€, up to multiple thousands, under 10k (section 9) |
+| "Eco-responsible label" as trust signal (audit Tier 2.1)        | No label exists; no eco claim (section 10)                                                     |
+| Neuro-architecture on the service page (audit Tier 2.1)         | À-propos lens only, never a trust-block credential (section 10)                                |
+| Bridge "has already happened a few times" implying track record | Aspirational; vision framing only (section 10)                                                 |
+| "14 years" as a hardcoded age                                   | Founding-year form ("depuis 2012"); "30 ans" is her career, distinct                           |
+| Live site's "30 années" unexplained                             | Reconciled: Crystelle's total career; usable only in that framing                              |
+| Audit's "new Next.js build"                                     | Stale; tech stack decided outside this document                                                |
+| "Studio Crystelle Terrasson" ambient survival                   | Retired publicly with "anciennement" transition (section 4)                                    |
 
 ## 13. Deferred (later bucket)
 
@@ -366,6 +411,29 @@ price display, the client portal, the furniture-partnership idea.
   while keeping artist-by-artist commercial mechanics flexible: purchase and resale,
   or a time-bound sale contract with Jukkai commission. Kept conseil / mission déco
   name, price, and scope blocking-for-copy until Crystelle gives concrete details.
+- **2026-07-02, v1.4 (name-weight ruling).** Section 4 gained three rulings from
+  Martin's question about how visible "by Crystelle Terrasson" should be. (1) The
+  compound name is a three-layer system: full form in the machine/legal layer (titles,
+  meta, GBP, schema, NAP, signage, citations); a visually subordinate, removable
+  lockup line at trust moments only (site header, once in the homepage hero); and
+  never in running copy, where "Jukkai" and "Crystelle" are woven separately. (2) The
+  connector stays "by", generic on purpose so equity accrues to "Jukkai" and to her
+  name rather than to the phrase; it matches the "L'art shop" register; it freezes at
+  signage lock, with Crystelle's veto until then (logged as an open item). Cleverer
+  French phrasings live in the woven copy layer. (3) The eventual drop is a layered
+  retreat in reverse order: lockup line first, titles and GBP last. The closed
+  decision on the name itself is unchanged.
+- **2026-07-02, v1.5 (GBP/signage decoupling).** Section 4's GBP bullet no longer
+  makes the profile name depend on the main sign. The GBP name is the full compound
+  regardless: Google weighs the real-world identity as represented across website,
+  citations, social bios, and frontage together, all of which carry the compound;
+  renaming the existing reviewed profile from "Studio Crystelle Terrasson" needs
+  "Crystelle Terrasson" to survive as the recognizable thread in the map pack; and
+  the name is not keyword-stuffed. New signage rule: the main sign may be the Jukkai
+  wordmark alone, but "by Crystelle Terrasson" must appear somewhere on the frontage
+  in small lettering (door vitrine, hours plaque, window lettering), added to the
+  signage brief as a launch task. This resolves the "signage text is a launch
+  question" dependency in Martin's favour: the profile never waits on the sign.
 
 _Later phases append here with date and reason; Phase 1 research that overturns
 anything above must amend explicitly, never silently._

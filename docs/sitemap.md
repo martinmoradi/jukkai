@@ -1,7 +1,7 @@
 # Jukkai sitemap (Phase 3, IA)
 
 **Phase 3 deliverable, produced July 2, 2026.** Reads the frozen `docs/foundation.md`
-(v1.3), `docs/audience.md`, `docs/messaging.md`, `docs/keywords.md`,
+(v1.5), `docs/audience.md`, `docs/messaging.md`, `docs/keywords.md`,
 `docs/competitors.md`, and `docs/questions-for-crystelle.md`. Mines the old-site
 crawl (`docs/reference/studioterrasson/`) and the March 2026 SEO audit as
 provisional inventory only, never as independent truth.
@@ -110,20 +110,20 @@ because communes must be real, not invented.
 
 ## 3. Page purpose and primary audience
 
-| Page | Purpose (the one job) | Primary audience |
-|---|---|---|
-| Accueil | Validate the referral in seconds; open the Jukkai world; route to service, projets, shop | Referred private clients (branded searchers) |
-| Service page Rennes | Give the stranger a complete, credible answer to « architecte d'intérieur Rennes » and carry them to the form | Non-branded private searchers |
-| Prestations | Make the offer ladder and its prices legible; show the process incl. contrat de mission; catch « is my project too small? » | Private clients comparing and scoping |
-| Espaces professionnels | Convert office fit-out demand with process and references, not QVT clichés | B2B decision-makers |
-| Guide coût | Own the proven tarif query with real figures; feed the service page | Price-researching private clients (pre-hiring) |
-| Projets (hub) | Proof by transformation; browse by habitat / espaces pro | Private clients + B2B validating her eye |
-| Pages projet | One transformation story each: photos, location, type, écoute + budget register, closing art move | Referred + researching clients |
-| L'art shop | Make the place visitable and desirable before opening; carry the artist block; hold the thesis line | Art visitors; artists (block); referred clients absorbing the world |
-| À propos | Her story and the umbrella (« Jukkai est l'ensemble »); credentials in precision; transition from the old name | Referred clients doing diligence; press |
-| Contact | Convert: qualification form, no budget floor; the warm door | All enquirers, private first |
-| /contact/merci/ | Confirm, track the conversion, offer the Calendly accelerator | Just-converted enquirers |
-| Legal ×3, 404 | Compliance and dead-end recovery | Everyone, rarely |
+| Page                   | Purpose (the one job)                                                                                                       | Primary audience                                                    |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| Accueil                | Validate the referral in seconds; open the Jukkai world; route to service, projets, shop                                    | Referred private clients (branded searchers)                        |
+| Service page Rennes    | Give the stranger a complete, credible answer to « architecte d'intérieur Rennes » and carry them to the form               | Non-branded private searchers                                       |
+| Prestations            | Make the offer ladder and its prices legible; show the process incl. contrat de mission; catch « is my project too small? » | Private clients comparing and scoping                               |
+| Espaces professionnels | Convert office fit-out demand with process and references, not QVT clichés                                                  | B2B decision-makers                                                 |
+| Guide coût             | Own the proven tarif query with real figures; feed the service page                                                         | Price-researching private clients (pre-hiring)                      |
+| Projets (hub)          | Proof by transformation; browse by habitat / espaces pro                                                                    | Private clients + B2B validating her eye                            |
+| Pages projet           | One transformation story each: photos, location, type, écoute + budget register, closing art move                           | Referred + researching clients                                      |
+| L'art shop             | Make the place visitable and desirable before opening; carry the artist block; hold the thesis line                         | Art visitors; artists (block); referred clients absorbing the world |
+| À propos               | Her story and the umbrella (« Jukkai est l'ensemble »); credentials in precision; transition from the old name              | Referred clients doing diligence; press                             |
+| Contact                | Convert: qualification form, no budget floor; the warm door                                                                 | All enquirers, private first                                        |
+| /contact/merci/        | Confirm, track the conversion, offer the Calendly accelerator                                                               | Just-converted enquirers                                            |
+| Legal ×3, 404          | Compliance and dead-end recovery                                                                                            | Everyone, rarely                                                    |
 
 ## 4. CTA logic
 
@@ -133,18 +133,18 @@ CTA per page, no exceptions, including the shop page.
 
 **Secondary CTA per page** (never at primary visual weight):
 
-| Page | Secondary CTA |
-|---|---|
-| Accueil | « Venez pousser la porte » register → /art-shop/ (the world); tertiary: voir les projets |
-| Service page | Voir les projets / le guide coût (deepen before converting) |
-| Prestations | Guide coût; per-offer anchor into the form with project type prefilled (Phase 4 detail) |
-| Espaces professionnels | Click-to-call / click-to-email (B2B moves by phone); voir les projets pro |
-| Guide coût | Service page, then the form |
-| Projets hub + pages projet | Next project / service page; closing art move links to /art-shop/ as a quiet note |
-| L'art shop | This page's own jobs run on secondary weight: itinerary click, Instagram follow, newsletter signup; artist block has its direct contact route |
-| À propos | Voir les projets |
-| Contact | None (the form is the page) |
-| /contact/merci/ | Calendly booking (« choisissez un créneau si vous voulez avancer tout de suite ») |
+| Page                       | Secondary CTA                                                                                                                                 |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Accueil                    | « Venez pousser la porte » register → /art-shop/ (the world); tertiary: voir les projets                                                      |
+| Service page               | Voir les projets / le guide coût (deepen before converting)                                                                                   |
+| Prestations                | Guide coût; per-offer anchor into the form with project type prefilled (Phase 4 detail)                                                       |
+| Espaces professionnels     | Click-to-call / click-to-email (B2B moves by phone); voir les projets pro                                                                     |
+| Guide coût                 | Service page, then the form                                                                                                                   |
+| Projets hub + pages projet | Next project / service page; closing art move links to /art-shop/ as a quiet note                                                             |
+| L'art shop                 | This page's own jobs run on secondary weight: itinerary click, Instagram follow, newsletter signup; artist block has its direct contact route |
+| À propos                   | Voir les projets                                                                                                                              |
+| Contact                    | None (the form is the page)                                                                                                                   |
+| /contact/merci/            | Calendly booking (« choisissez un créneau si vous voulez avancer tout de suite »)                                                             |
 
 **Measurement** (foundation §3, restated because it is a sitemap constraint, not
 an afterthought): the primary tracked event is the enquiry form submission,
@@ -163,20 +163,20 @@ budget band with « je ne sais pas encore ». Phone optional. No budget floor.
 From messaging §3, which binds these briefs; new pages assigned by the same rule
 (architecture owns the structural sentence, Jukkai owns the atmosphere around it):
 
-| Page | Lead register | Guest moments |
-|---|---|---|
-| Accueil | Fusion: Jukkai frame, architecture anchor | Both, per the frozen hero ruling |
-| Service page Rennes | Architecture | One Jukkai closing note at most |
-| Prestations | Architecture | Art woven into offer descriptions |
-| Espaces professionnels | Architecture, rational path leads | Jukkai present but secondary |
-| Guide coût | Architecture | None |
-| Projets hub + pages projet | Architecture structure, dual naming | Creative titles + closing art move are Jukkai |
-| L'art shop | Jukkai | Structural blocks: visit info, artist block, studio solidity |
-| À propos | Blend: story in Jukkai warmth, credentials in architecture precision | « anciennement » line; neuro-architecture as lens only |
-| Contact + merci | Architecture, warm | None |
-| Legal, 404 | Utility (404 may carry one line of Jukkai warmth) | — |
-| Reserved: décoratrice page | Architecture (premium inversion is an architecture claim) | Jukkai colour in examples |
-| Reserved: commune page, guide rénovation | Architecture | Local texture |
+| Page                                     | Lead register                                                        | Guest moments                                                |
+| ---------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------------------ |
+| Accueil                                  | Fusion: Jukkai frame, architecture anchor                            | Both, per the frozen hero ruling                             |
+| Service page Rennes                      | Architecture                                                         | One Jukkai closing note at most                              |
+| Prestations                              | Architecture                                                         | Art woven into offer descriptions                            |
+| Espaces professionnels                   | Architecture, rational path leads                                    | Jukkai present but secondary                                 |
+| Guide coût                               | Architecture                                                         | None                                                         |
+| Projets hub + pages projet               | Architecture structure, dual naming                                  | Creative titles + closing art move are Jukkai                |
+| L'art shop                               | Jukkai                                                               | Structural blocks: visit info, artist block, studio solidity |
+| À propos                                 | Blend: story in Jukkai warmth, credentials in architecture precision | « anciennement » line; neuro-architecture as lens only       |
+| Contact + merci                          | Architecture, warm                                                   | None                                                         |
+| Legal, 404                               | Utility (404 may carry one line of Jukkai warmth)                    | —                                                            |
+| Reserved: décoratrice page               | Architecture (premium inversion is an architecture claim)            | Jukkai colour in examples                                    |
+| Reserved: commune page, guide rénovation | Architecture                                                         | Local texture                                                |
 
 Homepage hero, restated because it is the model for every shared surface: Jukkai
 sets the register in the frame; the architecture kicker is the real, visible H1
@@ -186,18 +186,18 @@ heading. The H1 guardrail travels (messaging §10.3).
 
 ## 6. SEO role per page
 
-| Page | SEO role | Title pattern rule |
-|---|---|---|
-| Accueil | Branded validation (jukkai, crystelle terrasson, studio terrasson) | Frozen: « Jukkai by Crystelle Terrasson — Architecte d'intérieur, Rennes & Châteaugiron » |
-| Service page Rennes | **Local acquisition, P0.** « architecte d'intérieur rennes » + agence variant; Ille-et-Vilaine / 35 / région rennaise as body vocabulary only | Keyword-first |
-| Guide coût | **Cost / search intent, P0.** « combien coûte / tarif architecte d'intérieur rennes »; dated title, refreshed yearly | Keyword-first |
-| Espaces professionnels | **B2B acquisition, P1.** « aménagement bureaux rennes », « architecte bureau rennes » | Keyword-first |
-| Prestations | Proof/support: carries the public ranges and the process; supports the tarif cluster via cross-links, does not chase it | Brand-first |
-| Projets + pages projet | Proof/support + long tail: dual naming catches « rénovation maison/appartement {commune} » | Brand-first, descriptive subtitle in title |
-| L'art shop | Shop visitability: branded + Châteaugiron discovery. Never chases « galerie d'art » in copy (banned words); the vocabulary matching lives in GBP secondary category, schema (Phase 4), and third-party listings | Brand-first |
-| À propos | Branded validation + « anciennement Studio Crystelle Terrasson » migration queries | Brand-first |
-| Contact | Branded/utility (the old /contact/ sat at position 10; keep it indexable) | Brand-first |
-| Legal, merci, 404 | Legal/utility; merci and 404 noindex | Brand-first |
+| Page                   | SEO role                                                                                                                                                                                                        | Title pattern rule                                                                        |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| Accueil                | Branded validation (jukkai, crystelle terrasson, studio terrasson)                                                                                                                                              | Frozen: « Jukkai by Crystelle Terrasson — Architecte d'intérieur, Rennes & Châteaugiron » |
+| Service page Rennes    | **Local acquisition, P0.** « architecte d'intérieur rennes » + agence variant; Ille-et-Vilaine / 35 / région rennaise as body vocabulary only                                                                   | Keyword-first                                                                             |
+| Guide coût             | **Cost / search intent, P0.** « combien coûte / tarif architecte d'intérieur rennes »; dated title, refreshed yearly                                                                                            | Keyword-first                                                                             |
+| Espaces professionnels | **B2B acquisition, P1.** « aménagement bureaux rennes », « architecte bureau rennes »                                                                                                                           | Keyword-first                                                                             |
+| Prestations            | Proof/support: carries the public ranges and the process; supports the tarif cluster via cross-links, does not chase it                                                                                         | Brand-first                                                                               |
+| Projets + pages projet | Proof/support + long tail: dual naming catches « rénovation maison/appartement {commune} »                                                                                                                      | Brand-first, descriptive subtitle in title                                                |
+| L'art shop             | Shop visitability: branded + Châteaugiron discovery. Never chases « galerie d'art » in copy (banned words); the vocabulary matching lives in GBP secondary category, schema (Phase 4), and third-party listings | Brand-first                                                                               |
+| À propos               | Branded validation + « anciennement Studio Crystelle Terrasson » migration queries                                                                                                                              | Brand-first                                                                               |
+| Contact                | Branded/utility (the old /contact/ sat at position 10; keep it indexable)                                                                                                                                       | Brand-first                                                                               |
+| Legal, merci, 404      | Legal/utility; merci and 404 noindex                                                                                                                                                                            | Brand-first                                                                               |
 
 FAQ blocks are table stakes on the three acquisition surfaces (keywords §6.3):
 service page, guide coût, espaces professionnels each carry one; « architecte
@@ -225,24 +225,24 @@ Baseline pressure, from the audit: 93% of clicks are branded; the homepage takes
 old IA earns the right to dictate the new one. Per-URL final mapping is Phase 4;
 these are the planning rulings:
 
-| Old URL(s) | Handling | Destination |
-|---|---|---|
-| `/` | Migrate | `jukkai.fr/` |
-| `/prestations/` (2,551 impressions) | Merge into new offer page | `/prestations/` |
-| `/contact/` (position ~10) | Keep equivalent | `/contact/` |
-| `/particulier/` | Merge | `/projets/` |
-| `/professionnel/` | Merge | `/projets/` (pro view); see decision 9.2 |
-| `/realisations` (already redirects) | Re-point | `/projets/` |
-| `/particulier/belle-epoque/` (852 impr., 7 clicks: the one project page with search value) | Keep as project page if selected (strong candidate) | `/projets/{new-slug}/` |
-| Other kept project pages | Keep, renamed | Per-page 301 to `/projets/{new-slug}/` |
-| Dropped project pages | Merge | 301 to `/projets/` (parent, per audit rule) |
-| `/conseils/` | Retire | 301 to the guide coût (closest advice successor) |
-| `/concevoir-une-cuisine-ecologique/` (5,317 impr., 0 clicks), `/7-regles-dor-cuisine-moderne/` | Retire. National-topic content is dead (foundation §8); eco positioning banned (§10). Do not recreate | 301 to `/projets/` (kitchen proof) or 410; see decision 9.5 |
-| `/renover-une-vieille-salle-de-bain/` | Retire | 301 to guide coût (renovation-cost adjacent) |
-| `/comment-creer-un-espace-bureau/` | Retire | 301 to `/amenagement-bureaux-rennes/` (loose topical heir) |
-| `/comment-decorer-ses-toilettes/`, `/comment-mettre-en-valeur-un-couloir/` | Retire | 301 to `/projets/` or 410 |
-| Legal pages (mentions légales, confidentialité, CGPS, présentation) | Keep equivalents | New legal URLs; `/presentation` equivalent → `/a-propos/` |
-| Current jukkai.fr teaser page(s) | Absorb | Newsletter + Instagram + artist CTAs move into `/art-shop/`; teaser URLs 301 into the new IA (Phase 4 map) |
+| Old URL(s)                                                                                     | Handling                                                                                              | Destination                                                                                                |
+| ---------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `/`                                                                                            | Migrate                                                                                               | `jukkai.fr/`                                                                                               |
+| `/prestations/` (2,551 impressions)                                                            | Merge into new offer page                                                                             | `/prestations/`                                                                                            |
+| `/contact/` (position ~10)                                                                     | Keep equivalent                                                                                       | `/contact/`                                                                                                |
+| `/particulier/`                                                                                | Merge                                                                                                 | `/projets/`                                                                                                |
+| `/professionnel/`                                                                              | Merge                                                                                                 | `/projets/` (pro view); see decision 9.2                                                                   |
+| `/realisations` (already redirects)                                                            | Re-point                                                                                              | `/projets/`                                                                                                |
+| `/particulier/belle-epoque/` (852 impr., 7 clicks: the one project page with search value)     | Keep as project page if selected (strong candidate)                                                   | `/projets/{new-slug}/`                                                                                     |
+| Other kept project pages                                                                       | Keep, renamed                                                                                         | Per-page 301 to `/projets/{new-slug}/`                                                                     |
+| Dropped project pages                                                                          | Merge                                                                                                 | 301 to `/projets/` (parent, per audit rule)                                                                |
+| `/conseils/`                                                                                   | Retire                                                                                                | 301 to the guide coût (closest advice successor)                                                           |
+| `/concevoir-une-cuisine-ecologique/` (5,317 impr., 0 clicks), `/7-regles-dor-cuisine-moderne/` | Retire. National-topic content is dead (foundation §8); eco positioning banned (§10). Do not recreate | 301 to `/projets/` (kitchen proof) or 410; see decision 9.5                                                |
+| `/renover-une-vieille-salle-de-bain/`                                                          | Retire                                                                                                | 301 to guide coût (renovation-cost adjacent)                                                               |
+| `/comment-creer-un-espace-bureau/`                                                             | Retire                                                                                                | 301 to `/amenagement-bureaux-rennes/` (loose topical heir)                                                 |
+| `/comment-decorer-ses-toilettes/`, `/comment-mettre-en-valeur-un-couloir/`                     | Retire                                                                                                | 301 to `/projets/` or 410                                                                                  |
+| Legal pages (mentions légales, confidentialité, CGPS, présentation)                            | Keep equivalents                                                                                      | New legal URLs; `/presentation` equivalent → `/a-propos/`                                                  |
+| Current jukkai.fr teaser page(s)                                                               | Absorb                                                                                                | Newsletter + Instagram + artist CTAs move into `/art-shop/`; teaser URLs 301 into the new IA (Phase 4 map) |
 
 Non-negotiables carried from foundation §8: page-by-page 301 map, GBP update,
 external profile updates (Linktr.ee, Pages Jaunes, social bios, Houzz, Pinterest)

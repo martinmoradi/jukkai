@@ -1,7 +1,7 @@
 # Jukkai wireframe brief (Phase 3.5)
 
 **Phase 3.5 deliverable, produced July 2, 2026.** Derived from `docs/foundation.md`
-(v1.3, truth), `docs/messaging.md` (registers, vocabulary), `docs/sitemap.md` and
+(v1.5, truth), `docs/messaging.md` (registers, vocabulary), `docs/sitemap.md` and
 `docs/content-matrix.md` (IA and content source). Audience: a Figma/wireframe agent.
 
 This document defines section-level page outlines: what each page must show, in
@@ -17,9 +17,12 @@ strategy visible, not make the final website beautiful.
    votre projet » territory, pointing to `/contact/`). The shop's invitation
    (« venez pousser la porte » territory) is always secondary weight and never
    competes visually. No exceptions, including the shop page.
-2. **Header, sitewide**: nav Projets · Prestations · L'art shop · À propos ·
-   Contact, flat, no dropdowns, plus the primary CTA as a styled button beside
-   the nav, visually distinct from it.
+2. **Header, sitewide**: the brand lockup at logo position (the Jukkai wordmark
+   with « by Crystelle Terrasson » as a visually subordinate line, designed so
+   the line deletes without the wordmark changing — foundation §4 name-weight
+   rule); nav Projets · Prestations · L'art shop · À propos · Contact, flat, no
+   dropdowns; plus the primary CTA as a styled button beside the nav, visually
+   distinct from it.
 3. **Footer, sitewide**: full page list, NAP block (Jukkai by Crystelle
    Terrasson, Châteaugiron address, phone), « à 20 minutes de Rennes » anchor
    line, Instagram link, legal links, links to service page and guide coût
@@ -41,23 +44,31 @@ strategy visible, not make the final website beautiful.
    that consumes projects (teasers, galleries, reference slots) must work when
    rows are added, swapped, or removed, and must render acceptably at the low
    end of the 6-10 launch slate.
+8. **Name-weight rule (foundation §4, v1.4).** The full « Jukkai by Crystelle
+   Terrasson » compound appears in exactly three visible places: the header
+   lockup (rule 2), the footer NAP block (rule 3), and once in the homepage
+   hero's first viewport. Never in section headings, never in CTAs, never in
+   running or placeholder copy, never repeated beside other wordmark instances.
+   Body text says « Jukkai » and « Crystelle » separately; her name appears as
+   a person at trust moments (à-propos story, beside the contact form), not as
+   a brand suffix.
 
 ### Shared proof-module library
 
 Reference these by ID in the per-page briefs; design each once, reuse everywhere.
 
-| ID | Module | Contents |
-|---|---|---|
-| PM1 | Claims-canon strip | 2 architectes · 30 ans de métier · depuis 2012 · UNAID. Compact; qualifies, never persuades. Sits near conversion points. |
-| PM2 | Testimonial card | Client quote slot + attribution (first name + commune + project type). Content is C4-gated: slots only. |
-| PM3 | Project card | Photo, creative title (Jukkai register), descriptive subtitle, commune, project type. Dual naming always. |
-| PM4 | Before/after or 3D module | Transformation proof; optional per project (not all rows have it). |
-| PM5 | Price/range table | Public architecture ranges in market frames (8-15% des travaux, €/m², entry offer once validated). |
-| PM6 | Process steps | Phases from first contact to suivi de chantier; names the contrat de mission / lettre de mission plainly. |
-| PM7 | FAQ block | Accordion or list; only on the three acquisition surfaces. FAQ schema is Phase 4. |
-| PM8 | Reviews cue | Google reviews count/stars, compact, real numbers only. |
-| PM9 | Visit/NAP block | Address, hours, itinerary link, map. Hours and phone are L5-gated. |
-| PM10 | Artist block | « Vous êtes artiste ? » heading territory, no-fee-to-exhibit line, named contact route, « come see the place » invitation, studio-solidity line (depuis 2012). Terms wording is C9/V8-gated. |
+| ID   | Module                    | Contents                                                                                                                                                                                     |
+| ---- | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| PM1  | Claims-canon strip        | 2 architectes · 30 ans de métier · depuis 2012 · UNAID. Compact; qualifies, never persuades. Sits near conversion points.                                                                    |
+| PM2  | Testimonial card          | Client quote slot + attribution (first name + commune + project type). Content is C4-gated: slots only.                                                                                      |
+| PM3  | Project card              | Photo, creative title (Jukkai register), descriptive subtitle, commune, project type. Dual naming always.                                                                                    |
+| PM4  | Before/after or 3D module | Transformation proof; optional per project (not all rows have it).                                                                                                                           |
+| PM5  | Price/range table         | Public architecture ranges in market frames (8-15% des travaux, €/m², entry offer once validated).                                                                                           |
+| PM6  | Process steps             | Phases from first contact to suivi de chantier; names the contrat de mission / lettre de mission plainly.                                                                                    |
+| PM7  | FAQ block                 | Accordion or list; only on the three acquisition surfaces. FAQ schema is Phase 4.                                                                                                            |
+| PM8  | Reviews cue               | Google reviews count/stars, compact, real numbers only.                                                                                                                                      |
+| PM9  | Visit/NAP block           | Address, hours, itinerary link, map. Hours and phone are L5-gated.                                                                                                                           |
+| PM10 | Artist block              | « Vous êtes artiste ? » heading territory, no-fee-to-exhibit line, named contact route, « come see the place » invitation, studio-solidity line (depuis 2012). Terms wording is C9/V8-gated. |
 
 ---
 
@@ -73,7 +84,10 @@ Reference these by ID in the per-page briefs; design each once, reuse everywhere
    (colour, art, alive); an emotional display headline that is NOT a heading;
    the architecture kicker as the real H1 (« Architecte d'intérieur à Rennes &
    Châteaugiron » territory); the primary CTA; a compact proof cue (PM8 + UNAID
-   from PM1).
+   from PM1). The full brand compound appears once in this frame (eyebrow-line
+   territory, per global rule 8); the header lockup above it already carries
+   the name, so the hero instance stays small and must not read as a third
+   headline.
 4. **Section order.**
    1. Hero (the fusion frame above).
    2. Umbrella answer: what Jukkai is (the practice, the shop, the place); one
@@ -97,7 +111,9 @@ Reference these by ID in the per-page briefs; design each once, reuse everywhere
 9. **Wireframe guardrails.** The shop section must not read as a second hero;
    the emotional headline must never be markup-promoted to H1; do not write
    placeholder testimonial quotes; sections 3 and 5 must be modular (swap rows,
-   swap imagery, zero structural change).
+   swap imagery, zero structural change); below the hero, the compound never
+   reappears (global rule 8): section headings and CTAs use « Jukkai » alone or
+   no brand at all.
 
 ## 2. Service page `/architecte-interieur-rennes/`
 
