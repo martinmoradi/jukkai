@@ -1,5 +1,15 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [
+    ".prettierignore",
+    ".prettierrc.json",
+    "bun.lock",
+    "commitlint.config.mjs",
+    "eslint.config.mjs",
+    "package.json",
+    "stylelint.config.mjs",
+    "turbo.json"
+  ],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
