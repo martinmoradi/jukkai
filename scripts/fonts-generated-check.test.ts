@@ -5,6 +5,10 @@ import { afterEach, describe, expect, it } from 'bun:test';
 
 import { writeGeneratedFontFixture } from './fonts-fixture';
 import { ensureGeneratedFonts } from './fonts-generated-check';
+import {
+  EXPECTED_GENERATED_FONTS_SET,
+  EXPECTED_GENERATED_FONTS_VERSION,
+} from './generated-font-assets';
 
 const workspaces: string[] = [];
 
@@ -53,11 +57,41 @@ describe('generated font check', () => {
       join(outputDir, 'manifest.json'),
       JSON.stringify({
         fonts: [{ outputPath: 'fonts/demo.woff2' }],
+        set: EXPECTED_GENERATED_FONTS_SET,
+        version: EXPECTED_GENERATED_FONTS_VERSION,
       }),
     );
     await writeFile(join(outputDir, 'fonts', 'demo.woff2'), 'fake-font');
 
     await expect(ensureGeneratedFonts({ outputDir })).resolves.toBeUndefined();
+  });
+
+  it('fails clearly when generated font assets come from a different Set version', async () => {
+    const workspace = await createWorkspace();
+    const outputDir = join(
+      workspace,
+      'apps',
+      'marketing',
+      'public',
+      'fonts',
+      'generated',
+    );
+
+    await mkdir(join(outputDir, 'fonts'), { recursive: true });
+    await writeFile(join(outputDir, 'fonts.css'), '@font-face {}\n');
+    await writeFile(
+      join(outputDir, 'manifest.json'),
+      JSON.stringify({
+        fonts: [{ outputPath: 'fonts/demo.woff2' }],
+        set: 'other-set',
+        version: 2,
+      }),
+    );
+    await writeFile(join(outputDir, 'fonts', 'demo.woff2'), 'fake-font');
+
+    await expect(ensureGeneratedFonts({ outputDir })).rejects.toThrow(
+      'Generated fonts must be prefetched from jukkai-starter@1.',
+    );
   });
 
   it('accepts the generated CI font fixture', async () => {

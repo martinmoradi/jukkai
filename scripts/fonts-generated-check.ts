@@ -2,6 +2,8 @@ import { access, readdir } from 'node:fs/promises';
 
 import {
   DEFAULT_GENERATED_FONTS_OUTPUT_DIR_ABSOLUTE,
+  EXPECTED_GENERATED_FONTS_SET,
+  EXPECTED_GENERATED_FONTS_VERSION,
   getGeneratedFontAssetPath,
   getGeneratedFontCssPath,
   getGeneratedFontFilesDir,
@@ -23,6 +25,15 @@ export async function ensureGeneratedFonts(options?: {
 
     const manifest = await readGeneratedFontsManifest(outputDir);
     const fonts = manifest.fonts ?? [];
+
+    if (
+      manifest.set !== EXPECTED_GENERATED_FONTS_SET ||
+      manifest.version !== EXPECTED_GENERATED_FONTS_VERSION
+    ) {
+      throw new GeneratedFontsError(
+        `Generated fonts must be prefetched from ${EXPECTED_GENERATED_FONTS_SET}@${EXPECTED_GENERATED_FONTS_VERSION}.`,
+      );
+    }
 
     if (fonts.length === 0) {
       throw new GeneratedFontsError('Generated font manifest is empty.');
