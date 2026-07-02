@@ -129,8 +129,12 @@ describe('fonts prefetch command', () => {
         `${digest}.woff2`,
       );
 
-      await expect(readFile(outputFontPath)).resolves.toEqual(fontBytes);
-      await expect(readFile(cacheFontPath)).resolves.toEqual(fontBytes);
+      expect(Array.from(await readFile(outputFontPath))).toEqual(
+        Array.from(fontBytes),
+      );
+      expect(Array.from(await readFile(cacheFontPath))).toEqual(
+        Array.from(fontBytes),
+      );
 
       const css = await readFile(
         join(workspace, 'public', 'fonts', 'generated', 'fonts.css'),
