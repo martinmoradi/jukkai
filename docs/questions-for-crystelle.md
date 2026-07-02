@@ -23,8 +23,9 @@ Bucketed by what each answer blocks. Produced by Phase 0 on July 2, 2026, alongs
 1. **The entry offer (conseil / mission déco).** The frame is validated (Martin,
    July 2, 2026: "une mission déco avec l'exigence d'une architecte d'intérieur"
    works; Crystelle agreed with the underlying read). What remains for her:
-   - Define the offer: exact name, price, and what it includes. Proposed default: a
-     flat-fee "rendez-vous conseil" (fixed price, fixed duration, concrete
+   - Define the offer: exact name, price, and what it includes. This needs concrete
+     detail from Crystelle before copy freezes. Proposed default for discussion only:
+     a flat-fee "rendez-vous conseil" (fixed price, fixed duration, concrete
      recommendations), deliverable optional.
    - Where and how prominently it is communicated is Phase 2/3 work, within the
      ceiling already set (the word "déco" allowed in names and copy).
@@ -53,19 +54,20 @@ Bucketed by what each answer blocks. Produced by Phase 0 on July 2, 2026, alongs
    direction, but they are the most exposed public words on the site and they are
    built from her own vocabulary. She validates or adjusts the exact phrasing.
 9. **Artist dépôt / commission terms.** The artist block can say "vous êtes artiste ?"
-   now, but it cannot fully answer artist credibility fears until the basics are
-   decided internally: no fee to exhibit, written contract / bon de dépôt, commission
-   logic, insurance / responsibility for works, and who artists contact. Proposed
-   default: do not publish commission numbers pre-launch, but do state any seriousness
-   promises that are operationally true.
+   and it may state that there is no fee to exhibit. The remaining mechanics need
+   Crystelle's concrete terms: whether Jukkai buys and resells the work, uses a
+   time-bound sale / dépôt contract with commission, how insurance / responsibility is
+   handled, and who artists contact. Proposed default: do not publish commission
+   numbers or imply one universal model pre-launch, but do state the no-fee rule and
+   any seriousness promises that are operationally true.
 
 ---
 
 ## Blocking for launch
 
-1. **Opening date, final confirmation before copy freeze.** Currently holding at
-   October 2026; the shop page will print "ouverture octobre 2026". If confidence
-   drops, we downgrade to "automne 2026".
+1. **Opening date copy.** October 1, 2026 is the real deadline. The shop page may
+   print either "ouverture le 1er octobre 2026" or the softer "ouverture octobre
+   2026"; downgrade only if the date actually moves.
 2. **Storefront signage text.** The Google Business Profile name must match the
    real-world signage. What will the sign actually say: "Jukkai", "Jukkai by
    Crystelle Terrasson", something else? Proposed default: "Jukkai by Crystelle

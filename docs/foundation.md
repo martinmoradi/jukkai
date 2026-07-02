@@ -1,7 +1,8 @@
 # Jukkai marketing foundation
 
-**Version 1.2. Frozen July 2, 2026 (v1.0), amended same day after the cross-model
-critic pass (v1.1) and Phase 1 research reconciliation (v1.2).**
+**Version 1.3. Frozen July 2, 2026 (v1.0), amended same day after the cross-model
+critic pass (v1.1), Phase 1 research reconciliation (v1.2), and Martin's Phase 2
+clarifications (v1.3).**
 
 This is the canonical source of truth for all marketing phases (see `docs/method.md`).
 It was produced in Phase 0 from the five source docs plus the July 2, 2026 grilling
@@ -21,8 +22,8 @@ adapter is generated from this file and regenerated on every change, never hand-
 - The practice has two architects: Crystelle Terrasson and Laura Corbel.
 - The practice moves from Vern-sur-Seiche to Châteaugiron (Petite Cité de Caractère,
   Ille-et-Vilaine, about 20 minutes from Rennes), into a space shared with the Jukkai
-  art shop. Opening window: around October 1, 2026, holding as of July 2026. Final date
-  confirmation is a launch blocker (see questions file).
+  art shop. Opening deadline: October 1, 2026. This is the real target, not a soft
+  window; downgrade public copy only if the date actually moves.
 - Economics (closed decision): the studio sustains the business, Jukkai carries the
   brand. The website's primary job serves the studio's client pipeline.
 - Leads today come almost entirely through referral and word of mouth. The current
@@ -37,7 +38,7 @@ The only experience and identity numbers allowed in public copy:
 | "2 architectes" | Crystelle + Laura Corbel | Canonical |
 | "30 ans de métier" | Crystelle's total personal career | Hers alone; survives staffing changes; never phrased as studio age |
 | "depuis 2012" / "14 ans de studio" | Studio founding | Prefer the founding-year form so it doesn't rot |
-| "ouverture octobre 2026" | Opening window holding (July 2026) | Allowed on the shop page; downgrade to "automne 2026" if confidence drops |
+| "ouverture le 1er octobre 2026" / "ouverture octobre 2026" | Confirmed opening deadline | Allowed on the shop page; downgrade only if the date actually moves |
 
 The two experience numbers must never blur: 30 is her career, 14 is the studio. The
 old site's "30 années" survives only in the career framing above.
@@ -229,7 +230,8 @@ What the shop page may say before opening:
 - **The scene**: you push the door into a colourful, alive interior; art on the walls,
   sculptures on columns, iconic furniture; the interior architects visible at work
   behind the vitrines; someone offers you a coffee. All confirmed launch scope.
-- **The opening window**: "ouverture octobre 2026" (date-level, per section 2).
+- **The opening date**: "ouverture le 1er octobre 2026" or "ouverture octobre 2026"
+  (date-level or month-level, per section 2).
 - **The pre-opening CTA**: newsletter signup and Instagram follow, carried over from
   the teaser.
 - **Visuals**: space photos/renders exist and may be used (Crystelle approves the
@@ -237,7 +239,10 @@ What the shop page may say before opening:
 - **The negative-definition line, once**: "Ni galerie, ni boutique déco. Un art shop."
   is the shop page's thesis line. It appears exactly once, on that page, and is never
   repeated elsewhere as a motif.
-- **The artist block**: "vous êtes artiste ?" with a direct contact route.
+- **The artist block**: "vous êtes artiste ?" with a direct contact route. It may
+  state that artists pay no fee to exhibit. Do not imply a single commercial model:
+  Crystelle works artist by artist, either buying and reselling pieces or using a
+  time-bound contract where Jukkai sells the work and takes a commission.
 
 What it may not say:
 
@@ -356,6 +361,11 @@ price display, the client portal, the furniture-partnership idea.
   mission / lettre de mission as a process trust signal for architecture work.
   Deferred artist-block commercial terms to Crystelle and kept the pre-opening
   no-numbers art-price rule unchanged until inventory is real.
+- **2026-07-02, v1.3 (Martin Phase 2 clarification).** Confirmed October 1, 2026 as
+  the real opening deadline. Confirmed the artist-facing no-fee-to-exhibit rule,
+  while keeping artist-by-artist commercial mechanics flexible: purchase and resale,
+  or a time-bound sale contract with Jukkai commission. Kept conseil / mission déco
+  name, price, and scope blocking-for-copy until Crystelle gives concrete details.
 
 _Later phases append here with date and reason; Phase 1 research that overturns
 anything above must amend explicitly, never silently._

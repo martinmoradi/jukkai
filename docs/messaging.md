@@ -137,11 +137,13 @@ Register assignment per surface (binds Phase 3 page briefs):
   public price ranges, the contrat de mission line.
 - **Price posture**: answer the fee question before contact. Ranges per mission
   type in the frame searchers already carry (8-15% des travaux for mission
-  complète, €/m² for études, a fixed-price entry point). The market benchmark
-  for the entry offer is around 120€ for a visite conseil locally.
+  complète, €/m² for études, an entry offer once Crystelle defines it). The
+  market benchmark for a local visite conseil is around 120€, but the exact
+  Jukkai name, price, scope, and whether it is fixed-price are
+  **[VALIDATION-NEEDED]** before copy freeze.
 - **Sub-persona notes**: Isabelle needs projection and the transformation story;
   Bernard needs process, délais, suivi de chantier, vetted artisans; the young
-  couple needs the fixed-price entry and budget-respect proof (the
+  couple needs clear entry-offer pricing and budget-respect proof (the
   décoratrice-is-cheaper objection lives here); the déco client needs the
   premium-inversion frame and explicit permission to be "small" (« un truc
   clochait... par quoi commencer » is their trigger language).
@@ -186,20 +188,21 @@ Register assignment per surface (binds Phase 3 page briefs):
 
 ### 4.4 Artists
 
-- **Core message**: a serious venue. No fee to exhibit, a written contract,
-  clear commission logic, a named human to talk to, a real place you can come
-  assess.
+- **Core message**: a serious venue. No fee to exhibit, clear artist-by-artist
+  terms, a named human to talk to, and a real place you can come assess.
 - **Lead with**: the credibility tests, pre-answered. Artists screen unknown
   venues through a scam filter (« droit d'accrochage » venues, burn stories
   about unpaid dépôts). One line per test defuses it.
 - **Proof**: the place itself (photos/renders), the studio's solidity (backed by
   a practice founded in 2012, not a pop-up), later peer proof once first artists
   consent to be named.
-- **Constraint**: commission and dépôt terms are not yet defined.
-  **[VALIDATION-NEEDED]**: the artist block can promise the posture (no fee,
-  written contract, clear terms) but must not state numbers or contract
-  specifics until Crystelle fixes them (blocking-for-copy in the questions
-  file). No artist names anywhere until consent is secured.
+- **Constraint**: the no-fee-to-exhibit rule is settled, but commission and
+  dépôt mechanics are artist-by-artist. Crystelle may buy and resell some work;
+  for other artists, she may use a time-bound sale / dépôt contract where
+  Jukkai sells the work and takes a commission. **[VALIDATION-NEEDED]**: exact
+  public wording, commission logic, duration, insurance / responsibility, and
+  written-term details remain blocking-for-copy. No artist names anywhere until
+  consent is secured.
 
 ## 5. Proof themes and where they belong
 
@@ -221,7 +224,7 @@ persuade. The credential sits close to the form; the stories fill the pages.
 
 | Objection | Response posture | Where |
 |---|---|---|
-| "What will it actually cost me?" (dominant) | Public ranges per mission type, fixed-price entry point, the cost guide; the form's budget bands with « je ne sais pas encore » | Prestations, cost guide, form |
+| "What will it actually cost me?" (dominant) | Public ranges per mission type, Crystelle-validated entry-offer pricing, the cost guide; the form's budget bands with « je ne sais pas encore » | Prestations, cost guide, form |
 | "Will I get billed without a clear agreement?" | Name the contrat de mission / lettre de mission before paid design work, plainly | Process sections |
 | "A décoratrice is cheaper and maybe enough" | Premium inversion: « une mission déco avec l'exigence d'une architecte d'intérieur »; the « architecte d'intérieur ou décorateur ? » FAQ answers the real fork | Offer pages, FAQ content |
 | "For structural work I need a real architect" | Honest scoping; a factual line on the 150 m² / Ordre threshold where relevant | B2B and process content |
@@ -231,14 +234,14 @@ persuade. The credential sits close to the form; the stories fill the pages.
 | "Is Châteaugiron too far?" | « à Châteaugiron, à 20 minutes de Rennes »; Rennes et sa région is the working territory | Service page, contact, footer |
 | "Art is not for someone like me" | The scene, coup-de-cœur permission, « adepte ou néophyte » welcome; never a jargon test | Shop page |
 | "I probably can't afford it" (art) | Pre-opening: accessibility carried by scene and gift-register framing, no numbers, no « prix sur demande » register; in-shop price visibility promise is **[VALIDATION-NEEDED]** | Shop page |
-| "Is this venue serious?" (artists) | Pre-answer the credibility tests: no fee to exhibit, written contract, clear commission logic, named contact, come see the place | Artist block on shop page |
+| "Is this venue serious?" (artists) | Pre-answer the credibility tests: no fee to exhibit, clear artist-by-artist terms, named contact, come see the place | Artist block on shop page |
 
 ## 7. Words and phrases to use
 
 **Brand nouns (canonical, foundation §2/§4):** Jukkai by Crystelle Terrasson;
 architecte d'intérieur (the identity, always); L'art shop; 2 architectes; 30 ans
-de métier (her career only); depuis 2012; ouverture octobre 2026 (downgrade to
-« automne 2026 » if confidence drops).
+de métier (her career only); depuis 2012; ouverture le 1er octobre 2026 /
+ouverture octobre 2026 (downgrade only if the date actually moves).
 
 **Geography:** Rennes; Châteaugiron; « à 20 minutes de Rennes »; Rennes et sa
 région; la région rennaise; Ille-et-Vilaine.
@@ -262,8 +265,9 @@ dénicher; adepte ou néophyte; démocratiser l'art (behaviour, not slogan);
 « Chaque contrainte est un terrain de jeu »; the scene vocabulary (couleur,
 œuvres, sculptures, mobilier iconique, un café offert).
 
-**Artist register:** dépôt-vente; bon de dépôt; commission claire; aucun frais
-pour exposer; un contrat écrit; un interlocuteur.
+**Artist register:** aucun frais pour exposer; dépôt-vente where relevant; bon
+de dépôt / contrat where relevant; modalités claires; commission claire; un
+interlocuteur.
 
 ## 8. Words and phrases to avoid
 
@@ -323,7 +327,8 @@ ruling; flag to Crystelle with the batch below rather than blocking on it.
 3. The premium-inversion public phrasing and its placement: « une mission déco
    avec l'exigence d'une architecte d'intérieur ». The frame itself is validated
    (99%); what remains is where and how it is said, plus each offer name.
-4. Conseil / mission déco: exact name, price, and scope (blocking-for-copy).
+4. Conseil / mission déco: exact name, price, scope, and whether the entry offer
+   is fixed-price (blocking-for-copy).
 5. The primary CTA exact French (« Parlons de votre projet » territory) and the
    shop CTA exact French (« venez pousser la porte » territory). Both registers
    are ruled; the literal strings are hers.
@@ -333,8 +338,9 @@ ruling; flag to Crystelle with the batch below rather than blocking on it.
    either way.
 7. Neuro-architecture phrasing in the à-propos narrative (lens, never a
    credential; exact sentence gets her veto).
-8. Artist-block terms: commission/dépôt posture she is willing to state
-   (blocking-for-copy per the reconciliation).
+8. Artist-block terms: no fee to exhibit is settled; the validation need is the
+   artist-by-artist public wording, commission/dépôt mechanics, duration,
+   insurance / responsibility, and named contact.
 
 **Research-quote hygiene:** the French verbatims in `docs/audience.md` came
 through a fetch-and-summarize pipeline. Any quote or near-quote used in public
@@ -367,19 +373,23 @@ documented permission.
    page states them in the studio's own voice, rewrite.
 8. **Acquisition pages meet the numeric frame.** The Rennes service page, cost
    guide, and B2B page must answer the fee question in the units searchers
-   carry (%, €/m², fixed entry price), keyword-first titles per foundation §4.
+   carry (%, €/m², Crystelle-validated entry-offer price), keyword-first titles
+   per foundation §4.
 9. **Dual naming on portfolio**: creative title (Jukkai register) plus
    descriptive subtitle and URL (architecture register).
 10. **[VALIDATION-NEEDED] items never freeze.** The content matrix carries a
     validation-status column; the eight items in section 9 cannot pass to
     "final" until Crystelle signs off. Placeholder copy is fine; silent
     promotion to final is not.
-11. **Artist block promises posture, not terms**, until the dépôt/commission
-    terms exist. No fee to exhibit, written contract, clear terms, named
-    contact: yes. Numbers and contract specifics: not yet.
-12. **Opening-date discipline.** « Ouverture octobre 2026 » on the shop page
-    only, with the automatic downgrade to « automne 2026 » if confidence drops.
-    No event or lineup promises anywhere.
+11. **Artist block states the settled no-fee rule, not a universal model.**
+    Artist mechanics are intentionally flexible: purchase/resale for some,
+    time-bound sale or dépôt contract with commission for others. No commission
+    numbers, duration, insurance / responsibility terms, or contract specifics
+    until Crystelle fixes them.
+12. **Opening-date discipline.** October 1, 2026 is the real deadline. The shop
+    page may use « ouverture le 1er octobre 2026 » or « ouverture octobre
+    2026 ». Downgrade only if the date actually moves. No event or lineup
+    promises anywhere.
 13. **Vocabulary bans are absolute** (section 8). A banned word in a draft is a
     defect, not a style choice.
 
