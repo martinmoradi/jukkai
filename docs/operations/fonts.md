@@ -106,15 +106,21 @@ PR CI uses `bun run fonts:fixture` before the build job. That command writes a
 tiny generated fixture for hermetic build verification only; production and
 local typography checks should use `bun run fonts:prefetch`.
 
-Issue #12 should consume `fonts.css` or `manifest.json` rather than scan the
-generated directory or guess font filenames.
+The marketing app links generated `fonts.css` and uses its exported
+`--jukkai-generated-font-family` variable in the page font stack. That proves
+local dev and builds run against Jukkai-owned generated font URLs without making
+the browser contact `fonts.martinmoradi.com`.
 
 `fonts.css` is the primary marketing-app contract. It should contain the
-generated `@font-face` declarations that Astro can import or link directly.
+generated `@font-face` declarations and the selected generated-family variable.
 `manifest.json` is for tests, diagnostics, and later tooling; app styling should
 not need to know registry internals to use the generated fonts.
 
-Until that slice lands, the expected local flow is:
+Issue #12 owns the final typography choices and should consume `fonts.css` or
+`manifest.json` rather than scan the generated directory or guess font
+filenames.
+
+The expected local flow is:
 
 1. Source the local `~/.config/fonts/` environment files or project them into an
    ignored `.env.local`.
