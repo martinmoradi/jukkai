@@ -47,6 +47,25 @@
   color: #4f463c;
 }
 
+.cta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.7rem 1rem;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #f9f4ea;
+  text-decoration: none;
+  background: #18140f;
+}
+
+.cta:focus-visible {
+  outline: 3px solid #8d2c20;
+  outline-offset: 4px;
+}
+
 .panel {
   display: grid;
   gap: 1rem;

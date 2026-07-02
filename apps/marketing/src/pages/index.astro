@@ -1,20 +1,24 @@
 ---
 import SeoHead from '../components/SeoHead.astro';
 import SiteHero from '../components/SiteHero.astro';
-import { SITE_METADATA } from '../lib/site-metadata';
+import { getMarketingPage } from '../lib/pages';
 import styles from './index.module.css';
 
-const pageTitle = SITE_METADATA.defaultTitle;
+const page = getMarketingPage('/');
 ---
 
 <!doctype html>
 <html lang='fr'>
   <head>
-    <SeoHead title={pageTitle} canonicalPath='/' />
+    <SeoHead
+      title={page.title}
+      description={page.metaDescription}
+      canonicalPath={page.slug}
+    />
   </head>
   <body class={styles.page}>
     <main>
-      <SiteHero />
+      <SiteHero title={page.h1 ?? undefined} primaryCta={page.primaryCta} />
     </main>
   </body>
 </html>
