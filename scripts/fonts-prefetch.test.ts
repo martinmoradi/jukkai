@@ -137,6 +137,7 @@ describe('fonts prefetch command', () => {
         'utf8',
       );
       expect(css).toContain('@font-face');
+      expect(css).toContain('--jukkai-generated-font-family: "demo-sans"');
       expect(css).toContain('font-family: "demo-sans"');
       expect(css).toContain(`url("/fonts/generated/fonts/${digest}.woff2")`);
 
@@ -161,6 +162,93 @@ describe('fonts prefetch command', () => {
       });
 
       expect(requests).toHaveLength(2);
+    } finally {
+      await server.stop(true);
+    }
+  });
+
+  it('limits concurrent font downloads for broad Sets', async () => {
+    const workspace = await createWorkspace();
+    const fonts = Array.from({ length: 12 }, (_, index) => {
+      const bytes = new TextEncoder().encode(`fake-woff2-${index}`);
+      const digest = createHash('sha256').update(bytes).digest('hex');
+
+      return { bytes, digest, familySlug: `demo-sans-${index}` };
+    });
+    let activeFontRequests = 0;
+    let maxActiveFontRequests = 0;
+
+    const server = Bun.serve({
+      async fetch(request) {
+        const url = new URL(request.url);
+
+        if (url.pathname === '/api/sets/jukkai-starter/versions/1/snapshot') {
+          return Response.json({
+            snapshot: {
+              digest: 'snapshot-digest',
+              manifest: {
+                count: fonts.length,
+                emitterVersion: 2,
+                fonts: fonts.map((font) => ({
+                  axes: [],
+                  cutIndex: 0,
+                  familySlug: font.familySlug,
+                  fontDigest: `sha256:${font.digest}`,
+                  sourcePath: `fonts/${font.digest}.woff2`,
+                })),
+                version: 1,
+              },
+              set: {
+                name: 'Jukkai Starter',
+                slug: 'jukkai-starter',
+              },
+              setVersion: 1,
+            },
+          });
+        }
+
+        const font = fonts.find(
+          (candidate) =>
+            url.pathname ===
+            `/api/sets/jukkai-starter/versions/1/fonts/${candidate.digest}.woff2`,
+        );
+
+        if (font) {
+          activeFontRequests += 1;
+          maxActiveFontRequests = Math.max(
+            maxActiveFontRequests,
+            activeFontRequests,
+          );
+          await Bun.sleep(5);
+          activeFontRequests -= 1;
+
+          return new Response(font.bytes, {
+            headers: { 'content-type': 'font/woff2' },
+          });
+        }
+
+        return new Response('not found', { status: 404 });
+      },
+      port: 0,
+    });
+
+    try {
+      const result = await runFontsPrefetch({
+        env: {
+          MM_FONTS_ACCESS_CLIENT_ID: 'access-client-id',
+          MM_FONTS_ACCESS_CLIENT_SECRET: 'access-client-secret',
+          MM_FONTS_CACHE_DIR: join(workspace, 'cache'),
+          MM_FONTS_FETCH_TOKEN: 'fetch-token',
+          MM_FONTS_OUTPUT_DIR: join(workspace, 'public', 'fonts', 'generated'),
+          MM_FONTS_SERVICE_URL: server.url.origin,
+          MM_FONTS_SET: 'jukkai-starter',
+          MM_FONTS_SET_VERSION: '1',
+        },
+      });
+
+      expect(result.fontCount).toBe(fonts.length);
+      expect(maxActiveFontRequests).toBeLessThanOrEqual(8);
+      expect(maxActiveFontRequests).toBeGreaterThan(1);
     } finally {
       await server.stop(true);
     }

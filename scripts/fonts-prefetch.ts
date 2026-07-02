@@ -9,6 +9,7 @@ import {
 } from './generated-font-assets';
 
 const DEFAULT_CACHE_DIR = '.cache/mm-fonts';
+const DEFAULT_FONT_FETCH_CONCURRENCY = 8;
 const SNAPSHOT_FONT_DIGEST_PATTERN = /^sha256:(?<digest>[a-f0-9]{64})$/;
 
 const REQUIRED_ENV_KEYS = [
@@ -72,12 +73,13 @@ export async function runFontsPrefetch(options: {
 
   await mkdir(config.cacheDir, { recursive: true });
 
-  const fonts = await Promise.all(
-    snapshot.manifest.fonts.map(async (font) => {
+  const fonts = await mapConcurrent(
+    snapshot.manifest.fonts,
+    DEFAULT_FONT_FETCH_CONCURRENCY,
+    async (font) => {
       const sourcePath = getSafeSourcePath(font.sourcePath);
       const digest = parseSnapshotFontDigest(font.fontDigest);
       const cachePath = join(config.cacheDir, sourcePath);
-      const outputPath = join(config.outputDir, sourcePath);
       const bytes = await readOrFetchFont({
         cachePath,
         config,
@@ -86,16 +88,13 @@ export async function runFontsPrefetch(options: {
         sourcePath,
       });
 
-      await mkdir(dirname(outputPath), { recursive: true });
-      await writeFile(outputPath, bytes);
-
       return {
         axes: font.axes,
         bytes,
         familySlug: font.familySlug,
         outputPath: sourcePath,
       };
-    }),
+    },
   );
 
   await writeGeneratedFontAssets({
@@ -297,6 +296,31 @@ function getSafeSourcePath(sourcePath: string) {
 
 function withTrailingSlash(value: string) {
   return value.endsWith('/') ? value : `${value}/`;
+}
+
+async function mapConcurrent<Input, Output>(
+  inputs: Input[],
+  concurrency: number,
+  mapper: (input: Input) => Promise<Output>,
+) {
+  const results: Output[] = [];
+  let nextIndex = 0;
+
+  async function worker() {
+    while (nextIndex < inputs.length) {
+      const index = nextIndex;
+      nextIndex += 1;
+      results[index] = await mapper(inputs[index]!);
+    }
+  }
+
+  await Promise.all(
+    Array.from({ length: Math.min(concurrency, inputs.length) }, () =>
+      worker(),
+    ),
+  );
+
+  return results;
 }
 
 if (import.meta.main) {

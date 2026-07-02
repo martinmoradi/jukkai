@@ -6,6 +6,8 @@ export const GENERATED_FONT_FILES_DIR = 'fonts';
 export const GENERATED_FONTS_CSS_FILE = 'fonts.css';
 export const GENERATED_FONTS_MANIFEST_FILE = 'manifest.json';
 export const GENERATED_FONTS_PUBLIC_BASE_PATH = '/fonts/generated';
+export const GENERATED_FONT_FAMILY_CSS_VARIABLE =
+  '--jukkai-generated-font-family';
 export const DEFAULT_GENERATED_FONTS_OUTPUT_DIR =
   'apps/marketing/public/fonts/generated';
 
@@ -120,7 +122,17 @@ export async function writeGeneratedFontAssets(params: {
 }
 
 function buildFontsCss(manifest: GeneratedFontsManifest) {
-  return `${manifest.fonts
+  const primaryFont = manifest.fonts[0];
+  const rootDeclaration = primaryFont
+    ? [
+        ':root {',
+        `  ${GENERATED_FONT_FAMILY_CSS_VARIABLE}: "${escapeCssString(primaryFont.familySlug)}";`,
+        '}',
+        '',
+      ].join('\n')
+    : '';
+
+  return `${rootDeclaration}${manifest.fonts
     .map((font) => {
       const weightAxis = font.axes.find((axis) => axis.tag === 'wght');
       const fontWeight = weightAxis
