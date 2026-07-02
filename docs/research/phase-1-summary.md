@@ -1,10 +1,10 @@
 # Phase 1 research summary
 
-Produced July 2, 2026. Reconciles `audience.md`, `competitors.md`, and
-`keywords.md` against frozen `foundation.md` v1.1, then records the accepted v1.2
+Produced July 2, 2026. Reconciles `docs/research/audience.md`, `docs/research/competitors.md`, and
+`docs/research/keywords.md` against frozen `docs/strategy/foundation.md` v1.1, then records the accepted v1.2
 foundation amendments.
 
-`foundation.md` remains canonical. Phase 1 did not silently change it: Martin accepted
+`docs/strategy/foundation.md` remains canonical. Phase 1 did not silently change it: Martin accepted
 two amendments after review, and two items remain conditional/later.
 
 ## Strongest confirmed findings

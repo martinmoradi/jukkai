@@ -5,7 +5,7 @@ critic pass (v1.1), Phase 1 research reconciliation (v1.2), Martin's Phase 2
 clarifications (v1.3), the name-weight ruling (v1.4), and the GBP/signage
 decoupling (v1.5).**
 
-This is the canonical source of truth for all marketing phases (see `docs/method.md`).
+This is the canonical source of truth for all marketing phases (see `docs/operations/method.md`).
 It was produced in Phase 0 from the five source docs plus the July 2, 2026 grilling
 session with Martin. Where this document contradicts the source material, this document
 wins; superseded facts are listed in section 12.
@@ -383,7 +383,7 @@ rule:
 ## 13. Deferred (later bucket)
 
 These do not block the sitemap, copy, or launch, and live in
-`docs/questions-for-crystelle.md` under "Later": exact art-buyer persona, three-year
+`docs/strategy/questions-for-crystelle.md` under "Later": exact art-buyer persona, three-year
 art-shop economics, event calendar, artist lineup and naming consent, post-opening
 price display, the client portal, the furniture-partnership idea.
 

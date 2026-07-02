@@ -1,13 +1,13 @@
 # Jukkai keyword and SERP research
 
 **Phase 1 deliverable. Live SERP refresh run July 2, 2026.** Originally read
-`docs/foundation.md` v1.1 (frozen) and treats
+`docs/strategy/foundation.md` v1.1 (frozen) and treats
 `docs/source-material/seo-digital-performance-audit.md` (March 2026) as a stale
-baseline. After reconciliation, `foundation.md` v1.2 incorporates the title-pattern
+baseline. After reconciliation, `docs/strategy/foundation.md` v1.2 incorporates the title-pattern
 amendment flagged here. This document is evidence plus per-cluster recommendations;
 it feeds Phase 3 (sitemap and content matrix). It does not write the sitemap.
 
-**Foundation check:** nothing found in this refresh overturns `foundation.md`. The
+**Foundation check:** nothing found in this refresh overturns `docs/strategy/foundation.md`. The
 one-canonical-Rennes-service-page rule survives contact with the live SERPs (see
 section 3). One narrow title-pattern amendment was accepted after Phase 1: title tags
 are keyword-first on all acquisition surfaces, not only on the core service page.
@@ -70,7 +70,7 @@ The audit's picture is directionally intact but the market moved:
   pages, each carrying a real project, remains the right answer.
 - The clusters that genuinely need their own surface (bureaux, cost content) are
   different intents, not geo duplicates, and the foundation already provides for both
-  (sections 7 and 8 of foundation.md).
+  in sections 7 and 8.
 
 ## 4. Cluster-by-cluster findings and rulings
 
@@ -294,16 +294,16 @@ The audit's picture is directionally intact but the market moved:
 
 ### Launch keyword set (structures the Phase 3 sitemap)
 
-| Cluster | Surface | Priority |
-|---|---|---|
-| Branded (jukkai, crystelle terrasson, studio terrasson, + "anciennement") | Homepage, à-propos, 301 map | P0 |
-| architecte d'intérieur Rennes (+ agence variant) | Canonical service page `/architecte-interieur-rennes/` | P0 |
-| tarif / prix / combien coûte architecte d'intérieur Rennes | Dedicated cost guide + ranges on Prestations | P0, launch if possible; immediate fast-follow at latest |
-| aménagement bureaux Rennes / architecte bureau Rennes | Espaces professionnels page at `/amenagement-bureaux-rennes/`, grouped under Prestations | P1 |
-| architecte intérieur Châteaugiron | GBP + physical-anchor copy sitewide (no dedicated page) | P1 |
-| architecte d'intérieur ou décorateur ? | FAQ on service page / cost guide | P1 |
-| Ille-et-Vilaine, 35, région rennaise | Body vocabulary on service page | P3 |
-| rénovation maison/appartement Rennes (long tail) | Portfolio dual naming (subtitles + URLs) | P2 |
+| Cluster                                                                   | Surface                                                                                  | Priority                                                |
+| ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| Branded (jukkai, crystelle terrasson, studio terrasson, + "anciennement") | Homepage, à-propos, 301 map                                                              | P0                                                      |
+| architecte d'intérieur Rennes (+ agence variant)                          | Canonical service page `/architecte-interieur-rennes/`                                   | P0                                                      |
+| tarif / prix / combien coûte architecte d'intérieur Rennes                | Dedicated cost guide + ranges on Prestations                                             | P0, launch if possible; immediate fast-follow at latest |
+| aménagement bureaux Rennes / architecte bureau Rennes                     | Espaces professionnels page at `/amenagement-bureaux-rennes/`, grouped under Prestations | P1                                                      |
+| architecte intérieur Châteaugiron                                         | GBP + physical-anchor copy sitewide (no dedicated page)                                  | P1                                                      |
+| architecte d'intérieur ou décorateur ?                                    | FAQ on service page / cost guide                                                         | P1                                                      |
+| Ille-et-Vilaine, 35, région rennaise                                      | Body vocabulary on service page                                                          | P3                                                      |
+| rénovation maison/appartement Rennes (long tail)                          | Portfolio dual naming (subtitles + URLs)                                                 | P2                                                      |
 
 ### Post-launch keyword set (feeds the content calendar, in order)
 

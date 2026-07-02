@@ -1,8 +1,8 @@
 # Jukkai wireframe brief (Phase 3.5)
 
-**Phase 3.5 deliverable, produced July 2, 2026.** Derived from `docs/foundation.md`
-(v1.5, truth), `docs/messaging.md` (registers, vocabulary), `docs/sitemap.md` and
-`docs/content-matrix.md` (IA and content source). Audience: a Figma/wireframe agent.
+**Phase 3.5 deliverable, produced July 2, 2026.** Derived from `docs/strategy/foundation.md`
+(v1.5, truth), `docs/strategy/messaging.md` (registers, vocabulary), `docs/strategy/sitemap.md` and
+`docs/strategy/content-matrix.md` (IA and content source). Audience: a Figma/wireframe agent.
 
 This document defines section-level page outlines: what each page must show, in
 what order, and why. It is not final copy and not visual design. Every quoted
