@@ -1,7 +1,7 @@
 # Jukkai marketing foundation
 
-**Version 1.1. Frozen July 2, 2026 (v1.0), amended same day after the cross-model
-critic pass.**
+**Version 1.2. Frozen July 2, 2026 (v1.0), amended same day after the cross-model
+critic pass (v1.1) and Phase 1 research reconciliation (v1.2).**
 
 This is the canonical source of truth for all marketing phases (see `docs/method.md`).
 It was produced in Phase 0 from the five source docs plus the July 2, 2026 grilling
@@ -97,7 +97,8 @@ personal reply first is her workflow call (logged, launch bucket).
   equivalent. Address: Châteaugiron. Applying the tiebreak rule: the map-pack slot for
   "architecte d'intérieur rennes" is a conversion asset; art discovery is not.
 - **Title pattern**: `{Page} — Jukkai by Crystelle Terrasson` sitewide. Keyword-first
-  titles only on the acquisition service page.
+  titles only on acquisition surfaces: the Rennes service page, the cost guide, and
+  the B2B page. Brand-first everywhere else.
 
 ## 5. Center of gravity: the two layers and the slot rulings
 
@@ -187,6 +188,11 @@ once real projects prove it.
 content explicitly targeting "combien coûte un architecte d'intérieur à Rennes". The
 "tarif" query variant is the only non-branded query the old site ever nearly ranked
 for (position 9-12); that demand is proven.
+
+**Process trust signal**: before paid design work begins, the mission is framed by a
+clear contrat de mission or lettre de mission. The site may name this plainly in the
+process/prestations content; it answers the documented fear of being billed without a
+clear agreement.
 
 Future note, not public: the furniture-partnership / kickback idea is unresolved
 business-model exploration. It stays off the site entirely.
@@ -344,6 +350,12 @@ price display, the client portal, the furniture-partnership idea.
   frame is validated (99%, remaining question is where and how it is communicated),
   and the contact-mechanics ruling (form primary, Calendly as post-submission
   accelerator) was added to section 3.
+- **2026-07-02, v1.2 (Phase 1 research reconciliation).** Amended the title rule so
+  keyword-first titles apply to all acquisition surfaces (Rennes service page, cost
+  guide, B2B page), with brand-first titles everywhere else. Added the contrat de
+  mission / lettre de mission as a process trust signal for architecture work.
+  Deferred artist-block commercial terms to Crystelle and kept the pre-opening
+  no-numbers art-price rule unchanged until inventory is real.
 
 _Later phases append here with date and reason; Phase 1 research that overturns
 anything above must amend explicitly, never silently._

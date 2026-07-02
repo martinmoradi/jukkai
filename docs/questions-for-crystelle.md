@@ -52,6 +52,12 @@ Bucketed by what each answer blocks. Produced by Phase 0 on July 2, 2026, alongs
    boutique déco. Un art shop." as the shop page's thesis line are canonical
    direction, but they are the most exposed public words on the site and they are
    built from her own vocabulary. She validates or adjusts the exact phrasing.
+9. **Artist dépôt / commission terms.** The artist block can say "vous êtes artiste ?"
+   now, but it cannot fully answer artist credibility fears until the basics are
+   decided internally: no fee to exhibit, written contract / bon de dépôt, commission
+   logic, insurance / responsibility for works, and who artists contact. Proposed
+   default: do not publish commission numbers pre-launch, but do state any seriousness
+   promises that are operationally true.
 
 ---
 

@@ -1,15 +1,16 @@
 # Jukkai keyword and SERP research
 
-**Phase 1 deliverable. Live SERP refresh run July 2, 2026.** Reads `docs/foundation.md`
-v1.1 (frozen) and treats `docs/source-material/seo-digital-performance-audit.md`
-(March 2026) as a stale baseline. This document is evidence plus per-cluster
-recommendations; it feeds Phase 3 (sitemap and content matrix). It does not write the
-sitemap.
+**Phase 1 deliverable. Live SERP refresh run July 2, 2026.** Originally read
+`docs/foundation.md` v1.1 (frozen) and treats
+`docs/source-material/seo-digital-performance-audit.md` (March 2026) as a stale
+baseline. After reconciliation, `foundation.md` v1.2 incorporates the title-pattern
+amendment flagged here. This document is evidence plus per-cluster recommendations;
+it feeds Phase 3 (sitemap and content matrix). It does not write the sitemap.
 
-**Foundation check:** nothing found in this refresh overturns `foundation.md`. No
-amendment is required. The one-canonical-Rennes-service-page rule survives contact
-with the live SERPs (see section 3). One small tension is flagged for Phase 3 in
-section 6.
+**Foundation check:** nothing found in this refresh overturns `foundation.md`. The
+one-canonical-Rennes-service-page rule survives contact with the live SERPs (see
+section 3). One narrow title-pattern amendment was accepted after Phase 1: title tags
+are keyword-first on all acquisition surfaces, not only on the core service page.
 
 ## 1. Method and confidence
 
@@ -116,8 +117,9 @@ The audit's picture is directionally intact but the market moved:
 - **Page owner:** a dedicated cost guide, "Combien coûte un architecte d'intérieur à
   Rennes ?", cross-linked with the service page, with real euro figures per offer
   (foundation already mandates public pricing and names this exact content). Format:
-  tables, per-offer tiers, FAQ schema. The Prestations page carries the ranges; the
-  guide carries the query.
+  tables, per-offer tiers, FAQ schema. URL recommendation:
+  `/combien-coute-architecte-interieur-rennes/`. The Prestations page carries the
+  ranges; the guide carries the query.
 - **Priority: P0, launch or immediate fast-follow.** This was the only non-branded
   query the old site ever nearly ranked for (position 9-12, 459+185 impressions on
   the two tarif variants), demand is proven, and two local competitors moved into the
@@ -251,9 +253,10 @@ The audit's picture is directionally intact but the market moved:
 - **Page owner:** the espaces professionnels page under Prestations (own URL), which
   foundation section 6 already mandates. Target "aménagement de bureaux Rennes" and
   the "architecte bureau Rennes" variant; position honestly on conception and
-  prescription (the Tertiaire.bzh precedent proves that positioning ranks). URL
-  suggestion for Phase 3: `/amenagement-bureaux-rennes/` or
-  `/espaces-professionnels/` with the keyword in title and H1.
+  prescription (the Tertiaire.bzh precedent proves that positioning ranks). Phase 3
+  recommendation: use `/amenagement-bureaux-rennes/` as the public slug, grouped
+  under Prestations in navigation and breadcrumbs. This gives the page the keyword
+  shape the SERP rewards without creating a top-level nav slot.
 - **Dependency:** nameable B2B references are pending Crystelle's selection; the page
   can launch with process and credentials and add references when cleared.
 - **Priority: P1, launch** (the page exists anyway per foundation; making it target
@@ -295,8 +298,8 @@ The audit's picture is directionally intact but the market moved:
 |---|---|---|
 | Branded (jukkai, crystelle terrasson, studio terrasson, + "anciennement") | Homepage, à-propos, 301 map | P0 |
 | architecte d'intérieur Rennes (+ agence variant) | Canonical service page `/architecte-interieur-rennes/` | P0 |
-| tarif / prix / combien coûte architecte d'intérieur Rennes | Dedicated cost guide + ranges on Prestations | P0 |
-| aménagement bureaux Rennes / architecte bureau Rennes | Espaces professionnels page (own URL) | P1 |
+| tarif / prix / combien coûte architecte d'intérieur Rennes | Dedicated cost guide + ranges on Prestations | P0, launch if possible; immediate fast-follow at latest |
+| aménagement bureaux Rennes / architecte bureau Rennes | Espaces professionnels page at `/amenagement-bureaux-rennes/`, grouped under Prestations | P1 |
 | architecte intérieur Châteaugiron | GBP + physical-anchor copy sitewide (no dedicated page) | P1 |
 | architecte d'intérieur ou décorateur ? | FAQ on service page / cost guide | P1 |
 | Ille-et-Vilaine, 35, région rennaise | Body vocabulary on service page | P3 |
@@ -334,14 +337,13 @@ The audit's picture is directionally intact but the market moved:
 
 1. **Sitemap consequence:** the launch set implies exactly three keyword-bearing
    commercial surfaces (service page, cost guide, espaces professionnels) plus the
-   brand pages. That matches the foundation. No new page types are needed.
-2. **Title-pattern tension to rule on:** foundation section 4 allows keyword-first
-   titles "only on the acquisition service page." Live evidence says the cost guide
-   and the B2B page also compete on SERPs where every winner is keyword-first
-   (e.g. "Aménagement de bureaux à Rennes", "Combien coûte un architecte à Rennes ?
-   Guide 2026"). Recommend Phase 3 interpret the rule as "keyword-first on
-   acquisition surfaces" (service page, cost guide, B2B page) and brand-first
-   everywhere else. If accepted, record it as a dated foundation amendment then.
+   brand pages. That matches the foundation. No new page types are needed. If the cost
+   guide misses launch, Phase 3 should still reserve its URL and content-matrix row so
+   it ships as the first fast-follow.
+2. **Accepted foundation amendment: title pattern.** Foundation v1.2 now records the
+   Phase 1 finding: keyword-first titles apply to acquisition surfaces (service page,
+   cost guide, B2B page), while brand-first titles apply everywhere else. This is an
+   SEO surface clarification, not a change to the brand architecture.
 3. **FAQ blocks are now table stakes** on the winning pages of clusters 4.1, 4.2, and
    4.8. The content matrix should carry an FAQ row for each of the three commercial
    surfaces (and Phase 4 should pair them with FAQ schema).
