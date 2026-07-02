@@ -17,13 +17,13 @@
     "fonts:check": "bun scripts/fonts-generated-check.ts",
     "fonts:fixture": "bun scripts/fonts-fixture.ts",
     "fonts:prefetch": "bun scripts/fonts-prefetch.ts",
-    "format": "prettier --write --ignore-unknown README.md package.json tsconfig.scripts.json turbo.json eslint.config.mjs stylelint.config.mjs commitlint.config.mjs \".github/**/*\" \"apps/**/*\" \"docs/operations/fonts.md\" \"scripts/**/*\" \".env.example\"",
-    "format:check": "prettier --check --ignore-unknown README.md package.json tsconfig.scripts.json turbo.json eslint.config.mjs stylelint.config.mjs commitlint.config.mjs \".github/**/*\" \"apps/**/*\" \"docs/operations/fonts.md\" \"scripts/**/*\" \".env.example\"",
+    "format": "prettier --write --ignore-unknown README.md package.json tsconfig.json tsconfig.scripts.json turbo.json eslint.config.mjs stylelint.config.mjs commitlint.config.mjs \".github/**/*\" \"apps/**/*\" \"docs/operations/fonts.md\" \"scripts/**/*\" \".env.example\"",
+    "format:check": "prettier --check --ignore-unknown README.md package.json tsconfig.json tsconfig.scripts.json turbo.json eslint.config.mjs stylelint.config.mjs commitlint.config.mjs \".github/**/*\" \"apps/**/*\" \"docs/operations/fonts.md\" \"scripts/**/*\" \".env.example\"",
     "lint": "eslint scripts --ext .ts && turbo run lint",
     "lint:fix": "turbo run lint:fix",
     "prepare": "husky",
     "test": "bun test ./scripts && turbo run test",
-    "typecheck": "tsc --noEmit -p tsconfig.scripts.json && turbo run typecheck"
+    "typecheck": "tsc --noEmit -p tsconfig.json && turbo run typecheck"
   },
   "lint-staged": {
     "*.{astro,ts,js,mjs,cjs}": [
