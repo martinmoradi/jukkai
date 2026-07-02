@@ -1,0 +1,28 @@
+export default {
+  extends: ['stylelint-config-standard', 'stylelint-config-recess-order'],
+  ignoreFiles: [
+    '**/dist/**',
+    '**/.astro/**',
+    '**/.turbo/**',
+    '**/coverage/**',
+    '**/node_modules/**',
+  ],
+  rules: {
+    'alpha-value-notation': null,
+    'at-rule-empty-line-before': null,
+    'color-function-alias-notation': null,
+    'color-function-notation': null,
+    'comment-empty-line-before': null,
+    'custom-property-empty-line-before': null,
+    'declaration-empty-line-before': null,
+    'import-notation': null,
+    'length-zero-no-unit': null,
+    'media-feature-range-notation': null,
+    'no-descending-specificity': null,
+    'property-no-vendor-prefix': null,
+    'rule-empty-line-before': null,
+    'selector-class-pattern': null,
+    'shorthand-property-no-redundant-values': null,
+    'value-keyword-case': null,
+  },
+};

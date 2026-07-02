@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+
+# turborepo
+.turbo/
+
+# build output
+dist/
+.astro/
+
+# env / secrets
+.env
+.env.*
+!.env.example
+
+# logs
+*.log
+
+# coverage
+coverage/
+
+# local agent state
+/.agents/
+/.claude/
+/.codex/

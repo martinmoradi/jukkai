@@ -1,0 +1,28 @@
+---
+import styles from './SiteHero.module.css';
+
+interface Props {
+  eyebrow?: string;
+  lead?: string;
+  title?: string;
+}
+
+const {
+  eyebrow = 'Architecture interieure a Rennes',
+  lead = 'Un premier socle Astro pour transformer les contenus de reference en site marketing propre, rapide et testable.',
+  title = 'Jukkai',
+} = Astro.props;
+---
+
+<section class={styles.hero}>
+  <div class={styles.copy}>
+    <p class={styles.eyebrow}>{eyebrow}</p>
+    <h1 class={styles.title}>{title}</h1>
+    <p class={styles.lead}>{lead}</p>
+  </div>
+  <div class={styles.panel} aria-hidden='true'>
+    <span class={styles.panelLabel}>Marketing</span>
+    <span class={styles.panelRule}></span>
+    <span class={styles.panelMeta}>Astro + Vite</span>
+  </div>
+</section>
