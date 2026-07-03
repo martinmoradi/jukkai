@@ -4,6 +4,7 @@ import { describe, expect, it } from 'vitest';
 
 import { getMarketingPage } from '../../lib/pages';
 import {
+  HOME_HERO_DISPLAY_EMPHASIS,
   HOME_HERO_DISPLAY_ROWS,
   HOME_HERO_FIELD_IMAGE,
   HOME_HERO_PRINTS,
@@ -19,6 +20,20 @@ describe('homepage hero contracts', () => {
       'choisit les œuvres',
       'et dessine les espaces.',
     ]);
+  });
+
+  it('italicizes the display flourish as a suffix of the final row', () => {
+    const finalRow = HOME_HERO_DISPLAY_ROWS[HOME_HERO_DISPLAY_ROWS.length - 1];
+
+    expect(HOME_HERO_DISPLAY_EMPHASIS.length).toBeGreaterThan(0);
+    expect(finalRow.endsWith(HOME_HERO_DISPLAY_EMPHASIS)).toBe(true);
+    expect(heroSource).toContain('<em');
+  });
+
+  it('renders the wordmark as the inline, recolorable component', () => {
+    expect(heroSource).toContain("import Wordmark from '../Wordmark.astro'");
+    expect(heroSource).toContain('<Wordmark');
+    expect(heroSource).not.toContain('jukkai-wordmark.svg');
   });
 
   it('keeps the visible H1 and CTA sourced from the page contract', () => {
