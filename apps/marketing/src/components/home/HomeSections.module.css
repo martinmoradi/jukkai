@@ -3,27 +3,8 @@
   padding: 4rem 1rem;
 }
 
-.hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 2rem;
-  align-items: end;
-  min-height: 38rem;
-  background:
-    linear-gradient(135deg, rgba(215, 168, 110, 0.22), transparent 44%),
-    linear-gradient(180deg, #fbfaf6, #f2eee6);
-  border-bottom: 1px solid var(--home-line);
-}
-
-.heroCopy {
-  display: grid;
-  gap: 1rem;
-  max-width: 55rem;
-}
-
 .kicker,
 .validationLabel,
-.heroProof,
 .proofStrip,
 .trustPlaceholders {
   margin: 0;
@@ -38,7 +19,6 @@
   color: var(--home-brick);
 }
 
-.heroDisplay,
 .sectionTitle,
 .closingTitle {
   margin: 0;
@@ -50,31 +30,10 @@
   text-wrap: balance;
 }
 
-.heroDisplay {
-  max-width: 12ch;
-  font-size: 3.1rem;
-}
-
-.heroH1 {
-  max-width: 42rem;
-  margin: 0;
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.35;
-}
-
-.heroLead,
 .textStack,
 .artCopy > p,
 .cardCopy {
   color: var(--home-muted);
-}
-
-.heroLead {
-  max-width: 44rem;
-  margin: 0;
-  font-size: 1.1rem;
-  line-height: 1.55;
 }
 
 .primaryCta,
@@ -116,7 +75,6 @@
   outline-offset: 4px;
 }
 
-.heroProof,
 .proofStrip,
 .trustPlaceholders,
 .inlineList {
@@ -127,7 +85,6 @@
   list-style: none;
 }
 
-.heroProof span,
 .proofStrip span,
 .trustPlaceholders span,
 .inlineList li {
@@ -136,10 +93,6 @@
   padding: 0.45rem 0.55rem;
   border: 1px solid var(--home-line);
   border-radius: 4px;
-}
-
-.heroProof {
-  color: var(--home-moss);
 }
 
 .umbrella {
@@ -349,15 +302,6 @@
     padding: 5rem 2rem;
   }
 
-  .hero {
-    grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem);
-    min-height: 40rem;
-  }
-
-  .heroDisplay {
-    font-size: 4rem;
-  }
-
   .umbrella,
   .artShop,
   .closing {
@@ -379,10 +323,6 @@
 @media (min-width: 1080px) {
   .section {
     padding: 6rem 3.5rem;
-  }
-
-  .heroDisplay {
-    font-size: 5.2rem;
   }
 
   .sectionTitle {
