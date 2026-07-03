@@ -1,38 +1,92 @@
 ---
 import type { MarketingPage } from '../../lib/pages';
 import { HOME_PROOF_CLAIMS } from './home-content';
-import styles from './HomeSections.module.css';
+import {
+  HOME_HERO_DISPLAY_ROWS,
+  HOME_HERO_DISPLAY_TEXT,
+  HOME_HERO_FIELD_IMAGE,
+  HOME_HERO_PRINTS,
+  HOME_HERO_WORDMARK_IMAGE,
+} from './home-hero';
+import heroStyles from './HomeHero.module.css';
+import sectionStyles from './HomeSections.module.css';
 
 interface Props {
   page: MarketingPage;
 }
 
 const { page } = Astro.props;
+
+const displayRowStyles = [
+  heroStyles.displayRowFirst,
+  heroStyles.displayRowSecond,
+  heroStyles.displayRowThird,
+] as const;
 ---
 
 <section
-  class={`${styles.section} ${styles.hero}`}
+  class={`${sectionStyles.section} ${heroStyles.hero}`}
   data-home-section='hero'
   aria-labelledby='home-title'>
-  <div class={styles.heroCopy}>
-    <p class={styles.kicker}>Jukkai by Crystelle Terrasson</p>
-    <p class={styles.heroDisplay}>
-      Le même œil choisit les œuvres et dessine les espaces.
+  <img
+    class={heroStyles.fieldImage}
+    src={HOME_HERO_FIELD_IMAGE}
+    alt=''
+    aria-hidden='true'
+    decoding='async'
+    fetchpriority='high'
+  />
+
+  <div class={heroStyles.constellation} aria-hidden='true'>
+    {
+      HOME_HERO_PRINTS.map((print) => (
+        <figure
+          class:list={[
+            heroStyles.print,
+            print.layer === 'near' ? heroStyles.printNear : heroStyles.printFar,
+            print.mobileWidthVw ? heroStyles.printMobile : null,
+          ]}
+          style={`--print-x:${print.xPercent}%; --print-y:${print.yPercent}%; --print-w:${print.widthVw}vw;${print.mobileWidthVw ? ` --print-mobile-w:${print.mobileWidthVw}vw;` : ''}`}>
+          <img src={print.imageSrc} alt='' loading='eager' decoding='async' />
+        </figure>
+      ))
+    }
+  </div>
+
+  <div class={heroStyles.cluster}>
+    <h1 id='home-title' class={heroStyles.h1}>{page.h1}</h1>
+    <p class={heroStyles.display} aria-label={HOME_HERO_DISPLAY_TEXT}>
+      {
+        HOME_HERO_DISPLAY_ROWS.map((row, index) => (
+          <span
+            class:list={[heroStyles.displayRow, displayRowStyles[index]]}
+            aria-hidden='true'>
+            {row}
+          </span>
+        ))
+      }
     </p>
-    <h1 id='home-title' class={styles.heroH1}>{page.h1}</h1>
-    <p class={styles.heroLead}>
-      Une architecture intérieure attentive aux usages, aux matières et à la
-      manière dont un lieu accompagne la vie.
-    </p>
+    <div class={heroStyles.lockup} aria-label='Jukkai by Crystelle Terrasson'>
+      <img
+        class={heroStyles.wordmark}
+        src={HOME_HERO_WORDMARK_IMAGE}
+        alt='Jukkai'
+        decoding='async'
+        loading='eager'
+      />
+      <p class={heroStyles.byline}>by Crystelle Terrasson</p>
+    </div>
     {
       page.primaryCta ? (
-        <a class={styles.primaryCta} href={page.primaryCta.href}>
+        <a class={heroStyles.cta} href={page.primaryCta.href}>
           {page.primaryCta.label}
+          <span class={heroStyles.ctaArrow} aria-hidden='true'>
+            &rarr;
+          </span>
         </a>
       ) : null
     }
   </div>
-  <aside class={styles.heroProof} aria-label='Repères Jukkai'>
-    {HOME_PROOF_CLAIMS.map((claim) => <span>{claim}</span>)}
-  </aside>
+
+  <p class={heroStyles.proof}>{HOME_PROOF_CLAIMS.join(' · ')}</p>
 </section>
