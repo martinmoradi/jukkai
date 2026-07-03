@@ -36,6 +36,12 @@
   margin: 0;
 }
 
+/* Transform ownership when motion boots: the figure takes stream y + cursor
+   x, this wrapper takes the spawn/exit bloom. Without JS it is inert. */
+.printInner {
+  will-change: transform;
+}
+
 .print img {
   display: block;
   width: 100%;
