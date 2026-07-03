@@ -5,6 +5,9 @@ By default, this writes the production field used by `/`:
 
   public/home/hero/field.webp
 
+The field keeps the champagne body low in the frame, then fades the bottom band
+to transparency so the hero can land on the page paper without a yellow edge.
+
 Pass `--prints-dir` to rebuild the curated print cards from an image pool whose
 files are named by their source index, for example `04.jpg`.
 """
@@ -35,6 +38,8 @@ PRINT_QUALITY = 84
 PRINT_ASPECT = 22 / 30
 PRINT_HEIGHT = 900
 SEED = 20260703
+ALPHA_FADE_START = 0.74
+ALPHA_FADE_END = 0.98
 
 Rgb = tuple[int, int, int]
 GradientStop = tuple[float, Rgb]
@@ -97,31 +102,25 @@ def hex_color(value: str) -> Rgb:
     return tuple(int(value[index : index + 2], 16) for index in (1, 3, 5))
 
 
-BOTTOM_CREAM = oklch_to_srgb(0.94, 0.045, 95)
-
 LEFT_LADDER: Sequence[GradientStop] = (
     (0.00, hex_color("#7C5338")),
-    (0.08, hex_color("#8E6950")),
-    (0.16, hex_color("#A68871")),
-    (0.25, hex_color("#B79E88")),
-    (0.33, hex_color("#C4AF9B")),
-    (0.40, hex_color("#D3C2B0")),
-    (0.46, hex_color("#D6C7B7")),
-    (0.52, hex_color("#ECE4D9")),
-    (0.60, hex_color("#EFE8DC")),
-    (1.00, BOTTOM_CREAM),
+    (0.10, hex_color("#8E6950")),
+    (0.22, hex_color("#A68871")),
+    (0.36, hex_color("#B79E88")),
+    (0.50, hex_color("#C4AF9B")),
+    (0.64, hex_color("#D3C2B0")),
+    (0.74, hex_color("#D6C7B7")),
+    (1.00, hex_color("#D6C7B7")),
 )
 RIGHT_LADDER: Sequence[GradientStop] = (
     (0.00, hex_color("#7B5136")),
-    (0.08, hex_color("#8D6850")),
-    (0.16, hex_color("#A68872")),
-    (0.25, hex_color("#B89F8B")),
-    (0.33, hex_color("#C8B5A4")),
-    (0.40, hex_color("#CEBDAB")),
-    (0.46, hex_color("#CEBDAA")),
-    (0.52, hex_color("#E4DACE")),
-    (0.60, hex_color("#F7F1EB")),
-    (1.00, BOTTOM_CREAM),
+    (0.10, hex_color("#8D6850")),
+    (0.22, hex_color("#A68872")),
+    (0.36, hex_color("#B89F8B")),
+    (0.50, hex_color("#C8B5A4")),
+    (0.64, hex_color("#CEBDAB")),
+    (0.74, hex_color("#D3C2B0")),
+    (1.00, hex_color("#D3C2B0")),
 )
 
 
@@ -171,24 +170,37 @@ def build_field() -> np.ndarray:
     return field + glow[:, :, None] * 7.0
 
 
+def smoothstep(edge_start: float, edge_end: float, values: np.ndarray) -> np.ndarray:
+    progress = np.clip((values - edge_start) / (edge_end - edge_start), 0, 1)
+    return progress * progress * (3 - 2 * progress)
+
+
+def build_alpha() -> np.ndarray:
+    vertical_position = np.linspace(0, 1, FIELD_HEIGHT)[:, None, None]
+    alpha = 1 - smoothstep(ALPHA_FADE_START, ALPHA_FADE_END, vertical_position)
+    alpha[-4:, :, :] = 0
+    return np.broadcast_to(alpha * 255, (FIELD_HEIGHT, FIELD_WIDTH, 1))
+
+
 def bake_field(output_dir: Path, variants: Sequence[FieldVariant]) -> None:
     field = build_field()
     fade = np.clip((1.0 - np.linspace(0, 1, FIELD_HEIGHT)) * 40, 0, 1)
     fade = fade[:, None, None]
+    alpha = build_alpha()
 
     output_dir.mkdir(parents=True, exist_ok=True)
     for variant in variants:
         rng = np.random.default_rng(SEED)
         grain = rng.normal(0.0, variant.grain_sigma, (FIELD_HEIGHT, FIELD_WIDTH, 1))
         field_variant = field + grain * fade
-        field_variant[-4:, :, :] = np.array(BOTTOM_CREAM, dtype=float)
+        rgba = np.concatenate([np.clip(field_variant, 0, 255), alpha], axis=2)
 
-        image = Image.fromarray(np.clip(field_variant, 0, 255).astype(np.uint8))
+        image = Image.fromarray(rgba.astype(np.uint8))
         path = output_dir / variant.name
         image.save(path, quality=FIELD_QUALITY, method=6)
         print(
             f"field -> {path} ({path.stat().st_size // 1024} KB), "
-            f"bottom rgb{BOTTOM_CREAM}",
+            f"alpha fades from {ALPHA_FADE_START:.2f} to {ALPHA_FADE_END:.2f}",
         )
 
 
