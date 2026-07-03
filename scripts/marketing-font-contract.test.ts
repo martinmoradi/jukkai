@@ -1,4 +1,12 @@
-import { mkdir, mkdtemp, readFile, rename, rm, stat } from 'node:fs/promises';
+import {
+  mkdir,
+  mkdtemp,
+  readdir,
+  readFile,
+  rename,
+  rm,
+  stat,
+} from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'bun:test';
@@ -14,7 +22,7 @@ const GENERATED_FONTS_BACKUP_ROOT = join(
 );
 
 describe('marketing generated font contract', () => {
-  it('uses the generated font family for the hero title in the built page', async () => {
+  it('uses the generated font family for homepage display typography in the built page', async () => {
     const restoreGeneratedFonts = await useFixtureGeneratedFonts();
 
     try {
@@ -24,9 +32,10 @@ describe('marketing generated font contract', () => {
         join(REPO_ROOT, 'apps', 'marketing', 'dist', 'index.html'),
         'utf8',
       );
+      const builtCss = await readBuiltCssAssets();
 
-      expect(html).toMatch(
-        /font-family:var\(--jukkai-generated-font-family\), Georgia, "?Times New Roman"?, serif/,
+      expect(`${html}\n${builtCss}`).toMatch(
+        /font-family:var\(--jukkai-generated-font-family\),\s*Georgia,\s*"?Times New Roman"?,\s*serif/,
       );
     } finally {
       await restoreGeneratedFonts();
@@ -68,6 +77,17 @@ describe('marketing generated font contract', () => {
     }
   });
 });
+
+async function readBuiltCssAssets() {
+  const assetsDir = join(REPO_ROOT, 'apps', 'marketing', 'dist', '_astro');
+  const entries = await readdir(assetsDir);
+  const cssFiles = entries.filter((entry) => entry.endsWith('.css'));
+  const cssContents = await Promise.all(
+    cssFiles.map((file) => readFile(join(assetsDir, file), 'utf8')),
+  );
+
+  return cssContents.join('\n');
+}
 
 async function runMarketingBuild() {
   const child = Bun.spawn({
