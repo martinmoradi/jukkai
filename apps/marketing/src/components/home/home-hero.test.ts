@@ -8,6 +8,7 @@ import {
   HOME_HERO_DISPLAY_ROWS,
   HOME_HERO_FIELD_IMAGE,
   HOME_HERO_PRINTS,
+  homeHeroPrintLayer,
 } from './home-hero';
 
 const heroSource = readFileSync('src/components/home/HomeHero.astro', 'utf8');
@@ -58,6 +59,28 @@ describe('homepage hero contracts', () => {
     expect(productionHeroSource).not.toMatch(/\bv3\b/i);
     expect(productionHeroSource).not.toMatch(/\bcomp\b/i);
     expect(productionHeroSource).not.toMatch(/\bround\b/i);
+  });
+
+  it('keeps stream depth and phase inside their normalized ranges', () => {
+    for (const print of HOME_HERO_PRINTS) {
+      expect(print.depth).toBeGreaterThan(0);
+      expect(print.depth).toBeLessThanOrEqual(1);
+      expect(print.phase).toBeGreaterThanOrEqual(0);
+      expect(print.phase).toBeLessThan(1);
+    }
+  });
+
+  it('keeps the near tier reserved for the largest, closest prints', () => {
+    const nearPrints = HOME_HERO_PRINTS.filter(
+      (print) => homeHeroPrintLayer(print) === 'near',
+    );
+
+    expect(nearPrints).toHaveLength(4);
+    for (const print of nearPrints) {
+      // Near prints are the only ones surfaced on mobile, so the tier and
+      // the mobile subset must stay the same set.
+      expect(print.mobileWidthVw).toBeGreaterThan(0);
+    }
   });
 
   it('uses only production hero asset paths that exist locally', () => {

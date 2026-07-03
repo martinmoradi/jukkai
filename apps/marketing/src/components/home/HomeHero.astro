@@ -8,6 +8,7 @@ import {
   HOME_HERO_DISPLAY_TEXT,
   HOME_HERO_FIELD_IMAGE,
   HOME_HERO_PRINTS,
+  homeHeroPrintLayer,
 } from './home-hero';
 import heroStyles from './HomeHero.module.css';
 import sectionStyles from './HomeSections.module.css';
@@ -57,7 +58,9 @@ const displayRows = HOME_HERO_DISPLAY_ROWS.map((text, index) => {
         <figure
           class:list={[
             heroStyles.print,
-            print.layer === 'near' ? heroStyles.printNear : heroStyles.printFar,
+            homeHeroPrintLayer(print) === 'near'
+              ? heroStyles.printNear
+              : heroStyles.printFar,
             print.mobileWidthVw ? heroStyles.printMobile : null,
           ]}
           style={`--print-x:${print.xPercent}%; --print-y:${print.yPercent}%; --print-w:${print.widthVw}vw;${print.mobileWidthVw ? ` --print-mobile-w:${print.mobileWidthVw}vw;` : ''}`}>
