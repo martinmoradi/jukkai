@@ -63,20 +63,28 @@ const displayRows = HOME_HERO_DISPLAY_ROWS.map((text, index) => {
               : heroStyles.printFar,
             print.mobileWidthVw ? heroStyles.printMobile : null,
           ]}
+          data-hero-print
+          data-hero-depth={print.depth}
+          data-hero-phase={print.phase}
           style={`--print-x:${print.xPercent}%; --print-y:${print.yPercent}%; --print-w:${print.widthVw}vw;${print.mobileWidthVw ? ` --print-mobile-w:${print.mobileWidthVw}vw;` : ''}`}>
-          <img src={print.imageSrc} alt='' loading='eager' decoding='async' />
+          <div class={heroStyles.printInner} data-hero-print-inner>
+            <img src={print.imageSrc} alt='' loading='eager' decoding='async' />
+          </div>
         </figure>
       ))
     }
   </div>
 
-  <div class={heroStyles.cluster}>
-    <h1 id='home-title' class={heroStyles.h1}>{page.h1}</h1>
+  <div class={heroStyles.cluster} data-hero-cluster>
+    <h1 id='home-title' class={heroStyles.h1} data-hero-entrance='kicker'>
+      {page.h1}
+    </h1>
     <p class={heroStyles.display} aria-label={HOME_HERO_DISPLAY_TEXT}>
       {
         displayRows.map((row) => (
           <span
             class:list={[heroStyles.displayRow, row.className]}
+            data-hero-entrance='row'
             aria-hidden='true'>
             {row.lead}
             {row.emphasis ? (
@@ -86,13 +94,19 @@ const displayRows = HOME_HERO_DISPLAY_ROWS.map((text, index) => {
         ))
       }
     </p>
-    <div class={heroStyles.lockup} aria-label='Jukkai by Crystelle Terrasson'>
+    <div
+      class={heroStyles.lockup}
+      data-hero-entrance='lockup'
+      aria-label='Jukkai by Crystelle Terrasson'>
       <Wordmark class={heroStyles.wordmark} />
       <p class={heroStyles.byline}>by Crystelle Terrasson</p>
     </div>
     {
       page.primaryCta ? (
-        <a class={heroStyles.cta} href={page.primaryCta.href}>
+        <a
+          class={heroStyles.cta}
+          data-hero-entrance='cta'
+          href={page.primaryCta.href}>
           {page.primaryCta.label}
           <span class={heroStyles.ctaArrow} aria-hidden='true'>
             &rarr;
@@ -102,5 +116,18 @@ const displayRows = HOME_HERO_DISPLAY_ROWS.map((text, index) => {
     }
   </div>
 
-  <p class={heroStyles.proof}>{HOME_PROOF_CLAIMS.join(' · ')}</p>
+  <p class={heroStyles.proof} data-hero-entrance='proof'>
+    {HOME_PROOF_CLAIMS.join(' · ')}
+  </p>
 </section>
+
+<script>
+  import { initHomeHeroMotion } from './home-hero-motion';
+
+  // Deliberate homepage motion boot: scoped to the hero section, no-op when
+  // the section is absent. Reduced-motion gating lives inside the module.
+  const hero = document.querySelector("[data-home-section='hero']");
+  if (hero instanceof HTMLElement) {
+    initHomeHeroMotion(hero);
+  }
+</script>
