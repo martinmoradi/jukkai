@@ -1,27 +1,14 @@
 ---
-import type { PageCta } from '../../lib/pages';
+import Wordmark from '../Wordmark.astro';
 import { getHomePrimaryNavigationPages } from './home-content';
-import styles from './HomePage.module.css';
+import styles from './HomeHeader.module.css';
 
-interface Props {
-  primaryCta: PageCta | null;
-}
-
-const { primaryCta } = Astro.props;
 const navigationPages = getHomePrimaryNavigationPages();
 ---
 
 <header class={styles.header}>
-  <a class={styles.lockup} href='/' aria-label='Jukkai, accueil'>
-    <img
-      class={styles.wordmark}
-      src='/brand/jukkai-wordmark.svg'
-      alt='Jukkai'
-      width='2609'
-      height='1021'
-      decoding='async'
-      fetchpriority='high'
-    />
+  <a class={styles.lockup} href='/'>
+    <Wordmark class={styles.wordmark} />
     <span class={styles.lockupLine}>by Crystelle Terrasson</span>
   </a>
   <nav class={styles.nav} aria-label='Navigation principale'>
@@ -31,13 +18,6 @@ const navigationPages = getHomePrimaryNavigationPages();
           {item.navLabel}
         </a>
       ))
-    }
-    {
-      primaryCta ? (
-        <a class={styles.navCta} href={primaryCta.href}>
-          {primaryCta.label}
-        </a>
-      ) : null
     }
   </nav>
 </header>
