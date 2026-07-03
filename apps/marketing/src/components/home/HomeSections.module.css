@@ -1,0 +1,391 @@
+.section {
+  box-sizing: border-box;
+  padding: 4rem 1rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2rem;
+  align-items: end;
+  min-height: 38rem;
+  background:
+    linear-gradient(135deg, rgba(215, 168, 110, 0.22), transparent 44%),
+    linear-gradient(180deg, #fbfaf6, #f2eee6);
+  border-bottom: 1px solid var(--home-line);
+}
+
+.heroCopy {
+  display: grid;
+  gap: 1rem;
+  max-width: 55rem;
+}
+
+.kicker,
+.validationLabel,
+.heroProof,
+.proofStrip,
+.trustPlaceholders {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.kicker,
+.validationLabel {
+  color: var(--home-brick);
+}
+
+.heroDisplay,
+.sectionTitle,
+.closingTitle {
+  margin: 0;
+  font-family:
+    var(--jukkai-generated-font-family), Georgia, 'Times New Roman', serif;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+.heroDisplay {
+  max-width: 12ch;
+  font-size: 3.1rem;
+}
+
+.heroH1 {
+  max-width: 42rem;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.heroLead,
+.textStack,
+.artCopy > p,
+.cardCopy {
+  color: var(--home-muted);
+}
+
+.heroLead {
+  max-width: 44rem;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.55;
+}
+
+.primaryCta,
+.secondaryCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 2.75rem;
+  padding: 0.7rem 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.primaryCta {
+  color: var(--home-paper);
+  background: var(--home-ink);
+}
+
+.secondaryCta {
+  color: var(--home-paper);
+  background: var(--home-moss);
+}
+
+.textLink {
+  width: fit-content;
+  font-weight: 700;
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.32em;
+}
+
+.primaryCta:focus-visible,
+.secondaryCta:focus-visible,
+.textLink:focus-visible {
+  outline: 3px solid var(--home-clay);
+  outline-offset: 4px;
+}
+
+.heroProof,
+.proofStrip,
+.trustPlaceholders,
+.inlineList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  padding: 0;
+  list-style: none;
+}
+
+.heroProof span,
+.proofStrip span,
+.trustPlaceholders span,
+.inlineList li {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid var(--home-line);
+  border-radius: 4px;
+}
+
+.heroProof {
+  color: var(--home-moss);
+}
+
+.umbrella {
+  display: grid;
+  gap: 2rem;
+  background: var(--home-paper);
+}
+
+.sectionHeader {
+  display: grid;
+  gap: 1rem;
+  max-width: 48rem;
+}
+
+.sectionTitle {
+  font-size: 2.35rem;
+}
+
+.textStack {
+  display: grid;
+  gap: 1rem;
+  max-width: 44rem;
+  font-size: 1.08rem;
+  line-height: 1.55;
+}
+
+.textStack p,
+.artCopy > p,
+.cardCopy {
+  margin: 0;
+}
+
+.projects,
+.offers,
+.trust {
+  display: grid;
+  gap: 2rem;
+}
+
+.projects {
+  background: #f4f0e8;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.projectCard {
+  display: grid;
+  gap: 0.85rem;
+  padding: 0.75rem;
+  background: var(--home-panel);
+  border: 1px solid var(--home-line);
+  border-radius: 6px;
+}
+
+.placeholderFrame,
+.artPanel {
+  display: grid;
+  place-items: center;
+  min-height: 12rem;
+  color: var(--home-muted);
+  background:
+    linear-gradient(135deg, rgba(49, 84, 107, 0.2), transparent 46%),
+    linear-gradient(160deg, rgba(139, 63, 47, 0.18), rgba(53, 68, 58, 0.22)),
+    var(--home-stone);
+  border: 1px solid var(--home-line);
+  border-radius: 6px;
+}
+
+.placeholderFrame {
+  aspect-ratio: 4 / 3;
+}
+
+.placeholderFrame span,
+.artPanel span {
+  max-width: 12rem;
+  padding: 0.45rem 0.55rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+  text-transform: uppercase;
+  background: rgba(251, 250, 246, 0.82);
+  border-radius: 4px;
+}
+
+.cardTitle {
+  margin: 0;
+  font-family:
+    var(--jukkai-generated-font-family), Georgia, 'Times New Roman', serif;
+  font-size: 1.45rem;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+.cardCopy {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.offers {
+  background: var(--home-paper);
+}
+
+.offerList {
+  display: grid;
+  border-top: 1px solid var(--home-line);
+}
+
+.offerRow {
+  display: grid;
+  gap: 0.65rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--home-line);
+}
+
+.artShop {
+  display: grid;
+  gap: 2rem;
+  color: var(--home-paper);
+  background:
+    linear-gradient(135deg, rgba(215, 168, 110, 0.22), transparent 38%),
+    var(--home-moss);
+}
+
+.artPanel {
+  min-height: 18rem;
+  color: var(--home-ink);
+  background:
+    linear-gradient(135deg, rgba(215, 168, 110, 0.5), transparent 46%),
+    linear-gradient(160deg, rgba(49, 84, 107, 0.32), rgba(139, 63, 47, 0.38)),
+    #ebe2d6;
+}
+
+.artCopy {
+  display: grid;
+  gap: 1rem;
+  max-width: 42rem;
+}
+
+.artCopy > p {
+  font-size: 1.08rem;
+  line-height: 1.55;
+  color: rgba(251, 250, 246, 0.84);
+}
+
+.artCopy .kicker {
+  color: var(--home-clay);
+}
+
+.inlineList {
+  margin: 0;
+}
+
+.inlineList li {
+  border-color: rgba(251, 250, 246, 0.24);
+}
+
+.inlineList span,
+.trustPlaceholders strong {
+  display: block;
+  color: inherit;
+}
+
+.trust {
+  align-items: center;
+  background: #eef1ee;
+}
+
+.proofStrip {
+  color: var(--home-moss);
+}
+
+.trustPlaceholders {
+  color: var(--home-brick);
+}
+
+.closing {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+  color: var(--home-paper);
+  background: var(--home-ink);
+}
+
+.closing .kicker {
+  color: var(--home-clay);
+}
+
+.closingTitle {
+  max-width: 11ch;
+  font-size: 2.8rem;
+}
+
+.closing .primaryCta {
+  color: var(--home-ink);
+  background: var(--home-paper);
+}
+
+@media (min-width: 720px) {
+  .section {
+    padding: 5rem 2rem;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem);
+    min-height: 40rem;
+  }
+
+  .heroDisplay {
+    font-size: 4rem;
+  }
+
+  .umbrella,
+  .artShop,
+  .closing {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+    align-items: center;
+  }
+
+  .cardGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .offerRow {
+    grid-template-columns: 9rem minmax(11rem, 0.7fr) minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: baseline;
+  }
+}
+
+@media (min-width: 1080px) {
+  .section {
+    padding: 6rem 3.5rem;
+  }
+
+  .heroDisplay {
+    font-size: 5.2rem;
+  }
+
+  .sectionTitle {
+    font-size: 3.7rem;
+  }
+}

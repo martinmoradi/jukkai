@@ -1,0 +1,26 @@
+---
+import type { PageCta } from '../../lib/pages';
+import styles from './HomeSections.module.css';
+
+interface Props {
+  primaryCta: PageCta | null;
+}
+
+const { primaryCta } = Astro.props;
+---
+
+<section
+  class={`${styles.section} ${styles.closing}`}
+  data-home-section='closing-cta'>
+  <div>
+    <p class={styles.kicker}>Premier échange</p>
+    <h2 class={styles.closingTitle}>Et si on regardait votre lieu ?</h2>
+  </div>
+  {
+    primaryCta ? (
+      <a class={styles.primaryCta} href={primaryCta.href}>
+        {primaryCta.label}
+      </a>
+    ) : null
+  }
+</section>

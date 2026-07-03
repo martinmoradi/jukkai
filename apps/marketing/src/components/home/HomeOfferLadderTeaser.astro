@@ -1,0 +1,25 @@
+---
+import { HOME_OFFER_PLACEHOLDERS } from './home-content';
+import styles from './HomeSections.module.css';
+---
+
+<section
+  class={`${styles.section} ${styles.offers}`}
+  data-home-section='offer-ladder-teaser'>
+  <div class={styles.sectionHeader}>
+    <p class={styles.kicker}>Prestations</p>
+    <h2 class={styles.sectionTitle}>Quatre tailles de mission à clarifier.</h2>
+    <a class={styles.textLink} href='/prestations/'>Voir les prestations</a>
+  </div>
+  <div class={styles.offerList}>
+    {
+      HOME_OFFER_PLACEHOLDERS.map((offer) => (
+        <article class={styles.offerRow}>
+          <span class={styles.validationLabel}>{offer.label}</span>
+          <h3 class={styles.cardTitle}>{offer.title}</h3>
+          <p class={styles.cardCopy}>{offer.copy}</p>
+        </article>
+      ))
+    }
+  </div>
+</section>
