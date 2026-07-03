@@ -1,12 +1,13 @@
 ---
 import type { MarketingPage } from '../../lib/pages';
+import Wordmark from '../Wordmark.astro';
 import { HOME_PROOF_CLAIMS } from './home-content';
 import {
+  HOME_HERO_DISPLAY_EMPHASIS,
   HOME_HERO_DISPLAY_ROWS,
   HOME_HERO_DISPLAY_TEXT,
   HOME_HERO_FIELD_IMAGE,
   HOME_HERO_PRINTS,
-  HOME_HERO_WORDMARK_IMAGE,
 } from './home-hero';
 import heroStyles from './HomeHero.module.css';
 import sectionStyles from './HomeSections.module.css';
@@ -22,6 +23,19 @@ const displayRowStyles = [
   heroStyles.displayRowSecond,
   heroStyles.displayRowThird,
 ] as const;
+
+// Split the emphasized tail out of its row so the italic flourish is markup,
+// not a second copy of the sentence.
+const displayRows = HOME_HERO_DISPLAY_ROWS.map((text, index) => {
+  const hasEmphasis = text.endsWith(HOME_HERO_DISPLAY_EMPHASIS);
+  return {
+    className: displayRowStyles[index],
+    lead: hasEmphasis
+      ? text.slice(0, text.length - HOME_HERO_DISPLAY_EMPHASIS.length)
+      : text,
+    emphasis: hasEmphasis ? HOME_HERO_DISPLAY_EMPHASIS : null,
+  };
+});
 ---
 
 <section
@@ -57,23 +71,20 @@ const displayRowStyles = [
     <h1 id='home-title' class={heroStyles.h1}>{page.h1}</h1>
     <p class={heroStyles.display} aria-label={HOME_HERO_DISPLAY_TEXT}>
       {
-        HOME_HERO_DISPLAY_ROWS.map((row, index) => (
+        displayRows.map((row) => (
           <span
-            class:list={[heroStyles.displayRow, displayRowStyles[index]]}
+            class:list={[heroStyles.displayRow, row.className]}
             aria-hidden='true'>
-            {row}
+            {row.lead}
+            {row.emphasis ? (
+              <em class={heroStyles.displayEmphasis}>{row.emphasis}</em>
+            ) : null}
           </span>
         ))
       }
     </p>
     <div class={heroStyles.lockup} aria-label='Jukkai by Crystelle Terrasson'>
-      <img
-        class={heroStyles.wordmark}
-        src={HOME_HERO_WORDMARK_IMAGE}
-        alt='Jukkai'
-        decoding='async'
-        loading='eager'
-      />
+      <Wordmark class={heroStyles.wordmark} />
       <p class={heroStyles.byline}>by Crystelle Terrasson</p>
     </div>
     {

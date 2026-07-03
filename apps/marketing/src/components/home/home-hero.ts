@@ -1,7 +1,5 @@
 export const HOME_HERO_FIELD_IMAGE = '/home/hero/field.webp' as const;
 
-export const HOME_HERO_WORDMARK_IMAGE = '/brand/jukkai-wordmark.svg' as const;
-
 export const HOME_HERO_DISPLAY_ROWS = [
   'Le même œil',
   'choisit les œuvres',
@@ -9,6 +7,11 @@ export const HOME_HERO_DISPLAY_ROWS = [
 ] as const;
 
 export const HOME_HERO_DISPLAY_TEXT = HOME_HERO_DISPLAY_ROWS.join(' ');
+
+// The tail of the final row is set in italic — the one expressive flourish in
+// the display. It must stay a suffix of the last row so the split renders the
+// full sentence unchanged.
+export const HOME_HERO_DISPLAY_EMPHASIS = 'les espaces.' as const;
 
 type HomeHeroPrintLayer = 'near' | 'far';
 
