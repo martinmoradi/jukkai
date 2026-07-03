@@ -19,7 +19,7 @@ export const HOME_HERO_MOTION_TUNING = {
   stream: {
     durationSlowest: 34, // s per traversal for the farthest print (depth 0)
     durationSpan: 16, //   the nearest print (depth 1) takes slowest - span
-    travel: '-145vh', //   how far each print rises before looping
+    travelVh: 145, //      how far each print rises (vh) before looping
     bloom: 0.13, //        fraction of the loop spent fading in/out
     bloomScale: 0.6, //    prints spawn and exit at this scale
   },
@@ -102,21 +102,27 @@ export function initHomeHeroMotion(
     // populated at load. Spawn and exit soften on the inner wrapper.
     // Transform ownership per print, so tweens never fight: the figure takes
     // stream y + cursor x, the inner wrapper takes the bloom scale/opacity.
+    //
+    // Everything moves through transforms only. Repositioning via top/left
+    // would count as layout shift (CLS) when the stream boots; translating
+    // from the static --print-y position to the hero bottom does not.
     const streamTuning = HOME_HERO_MOTION_TUNING.stream;
+    const heroHeight = hero.clientHeight;
     const streams = prints.map((el) => {
       const depth = printDepth(el);
       const inner = el.querySelector('[data-hero-print-inner]');
       const duration =
         streamTuning.durationSlowest - streamTuning.durationSpan * depth;
-      gsap.set(el, { top: '100%' });
+      const staticTopPercent = Number.parseFloat(
+        el.style.getPropertyValue('--print-y'),
+      );
+      // Translate the print from its static frame position down to the hero
+      // bottom, then rise travelVh from there over one loop.
+      const startY = heroHeight * (1 - staticTopPercent / 100);
+      const endY = startY - (streamTuning.travelVh / 100) * window.innerHeight;
       const stream = gsap.timeline({ repeat: -1 });
       stream
-        .fromTo(
-          el,
-          { y: 0 },
-          { y: streamTuning.travel, duration, ease: 'none' },
-          0,
-        )
+        .fromTo(el, { y: startY }, { y: endY, duration, ease: 'none' }, 0)
         .fromTo(
           inner,
           { scale: streamTuning.bloomScale, opacity: 0 },
