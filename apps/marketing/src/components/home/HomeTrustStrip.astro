@@ -1,0 +1,23 @@
+---
+import { HOME_PROOF_CLAIMS, HOME_TRUST_PLACEHOLDERS } from './home-content';
+import styles from './HomeSections.module.css';
+---
+
+<section
+  class={`${styles.section} ${styles.trust}`}
+  data-home-section='trust-strip'>
+  <div class={styles.proofStrip} aria-label='Repères de confiance'>
+    {HOME_PROOF_CLAIMS.map((claim) => <span>{claim}</span>)}
+  </div>
+  <div class={styles.trustPlaceholders} aria-label='Preuves à valider'>
+    {
+      HOME_TRUST_PLACEHOLDERS.map((item) => (
+        <span>
+          <strong>{item.label}</strong>
+          {item.text}
+        </span>
+      ))
+    }
+  </div>
+  <a class={styles.textLink} href='/a-propos/'>Découvrir Crystelle</a>
+</section>

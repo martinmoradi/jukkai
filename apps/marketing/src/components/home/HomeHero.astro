@@ -1,0 +1,38 @@
+---
+import type { MarketingPage } from '../../lib/pages';
+import { HOME_PROOF_CLAIMS } from './home-content';
+import styles from './HomeSections.module.css';
+
+interface Props {
+  page: MarketingPage;
+}
+
+const { page } = Astro.props;
+---
+
+<section
+  class={`${styles.section} ${styles.hero}`}
+  data-home-section='hero'
+  aria-labelledby='home-title'>
+  <div class={styles.heroCopy}>
+    <p class={styles.kicker}>Jukkai by Crystelle Terrasson</p>
+    <p class={styles.heroDisplay}>
+      Le même œil choisit les œuvres et dessine les espaces.
+    </p>
+    <h1 id='home-title' class={styles.heroH1}>{page.h1}</h1>
+    <p class={styles.heroLead}>
+      Une architecture intérieure attentive aux usages, aux matières et à la
+      manière dont un lieu accompagne la vie.
+    </p>
+    {
+      page.primaryCta ? (
+        <a class={styles.primaryCta} href={page.primaryCta.href}>
+          {page.primaryCta.label}
+        </a>
+      ) : null
+    }
+  </div>
+  <aside class={styles.heroProof} aria-label='Repères Jukkai'>
+    {HOME_PROOF_CLAIMS.map((claim) => <span>{claim}</span>)}
+  </aside>
+</section>

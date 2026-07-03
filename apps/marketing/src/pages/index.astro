@@ -1,8 +1,7 @@
 ---
+import HomePage from '../components/home/HomePage.astro';
 import SeoHead from '../components/SeoHead.astro';
-import SiteHero from '../components/SiteHero.astro';
 import { getMarketingPage } from '../lib/pages';
-import styles from './index.module.css';
 
 const page = getMarketingPage('/');
 ---
@@ -16,9 +15,7 @@ const page = getMarketingPage('/');
       canonicalPath={page.slug}
     />
   </head>
-  <body class={styles.page}>
-    <main>
-      <SiteHero title={page.h1 ?? undefined} primaryCta={page.primaryCta} />
-    </main>
+  <body>
+    <HomePage page={page} />
   </body>
 </html>
