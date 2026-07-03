@@ -31,3 +31,5 @@ This folder is organized by how the docs are used.
   design.
 - `operations/method.md` - how the marketing docs are produced phase by phase.
 - `operations/ci.md` - pull request and branch protection policy.
+- `operations/homepage-browser-regression-gate.md` - browser evidence contract
+  for homepage visual slices.
