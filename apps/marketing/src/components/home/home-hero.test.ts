@@ -13,6 +13,14 @@ import {
 
 const heroSource = readFileSync('src/components/home/HomeHero.astro', 'utf8');
 const heroDataSource = readFileSync('src/components/home/home-hero.ts', 'utf8');
+const heroMotionSource = readFileSync(
+  'src/components/home/home-hero-motion.ts',
+  'utf8',
+);
+const heroGlSource = readFileSync(
+  'src/components/home/home-hero-print-gl.ts',
+  'utf8',
+);
 
 describe('homepage hero contracts', () => {
   it('keeps the display rows owned by the hero data contract', () => {
@@ -52,13 +60,15 @@ describe('homepage hero contracts', () => {
   });
 
   it('keeps exploration-only names and placeholder links out of hero code', () => {
-    const productionHeroSource = `${heroSource}\n${heroDataSource}`;
+    const productionHeroSource = `${heroSource}\n${heroDataSource}\n${heroMotionSource}\n${heroGlSource}`;
 
     expect(productionHeroSource).not.toMatch(/\/directions\//);
     expect(productionHeroSource).not.toMatch(/href=(['"])#\1/);
     expect(productionHeroSource).not.toMatch(/\bv3\b/i);
     expect(productionHeroSource).not.toMatch(/\bcomp\b/i);
-    expect(productionHeroSource).not.toMatch(/\bround\b/i);
+    // Exploration comments referenced numbered iteration rounds; Math.round
+    // and similar legitimate uses stay allowed.
+    expect(productionHeroSource).not.toMatch(/\bround\s*\d/i);
   });
 
   it('keeps stream depth and phase inside their normalized ranges', () => {

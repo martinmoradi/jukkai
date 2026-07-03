@@ -20,12 +20,20 @@
   object-fit: fill;
 }
 
-.constellation {
+/* The WebGL canvas repaints the prints in place, so it shares the
+   constellation's stacking slot and top dissolve mask exactly. */
+.constellation,
+.glCanvas {
   position: absolute;
   inset: 0;
   z-index: -1;
   pointer-events: none;
   mask-image: linear-gradient(to bottom, transparent 1%, black 15%);
+}
+
+.glCanvas {
+  width: 100%;
+  height: 100%;
 }
 
 .print {

@@ -123,11 +123,12 @@ const displayRows = HOME_HERO_DISPLAY_ROWS.map((text, index) => {
 
 <script>
   import { initHomeHeroMotion } from './home-hero-motion';
+  import heroStyles from './HomeHero.module.css';
 
   // Deliberate homepage motion boot: scoped to the hero section, no-op when
   // the section is absent. Reduced-motion gating lives inside the module.
   const hero = document.querySelector("[data-home-section='hero']");
   if (hero instanceof HTMLElement) {
-    initHomeHeroMotion(hero);
+    initHomeHeroMotion(hero, { glCanvasClass: heroStyles.glCanvas });
   }
 </script>

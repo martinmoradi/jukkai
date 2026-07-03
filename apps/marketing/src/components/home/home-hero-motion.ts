@@ -10,6 +10,9 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+import type { HeroPrintGlLayer } from './home-hero-print-gl';
+import { initHeroPrintGl } from './home-hero-print-gl';
+
 // Every timing and amplitude knob for the hero motion. Per-print depth,
 // phase, position, and size live in HOME_HERO_PRINTS (home-hero.ts).
 export const HOME_HERO_MOTION_TUNING = {
@@ -32,13 +35,30 @@ export const HOME_HERO_MOTION_TUNING = {
     xAmpBase: 8, //        px of x-parallax at depth 0
     xAmpDepth: 26, //      extra px at depth 1 (near prints move more)
   },
+  gl: {
+    enabled: true, //      set false to keep the plain DOM prints
+    rippleRadius: 170, //  px around the cursor that liquefies
+    rippleStrength: 0, //  liquefy amplitude; 0 disables it, > 0 to try it
+    smear: 0.05, //        how much stream speed bends the prints (vertical)
+    drag: 0.08, //         how much cursor-parallax drag flexes them (horizontal)
+    dragMax: 0.14, //      flex ceiling so a cursor jump can't fold a print
+    speedLerp: 0.06, //    smear inertia (lower = lazier fabric)
+  },
 } as const;
 
 function printDepth(el: HTMLElement): number {
   return Number.parseFloat(el.dataset.heroDepth ?? '0.5');
 }
 
-export function initHomeHeroMotion(hero: HTMLElement): gsap.MatchMedia {
+export interface HomeHeroMotionOptions {
+  /** Class applied to the WebGL canvas so its styling stays in the module CSS. */
+  glCanvasClass: string;
+}
+
+export function initHomeHeroMotion(
+  hero: HTMLElement,
+  options: HomeHeroMotionOptions,
+): gsap.MatchMedia {
   gsap.registerPlugin(ScrollTrigger);
 
   const mm = gsap.matchMedia();
@@ -177,7 +197,10 @@ export function initHomeHeroMotion(hero: HTMLElement): gsap.MatchMedia {
     const xTo = prints.map((el) =>
       gsap.quickTo(el, 'x', { duration: 0.9, ease: 'power2.out' }),
     );
+    const mouse = { x: -9999, y: -9999 };
     const onMove = (event: MouseEvent) => {
+      mouse.x = event.clientX;
+      mouse.y = event.clientY;
       const nx = event.clientX / window.innerWidth - 0.5;
       prints.forEach((el, i) => {
         xTo[i](
@@ -188,10 +211,61 @@ export function initHomeHeroMotion(hero: HTMLElement): gsap.MatchMedia {
     };
     window.addEventListener('mousemove', onMove);
 
+    // WebGL material layer: paints the prints with speed smear and cursor
+    // liquefy. The DOM keeps driving position; if init fails, the DOM images
+    // simply stay visible. Fail-open — never let the enhancement blank the
+    // hero.
+    const glTuning = HOME_HERO_MOTION_TUNING.gl;
+    let glLayer: HeroPrintGlLayer | null = null;
+    let smoothSpeed = 0;
+    const render = () => {
+      if (!glLayer) return;
+      smoothSpeed +=
+        (streams[0].timeScale() - 1 - smoothSpeed) * glTuning.speedLerp;
+      glLayer.draw({
+        mouse,
+        speed: smoothSpeed,
+        getAlpha: (plane) => Number(gsap.getProperty(plane.inner, 'opacity')),
+      });
+    };
+    if (glTuning.enabled) {
+      try {
+        glLayer = initHeroPrintGl({
+          host: hero,
+          items: prints.flatMap((el) => {
+            const inner = el.querySelector('[data-hero-print-inner]');
+            const img = el.querySelector('img');
+            if (!(inner instanceof HTMLElement) || !img) return [];
+            return [{ el, inner, img, depth: printDepth(el) }];
+          }),
+          fx: glTuning,
+          canvasClass: options.glCanvasClass,
+        });
+      } catch {
+        glLayer = null;
+      }
+      if (glLayer) {
+        for (const el of prints) {
+          const img = el.querySelector('img');
+          if (img) img.style.visibility = 'hidden';
+        }
+        gsap.ticker.add(render);
+      }
+    }
+
     return () => {
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('mousemove', onMove);
       clearTimeout(settleTimer);
+      if (glLayer) {
+        gsap.ticker.remove(render);
+        glLayer.destroy();
+        glLayer = null;
+        for (const el of prints) {
+          const img = el.querySelector('img');
+          if (img) img.style.visibility = '';
+        }
+      }
     };
   });
 
