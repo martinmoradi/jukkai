@@ -5,7 +5,7 @@
   min-height: 100svh;
   overflow: hidden;
   color: var(--home-paper);
-  background-color: #7e563e;
+  background-color: var(--home-paper);
   border-bottom: 1px solid var(--home-line);
   isolation: isolate;
 }
