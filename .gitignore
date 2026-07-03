@@ -20,6 +20,9 @@ apps/marketing/public/fonts/generated/
 # logs
 *.log
 
+# local browser evidence
+.browser-evidence/
+
 # coverage
 coverage/
 
