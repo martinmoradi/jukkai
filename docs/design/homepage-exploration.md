@@ -16,12 +16,14 @@ questions. Read alongside the wireframe brief (`docs/strategy/wireframe-brief.md
 ## Hero: the frozen skeleton (from strategy, not draft)
 
 One viewport: emotional display headline (display text, never a heading) +
-kicker H1 (« Architecte d'intérieur à Rennes & Châteaugiron » territory, real
-visible text) + primary CTA (« Parlons de votre projet » territory, V5-gated) +
-compact proof cue (reviews placeholder + UNAID claims canon) + the compound
-« Jukkai by Crystelle Terrasson » exactly once, eyebrow weight, never a third
-headline. Vocabulary bans absolute. Shop invitation is NOT in the hero
-(section 5 only).
+kicker H1 (« Architecte d'intérieur à Rennes » territory, real visible text) +
+nearby support copy for Châteaugiron / région rennaise + primary CTA (« Parlons
+de votre projet » territory, V5-gated) + compact proof cue (reviews placeholder
+
+- UNAID claims canon) + the compound « Jukkai by Crystelle Terrasson » exactly
+  once, eyebrow weight, never a third headline. Vocabulary discipline follows
+  foundation v1.6: reject cold-gallery codes, not necessarily the word « galerie »
+  when it is reclaimed. Shop invitation is NOT in the hero (section 5 only).
 
 ## Hero text inventory (all candidate slots for composition trials)
 
@@ -37,12 +39,13 @@ Every slot below is optional except the skeleton items. Mix and match per
 composition; do not use two slots that both say « art shop » (pick one).
 
 1. **Eyebrow (skeleton):** « Jukkai by Crystelle Terrasson » — tiny, once.
-2. **Kicker pair:** H1 « Architecte d'intérieur à Rennes & Châteaugiron »
-   (element contains only this), plus a styled sibling span completing the
-   identity. Candidates:
+2. **Kicker pair:** H1 « Architecte d'intérieur à Rennes » (element contains
+   only this), plus styled sibling text completing the place/fusion identity.
+   Candidates:
    - « & un art shop, sous le même toit »
    - « et bientôt un art shop » [L1: "bientôt"/date form gated]
    - « et un lieu où l'art est chez lui » (softer, no label commitment)
+   - « installée à Châteaugiron, au service de la région rennaise »
 3. **Display stance (skeleton):** current candidates
    « Des lieux dont on se souvient. » / « Des lieux qu'on n'oublie pas » /
    « On se souvient des lieux ».
@@ -132,8 +135,11 @@ One short stance line anchors each major section, editorial-poster style:
   Placement near missions/projects per Martin's instinct. DRAFT.
 - Missions/offer ladder area: the waouh idea lives here or in projects, not the
   hero.
-- Shop page (not homepage): thesis line « Ni galerie, ni boutique déco. Un art
-  shop. » appears once, there only (V2-gated).
+- Shop page (not homepage): thesis line appears once, there only (V2-gated).
+  Current preferred territory after the July 5 discussion: « une galerie
+  vivante, pensée comme un art shop », « une galerie qui ne chuchote pas », or
+  « repartir avec un coup de cœur ». The old « Ni galerie, ni boutique déco. Un
+  art shop. » line is only a contrast option now.
 - Martin likes negative framing generally; transcript bloc 5 has the raw
   "jamais" list (pas un magasin, pas une boutique déco, pas tout blanc, pas
   froid, vivant).
@@ -180,13 +186,19 @@ foundation §5 slot fight; shop invitation runs secondary weight in section 5.
 
 ## Galerie / naming (so future sessions don't relitigate)
 
-« galerie châteaugiron » discovery is deliberately carried OFF-page: GBP
-secondary category (art-gallery equivalent), ArtGallery schema on /art-shop/,
-third-party listings (sitemap §6, matrix note 7). On-page copy never adopts the
-word; the thesis line uses it once by negation on the shop page. Physical
-signage is Crystelle's call and out of scope for the site. Martin + Crystelle
-both dislike « art shop » as a label; that is the open C8/V1 validation, to be
-resolved with Crystelle, not smuggled into hero copy.
+July 5 clarification: the problem is not necessarily the word « galerie »; the
+problem is the cold/intimidating gallery code (white cube, silence, hidden
+prices, conceptual snobbery, collector-only posture). « Galerie » gives category
+fluency and legitimacy. « Art shop » gives permission to browse, buy, offer, and
+leave with a coup de cœur. The strongest working frame is: « une galerie
+vivante, pensée comme un art shop ».
+
+« galerie châteaugiron » discovery is still mostly carried by GBP secondary
+category, ArtGallery schema on `/art-shop/`, third-party listings, and maybe
+signage/category language. On-page copy may use « galerie » only if it is
+qualified/reclaimed by the warm, alive, purchasable Jukkai frame. Do not smuggle
+a cold gallery page into the hero; the exact public label remains C8/V1/V2
+validation with Crystelle.
 
 ## Design principles mined from the discovery transcript
 

@@ -275,13 +275,13 @@ The audit's picture is directionally intact but the market moved:
 - **SERP type:** map-pack and tourism-discovery territory. Galerie Laute ranks with a
   title tag of just "Galerie Laute": this cluster runs on entity and GBP strength,
   not on-page SEO.
-- **The copy-ban tension, resolved structurally:** the words galerie/boutique are
-  banned in Jukkai copy, so the shop page can never chase "galerie d'art" queries in
-  its visible text. The vocabulary matching happens in the layers that are not copy:
-  the GBP secondary category (art gallery equivalent, already canon), LocalBusiness/
-  ArtGallery schema on the shop page (Phase 4 decision), and third-party listings
-  (Pays de Châteaugiron tourism, Pages Jaunes, Mappy) which all rank on this SERP and
-  will describe Jukkai in their own words.
+- **The gallery-language tension:** the original copy rule treated galerie/boutique
+  as banned in visible shop copy, so vocabulary matching lived mostly in GBP,
+  LocalBusiness/ArtGallery schema, and third-party listings. Foundation v1.6 refines
+  this: the cold/intimidating gallery code is banned, while "galerie" may appear if
+  reclaimed by the living/art-shop frame. The SEO point still stands: do not chase
+  "galerie d'art" with generic cold-gallery copy; the discovery layer is entity,
+  category, citations, and the Châteaugiron place.
 - **Page owner:** the shop page, doing its foundation job (visitability, the scene,
   the thesis line, the artist block), optimized for the brand query and Châteaugiron
   discovery, not for art-buying keywords. No art-SEO content play at launch or
