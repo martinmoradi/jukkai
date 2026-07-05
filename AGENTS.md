@@ -74,11 +74,13 @@ remove them when the convention changes.
   first. Treat those docs as research-backed working context: preserve settled
   business constraints, but challenge sitemap, section density, copy volume, and
   wireframe choices when they make the implementation bloated or dull.
-- The marketing app does not have `PRODUCT.md` yet on purpose. Do not create or
-  require one until Martin says the visual direction is ready to freeze.
+- Strategic design context lives in `apps/marketing/PRODUCT.md` (register,
+  users, personality, design principles). `DESIGN.md` is deliberately deferred:
+  the visual system is in exploration, so do not create `DESIGN.md` or freeze
+  tokens until Martin says the direction is ready. Current design state lives
+  in `docs/design/homepage-exploration.md`.
 - For substantial visual or interaction work, prefer the local `impeccable`
-  skill when invoked or clearly useful, while respecting the no-`PRODUCT.md`
-  exploration phase.
+  skill when invoked or clearly useful.
 - Protect conversion and SEO intent, but allow visual implementation to
   challenge conventional brochure-site patterns when it improves taste,
   memorability, and clarity.
