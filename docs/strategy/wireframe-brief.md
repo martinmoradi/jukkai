@@ -1,7 +1,7 @@
 # Jukkai wireframe brief (Phase 3.5)
 
 **Phase 3.5 deliverable, produced July 2, 2026.** Derived from `docs/strategy/foundation.md`
-(v1.5, truth), `docs/strategy/messaging.md` (registers, vocabulary), `docs/strategy/sitemap.md` and
+(v1.6, truth), `docs/strategy/messaging.md` (registers, vocabulary), `docs/strategy/sitemap.md` and
 `docs/strategy/content-matrix.md` (IA and content source). Audience: a Figma/wireframe agent.
 
 This document defines section-level page outlines: what each page must show, in
@@ -36,10 +36,12 @@ strategy visible, not make the final website beautiful.
    validation key (S1, C1..C9, L1..L6, V1..V8) is wireframed as a clearly
    labelled slot. Do not invent projects, testimonials, artist names, art
    prices, events, offer names, or offer prices to fill a frame.
-6. **Vocabulary bans are absolute** even in wireframe placeholder text: no
-   galerie / boutique / magasin / objets for the shop, no « prix sur demande »,
-   no « premium / haut de gamme / luxe », no QVT boilerplate, no self-asserted
-   « nous sommes à l'écoute », no past-tense art×architecture bridge claims.
+6. **Vocabulary discipline is absolute** even in wireframe placeholder text:
+   no cold-gallery, boutique, magasin, product-grid, ecommerce, catalogue, or
+   « prix sur demande » codes for the shop; no « premium / haut de gamme /
+   luxe », no QVT boilerplate, no self-asserted « nous sommes à l'écoute », no
+   past-tense art×architecture bridge claims. « Galerie » is allowed only when
+   qualified/reclaimed by the living, accessible, purchasable Jukkai frame.
 7. **Project pages are modular proof rows, not structural pillars.** Any module
    that consumes projects (teasers, galleries, reference slots) must work when
    rows are added, swapped, or removed, and must render acceptably at the low
@@ -82,9 +84,10 @@ Reference these by ID in the per-page briefs; design each once, reuse everywhere
    ruling.
 3. **Above the fold.** All in one viewport: the Jukkai world sets the register
    (colour, art, alive); an emotional display headline that is NOT a heading;
-   the architecture kicker as the real H1 (« Architecte d'intérieur à Rennes &
-   Châteaugiron » territory); the primary CTA; a compact proof cue (PM8 + UNAID
-   from PM1). The full brand compound appears once in this frame (eyebrow-line
+   the architecture kicker as the real H1 (« Architecte d'intérieur à Rennes »
+   territory); a nearby support line carrying Châteaugiron / région rennaise;
+   the primary CTA; a compact proof cue (PM8 + UNAID from PM1). The full brand
+   compound appears once in this frame (eyebrow-line
    territory, per global rule 8); the header lockup above it already carries
    the name, so the hero instance stays small and must not read as a third
    headline.
@@ -102,10 +105,11 @@ Reference these by ID in the per-page briefs; design each once, reuse everywhere
 5. **Proof modules.** PM8 + PM1 (hero cue and trust strip), PM3 ×3.
 6. **CTA placement.** Primary: header, hero, closing band. Secondary: shop
    invitation in section 5 only. Tertiary: « voir les projets » links.
-7. **SEO/content requirements.** Frozen title: « Jukkai by Crystelle Terrasson
-   — Architecte d'intérieur, Rennes & Châteaugiron ». Branded intent only. The
-   kicker H1 obeys global rule 4. Internal links to the service page and guide
-   coût somewhere in the body or footer.
+7. **SEO/content requirements.** Brand-first title with the architecture keyword
+   and place anchor; exact string freezes in Phase 4. Rennes carries the search
+   phrase, Châteaugiron is phrased as the physical anchor, not a co-primary
+   market. Branded intent only. The kicker H1 obeys global rule 4. Internal
+   links to the service page and guide coût somewhere in the body or footer.
 8. **Validation-needed.** Exact CTA French (V5), project teaser rows (S1), real
    review count (launch task), hero visuals (Crystelle approves selection).
 9. **Wireframe guardrails.** The shop section must not read as a second hero;
@@ -122,8 +126,9 @@ Reference these by ID in the per-page briefs; design each once, reuse everywhere
    acquisition surface; the page the site is built around.
 2. **Lead register.** Architecture. At most one Jukkai closing note.
 3. **Above the fold.** Keyword-first H1 (« Architecte d'intérieur à Rennes »
-   territory), an immediate answer-style intro (who, where: « à Châteaugiron, à
-   20 minutes de Rennes », for whom), PM1 compact, primary CTA.
+   territory), an immediate answer-style intro (who, where: basée à
+   Châteaugiron, à 20 minutes de Rennes; for whom: Rennes et la région
+   rennaise), PM1 compact, primary CTA.
 4. **Section order.**
    1. H1 + intro answering the query directly.
    2. Offer summary: the mission ladder with entry price ranges on-page (the
@@ -139,8 +144,10 @@ Reference these by ID in the per-page briefs; design each once, reuse everywhere
 6. **CTA placement.** Primary: hero, after the trust block, closing band.
    Secondary: projets and guide coût links (deepen before converting).
 7. **SEO/content requirements.** Keyword-first title. Body vocabulary: Rennes,
-   Ille-et-Vilaine, région rennaise; Châteaugiron as the physical anchor.
-   Cross-links both ways with the guide coût. FAQ block is table stakes.
+   région rennaise, Ille-et-Vilaine (35); use `35` only paired with the
+   department name. Châteaugiron is the physical anchor, not part of the
+   service-page H1. Cross-links both ways with the guide coût. FAQ block is
+   table stakes.
 8. **Validation-needed.** Testimonials to collect (C4): wireframe slots with
    the attribution format visible. Claims phrasing (C5). Entry-offer figure in
    the ladder is C1-gated.
@@ -327,8 +334,11 @@ Reference these by ID in the per-page briefs; design each once, reuse everywhere
    or month-level form, L1).
 4. **Section order.**
    1. Scene hero + opening date.
-   2. Thesis line, exactly once: « Ni galerie, ni boutique déco. Un art shop. »
-      (wording V2-gated).
+   2. Thesis line, exactly once. Preferred territory after the v1.6
+      clarification: « une galerie vivante, pensée comme un art shop » /
+      « une galerie qui ne chuchote pas » / « repartir avec un coup de cœur ».
+      The old negative line remains only a draft contrast option (wording
+      V2-gated).
    3. What you will find: the scene unpacked (œuvres, sculptures, mobilier
       iconique, the visible working architects), coup-de-cœur permission
       (« adepte ou néophyte » territory), gift-register accessibility. Slot for
@@ -344,20 +354,23 @@ Reference these by ID in the per-page briefs; design each once, reuse everywhere
 6. **CTA placement.** Primary architecture CTA present but quiet. The page's
    own jobs run at secondary weight: itinerary click, Instagram follow,
    newsletter signup, artist contact route (all tracked).
-7. **SEO/content requirements.** Brand-first title (« L'art shop — Jukkai by
-   Crystelle Terrasson »). Never chases « galerie » on-page; GBP and schema
-   (Phase 4) carry that vocabulary. Châteaugiron discovery surface.
+7. **SEO/content requirements.** Brand-first title. The page does not chase
+   « galerie d'art » with generic cold-gallery copy, but « galerie » may appear
+   if reclaimed by the living/art-shop frame. GBP, schema (Phase 4), citations,
+   and signage/category layers can also carry the vocabulary. Châteaugiron
+   discovery surface.
 8. **Validation-needed.** The largest validation surface on the site: C8/V1
    (« L'art shop » label), V2 (thesis line), V6 (price-behaviour sentence),
    C9/V8 (artist terms wording), L1 (date form), L4 (visuals), L5 (hours,
    phone). Wireframe all as labelled slots.
 9. **Wireframe guardrails.** No prices, no « prix sur demande » register, no
    event promises, no artist names, no ecommerce or catalogue patterns (no
-   product grids, no cart affordances); banned words absolute (galerie,
-   boutique, magasin, objets); the thesis line appears once and is never echoed
-   as a motif; the artist block must not visually suggest pay-to-exhibit; the
-   architecture CTA never competes with the visit CTAs here, and the visit CTAs
-   never rise to primary weight.
+   product grids, no cart affordances); do not use boutique, magasin, objets,
+   or cold-gallery codes as dominant labels; « galerie » must be qualified if
+   used. The thesis line appears once and is never echoed as a motif; the
+   artist block must not visually suggest pay-to-exhibit; the architecture CTA
+   never competes with the visit CTAs here, and the visit CTAs never rise to
+   primary weight.
 
 ## 9. À propos `/a-propos/`
 

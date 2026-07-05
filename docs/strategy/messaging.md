@@ -104,8 +104,12 @@ The foundation's tiebreak rule, applied to messaging:
   signal for artists (a shop backed by a studio founded in 2012 is not a pop-up).
   Never alternate registers within one paragraph; a surface has a lead register
   and bounded guest moments.
-- **The thesis line is a single gesture.** « Ni galerie, ni boutique déco. Un
-  art shop. » appears exactly once, on the shop page, never as a sitewide motif.
+- **The shop thesis is a single gesture, but the old negative line is not frozen.**
+  The current direction rejects the cold gallery code, not necessarily the word
+  « galerie ». Candidate territory: « une galerie vivante, pensée comme un art
+  shop », « une galerie qui ne chuchote pas », or « un lieu vivant où l'on peut
+  repartir avec un coup de cœur ». It appears on the shop page only, never as a
+  sitewide motif, and Crystelle validates the final French.
 
 Register assignment per surface (binds Phase 3 page briefs):
 
@@ -173,7 +177,10 @@ Register assignment per surface (binds Phase 3 page briefs):
 - **Lead with**: the scene, shown not claimed. The documented ideal is browsing
   « comme chez un disquaire », far from « l'aura élitiste des galeries ». The
   copy's job is permission: « Je n'y connais rien en art » must feel like the
-  normal, expected starting point.
+  normal, expected starting point. Martin's July 5 framing adds the missing
+  commercial permission: Jukkai is not only a place to look and leave; it is a
+  warm, busy, colourful place where one may talk, have a coffee, find a gift,
+  and perhaps repartir avec un coup de cœur.
 - **Proof**: photos/renders of the space, the visible working architects, the
   visit basics (address, hours, itinerary), Instagram as the living feed.
 - **Price posture (pre-opening)**: no numbers (foundation §9). But never adopt
@@ -231,7 +238,7 @@ persuade. The credential sits close to the form; the stories fill the pages.
 | "Is this person even qualified?" (unregulated title) | UNAID + 30 ans de métier + 2 architectes, visible near the conversion point                                                                                                      | Service page, à propos, form vicinity |
 | "Is my project too small for her?"                   | The full mission ladder down to conseil / mission déco; no budget floor in the form                                                                                              | Prestations, form                     |
 | "Is Jukkai an architecture studio or an art shop?"   | Jukkai is the umbrella: the practice, the shop, the place. Architecture is the site's job; the shop is the world                                                                 | Homepage, à propos                    |
-| "Is Châteaugiron too far?"                           | « à Châteaugiron, à 20 minutes de Rennes »; Rennes et sa région is the working territory                                                                                         | Service page, contact, footer         |
+| "Is Châteaugiron too far?"                           | Basée à Châteaugiron, à 20 minutes de Rennes; the working territory is Rennes / région rennaise, with wider Ille-et-Vilaine (35) reach depending on project scope                | Service page, contact, footer         |
 | "Art is not for someone like me"                     | The scene, coup-de-cœur permission, « adepte ou néophyte » welcome; never a jargon test                                                                                          | Shop page                             |
 | "I probably can't afford it" (art)                   | Pre-opening: accessibility carried by scene and gift-register framing, no numbers, no « prix sur demande » register; in-shop price visibility promise is **[VALIDATION-NEEDED]** | Shop page                             |
 | "Is this venue serious?" (artists)                   | Pre-answer the credibility tests: no fee to exhibit, clear artist-by-artist terms, named contact, come see the place                                                             | Artist block on shop page             |
@@ -244,7 +251,9 @@ de métier (her career only); depuis 2012; ouverture le 1er octobre 2026 /
 ouverture octobre 2026 (downgrade only if the date actually moves).
 
 **Geography:** Rennes; Châteaugiron; « à 20 minutes de Rennes »; Rennes et sa
-région; la région rennaise; Ille-et-Vilaine.
+région; la région rennaise; Ille-et-Vilaine (35). Use `35` only paired with the
+department name, never as a standalone keyword. Rennes is the headline/search
+phrase; Châteaugiron is the physical anchor.
 
 **Offer vocabulary:** mission déco / conseil déco (naming pending validation);
 transformation ciblée; rénovation complète / mission complète; espaces
@@ -271,12 +280,15 @@ interlocuteur.
 
 ## 8. Words and phrases to avoid
 
-**Banned (foundation):** galerie, boutique, magasin, objets (for the shop);
-« 30 années » as studio age; guaranteed price floors; any art price pre-opening;
-event promises (vernissages, live painting); artist names pre-consent; ecommerce
-or catalogue vocabulary; eco-responsible label or eco positioning; art as
-investment; the bridge as track record (no past tense until proven);
-influenceuse registers; untranslated art-world or architecture jargon.
+**Avoid or tightly control (foundation):** unqualified cold-gallery language for
+the shop; boutique, magasin, product-grid, ecommerce, and catalogue codes; objets
+as a dominant label; « prix disponible sur demande »; « 30 années » as studio age;
+guaranteed price floors; any art price pre-opening; event promises (vernissages,
+live painting); artist names pre-consent; eco-responsible label or eco positioning;
+art as investment; the bridge as track record (no past tense until proven);
+influenceuse registers; untranslated art-world or architecture jargon. « Galerie »
+is allowed only when reclaimed/qualified by the living, accessible, purchasable
+Jukkai frame.
 
 **Register traps (this phase's additions):**
 
@@ -305,9 +317,9 @@ influenceuse registers; untranslated art-world or architecture jargon.
 
 - Title pattern: `{Page} — Jukkai by Crystelle Terrasson`; keyword-first only on
   the acquisition surfaces (Rennes service page, cost guide, B2B page).
-- Homepage H1 territory: « Architecte d'intérieur à Rennes & Châteaugiron »
-  (natural variants allowed), rendered as the hero kicker per the foundation §5
-  guardrail.
+- Homepage H1 territory: « Architecte d'intérieur à Rennes » (natural variants
+  allowed), rendered as the hero kicker per the foundation §5 guardrail. Châteaugiron
+  and la région rennaise appear in nearby support copy, not inside the H1.
 - « anciennement Studio Crystelle Terrasson » as the transition phrase, à-propos
   and migration-window meta descriptions only.
 - Testimonial attribution format: first name + commune + project type.
@@ -320,10 +332,12 @@ ruling; flag to Crystelle with the batch below rather than blocking on it.
 
 **[VALIDATION-NEEDED] before copy freeze (Crystelle's list, consolidated):**
 
-1. « L'art shop » as nav label and running-copy referent (canonical direction,
-   exact French hers to confirm).
-2. The thesis line: « Ni galerie, ni boutique déco. Un art shop. » (exact
-   wording and her comfort with the negative definition).
+1. The shop's public label system: « L'art shop », « galerie vivante », signage
+   language, and whether the site pairs or separates those terms.
+2. The thesis line: current preferred territory is « une galerie vivante, pensée
+   comme un art shop » / « une galerie qui ne chuchote pas » / « repartir avec un
+   coup de cœur ». The old « Ni galerie, ni boutique déco. Un art shop. » line is a
+   draft contrast option, not the default.
 3. The premium-inversion public phrasing and its placement: « une mission déco
    avec l'exigence d'une architecte d'intérieur ». The frame itself is validated
    (99%); what remains is where and how it is said, plus each offer name.
@@ -390,8 +404,9 @@ documented permission.
     page may use « ouverture le 1er octobre 2026 » or « ouverture octobre
     2026 ». Downgrade only if the date actually moves. No event or lineup
     promises anywhere.
-13. **Vocabulary bans are absolute** (section 8). A banned word in a draft is a
-    defect, not a style choice.
+13. **Vocabulary discipline is absolute** (section 8). Do not smuggle in cold
+    gallery, boutique, product-grid, ecommerce, price-on-request, or jargon codes.
+    « Galerie » is not banned by itself, but it must be qualified/reclaimed.
 
 Per the method, messaging may optionally receive a single cross-model second
 opinion on voice before Phase 3 opens. That is Martin's call; nothing here

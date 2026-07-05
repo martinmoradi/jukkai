@@ -180,24 +180,25 @@ From messaging §3, which binds these briefs; new pages assigned by the same rul
 
 Homepage hero, restated because it is the model for every shared surface: Jukkai
 sets the register in the frame; the architecture kicker is the real, visible H1
-(« Architecte d'intérieur à Rennes & Châteaugiron » territory); primary CTA and a
-proof cue anchor the same viewport; the emotional headline is display text, not a
-heading. The H1 guardrail travels (messaging §10.3).
+(« Architecte d'intérieur à Rennes » territory); Châteaugiron and la région rennaise
+belong in nearby support copy, not inside the H1; primary CTA and a proof cue anchor
+the same viewport; the emotional headline is display text, not a heading. The H1
+guardrail travels (messaging §10.3).
 
 ## 6. SEO role per page
 
-| Page                   | SEO role                                                                                                                                                                                                        | Title pattern rule                                                                        |
-| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| Accueil                | Branded validation (jukkai, crystelle terrasson, studio terrasson)                                                                                                                                              | Frozen: « Jukkai by Crystelle Terrasson — Architecte d'intérieur, Rennes & Châteaugiron » |
-| Service page Rennes    | **Local acquisition, P0.** « architecte d'intérieur rennes » + agence variant; Ille-et-Vilaine / 35 / région rennaise as body vocabulary only                                                                   | Keyword-first                                                                             |
-| Guide coût             | **Cost / search intent, P0.** « combien coûte / tarif architecte d'intérieur rennes »; dated title, refreshed yearly                                                                                            | Keyword-first                                                                             |
-| Espaces professionnels | **B2B acquisition, P1.** « aménagement bureaux rennes », « architecte bureau rennes »                                                                                                                           | Keyword-first                                                                             |
-| Prestations            | Proof/support: carries the public ranges and the process; supports the tarif cluster via cross-links, does not chase it                                                                                         | Brand-first                                                                               |
-| Projets + pages projet | Proof/support + long tail: dual naming catches « rénovation maison/appartement {commune} »                                                                                                                      | Brand-first, descriptive subtitle in title                                                |
-| L'art shop             | Shop visitability: branded + Châteaugiron discovery. Never chases « galerie d'art » in copy (banned words); the vocabulary matching lives in GBP secondary category, schema (Phase 4), and third-party listings | Brand-first                                                                               |
-| À propos               | Branded validation + « anciennement Studio Crystelle Terrasson » migration queries                                                                                                                              | Brand-first                                                                               |
-| Contact                | Branded/utility (the old /contact/ sat at position 10; keep it indexable)                                                                                                                                       | Brand-first                                                                               |
-| Legal, merci, 404      | Legal/utility; merci and 404 noindex                                                                                                                                                                            | Brand-first                                                                               |
+| Page                   | SEO role                                                                                                                                                                                                                                                                                          | Title pattern rule                                                                           |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| Accueil                | Branded validation (jukkai, crystelle terrasson, studio terrasson)                                                                                                                                                                                                                                | Brand-first with architecture keyword; Rennes as search phrase, Châteaugiron as place anchor |
+| Service page Rennes    | **Local acquisition, P0.** « architecte d'intérieur rennes » + agence variant; Ille-et-Vilaine (35) / région rennaise as body vocabulary only                                                                                                                                                     | Keyword-first                                                                                |
+| Guide coût             | **Cost / search intent, P0.** « combien coûte / tarif architecte d'intérieur rennes »; dated title, refreshed yearly                                                                                                                                                                              | Keyword-first                                                                                |
+| Espaces professionnels | **B2B acquisition, P1.** « aménagement bureaux rennes », « architecte bureau rennes »                                                                                                                                                                                                             | Keyword-first                                                                                |
+| Prestations            | Proof/support: carries the public ranges and the process; supports the tarif cluster via cross-links, does not chase it                                                                                                                                                                           | Brand-first                                                                                  |
+| Projets + pages projet | Proof/support + long tail: dual naming catches « rénovation maison/appartement {commune} »                                                                                                                                                                                                        | Brand-first, descriptive subtitle in title                                                   |
+| L'art shop             | Shop visitability: branded + Châteaugiron discovery. Does not chase « galerie d'art » with generic cold-gallery copy; « galerie » may appear only if reclaimed by the living/art-shop frame. Vocabulary matching also lives in GBP secondary category, schema (Phase 4), and third-party listings | Brand-first                                                                                  |
+| À propos               | Branded validation + « anciennement Studio Crystelle Terrasson » migration queries                                                                                                                                                                                                                | Brand-first                                                                                  |
+| Contact                | Branded/utility (the old /contact/ sat at position 10; keep it indexable)                                                                                                                                                                                                                         | Brand-first                                                                                  |
+| Legal, merci, 404      | Legal/utility; merci and 404 noindex                                                                                                                                                                                                                                                              | Brand-first                                                                                  |
 
 FAQ blocks are table stakes on the three acquisition surfaces (keywords §6.3):
 service page, guide coût, espaces professionnels each carry one; « architecte
@@ -281,8 +282,10 @@ later phases without touching the IA.
 Each with a proposed default so a « yes, fine » is cheap.
 
 1. **Shop URL slug.** Proposed `/art-shop/` (clean, unaccented, elision-free).
-   The nav label and running-copy referent stay « L'art shop » pending
-   Crystelle's French validation (C8); the slug can freeze independently.
+   The nav label and running-copy referent stay « L'art shop » as the working
+   default pending Crystelle's French validation (C8); the slug can freeze
+   independently. v1.6 reopened whether "galerie" can be reclaimed in signage or
+   thesis language, but not the URL.
 2. **Projets hub structure.** Proposed: one `/projets/` hub with a habitat /
    espaces professionnels filter, no separately indexable segment URLs at launch
    (avoids thin pages); both old hubs 301 to `/projets/`. Alternative if the

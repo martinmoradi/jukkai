@@ -16,9 +16,11 @@ brand
 
 ## Users
 
-- **Primary: referred particuliers** around Rennes and Châteaugiron. Roughly
-  93% of old-site traffic was branded; hero visitors arrive pre-convinced and
-  need a visible door handle (« Parlons de votre projet »), not persuasion.
+- **Primary: referred particuliers** around Rennes and the région rennaise.
+  Châteaugiron is the real place / shop anchor, not a co-primary acquisition
+  market. Roughly 93% of old-site traffic was branded; hero visitors arrive
+  pre-convinced and need a visible door handle (« Parlons de votre projet »),
+  not persuasion.
 - **Permission seekers**: smaller-budget déco clients asking "is my project
   too small? what will it cost?". They need legible offers and public ranges,
   not spectacle.
@@ -58,11 +60,13 @@ reactions: recognition plus intrigue in the hero, « on n'aurait jamais fait
 - Beige-serif luxury interior sites: hushed monochrome, sterile calm,
   price-on-request energy. This is the lane the site borrows craft from and
   must never land in.
-- White-cube cold gallery aesthetics for the art. The gallery is dark, warm,
-  alive; color comes from the works.
+- White-cube cold gallery aesthetics for the art. The category may be reclaimed
+  as « galerie vivante », but never as hushed white-cube codes: no whispering,
+  hidden-price, collector-only, or conceptual-snob posture. Color comes from
+  the works.
 - AI landing-page grammar: tracked uppercase eyebrows on every section,
   identical card grids, gradient text, hero-metric templates.
-- Vocabulary bans from `docs/strategy/messaging.md` bind all UI copy,
+- Vocabulary discipline from `docs/strategy/messaging.md` binds all UI copy,
   including placeholder text in comps.
 
 ## Design Principles
@@ -106,6 +110,8 @@ reactions: recognition plus intrigue in the hero, « on n'aurait jamais fait
   mechanism ships with its `prefers-reduced-motion` counterpart designed.
 - Contrast holds on gradients: body text 4.5:1, large display 3:1, including
   the kicker H1 over the hero ground (the current draft fails this; known).
-- French-language audience; the H1 stays the clean SEO kicker string.
+- French-language audience; the H1 stays the clean SEO kicker string
+  « Architecte d'intérieur à Rennes ». Châteaugiron / région rennaise belong in
+  nearby support copy.
 - Motion must hold 60fps on mid-range hardware; transform-only discipline for
   scroll-driven work.

@@ -1,9 +1,9 @@
 # Jukkai marketing foundation
 
-**Version 1.5. Frozen July 2, 2026 (v1.0), amended same day after the cross-model
+**Version 1.6. Frozen July 2, 2026 (v1.0), amended same day after the cross-model
 critic pass (v1.1), Phase 1 research reconciliation (v1.2), Martin's Phase 2
 clarifications (v1.3), the name-weight ruling (v1.4), and the GBP/signage
-decoupling (v1.5).**
+decoupling (v1.5), and Martin's geography / gallery-language clarification (v1.6).**
 
 This is the canonical source of truth for all marketing phases (see `docs/operations/method.md`).
 It was produced in Phase 0 from the five source docs plus the July 2, 2026 grilling
@@ -120,8 +120,14 @@ personal reply first is her workflow call (logged, launch bucket).
   Studio Crystelle Terrasson" appears in the à-propos page and in meta descriptions
   during the migration window, then fades. Her personal name, which is what referrals
   actually pass around, is preserved inside the brand itself.
-- **The shop is called "L'art shop"** in the nav and in running copy (Crystelle's own
-  spontaneous word). Banned shop words: galerie, boutique, magasin, objets.
+- **The shop language is under active validation (v1.6).** "L'art shop" remains the
+  working nav/running-copy referent because it gives visitors permission to browse,
+  buy, gift, and leave with a coup de cœur. The project rejects the cold, expensive,
+  intimidating gallery codes, not necessarily the word "galerie" in every layer.
+  "Galerie" may appear in controlled category, signage, SEO, citation, schema, or
+  contrast contexts if it is reclaimed with a living/accessibility frame. Candidate
+  direction: "une galerie vivante, pensée comme un art shop." Do not let galerie,
+  boutique, magasin, or objets become unqualified dominant self-labels in running copy.
 - **Google Business Profile**: one profile, not two. Name "Jukkai by Crystelle
   Terrasson", full compound, regardless of what the main sign says (v1.5). The name
   evidence Google actually weighs is the real-world identity as consistently
@@ -163,14 +169,14 @@ physical space and the voice, not the site structure.
 
 The rule applied to the six contested slots (all ruled, none deferred):
 
-| Slot                  | Ruling                                                                                                                                                                                                                                                    |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Homepage title tag    | Brand-first with keyword: "Jukkai by Crystelle Terrasson — Architecte d'intérieur, Rennes & Châteaugiron". The service page carries the keyword-first title.                                                                                              |
-| Homepage H1           | The architecture claim ("Architecte d'intérieur à Rennes & Châteaugiron", natural variant), rendered as the hero's kicker line. The visually dominant emotional headline is display text, not a heading. The old site died on this exact hill; not again. |
-| Homepage hero         | Fusion in one frame: the Jukkai world sets the register (colour, art, alive), with the architecture kicker, the primary CTA, and a proof cue anchored in the same viewport.                                                                               |
-| Primary nav           | Projets / Prestations / L'art shop / À propos / Contact. Architecture owns two items; the shop comes immediately after.                                                                                                                                   |
-| Primary CTA           | The architecture enquiry, warm register ("Parlons de votre projet" territory), sitewide. The shop's "venez pousser la porte" is secondary and never competes at the same visual weight.                                                                   |
-| Primary tracked event | Architecture enquiry form submission. One number defines success.                                                                                                                                                                                         |
+| Slot                  | Ruling                                                                                                                                                                                                                                                                                            |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Homepage title tag    | Brand-first with keyword, but Rennes carries the commercial/search phrase and Châteaugiron carries the physical anchor. Example territory: "Jukkai by Crystelle Terrasson — Architecte d'intérieur à Rennes, installée à Châteaugiron". The service page carries the keyword-first title.         |
+| Homepage H1           | The architecture claim ("Architecte d'intérieur à Rennes" territory), rendered as the hero's kicker line. A nearby support line carries Châteaugiron / région rennaise. The visually dominant emotional headline is display text, not a heading. The old site died on this exact hill; not again. |
+| Homepage hero         | Fusion in one frame: the Jukkai world sets the register (colour, art, alive), with the architecture kicker, the primary CTA, and a proof cue anchored in the same viewport.                                                                                                                       |
+| Primary nav           | Projets / Prestations / L'art shop / À propos / Contact. Architecture owns two items; the shop comes immediately after.                                                                                                                                                                           |
+| Primary CTA           | The architecture enquiry, warm register ("Parlons de votre projet" territory), sitewide. The shop's "venez pousser la porte" is secondary and never competes at the same visual weight.                                                                                                           |
+| Primary tracked event | Architecture enquiry form submission. One number defines success.                                                                                                                                                                                                                                 |
 
 Implementation guardrail on the H1 ruling (from the critic pass): the architecture
 kicker must be real, visible, styled text in normal document order, a legitimate part
@@ -248,9 +254,13 @@ business-model exploration. It stays off the site entirely.
 - **Geography: Rennes is the commercial claim, Châteaugiron is the physical anchor.**
   The service page claims Rennes head-on (title, H1, URL `/architecte-interieur-rennes/`,
   body "Rennes et sa région"). Châteaugiron anchors everything physically ("à
-  Châteaugiron, à 20 minutes de Rennes") and owns the shop-side local claims.
-  Ille-et-Vilaine and "la région rennaise" are supporting vocabulary. This matches
-  documented competitor practice (Le Rheu, Cesson) and is honest.
+  Châteaugiron, à 20 minutes de Rennes") and owns the shop-side local claims; it is
+  not a co-primary acquisition market in homepage or service-page H1s. "La région
+  rennaise" is the human service-area phrase. "Ille-et-Vilaine (35)" is supporting
+  body vocabulary, used sparingly and never as a standalone headline target. The
+  honest operational frame is Rennes and the région rennaise first, with wider
+  Ille-et-Vilaine reach depending on project scope. This matches documented
+  competitor practice (Le Rheu, Cesson) and is honest.
 - **One canonical service page at launch.** Service-area pages: none at launch. A
   post-launch tier of at most 2-3 honest commune pages (Cesson-Sévigné, Le Rheu,
   Châteaugiron), each shipped only when it can carry a real project as proof. Never
@@ -281,9 +291,13 @@ What the shop page may say before opening:
   the teaser.
 - **Visuals**: space photos/renders exist and may be used (Crystelle approves the
   selection; launch bucket).
-- **The negative-definition line, once**: "Ni galerie, ni boutique déco. Un art shop."
-  is the shop page's thesis line. It appears exactly once, on that page, and is never
-  repeated elsewhere as a motif.
+- **The shop thesis line, once**: the old candidate "Ni galerie, ni boutique déco. Un
+  art shop." is no longer frozen as the default. It may still be useful as a contrast
+  line, but if signage or public category language uses "galerie", the copy should
+  reject the intimidating gallery code rather than deny the category. Stronger
+  candidate territory: "une galerie vivante, pensée comme un art shop"; "une galerie
+  qui ne chuchote pas"; "un lieu vivant où l'on peut repartir avec un coup de cœur."
+  The final French is Crystelle-validation work.
 - **The artist block**: "vous êtes artiste ?" with a direct contact route. It may
   state that artists pay no fee to exhibit. Do not imply a single commercial model:
   Crystelle works artist by artist, either buying and reselling pieces or using a
@@ -352,15 +366,24 @@ applies to every decision.
 
 Language rulings from this phase:
 
-- The shop is "L'art shop". The anglicism is hers, it is honest, and it dodges every
-  banned word.
-- "Ni galerie, ni boutique déco. Un art shop." appears once, on the shop page.
-- Both of the above are canonical direction but publicly exposed language; Crystelle
-  validates the exact French before copy freeze (logged, blocking-for-copy).
+- The shop working label is "L'art shop". The anglicism is hers and it gives permission
+  to buy, offer, and leave with a piece; exact public label remains Crystelle-validation
+  work.
+- The phrase "galerie" is no longer treated as absolutely banned. The category may be
+  reclaimed if the frame makes the place warm, alive, colourful, purchasable, and
+  non-intimidating. The thing to avoid is the cold gallery code: white cube, silence,
+  hidden prices, conceptual snobbery, collector-only posture.
+- Candidate thesis territory, not frozen copy: "une galerie vivante, pensée comme un
+  art shop"; "une galerie qui ne chuchote pas"; "un lieu vivant où l'on peut
+  repartir avec un coup de cœur."
+- These are canonical direction but publicly exposed language; Crystelle validates
+  the exact French before copy freeze (logged, blocking-for-copy).
 - "Démocratiser l'art" is acceptable copy register (her own words), expressed through
   scene and behaviour rather than as a slogan.
-- Banned vocabulary: galerie, boutique, magasin, objets (for the shop); influenceuse
-  registers; art-world and architectural jargon without translation.
+- Avoid as dominant unqualified shop self-labels: galerie, boutique, magasin, objets.
+  Boutique, magasin, product-grid, catalogue, and ecommerce codes remain out. Galerie is
+  allowed only when qualified/reclaimed, not as the default cold category. Also avoid
+  influenceuse registers and art-world or architectural jargon without translation.
 - The two registers (architecture and Jukkai) get their full definition in Phase 2
   messaging. This document fixes only the canonical nouns and claims.
 
@@ -434,6 +457,16 @@ price display, the client portal, the furniture-partnership idea.
   in small lettering (door vitrine, hours plaque, window lettering), added to the
   signage brief as a launch task. This resolves the "signage text is a launch
   question" dependency in Martin's favour: the profile never waits on the sign.
+- **2026-07-05, v1.6 (geography / gallery-language clarification).** Martin clarified
+  that Châteaugiron is the real place and shop anchor, not a co-primary market to carry
+  in the homepage or service-page H1. Rennes keeps the clean acquisition phrase
+  ("Architecte d'intérieur à Rennes"); Châteaugiron moves to nearby support copy, NAP,
+  GBP, shop/contact pages, and local citations. "La région rennaise" is the natural
+  service-area language, and "Ille-et-Vilaine (35)" is supporting body vocabulary, not a
+  standalone SEO target. Martin also clarified that Crystelle's "galerie" tension is
+  about the cold/intimidating gallery image, not necessarily the word itself. The docs
+  now reject gallery codes rather than absolutely banning "galerie"; candidate language
+  shifts toward "une galerie vivante, pensée comme un art shop."
 
 _Later phases append here with date and reason; Phase 1 research that overturns
 anything above must amend explicitly, never silently._

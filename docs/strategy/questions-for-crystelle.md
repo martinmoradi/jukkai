@@ -49,10 +49,13 @@ Bucketed by what each answer blocks. Produced by Phase 0 on July 2, 2026, alongs
    artwork is visible in the photos and the story can be told with the client's
    permission? If yes, the differentiator upgrades from vision to proof. If no, the
    site claims the eye, not the track record (already the default).
-8. **The exact shop French.** "L'art shop" as the nav label and "Ni galerie, ni
-   boutique déco. Un art shop." as the shop page's thesis line are canonical
-   direction, but they are the most exposed public words on the site and they are
-   built from her own vocabulary. She validates or adjusts the exact phrasing.
+8. **The exact shop French.** "L'art shop" remains the working nav label, but
+   Martin's July 5 clarification reopened the thesis language. The question for
+   Crystelle is whether Jukkai rejects the word "galerie" or only the cold,
+   intimidating gallery codes. Candidate territory: "une galerie vivante, pensée
+   comme un art shop", "une galerie qui ne chuchote pas", and language around
+   "repartir avec un coup de cœur". She validates or adjusts the exact phrasing,
+   including any signage pairing of galerie / art shop.
 9. **Artist dépôt / commission terms.** The artist block can say "vous êtes artiste ?"
    and it may state that there is no fee to exhibit. The remaining mechanics need
    Crystelle's concrete terms: whether Jukkai buys and resells the work, uses a

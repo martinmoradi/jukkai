@@ -1,6 +1,6 @@
 # Product Marketing Context
 
-*Last updated: 2026-07-02*
+*Last updated: 2026-07-05*
 
 ## Adapter Contract
 
@@ -18,7 +18,7 @@ of truth.
 
 ## Product Overview
 
-**One-liner:** Jukkai by Crystelle Terrasson is the public house for Crystelle Terrasson's interior-architecture practice and art shop in Châteaugiron, serving Rennes and the surrounding region.
+**One-liner:** Jukkai by Crystelle Terrasson is the public house for Crystelle Terrasson's interior-architecture practice and art shop, based in Châteaugiron and serving Rennes and the région rennaise.
 
 **What it does:** The architecture studio produces qualified interior-architecture enquiries and validates referral-driven prospects who already know Crystelle's name. The Jukkai world carries the brand experience: colour, art, a physical place, and a shop visitors can actually enter. The website's structural job is architecture conversion; Jukkai owns the emotional opening and differentiator role.
 
@@ -32,7 +32,7 @@ of truth.
 
 ## Target Audience
 
-**Target companies:** Private clients around Rennes, Châteaugiron, Ille-et-Vilaine, and the region rennaise; B2B office-space clients; local art visitors; artists who may want to be shown in the shop.
+**Target companies:** Private clients around Rennes and the région rennaise, with wider Ille-et-Vilaine (35) reach depending on project scope; B2B office-space clients; local art visitors; artists who may want to be shown in the shop. Châteaugiron is the physical place/shop anchor.
 
 **Decision-makers:** Homeowners and couples making renovation decisions; B2B owners or workplace decision-makers; Crystelle-referral prospects validating trust; artists deciding whether Jukkai is credible enough to contact.
 
@@ -65,7 +65,7 @@ of truth.
 | Young couple | Guidance within constraints | Wants help but may not know scope, budget, or path | A right-sized mission that helps them make good decisions without pretending every project is a 150k renovation |
 | Déco / targeted-transformation client | Taste, access, a realistic entry point | Needs targeted help but fears being too small for an architect | Mission déco with the standard and judgment of an architecte d'intérieur |
 | B2B space client | Credentials, process, professional references | Needs rational proof plus an environment people can work in | Conception and prescription for office spaces, with references and a dedicated service surface |
-| Art visitor | Aesthetic pull, accessibility, visitability | Is not a collector and may not know what is behind the door | A colourful, alive art shop with an approachable scene, not an intimidating gallery |
+| Art visitor | Aesthetic pull, accessibility, visitability | Is not a collector and may not know what is behind the door | A colourful, alive gallery/art-shop frame with an approachable scene, not an intimidating white-cube gallery |
 | Artist | Credibility, community, direct access | Needs to know whether Jukkai is serious enough to approach | A clear artist contact route and a place that treats art as part of its identity |
 
 **Source:** Sections 6, 7, 9, 10.
@@ -125,7 +125,7 @@ of truth.
 | "Is my project too small?" | There is a full ladder of mission sizes, including conseil / mission déco and transformation ciblée. The enquiry form has no budget floor and includes "je ne sais pas encore." |
 | "Will the mission be clear before paid design work begins?" | Yes. Architecture work is framed by a clear contrat de mission or lettre de mission before paid design work begins. |
 | "Why are there no art prices or catalogue?" | Pre-opening art prices are intentionally absent because the entry point is not guaranteed, artist consent is not secured, and Jukkai is not an ecommerce catalogue. |
-| "Is Châteaugiron too far from Rennes?" | Rennes is the commercial claim; Châteaugiron is the physical anchor, about 20 minutes from Rennes. |
+| "Is Châteaugiron too far from Rennes?" | Rennes is the commercial claim; Châteaugiron is the physical anchor, about 20 minutes from Rennes. The working territory is Rennes and the région rennaise, with wider Ille-et-Vilaine (35) reach depending on project scope. |
 
 **Anti-persona:** People who negotiate prices without understanding there is an artist behind the work. Also poor fit: prospects looking for cheap decorating, catalogue ecommerce, doorway-page service coverage, or claims Jukkai cannot prove yet.
 
@@ -154,15 +154,18 @@ of truth.
 **How they describe us:**
 
 - "Jukkai by Crystelle Terrasson"
-- "Architecte d'intérieur à Rennes & Châteaugiron"
+- "Architecte d'intérieur à Rennes"
+- "installée à Châteaugiron, au service de la région rennaise"
 - "L'art shop"
-- "Ni galerie, ni boutique déco. Un art shop."
+- "une galerie vivante, pensée comme un art shop"
+- "une galerie qui ne chuchote pas"
+- "repartir avec un coup de cœur"
 - "une mission déco avec l'exigence d'une architecte d'intérieur."
 - "Chaque contrainte est un terrain de jeu."
 
-**Words to use:** Jukkai by Crystelle Terrasson; architecte d'intérieur; Rennes; Châteaugiron; région rennaise; Ille-et-Vilaine; L'art shop; mission déco; transformation ciblée; rénovation complète; espaces professionnels; Parlons de votre projet; venez pousser la porte; démocratiser l'art.
+**Words to use:** Jukkai by Crystelle Terrasson; architecte d'intérieur; Rennes; Châteaugiron; région rennaise; Ille-et-Vilaine (35); L'art shop; galerie vivante; coup de cœur; repartir avec; mission déco; transformation ciblée; rénovation complète; espaces professionnels; Parlons de votre projet; venez pousser la porte; démocratiser l'art.
 
-**Words to avoid:** Galerie, boutique, magasin, objets for the shop; influenceuse registers; untranslated art-world or architecture jargon; eco-responsible label; art as investment; art prices pre-opening; event promises; artist lineup promises; art-and-architecture bridge as past track record; the full "Jukkai by Crystelle Terrasson" compound in running copy, section headings, CTAs, or as a repeated social-caption motif (machine/legal layer and lockup only).
+**Words to avoid:** Unqualified cold-gallery language for the shop; boutique, magasin, product-grid, catalogue, and ecommerce codes; objets as a dominant label; "prix disponible sur demande"; influenceuse registers; untranslated art-world or architecture jargon; eco-responsible label; art as investment; art prices pre-opening; event promises; artist lineup promises; art-and-architecture bridge as past track record; the full "Jukkai by Crystelle Terrasson" compound in running copy, section headings, CTAs, or as a repeated social-caption motif (machine/legal layer and lockup only). "Galerie" is allowed only when reclaimed/qualified by the warm, alive, purchasable Jukkai frame.
 
 **Glossary:**
 
@@ -170,7 +173,8 @@ of truth.
 |------|---------|
 | Jukkai | Umbrella for the architecture practice, art shop, and place. |
 | Jukkai by Crystelle Terrasson | Public launch brand, preserving Crystelle's referral equity. Full form lives in the machine/legal layer and the logo lockup (subordinate, removable line); running copy uses "Jukkai" and "Crystelle" separately, never the compound. |
-| L'art shop | The shop referent in nav and running copy. Not galerie, boutique, magasin, or objets. |
+| L'art shop | Working shop referent in nav and running copy; gives permission to browse, buy, gift, and leave with a coup de cœur. |
+| Galerie vivante | Candidate reclaimed category frame for the shop: keeps gallery legitimacy while rejecting cold, intimidating gallery codes. |
 | Architecte d'intérieur | The identity that never changes, even when mission size varies. |
 | Mission déco | Entry-level / décor mission performed with the standards of an architecte d'intérieur. Exact naming and scope need Crystelle's validation. |
 | Transformation ciblée | Targeted transformation offer, roughly matching the 40k-50k déco persona. |
@@ -213,8 +217,8 @@ of truth.
 | Theme | Proof |
 |-------|-------|
 | Trust and qualification | UNAID qualification, 30 ans de métier, 2 architectes, depuis 2012. |
-| Local relevance | Rennes as commercial claim; Châteaugiron as physical anchor; regional vocabulary. |
-| Emotional differentiation | Jukkai world, art shop scene, "Chaque contrainte est un terrain de jeu." |
+| Local relevance | Rennes as commercial claim; Châteaugiron as physical anchor; région rennaise as human service-area language; Ille-et-Vilaine (35) as supporting vocabulary. |
+| Emotional differentiation | Jukkai world, gallery/art-shop scene, "Chaque contrainte est un terrain de jeu." |
 | Conversion clarity | Enquiry form as primary conversion, Calendly as post-submission accelerator, clear contrat de mission or lettre de mission before paid design work. |
 | Proof discipline | No unverified eco label, no art-as-investment, no art-and-architecture track-record claim before proof exists. |
 
@@ -236,7 +240,7 @@ of truth.
 
 - Signage brief must include "by Crystelle Terrasson" in small lettering somewhere on the frontage (door vitrine, hours plaque, window lettering); the main sign may be the Jukkai wordmark alone. The GBP name is the full compound regardless of the sign and never waits on it.
 - Crystelle's veto window on the "by" connector closes at signage lock; after the sign is ordered the connector never changes.
-- Crystelle validation of exact shop French: "L'art shop" and "Ni galerie, ni boutique déco. Un art shop."
+- Crystelle validation of exact shop French: "L'art shop", "galerie vivante", any signage pairing of galerie / art shop, and the final thesis line. Candidate territory: "une galerie vivante, pensée comme un art shop", "une galerie qui ne chuchote pas", and "repartir avec un coup de cœur".
 - Exact conseil / mission déco name, price, scope, and whether the entry offer is fixed-price.
 - Which projects, photos, locations, and permissions can be published.
 - 3-5 written testimonials with first name, commune, and project type.

@@ -52,8 +52,10 @@ two amendments after review, and two items remain conditional/later.
   contrat or lettre de mission if made canonical.
 - Place UNAID and the 30-year claim near conversion points, but let references,
   projects, and transformation stories do most of the persuasion.
-- For art visitors, use coup de coeur, pousser la porte, and permission for
-  neophytes. Avoid galerie, boutique, magasin, objets, and art-world jargon.
+- For art visitors, use coup de cœur, pousser la porte, and permission for
+  neophytes. Avoid cold-gallery codes, boutique/magasin/product-grid cues, price-on-
+  request behavior, and art-world jargon. Foundation v1.6 later clarified that
+  "galerie" itself may be reclaimed when qualified by a living/accessibility frame.
 - For B2B, keep Jukkai's sensibility present but secondary to references, process,
   budget, deadlines, and coordination.
 
