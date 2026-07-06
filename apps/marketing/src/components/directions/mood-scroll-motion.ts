@@ -103,7 +103,12 @@ export function initMoodScroll(
     gsDevToolsInstance = null;
   };
 
+  // Serialized on a token: a conductor rebuild can request a sync while an
+  // earlier enable is still awaiting the dynamic import; only the latest
+  // request may create an instance, or duplicates leak into the DOM.
+  let gsDevToolsSyncId = 0;
   const syncGsDevTools = async (): Promise<MoodDevToggleResult> => {
+    const syncId = ++gsDevToolsSyncId;
     killGsDevTools();
     if (!gsDevToolsEnabled) return { ok: true };
 
@@ -114,6 +119,7 @@ export function initMoodScroll(
     }
 
     const { GSDevTools } = await import('gsap/GSDevTools');
+    if (syncId !== gsDevToolsSyncId) return { ok: true };
     gsap.registerPlugin(GSDevTools);
     gsDevToolsInstance = GSDevTools.create({
       animation: timeline,
@@ -410,8 +416,13 @@ function createConductorState(
         onUpdate: (self) => {
           timeline.time(self.progress);
         },
+        // At creation the trigger has no layout yet (progress 0). Re-sync on
+        // refresh so a conductor rebuild while parked inside the pin does not
+        // leave the timeline at its start until the next scroll event.
+        onRefresh: (self) => {
+          timeline.time(self.progress);
+        },
       });
-      timeline.time(trigger.progress);
       chain.push({
         target: { mechanism: 'takeover', sceneKey: scene.key, progress: 0 },
         st: trigger,
@@ -509,6 +520,14 @@ function createGalerieTakeoverTimeline(
     }
 
     if (captionEl) {
+      // The timeline contract is 1 second = full pin; the scrub drives it
+      // with time(progress in 0..1). Clamp the caption tween to fit, or a
+      // late start plus long duration pushes it past what the pin can reach.
+      const captionStart = Math.min(galerieTunables.captionStart.get(), 1);
+      const captionDuration = Math.max(
+        Math.min(galerieTunables.captionDuration.get(), 1 - captionStart),
+        0.001,
+      );
       timeline.fromTo(
         captionEl,
         { autoAlpha: 0, y: () => galerieTunables.captionLiftY.get() },
@@ -516,9 +535,9 @@ function createGalerieTakeoverTimeline(
           autoAlpha: 1,
           y: 0,
           ease: 'none',
-          duration: galerieTunables.captionDuration.get(),
+          duration: captionDuration,
         },
-        galerieTunables.captionStart.get(),
+        captionStart,
       );
     }
     renderGalerieTimeline(timeline, 0);
