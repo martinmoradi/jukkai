@@ -271,6 +271,8 @@ const growStart = tunable(tunables, 'galerie.growStartScale', 0.5, {
   min: 0.2,
   max: 1,
   step: 0.01,
+  group: 'grow', // clusters the row under a collapsible sub-section
+  description: 'Scale of the featured frame when the grow phase begins.',
 });
 ```
 
@@ -278,18 +280,25 @@ The returned handle exposes `get()` and `set()`. Scene timelines read
 `get()` live where possible, or declare `requiresReinit: true` for timing
 values that change ScrollTrigger or timeline geometry. The dev panel renders
 registered tunables automatically, grouped under the scene their id prefix
-names (`galerie.growStartScale` lands in the galerie group). Save JSON
-persists them with the scenes, same preset files, same repo-backed API.
-Agents wire tunables and never guess at feel; Martin drives the sliders.
+names (`galerie.growStartScale` lands in the galerie group). The optional
+`group` clusters related sliders into a collapsible sub-section (approach,
+collage, grow…) and `description` becomes the row's hover explanation; both
+are metadata only and never touch saved JSON. Save JSON persists values with
+the scenes, same preset files, same repo-backed API. Agents wire tunables
+and never guess at feel; Martin drives the sliders.
 
 - The dev panel mirrors the scene model (issue #55): a jump row that scrolls
   instantly to any scene or stop (computed from the live ScrollTrigger
   layout, including inside the pinned galerie), one collapsible group per
   scene (enter controls, per-stop colors and field params, that scene's
   tunables), and a small global group (color smoothing, velocity lift,
-  markers, GSDevTools). Collapse state is remembered per browser; the scene
-  in view is highlighted while the panel is open. Panel styling stays
-  utilitarian; no beauty pass.
+  markers, GSDevTools). Long scenes nest further: each stop is a collapsible
+  card whose header carries its `at` and a live colour-swatch strip, and
+  tunables cluster into collapsible phase sub-sections; an expand/collapse-all
+  control and a sticky scene header keep a long section (galerie) navigable.
+  Non-obvious rows carry a hover explanation. Collapse state (scenes and
+  sub-sections) is remembered per browser; the scene in view is highlighted
+  while the panel is open. Panel styling stays utilitarian.
 - **GSDevTools** (free since GSAP 3.13) is the timeline counterpart of the
   panel: scrub and slow-mo any scene timeline while tuning. ScrollTrigger
   `markers` per scene, toggleable from the panel. Panel = taste values,
