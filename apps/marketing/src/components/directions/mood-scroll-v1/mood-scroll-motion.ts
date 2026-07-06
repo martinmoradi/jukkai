@@ -182,20 +182,21 @@ export function initMoodScroll(
       smoothedVelocity += (delta - smoothedVelocity) * VELOCITY_SMOOTHING;
     }
 
+    const colorSmoothing = frozen ? 1 : COLOR_SMOOTHING;
     current.ground = mixRgb(
       current.ground,
       targetRgb(target, 'ground'),
-      COLOR_SMOOTHING,
+      colorSmoothing,
     );
     current.blob1 = mixRgb(
       current.blob1,
       targetRgb(target, 'blob1'),
-      COLOR_SMOOTHING,
+      colorSmoothing,
     );
     current.blob2 = mixRgb(
       current.blob2,
       targetRgb(target, 'blob2'),
-      COLOR_SMOOTHING,
+      colorSmoothing,
     );
 
     const velocity =

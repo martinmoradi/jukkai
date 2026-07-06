@@ -189,13 +189,10 @@ export function initMoodScroll(
       smoothedVelocity += (delta - smoothedVelocity) * VELOCITY_SMOOTHING;
     }
 
-    current.ground = mixRgb(
-      current.ground,
-      target.ground,
-      config.colorSmoothing,
-    );
-    current.blob1 = mixRgb(current.blob1, target.blob1, config.colorSmoothing);
-    current.blob2 = mixRgb(current.blob2, target.blob2, config.colorSmoothing);
+    const colorSmoothing = frozen ? 1 : config.colorSmoothing;
+    current.ground = mixRgb(current.ground, target.ground, colorSmoothing);
+    current.blob1 = mixRgb(current.blob1, target.blob1, colorSmoothing);
+    current.blob2 = mixRgb(current.blob2, target.blob2, colorSmoothing);
 
     const velocity =
       reducedMotion || frozen
