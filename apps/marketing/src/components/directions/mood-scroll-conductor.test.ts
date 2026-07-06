@@ -1,16 +1,54 @@
 import { describe, expect, it } from 'vitest';
 
 import {
+  parseSceneLengthVh,
+  resolveConductorFrameAt,
   resolveConductorTarget,
   resolveEnterWindow,
   resolveSceneStop,
   toMoodGlFrame,
 } from './mood-scroll-conductor';
 import type { MoodFieldStop, MoodScene } from './mood-scroll-config';
+import { createDefaultConfig } from './mood-scroll-config';
 
 const TOLERANCE = 0.002;
 
 describe('mood scroll scene conductor', () => {
+  it('runs the blockout journey dark to light to dark end to end', () => {
+    const config = createDefaultConfig();
+    const starts = new Map<string, number>();
+    let accVh = 0;
+    for (const scene of config.scenes) {
+      starts.set(scene.key, accVh);
+      accVh += parseSceneLengthVh(scene.length);
+    }
+    const finale = config.scenes[config.scenes.length - 1];
+    const journeyEndVh = resolveEnterWindow(
+      finale.enter,
+      starts.get('finale') ?? 0,
+    ).endVh;
+    const frameAtVh = (scrollVh: number) =>
+      resolveConductorFrameAt(config, scrollVh / journeyEndVh);
+
+    // Deepest galerie: dark ground, field fully present.
+    const galerieEndVh =
+      (starts.get('handoff') ?? 0) - parseSceneLengthVh('100vh');
+    const galerieDeep = frameAtVh(galerieEndVh);
+    expect(Math.max(...galerieDeep.ground)).toBeLessThan(0.3);
+    expect(galerieDeep.presence).toBeCloseTo(1, 6);
+
+    // Light chapter settled (past the offer-ladder enter band, before the
+    // art-shop one): light ground, field presence at zero.
+    const lightMid = frameAtVh((starts.get('offerLadder') ?? 0) + 10);
+    expect(Math.min(...lightMid.ground)).toBeGreaterThan(0.85);
+    expect(lightMid.presence).toBeCloseTo(0, 6);
+
+    // Finale: the field returns over the dark closing ground.
+    const finaleFrame = resolveConductorFrameAt(config, 1);
+    expect(Math.max(...finaleFrame.ground)).toBeLessThan(0.3);
+    expect(finaleFrame.presence).toBeCloseTo(1, 6);
+  });
+
   it('interpolates scene stops at boundaries and between stops', () => {
     const scene = testScene('test', [
       stop({ at: 0, ground: '#000000', strength: 0, presence: 1 }),
