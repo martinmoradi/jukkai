@@ -1,0 +1,426 @@
+/* Frozen v1 styles for issue #53 parity checks. Do not edit except #56.
+   The canvas owns the ground;
+   every section is transparent so the mood journey shows through. */
+
+.page {
+  min-height: 100vh;
+  font-family: system-ui, sans-serif;
+  /* CSS fallback ground if WebGL init fails (fail-open contract). */
+  background: #f6d9b4;
+}
+
+.canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+}
+
+.section {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100vh;
+  padding: clamp(4rem, 10vh, 8rem) clamp(1.5rem, 7vw, 7rem);
+}
+
+.inkDark {
+  color: #2b1d12;
+}
+
+.inkLight {
+  color: #f4ead9;
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  opacity: 0.75;
+}
+
+.display {
+  max-width: 12ch;
+  margin: 0;
+  font-family:
+    var(--jukkai-generated-font-family), Georgia, 'Times New Roman', serif;
+  font-size: clamp(3rem, 9vw, 7.5rem);
+  font-weight: 500;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.kicker {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.kickerSibling {
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.cta {
+  font-size: 1rem;
+  font-weight: 700;
+  color: inherit;
+  text-underline-offset: 0.35em;
+}
+
+.meta {
+  margin: 0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.65;
+}
+
+.statement {
+  max-width: 24ch;
+  margin: 0;
+  font-family:
+    var(--jukkai-generated-font-family), Georgia, 'Times New Roman', serif;
+  font-size: clamp(2rem, 5.4vw, 4.2rem);
+  font-weight: 500;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+.projects {
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.growFrame {
+  width: min(86vw, 1080px);
+  height: min(72vh, 720px);
+  overflow: hidden;
+  will-change: transform;
+}
+
+.growFrame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.stance {
+  margin: 0;
+  font-family:
+    var(--jukkai-generated-font-family), Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.6rem, 3.4vw, 2.8rem);
+  font-style: italic;
+}
+
+.printsRow {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.printsRow img {
+  width: clamp(120px, 16vw, 220px);
+  height: auto;
+}
+
+.finale {
+  gap: 0.4rem;
+  justify-content: flex-end;
+  min-height: 140vh;
+  padding-bottom: 0;
+}
+
+.finaleLine {
+  margin: 0;
+  font-family:
+    var(--jukkai-generated-font-family), Georgia, 'Times New Roman', serif;
+  font-size: clamp(3.4rem, 11vw, 9rem);
+  font-weight: 500;
+  line-height: 0.95;
+}
+
+.finaleCta {
+  margin: 3rem 0 6rem;
+}
+
+.footerBand {
+  box-sizing: border-box;
+  width: calc(100% + 2 * clamp(1.5rem, 7vw, 7rem));
+  padding: 1.6rem clamp(1.5rem, 7vw, 7rem);
+  margin: 0 calc(-1 * clamp(1.5rem, 7vw, 7rem));
+  font-size: 0.75rem;
+  color: #b8a893;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: #17110c;
+}
+
+/* Dev panel (toggled with D) */
+
+.panel {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  box-sizing: border-box;
+  width: 300px;
+  max-height: calc(100vh - 2rem);
+  padding: 0.9rem;
+  overflow-y: auto;
+  font-family: ui-monospace, monospace;
+  font-size: 0.72rem;
+  color: #ece4d8;
+  background: rgb(22 17 13 / 0.94);
+  border-radius: 8px;
+}
+
+.panelHidden {
+  display: none;
+}
+
+.panelTitle {
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.panelPresetButton {
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font: inherit;
+  font-weight: 700;
+  color: inherit;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: inherit;
+  white-space: nowrap;
+  cursor: text;
+  background: transparent;
+  border: 0;
+}
+
+.panelPresetButton:focus-visible {
+  outline: 2px solid rgb(236 228 216 / 0.42);
+  outline-offset: 2px;
+}
+
+.panelTitleHint {
+  flex: 0 0 auto;
+  font-weight: 600;
+  color: #d8cbb8;
+  opacity: 0.72;
+}
+
+.panelRename {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  min-width: 0;
+}
+
+.panelRenameStamp {
+  flex: 0 0 auto;
+}
+
+.panelRenameInput {
+  width: 8rem;
+  min-width: 0;
+  padding: 0.16rem 0.22rem;
+  font: inherit;
+  font-weight: 700;
+  color: #ece4d8;
+  text-transform: uppercase;
+  letter-spacing: inherit;
+  background: rgb(236 228 216 / 0.1);
+  border: 1px solid rgb(236 228 216 / 0.22);
+  border-radius: 4px;
+}
+
+.panelRenameInput:focus {
+  outline: 2px solid rgb(236 228 216 / 0.42);
+  outline-offset: 1px;
+}
+
+.panelGroup {
+  padding: 0.5rem 0;
+  border-top: 1px solid rgb(236 228 216 / 0.15);
+}
+
+.panelGroupHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+  margin: 0 0 0.4rem;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+}
+
+.panelGroupHeader:focus-visible {
+  outline: 2px solid rgb(236 228 216 / 0.42);
+  outline-offset: 2px;
+}
+
+.panelGroupTitle {
+  margin: 0;
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+.panelGroupToggle {
+  flex: 0 0 auto;
+  width: 1rem;
+  font-weight: 700;
+  color: #ece4d8;
+  text-align: right;
+  opacity: 0.8;
+}
+
+.panelGroupBody[hidden] {
+  display: none;
+}
+
+.panelRow {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0.25rem 0;
+}
+
+.panelRow span:first-child {
+  flex: 0 0 88px;
+}
+
+.panelRow input[type='range'] {
+  flex: 1;
+  min-width: 0;
+}
+
+/* stylelint-disable selector-pseudo-class-no-unknown */
+.panelRow :global(.clr-field) {
+  flex: 1;
+  min-width: 0;
+}
+
+.panelRow :global(.clr-field button) {
+  inset-inline-start: 0.34rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 999px;
+}
+
+.panelValue {
+  flex: 0 0 40px;
+  text-align: right;
+  opacity: 0.8;
+}
+
+.panelColorInput {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: 0.38rem 0.45rem 0.38rem 1.7rem;
+  font: inherit;
+  color: #ece4d8;
+  background: rgb(236 228 216 / 0.08);
+  border: 1px solid rgb(236 228 216 / 0.18);
+  border-radius: 5px;
+}
+
+.panelColorInput:focus {
+  outline: 2px solid rgb(236 228 216 / 0.42);
+  outline-offset: 1px;
+}
+
+.panelActions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.4rem;
+  margin-top: 0.7rem;
+}
+
+.panelButton {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0;
+  font: inherit;
+  font-weight: 700;
+  color: #17110c;
+  cursor: pointer;
+  background: #ece4d8;
+  border: 0;
+  border-radius: 5px;
+}
+
+.panelButton:hover,
+.panelButton:focus-visible {
+  background: #fff6e8;
+}
+
+.panelPresetList {
+  display: grid;
+  gap: 0.3rem;
+  padding: 0.45rem 0 0;
+  color: #d8cbb8;
+}
+
+.panelPresetList.panelHidden {
+  display: none;
+}
+
+.panelPresetListItem {
+  width: 100%;
+  padding: 0.42rem 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font: inherit;
+  color: #ece4d8;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+  background: rgb(236 228 216 / 0.08);
+  border: 1px solid rgb(236 228 216 / 0.14);
+  border-radius: 5px;
+}
+
+.panelPresetListItem:hover,
+.panelPresetListItem:focus-visible {
+  background: rgb(236 228 216 / 0.15);
+}
+
+.panelStatus {
+  min-height: 1rem;
+  margin: 0.45rem 0 0;
+  color: #d8cbb8;
+  opacity: 0.85;
+}
+
+.panel :global(.clr-picker) {
+  font-family: ui-monospace, monospace;
+}
+/* stylelint-enable selector-pseudo-class-no-unknown */
