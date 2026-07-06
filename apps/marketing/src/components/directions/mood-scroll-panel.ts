@@ -22,6 +22,7 @@ import {
   X,
 } from 'lucide';
 
+import { parseSceneLengthVh } from './mood-scroll-conductor';
 import {
   applyMoodScrollConfig,
   cloneMoodScrollConfig,
@@ -374,6 +375,28 @@ export function initMoodPanel(
       scene.key,
       scenePanelLabel(scene, index),
       sceneMeta(scene, index),
+    );
+
+    // Scene length is data (blockout contract): editing it reshapes the
+    // section and rebuilds the conductor. For pinned scenes this is the
+    // total scroll footprint (pin travel + one viewport).
+    addNumberSlider(
+      body,
+      classes,
+      {
+        key: 'lengthVh',
+        label: scene.pin ? 'length vh (pin)' : 'length vh',
+        min: 40,
+        max: 600,
+        step: 5,
+      },
+      {
+        get: () => parseSceneLengthVh(scene.length),
+        set: (value) => {
+          scene.length = `${value}vh`;
+          notifyStructureChange();
+        },
+      },
     );
 
     if (index > 0 && scene.enter.mechanism === 'crossfade') {

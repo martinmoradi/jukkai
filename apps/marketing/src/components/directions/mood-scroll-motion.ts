@@ -13,7 +13,6 @@ import {
   type ConductorTarget,
   parseSceneLengthVh,
   resolveConductorTarget,
-  resolveEnterWindow,
   toMoodGlFrame,
 } from './mood-scroll-conductor';
 import type { MoodScene, MoodScrollConfig, Rgb } from './mood-scroll-config';
@@ -48,7 +47,6 @@ interface GalerieTunables {
   captionStart: MoodTunableHandle;
   captionDuration: MoodTunableHandle;
   captionLiftY: MoodTunableHandle;
-  pinLengthVh: MoodTunableHandle;
 }
 
 export interface MoodDevToggleResult {
@@ -355,12 +353,6 @@ function registerGalerieTunables(
       step: 1,
       requiresReinit: true,
     }),
-    pinLengthVh: tunable(registry, 'galerie.pinLengthVh', 270, {
-      min: 120,
-      max: 420,
-      step: 5,
-      requiresReinit: true,
-    }),
   };
 }
 
@@ -379,26 +371,30 @@ function createConductorState(
   const section = (scene: MoodScene) =>
     root.querySelector(`[data-mood-section='${scene.key}']`);
 
+  // Scene lengths are data: each unpinned section gets its declared length
+  // as an inline min-height, so panel edits to a length reshape the page on
+  // the next conductor rebuild. Pinned scenes keep their 100vh section; the
+  // declared length is the total scroll footprint (pin travel + viewport),
+  // added by ScrollTrigger's pin spacer below.
+  for (const scene of config.scenes) {
+    const el = section(scene);
+    if (!(el instanceof HTMLElement)) continue;
+    if (scene.pin === true) {
+      el.style.removeProperty('min-height');
+      continue;
+    }
+    el.style.minHeight = `${parseSceneLengthVh(scene.length)}vh`;
+  }
+
   // Mood conductor: an ordered chain of scene enter triggers. The palette is
   // NOT written from competing onUpdate callbacks (an instant jump makes the
   // last-created trigger stomp the others); instead the render loop walks
   // the chain each frame and takes the deepest link with progress > 0.
-  let sceneStartVh = 0;
-  for (let index = 0; index < config.scenes.length; index += 1) {
+  for (let index = 1; index < config.scenes.length; index += 1) {
     const scene = config.scenes[index];
     const previous = config.scenes[index - 1];
-    const lengthVh = sceneLengthVh(scene, options.galerieTunables);
-
-    if (index === 0 || !previous) {
-      sceneStartVh += lengthVh;
-      continue;
-    }
-
     const el = section(scene);
-    if (!el) {
-      sceneStartVh += lengthVh;
-      continue;
-    }
+    if (!previous || !el) continue;
 
     if (scene.enter.mechanism === 'takeover') {
       const timeline = createGalerieTakeoverTimeline(
@@ -409,7 +405,7 @@ function createConductorState(
       const trigger = ScrollTrigger.create({
         trigger: el,
         start: 'top top',
-        end: `+=${scenePinTravelVh(scene, options.galerieTunables)}%`,
+        end: `+=${scenePinTravelVh(scene)}%`,
         markers: options.markers,
         pin: scene.pin === true,
         scrub: true,
@@ -435,27 +431,17 @@ function createConductorState(
         trigger.kill();
         timeline.kill();
       });
-
-      sceneStartVh += lengthVh;
       continue;
     }
 
-    const enterWindow = resolveEnterWindow(
-      scene.enter,
-      sceneStartVh,
-      lengthVh,
-      scene.pin === true,
-    );
-    const startLine = viewportLineForStart(
-      scene,
-      enterWindow.startVh,
-      sceneStartVh,
-    );
-    const endLine = viewportLineForStart(
-      scene,
-      enterWindow.endVh,
-      sceneStartVh,
-    );
+    // Crossfade and cut enters scrub while the section top crosses viewport
+    // lines derived from the enter spec (band fractions of one viewport).
+    const startLine =
+      scene.enter.mechanism === 'crossfade'
+        ? scene.enter.band[0] * 100
+        : scene.enter.at * 100;
+    const endLine =
+      scene.enter.mechanism === 'crossfade' ? scene.enter.band[1] * 100 : 0;
     const trigger = ScrollTrigger.create({
       trigger: el,
       start: `top ${startLine}%`,
@@ -486,7 +472,6 @@ function createConductorState(
             },
       st: trigger,
     });
-    sceneStartVh += lengthVh;
   }
 
   return {
@@ -567,31 +552,6 @@ function renderGalerieTimeline(
   timeline.time(progress, false);
 }
 
-function sceneLengthVh(
-  scene: MoodScene,
-  galerieTunables: GalerieTunables,
-): number {
-  if (scene.key === 'galerie') return galerieTunables.pinLengthVh.get();
-  return parseSceneLengthVh(scene.length);
-}
-
-function viewportLineForStart(
-  scene: MoodScene,
-  windowVh: number,
-  sceneStartVh: number,
-): number {
-  if (scene.enter.mechanism === 'crossfade') {
-    return sceneStartVh - windowVh;
-  }
-  if (scene.enter.mechanism === 'cut') {
-    return scene.enter.at * 100;
-  }
-  return 0;
-}
-
-function scenePinTravelVh(
-  scene: MoodScene,
-  galerieTunables: GalerieTunables,
-): number {
-  return Math.max(sceneLengthVh(scene, galerieTunables) - 100, 1);
+function scenePinTravelVh(scene: MoodScene): number {
+  return Math.max(parseSceneLengthVh(scene.length) - 100, 1);
 }
