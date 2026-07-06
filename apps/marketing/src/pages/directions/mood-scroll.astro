@@ -1,0 +1,29 @@
+---
+// Direction comp, not a public page: noindex, no SeoHead registry entry.
+import {
+  GENERATED_FONTS_CSS_FILE,
+  GENERATED_FONTS_PUBLIC_BASE_PATH,
+} from '../../../../../scripts/generated-font-assets';
+import MoodScroll from '../../components/directions/MoodScroll.astro';
+
+const fontsHref = `${GENERATED_FONTS_PUBLIC_BASE_PATH}/${GENERATED_FONTS_CSS_FILE}`;
+---
+
+<!doctype html>
+<html lang='fr'>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <meta name='robots' content='noindex, nofollow' />
+    <title>Mood scroll — comp de direction</title>
+    <link rel='stylesheet' href={fontsHref} />
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <MoodScroll />
+  </body>
+</html>
