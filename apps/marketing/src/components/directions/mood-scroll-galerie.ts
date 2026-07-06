@@ -5,7 +5,15 @@
 // assembly, promotion to full bleed, plateau, shrink-to-arch hand-off);
 // time and buttons drive which image is featured. The featured frame is one
 // fixed overlay element that both takeover timelines animate, so the seam
-// between the galerie pin and the hand-off pin stays invisible behind it.
+// between the galerie runway and the hand-off runway stays invisible behind
+// it.
+//
+// Each takeover scene is a sticky runway: the section is a tall block with a
+// 100vh sticky stage inside, and its timeline's 0..1 spans the whole block
+// from first entry ('top bottom') to the end of the stick ('bottom bottom').
+// The first viewport of that domain is the entrance window (the composed
+// room scrolling in); the tunable phase values stay in stuck space (0 = the
+// stage sticks, 1 = block end) and are mapped into the raw domain here.
 //
 // Structure is code, taste is tunables: every feel value here is registered
 // and drivable from the dev panel.
@@ -20,8 +28,11 @@ import {
 
 export interface GalerieChoreographyTunables {
   growStartScale: MoodTunableHandle;
+  backdropFadeStart: MoodTunableHandle;
+  backdropFadeDuration: MoodTunableHandle;
   editorialExitStart: MoodTunableHandle;
   editorialExitDuration: MoodTunableHandle;
+  /** Entrance-space: fractions of the scroll-in window, not the stick. */
   collageEnterStart: MoodTunableHandle;
   collageEnterDuration: MoodTunableHandle;
   collageRecedeStart: MoodTunableHandle;
@@ -61,6 +72,16 @@ export function registerGalerieChoreographyTunables(
       max: 1,
       step: 0.01,
     }),
+    backdropFadeStart: tunable(registry, 'galerie.backdropFadeStart', 0.06, {
+      ...phase,
+      max: 0.5,
+    }),
+    backdropFadeDuration: tunable(
+      registry,
+      'galerie.backdropFadeDuration',
+      0.1,
+      { ...span, max: 0.4 },
+    ),
     editorialExitStart: tunable(registry, 'galerie.editorialExitStart', 0.16, {
       ...phase,
       max: 0.8,
@@ -78,8 +99,8 @@ export function registerGalerieChoreographyTunables(
     collageEnterDuration: tunable(
       registry,
       'galerie.collageEnterDuration',
-      0.22,
-      { ...span, min: 0.05, max: 0.8 },
+      0.75,
+      { ...span, min: 0.05, max: 1 },
     ),
     collageRecedeStart: tunable(
       registry,
@@ -184,10 +205,49 @@ export interface SegmentWindow {
   duration: number;
 }
 
-/** Clamp a timeline segment so it fits the 0..1 pin contract. */
+/** Clamp a timeline segment so it fits the 0..1 runway contract. */
 export function clampSegment(start: number, duration: number): SegmentWindow {
   const s = clamp01(start);
   return { start: s, duration: Math.max(Math.min(duration, 1 - s), 0.001) };
+}
+
+/**
+ * A sticky runway's entrance window: the first viewport of the block's
+ * scroll domain ('top bottom' → 'bottom bottom'), before the stage sticks.
+ * Capped so a short runway always keeps some stuck travel.
+ */
+export function takeoverEntranceFraction(lengthVh: number): number {
+  if (!Number.isFinite(lengthVh) || lengthVh <= 0) return 0;
+  return Math.min(100 / lengthVh, 0.9);
+}
+
+/** Map a stuck-space fraction (0 = stick engages, 1 = block end) to raw. */
+export function stuckPosition(
+  entranceFraction: number,
+  position: number,
+): number {
+  const f = clamp01(entranceFraction);
+  return f + clamp01(position) * (1 - f);
+}
+
+/** A stuck-space segment mapped and scaled into the raw timeline domain. */
+export function stuckSegment(
+  entranceFraction: number,
+  start: number,
+  duration: number,
+): SegmentWindow {
+  const f = clamp01(entranceFraction);
+  return clampSegment(stuckPosition(f, start), duration * (1 - f));
+}
+
+/** An entrance-space segment mapped into the raw timeline domain. */
+export function entranceSegment(
+  entranceFraction: number,
+  start: number,
+  duration: number,
+): SegmentWindow {
+  const f = clamp01(entranceFraction);
+  return clampSegment(clamp01(start) * f, duration * f);
 }
 
 export interface HandoffGeometryInput {
@@ -255,7 +315,14 @@ function clamp01(value: number): number {
 
 // --- Timeline builders ---
 
+/**
+ * Stuck-space point where the fixed overlay swaps into the inline arch slot
+ * (shared with the carousel's auto-advance gate).
+ */
+export const HANDOFF_SWAP_AT = 0.985;
+
 const CHOREOGRAPHY_SELECTORS = [
+  '[data-galerie-backdrop]',
   '[data-galerie-editorial]',
   '[data-collage-item]',
   '[data-galerie-overlay]',
@@ -317,32 +384,34 @@ function padToPinContract(timeline: gsap.core.Timeline): void {
 }
 
 /**
- * Galerie takeover: editorial beat on the cobalt snap, collage assembly,
- * featured frame appears, promotion to full bleed, plateau. The plateau has
- * no geometry on purpose: the carousel owns it, and the unpin traversal
- * that follows hides the section seam behind the full-bleed overlay.
+ * Galerie takeover: the composed dark room scrolls in on its backdrop while
+ * the collage assembles (the entrance window), the backdrop fades to reveal
+ * the cobalt field, the editorial exits, the featured frame appears and
+ * grows to full bleed, plateau. The plateau has no geometry on purpose: the
+ * carousel owns it, and the traversal that follows hides the section seam
+ * behind the full-bleed overlay.
  */
 export function createGalerieTimeline(
   root: HTMLElement,
   t: GalerieChoreographyTunables,
+  entranceFraction: number,
 ): gsap.core.Timeline {
   const tl = gsap.timeline({ paused: true, id: 'galerie' });
   padToPinContract(tl);
+  const f = entranceFraction;
 
+  const backdrop = root.querySelector('[data-galerie-backdrop]');
   const editorial = root.querySelector('[data-galerie-editorial]');
   const collageItems = root.querySelectorAll('[data-collage-item]');
   const overlay = root.querySelector('[data-galerie-overlay]');
   const frame = root.querySelector('[data-galerie-frame]');
   const chrome = root.querySelector('[data-galerie-chrome]');
 
+  // The editorial is stylesheet-visible so the room never arrives empty;
+  // the timeline only owns its exit.
   if (editorial) {
-    tl.fromTo(
-      editorial,
-      { autoAlpha: 0, yPercent: 16 },
-      { autoAlpha: 1, yPercent: 0, ease: 'none', duration: 0.08 },
-      0,
-    );
-    const exit = clampSegment(
+    const exit = stuckSegment(
+      f,
       t.editorialExitStart.get(),
       t.editorialExitDuration.get(),
     );
@@ -353,9 +422,26 @@ export function createGalerieTimeline(
     );
   }
 
+  // The backdrop is the hard section boundary while the room scrolls in.
+  // Just after the stick the field underneath has snapped to the same
+  // cobalt, so fading the wall swaps flat paint for the living blobs.
+  if (backdrop) {
+    const fade = stuckSegment(
+      f,
+      t.backdropFadeStart.get(),
+      t.backdropFadeDuration.get(),
+    );
+    tl.to(
+      backdrop,
+      { autoAlpha: 0, ease: 'none', duration: fade.duration },
+      fade.start,
+    );
+  }
+
   if (collageItems.length > 0) {
     tl.set(collageItems, { autoAlpha: 0 }, 0);
-    const enter = clampSegment(
+    const enter = entranceSegment(
+      f,
       t.collageEnterStart.get(),
       t.collageEnterDuration.get(),
     );
@@ -374,7 +460,8 @@ export function createGalerieTimeline(
       },
       enter.start,
     );
-    const recede = clampSegment(
+    const recede = stuckSegment(
+      f,
       t.collageRecedeStart.get(),
       t.collageRecedeDuration.get(),
     );
@@ -392,7 +479,7 @@ export function createGalerieTimeline(
   }
 
   if (overlay && frame) {
-    const appear = clampSegment(t.featuredAppearStart.get(), 0.06);
+    const appear = stuckSegment(f, t.featuredAppearStart.get(), 0.06);
     tl.set(overlay, { autoAlpha: 0 }, 0);
     tl.set(frame, { autoAlpha: 0 }, 0);
     tl.set(overlay, { autoAlpha: 1 }, Math.max(appear.start - 0.001, 0));
@@ -402,7 +489,8 @@ export function createGalerieTimeline(
       { autoAlpha: 1, ease: 'none', duration: appear.duration },
       appear.start,
     );
-    const grow = clampSegment(
+    const grow = stuckSegment(
+      f,
       t.growPhaseStart.get(),
       t.growPhaseDuration.get(),
     );
@@ -423,7 +511,7 @@ export function createGalerieTimeline(
   }
 
   if (chrome) {
-    const chromeIn = clampSegment(t.chromeStart.get(), 0.08);
+    const chromeIn = stuckSegment(f, t.chromeStart.get(), 0.08);
     tl.set(chrome, { autoAlpha: 0 }, 0);
     tl.fromTo(
       chrome,
@@ -443,16 +531,20 @@ export function createGalerieTimeline(
  * Hand-off takeover: the full-bleed featured frame shrinks into an
  * arch-masked door while the light chapter's panel rises to the seam, then
  * the overlay swaps into the inline slot so the arch scrolls away with the
- * page. Every tween uses `immediateRender: false` plus explicit `from`
- * values: this timeline shares the overlay with the galerie timeline, and
- * must not write anything until its own pin is actually engaged.
+ * page. The runway's entrance window is the traversal between the two
+ * sticky stages: it plays under the full-bleed overlay, so every beat here
+ * lives in the stuck window. Every tween uses `immediateRender: false` plus
+ * explicit `from` values: this timeline shares the overlay with the galerie
+ * timeline, and must not write anything until its own runway is engaged.
  */
 export function createHandoffTimeline(
   root: HTMLElement,
   t: GalerieChoreographyTunables,
+  entranceFraction: number,
 ): gsap.core.Timeline {
   const tl = gsap.timeline({ paused: true, id: 'handoff' });
   padToPinContract(tl);
+  const f = entranceFraction;
 
   const overlay = root.querySelector('[data-galerie-overlay]');
   const frame = root.querySelector('[data-galerie-frame]');
@@ -464,7 +556,7 @@ export function createHandoffTimeline(
   applyHandoffGeometryVars(root, t);
 
   if (frame) {
-    const shrink = clampSegment(t.shrinkStart.get(), t.shrinkDuration.get());
+    const shrink = stuckSegment(f, t.shrinkStart.get(), t.shrinkDuration.get());
     tl.fromTo(
       frame,
       {
@@ -490,18 +582,25 @@ export function createHandoffTimeline(
   }
 
   if (chrome) {
+    const chromeFade = stuckSegment(f, t.chromeFadeStart.get(), 0.12);
     tl.fromTo(
       chrome,
       { autoAlpha: 1 },
-      { autoAlpha: 0, ease: 'none', duration: 0.12, immediateRender: false },
-      Math.max(t.chromeFadeStart.get(), 0.0001),
+      {
+        autoAlpha: 0,
+        ease: 'none',
+        duration: chromeFade.duration,
+        immediateRender: false,
+      },
+      Math.max(chromeFade.start, 0.0001),
     );
   }
 
   if (panel) {
     // The panel is handoff-owned, so its resting state can be set eagerly.
     gsap.set(panel, { yPercent: 100 });
-    const rise = clampSegment(
+    const rise = stuckSegment(
+      f,
       t.panelRiseStart.get(),
       t.panelRiseDuration.get(),
     );
@@ -520,7 +619,7 @@ export function createHandoffTimeline(
 
   if (type) {
     gsap.set(type, { autoAlpha: 0, yPercent: 30 });
-    const entrance = clampSegment(t.typeStart.get(), t.typeDuration.get());
+    const entrance = stuckSegment(f, t.typeStart.get(), t.typeDuration.get());
     tl.fromTo(
       type,
       { autoAlpha: 0, yPercent: 30 },
@@ -537,18 +636,29 @@ export function createHandoffTimeline(
 
   if (slot) {
     gsap.set(slot, { autoAlpha: 0 });
-    const swapAt = 0.985;
+    const swapAt = stuckPosition(f, HANDOFF_SWAP_AT);
+    const swapDuration = Math.max((1 - swapAt) * 0.6, 0.001);
     tl.fromTo(
       slot,
       { autoAlpha: 0 },
-      { autoAlpha: 1, duration: 0.01, ease: 'none', immediateRender: false },
+      {
+        autoAlpha: 1,
+        duration: swapDuration,
+        ease: 'none',
+        immediateRender: false,
+      },
       swapAt,
     );
     if (overlay) {
       tl.fromTo(
         overlay,
         { autoAlpha: 1 },
-        { autoAlpha: 0, duration: 0.01, ease: 'none', immediateRender: false },
+        {
+          autoAlpha: 0,
+          duration: swapDuration,
+          ease: 'none',
+          immediateRender: false,
+        },
         swapAt,
       );
     }

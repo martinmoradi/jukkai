@@ -160,12 +160,16 @@ export function createDefaultConfig(): MoodScrollConfig {
           }),
         ],
       },
-      // Galerie takeover (experiment #57/#58): the field snaps to punchy
-      // cobalt just after the pin engages, then deepens continuously so the
-      // darkest blue lands with the full-bleed featured image. The last stop
-      // holds through the plateau. Length follows the Obsidian reference
-      // pacing (~2 wheel notches per captured frame, 11 of 15 intervals
-      // inside the dark room).
+      // Galerie takeover (experiment #57/#58): a sticky runway, so the stop
+      // fractions cover the WHOLE block from first entry — for 400vh the
+      // first quarter is the entrance window, where the room scrolls in on
+      // its own cobalt backdrop. The field holds the light continuity under
+      // the sections still visible above, snaps to punchy cobalt beneath
+      // the backdrop right after the stick (the backdrop fade reveals it),
+      // then deepens continuously so the darkest blue lands with the
+      // full-bleed featured image. The last stop holds through the plateau.
+      // Length follows the Obsidian reference pacing (~2 wheel notches per
+      // captured frame, 11 of 15 intervals inside the dark room).
       {
         key: 'galerie',
         label: 'galerie',
@@ -178,13 +182,18 @@ export function createDefaultConfig(): MoodScrollConfig {
             blob1: '#cdb9e8',
             blob2: '#e6cbd9',
           }),
-          field(0.07, {
+          field(0.22, {
+            ground: '#f2eae0',
+            blob1: '#cdb9e8',
+            blob2: '#e6cbd9',
+          }),
+          field(0.29, {
             ground: '#2036a8',
             blob1: '#4f74e8',
             blob2: '#8fb0ff',
           }),
           field(
-            0.5,
+            0.55,
             {
               ground: '#18265f',
               blob1: '#35507c',
@@ -192,14 +201,17 @@ export function createDefaultConfig(): MoodScrollConfig {
             },
             { drift: 0.16 },
           ),
-          field(0.85, galerieDarkest, { drift: 0.1 }),
+          field(0.88, galerieDarkest, { drift: 0.1 }),
         ],
       },
-      // Hand-off seam (experiment #57): a pinned takeover so the
-      // shrink-to-arch morph gets scrubbed runway. The field stays on the
-      // dark chapter's ground while presence mutes; the visible dark-to-light
-      // flip is the DOM light panel rising inside the same gesture, then the
-      // offer ladder's fast enter band flips the field underneath it.
+      // Hand-off seam (experiment #57): a sticky-runway takeover so the
+      // shrink-to-arch morph gets scrubbed travel. Its entrance window (the
+      // first half of 200vh) is the traversal between the two sticky
+      // stages, played under the full-bleed overlay. The field stays on the
+      // dark chapter's ground while presence mutes; the visible
+      // dark-to-light flip is the DOM light panel rising inside the same
+      // gesture, then the offer ladder's fast enter band flips the field
+      // underneath it.
       {
         key: 'handoff',
         label: 'hand-off seam',

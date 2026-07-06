@@ -2,8 +2,12 @@ import { describe, expect, it } from 'vitest';
 
 import {
   clampSegment,
+  entranceSegment,
   resolveHandoffGeometry,
   shrinkEase,
+  stuckPosition,
+  stuckSegment,
+  takeoverEntranceFraction,
   wrapIndex,
 } from './mood-scroll-galerie';
 
@@ -20,6 +24,38 @@ describe('galerie choreography segments', () => {
   it('never collapses a segment to zero duration', () => {
     expect(clampSegment(1, 0.5).duration).toBeGreaterThan(0);
     expect(clampSegment(0.5, 0).duration).toBeGreaterThan(0);
+  });
+});
+
+describe('sticky runway mapping', () => {
+  it('derives the entrance window from the block length', () => {
+    // 400vh block: the first viewport (a quarter) is the entrance.
+    expect(takeoverEntranceFraction(400)).toBeCloseTo(0.25, 10);
+    // 200vh block: the traversal is half the domain.
+    expect(takeoverEntranceFraction(200)).toBeCloseTo(0.5, 10);
+    // A degenerate length still keeps some stuck travel.
+    expect(takeoverEntranceFraction(100)).toBeCloseTo(0.9, 10);
+    expect(takeoverEntranceFraction(0)).toBe(0);
+    expect(takeoverEntranceFraction(Number.NaN)).toBe(0);
+  });
+
+  it('maps stuck-space fractions past the entrance window', () => {
+    expect(stuckPosition(0.25, 0)).toBeCloseTo(0.25, 10);
+    expect(stuckPosition(0.25, 1)).toBeCloseTo(1, 10);
+    expect(stuckPosition(0.25, 0.4)).toBeCloseTo(0.55, 10);
+  });
+
+  it('scales stuck segments by the remaining runway', () => {
+    const segment = stuckSegment(0.25, 0.2, 0.4);
+    expect(segment.start).toBeCloseTo(0.4, 10);
+    expect(segment.duration).toBeCloseTo(0.3, 10);
+  });
+
+  it('keeps entrance segments inside the entrance window', () => {
+    const segment = entranceSegment(0.25, 0.1, 0.75);
+    expect(segment.start).toBeCloseTo(0.025, 10);
+    expect(segment.duration).toBeCloseTo(0.1875, 10);
+    expect(segment.start + segment.duration).toBeLessThanOrEqual(0.25);
   });
 });
 

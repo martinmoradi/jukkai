@@ -3,8 +3,15 @@
 // The background is weather, not scenery: blobs drift on their own clock,
 // scroll never translates them. Scroll couples in three ways only:
 //   - scene enter windows scrub the field blend
-//   - takeover scenes pin and scrub their internal stops
+//   - takeover scenes ride sticky runways and scrub their internal stops
 //   - scroll velocity lifts brightness (capped, smoothed)
+//
+// Takeover scenes are sticky runways, not GSAP pins: the section is a tall
+// block (its declared length) holding a 100vh `position: sticky` stage, and
+// the trigger spans the whole block from 'top bottom' to 'bottom bottom'.
+// The first viewport of that domain is the entrance window, so the room's
+// arrival is part of the choreography and the field stops (raw fractions)
+// can start working while the block scrolls in.
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -26,7 +33,10 @@ import {
   createGalerieTimeline,
   createHandoffTimeline,
   type GalerieChoreographyTunables,
+  HANDOFF_SWAP_AT,
   registerGalerieChoreographyTunables,
+  stuckPosition,
+  takeoverEntranceFraction,
 } from './mood-scroll-galerie';
 import { createMoodGl } from './mood-scroll-gl';
 import type { MoodTunableRegistry } from './mood-scroll-tunables';
@@ -109,16 +119,30 @@ export function initMoodScroll(
   });
 
   // Auto-advance only while the journey actually shows the featured frame:
-  // from its appearance inside the galerie pin until the hand-off swaps the
-  // overlay into the inline arch slot.
+  // from its appearance inside the galerie runway until the hand-off swaps
+  // the overlay into the inline arch slot. In the static version the timer
+  // runs while the galerie section is on screen (the contract stays time +
+  // buttons, never scroll).
+  const sceneEntrance = (sceneKey: string): number => {
+    const scene = config.scenes.find((entry) => entry.key === sceneKey);
+    return scene
+      ? takeoverEntranceFraction(parseSceneLengthVh(scene.length))
+      : 0;
+  };
   const takeoverProgress: Record<string, number> = { galerie: 0, handoff: 0 };
   const onTakeoverProgress = (sceneKey: string, progress: number) => {
     takeoverProgress[sceneKey] = progress;
-    carousel.setAutoAdvance(
-      resolveMode() === 'full' &&
-        takeoverProgress.galerie > choreography.featuredAppearStart.get() &&
-        takeoverProgress.handoff < 0.985,
-    );
+    const enabled =
+      resolveMode() === 'full'
+        ? takeoverProgress.galerie >
+            stuckPosition(
+              sceneEntrance('galerie'),
+              choreography.featuredAppearStart.get(),
+            ) &&
+          takeoverProgress.handoff <
+            stuckPosition(sceneEntrance('handoff'), HANDOFF_SWAP_AT)
+        : takeoverProgress.galerie > 0.02 && takeoverProgress.galerie < 0.98;
+    carousel.setAutoAdvance(enabled);
   };
 
   let mode = resolveMode();
@@ -404,20 +428,23 @@ function createConductorState(
   const section = (scene: MoodScene) =>
     root.querySelector(`[data-mood-section='${scene.key}']`);
 
-  // Scene lengths are data: each unpinned section gets its declared length
-  // as an inline min-height, so panel edits to a length reshape the page on
-  // the next conductor rebuild. Pinned scenes keep their 100vh section; the
-  // declared length is the total scroll footprint (pin travel + viewport),
-  // added by ScrollTrigger's pin spacer below.
+  // Scene lengths are data: each section gets its declared length as an
+  // inline min-height, so panel edits to a length reshape the page on the
+  // next conductor rebuild. Takeover scenes are sticky runway blocks — the
+  // declared length IS the block height; the 100vh sticky stage inside
+  // supplies the viewport. In the static version those sections drop back
+  // to natural flow height.
   for (const scene of config.scenes) {
     const el = section(scene);
     if (!(el instanceof HTMLElement)) continue;
-    if (scene.pin === true) {
+    if (scene.pin === true && options.mode === 'static') {
       el.style.removeProperty('min-height');
       continue;
     }
     el.style.minHeight = `${parseSceneLengthVh(scene.length)}vh`;
   }
+
+  applyGalerieBackdropTreatment(root, config, options.mode);
 
   // Mood conductor: an ordered chain of scene enter triggers. The palette is
   // NOT written from competing onUpdate callbacks (an instant jump makes the
@@ -451,30 +478,35 @@ function createConductorState(
         continue;
       }
 
+      const entrance = takeoverEntranceFraction(
+        parseSceneLengthVh(scene.length),
+      );
       const timeline = createTakeoverTimeline(
         root,
         scene.key,
         options.choreography,
+        entrance,
       );
       // The two takeover timelines share the featured overlay. A timeline
-      // only renders while its own pin is engaged (or once, to rewind on the
-      // way out); otherwise a refresh while parked inside the OTHER pin
-      // would stomp the overlay with this timeline's resting values.
+      // only renders while its own runway is engaged (or once, to rewind on
+      // the way out); otherwise a refresh while parked inside the OTHER
+      // runway would stomp the overlay with this timeline's resting values.
       const apply = createGuardedTimelineApply(timeline);
+      // No pin: CSS sticky holds the stage. The trigger spans the whole
+      // block so the timeline domain includes the entrance window.
       const trigger = ScrollTrigger.create({
         trigger: el,
-        start: 'top top',
-        end: `+=${scenePinTravelVh(scene)}%`,
+        start: 'top bottom',
+        end: 'bottom bottom',
         markers: options.markers,
-        pin: scene.pin === true,
         scrub: true,
         onUpdate: (self) => {
           apply(self.progress);
           options.onTakeoverProgress?.(scene.key, self.progress);
         },
         // At creation the trigger has no layout yet (progress 0). Re-sync on
-        // refresh so a conductor rebuild while parked inside the pin does not
-        // leave the timeline at its start until the next scroll event.
+        // refresh so a conductor rebuild while parked inside the runway does
+        // not leave the timeline at its start until the next scroll event.
         onRefresh: (self) => {
           apply(self.progress);
           options.onTakeoverProgress?.(scene.key, self.progress);
@@ -554,10 +586,45 @@ function createTakeoverTimeline(
   root: HTMLElement,
   sceneKey: string,
   choreography: GalerieChoreographyTunables,
+  entranceFraction: number,
 ): gsap.core.Timeline {
-  if (sceneKey === 'galerie') return createGalerieTimeline(root, choreography);
-  if (sceneKey === 'handoff') return createHandoffTimeline(root, choreography);
+  if (sceneKey === 'galerie') {
+    return createGalerieTimeline(root, choreography, entranceFraction);
+  }
+  if (sceneKey === 'handoff') {
+    return createHandoffTimeline(root, choreography, entranceFraction);
+  }
   return gsap.timeline({ paused: true });
+}
+
+/**
+ * The galerie backdrop is the dark room's own wall: it scrolls in with the
+ * block as the hard section boundary, colored from the scene's punch stop
+ * (the first stop past the entrance window). Full mode paints it flat so
+ * the timeline can fade it out over the matching field; the static version
+ * keeps it and pre-bakes the deepening as a gradient. Stop color edits
+ * reach it on the next conductor rebuild.
+ */
+function applyGalerieBackdropTreatment(
+  root: HTMLElement,
+  config: MoodScrollConfig,
+  mode: MoodScrollMode,
+): void {
+  const backdrop = root.querySelector('[data-galerie-backdrop]');
+  if (!(backdrop instanceof HTMLElement)) return;
+  const scene = config.scenes.find((entry) => entry.key === 'galerie');
+  if (!scene || scene.stops.length === 0) return;
+
+  const entrance = takeoverEntranceFraction(parseSceneLengthVh(scene.length));
+  const punch =
+    scene.stops.find((stop) => stop.at >= entrance) ?? scene.stops.at(-1);
+  const darkest = scene.stops.at(-1);
+  if (!punch || !darkest) return;
+
+  backdrop.style.background =
+    mode === 'static'
+      ? `linear-gradient(${punch.ground}, ${darkest.ground} 90%)`
+      : punch.ground;
 }
 
 function createGuardedTimelineApply(
@@ -595,8 +662,4 @@ function renderTakeoverTimeline(
     }
   }
   timeline.time(progress, false);
-}
-
-function scenePinTravelVh(scene: MoodScene): number {
-  return Math.max(parseSceneLengthVh(scene.length) - 100, 1);
 }

@@ -31,7 +31,7 @@ describe('mood scroll blockout scene model', () => {
     expect(keys.indexOf('offerLadder')).toBe(keys.indexOf('handoff') + 1);
   });
 
-  it('pins the galerie and the hand-off so their choreography gets runway', () => {
+  it('gives the galerie and the hand-off sticky runways for choreography', () => {
     const config = createDefaultConfig();
     const galerie = config.scenes.find((scene) => scene.key === 'galerie');
     const handoff = config.scenes.find((scene) => scene.key === 'handoff');
@@ -150,7 +150,7 @@ describe('mood scroll config dev helpers', () => {
 
     expect(changed).toBe(true);
     expect(config.scenes[2].stops.map((stop) => stop.at)).toEqual([
-      0, 0.07, 0.5, 0.85,
+      0, 0.22, 0.29, 0.55, 0.88,
     ]);
   });
 
