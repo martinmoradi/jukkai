@@ -215,20 +215,28 @@ tunables.**
   never hardcoded. Any magic number becomes a registered tunable:
 
 ```ts
-const growStart = tunable('galerie.growStart', 0.5, { min: 0.2, max: 1 });
+const tunables = createTunableRegistry(config);
+const growStart = tunable(tunables, 'galerie.growStartScale', 0.5, {
+  min: 0.2,
+  max: 1,
+  step: 0.01,
+});
 ```
 
-The dev panel renders registered tunables automatically under their
-scene's group. Save JSON persists them with the moods, same preset files,
-same repo-backed API. Agents wire tunables and never guess at feel;
-Martin drives the sliders.
+The returned handle exposes `get()` and `set()`. Scene timelines read
+`get()` live where possible, or declare `requiresReinit: true` for timing
+values that change ScrollTrigger or timeline geometry. The dev panel renders
+registered tunables automatically; until the panel reshape lands, they may
+appear in one tunables group rather than under each scene. Save JSON persists
+them with the moods, same preset files, same repo-backed API. Agents wire
+tunables and never guess at feel; Martin drives the sliders.
 
 - The dev panel mirrors the scene model: one collapsible group per scene
   (enter controls and stops) plus a small global group. Issue #53 ships live
-  enter-band, cut-line, ease, color, and field sliders. Jump navigation,
-  registered foreground tunables, markers, and GSDevTools remain follow-up
-  tooling, not part of the current implementation. Panel styling stays
-  utilitarian; no beauty pass.
+  enter-band, cut-line, ease, color, and field sliders. Issue #54 ships
+  registered foreground tunables, ScrollTrigger markers, and GSDevTools.
+  Jump navigation and per-scene tunable grouping remain follow-up tooling.
+  Panel styling stays utilitarian; no beauty pass.
 - **GSDevTools** (free since GSAP 3.13) is the timeline counterpart of the
   panel: scrub and slow-mo any scene timeline while tuning. ScrollTrigger
   `markers` per scene, toggleable from the panel. Panel = taste values,
