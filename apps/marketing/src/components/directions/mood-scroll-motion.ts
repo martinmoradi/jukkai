@@ -323,7 +323,7 @@ export function initMoodScroll(
   };
 
   gsap.ticker.add(tick);
-  // Choreography geometry (arch size, seam position, full-bleed tweens) is
+  // Choreography geometry (arch size, seam position, large-frame tweens) is
   // computed in pixels at build time, so a settled resize rebuilds the
   // conductor rather than leaving stale end values.
   let resizeRebuildTimer: ReturnType<typeof setTimeout> | null = null;

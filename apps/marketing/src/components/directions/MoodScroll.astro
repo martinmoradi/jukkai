@@ -32,11 +32,11 @@ const featuredProjects = [
 // recede treatment is tunable). CSS vars so the static fallback can
 // re-lay them out without fighting inline styles.
 const collageItems = [
-  { left: '5%', top: '10%', width: '17vw', aspect: '3 / 4' },
-  { left: '76%', top: '7%', width: '19vw', aspect: '4 / 3' },
-  { left: '9%', top: '60%', width: '15vw', aspect: '1 / 1' },
-  { left: '72%', top: '56%', width: '18vw', aspect: '3 / 2' },
-  { left: '43%', top: '4%', width: '13vw', aspect: '4 / 5' },
+  { left: '3.1%', top: '30%', width: '22.25vw', aspect: '11 / 12' },
+  { left: '74.7%', top: '29%', width: '22.25vw', aspect: '5 / 4' },
+  { left: '3.1%', top: '64%', width: '22.25vw', aspect: '3 / 2' },
+  { left: '74.7%', top: '55%', width: '22.25vw', aspect: '1 / 1' },
+  { left: '58.7%', top: '19%', width: '14.4vw', aspect: '5 / 4' },
 ];
 
 const collageItemStyle = (item: (typeof collageItems)[number]): string =>
@@ -84,7 +84,7 @@ const collageItemStyle = (item: (typeof collageItems)[number]): string =>
          backdrop is the dark room's own wall (hard section boundary while
          the composed room scrolls in), the sticky stage holds the beats:
          editorial, collage assembly, then the featured frame (a fixed
-         overlay, below) grows to full bleed. Scroll drives geometry; the
+         overlay, below) grows into a padded large frame. Scroll drives geometry; the
          carousel drives content. -->
     <section
       class={`${styles.section} ${styles.inkLight} ${styles.galerie}`}
@@ -113,11 +113,8 @@ const collageItemStyle = (item: (typeof collageItems)[number]): string =>
             ))
           }
         </div>
-        <!-- Static version (below 1024px / reduced motion), per
-             gallery-mobile.png + gallery-tablet.png: the typographic beat,
-             then the carousel with its chrome on the image. No collage. -->
-        <div class={styles.staticFeatured} data-galerie-static>
-          <div class={styles.staticStage} data-carousel-stage>
+        <div class={styles.inlineFeatured} data-galerie-inline>
+          <div class={styles.inlineStage} data-carousel-stage>
             {
               featuredProjects.map((project, index) => (
                 <div
@@ -157,7 +154,7 @@ const collageItemStyle = (item: (typeof collageItems)[number]): string =>
       </div>
     </section>
 
-    <!-- Hand-off seam (experiment #57): a sticky runway where the full-bleed
+    <!-- Hand-off seam (experiment #57): a sticky runway where the large
          featured image shrinks into an arch-masked door while the light
          chapter rises to the seam. The arch is the door; the sentence below
          invites you to push it. -->
@@ -287,7 +284,7 @@ const collageItemStyle = (item: (typeof collageItems)[number]): string =>
   </main>
 
   <!-- Featured overlay: one fixed frame both takeover timelines animate.
-       It appears mid-galerie, grows to full bleed, hides the section seam
+       It appears mid-galerie, grows to the padded large-frame state, hides the section seam
        during the unpin traversal, then morphs into the arch and swaps into
        the hand-off's inline slot. Wheel events pass through; only the
        carousel buttons take the pointer. -->

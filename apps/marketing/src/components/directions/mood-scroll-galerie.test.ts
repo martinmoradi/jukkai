@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 import {
   clampSegment,
   entranceSegment,
+  resolveFeaturedFrameGeometry,
   resolveHandoffGeometry,
   shrinkEase,
   stuckPosition,
@@ -120,6 +121,31 @@ describe('hand-off geometry', () => {
   });
 });
 
+describe('featured frame geometry', () => {
+  it('starts as a wide editorial carousel panel', () => {
+    const geometry = resolveFeaturedFrameGeometry(
+      { growStartScale: 0.46 },
+      { widthPx: 1280, heightPx: 950 },
+    );
+
+    expect(geometry.startWidthPx).toBeCloseTo(588.8, 6);
+    expect(geometry.startHeightPx).toBeCloseTo(306.667, 3);
+    expect(geometry.startWidthPx / geometry.startHeightPx).toBeCloseTo(1.92, 6);
+  });
+
+  it('keeps the grown frame padded inside the viewport', () => {
+    const geometry = resolveFeaturedFrameGeometry(
+      { growStartScale: 0.46 },
+      { widthPx: 1280, heightPx: 950 },
+    );
+
+    expect(geometry.maxWidthPx).toBeLessThan(1280);
+    expect(geometry.maxHeightPx).toBeLessThan(950);
+    expect(geometry.maxWidthPx).toBeGreaterThan(geometry.startWidthPx);
+    expect(geometry.maxHeightPx).toBeGreaterThan(geometry.startHeightPx);
+  });
+});
+
 describe('shrink ease', () => {
   it('is identity at shape 1 and stays inside 0..1', () => {
     expect(shrinkEase(0.3, 1)).toBeCloseTo(0.3, 6);
@@ -127,7 +153,7 @@ describe('shrink ease', () => {
     expect(shrinkEase(1, 2)).toBe(1);
   });
 
-  it('holds the full bleed longer with a harder shape', () => {
+  it('holds the large frame longer with a harder shape', () => {
     expect(shrinkEase(0.25, 2)).toBeLessThan(0.25);
     expect(shrinkEase(0.75, 2)).toBeGreaterThan(0.75);
   });

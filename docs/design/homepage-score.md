@@ -51,12 +51,13 @@ trust strip stay freely scrollable, never pinned.
    piece. The block scrolls in as a composed dark room on its own cobalt
    wall (editorial display type visible, collage assembling on the way up),
    the wall fades to the living field once the stage sticks, then the
-   featured frame is promoted to full bleed while the blues deepen to their
-   darkest. Scroll drives geometry only; the featured image cycles by timer
-   and prev/next buttons. Detailed spec below.
+   featured frame is promoted into a large padded carousel frame while the
+   blues deepen to their darkest. It never becomes true full bleed. Scroll
+   drives geometry only; the featured image cycles by timer and prev/next
+   buttons. Detailed spec below.
 4. **The hand-off.** `200vh` sticky-runway takeover (`handoff`, experiment
    #57, PR #66). The signature transition out of the dark chapter: the
-   full-bleed image shrinks into an arch-masked door while the light
+   large featured image shrinks into an arch-masked door while the light
    chapter's panel rises to the seam in the same gesture; the field mutes
    toward zero and flips to light under the risen panel (fast offer-ladder
    enter band). The arch ends sitting across the seam and scrolls away with
@@ -90,11 +91,11 @@ chapter. The committed sequence is `references/obsidian-assembly/01..16`
 (1400x900, two wheel notches between frames; it supersedes the earlier
 `gallery-approach` / `gallery-handoff` sets). Frames 04..14 are the dark
 room: oversized display headline, loose collage, one image promoted toward
-full bleed with a name and counter while the others recede.
+a large padded frame with a name and counter while the others recede.
 
 Interaction fork RESOLVED (Martin, July 6 session): neither pure variant.
 Scroll and content are decoupled. Scroll drives geometry only — the entry,
-the collage assembly, the single promotion journey to full bleed, and the
+the collage assembly, the single promotion journey to a large padded frame, and the
 exit; scrolling back rewinds the journey. Which image is featured is
 time-driven (auto-advance interval) plus prev/next buttons with a counter,
 never scroll, so the takeover can never trap the visitor. Built in PR #66:
@@ -117,7 +118,7 @@ the same cobalt-to-dark wall, gradient pre-baked. No collage, no arch.
 ## The hand-off, detailed
 
 Reference: frames 10..16 of `references/obsidian-assembly/01..16`. Full
-bleed with dark chrome, then the image shrinks back into a rounded frame on
+large padded frame with dark chrome, then the image shrinks back into a rounded frame on
 near-black, resolves into a small arch-shaped frame sitting at the seam,
 and a light parchment chapter rises beneath it with giant serif typography.
 The arch reads as a door back into the previous chapter.
@@ -294,14 +295,14 @@ Martin designs from references, not briefs. The loop, per idea:
 4. The mechanism library below gets one line either way. The score's beats
    update when a verdict changes them.
 
-| Mechanism                                                                  | Source                | Verdict                             | Where          |
-| -------------------------------------------------------------------------- | --------------------- | ----------------------------------- | -------------- |
-| Mood field (blob + grain, scroll-blended)                                  | Codrops depth gallery | kept                                | whole page     |
-| Sticky takeover runway (image grows, room dims; was the pin takeover)      | comp v1 → sticky      | kept                                | galerie        |
-| Dark-room entrance (backdrop wall scrolls in, cobalt snap beneath)         | July 6 session        | built (PR #66), awaiting taste gate | galerie entry  |
-| Gallery promotion (collage, grow to full bleed; content by time + buttons) | Obsidian Assembly     | built (PR #66), awaiting taste gate | galerie        |
-| Hand-off (dominant image shrinks into framed arch, tonal flip)             | Obsidian Assembly     | built (PR #66), awaiting taste gate | galerie exit   |
-| Idle texture (field life while not scrolling)                              | none yet              | candidate, needs refs               | ambient scenes |
+| Mechanism                                                                      | Source                | Verdict                             | Where          |
+| ------------------------------------------------------------------------------ | --------------------- | ----------------------------------- | -------------- |
+| Mood field (blob + grain, scroll-blended)                                      | Codrops depth gallery | kept                                | whole page     |
+| Sticky takeover runway (image grows, room dims; was the pin takeover)          | comp v1 → sticky      | kept                                | galerie        |
+| Dark-room entrance (backdrop wall scrolls in, cobalt snap beneath)             | July 6 session        | built (PR #66), awaiting taste gate | galerie entry  |
+| Gallery promotion (collage, grow to a padded frame; content by time + buttons) | Obsidian Assembly     | built (PR #66), awaiting taste gate | galerie        |
+| Hand-off (dominant image shrinks into framed arch, tonal flip)                 | Obsidian Assembly     | built (PR #66), awaiting taste gate | galerie exit   |
+| Idle texture (field life while not scrolling)                                  | none yet              | candidate, needs refs               | ambient scenes |
 
 ## Build order
 

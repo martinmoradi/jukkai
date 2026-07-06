@@ -167,7 +167,7 @@ export function createDefaultConfig(): MoodScrollConfig {
       // the sections still visible above, snaps to punchy cobalt beneath
       // the backdrop right after the stick (the backdrop fade reveals it),
       // then deepens continuously so the darkest blue lands with the
-      // full-bleed featured image. The last stop holds through the plateau.
+      // large featured image. The last stop holds through the plateau.
       // Length follows the Obsidian reference pacing (~2 wheel notches per
       // captured frame, 11 of 15 intervals inside the dark room).
       {
@@ -207,7 +207,7 @@ export function createDefaultConfig(): MoodScrollConfig {
       // Hand-off seam (experiment #57): a sticky-runway takeover so the
       // shrink-to-arch morph gets scrubbed travel. Its entrance window (the
       // first half of 200vh) is the traversal between the two sticky
-      // stages, played under the full-bleed overlay. The field stays on the
+      // stages, played under the large overlay. The field stays on the
       // dark chapter's ground while presence mutes; the visible
       // dark-to-light flip is the DOM light panel rising inside the same
       // gesture, then the offer ladder's fast enter band flips the field

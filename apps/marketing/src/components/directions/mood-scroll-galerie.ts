@@ -2,7 +2,7 @@
 // #57 + #58, reference: docs/design/references/obsidian-assembly/01..16).
 //
 // The contract split: scroll drives geometry only (editorial beat, collage
-// assembly, promotion to full bleed, plateau, shrink-to-arch hand-off);
+// assembly, promotion to a large padded frame, plateau, shrink-to-arch hand-off);
 // time and buttons drive which image is featured. The featured frame is one
 // fixed overlay element that both takeover timelines animate, so the seam
 // between the galerie runway and the hand-off runway stays invisible behind
@@ -105,13 +105,13 @@ export function registerGalerieChoreographyTunables(
     collageRecedeStart: tunable(
       registry,
       'galerie.collageRecedeStart',
-      0.48,
+      0.34,
       phase,
     ),
     collageRecedeDuration: tunable(
       registry,
       'galerie.collageRecedeDuration',
-      0.18,
+      0.26,
       { ...span, max: 0.8 },
     ),
     collageRecedeDim: tunable(registry, 'galerie.collageRecedeDim', 0.22, {
@@ -122,15 +122,15 @@ export function registerGalerieChoreographyTunables(
     featuredAppearStart: tunable(
       registry,
       'galerie.featuredAppearStart',
-      0.3,
+      0.24,
       phase,
     ),
-    growPhaseStart: tunable(registry, 'galerie.growPhaseStart', 0.46, phase),
+    growPhaseStart: tunable(registry, 'galerie.growPhaseStart', 0.3, phase),
     growPhaseDuration: tunable(registry, 'galerie.growPhaseDuration', 0.34, {
       ...span,
       min: 0.05,
     }),
-    chromeStart: tunable(registry, 'galerie.chromeStart', 0.52, phase),
+    chromeStart: tunable(registry, 'galerie.chromeStart', 0.24, phase),
     slideIntervalSec: tunable(registry, 'galerie.slideIntervalSec', 4, {
       min: 1,
       max: 12,
@@ -268,6 +268,40 @@ export interface HandoffGeometry {
   frameShiftYPx: number;
 }
 
+export interface FeaturedFrameGeometryInput {
+  growStartScale: number;
+}
+
+export interface FeaturedFrameGeometry {
+  startWidthPx: number;
+  startHeightPx: number;
+  maxWidthPx: number;
+  maxHeightPx: number;
+}
+
+const FEATURED_FRAME_ASPECT = 1.92;
+
+function clamp(value: number, min: number, max: number): number {
+  if (!Number.isFinite(value)) return min;
+  return Math.min(Math.max(value, min), max);
+}
+
+export function resolveFeaturedFrameGeometry(
+  input: FeaturedFrameGeometryInput,
+  viewport: { widthPx: number; heightPx: number },
+): FeaturedFrameGeometry {
+  const startWidthPx = clamp01(input.growStartScale) * viewport.widthPx;
+  const startHeightPx = startWidthPx / FEATURED_FRAME_ASPECT;
+  const gutterX = clamp(viewport.widthPx * 0.025, 24, 48);
+  const gutterY = clamp(viewport.heightPx * 0.075, 56, 96);
+  return {
+    startWidthPx,
+    startHeightPx,
+    maxWidthPx: Math.max(startWidthPx, viewport.widthPx - gutterX * 2),
+    maxHeightPx: Math.max(startHeightPx, viewport.heightPx - gutterY * 2),
+  };
+}
+
 /**
  * The arch's resting place: its bottom overlaps the light panel's seam by
  * `archOverlap` of its own height, like a door hung across the wall's edge.
@@ -293,7 +327,7 @@ export function resolveHandoffGeometry(
 
 /**
  * Symmetric power ease for the shrink: shape 1 is linear, higher shapes
- * hold the full bleed longer and land the arch harder.
+ * hold the large frame longer and land the arch harder.
  */
 export function shrinkEase(progress: number, shape: number): number {
   const t = clamp01(progress);
@@ -325,6 +359,7 @@ const CHOREOGRAPHY_SELECTORS = [
   '[data-galerie-backdrop]',
   '[data-galerie-editorial]',
   '[data-collage-item]',
+  '[data-galerie-inline]',
   '[data-galerie-overlay]',
   '[data-galerie-frame]',
   '[data-galerie-chrome]',
@@ -387,9 +422,9 @@ function padToPinContract(timeline: gsap.core.Timeline): void {
  * Galerie takeover: the composed dark room scrolls in on its backdrop while
  * the collage assembles (the entrance window), the backdrop fades to reveal
  * the cobalt field, the editorial exits, the featured frame appears and
- * grows to full bleed, plateau. The plateau has no geometry on purpose: the
+ * grows to the padded large-frame state, plateau. The plateau has no geometry on purpose: the
  * carousel owns it, and the traversal that follows hides the section seam
- * behind the full-bleed overlay.
+ * behind the large featured overlay.
  */
 export function createGalerieTimeline(
   root: HTMLElement,
@@ -403,6 +438,7 @@ export function createGalerieTimeline(
   const backdrop = root.querySelector('[data-galerie-backdrop]');
   const editorial = root.querySelector('[data-galerie-editorial]');
   const collageItems = root.querySelectorAll('[data-collage-item]');
+  const inlineFeatured = root.querySelector('[data-galerie-inline]');
   const overlay = root.querySelector('[data-galerie-overlay]');
   const frame = root.querySelector('[data-galerie-frame]');
   const chrome = root.querySelector('[data-galerie-chrome]');
@@ -480,6 +516,11 @@ export function createGalerieTimeline(
 
   if (overlay && frame) {
     const appear = stuckSegment(f, t.featuredAppearStart.get(), 0.06);
+    const frameGeometry = () =>
+      resolveFeaturedFrameGeometry(
+        { growStartScale: t.growStartScale.get() },
+        { widthPx: window.innerWidth, heightPx: window.innerHeight },
+      );
     tl.set(overlay, { autoAlpha: 0 }, 0);
     tl.set(frame, { autoAlpha: 0 }, 0);
     tl.set(overlay, { autoAlpha: 1 }, Math.max(appear.start - 0.001, 0));
@@ -489,6 +530,14 @@ export function createGalerieTimeline(
       { autoAlpha: 1, ease: 'none', duration: appear.duration },
       appear.start,
     );
+    if (inlineFeatured) {
+      tl.set(inlineFeatured, { autoAlpha: 1 }, 0);
+      tl.to(
+        inlineFeatured,
+        { autoAlpha: 0, ease: 'none', duration: appear.duration },
+        appear.start,
+      );
+    }
     const grow = stuckSegment(
       f,
       t.growPhaseStart.get(),
@@ -497,12 +546,12 @@ export function createGalerieTimeline(
     tl.fromTo(
       frame,
       {
-        width: () => `${t.growStartScale.get() * 100}vw`,
-        height: () => `${t.growStartScale.get() * 100}vh`,
+        width: () => `${frameGeometry().startWidthPx}px`,
+        height: () => `${frameGeometry().startHeightPx}px`,
       },
       {
-        width: '100vw',
-        height: '100vh',
+        width: () => `${frameGeometry().maxWidthPx}px`,
+        height: () => `${frameGeometry().maxHeightPx}px`,
         ease: 'none',
         duration: grow.duration,
       },
@@ -528,11 +577,11 @@ export function createGalerieTimeline(
 }
 
 /**
- * Hand-off takeover: the full-bleed featured frame shrinks into an
+ * Hand-off takeover: the large featured frame shrinks into an
  * arch-masked door while the light chapter's panel rises to the seam, then
  * the overlay swaps into the inline slot so the arch scrolls away with the
  * page. The runway's entrance window is the traversal between the two
- * sticky stages: it plays under the full-bleed overlay, so every beat here
+ * sticky stages: it plays under the large overlay, so every beat here
  * lives in the stuck window. Every tween uses `immediateRender: false` plus
  * explicit `from` values: this timeline shares the overlay with the galerie
  * timeline, and must not write anything until its own runway is engaged.
@@ -557,13 +606,18 @@ export function createHandoffTimeline(
 
   if (frame) {
     const shrink = stuckSegment(f, t.shrinkStart.get(), t.shrinkDuration.get());
+    const featured = () =>
+      resolveFeaturedFrameGeometry(
+        { growStartScale: t.growStartScale.get() },
+        { widthPx: window.innerWidth, heightPx: window.innerHeight },
+      );
     tl.fromTo(
       frame,
       {
-        width: '100vw',
-        height: '100vh',
+        width: () => `${featured().maxWidthPx}px`,
+        height: () => `${featured().maxHeightPx}px`,
         y: 0,
-        borderRadius: '0px 0px 0px 0px',
+        borderRadius: '8px 8px 8px 8px',
       },
       {
         width: () => `${handoffGeometry(t).archWidthPx}px`,
