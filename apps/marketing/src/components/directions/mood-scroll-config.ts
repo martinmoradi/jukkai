@@ -75,11 +75,19 @@ export interface MoodScrollConfig {
   scenes: MoodScene[];
 }
 
+// Blockout beat order (score "The beats" + wireframe-brief §1.4): the light
+// chapter is three separate freely-scrollable scenes, and the hand-off seam
+// between the dark and light chapters is its own scene so its runway length
+// is tunable data (#57 replaces its default crossfade with the hand-off
+// mechanism).
 export const MOOD_SCENE_KEYS = [
   'hero',
   'umbrella',
   'galerie',
+  'handoff',
+  'offerLadder',
   'artShop',
+  'trust',
   'finale',
 ] as const;
 
@@ -173,17 +181,80 @@ export function createDefaultConfig(): MoodScrollConfig {
           }),
         ],
       },
+      // Hand-off seam: the tonal flip out of the dark chapter. The enter
+      // band is the flip; the rest of the declared length is quiet runway so
+      // the page rhythm is tuned with the seam in place before #57 builds
+      // the real hand-off mechanism here.
+      {
+        key: 'handoff',
+        label: 'hand-off seam',
+        length: '120vh',
+        enter: { mechanism: 'crossfade', band: [0.6, 0.2], ease: 'smoothstep' },
+        stops: [
+          field(
+            0,
+            {
+              ground: '#ece3d6',
+              blob1: '#cbb9a4',
+              blob2: '#ddcab4',
+            },
+            { presence: 0.2, drift: 0.18 },
+          ),
+        ],
+      },
+      // Light chapter: flat light ground, field presence at or near zero,
+      // freely scrollable (hard constraint: no pin, no scroll hijack).
+      {
+        key: 'offerLadder',
+        label: 'offer ladder',
+        length: '130vh',
+        enter: { mechanism: 'crossfade', band: [0.85, 0.2], ease: 'none' },
+        stops: [
+          field(
+            0,
+            {
+              ground: '#f4efe6',
+              blob1: '#d8c8e6',
+              blob2: '#e8d8c8',
+            },
+            { presence: 0, drift: 0.15 },
+          ),
+        ],
+      },
       {
         key: 'artShop',
         label: 'art shop',
+        length: '120vh',
+        enter: { mechanism: 'crossfade', band: [0.85, 0.2], ease: 'none' },
+        stops: [
+          field(
+            0,
+            {
+              ground: '#f6e7e0',
+              blob1: '#ec5ea4',
+              blob2: '#ffa075',
+            },
+            // A whisper of the wireframe's "second color moment"; still
+            // "near 0" per the light-chapter constraint.
+            { presence: 0.08, drift: 0.15 },
+          ),
+        ],
+      },
+      {
+        key: 'trust',
+        label: 'trust strip',
         length: '100vh',
         enter: { mechanism: 'crossfade', band: [0.85, 0.2], ease: 'none' },
         stops: [
-          field(0, {
-            ground: '#f4e0dd',
-            blob1: '#ec5ea4',
-            blob2: '#ffa075',
-          }),
+          field(
+            0,
+            {
+              ground: '#f2ede4',
+              blob1: '#dccfbd',
+              blob2: '#e6dbc9',
+            },
+            { presence: 0, drift: 0.12 },
+          ),
         ],
       },
       {
