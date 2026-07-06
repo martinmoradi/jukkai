@@ -98,18 +98,288 @@
   text-wrap: balance;
 }
 
-.projects {
-  gap: 2rem;
+/* --- Galerie takeover (experiment #57+#58) --- */
+
+/* The pinned dark room: a full-viewport stage whose children are layered
+   absolutely; the choreography timeline owns their entrances. */
+.galerie {
+  gap: 0;
   align-items: center;
   justify-content: center;
+  padding: 0;
   overflow: hidden;
 }
 
-.growFrame {
-  width: min(86vw, 1080px);
-  height: min(72vh, 720px);
+.galerieEditorial {
+  z-index: 1;
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.galerieDisplay {
+  margin: 0;
+  font-family:
+    var(--jukkai-generated-font-family), Georgia, 'Times New Roman', serif;
+  font-size: clamp(4rem, 13vw, 11rem);
+  font-weight: 500;
+  line-height: 0.92;
+}
+
+.galerieKicker {
+  margin: 0;
+  font-family:
+    var(--jukkai-generated-font-family), Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.collage {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.collageItem {
+  position: absolute;
+  top: var(--collage-top);
+  left: var(--collage-left);
+  width: var(--collage-width);
+  height: auto;
+  aspect-ratio: var(--collage-aspect);
+}
+
+/* Carousel slides: tinted placeholders standing in for project images. */
+.slide {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  visibility: hidden;
+  place-items: center;
+  background: var(--slide-tint, #444);
+  opacity: 0;
+}
+
+.slide::after {
+  font-size: 0.72rem;
+  color: rgb(244 234 217 / 0.75);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  content: attr(data-label);
+}
+
+/* Featured overlay: fixed rider above the sections, animated by both
+   takeover timelines. Hidden until the galerie choreography reveals it. */
+.featuredOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  visibility: hidden;
+  place-items: center;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.featuredFrame {
+  position: relative;
+  width: 46vw;
+  height: 46vh;
   overflow: hidden;
-  will-change: transform;
+  will-change: width, height, transform;
+}
+
+.frameStage,
+.slotStage {
+  position: absolute;
+  inset: 0;
+}
+
+.featuredChrome {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1rem;
+  align-items: end;
+  padding: clamp(1rem, 3vw, 2.4rem);
+}
+
+.featuredName {
+  margin: 0;
+  font-family:
+    var(--jukkai-generated-font-family), Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.2rem, 2.4vw, 2rem);
+}
+
+.featuredNav {
+  display: flex;
+  gap: 0.6rem;
+  place-self: center center;
+}
+
+.navButton {
+  display: grid;
+  place-items: center;
+  width: clamp(2.8rem, 4.4vw, 3.6rem);
+  aspect-ratio: 1;
+  padding: 0;
+  font-size: 1.1rem;
+  color: #f4ead9;
+  pointer-events: auto;
+  cursor: pointer;
+  background: rgb(8 10 18 / 0.55);
+  border: 1px solid rgb(244 234 217 / 0.3);
+  border-radius: 50%;
+}
+
+.navButton:hover,
+.navButton:focus-visible {
+  background: rgb(8 10 18 / 0.8);
+}
+
+.navButton:focus-visible {
+  outline: 2px solid rgb(244 234 217 / 0.7);
+  outline-offset: 2px;
+}
+
+.featuredCounter {
+  margin: 0;
+  font-size: 0.85rem;
+  text-align: right;
+  letter-spacing: 0.08em;
+}
+
+/* Static fallback carousel: hidden while the full choreography runs. */
+.staticFeatured {
+  position: relative;
+  display: none;
+  width: min(92vw, 680px);
+}
+
+.staticStage {
+  position: relative;
+  aspect-ratio: 3 / 2;
+}
+
+.staticChrome {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 0.8rem;
+}
+
+/* --- Hand-off seam (experiment #57) --- */
+
+.handoff {
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Inline arch slot: where the overlay parks at the end of the morph so the
+   door scrolls away with the page. Geometry mirrors the tunables via CSS
+   vars set by the choreography. */
+.handoffSlot {
+  position: absolute;
+  top: var(--handoff-slot-top, 12vh);
+  left: 50%;
+  visibility: hidden;
+  width: var(--handoff-arch-w, 24vw);
+  height: var(--handoff-arch-h, 46vh);
+  overflow: hidden;
+  border-radius: var(--handoff-arch-r, 12vw) var(--handoff-arch-r, 12vw) 0 0;
+  opacity: 0;
+  transform: translateX(-50%);
+}
+
+.handoffPanel {
+  position: absolute;
+  inset: var(--handoff-seam-top, 56vh) 0 0;
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  padding: clamp(2rem, 6vh, 4rem) clamp(1.5rem, 7vw, 7rem);
+  background: #ece3d6;
+}
+
+.handoffType {
+  display: grid;
+  gap: 1rem;
+}
+
+.handoffDisplay {
+  max-width: 14ch;
+  margin: 0;
+  font-family:
+    var(--jukkai-generated-font-family), Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.6rem, 7vw, 6rem);
+  font-weight: 500;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+/* --- Static fallback (mobile / tablet / reduced motion) ---
+   No pins, no morph: sections in normal flow, carousel by buttons only.
+   Deliberately rough for now. */
+
+[data-mood-static] .featuredOverlay {
+  display: none;
+}
+
+[data-mood-static] .galerie {
+  gap: 2rem;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: clamp(4rem, 10vh, 8rem) clamp(1.5rem, 7vw, 7rem);
+  overflow: visible;
+}
+
+[data-mood-static] .galerieEditorial {
+  justify-items: start;
+  text-align: left;
+}
+
+[data-mood-static] .collage {
+  position: static;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+[data-mood-static] .collageItem {
+  position: static;
+  width: clamp(110px, 26vw, 220px);
+}
+
+[data-mood-static] .staticFeatured {
+  display: block;
+}
+
+[data-mood-static] .handoff {
+  gap: 2rem;
+  align-items: stretch;
+  min-height: 100vh;
+  padding: clamp(4rem, 10vh, 8rem) 0 0;
+  overflow: visible;
+}
+
+[data-mood-static] .handoffSlot {
+  position: static;
+  visibility: visible;
+  align-self: center;
+  width: min(70vw, 340px);
+  height: min(56vh, 440px);
+  border-radius: min(35vw, 170px) min(35vw, 170px) 0 0;
+  opacity: 1;
+  transform: none;
+}
+
+[data-mood-static] .handoffPanel {
+  position: static;
 }
 
 /* Blockout placeholder: a neutral media box standing in for an image at its
@@ -129,14 +399,6 @@
   letter-spacing: 0.1em;
   content: attr(data-label);
   opacity: 0.62;
-}
-
-.stance {
-  margin: 0;
-  font-family:
-    var(--jukkai-generated-font-family), Georgia, 'Times New Roman', serif;
-  font-size: clamp(1.6rem, 3.4vw, 2.8rem);
-  font-style: italic;
 }
 
 .printsRow {

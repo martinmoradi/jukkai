@@ -20,15 +20,27 @@ import {
   mixRgb,
   MOOD_SCROLL_STRUCTURE_CHANGE_EVENT,
 } from './mood-scroll-config';
-import { createMoodGl } from './mood-scroll-gl';
 import {
-  type MoodTunableHandle,
-  type MoodTunableRegistry,
-  tunable,
-} from './mood-scroll-tunables';
+  clearGalerieChoreographyStyles,
+  createFeaturedCarousel,
+  createGalerieTimeline,
+  createHandoffTimeline,
+  type GalerieChoreographyTunables,
+  registerGalerieChoreographyTunables,
+} from './mood-scroll-galerie';
+import { createMoodGl } from './mood-scroll-gl';
+import type { MoodTunableRegistry } from './mood-scroll-tunables';
 
 const VELOCITY_SMOOTHING = 0.12;
 const VELOCITY_NORM_PX = 60;
+const RESIZE_REBUILD_DELAY_MS = 180;
+
+// Below this width (or under reduced motion) the page uses the static
+// fallback: no pins, no morph theatrics, sections in normal flow. The mood
+// journey still rides scroll; the carousel still works from its buttons.
+const FULL_CHOREOGRAPHY_QUERY = '(min-width: 1024px)';
+
+type MoodScrollMode = 'full' | 'static';
 
 type ConductorLink = {
   target: ConductorTarget;
@@ -41,13 +53,6 @@ type ConductorState = {
   timelines: Map<string, gsap.core.Timeline>;
   dispose: () => void;
 };
-
-interface GalerieTunables {
-  growStartScale: MoodTunableHandle;
-  captionStart: MoodTunableHandle;
-  captionDuration: MoodTunableHandle;
-  captionLiftY: MoodTunableHandle;
-}
 
 export interface MoodDevToggleResult {
   ok: boolean;
@@ -78,20 +83,54 @@ export function initMoodScroll(
   if (!moodGl) return null;
 
   gsap.registerPlugin(ScrollTrigger);
-  const galerieTunables = registerGalerieTunables(tunables);
+  const choreography = registerGalerieChoreographyTunables(tunables);
 
-  const reducedMotion = window.matchMedia(
+  const reducedMotionQuery = window.matchMedia(
     '(prefers-reduced-motion: reduce)',
-  ).matches;
+  );
+  const fullChoreographyQuery = window.matchMedia(FULL_CHOREOGRAPHY_QUERY);
+  const reducedMotion = reducedMotionQuery.matches;
   const frozen =
     new URLSearchParams(window.location.search).get('frozen') === '1';
 
+  const resolveMode = (): MoodScrollMode =>
+    fullChoreographyQuery.matches && !reducedMotionQuery.matches
+      ? 'full'
+      : 'static';
+  const applyModeAttribute = (mode: MoodScrollMode) => {
+    if (mode === 'static') root.dataset.moodStatic = 'true';
+    else delete root.dataset.moodStatic;
+  };
+
+  const carousel = createFeaturedCarousel(root, {
+    intervalSec: choreography.slideIntervalSec,
+    fadeSec: choreography.slideFadeSec,
+    reducedMotion,
+  });
+
+  // Auto-advance only while the journey actually shows the featured frame:
+  // from its appearance inside the galerie pin until the hand-off swaps the
+  // overlay into the inline arch slot.
+  const takeoverProgress: Record<string, number> = { galerie: 0, handoff: 0 };
+  const onTakeoverProgress = (sceneKey: string, progress: number) => {
+    takeoverProgress[sceneKey] = progress;
+    carousel.setAutoAdvance(
+      resolveMode() === 'full' &&
+        takeoverProgress.galerie > choreography.featuredAppearStart.get() &&
+        takeoverProgress.handoff < 0.985,
+    );
+  };
+
+  let mode = resolveMode();
+  applyModeAttribute(mode);
   let markersEnabled = false;
   let gsDevToolsEnabled = false;
   let gsDevToolsInstance: { kill: () => void } | null = null;
   let conductor = createConductorState(root, config, {
-    galerieTunables,
+    choreography,
     markers: markersEnabled,
+    mode,
+    onTakeoverProgress,
   });
   let chain = conductor.chain;
   let conductorRebuildFrame: number | null = null;
@@ -128,9 +167,13 @@ export function initMoodScroll(
 
   const rebuildConductor = () => {
     conductor.dispose();
+    mode = resolveMode();
+    applyModeAttribute(mode);
     conductor = createConductorState(root, config, {
-      galerieTunables,
+      choreography,
       markers: markersEnabled,
+      mode,
+      onTakeoverProgress,
     });
     chain = conductor.chain;
     ScrollTrigger.refresh();
@@ -256,8 +299,22 @@ export function initMoodScroll(
   };
 
   gsap.ticker.add(tick);
-  const onResize = () => moodGl.resize();
+  // Choreography geometry (arch size, seam position, full-bleed tweens) is
+  // computed in pixels at build time, so a settled resize rebuilds the
+  // conductor rather than leaving stale end values.
+  let resizeRebuildTimer: ReturnType<typeof setTimeout> | null = null;
+  const onResize = () => {
+    moodGl.resize();
+    if (resizeRebuildTimer !== null) clearTimeout(resizeRebuildTimer);
+    resizeRebuildTimer = setTimeout(() => {
+      resizeRebuildTimer = null;
+      scheduleConductorRebuild();
+    }, RESIZE_REBUILD_DELAY_MS);
+  };
   window.addEventListener('resize', onResize);
+  const onModeChange = () => scheduleConductorRebuild();
+  fullChoreographyQuery.addEventListener('change', onModeChange);
+  reducedMotionQuery.addEventListener('change', onModeChange);
 
   // Jump targets read the live conductor chain at click time, so they stay
   // correct after enter-band edits or pin-length changes rebuild the triggers.
@@ -311,6 +368,9 @@ export function initMoodScroll(
     dispose: () => {
       gsap.ticker.remove(tick);
       window.removeEventListener('resize', onResize);
+      fullChoreographyQuery.removeEventListener('change', onModeChange);
+      reducedMotionQuery.removeEventListener('change', onModeChange);
+      if (resizeRebuildTimer !== null) clearTimeout(resizeRebuildTimer);
       window.removeEventListener(
         MOOD_SCROLL_STRUCTURE_CHANGE_EVENT,
         scheduleConductorRebuild,
@@ -320,39 +380,10 @@ export function initMoodScroll(
         window.cancelAnimationFrame(conductorRebuildFrame);
       }
       killGsDevTools();
+      carousel.dispose();
       conductor.dispose();
       moodGl.dispose();
     },
-  };
-}
-
-function registerGalerieTunables(
-  registry: MoodTunableRegistry,
-): GalerieTunables {
-  return {
-    growStartScale: tunable(registry, 'galerie.growStartScale', 0.5, {
-      min: 0.2,
-      max: 1,
-      step: 0.01,
-    }),
-    captionStart: tunable(registry, 'galerie.captionStart', 0.6, {
-      min: 0,
-      max: 1,
-      step: 0.01,
-      requiresReinit: true,
-    }),
-    captionDuration: tunable(registry, 'galerie.captionDuration', 0.35, {
-      min: 0.05,
-      max: 1,
-      step: 0.01,
-      requiresReinit: true,
-    }),
-    captionLiftY: tunable(registry, 'galerie.captionLiftY', 24, {
-      min: 0,
-      max: 80,
-      step: 1,
-      requiresReinit: true,
-    }),
   };
 }
 
@@ -360,8 +391,10 @@ function createConductorState(
   root: HTMLElement,
   config: MoodScrollConfig,
   options: {
-    galerieTunables: GalerieTunables;
+    choreography: GalerieChoreographyTunables;
     markers: boolean;
+    mode: MoodScrollMode;
+    onTakeoverProgress?: (sceneKey: string, progress: number) => void;
   },
 ): ConductorState {
   const chain: ConductorLink[] = [];
@@ -397,11 +430,37 @@ function createConductorState(
     if (!previous || !el) continue;
 
     if (scene.enter.mechanism === 'takeover') {
-      const timeline = createGalerieTakeoverTimeline(
+      // Static fallback: no pin, no choreography timeline. The section sits
+      // in normal flow and the field journey scrubs across its traversal.
+      if (options.mode === 'static') {
+        const trigger = ScrollTrigger.create({
+          trigger: el,
+          start: 'top 75%',
+          end: 'bottom 40%',
+          markers: options.markers,
+          scrub: true,
+          onUpdate: (self) => {
+            options.onTakeoverProgress?.(scene.key, self.progress);
+          },
+        });
+        chain.push({
+          target: { mechanism: 'takeover', sceneKey: scene.key, progress: 0 },
+          st: trigger,
+        });
+        disposers.push(() => trigger.kill());
+        continue;
+      }
+
+      const timeline = createTakeoverTimeline(
         root,
         scene.key,
-        options.galerieTunables,
+        options.choreography,
       );
+      // The two takeover timelines share the featured overlay. A timeline
+      // only renders while its own pin is engaged (or once, to rewind on the
+      // way out); otherwise a refresh while parked inside the OTHER pin
+      // would stomp the overlay with this timeline's resting values.
+      const apply = createGuardedTimelineApply(timeline);
       const trigger = ScrollTrigger.create({
         trigger: el,
         start: 'top top',
@@ -410,13 +469,15 @@ function createConductorState(
         pin: scene.pin === true,
         scrub: true,
         onUpdate: (self) => {
-          timeline.time(self.progress);
+          apply(self.progress);
+          options.onTakeoverProgress?.(scene.key, self.progress);
         },
         // At creation the trigger has no layout yet (progress 0). Re-sync on
         // refresh so a conductor rebuild while parked inside the pin does not
         // leave the timeline at its start until the next scroll event.
         onRefresh: (self) => {
-          timeline.time(self.progress);
+          apply(self.progress);
+          options.onTakeoverProgress?.(scene.key, self.progress);
         },
       });
       chain.push({
@@ -425,7 +486,8 @@ function createConductorState(
       });
       timelines.set(scene.key, timeline);
       renderers.set(scene.key, (invalidate = false) => {
-        renderGalerieTimeline(timeline, trigger.progress, invalidate);
+        if (trigger.progress === 0) return;
+        renderTakeoverTimeline(timeline, trigger.progress, invalidate);
       });
       disposers.push(() => {
         trigger.kill();
@@ -480,58 +542,41 @@ function createConductorState(
     timelines,
     dispose: () => {
       for (const dispose of disposers.splice(0).reverse()) dispose();
+      // Rebuilds (and switches to the static fallback) start from the
+      // stylesheet's truth, not from whatever inline state the choreography
+      // timelines left behind.
+      clearGalerieChoreographyStyles(root);
     },
   };
 }
 
-function createGalerieTakeoverTimeline(
+function createTakeoverTimeline(
   root: HTMLElement,
   sceneKey: string,
-  galerieTunables: GalerieTunables,
+  choreography: GalerieChoreographyTunables,
 ): gsap.core.Timeline {
-  const timeline = gsap.timeline({ paused: true });
-
-  if (sceneKey === 'galerie') {
-    const growEl = root.querySelector('[data-mood-grow]');
-    const captionEl = root.querySelector('[data-mood-caption]');
-
-    if (growEl) {
-      timeline.fromTo(
-        growEl,
-        { scale: () => galerieTunables.growStartScale.get() },
-        { scale: 1, ease: 'none', duration: 1 },
-        0,
-      );
-    }
-
-    if (captionEl) {
-      // The timeline contract is 1 second = full pin; the scrub drives it
-      // with time(progress in 0..1). Clamp the caption tween to fit, or a
-      // late start plus long duration pushes it past what the pin can reach.
-      const captionStart = Math.min(galerieTunables.captionStart.get(), 1);
-      const captionDuration = Math.max(
-        Math.min(galerieTunables.captionDuration.get(), 1 - captionStart),
-        0.001,
-      );
-      timeline.fromTo(
-        captionEl,
-        { autoAlpha: 0, y: () => galerieTunables.captionLiftY.get() },
-        {
-          autoAlpha: 1,
-          y: 0,
-          ease: 'none',
-          duration: captionDuration,
-        },
-        captionStart,
-      );
-    }
-    renderGalerieTimeline(timeline, 0);
-  }
-
-  return timeline;
+  if (sceneKey === 'galerie') return createGalerieTimeline(root, choreography);
+  if (sceneKey === 'handoff') return createHandoffTimeline(root, choreography);
+  return gsap.timeline({ paused: true });
 }
 
-function renderGalerieTimeline(
+function createGuardedTimelineApply(
+  timeline: gsap.core.Timeline,
+): (progress: number) => void {
+  let engaged = false;
+  return (progress: number) => {
+    if (progress > 0) {
+      engaged = true;
+      timeline.time(progress, false);
+      return;
+    }
+    if (!engaged) return;
+    engaged = false;
+    timeline.time(0, false);
+  };
+}
+
+function renderTakeoverTimeline(
   timeline: gsap.core.Timeline,
   progress: number,
   invalidate = false,

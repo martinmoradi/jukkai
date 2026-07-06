@@ -17,6 +17,31 @@ const sectionStyle = (key: string): string | undefined => {
   if (!scene || scene.pin) return undefined;
   return `min-height: ${parseSceneLengthVh(scene.length)}vh`;
 };
+
+// Featured works for the galerie carousel: distinguishable placeholder
+// tints so image-to-image transitions can be judged before real assets.
+const featuredProjects = [
+  { name: 'Projet 01 · [maison]', tint: '#8a4a33' },
+  { name: 'Projet 02 · [appartement]', tint: '#96702f' },
+  { name: 'Projet 03 · [restaurant]', tint: '#586647' },
+  { name: 'Projet 04 · [bureaux]', tint: '#3d4c66' },
+  { name: 'Projet 05 · [boutique]', tint: '#5d3f52' },
+];
+
+// Loose collage scatter for the dark room (positions are structure; the
+// recede treatment is tunable). CSS vars so the static fallback can
+// re-lay them out without fighting inline styles.
+const collageItems = [
+  { left: '5%', top: '10%', width: '17vw', aspect: '3 / 4' },
+  { left: '76%', top: '7%', width: '19vw', aspect: '4 / 3' },
+  { left: '9%', top: '60%', width: '15vw', aspect: '1 / 1' },
+  { left: '72%', top: '56%', width: '18vw', aspect: '3 / 2' },
+  { left: '43%', top: '4%', width: '13vw', aspect: '4 / 5' },
+];
+
+const collageItemStyle = (item: (typeof collageItems)[number]): string =>
+  `--collage-left: ${item.left}; --collage-top: ${item.top}; ` +
+  `--collage-width: ${item.width}; --collage-aspect: ${item.aspect};`;
 ---
 
 <div class={styles.page} data-mood-root>
@@ -55,25 +80,105 @@ const sectionStyle = (key: string): string | undefined => {
       </p>
     </section>
 
+    <!-- Galerie takeover (experiment #57+#58): editorial beat, collage
+         assembly, then the featured frame (a fixed overlay, below) grows to
+         full bleed. Scroll drives geometry; the carousel drives content. -->
     <section
-      class={`${styles.section} ${styles.inkLight} ${styles.projects}`}
+      class={`${styles.section} ${styles.inkLight} ${styles.galerie}`}
       data-mood-section='galerie'>
-      <div class={styles.growFrame} data-mood-grow>
-        <div class={styles.mediaBox} data-label='image projet · 3:2'></div>
+      <div class={styles.galerieEditorial} data-galerie-editorial>
+        <p class={styles.galerieDisplay}>Les projets</p>
+        <p class={styles.galerieKicker}>
+          Des lieux habités, pas des décors. [placeholder]
+        </p>
       </div>
-      <p class={styles.stance} data-mood-caption>
-        « On n'aurait jamais fait ça. »
-      </p>
+      <div class={styles.collage} data-galerie-collage aria-hidden='true'>
+        {
+          collageItems.map((item, index) => (
+            <div
+              class={`${styles.mediaBox} ${styles.collageItem}`}
+              style={collageItemStyle(item)}
+              data-collage-item
+              data-label={`image projet · ${index + 1}`}
+            />
+          ))
+        }
+      </div>
+      <!-- Static fallback (mobile/tablet/reduced motion): the carousel in
+           normal flow, buttons only, no growth choreography. -->
+      <div class={styles.staticFeatured} data-galerie-static>
+        <div class={styles.staticStage} data-carousel-stage>
+          {
+            featuredProjects.map((project, index) => (
+              <div
+                class={styles.slide}
+                style={`--slide-tint: ${project.tint}`}
+                data-carousel-slide
+                data-project-name={project.name}
+                data-label={project.name}
+                aria-hidden={index === 0 ? undefined : 'true'}
+              />
+            ))
+          }
+        </div>
+        <div class={styles.staticChrome}>
+          <p class={styles.featuredName} data-carousel-name>
+            {featuredProjects[0].name}
+          </p>
+          <div class={styles.featuredNav}>
+            <button
+              class={styles.navButton}
+              type='button'
+              data-carousel-prev
+              aria-label='Projet précédent'>←</button
+            >
+            <button
+              class={styles.navButton}
+              type='button'
+              data-carousel-next
+              aria-label='Projet suivant'>→</button
+            >
+          </div>
+          <p class={styles.featuredCounter} data-carousel-counter>
+            1/{featuredProjects.length}
+          </p>
+        </div>
+      </div>
     </section>
 
-    <!-- Hand-off seam: reserved runway between the dark and light chapters.
-         The mood crossfade is the content; #57 builds the real hand-off
-         mechanism (image shrinks into an arched frame) inside this band. -->
+    <!-- Hand-off seam (experiment #57): pinned runway where the full-bleed
+         featured image shrinks into an arch-masked door while the light
+         chapter rises to the seam. The arch is the door; the sentence below
+         invites you to push it. -->
     <section
-      class={styles.section}
+      class={`${styles.section} ${styles.handoff}`}
       style={sectionStyle('handoff')}
-      data-mood-section='handoff'
-      aria-hidden='true'>
+      data-mood-section='handoff'>
+      <div class={styles.handoffSlot} data-handoff-slot aria-hidden='true'>
+        <div class={styles.slotStage} data-carousel-stage>
+          {
+            featuredProjects.map((project) => (
+              <div
+                class={styles.slide}
+                style={`--slide-tint: ${project.tint}`}
+                data-carousel-slide
+                data-project-name={project.name}
+                data-label={project.name}
+              />
+            ))
+          }
+        </div>
+      </div>
+      <div
+        class={`${styles.handoffPanel} ${styles.inkDark}`}
+        data-handoff-panel>
+        <div class={styles.handoffType} data-handoff-type>
+          <p class={styles.handoffDisplay}>Venez pousser la porte.</p>
+          <p class={styles.meta}>
+            L'art shop ouvre en octobre 2026 · Châteaugiron [placeholder]
+          </p>
+        </div>
+      </div>
     </section>
 
     <section
@@ -167,6 +272,53 @@ const sectionStyle = (key: string): string | undefined => {
       </div>
     </section>
   </main>
+
+  <!-- Featured overlay: one fixed frame both takeover timelines animate.
+       It appears mid-galerie, grows to full bleed, hides the section seam
+       during the unpin traversal, then morphs into the arch and swaps into
+       the hand-off's inline slot. Wheel events pass through; only the
+       carousel buttons take the pointer. -->
+  <div class={styles.featuredOverlay} data-galerie-overlay>
+    <div
+      class={`${styles.featuredFrame} ${styles.inkLight}`}
+      data-galerie-frame>
+      <div class={styles.frameStage} data-carousel-stage>
+        {
+          featuredProjects.map((project) => (
+            <div
+              class={styles.slide}
+              style={`--slide-tint: ${project.tint}`}
+              data-carousel-slide
+              data-project-name={project.name}
+              data-label={project.name}
+            />
+          ))
+        }
+      </div>
+      <div class={styles.featuredChrome} data-galerie-chrome>
+        <p class={styles.featuredName} data-carousel-name aria-live='polite'>
+          {featuredProjects[0].name}
+        </p>
+        <div class={styles.featuredNav}>
+          <button
+            class={styles.navButton}
+            type='button'
+            data-carousel-prev
+            aria-label='Projet précédent'>←</button
+          >
+          <button
+            class={styles.navButton}
+            type='button'
+            data-carousel-next
+            aria-label='Projet suivant'>→</button
+          >
+        </div>
+        <p class={styles.featuredCounter} data-carousel-counter>
+          1/{featuredProjects.length}
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
