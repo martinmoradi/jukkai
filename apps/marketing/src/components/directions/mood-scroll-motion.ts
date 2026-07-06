@@ -64,7 +64,7 @@ export interface MoodScrollDevTools {
 }
 
 export interface MoodScrollInstance {
-  devTools: MoodScrollDevTools;
+  devTools?: MoodScrollDevTools;
   dispose(): void;
 }
 
@@ -106,11 +106,6 @@ export function initMoodScroll(
     killGsDevTools();
     if (!gsDevToolsEnabled) return { ok: true };
 
-    if (!import.meta.env.DEV) {
-      gsDevToolsEnabled = false;
-      return { ok: false, message: 'GSDevTools is dev-server only' };
-    }
-
     const timeline = conductor.timelines.get('galerie');
     if (!timeline) {
       gsDevToolsEnabled = false;
@@ -134,7 +129,7 @@ export function initMoodScroll(
     });
     chain = conductor.chain;
     ScrollTrigger.refresh();
-    void syncGsDevTools();
+    if (import.meta.env.DEV && gsDevToolsEnabled) void syncGsDevTools();
   };
 
   const scheduleConductorRebuild = () => {
@@ -259,25 +254,24 @@ export function initMoodScroll(
   const onResize = () => moodGl.resize();
   window.addEventListener('resize', onResize);
 
-  const devTools: MoodScrollDevTools = {
-    markersEnabled: () => markersEnabled,
-    gsDevToolsEnabled: () => gsDevToolsEnabled,
-    setMarkers: (enabled) => {
-      if (!import.meta.env.DEV) {
-        return { ok: false, message: 'ScrollTrigger markers are dev-only' };
+  const devTools: MoodScrollDevTools | undefined = import.meta.env.DEV
+    ? {
+        markersEnabled: () => markersEnabled,
+        gsDevToolsEnabled: () => gsDevToolsEnabled,
+        setMarkers: (enabled) => {
+          markersEnabled = enabled;
+          scheduleConductorRebuild();
+          return {
+            ok: true,
+            message: enabled ? 'Markers on' : 'Markers off',
+          };
+        },
+        setGsDevTools: async (enabled) => {
+          gsDevToolsEnabled = enabled;
+          return syncGsDevTools();
+        },
       }
-      markersEnabled = enabled;
-      scheduleConductorRebuild();
-      return {
-        ok: true,
-        message: enabled ? 'Markers on' : 'Markers off',
-      };
-    },
-    setGsDevTools: async (enabled) => {
-      gsDevToolsEnabled = enabled;
-      return syncGsDevTools();
-    },
-  };
+    : undefined;
 
   return {
     devTools,
