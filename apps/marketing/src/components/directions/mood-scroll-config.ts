@@ -5,6 +5,8 @@
 // system is not reopened by default. Every value here is a stage anchor to
 // point at in the browser, not a token.
 
+import type { MoodTunableRegistry } from './mood-scroll-tunables';
+
 export type Rgb = [number, number, number];
 
 export const MOOD_FIELD_COLOR_CHANNELS = ['ground', 'blob1', 'blob2'] as const;
@@ -69,6 +71,7 @@ export interface MoodScene {
 export interface MoodScrollConfig {
   colorSmoothing: number;
   velocityInfluence: number;
+  tunables: Record<string, number>;
   scenes: MoodScene[];
 }
 
@@ -122,6 +125,7 @@ export function createDefaultConfig(): MoodScrollConfig {
   return {
     colorSmoothing: 0.14,
     velocityInfluence: 1,
+    tunables: {},
     scenes: [
       {
         key: 'hero',
@@ -212,6 +216,7 @@ export function cloneMoodScrollConfig(
   return {
     colorSmoothing: config.colorSmoothing,
     velocityInfluence: config.velocityInfluence,
+    tunables: { ...config.tunables },
     scenes: config.scenes.map(cloneScene),
   };
 }
@@ -219,6 +224,7 @@ export function cloneMoodScrollConfig(
 export function applyMoodScrollConfig(
   target: MoodScrollConfig,
   raw: unknown,
+  tunables?: MoodTunableRegistry,
 ): boolean {
   const next = parseMoodScrollConfig(raw);
   if (!next) return false;
@@ -226,6 +232,7 @@ export function applyMoodScrollConfig(
   target.colorSmoothing = next.colorSmoothing;
   target.velocityInfluence = next.velocityInfluence;
   copyScenes(target.scenes, next.scenes);
+  copyTunables(target.tunables, next.tunables, tunables);
   return true;
 }
 
@@ -291,6 +298,7 @@ function parseMoodScrollConfig(raw: unknown): MoodScrollConfig | null {
   return {
     colorSmoothing,
     velocityInfluence,
+    tunables: parseTunables(raw.tunables),
     scenes: scenes as MoodScene[],
   };
 }
@@ -410,6 +418,23 @@ function copyScenes(target: MoodScene[], source: MoodScene[]): void {
   }
 }
 
+function copyTunables(
+  target: Record<string, number>,
+  source: Record<string, number>,
+  registry?: MoodTunableRegistry,
+): void {
+  if (registry) {
+    registry.applyPreset(source);
+    return;
+  }
+
+  for (const id of Object.keys(target)) {
+    if (Number.isFinite(source[id])) {
+      target[id] = source[id];
+    }
+  }
+}
+
 function hasExpectedSceneOrder(scenes: MoodScene[]): boolean {
   return MOOD_SCENE_KEYS.every((key, index) => scenes[index]?.key === key);
 }
@@ -424,6 +449,18 @@ function parseEnterEase(raw: unknown): MoodEnterEase | null {
 
 function finiteOrDefault(raw: unknown, fallback: number): number {
   return typeof raw === 'number' && Number.isFinite(raw) ? raw : fallback;
+}
+
+function parseTunables(raw: unknown): Record<string, number> {
+  if (!isRecord(raw)) return {};
+
+  const parsed: Record<string, number> = {};
+  for (const [id, value] of Object.entries(raw)) {
+    if (typeof value === 'number' && Number.isFinite(value)) {
+      parsed[id] = value;
+    }
+  }
+  return parsed;
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
