@@ -8,14 +8,14 @@ import {
 } from './mood-scroll-config';
 
 describe('mood scroll config dev helpers', () => {
-  it('clones configs without sharing nested mood objects', () => {
+  it('clones configs without sharing nested scene stop objects', () => {
     const config = createDefaultConfig();
     const clone = cloneMoodScrollConfig(config);
 
-    clone.moods.hero.ground = '#000000';
+    clone.scenes[0].stops[0].ground = '#000000';
 
-    expect(config.moods.hero.ground).toBe('#f7ddba');
-    expect(clone.moods.hero.ground).toBe('#000000');
+    expect(config.scenes[0].stops[0].ground).toBe('#f7ddba');
+    expect(clone.scenes[0].stops[0].ground).toBe('#000000');
   });
 
   it('normalizes hex colors for hand-edited JSON', () => {
@@ -24,33 +24,33 @@ describe('mood scroll config dev helpers', () => {
     expect(normalizeHexColor('not a color')).toBeNull();
   });
 
-  it('applies a partial loaded config while ignoring invalid fields', () => {
+  it('applies a loaded scene config round trip', () => {
     const config = createDefaultConfig();
+    const next = cloneMoodScrollConfig(config);
+    next.velocityInfluence = 1.4;
+    next.colorSmoothing = 0.2;
+    next.scenes[0].stops[0].ground = '#123456';
+    next.scenes[2].stops[1].presence = 0.25;
 
-    const changed = applyMoodScrollConfig(config, {
-      blobStrength: 1.2,
-      driftSpeed: Number.NaN,
-      moods: {
-        hero: {
-          ground: '123456',
-          blob1: '#abc',
-          blob2: 'nope',
-        },
-      },
-    });
+    const changed = applyMoodScrollConfig(config, next);
 
     expect(changed).toBe(true);
-    expect(config.blobStrength).toBe(1.2);
-    expect(config.driftSpeed).toBe(0.28);
-    expect(config.moods.hero.ground).toBe('#123456');
-    expect(config.moods.hero.blob1).toBe('#aabbcc');
-    expect(config.moods.hero.blob2).toBe('#eb9c55');
+    expect(config.velocityInfluence).toBe(1.4);
+    expect(config.colorSmoothing).toBe(0.2);
+    expect(config.scenes[0].stops[0].ground).toBe('#123456');
+    expect(config.scenes[2].stops[1].presence).toBe(0.25);
   });
 
-  it('rejects JSON roots that do not contain known config fields', () => {
+  it('rejects old-shape or unknown JSON roots', () => {
     const config = createDefaultConfig();
 
     expect(applyMoodScrollConfig(config, ['nope'])).toBe(false);
     expect(applyMoodScrollConfig(config, { unrelated: true })).toBe(false);
+    expect(
+      applyMoodScrollConfig(config, {
+        blobStrength: 1.2,
+        moods: { hero: { ground: '#000000' } },
+      }),
+    ).toBe(false);
   });
 });
