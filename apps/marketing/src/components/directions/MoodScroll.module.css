@@ -192,10 +192,73 @@
 }
 
 .panelTitle {
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+  justify-content: space-between;
   margin: 0 0 0.6rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+
+.panelPresetButton {
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font: inherit;
+  font-weight: 700;
+  color: inherit;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: inherit;
+  white-space: nowrap;
+  cursor: text;
+  background: transparent;
+  border: 0;
+}
+
+.panelPresetButton:focus-visible {
+  outline: 2px solid rgb(236 228 216 / 0.42);
+  outline-offset: 2px;
+}
+
+.panelTitleHint {
+  flex: 0 0 auto;
+  font-weight: 600;
+  color: #d8cbb8;
+  opacity: 0.72;
+}
+
+.panelRename {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  min-width: 0;
+}
+
+.panelRenameStamp {
+  flex: 0 0 auto;
+}
+
+.panelRenameInput {
+  width: 8rem;
+  min-width: 0;
+  padding: 0.16rem 0.22rem;
+  font: inherit;
+  font-weight: 700;
+  color: #ece4d8;
+  text-transform: uppercase;
+  letter-spacing: inherit;
+  background: rgb(236 228 216 / 0.1);
+  border: 1px solid rgb(236 228 216 / 0.22);
+  border-radius: 4px;
+}
+
+.panelRenameInput:focus {
+  outline: 2px solid rgb(236 228 216 / 0.42);
+  outline-offset: 1px;
 }
 
 .panelGroup {
@@ -263,11 +326,12 @@
 
 .panelActions {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.4rem;
   margin-top: 0.7rem;
 }
 
-.panelCopy {
+.panelButton {
   width: 100%;
   padding: 0.5rem;
   margin: 0;
@@ -280,8 +344,40 @@
   border-radius: 5px;
 }
 
-.panelFileInput {
+.panelButton:hover,
+.panelButton:focus-visible {
+  background: #fff6e8;
+}
+
+.panelPresetList {
+  display: grid;
+  gap: 0.3rem;
+  padding: 0.45rem 0 0;
+  color: #d8cbb8;
+}
+
+.panelPresetList.panelHidden {
   display: none;
+}
+
+.panelPresetListItem {
+  width: 100%;
+  padding: 0.42rem 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font: inherit;
+  color: #ece4d8;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+  background: rgb(236 228 216 / 0.08);
+  border: 1px solid rgb(236 228 216 / 0.14);
+  border-radius: 5px;
+}
+
+.panelPresetListItem:hover,
+.panelPresetListItem:focus-visible {
+  background: rgb(236 228 216 / 0.15);
 }
 
 .panelStatus {
