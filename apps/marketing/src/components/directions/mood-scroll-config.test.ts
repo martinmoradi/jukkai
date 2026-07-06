@@ -1,12 +1,49 @@
 import { describe, expect, it } from 'vitest';
 
+import { parseSceneLengthVh } from './mood-scroll-conductor';
 import {
   applyMoodScrollConfig,
   cloneMoodScrollConfig,
   createDefaultConfig,
+  MOOD_SCENE_KEYS,
   normalizeHexColor,
 } from './mood-scroll-config';
 import { createTunableRegistry, tunable } from './mood-scroll-tunables';
+
+const LIGHT_CHAPTER_KEYS = ['offerLadder', 'artShop', 'trust'] as const;
+
+describe('mood scroll blockout scene model', () => {
+  it('declares the six beats in wireframe order with parseable lengths', () => {
+    const config = createDefaultConfig();
+
+    expect(config.scenes.map((scene) => scene.key)).toEqual([
+      ...MOOD_SCENE_KEYS,
+    ]);
+    for (const scene of config.scenes) {
+      expect(parseSceneLengthVh(scene.length)).toBeGreaterThan(0);
+    }
+  });
+
+  it('reserves the hand-off seam between the dark and light chapters', () => {
+    const keys = createDefaultConfig().scenes.map((scene) => scene.key);
+
+    expect(keys.indexOf('handoff')).toBe(keys.indexOf('galerie') + 1);
+    expect(keys.indexOf('offerLadder')).toBe(keys.indexOf('handoff') + 1);
+  });
+
+  it('keeps the light chapter unpinned with field presence near zero', () => {
+    const config = createDefaultConfig();
+
+    for (const key of LIGHT_CHAPTER_KEYS) {
+      const scene = config.scenes.find((entry) => entry.key === key);
+      expect(scene).toBeDefined();
+      expect(scene?.pin).not.toBe(true);
+      for (const stop of scene?.stops ?? []) {
+        expect(stop.presence).toBeLessThanOrEqual(0.1);
+      }
+    }
+  });
+});
 
 describe('mood scroll config dev helpers', () => {
   it('clones configs without sharing nested scene stop objects', () => {
