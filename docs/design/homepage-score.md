@@ -48,13 +48,14 @@ trust strip stay freely scrollable, never pinned.
    over paper (open, tune live).
 3. **Galerie (projects proof).** `400vh` sticky-runway takeover (experiment
    #58, PR #66; length from the Obsidian reference pacing). The first set
-   piece. The block scrolls in as a composed dark room on its own cobalt
-   wall (editorial display type visible, collage assembling on the way up),
-   the wall fades to the living field once the stage sticks, then the
-   featured frame is promoted into a large padded carousel frame while the
-   blues deepen to their darkest. It never becomes true full bleed. Scroll
-   drives geometry only; the featured image cycles by timer and prev/next
-   buttons. Detailed spec below.
+   piece. The block scrolls in as a composed dark room on its own living
+   cobalt wall: the wall carries its own mood surface (blobs, grain, drift)
+   from arrival, with editorial display type visible and the collage
+   assembling on the way up, while the umbrella recedes beneath it. The
+   featured frame is then promoted into a large padded carousel frame while
+   the blues deepen to their darkest. It never becomes true full bleed.
+   Scroll drives geometry only; the featured image cycles by timer and
+   prev/next buttons. Detailed spec below.
 4. **The hand-off.** `200vh` sticky-runway takeover (`handoff`, experiment
    #57, PR #66). The signature transition out of the dark chapter: the
    large featured image shrinks into an arch-masked door while the light
@@ -75,14 +76,24 @@ The "pousser la porte" idea found its home (July 6 session): it is not an
 entry mechanism into the galerie but the exit's meaning. The arch the
 hand-off leaves at the seam is the door, and the light chapter opens on the
 sentence that invites you to push it. The entry into the dark chapter went
-through two takes: the first was field-only (a cobalt snap after the pin),
-which read as an empty room recoloring — the shared fixed canvas cannot
-produce the reference's arriving-dark-room boundary. The sticky iteration
-gives the galerie block its own cobalt backdrop that scrolls in with it
-(the hard section boundary), with the field snapping to the same cobalt
-beneath it and the backdrop fading out just after the stick. The wall is a
-surface, not a framed shape, so the page's one big shape reveal is still
-saved for the exit arch.
+through three takes. The first was field-only (a cobalt snap after the
+pin), which read as an empty room recoloring — the shared fixed canvas
+cannot produce the reference's arriving-dark-room boundary. The second gave
+the galerie block an opaque flat backdrop that scrolls in with it (the hard
+section boundary), with the field snapping to the same cobalt beneath it
+and the backdrop fading out just after the stick; that kept the approach
+dead (flat CSS until the fade) and put the fade tunables in stuck space
+where they could not reach the entrance. The living-wall iteration (July 7
+session) keeps the arriving-boundary rationale and deletes the fade: the
+wall hosts its own contained mood surface (a sticky canvas driven by the
+scene's `surfaceStops` track), so the room is alive from the first pixel
+of the approach, the shared canvas stays lavender behind the umbrella
+(containment by construction), and both canvases share the same clock so
+their fields are pixel-identical wherever they meet. The galerie arrives
+as its own plane: the umbrella content lags, dims and shrinks under the
+rising edge (approach tunables), and the wall's top edge carries a soft
+shadow. The wall is a surface, not a framed shape, so the page's one big
+shape reveal is still saved for the exit arch.
 
 ## The galerie beat, detailed
 
@@ -100,8 +111,10 @@ exit; scrolling back rewinds the journey. Which image is featured is
 time-driven (auto-advance interval) plus prev/next buttons with a counter,
 never scroll, so the takeover can never trap the visitor. Built in PR #66:
 the choreography segments (editorial exit, collage enter/recede, featured
-appear, grow phase, chrome timing, backdrop fade) and the carousel timing
-are tunables under the `galerie` panel group.
+appear, grow phase, chrome timing), the approach treatment (umbrella
+parallax/dim/scale, block overlap, edge shadow) and the carousel timing
+are tunables under the `galerie` panel group; the wall's surface stops
+edit like any other stop list and land live even mid-approach.
 
 Implementation shape (sticky iteration, PR #66): the section is a tall
 block (`scene.length`) holding a 100vh `position: sticky` stage — no GSAP
@@ -299,7 +312,7 @@ Martin designs from references, not briefs. The loop, per idea:
 | ------------------------------------------------------------------------------ | --------------------- | ----------------------------------- | -------------- |
 | Mood field (blob + grain, scroll-blended)                                      | Codrops depth gallery | kept                                | whole page     |
 | Sticky takeover runway (image grows, room dims; was the pin takeover)          | comp v1 → sticky      | kept                                | galerie        |
-| Dark-room entrance (backdrop wall scrolls in, cobalt snap beneath)             | July 6 session        | built (PR #66), awaiting taste gate | galerie entry  |
+| Dark-room entrance (living wall scrolls in as its own plane, umbrella recedes) | July 7 session        | built (PR #66), awaiting taste gate | galerie entry  |
 | Gallery promotion (collage, grow to a padded frame; content by time + buttons) | Obsidian Assembly     | built (PR #66), awaiting taste gate | galerie        |
 | Hand-off (dominant image shrinks into framed arch, tonal flip)                 | Obsidian Assembly     | built (PR #66), awaiting taste gate | galerie exit   |
 | Idle texture (field life while not scrolling)                                  | none yet              | candidate, needs refs               | ambient scenes |
