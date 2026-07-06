@@ -203,6 +203,10 @@ export function initMoodScroll(
     conductor.dispose();
     mode = resolveMode();
     applyModeAttribute(mode);
+    // The surface canvas is display: none in the static version, so window
+    // resizes while hidden left its buffer at 0x0 (opaque black for an
+    // alpha: false context). Re-measure now that the mode attribute is set.
+    surfaceGl?.resize();
     conductor = createConductorState(root, config, {
       choreography,
       markers: markersEnabled,
