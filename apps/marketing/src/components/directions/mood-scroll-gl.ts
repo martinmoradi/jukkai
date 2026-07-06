@@ -33,6 +33,7 @@ uniform float u_noise;
 uniform float u_time;
 uniform float u_velocity;
 uniform vec2 u_aspect;
+uniform float u_roundness;
 
 float hash(vec2 p) {
   return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453123);
@@ -51,8 +52,12 @@ void main() {
     0.55 + sin(t * 1.175) * 0.07 + sin(t * 0.618) * 0.03
   );
 
-  float b1 = smoothstep(u_radius1, 0.0, length((v_uv - c1) * u_aspect));
-  float b2 = smoothstep(u_radius2, 0.0, length((v_uv - c2) * u_aspect));
+  // roundness 0 keeps the reference-demo behavior: blobs stretch with the
+  // viewport into wide soft washes and no circular rim is ever readable.
+  // roundness 1 aspect-corrects them into true circles (denser, spottier).
+  vec2 asp = vec2(mix(1.0, u_aspect.x, u_roundness), 1.0);
+  float b1 = smoothstep(u_radius1, 0.0, length((v_uv - c1) * asp));
+  float b2 = smoothstep(u_radius2, 0.0, length((v_uv - c2) * asp));
 
   color = mix(color, mix(u_blob1, u_ground, 0.35), b1 * u_strength);
   color = mix(color, mix(u_blob2, u_ground, 0.35), b2 * u_strength);
@@ -73,6 +78,7 @@ export interface MoodGlFrame {
   noise: number;
   time: number;
   velocity: number;
+  roundness: number;
 }
 
 export interface MoodGl {
@@ -141,6 +147,7 @@ export function createMoodGl(canvas: HTMLCanvasElement): MoodGl | null {
   const uTime = uniform('u_time');
   const uVelocity = uniform('u_velocity');
   const uAspect = uniform('u_aspect');
+  const uRoundness = uniform('u_roundness');
 
   const resize = () => {
     const dpr = Math.min(window.devicePixelRatio || 1, MAX_DPR);
@@ -166,6 +173,7 @@ export function createMoodGl(canvas: HTMLCanvasElement): MoodGl | null {
       gl.uniform1f(uNoise, frame.noise);
       gl.uniform1f(uTime, frame.time);
       gl.uniform1f(uVelocity, frame.velocity);
+      gl.uniform1f(uRoundness, frame.roundness);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
     },
     resize,
