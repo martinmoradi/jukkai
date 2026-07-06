@@ -1,8 +1,11 @@
 // Dev tweak panel for the /directions/mood-scroll/ comp. Toggled with "D".
 //
-// Writes straight into the shared scene config object; the render loop reads
-// the config every frame, so every edit is live. JSON actions are dev-server
-// backed so good tuning sessions are saved inside the repo worktree.
+// The panel mirrors the scene model: a jump row for instant travel, one
+// collapsible group per scene (enter, stops, registered tunables), then a
+// small global group. Writes go straight into the shared scene config object;
+// the render loop reads the config every frame, so every edit is live. JSON
+// actions are dev-server backed so good tuning sessions are saved inside the
+// repo worktree.
 
 import '@melloware/coloris/dist/coloris.css';
 
@@ -16,6 +19,7 @@ import {
   MOOD_SCROLL_STRUCTURE_CHANGE_EVENT,
   type MoodFieldColorChannel,
   type MoodFieldNumberChannel,
+  type MoodScene,
   type MoodScrollConfig,
   normalizeHexColor,
   sortMoodSceneStops,
@@ -35,11 +39,17 @@ export interface MoodPanelClasses {
   rename: string;
   renameStamp: string;
   renameInput: string;
+  jumpRow: string;
+  jumpScene: string;
+  jumpButton: string;
+  jumpStopButton: string;
   group: string;
   groupHeader: string;
   groupTitle: string;
+  groupMeta: string;
   groupToggle: string;
   groupBody: string;
+  subheading: string;
   row: string;
   value: string;
   colorInput: string;
@@ -101,7 +111,14 @@ const CHANNEL_LABELS: Record<MoodFieldColorChannel, string> = {
 const PRESET_API = '/__mood-scroll-presets';
 const PRESET_NAME_PATTERN =
   /^(\d{2}-\d{4})(?:-([a-z0-9]+(?:-[a-z0-9]+)*))?\.json$/;
+const EXPANDED_STORAGE_KEY = 'jukkai:mood-scroll-panel:expanded';
 let nextGroupId = 0;
+
+interface GroupControl {
+  header: HTMLButtonElement;
+  body: HTMLElement;
+  setExpanded(expanded: boolean): void;
+}
 
 export function initMoodPanel(
   config: MoodScrollConfig,
@@ -141,9 +158,117 @@ export function initMoodPanel(
   title.className = classes.title;
   panel.append(title);
 
+  const jumpRoot = document.createElement('nav');
+  jumpRoot.className = classes.jumpRow;
+  jumpRoot.setAttribute('aria-label', 'Jump to scene');
+
   const controlsRoot = document.createElement('div');
   const presetList = document.createElement('div');
   presetList.className = `${classes.presetList} ${classes.hidden}`;
+
+  // Collapse memory: which groups are open survives reloads. First-ever open
+  // falls back to expanding the scene currently in view.
+  const storedExpanded = readExpandedState();
+  const hadStoredState = storedExpanded !== null;
+  const expandedState: Record<string, boolean> = storedExpanded ?? {};
+  const persistExpanded = () => writeExpandedState(expandedState);
+
+  const groupControls = new Map<string, GroupControl>();
+  const jumpButtons = new Map<string, HTMLButtonElement>();
+
+  const sceneSections = config.scenes
+    .map((scene) => ({
+      key: scene.key,
+      el: document.querySelector(`[data-mood-section='${scene.key}']`),
+    }))
+    .filter((entry): entry is { key: string; el: Element } =>
+      Boolean(entry.el),
+    );
+
+  let activeSceneKey: string | null = null;
+
+  const computeActiveScene = (): string | null => {
+    // The section covering the viewport midline wins; a pinned section keeps
+    // covering it for its whole pin, which is exactly what we want.
+    const mid = window.innerHeight / 2;
+    let active = activeSceneKey ?? sceneSections[0]?.key ?? null;
+    for (const { key, el } of sceneSections) {
+      const rect = el.getBoundingClientRect();
+      if (rect.top <= mid && rect.bottom > mid) active = key;
+    }
+    return active;
+  };
+
+  const applyActiveHighlight = () => {
+    for (const [key, button] of jumpButtons) {
+      button.dataset.active = String(key === activeSceneKey);
+    }
+    for (const [key, control] of groupControls) {
+      if (key === 'global') continue;
+      control.header.dataset.active = String(key === activeSceneKey);
+    }
+  };
+
+  const updateActiveScene = () => {
+    const next = computeActiveScene();
+    if (next === activeSceneKey) return;
+    activeSceneKey = next;
+    applyActiveHighlight();
+  };
+
+  let scrollFrame: number | null = null;
+  const onViewportChange = () => {
+    if (scrollFrame !== null) return;
+    scrollFrame = window.requestAnimationFrame(() => {
+      scrollFrame = null;
+      updateActiveScene();
+    });
+  };
+  const startSceneTracking = () => {
+    window.addEventListener('scroll', onViewportChange, { passive: true });
+    window.addEventListener('resize', onViewportChange);
+    updateActiveScene();
+  };
+  const stopSceneTracking = () => {
+    window.removeEventListener('scroll', onViewportChange);
+    window.removeEventListener('resize', onViewportChange);
+    if (scrollFrame !== null) {
+      window.cancelAnimationFrame(scrollFrame);
+      scrollFrame = null;
+    }
+  };
+
+  const expandGroup = (key: string) => {
+    const control = groupControls.get(key);
+    if (!control) return;
+    control.setExpanded(true);
+    expandedState[key] = true;
+    persistExpanded();
+  };
+
+  const group = (key: string, label: string, meta?: string): HTMLElement => {
+    const control = createGroup(controlsRoot, classes, {
+      label,
+      meta,
+      expanded: expandedState[key] === true,
+      onToggle: (expanded) => {
+        expandedState[key] = expanded;
+        persistExpanded();
+      },
+    });
+    groupControls.set(key, control);
+    return control.body;
+  };
+
+  const jumpToScene = (scene: MoodScene, stopAt: number) => {
+    if (!devTools) return;
+    const result = devTools.jumpTo(scene.key, stopAt);
+    if (!result.ok) {
+      if (result.message) setStatus(result.message);
+      return;
+    }
+    expandGroup(scene.key);
+  };
 
   const mountColoris = () => {
     Coloris({
@@ -161,14 +286,185 @@ export function initMoodPanel(
     });
   };
 
-  const renderControls = () => {
-    syncControls = [];
-    colorInputs = [];
-    controlsRoot.replaceChildren();
+  const renderJumpRow = () => {
+    jumpRoot.replaceChildren();
+    jumpButtons.clear();
+    if (!devTools) return;
 
-    const globalGroup = group(controlsRoot, classes, 'global');
+    for (const scene of config.scenes) {
+      const label = scene.label ?? scene.key;
+      const cluster = document.createElement('div');
+      cluster.className = classes.jumpScene;
+
+      const sceneButton = document.createElement('button');
+      sceneButton.type = 'button';
+      sceneButton.className = classes.jumpButton;
+      sceneButton.textContent = label;
+      sceneButton.setAttribute('aria-label', `Jump to ${label}`);
+      sceneButton.addEventListener('click', () => jumpToScene(scene, 0));
+      jumpButtons.set(scene.key, sceneButton);
+      cluster.append(sceneButton);
+
+      if (scene.stops.length > 1) {
+        for (const stop of scene.stops) {
+          if (stop.at <= 0) continue;
+          const stopButton = document.createElement('button');
+          stopButton.type = 'button';
+          stopButton.className = classes.jumpStopButton;
+          stopButton.textContent = formatStopAt(stop.at);
+          stopButton.setAttribute(
+            'aria-label',
+            `Jump to ${label} stop at ${formatStopAt(stop.at)}`,
+          );
+          stopButton.addEventListener('click', () => {
+            jumpToScene(scene, stop.at);
+          });
+          cluster.append(stopButton);
+        }
+      }
+
+      jumpRoot.append(cluster);
+    }
+  };
+
+  const renderSceneGroup = (scene: MoodScene, index: number) => {
+    const body = group(
+      scene.key,
+      scene.label ?? scene.key,
+      sceneMeta(scene, index),
+    );
+
+    if (index > 0 && scene.enter.mechanism === 'crossfade') {
+      subheading(body, classes, 'enter');
+      addNumberSlider(
+        body,
+        classes,
+        { key: 'enterStart', label: 'band start', min: 0, max: 1, step: 0.01 },
+        {
+          get: () =>
+            scene.enter.mechanism === 'crossfade' ? scene.enter.band[0] : 0,
+          set: (value) => {
+            if (scene.enter.mechanism === 'crossfade') {
+              scene.enter.band[0] = value;
+              notifyStructureChange();
+            }
+          },
+        },
+      );
+      addNumberSlider(
+        body,
+        classes,
+        { key: 'enterEnd', label: 'band end', min: 0, max: 1, step: 0.01 },
+        {
+          get: () =>
+            scene.enter.mechanism === 'crossfade' ? scene.enter.band[1] : 0,
+          set: (value) => {
+            if (scene.enter.mechanism === 'crossfade') {
+              scene.enter.band[1] = value;
+              notifyStructureChange();
+            }
+          },
+        },
+      );
+      addSelect(
+        body,
+        classes,
+        { label: 'ease', options: MOOD_ENTER_EASES },
+        {
+          get: () =>
+            scene.enter.mechanism === 'crossfade' ? scene.enter.ease : 'none',
+          set: (value) => {
+            if (scene.enter.mechanism === 'crossfade') {
+              scene.enter.ease = value;
+              notifyStructureChange();
+            }
+          },
+        },
+      );
+    }
+
+    if (index > 0 && scene.enter.mechanism === 'cut') {
+      subheading(body, classes, 'enter');
+      addNumberSlider(
+        body,
+        classes,
+        { key: 'cutLine', label: 'cut line', min: 0, max: 1, step: 0.01 },
+        {
+          get: () => (scene.enter.mechanism === 'cut' ? scene.enter.at : 0),
+          set: (value) => {
+            if (scene.enter.mechanism === 'cut') {
+              scene.enter.at = value;
+              notifyStructureChange();
+            }
+          },
+        },
+      );
+    }
+
+    const multiStop = scene.stops.length > 1;
+    for (const stop of scene.stops) {
+      if (multiStop) {
+        const heading = subheading(
+          body,
+          classes,
+          `stop · ${formatStopAt(stop.at)}`,
+        );
+        addNumberSlider(
+          body,
+          classes,
+          { key: 'at', label: 'at', min: 0, max: 1, step: 0.01 },
+          {
+            get: () => stop.at,
+            set: (value) => {
+              stop.at = value;
+              sortMoodSceneStops(scene);
+              heading.textContent = `stop · ${formatStopAt(stop.at)}`;
+            },
+            // Stop order and jump pills may be stale after a drag; rebuild
+            // the controls once the drag commits.
+            onCommit: () => rerenderControls(),
+          },
+        );
+      }
+
+      for (const channel of MOOD_FIELD_COLOR_CHANNELS) {
+        addColorInput(body, classes, {
+          label: CHANNEL_LABELS[channel],
+          ariaLabel: multiStop
+            ? `${scene.key} stop ${formatStopAt(stop.at)} ${CHANNEL_LABELS[channel]}`
+            : `${scene.key} ${CHANNEL_LABELS[channel]}`,
+          get: () => stop[channel],
+          set: (value) => {
+            stop[channel] = value;
+          },
+        });
+      }
+
+      for (const spec of STOP_SLIDERS) {
+        addNumberSlider(body, classes, spec, {
+          get: () => stop[spec.key],
+          set: (value) => {
+            stop[spec.key] = value;
+          },
+        });
+      }
+    }
+
+    const sceneTunables = tunables
+      .entries()
+      .filter((handle) => handle.sceneKey === scene.key);
+    if (sceneTunables.length > 0) {
+      subheading(body, classes, 'tunables');
+      for (const handle of sceneTunables) {
+        addTunableSlider(body, classes, handle);
+      }
+    }
+  };
+
+  const renderGlobalGroup = () => {
+    const body = group('global', 'global');
     for (const spec of GLOBAL_SLIDERS) {
-      addNumberSlider(globalGroup, classes, spec, {
+      addNumberSlider(body, classes, spec, {
         get: () => config[spec.key],
         set: (value) => {
           config[spec.key] = value;
@@ -176,16 +472,29 @@ export function initMoodPanel(
       });
     }
 
+    // Tunables whose id prefix matches no scene still get a home so they are
+    // never invisible.
+    const sceneKeys = new Set(config.scenes.map((scene) => scene.key));
+    const orphanTunables = tunables
+      .entries()
+      .filter((handle) => !sceneKeys.has(handle.sceneKey));
+    if (orphanTunables.length > 0) {
+      subheading(body, classes, 'tunables');
+      for (const handle of orphanTunables) {
+        addTunableSlider(body, classes, handle);
+      }
+    }
+
     if (devTools) {
-      const toolsGroup = group(controlsRoot, classes, 'tools');
-      addCheckbox(toolsGroup, classes, 'markers', {
+      subheading(body, classes, 'dev tools');
+      addCheckbox(body, classes, 'markers', {
         get: () => devTools.markersEnabled(),
         set: (value) => {
           const result = devTools.setMarkers(value);
           if (result.message) setStatus(result.message);
         },
       });
-      addCheckbox(toolsGroup, classes, 'GSDevTools', {
+      addCheckbox(body, classes, 'GSDevTools', {
         get: () => devTools.gsDevToolsEnabled(),
         set: (value, sync) => {
           void devTools.setGsDevTools(value).then((result) => {
@@ -195,128 +504,28 @@ export function initMoodPanel(
         },
       });
     }
+  };
 
-    const entries = tunables.entries();
-    if (entries.length > 0) {
-      const tunableGroup = group(controlsRoot, classes, 'tunables');
-      for (const handle of entries) {
-        addTunableSlider(tunableGroup, classes, handle);
-      }
-    }
+  const renderControls = () => {
+    syncControls = [];
+    groupControls.clear();
+    controlsRoot.replaceChildren();
 
-    for (const scene of config.scenes) {
-      const sceneGroup = group(controlsRoot, classes, scene.label ?? scene.key);
+    renderJumpRow();
+    config.scenes.forEach(renderSceneGroup);
+    renderGlobalGroup();
 
-      if (scene.enter.mechanism === 'crossfade') {
-        addNumberSlider(
-          sceneGroup,
-          classes,
-          {
-            key: 'enterStart',
-            label: 'enter start',
-            min: 0,
-            max: 1,
-            step: 0.01,
-          },
-          {
-            get: () =>
-              scene.enter.mechanism === 'crossfade' ? scene.enter.band[0] : 0,
-            set: (value) => {
-              if (scene.enter.mechanism === 'crossfade') {
-                scene.enter.band[0] = value;
-                notifyStructureChange();
-              }
-            },
-          },
-        );
-        addNumberSlider(
-          sceneGroup,
-          classes,
-          { key: 'enterEnd', label: 'enter end', min: 0, max: 1, step: 0.01 },
-          {
-            get: () =>
-              scene.enter.mechanism === 'crossfade' ? scene.enter.band[1] : 0,
-            set: (value) => {
-              if (scene.enter.mechanism === 'crossfade') {
-                scene.enter.band[1] = value;
-                notifyStructureChange();
-              }
-            },
-          },
-        );
-        addSelect(
-          sceneGroup,
-          classes,
-          {
-            label: 'enter ease',
-            options: MOOD_ENTER_EASES,
-          },
-          {
-            get: () =>
-              scene.enter.mechanism === 'crossfade' ? scene.enter.ease : 'none',
-            set: (value) => {
-              if (scene.enter.mechanism === 'crossfade') {
-                scene.enter.ease = value;
-                notifyStructureChange();
-              }
-            },
-          },
-        );
-      }
-
-      if (scene.enter.mechanism === 'cut') {
-        addNumberSlider(
-          sceneGroup,
-          classes,
-          { key: 'cutLine', label: 'cut line', min: 0, max: 1, step: 0.01 },
-          {
-            get: () => (scene.enter.mechanism === 'cut' ? scene.enter.at : 0),
-            set: (value) => {
-              if (scene.enter.mechanism === 'cut') {
-                scene.enter.at = value;
-                notifyStructureChange();
-              }
-            },
-          },
-        );
-      }
-
-      for (const stop of scene.stops) {
-        addNumberSlider(
-          sceneGroup,
-          classes,
-          { key: 'at', label: `stop ${stop.at}`, min: 0, max: 1, step: 0.01 },
-          {
-            get: () => stop.at,
-            set: (value) => {
-              stop.at = value;
-              sortMoodSceneStops(scene);
-            },
-          },
-        );
-
-        for (const channel of MOOD_FIELD_COLOR_CHANNELS) {
-          addColorInput(sceneGroup, classes, {
-            label: `${stop.at} ${CHANNEL_LABELS[channel]}`,
-            get: () => stop[channel],
-            set: (value) => {
-              stop[channel] = value;
-            },
-          });
-        }
-
-        for (const spec of STOP_SLIDERS) {
-          addNumberSlider(sceneGroup, classes, spec, {
-            get: () => stop[spec.key],
-            set: (value) => {
-              stop[spec.key] = value;
-            },
-          });
-        }
-      }
-    }
-
+    colorInputs = Array.from(
+      controlsRoot.querySelectorAll<HTMLInputElement>('input[data-coloris]'),
+    );
     syncControls.push(...collectInputSyncs(controlsRoot));
+    applyActiveHighlight();
+  };
+
+  const rerenderControls = () => {
+    renderControls();
+    mountColoris();
+    syncAll();
   };
 
   const saveCurrentPreset = async (): Promise<boolean> => {
@@ -490,9 +699,7 @@ export function initMoodPanel(
       }
 
       presetState.fileName = fileName;
-      renderControls();
-      mountColoris();
-      syncAll();
+      rerenderControls();
       notifyStructureChange();
       renderPresetHeader();
       presetList.classList.add(classes.hidden);
@@ -503,13 +710,14 @@ export function initMoodPanel(
   };
 
   actions.append(save, load);
-  panel.append(controlsRoot, actions, presetList, status);
+  panel.append(jumpRoot, controlsRoot, actions, presetList, status);
 
   document.body.append(panel);
 
   Coloris.init();
   mountColoris();
 
+  let autoExpanded = false;
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'd' && event.key !== 'D') return;
     if (event.metaKey || event.ctrlKey || event.altKey) return;
@@ -522,6 +730,16 @@ export function initMoodPanel(
     }
     panel.classList.toggle(classes.hidden);
     Coloris.updatePosition();
+
+    if (panel.classList.contains(classes.hidden)) {
+      stopSceneTracking();
+      return;
+    }
+    startSceneTracking();
+    if (!autoExpanded && !hadStoredState) {
+      autoExpanded = true;
+      if (activeSceneKey) expandGroup(activeSceneKey);
+    }
   });
 
   return panel;
@@ -534,6 +752,7 @@ function addNumberSlider<Key extends string>(
   binding: {
     get: () => number;
     set: (value: number) => void;
+    onCommit?: () => void;
   },
 ): void {
   const row = document.createElement('label');
@@ -557,6 +776,9 @@ function addNumberSlider<Key extends string>(
     binding.set(Number.parseFloat(input.value));
     value.textContent = input.value;
   });
+  if (binding.onCommit) {
+    input.addEventListener('change', () => binding.onCommit?.());
+  }
   row.append(text, input, value);
   parent.append(row);
   sync();
@@ -639,7 +861,7 @@ function addTunableSlider(
     classes,
     {
       key: handle.id,
-      label: handle.label,
+      label: sceneScopedTunableLabel(handle),
       min: handle.min,
       max: handle.max,
       step: handle.step,
@@ -658,6 +880,7 @@ function addColorInput(
   classes: Pick<MoodPanelClasses, 'row' | 'colorInput'>,
   binding: {
     label: string;
+    ariaLabel: string;
     get: () => string;
     set: (value: string) => void;
   },
@@ -673,7 +896,7 @@ function addColorInput(
   input.inputMode = 'text';
   input.className = classes.colorInput;
   input.setAttribute('data-coloris', '');
-  input.setAttribute('aria-label', binding.label);
+  input.setAttribute('aria-label', binding.ariaLabel);
   input.dataset.syncColor = 'true';
   input.addEventListener('input', () => {
     const next = normalizeHexColor(input.value);
@@ -713,11 +936,16 @@ function collectInputSyncs(root: HTMLElement): Array<() => void> {
   ];
 }
 
-function group(
+function createGroup(
   parent: HTMLElement,
   classes: MoodPanelClasses,
-  label: string,
-): HTMLElement {
+  options: {
+    label: string;
+    meta?: string;
+    expanded: boolean;
+    onToggle: (expanded: boolean) => void;
+  },
+): GroupControl {
   const section = document.createElement('section');
   section.className = classes.group;
 
@@ -728,32 +956,74 @@ function group(
   header.type = 'button';
   header.className = classes.groupHeader;
   header.setAttribute('aria-controls', bodyId);
-  header.setAttribute('aria-expanded', 'true');
 
   const heading = document.createElement('span');
   heading.className = classes.groupTitle;
-  heading.textContent = label;
+  heading.textContent = options.label;
 
   const toggle = document.createElement('span');
   toggle.className = classes.groupToggle;
   toggle.setAttribute('aria-hidden', 'true');
-  toggle.textContent = '-';
 
   const body = document.createElement('div');
   body.id = bodyId;
   body.className = classes.groupBody;
 
+  const setExpanded = (expanded: boolean) => {
+    header.setAttribute('aria-expanded', String(expanded));
+    body.hidden = !expanded;
+    toggle.textContent = expanded ? '−' : '+';
+  };
+  setExpanded(options.expanded);
+
   header.addEventListener('click', () => {
     const expanded = header.getAttribute('aria-expanded') === 'true';
-    header.setAttribute('aria-expanded', String(!expanded));
-    body.hidden = expanded;
-    toggle.textContent = expanded ? '+' : '-';
+    setExpanded(!expanded);
+    options.onToggle(!expanded);
   });
 
-  header.append(heading, toggle);
+  if (options.meta) {
+    const meta = document.createElement('span');
+    meta.className = classes.groupMeta;
+    meta.textContent = options.meta;
+    header.append(heading, meta, toggle);
+  } else {
+    header.append(heading, toggle);
+  }
   section.append(header, body);
   parent.append(section);
-  return body;
+  return { header, body, setExpanded };
+}
+
+function subheading(
+  parent: HTMLElement,
+  classes: Pick<MoodPanelClasses, 'subheading'>,
+  text: string,
+): HTMLElement {
+  const el = document.createElement('p');
+  el.className = classes.subheading;
+  el.textContent = text;
+  parent.append(el);
+  return el;
+}
+
+function sceneMeta(scene: MoodScene, index: number): string {
+  if (index === 0) return 'start';
+  if (scene.enter.mechanism === 'takeover') {
+    return scene.pin ? 'takeover · pin' : 'takeover';
+  }
+  return scene.enter.mechanism;
+}
+
+function sceneScopedTunableLabel(handle: MoodTunableHandle): string {
+  const prefix = `${handle.sceneKey} `;
+  return handle.label.startsWith(prefix)
+    ? handle.label.slice(prefix.length)
+    : handle.label;
+}
+
+function formatStopAt(at: number): string {
+  return String(Math.round(at * 100) / 100);
 }
 
 function actionButton(
@@ -808,6 +1078,31 @@ function collectSwatches(config: MoodScrollConfig): string[] {
     }
   }
   return [...colors];
+}
+
+function readExpandedState(): Record<string, boolean> | null {
+  try {
+    const raw = window.localStorage.getItem(EXPANDED_STORAGE_KEY);
+    if (!raw) return null;
+    const parsed: unknown = JSON.parse(raw);
+    if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed))
+      return null;
+    const state: Record<string, boolean> = {};
+    for (const [key, value] of Object.entries(parsed)) {
+      if (typeof value === 'boolean') state[key] = value;
+    }
+    return state;
+  } catch {
+    return null;
+  }
+}
+
+function writeExpandedState(state: Record<string, boolean>): void {
+  try {
+    window.localStorage.setItem(EXPANDED_STORAGE_KEY, JSON.stringify(state));
+  } catch {
+    // Storage may be unavailable (private mode); collapse memory is optional.
+  }
 }
 
 async function listPresetFiles(): Promise<PresetListItem[]> {
