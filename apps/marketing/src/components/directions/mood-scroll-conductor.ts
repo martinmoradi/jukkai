@@ -65,7 +65,13 @@ export function resolveSceneStop(
   scene: MoodScene,
   progress: number,
 ): ResolvedMoodField {
-  const stops = scene.stops;
+  return resolveFieldStops(scene.stops, progress);
+}
+
+export function resolveFieldStops(
+  stops: MoodFieldStop[],
+  progress: number,
+): ResolvedMoodField {
   if (stops.length === 0) {
     return stopToResolved(fallbackStop());
   }
@@ -89,6 +95,31 @@ export function resolveSceneStop(
   }
 
   return stopToResolved(last);
+}
+
+/**
+ * Stop track for a scene's contained mood surface (the galerie's living
+ * wall). Scenes declare it as `surfaceStops`; configs saved before the track
+ * existed fall back to a derived two-stop journey — the punch stop (first
+ * shared stop past the entrance window, same selection the backdrop paint
+ * uses) held from arrival, deepening into the shared track's last stop.
+ */
+export function resolveSurfaceTrack(
+  scene: MoodScene,
+  entranceFraction: number,
+): MoodFieldStop[] {
+  if (scene.surfaceStops && scene.surfaceStops.length > 0) {
+    return scene.surfaceStops;
+  }
+  const punch =
+    scene.stops.find((stop) => stop.at >= entranceFraction) ??
+    scene.stops.at(-1);
+  const darkest = scene.stops.at(-1);
+  if (!punch || !darkest) return [];
+  return [
+    { ...punch, at: 0 },
+    { ...darkest, at: 1 },
+  ];
 }
 
 export function resolveConductorTarget(

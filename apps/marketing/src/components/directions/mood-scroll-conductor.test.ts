@@ -5,7 +5,9 @@ import {
   resolveConductorFrameAt,
   resolveConductorTarget,
   resolveEnterWindow,
+  resolveFieldStops,
   resolveSceneStop,
+  resolveSurfaceTrack,
   toMoodGlFrame,
 } from './mood-scroll-conductor';
 import type { MoodFieldStop, MoodScene } from './mood-scroll-config';
@@ -100,6 +102,38 @@ describe('mood scroll scene conductor', () => {
     });
 
     expect(frame.ground).toBeCloseRgb([0.15625, 0.15625, 0.15625]);
+  });
+
+  it('resolves a declared surface track and interpolates between its stops', () => {
+    const scene = testScene('galerie', [stop({ at: 0, ground: '#ffffff' })]);
+    scene.surfaceStops = [
+      stop({ at: 0, ground: '#000000', strength: 0 }),
+      stop({ at: 1, ground: '#ffffff', strength: 1 }),
+    ];
+
+    const track = resolveSurfaceTrack(scene, 0.25);
+
+    expect(track).toBe(scene.surfaceStops);
+    expect(resolveFieldStops(track, 0.5).strength).toBeCloseTo(0.5, 6);
+    expect(resolveFieldStops(track, 0.5).ground).toBeCloseRgb([0.5, 0.5, 0.5]);
+  });
+
+  it('derives a punch-to-darkest surface track for scenes without one', () => {
+    // Mirrors a pre-surface-track preset's galerie shape: lavender hold just
+    // below the entrance fraction, cobalt punch right after it.
+    const scene = testScene('galerie', [
+      stop({ at: 0, ground: '#f2eae0' }),
+      stop({ at: 0.24, ground: '#f2eae0' }),
+      stop({ at: 0.29, ground: '#2036a8' }),
+      stop({ at: 0.88, ground: '#10182b' }),
+    ]);
+
+    const track = resolveSurfaceTrack(scene, 0.25);
+
+    // Punch = first shared stop past the entrance window, held from arrival.
+    expect(track.map((entry) => entry.at)).toEqual([0, 1]);
+    expect(track[0].ground).toBe('#2036a8');
+    expect(track[1].ground).toBe('#10182b');
   });
 
   it('applies presence to rendered field strength and grain', () => {

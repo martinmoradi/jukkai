@@ -66,6 +66,11 @@ export interface MoodScene {
   pin?: boolean;
   enter: MoodSceneEnter;
   stops: MoodFieldStop[];
+  // Optional second stop track for a scene that carries its own contained
+  // mood surface (the galerie's living wall). `stops` stays the shared
+  // fixed-canvas journey; `surfaceStops` colors the surface canvas across
+  // the same 0..1 block progress.
+  surfaceStops?: MoodFieldStop[];
 }
 
 export interface MoodScrollConfig {
@@ -182,7 +187,11 @@ export function createDefaultConfig(): MoodScrollConfig {
             blob1: '#cdb9e8',
             blob2: '#e6cbd9',
           }),
-          field(0.22, {
+          // Hold the light continuity through (almost) the whole entrance
+          // window: the last umbrella sliver above the rising wall must not
+          // tint cobalt. Kept just below the 0.25 entrance fraction so the
+          // punch selection (first stop at >= entrance) still finds cobalt.
+          field(0.24, {
             ground: '#f2eae0',
             blob1: '#cdb9e8',
             blob2: '#e6cbd9',
@@ -202,6 +211,28 @@ export function createDefaultConfig(): MoodScrollConfig {
             { drift: 0.16 },
           ),
           field(0.88, galerieDarkest, { drift: 0.1 }),
+        ],
+        // The living wall: the surface canvas arrives already at the cobalt
+        // punch, deepens on the same schedule as the shared track, and ends
+        // on the exact hand-off opening stop so the wall's departing edge
+        // separates two identical fields.
+        surfaceStops: [
+          field(0, {
+            ground: '#2036a8',
+            blob1: '#4f74e8',
+            blob2: '#8fb0ff',
+          }),
+          field(
+            0.55,
+            {
+              ground: '#18265f',
+              blob1: '#35507c',
+              blob2: '#4a6ea0',
+            },
+            { drift: 0.16 },
+          ),
+          field(0.88, galerieDarkest, { drift: 0.1 }),
+          field(1, galerieDarkest, { presence: 0.5, drift: 0.08 }),
         ],
       },
       // Hand-off seam (experiment #57): a sticky-runway takeover so the
@@ -409,6 +440,19 @@ function parseScene(raw: unknown): MoodScene | null {
   const stops = raw.stops.map(parseStop);
   if (stops.some((stop) => !stop)) return null;
 
+  // Optional: presets saved before the surface track existed simply omit it
+  // (consumers derive a fallback), but a present-and-malformed track rejects
+  // the whole config like any other parse failure.
+  let surfaceStops: MoodFieldStop[] | undefined;
+  if (raw.surfaceStops !== undefined) {
+    if (!Array.isArray(raw.surfaceStops) || raw.surfaceStops.length === 0) {
+      return null;
+    }
+    const parsed = raw.surfaceStops.map(parseStop);
+    if (parsed.some((stop) => !stop)) return null;
+    surfaceStops = (parsed as MoodFieldStop[]).sort((a, b) => a.at - b.at);
+  }
+
   return {
     key: raw.key,
     label: typeof raw.label === 'string' ? raw.label : undefined,
@@ -416,6 +460,7 @@ function parseScene(raw: unknown): MoodScene | null {
     pin: raw.pin === true,
     enter,
     stops: (stops as MoodFieldStop[]).sort((a, b) => a.at - b.at),
+    surfaceStops,
   };
 }
 
@@ -477,6 +522,7 @@ function cloneScene(scene: MoodScene): MoodScene {
     pin: scene.pin,
     enter: cloneEnter(scene.enter),
     stops: scene.stops.map((stop) => ({ ...stop })),
+    surfaceStops: scene.surfaceStops?.map((stop) => ({ ...stop })),
   };
 }
 
@@ -510,6 +556,7 @@ function copyScenes(target: MoodScene[], source: MoodScene[]): void {
     for (let stopIndex = 0; stopIndex < next.stops.length; stopIndex += 1) {
       current.stops[stopIndex] = { ...next.stops[stopIndex] };
     }
+    current.surfaceStops = next.surfaceStops?.map((stop) => ({ ...stop }));
   }
 }
 

@@ -150,8 +150,59 @@ describe('mood scroll config dev helpers', () => {
 
     expect(changed).toBe(true);
     expect(config.scenes[2].stops.map((stop) => stop.at)).toEqual([
-      0, 0.22, 0.29, 0.55, 0.88,
+      0, 0.24, 0.29, 0.55, 0.88,
     ]);
+  });
+
+  it('round-trips the galerie surface track and sorts its stops', () => {
+    const config = createDefaultConfig();
+    const next = cloneMoodScrollConfig(config);
+    next.scenes[2].surfaceStops?.reverse();
+    const firstSurface = next.scenes[2].surfaceStops?.at(-1);
+    if (!firstSurface)
+      throw new Error('galerie fixture should have a surface track');
+    firstSurface.ground = '#123456';
+
+    const changed = applyMoodScrollConfig(config, next);
+
+    expect(changed).toBe(true);
+    expect(config.scenes[2].surfaceStops?.map((stop) => stop.at)).toEqual([
+      0, 0.55, 0.88, 1,
+    ]);
+    expect(config.scenes[2].surfaceStops?.[0]?.ground).toBe('#123456');
+  });
+
+  it('loads presets saved before the surface track existed', () => {
+    const config = createDefaultConfig();
+    const next = cloneMoodScrollConfig(config);
+    for (const scene of next.scenes) {
+      delete scene.surfaceStops;
+    }
+
+    const changed = applyMoodScrollConfig(config, next);
+
+    expect(changed).toBe(true);
+    expect(config.scenes[2].surfaceStops).toBeUndefined();
+  });
+
+  it('rejects a present-but-malformed surface track', () => {
+    const config = createDefaultConfig();
+    const next = cloneMoodScrollConfig(config);
+    Object.assign(next.scenes[2], { surfaceStops: [{ ground: 'nope' }] });
+
+    expect(applyMoodScrollConfig(config, next)).toBe(false);
+  });
+
+  it('clones the surface track without sharing stop objects', () => {
+    const config = createDefaultConfig();
+    const clone = cloneMoodScrollConfig(config);
+    const surfaceStop = clone.scenes[2].surfaceStops?.[0];
+    if (!surfaceStop)
+      throw new Error('galerie fixture should have a surface track');
+
+    surfaceStop.ground = '#000000';
+
+    expect(config.scenes[2].surfaceStops?.[0]?.ground).toBe('#2036a8');
   });
 
   it('rejects old-shape or unknown JSON roots', () => {
