@@ -334,6 +334,48 @@ export function initMoodPanel(
       },
     });
 
+  // Group a scene's registered tunables into collapsible phase clusters (in
+  // registration order). Handles without a group fall back to today's flat
+  // "tunables" list so nothing is ever hidden.
+  const renderTunableClusters = (
+    parentBody: HTMLElement,
+    sceneKey: string,
+    handles: MoodTunableHandle[],
+  ) => {
+    if (handles.length === 0) return;
+
+    const ungrouped: MoodTunableHandle[] = [];
+    const clusters = new Map<string, MoodTunableHandle[]>();
+    for (const handle of handles) {
+      if (!handle.group) {
+        ungrouped.push(handle);
+        continue;
+      }
+      const bucket = clusters.get(handle.group);
+      if (bucket) bucket.push(handle);
+      else clusters.set(handle.group, [handle]);
+    }
+
+    if (ungrouped.length > 0) {
+      subheading(parentBody, classes, 'tunables');
+      for (const handle of ungrouped) {
+        addTunableSlider(parentBody, classes, handle);
+      }
+    }
+
+    for (const [groupName, bucket] of clusters) {
+      const card = subGroup(
+        `${sceneKey}::phase::${tunablePhaseSlug(groupName)}`,
+        parentBody,
+        groupName,
+        { defaultExpanded: false, meta: String(bucket.length) },
+      );
+      for (const handle of bucket) {
+        addTunableSlider(card.body, classes, handle);
+      }
+    }
+  };
+
   const jumpToScene = (scene: MoodScene, stopAt: number) => {
     if (!devTools) return;
     const result = devTools.jumpTo(scene.key, stopAt);
@@ -591,15 +633,11 @@ export function initMoodPanel(
       );
     }
 
-    const sceneTunables = tunables
-      .entries()
-      .filter((handle) => handle.sceneKey === scene.key);
-    if (sceneTunables.length > 0) {
-      subheading(body, classes, 'tunables');
-      for (const handle of sceneTunables) {
-        addTunableSlider(body, classes, handle);
-      }
-    }
+    renderTunableClusters(
+      body,
+      scene.key,
+      tunables.entries().filter((handle) => handle.sceneKey === scene.key),
+    );
   };
 
   const renderGlobalGroup = () => {
@@ -616,15 +654,11 @@ export function initMoodPanel(
     // Tunables whose id prefix matches no scene still get a home so they are
     // never invisible.
     const sceneKeys = new Set(config.scenes.map((scene) => scene.key));
-    const orphanTunables = tunables
-      .entries()
-      .filter((handle) => !sceneKeys.has(handle.sceneKey));
-    if (orphanTunables.length > 0) {
-      subheading(body, classes, 'tunables');
-      for (const handle of orphanTunables) {
-        addTunableSlider(body, classes, handle);
-      }
-    }
+    renderTunableClusters(
+      body,
+      'global',
+      tunables.entries().filter((handle) => !sceneKeys.has(handle.sceneKey)),
+    );
 
     if (devTools) {
       subheading(body, classes, 'dev tools');
@@ -1267,6 +1301,13 @@ function sceneScopedTunableLabel(handle: MoodTunableHandle): string {
   return handle.label.startsWith(prefix)
     ? handle.label.slice(prefix.length)
     : handle.label;
+}
+
+function tunablePhaseSlug(group: string): string {
+  return group
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
 }
 
 function formatStopAt(at: number): string {
