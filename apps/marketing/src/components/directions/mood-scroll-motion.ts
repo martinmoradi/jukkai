@@ -61,6 +61,7 @@ export interface MoodScrollDevTools {
   gsDevToolsEnabled(): boolean;
   setMarkers(enabled: boolean): MoodDevToggleResult;
   setGsDevTools(enabled: boolean): Promise<MoodDevToggleResult>;
+  jumpTo(sceneKey: string, stopAt?: number): MoodDevToggleResult;
 }
 
 export interface MoodScrollInstance {
@@ -254,6 +255,33 @@ export function initMoodScroll(
   const onResize = () => moodGl.resize();
   window.addEventListener('resize', onResize);
 
+  // Jump targets read the live conductor chain at click time, so they stay
+  // correct after enter-band edits or pin-length changes rebuild the triggers.
+  const jumpTo = (sceneKey: string, stopAt = 0): MoodDevToggleResult => {
+    const scene = config.scenes.find((entry) => entry.key === sceneKey);
+    if (!scene) return { ok: false, message: `Unknown scene ${sceneKey}` };
+
+    const at = Math.min(Math.max(stopAt, 0), 1);
+    const takeoverLink = chain.find(
+      (link) =>
+        link.target.mechanism === 'takeover' &&
+        link.target.sceneKey === sceneKey,
+    );
+
+    let top: number;
+    if (takeoverLink) {
+      const { st } = takeoverLink;
+      top = st.start + at * (st.end - st.start);
+    } else {
+      const el = section(scene);
+      if (!el) return { ok: false, message: `No section for ${sceneKey}` };
+      top = window.scrollY + el.getBoundingClientRect().top;
+    }
+
+    window.scrollTo({ top: Math.max(0, Math.round(top)), behavior: 'instant' });
+    return { ok: true };
+  };
+
   const devTools: MoodScrollDevTools | undefined = import.meta.env.DEV
     ? {
         markersEnabled: () => markersEnabled,
@@ -270,6 +298,7 @@ export function initMoodScroll(
           gsDevToolsEnabled = enabled;
           return syncGsDevTools();
         },
+        jumpTo,
       }
     : undefined;
 
