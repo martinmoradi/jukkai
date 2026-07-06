@@ -22,6 +22,9 @@ export const MOOD_FIELD_NUMBER_CHANNELS = [
 export type MoodFieldNumberChannel =
   (typeof MOOD_FIELD_NUMBER_CHANNELS)[number];
 
+export const MOOD_SCROLL_STRUCTURE_CHANGE_EVENT =
+  'mood-scroll-structure-change';
+
 export interface MoodFieldStop {
   at: number;
   ground: string;
@@ -36,7 +39,9 @@ export interface MoodFieldStop {
   presence: number;
 }
 
-export type MoodEnterEase = 'none';
+export const MOOD_ENTER_EASES = ['none', 'smoothstep', 'sine.inOut'] as const;
+
+export type MoodEnterEase = (typeof MOOD_ENTER_EASES)[number];
 
 export type MoodSceneEnter =
   | {
@@ -246,12 +251,16 @@ export function normalizeHexColor(raw: unknown): string | null {
   return long ? `#${long[1].toLowerCase()}` : null;
 }
 
+export function sortMoodSceneStops(scene: MoodScene): void {
+  scene.stops.sort((a, b) => a.at - b.at);
+}
+
 export function hexToRgb(hex: string): Rgb {
   const raw = hex.replace('#', '');
-  const value = Number.parseInt(raw, 16);
-  if (raw.length !== 6 || Number.isNaN(value)) {
+  if (!/^[0-9a-f]{6}$/i.test(raw)) {
     return [0, 0, 0];
   }
+  const value = Number.parseInt(raw, 16);
   return [
     ((value >> 16) & 255) / 255,
     ((value >> 8) & 255) / 255,
@@ -270,9 +279,11 @@ export function mixRgb(a: Rgb, b: Rgb, t: number): Rgb {
 function parseMoodScrollConfig(raw: unknown): MoodScrollConfig | null {
   if (!isRecord(raw)) return null;
   if (!Array.isArray(raw.scenes)) return null;
+  if (raw.scenes.length !== MOOD_SCENE_KEYS.length) return null;
 
   const scenes = raw.scenes.map(parseScene);
   if (scenes.some((scene) => !scene)) return null;
+  if (!hasExpectedSceneOrder(scenes as MoodScene[])) return null;
 
   const colorSmoothing = finiteOrDefault(raw.colorSmoothing, 0.14);
   const velocityInfluence = finiteOrDefault(raw.velocityInfluence, 1);
@@ -319,10 +330,12 @@ function parseEnter(raw: unknown): MoodSceneEnter | null {
     const start = finiteOrDefault(raw.band[0], Number.NaN);
     const end = finiteOrDefault(raw.band[1], Number.NaN);
     if (!Number.isFinite(start) || !Number.isFinite(end)) return null;
+    const ease = parseEnterEase(raw.ease);
+    if (!ease) return null;
     return {
       mechanism: 'crossfade',
       band: [start, end],
-      ease: raw.ease === 'none' ? 'none' : 'none',
+      ease,
     };
   }
   return null;
@@ -395,6 +408,18 @@ function copyScenes(target: MoodScene[], source: MoodScene[]): void {
       current.stops[stopIndex] = { ...next.stops[stopIndex] };
     }
   }
+}
+
+function hasExpectedSceneOrder(scenes: MoodScene[]): boolean {
+  return MOOD_SCENE_KEYS.every((key, index) => scenes[index]?.key === key);
+}
+
+function parseEnterEase(raw: unknown): MoodEnterEase | null {
+  if (raw === undefined) return 'none';
+  if (typeof raw !== 'string') return null;
+  return MOOD_ENTER_EASES.includes(raw as MoodEnterEase)
+    ? (raw as MoodEnterEase)
+    : null;
 }
 
 function finiteOrDefault(raw: unknown, fallback: number): number {
