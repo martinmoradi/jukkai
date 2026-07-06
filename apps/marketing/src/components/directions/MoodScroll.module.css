@@ -261,6 +261,59 @@
   outline-offset: 1px;
 }
 
+.panelJumpRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin: 0 0 0.75rem;
+}
+
+.panelJumpScene {
+  display: flex;
+  gap: 1px;
+}
+
+.panelJumpButton,
+.panelJumpStopButton {
+  padding: 0.32rem 0.5rem;
+  font: inherit;
+  color: #ece4d8;
+  cursor: pointer;
+  background: rgb(236 228 216 / 0.08);
+  border: 1px solid rgb(236 228 216 / 0.18);
+}
+
+.panelJumpButton {
+  border-radius: 5px;
+}
+
+.panelJumpScene .panelJumpButton:not(:only-child) {
+  border-radius: 5px 0 0 5px;
+}
+
+.panelJumpStopButton {
+  padding-inline: 0.4rem;
+  color: #d8cbb8;
+  border-left: 0;
+}
+
+.panelJumpScene .panelJumpStopButton:last-child {
+  border-radius: 0 5px 5px 0;
+}
+
+.panelJumpButton:hover,
+.panelJumpButton:focus-visible,
+.panelJumpStopButton:hover,
+.panelJumpStopButton:focus-visible {
+  background: rgb(236 228 216 / 0.18);
+}
+
+.panelJumpButton[data-active='true'] {
+  color: #17110c;
+  background: #ece4d8;
+  border-color: #ece4d8;
+}
+
 .panelGroup {
   padding: 0.5rem 0;
   border-top: 1px solid rgb(236 228 216 / 0.15);
@@ -291,6 +344,29 @@
   opacity: 0.7;
 }
 
+.panelGroupHeader[data-active='true'] .panelGroupTitle {
+  opacity: 1;
+}
+
+.panelGroupHeader[data-active='true'] .panelGroupTitle::after {
+  margin-left: 0.35rem;
+  font-size: 0.55em;
+  vertical-align: 0.2em;
+  content: '●';
+}
+
+.panelGroupMeta {
+  flex: 1;
+  min-width: 0;
+  margin-left: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #d8cbb8;
+  text-align: right;
+  white-space: nowrap;
+  opacity: 0.55;
+}
+
 .panelGroupToggle {
   flex: 0 0 auto;
   width: 1rem;
@@ -302,6 +378,20 @@
 
 .panelGroupBody[hidden] {
   display: none;
+}
+
+.panelSubheading {
+  margin: 0.65rem 0 0.3rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #d8cbb8;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  opacity: 0.7;
+}
+
+.panelSubheading:first-child {
+  margin-top: 0.15rem;
 }
 
 .panelRow {
