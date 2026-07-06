@@ -4,6 +4,7 @@ import {
   readFile,
   rename,
   stat,
+  unlink,
   writeFile,
 } from 'node:fs/promises';
 import path from 'node:path';
@@ -65,6 +66,11 @@ function moodScrollPresetPlugin() {
 
           if (request.method === 'POST' && route === '/rename') {
             await renamePreset(response, await readRequestJson(request));
+            return;
+          }
+
+          if (request.method === 'POST' && route === '/delete') {
+            await deletePreset(response, await readRequestJson(request));
             return;
           }
 
@@ -151,6 +157,16 @@ async function renamePreset(response, body) {
 
   await rename(from, to);
   sendJson(response, 200, { fileName: nextFileName });
+}
+
+async function deletePreset(response, body) {
+  if (!isPresetFileName(body?.fileName)) {
+    sendJson(response, 400, { message: 'Invalid preset file name' });
+    return;
+  }
+
+  await unlink(path.join(moodScrollPresetDir, body.fileName));
+  sendJson(response, 200, { ok: true });
 }
 
 function createPresetStamp(date = new Date()) {
