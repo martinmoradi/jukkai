@@ -6,6 +6,7 @@ import {
   createDefaultConfig,
   normalizeHexColor,
 } from './mood-scroll-config';
+import { createTunableRegistry, tunable } from './mood-scroll-tunables';
 
 describe('mood scroll config dev helpers', () => {
   it('clones configs without sharing nested scene stop objects', () => {
@@ -47,6 +48,46 @@ describe('mood scroll config dev helpers', () => {
       mechanism: 'crossfade',
       ease: 'smoothstep',
     });
+  });
+
+  it('round-trips registered tunables and ignores unknown preset ids', () => {
+    const config = createDefaultConfig();
+    const registry = createTunableRegistry(config);
+    const growStart = tunable(registry, 'galerie.growStartScale', 0.5, {
+      min: 0.2,
+      max: 1,
+      step: 0.01,
+    });
+
+    growStart.set(0.7);
+    const next = cloneMoodScrollConfig(config);
+    next.tunables['galerie.growStartScale'] = 0.42;
+    next.tunables['unknown.value'] = 99;
+
+    const changed = applyMoodScrollConfig(config, next, registry);
+
+    expect(changed).toBe(true);
+    expect(growStart.get()).toBe(0.42);
+    expect(config.tunables['unknown.value']).toBeUndefined();
+  });
+
+  it('resets missing registered tunables to their defaults on load', () => {
+    const config = createDefaultConfig();
+    const registry = createTunableRegistry(config);
+    const growStart = tunable(registry, 'galerie.growStartScale', 0.5, {
+      min: 0.2,
+      max: 1,
+      step: 0.01,
+    });
+    const next = cloneMoodScrollConfig(config);
+
+    growStart.set(0.8);
+    delete next.tunables['galerie.growStartScale'];
+
+    const changed = applyMoodScrollConfig(config, next, registry);
+
+    expect(changed).toBe(true);
+    expect(growStart.get()).toBe(0.5);
   });
 
   it('sorts loaded stops at parse time', () => {

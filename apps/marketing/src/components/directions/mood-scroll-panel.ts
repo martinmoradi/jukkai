@@ -20,6 +20,11 @@ import {
   normalizeHexColor,
   sortMoodSceneStops,
 } from './mood-scroll-config';
+import type { MoodScrollDevTools } from './mood-scroll-motion';
+import type {
+  MoodTunableHandle,
+  MoodTunableRegistry,
+} from './mood-scroll-tunables';
 
 export interface MoodPanelClasses {
   panel: string;
@@ -100,7 +105,9 @@ let nextGroupId = 0;
 
 export function initMoodPanel(
   config: MoodScrollConfig,
+  tunables: MoodTunableRegistry,
   classes: MoodPanelClasses,
+  devTools?: MoodScrollDevTools,
 ): HTMLElement {
   const panel = document.createElement('aside');
   panel.className = `${classes.panel} ${classes.hidden}`;
@@ -167,6 +174,34 @@ export function initMoodPanel(
           config[spec.key] = value;
         },
       });
+    }
+
+    if (devTools) {
+      const toolsGroup = group(controlsRoot, classes, 'tools');
+      addCheckbox(toolsGroup, classes, 'markers', {
+        get: () => devTools.markersEnabled(),
+        set: (value) => {
+          const result = devTools.setMarkers(value);
+          if (result.message) setStatus(result.message);
+        },
+      });
+      addCheckbox(toolsGroup, classes, 'GSDevTools', {
+        get: () => devTools.gsDevToolsEnabled(),
+        set: (value, sync) => {
+          void devTools.setGsDevTools(value).then((result) => {
+            if (result.message) setStatus(result.message);
+            sync();
+          });
+        },
+      });
+    }
+
+    const entries = tunables.entries();
+    if (entries.length > 0) {
+      const tunableGroup = group(controlsRoot, classes, 'tunables');
+      for (const handle of entries) {
+        addTunableSlider(tunableGroup, classes, handle);
+      }
     }
 
     for (const scene of config.scenes) {
@@ -448,7 +483,7 @@ export function initMoodPanel(
   const loadPresetFile = async (fileName: string) => {
     try {
       const text = await readPresetFile(fileName);
-      const result = loadJsonConfig(config, text);
+      const result = loadJsonConfig(config, text, tunables);
       if (!result.ok) {
         setStatus(result.message);
         return;
@@ -565,6 +600,59 @@ function addSelect<Value extends string>(
   input.addEventListener('mood-scroll-sync', sync);
 }
 
+function addCheckbox(
+  parent: HTMLElement,
+  classes: Pick<MoodPanelClasses, 'row'>,
+  label: string,
+  binding: {
+    get: () => boolean;
+    set: (value: boolean, sync: () => void) => void;
+  },
+): void {
+  const row = document.createElement('label');
+  row.className = classes.row;
+  const text = document.createElement('span');
+  text.textContent = label;
+  const input = document.createElement('input');
+  input.type = 'checkbox';
+  input.dataset.syncCheckbox = 'true';
+
+  const sync = () => {
+    input.checked = binding.get();
+  };
+  input.addEventListener('change', () => {
+    binding.set(input.checked, sync);
+  });
+  row.append(text, input);
+  parent.append(row);
+  sync();
+  input.addEventListener('mood-scroll-sync', sync);
+}
+
+function addTunableSlider(
+  parent: HTMLElement,
+  classes: Pick<MoodPanelClasses, 'row' | 'value'>,
+  handle: MoodTunableHandle,
+): void {
+  addNumberSlider(
+    parent,
+    classes,
+    {
+      key: handle.id,
+      label: handle.label,
+      min: handle.min,
+      max: handle.max,
+      step: handle.step,
+    },
+    {
+      get: () => handle.get(),
+      set: (value) => {
+        handle.set(value);
+      },
+    },
+  );
+}
+
 function addColorInput(
   parent: HTMLElement,
   classes: Pick<MoodPanelClasses, 'row' | 'colorInput'>,
@@ -614,6 +702,11 @@ function collectInputSyncs(root: HTMLElement): Array<() => void> {
     }),
     ...Array.from(
       root.querySelectorAll<HTMLSelectElement>('[data-sync-select]'),
+    ).map((input) => () => {
+      input.dispatchEvent(new Event('mood-scroll-sync'));
+    }),
+    ...Array.from(
+      root.querySelectorAll<HTMLInputElement>('[data-sync-checkbox]'),
     ).map((input) => () => {
       input.dispatchEvent(new Event('mood-scroll-sync'));
     }),
@@ -677,6 +770,7 @@ function actionButton(
 function loadJsonConfig(
   config: MoodScrollConfig,
   text: string,
+  tunables: MoodTunableRegistry,
 ): { ok: true } | { ok: false; message: string } {
   let parsed: unknown;
   try {
@@ -685,7 +779,7 @@ function loadJsonConfig(
     return { ok: false, message: 'Invalid JSON' };
   }
 
-  if (!applyMoodScrollConfig(config, parsed)) {
+  if (!applyMoodScrollConfig(config, parsed, tunables)) {
     return { ok: false, message: 'No recognized mood-scroll settings' };
   }
   return { ok: true };
