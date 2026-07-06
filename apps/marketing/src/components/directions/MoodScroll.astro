@@ -99,7 +99,6 @@ import styles from './MoodScroll.module.css';
 <script>
   import { createDefaultConfig } from './mood-scroll-config';
   import { initMoodScroll } from './mood-scroll-motion';
-  import { initMoodPanel } from './mood-scroll-panel';
   import { createTunableRegistry } from './mood-scroll-tunables';
   import styles from './MoodScroll.module.css';
 
@@ -108,33 +107,37 @@ import styles from './MoodScroll.module.css';
     const config = createDefaultConfig();
     const tunables = createTunableRegistry(config);
     const moodScroll = initMoodScroll(root, config, tunables);
-    initMoodPanel(
-      config,
-      tunables,
-      {
-        panel: styles.panel,
-        hidden: styles.panelHidden,
-        title: styles.panelTitle,
-        presetButton: styles.panelPresetButton,
-        titleHint: styles.panelTitleHint,
-        rename: styles.panelRename,
-        renameStamp: styles.panelRenameStamp,
-        renameInput: styles.panelRenameInput,
-        group: styles.panelGroup,
-        groupHeader: styles.panelGroupHeader,
-        groupTitle: styles.panelGroupTitle,
-        groupToggle: styles.panelGroupToggle,
-        groupBody: styles.panelGroupBody,
-        row: styles.panelRow,
-        value: styles.panelValue,
-        colorInput: styles.panelColorInput,
-        actions: styles.panelActions,
-        button: styles.panelButton,
-        presetList: styles.panelPresetList,
-        presetListItem: styles.panelPresetListItem,
-        status: styles.panelStatus,
-      },
-      moodScroll?.devTools,
-    );
+    if (import.meta.env.DEV) {
+      void import('./mood-scroll-panel').then(({ initMoodPanel }) => {
+        initMoodPanel(
+          config,
+          tunables,
+          {
+            panel: styles.panel,
+            hidden: styles.panelHidden,
+            title: styles.panelTitle,
+            presetButton: styles.panelPresetButton,
+            titleHint: styles.panelTitleHint,
+            rename: styles.panelRename,
+            renameStamp: styles.panelRenameStamp,
+            renameInput: styles.panelRenameInput,
+            group: styles.panelGroup,
+            groupHeader: styles.panelGroupHeader,
+            groupTitle: styles.panelGroupTitle,
+            groupToggle: styles.panelGroupToggle,
+            groupBody: styles.panelGroupBody,
+            row: styles.panelRow,
+            value: styles.panelValue,
+            colorInput: styles.panelColorInput,
+            actions: styles.panelActions,
+            button: styles.panelButton,
+            presetList: styles.panelPresetList,
+            presetListItem: styles.panelPresetListItem,
+            status: styles.panelStatus,
+          },
+          moodScroll?.devTools,
+        );
+      });
+    }
   }
 </script>
