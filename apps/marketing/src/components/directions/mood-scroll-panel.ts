@@ -36,6 +36,8 @@ export interface MoodPanelClasses {
   title: string;
   presetButton: string;
   titleHint: string;
+  titleActions: string;
+  titleAction: string;
   rename: string;
   renameStamp: string;
   renameInput: string;
@@ -131,6 +133,9 @@ export function initMoodPanel(
   panel.setAttribute('aria-label', 'Mood background dev settings');
 
   const presetState: { fileName: string | null } = { fileName: null };
+  const loadedSnapshot: { config: MoodScrollConfig } = {
+    config: cloneMoodScrollConfig(config),
+  };
   let syncControls: Array<() => void> = [];
   let colorInputs: HTMLInputElement[] = [];
 
@@ -528,10 +533,27 @@ export function initMoodPanel(
     syncAll();
   };
 
+  const isDirty = () =>
+    JSON.stringify(cloneMoodScrollConfig(config)) !==
+    JSON.stringify(loadedSnapshot.config);
+
+  const resetUnsavedTweaks = () => {
+    if (!isDirty()) {
+      setStatus(`Already at ${presetHeaderLabel(presetState.fileName)}`);
+      return;
+    }
+
+    applyMoodScrollConfig(config, loadedSnapshot.config, tunables);
+    rerenderControls();
+    notifyStructureChange();
+    setStatus(`Reset to ${presetHeaderLabel(presetState.fileName)}`);
+  };
+
   const saveCurrentPreset = async (): Promise<boolean> => {
     try {
       const result = await savePresetFile(config, presetState.fileName);
       presetState.fileName = result.fileName;
+      loadedSnapshot.config = cloneMoodScrollConfig(config);
       renderPresetHeader();
       setStatus(`Saved ${result.fileName}`);
       return true;
@@ -566,7 +588,7 @@ export function initMoodPanel(
       label.className = classes.rename;
       const stamp = document.createElement('span');
       stamp.className = classes.renameStamp;
-      stamp.textContent = `mood-scroll / ${parsed.stamp}-`;
+      stamp.textContent = `${parsed.stamp}-`;
       const input = document.createElement('input');
       input.className = classes.renameInput;
       input.type = 'text';
@@ -618,7 +640,13 @@ export function initMoodPanel(
       });
 
       label.append(stamp, input);
-      title.append(label);
+      title.append(
+        label,
+        createHeaderActions(classes, resetUnsavedTweaks, () => {
+          panel.classList.add(classes.hidden);
+          stopSceneTracking();
+        }),
+      );
       window.setTimeout(() => {
         input.focus();
         input.select();
@@ -629,16 +657,19 @@ export function initMoodPanel(
     const button = document.createElement('button');
     button.type = 'button';
     button.className = classes.presetButton;
-    button.textContent = `mood-scroll / ${presetDisplayName(
-      presetState.fileName,
-    )}`;
-    button.title = 'Click to rename the saved JSON suffix';
+    button.textContent = presetHeaderLabel(presetState.fileName);
+    button.title = presetState.fileName
+      ? `Click to rename ${presetState.fileName}`
+      : 'Save JSON to name this preset';
     button.addEventListener('click', beginRename);
 
-    const hint = document.createElement('span');
-    hint.className = classes.titleHint;
-    hint.textContent = 'D to close';
-    title.append(button, hint);
+    title.append(
+      button,
+      createHeaderActions(classes, resetUnsavedTweaks, () => {
+        panel.classList.add(classes.hidden);
+        stopSceneTracking();
+      }),
+    );
   };
 
   renderPresetHeader();
@@ -699,6 +730,7 @@ export function initMoodPanel(
       }
 
       presetState.fileName = fileName;
+      loadedSnapshot.config = cloneMoodScrollConfig(config);
       rerenderControls();
       notifyStructureChange();
       renderPresetHeader();
@@ -759,8 +791,14 @@ function addNumberSlider<Key extends string>(
   row.className = classes.row;
   const text = document.createElement('span');
   text.textContent = spec.label;
-  const value = document.createElement('span');
+  const value = document.createElement('input');
+  value.type = 'number';
   value.className = classes.value;
+  value.min = String(spec.min);
+  value.max = String(spec.max);
+  value.step = String(spec.step);
+  value.inputMode = 'decimal';
+  value.setAttribute('aria-label', `${spec.label} value`);
   const input = document.createElement('input');
   input.type = 'range';
   input.min = String(spec.min);
@@ -770,15 +808,37 @@ function addNumberSlider<Key extends string>(
 
   const sync = () => {
     input.value = String(binding.get());
-    value.textContent = input.value;
+    value.value = formatPanelNumber(binding.get(), spec.step);
   };
   input.addEventListener('input', () => {
     binding.set(Number.parseFloat(input.value));
-    value.textContent = input.value;
+    value.value = formatPanelNumber(Number.parseFloat(input.value), spec.step);
   });
   if (binding.onCommit) {
     input.addEventListener('change', () => binding.onCommit?.());
   }
+  value.addEventListener('change', () => {
+    const next = parsePanelNumber(value.value, spec);
+    if (next === null) {
+      sync();
+      return;
+    }
+    binding.set(next);
+    input.value = String(next);
+    value.value = formatPanelNumber(next, spec.step);
+    binding.onCommit?.();
+  });
+  value.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      value.blur();
+    }
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      sync();
+      value.blur();
+    }
+  });
   row.append(text, input, value);
   parent.append(row);
   sync();
@@ -1026,6 +1086,50 @@ function formatStopAt(at: number): string {
   return String(Math.round(at * 100) / 100);
 }
 
+function formatPanelNumber(value: number, step: number): string {
+  return value.toFixed(decimalPlaces(step));
+}
+
+function decimalPlaces(value: number): number {
+  const [, decimals = ''] = String(value).split('.');
+  return decimals.length;
+}
+
+function parsePanelNumber(
+  raw: string,
+  spec: Pick<NumberSliderSpec<string>, 'min' | 'max'>,
+): number | null {
+  const value = Number.parseFloat(raw);
+  if (!Number.isFinite(value)) return null;
+  return Math.min(Math.max(value, spec.min), spec.max);
+}
+
+function createHeaderActions(
+  classes: Pick<MoodPanelClasses, 'titleActions' | 'titleAction'>,
+  onReset: () => void,
+  onClose: () => void,
+): HTMLElement {
+  const actions = document.createElement('div');
+  actions.className = classes.titleActions;
+
+  const reset = document.createElement('button');
+  reset.type = 'button';
+  reset.className = classes.titleAction;
+  reset.textContent = 'Reset';
+  reset.title = 'Reset unsaved tweaks to the loaded JSON or defaults';
+  reset.addEventListener('click', onReset);
+
+  const close = document.createElement('button');
+  close.type = 'button';
+  close.className = classes.titleAction;
+  close.textContent = 'Close';
+  close.dataset.panelAction = 'close';
+  close.addEventListener('click', onClose);
+
+  actions.append(reset, close);
+  return actions;
+}
+
 function actionButton(
   classes: Pick<MoodPanelClasses, 'button'>,
   label: string,
@@ -1168,6 +1272,13 @@ async function responseMessage(response: Response): Promise<string> {
 
 function presetDisplayName(fileName: string | null): string {
   return fileName ? fileName.replace(/\.json$/, '') : 'default';
+}
+
+function presetHeaderLabel(fileName: string | null): string {
+  if (!fileName) return 'default';
+  const parsed = parsePresetFileName(fileName);
+  if (!parsed) return presetDisplayName(fileName);
+  return parsed.slug || parsed.stamp;
 }
 
 function parsePresetFileName(
