@@ -778,7 +778,9 @@
 }
 
 .panelGroup {
-  overflow: hidden;
+  /* clip (not hidden) keeps the rounded corners without turning the section
+     into a scroll container, which would break the sticky header below. */
+  overflow: clip;
   background: rgb(240 228 211 / 0.035);
   border: 1px solid rgb(240 228 211 / 0.16);
   border-radius: 8px;
