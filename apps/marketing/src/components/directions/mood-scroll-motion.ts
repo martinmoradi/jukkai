@@ -20,6 +20,8 @@ import {
   type ConductorTarget,
   parseSceneLengthVh,
   resolveConductorTarget,
+  resolveFieldStops,
+  resolveSurfaceTrack,
   toMoodGlFrame,
 } from './mood-scroll-conductor';
 import type { MoodScene, MoodScrollConfig, Rgb } from './mood-scroll-config';
@@ -91,6 +93,14 @@ export function initMoodScroll(
   if (!(canvas instanceof HTMLCanvasElement)) return null;
   const moodGl = createMoodGl(canvas);
   if (!moodGl) return null;
+
+  // The galerie wall's own contained surface. Fail-open: a missing canvas or
+  // failed context leaves the backdrop's flat punch-colored wall.
+  const surfaceCanvas = root.querySelector('[data-galerie-surface]');
+  const surfaceGl =
+    surfaceCanvas instanceof HTMLCanvasElement
+      ? createMoodGl(surfaceCanvas)
+      : null;
 
   gsap.registerPlugin(ScrollTrigger);
   const choreography = registerGalerieChoreographyTunables(tunables);
@@ -266,9 +276,32 @@ export function initMoodScroll(
     blob1: firstField.blob1,
     blob2: firstField.blob2,
   };
+  // The galerie surface smooths its own color state; both canvases share the
+  // same time and velocity, so equal targets render pixel-identical fields.
+  const surfaceCurrent: { ground: Rgb; blob1: Rgb; blob2: Rgb } | null =
+    surfaceGl
+      ? { ground: [0, 0, 0], blob1: [0, 0, 0], blob2: [0, 0, 0] }
+      : null;
+  let surfacePrimed = false;
   let time = 0;
   let lastScrollY = window.scrollY;
   let smoothedVelocity = 0;
+
+  const readSurfaceField = () => {
+    const scene = config.scenes.find((entry) => entry.key === 'galerie');
+    if (!scene) return null;
+    const link = chain.find(
+      (entry) =>
+        entry.target.mechanism === 'takeover' &&
+        entry.target.sceneKey === 'galerie',
+    );
+    if (!link) return null;
+    const track = resolveSurfaceTrack(
+      scene,
+      takeoverEntranceFraction(parseSceneLengthVh(scene.length)),
+    );
+    return resolveFieldStops(track, link.st.progress);
+  };
 
   const readTarget = (): ConductorTarget => {
     let picked: ConductorTarget = {
@@ -320,6 +353,49 @@ export function initMoodScroll(
         { time, velocity },
       ),
     );
+
+    // The living wall: resolve the galerie's surface track at the block's
+    // own progress every frame (so panel edits land mid-approach too) and
+    // render with the SAME time and velocity as the shared canvas — equal
+    // targets produce pixel-identical fields across the wall's edges.
+    if (surfaceGl && surfaceCurrent && mode === 'full') {
+      const surfaceField = readSurfaceField();
+      if (surfaceField) {
+        if (!surfacePrimed) {
+          surfacePrimed = true;
+          surfaceCurrent.ground = surfaceField.ground;
+          surfaceCurrent.blob1 = surfaceField.blob1;
+          surfaceCurrent.blob2 = surfaceField.blob2;
+        } else {
+          surfaceCurrent.ground = mixRgb(
+            surfaceCurrent.ground,
+            surfaceField.ground,
+            colorSmoothing,
+          );
+          surfaceCurrent.blob1 = mixRgb(
+            surfaceCurrent.blob1,
+            surfaceField.blob1,
+            colorSmoothing,
+          );
+          surfaceCurrent.blob2 = mixRgb(
+            surfaceCurrent.blob2,
+            surfaceField.blob2,
+            colorSmoothing,
+          );
+        }
+        surfaceGl.render(
+          toMoodGlFrame(
+            {
+              ...surfaceField,
+              ground: surfaceCurrent.ground,
+              blob1: surfaceCurrent.blob1,
+              blob2: surfaceCurrent.blob2,
+            },
+            { time, velocity },
+          ),
+        );
+      }
+    }
   };
 
   gsap.ticker.add(tick);
@@ -329,6 +405,7 @@ export function initMoodScroll(
   let resizeRebuildTimer: ReturnType<typeof setTimeout> | null = null;
   const onResize = () => {
     moodGl.resize();
+    surfaceGl?.resize();
     if (resizeRebuildTimer !== null) clearTimeout(resizeRebuildTimer);
     resizeRebuildTimer = setTimeout(() => {
       resizeRebuildTimer = null;
@@ -407,6 +484,7 @@ export function initMoodScroll(
       carousel.dispose();
       conductor.dispose();
       moodGl.dispose();
+      surfaceGl?.dispose();
     },
   };
 }

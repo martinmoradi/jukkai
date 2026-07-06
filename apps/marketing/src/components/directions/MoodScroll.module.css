@@ -110,14 +110,28 @@
 }
 
 /* The room's own wall: scrolls in with the block as the hard section
-   boundary the reference shows, then the timeline fades it to reveal the
-   field, already snapped to the same cobalt. Color comes inline from the
-   scene's punch stop on every conductor rebuild. */
+   boundary the reference shows. It hosts its own mood surface (the sticky
+   canvas below), so the wall is alive from arrival; the flat background is
+   the fail-open ground if WebGL init fails. Color comes inline from the
+   scene's punch stop on every conductor rebuild. The overflow clip is safe
+   here: the sticky stage is a sibling, not a descendant. */
 .galerieBackdrop {
   position: absolute;
   inset: 0;
+  overflow: hidden;
   background: #2036a8;
   border-radius: 24px 24px 0 0;
+}
+
+/* Sticky like the stage: anchored at the section top during the approach
+   (covering the visible slice of the room as it scrolls in), then held for
+   the whole runway. */
+.galerieSurface {
+  position: sticky;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100vh;
 }
 
 .galerieStage {
@@ -364,10 +378,14 @@
 }
 
 /* The dark room keeps its wall; the scroll-driven deepening is pre-baked
-   into the gradient (set inline from the scene stops). */
+   into the gradient (set inline from the scene stops). No live surface. */
 [data-mood-static] .galerieBackdrop {
   background: linear-gradient(#2036a8, #10182b 90%);
   border-radius: 16px 16px 0 0;
+}
+
+[data-mood-static] .galerieSurface {
+  display: none;
 }
 
 [data-mood-static] .galerieStage {
