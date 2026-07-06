@@ -172,7 +172,7 @@
   top: var(--collage-top);
   left: var(--collage-left);
   width: var(--collage-width);
-  height: auto;
+  height: var(--collage-height, auto);
   aspect-ratio: var(--collage-aspect);
 }
 
