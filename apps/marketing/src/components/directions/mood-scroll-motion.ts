@@ -678,10 +678,10 @@ function createTakeoverTimeline(
 /**
  * The galerie backdrop is the dark room's own wall: it scrolls in with the
  * block as the hard section boundary, colored from the scene's punch stop
- * (the first stop past the entrance window). Full mode paints it flat so
- * the timeline can fade it out over the matching field; the static version
- * keeps it and pre-bakes the deepening as a gradient. Stop color edits
- * reach it on the next conductor rebuild.
+ * (the first stop past the entrance window). Full mode paints it flat as
+ * the fail-open ground under the wall's live mood surface; the static
+ * version keeps it and pre-bakes the deepening as a gradient. Stop color
+ * edits reach it on the next conductor rebuild.
  */
 function applyGalerieBackdropTreatment(
   root: HTMLElement,

@@ -28,8 +28,6 @@ import {
 
 export interface GalerieChoreographyTunables {
   growStartScale: MoodTunableHandle;
-  backdropFadeStart: MoodTunableHandle;
-  backdropFadeDuration: MoodTunableHandle;
   editorialExitStart: MoodTunableHandle;
   editorialExitDuration: MoodTunableHandle;
   /** Entrance-space: fractions of the scroll-in window, not the stick. */
@@ -72,16 +70,6 @@ export function registerGalerieChoreographyTunables(
       max: 1,
       step: 0.01,
     }),
-    backdropFadeStart: tunable(registry, 'galerie.backdropFadeStart', 0.06, {
-      ...phase,
-      max: 0.5,
-    }),
-    backdropFadeDuration: tunable(
-      registry,
-      'galerie.backdropFadeDuration',
-      0.1,
-      { ...span, max: 0.4 },
-    ),
     editorialExitStart: tunable(registry, 'galerie.editorialExitStart', 0.16, {
       ...phase,
       max: 0.8,
@@ -356,7 +344,6 @@ function clamp01(value: number): number {
 export const HANDOFF_SWAP_AT = 0.985;
 
 const CHOREOGRAPHY_SELECTORS = [
-  '[data-galerie-backdrop]',
   '[data-galerie-editorial]',
   '[data-collage-item]',
   '[data-galerie-inline]',
@@ -419,12 +406,13 @@ function padToPinContract(timeline: gsap.core.Timeline): void {
 }
 
 /**
- * Galerie takeover: the composed dark room scrolls in on its backdrop while
- * the collage assembles (the entrance window), the backdrop fades to reveal
- * the cobalt field, the editorial exits, the featured frame appears and
- * grows to the padded large-frame state, plateau. The plateau has no geometry on purpose: the
- * carousel owns it, and the traversal that follows hides the section seam
- * behind the large featured overlay.
+ * Galerie takeover: the composed dark room scrolls in on its living wall
+ * (the backdrop's own mood surface — no fade, the wall IS the field) while
+ * the collage assembles (the entrance window), the editorial exits, the
+ * featured frame appears and grows to the padded large-frame state, plateau.
+ * The plateau has no geometry on purpose: the carousel owns it, and the
+ * traversal that follows hides the section seam behind the large featured
+ * overlay.
  */
 export function createGalerieTimeline(
   root: HTMLElement,
@@ -435,7 +423,6 @@ export function createGalerieTimeline(
   padToPinContract(tl);
   const f = entranceFraction;
 
-  const backdrop = root.querySelector('[data-galerie-backdrop]');
   const editorial = root.querySelector('[data-galerie-editorial]');
   const collageItems = root.querySelectorAll('[data-collage-item]');
   const inlineFeatured = root.querySelector('[data-galerie-inline]');
@@ -455,22 +442,6 @@ export function createGalerieTimeline(
       editorial,
       { autoAlpha: 0, yPercent: -22, ease: 'none', duration: exit.duration },
       exit.start,
-    );
-  }
-
-  // The backdrop is the hard section boundary while the room scrolls in.
-  // Just after the stick the field underneath has snapped to the same
-  // cobalt, so fading the wall swaps flat paint for the living blobs.
-  if (backdrop) {
-    const fade = stuckSegment(
-      f,
-      t.backdropFadeStart.get(),
-      t.backdropFadeDuration.get(),
-    );
-    tl.to(
-      backdrop,
-      { autoAlpha: 0, ease: 'none', duration: fade.duration },
-      fade.start,
     );
   }
 

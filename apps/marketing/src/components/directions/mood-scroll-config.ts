@@ -168,13 +168,14 @@ export function createDefaultConfig(): MoodScrollConfig {
       // Galerie takeover (experiment #57/#58): a sticky runway, so the stop
       // fractions cover the WHOLE block from first entry — for 400vh the
       // first quarter is the entrance window, where the room scrolls in on
-      // its own cobalt backdrop. The field holds the light continuity under
-      // the sections still visible above, snaps to punchy cobalt beneath
-      // the backdrop right after the stick (the backdrop fade reveals it),
-      // then deepens continuously so the darkest blue lands with the
-      // large featured image. The last stop holds through the plateau.
-      // Length follows the Obsidian reference pacing (~2 wheel notches per
-      // captured frame, 11 of 15 intervals inside the dark room).
+      // its own living wall (the surface track below). The shared field
+      // holds the light continuity under the sections still visible above
+      // the wall's edge, then snaps to the same cobalt beneath the opaque
+      // wall right after the stick so the exit seam matches, and deepens so
+      // the darkest blue lands with the large featured image. The last stop
+      // holds through the plateau. Length follows the Obsidian reference
+      // pacing (~2 wheel notches per captured frame, 11 of 15 intervals
+      // inside the dark room).
       {
         key: 'galerie',
         label: 'galerie',
