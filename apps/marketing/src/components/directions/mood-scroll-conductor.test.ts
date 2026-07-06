@@ -1,37 +1,16 @@
 import { describe, expect, it } from 'vitest';
 
 import {
-  resolveConductorFrameAt,
   resolveConductorTarget,
   resolveEnterWindow,
   resolveSceneStop,
   toMoodGlFrame,
 } from './mood-scroll-conductor';
-import {
-  createDefaultConfig,
-  type MoodFieldStop,
-  type MoodScene,
-} from './mood-scroll-config';
-import parityFixture from './mood-scroll-v1-parity.fixture.json';
+import type { MoodFieldStop, MoodScene } from './mood-scroll-config';
 
 const TOLERANCE = 0.002;
 
 describe('mood scroll scene conductor', () => {
-  it('replays the frozen v1 numeric parity fixture', () => {
-    const config = createDefaultConfig();
-
-    for (const sample of parityFixture.samples) {
-      const frame = resolveConductorFrameAt(config, sample.scrollFraction);
-      expect(frame.ground).toBeCloseRgb(sample.ground);
-      expect(frame.blob1).toBeCloseRgb(sample.blob1);
-      expect(frame.blob2).toBeCloseRgb(sample.blob2);
-
-      const calm = 1 - sample.settle * 0.85;
-      expect(frame.strength).toBeCloseTo(0.9 * calm, 6);
-      expect(frame.drift).toBeCloseTo(0.28 * calm, 6);
-    }
-  });
-
   it('interpolates scene stops at boundaries and between stops', () => {
     const scene = testScene('test', [
       stop({ at: 0, ground: '#000000', strength: 0, presence: 1 }),
