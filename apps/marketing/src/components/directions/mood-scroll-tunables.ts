@@ -6,6 +6,10 @@ export interface MoodTunableOptions {
   max: number;
   step: number;
   requiresReinit?: boolean;
+  /** Sub-phase this tunable belongs to; the panel clusters by it. */
+  group?: string;
+  /** One-sentence hover explanation shown on the panel row. */
+  description?: string;
 }
 
 export interface MoodTunableHandle {
@@ -17,6 +21,8 @@ export interface MoodTunableHandle {
   max: number;
   step: number;
   requiresReinit: boolean;
+  group?: string;
+  description?: string;
   get(): number;
   set(value: number): void;
   reset(): void;
@@ -90,6 +96,8 @@ class ConfigBackedTunableRegistry implements MoodTunableRegistry {
       max: options.max,
       step: options.step,
       requiresReinit: options.requiresReinit === true,
+      group: options.group,
+      description: options.description,
       get: () => this.config.tunables[id] ?? normalizedDefault,
       set: (value) => {
         this.config.tunables[id] =
