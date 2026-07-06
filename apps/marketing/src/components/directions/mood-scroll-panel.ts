@@ -16,7 +16,6 @@ import {
   type MoodKey,
   type MoodScrollConfig,
   normalizeHexColor,
-  type ProjectsVariant,
 } from './mood-scroll-config';
 
 export interface MoodPanelClasses {
@@ -73,9 +72,8 @@ const SLIDERS: SliderSpec[] = [
 
 const MOOD_LABELS: Array<[MoodKey, string]> = [
   ['hero', 'hero (orange)'],
-  ['umbrella', 'umbrella (lavande)'],
-  ['projectsBlue', 'projets — variante bleue'],
-  ['projectsAubergine', 'projets — variante aubergine'],
+  ['umbrella', 'umbrella (lavender)'],
+  ['projects', 'projects (blue)'],
   ['artShop', 'art shop (magenta)'],
   ['finale', 'finale (settle)'],
 ];
@@ -96,28 +94,8 @@ export function initMoodPanel(
   title.textContent = 'mood-scroll — D pour fermer';
   panel.append(title);
 
-  // Projects variant switch.
-  const variantGroup = group(panel, classes, 'variante projets');
-  for (const variant of ['blue', 'aubergine'] as ProjectsVariant[]) {
-    const row = document.createElement('label');
-    row.className = classes.row;
-    const input = document.createElement('input');
-    input.type = 'radio';
-    input.name = 'mood-projects-variant';
-    const sync = () => {
-      input.checked = config.projectsVariant === variant;
-    };
-    syncControls.push(sync);
-    sync();
-    input.addEventListener('change', () => {
-      config.projectsVariant = variant;
-    });
-    row.append(input, document.createTextNode(` ${variant}`));
-    variantGroup.append(row);
-  }
-
   // Global sliders.
-  const globalGroup = group(panel, classes, 'globaux');
+  const globalGroup = group(panel, classes, 'global');
   for (const spec of SLIDERS) {
     const row = document.createElement('label');
     row.className = classes.row;
