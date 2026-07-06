@@ -1,0 +1,120 @@
+---
+// Direction comp: scroll-reactive mood background (see docs/design/
+// homepage-exploration.md, "page tonal script"). Placeholder copy comes from
+// the hero text inventory; nothing here is frozen. Press D for the dev panel.
+import styles from './MoodScroll.module.css';
+---
+
+<div class={styles.page} data-mood-root>
+  <canvas class={styles.canvas} data-mood-canvas aria-hidden='true'></canvas>
+
+  <main class={styles.main}>
+    <section
+      class={`${styles.section} ${styles.inkDark}`}
+      data-mood-section='hero'>
+      <p class={styles.eyebrow}>Jukkai by Crystelle Terrasson</p>
+      <h1 class={styles.display}>Des lieux dont on se souvient.</h1>
+      <p class={styles.kicker}>
+        Architecte d'intérieur à Rennes,
+        <span class={styles.kickerSibling}>
+          & un art shop, sous le même toit</span
+        >
+      </p>
+      <a class={styles.cta} href='#'>Parlons de votre projet →</a>
+      <p class={styles.meta}>
+        ★ 4,9 · [XX] avis Google — UNAID · 30 ans de métier · 2 architectes ·
+        depuis 2012
+      </p>
+    </section>
+
+    <section
+      class={`${styles.section} ${styles.inkDark}`}
+      data-mood-section='umbrella'>
+      <p class={styles.statement}>
+        Jukkai est un studio d'architecture d'intérieur et un art shop, sous le
+        même toit, à Châteaugiron.
+      </p>
+      <p class={styles.meta}>
+        Châteaugiron, à 20 minutes de Rennes · Depuis 2012
+      </p>
+    </section>
+
+    <section
+      class={`${styles.section} ${styles.inkLight} ${styles.projects}`}
+      data-mood-section='projects'>
+      <div class={styles.growFrame} data-mood-grow>
+        <img
+          src='/home/hero/prints/waouh-theatre.webp'
+          alt=''
+          decoding='async'
+        />
+      </div>
+      <p class={styles.stance} data-mood-caption>
+        « On n'aurait jamais fait ça. »
+      </p>
+    </section>
+
+    <section
+      class={`${styles.section} ${styles.inkDark}`}
+      data-mood-section='artShop'>
+      <p class={styles.eyebrow}>L'art shop ouvre en octobre 2026</p>
+      <p class={styles.statement}>
+        Une galerie vivante, pensée comme un art shop.
+      </p>
+      <div class={styles.printsRow}>
+        <img
+          src='/home/hero/prints/tournesol-jaune.webp'
+          alt=''
+          decoding='async'
+        />
+        <img
+          src='/home/hero/prints/fonderie-rouge.webp'
+          alt=''
+          decoding='async'
+        />
+        <img
+          src='/home/hero/prints/geometrie-spirale.webp'
+          alt=''
+          decoding='async'
+        />
+      </div>
+    </section>
+
+    <section
+      class={`${styles.section} ${styles.inkLight} ${styles.finale}`}
+      data-mood-section='finale'>
+      <p class={styles.finaleLine} data-mood-parallax='0.22'>Des lieux</p>
+      <p class={styles.finaleLine} data-mood-parallax='0.08'>dont on</p>
+      <p class={styles.finaleLine} data-mood-parallax='-0.1'>se souvient.</p>
+      <a class={`${styles.cta} ${styles.finaleCta}`} href='#'>
+        Parlons de votre projet →
+      </a>
+      <div class={styles.footerBand}>
+        Jukkai — Châteaugiron · comp /directions/mood-scroll · D&nbsp;: réglages
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+  import { createDefaultConfig } from './mood-scroll-config';
+  import { initMoodScroll } from './mood-scroll-motion';
+  import { initMoodPanel } from './mood-scroll-panel';
+  import styles from './MoodScroll.module.css';
+
+  const root = document.querySelector('[data-mood-root]');
+  if (root instanceof HTMLElement) {
+    const config = createDefaultConfig();
+    initMoodScroll(root, config);
+    initMoodPanel(config, {
+      panel: styles.panel,
+      hidden: styles.panelHidden,
+      title: styles.panelTitle,
+      group: styles.panelGroup,
+      groupTitle: styles.panelGroupTitle,
+      row: styles.panelRow,
+      value: styles.panelValue,
+      copy: styles.panelCopy,
+    });
+  }
+</script>
