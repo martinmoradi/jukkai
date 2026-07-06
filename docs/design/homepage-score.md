@@ -17,10 +17,9 @@ agents iterate. Update it as experiments settle or kill beats. Do not create
   `apps/marketing/src/components/directions/mood-scroll-*`.
   Press `D` on the page for the dev panel. Presets save to
   `apps/marketing/dev/mood-scroll-presets/` through a dev-server API.
-- The frozen v1 parity fixture is generated with
-  `bun run --cwd apps/marketing fixture:mood-scroll-v1`. It samples the
-  legacy field boundary chain in conductor-v2 coordinates (550vh), not the
-  full DOM page scroll height.
+- The frozen v1 parity reference (`/directions/mood-scroll-v1/` and its
+  fixture) was removed in the blockout slice (#56); the blockout deliberately
+  diverges from v1, so parity stopped being meaningful.
 - Goal Martin set: push this page to awwwards honorable-mention quality.
 
 ## The thesis
@@ -37,31 +36,36 @@ interpolation. The fix is structural (this score), not more tuning.
 ## The beats (current score, placeholder copy throughout)
 
 Section order and copy authority stay with the strategy stack
-(`docs/strategy/wireframe-brief.md` §1.4). The comp currently compresses the
-page to five sections; the full page adds the offer ladder and trust strip
-inside the light chapter (beat 5). Constraint carried from the July 5
-decisions: offer ladder and trust strip stay freely scrollable, never pinned.
+(`docs/strategy/wireframe-brief.md` §1.4). The blockout (#56) carries all six
+beats at provisional scroll lengths, declared as scene data and tunable from
+the panel; the lengths below are the blockout's starting hypotheses, not
+decisions. Constraint carried from the July 5 decisions: offer ladder and
+trust strip stay freely scrollable, never pinned.
 
-1. **Hero.** Warm yellow-orange ground, field present, calm drift.
+1. **Hero.** `100vh`. Warm yellow-orange ground, field present, calm drift.
    Typography per `homepage-exploration.md`.
-2. **Umbrella.** Field present, quieter. Color candidate: lavender over
-   paper (open, tune live).
-3. **Galerie (projects proof).** The first set piece. Space opens, big
-   typography, the field goes cobalt. Project images get promoted one at a
-   time; the featured image grows to full bleed while the blues deepen and
-   darken. The room dims because the artwork takes over. Detailed spec below.
-4. **The hand-off.** The signature transition out of the dark chapter. The
-   full-bleed image shrinks back into a small framed object (arched or
-   rounded frame) while a light chapter rises behind it; the page flips from
-   near-black to light ground in one gesture; the field mutes to zero.
-   Detailed spec below.
-5. **Light chapter (offer ladder, art shop invitation, trust).** Flat light
-   ground, field muted or nearly so. Art and prints read as objects on
+2. **Umbrella.** `100vh`. Field present, quieter. Color candidate: lavender
+   over paper (open, tune live).
+3. **Galerie (projects proof).** `270vh` pinned takeover. The first set
+   piece. Space opens, big typography, the field goes cobalt. Project images
+   get promoted one at a time; the featured image grows to full bleed while
+   the blues deepen and darken. The room dims because the artwork takes
+   over. Detailed spec below.
+4. **The hand-off.** `120vh` seam scene (`handoff`), reserved runway between
+   the dark and light chapters; a default fast crossfade occupies it until
+   the experiment (#57) lands. The signature transition out of the dark
+   chapter: the full-bleed image shrinks back into a small framed object
+   (arched or rounded frame) while a light chapter rises behind it; the page
+   flips from near-black to light ground in one gesture; the field mutes to
+   zero. Detailed spec below.
+5. **Light chapter (offer ladder, art shop invitation, trust).** Three
+   scenes: `offerLadder 130vh`, `artShop 120vh`, `trust 100vh`. Flat light
+   ground, field presence at or near zero. Art and prints read as objects on
    gallery walls; big type carries the chapter. Order of offer ladder vs art
    shop moment inside this chapter follows the wireframe; challenge it only
    with a live comp. Freely scrollable.
-6. **Finale.** The field returns and settles: drift calms, blobs fade,
-   parallax lines land the page. Exists in the comp already.
+6. **Finale.** `140vh`. The field returns and settles: drift calms, blobs
+   fade, parallax lines land the page. Exists in the comp already.
 
 The old "pousser la porte" idea (light-to-dark entry into the galerie) is
 still live as the _entry_ signature moment; the hand-off is its exit twin.
@@ -164,10 +168,13 @@ scenes: [
 Definitions:
 
 - **Scene**: one DOM section plus a declared scroll length (100vh default;
-  pinned scenes declare their pin distance). `key` must match the current
-  page section vocabulary (`hero`, `umbrella`, `galerie`, `artShop`,
-  `finale`); `label` is optional panel copy. Content-anchored, so copy edits
-  never invalidate tuning.
+  a pinned scene's length is its total scroll footprint, pin travel plus one
+  viewport). Since the blockout, unpinned sections take their min-height
+  from `scene.length`, and every scene group in the panel has a length
+  control (declare-reinit). `key` must match the current page section
+  vocabulary (`hero`, `umbrella`, `galerie`, `handoff`, `offerLadder`,
+  `artShop`, `trust`, `finale`); `label` is optional panel copy.
+  Content-anchored, so copy edits never invalidate tuning.
 - **Stop**: a full field state at `at`, a fraction of the scene's progress.
   Every field parameter lives on stops (colors, radius, ratio, strength,
   roundness, noise, drift, and **presence** 0..1, the field's opacity in the
