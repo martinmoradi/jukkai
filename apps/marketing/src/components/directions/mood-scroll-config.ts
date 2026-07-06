@@ -11,7 +11,11 @@ export interface Mood {
   blob2: string;
 }
 
+export const MOOD_COLOR_CHANNELS = ['ground', 'blob1', 'blob2'] as const;
+export type MoodColorChannel = (typeof MOOD_COLOR_CHANNELS)[number];
+
 export type ProjectsVariant = 'blue' | 'aubergine';
+export const PROJECTS_VARIANTS = ['blue', 'aubergine'] as const;
 
 export interface MoodScrollConfig {
   blobRadius: number;
@@ -31,6 +35,27 @@ export interface MoodScrollConfig {
     finale: Mood;
   };
 }
+
+export const MOOD_KEYS = [
+  'hero',
+  'umbrella',
+  'projectsBlue',
+  'projectsAubergine',
+  'artShop',
+  'finale',
+] as const;
+
+export type MoodKey = (typeof MOOD_KEYS)[number];
+
+const NUMBER_KEYS = [
+  'blobRadius',
+  'blobRadiusRatio',
+  'blobStrength',
+  'blobRoundness',
+  'noiseStrength',
+  'driftSpeed',
+  'velocityInfluence',
+] as const;
 
 export const MOOD_SEQUENCE = [
   'hero',
@@ -81,6 +106,74 @@ export function resolveMood(config: MoodScrollConfig, stop: MoodStop): Mood {
   return config.moods[stop];
 }
 
+export function cloneMoodScrollConfig(
+  config: MoodScrollConfig,
+): MoodScrollConfig {
+  return {
+    ...config,
+    moods: {
+      hero: { ...config.moods.hero },
+      umbrella: { ...config.moods.umbrella },
+      projectsBlue: { ...config.moods.projectsBlue },
+      projectsAubergine: { ...config.moods.projectsAubergine },
+      artShop: { ...config.moods.artShop },
+      finale: { ...config.moods.finale },
+    },
+  };
+}
+
+export function applyMoodScrollConfig(
+  target: MoodScrollConfig,
+  raw: unknown,
+): boolean {
+  if (!isRecord(raw)) return false;
+
+  let changed = false;
+  for (const key of NUMBER_KEYS) {
+    const value = raw[key];
+    if (typeof value === 'number' && Number.isFinite(value)) {
+      target[key] = value;
+      changed = true;
+    }
+  }
+
+  if (isProjectsVariant(raw.projectsVariant)) {
+    target.projectsVariant = raw.projectsVariant;
+    changed = true;
+  }
+
+  if (isRecord(raw.moods)) {
+    for (const moodKey of MOOD_KEYS) {
+      const mood = raw.moods[moodKey];
+      if (!isRecord(mood)) continue;
+      for (const channel of MOOD_COLOR_CHANNELS) {
+        const color = normalizeHexColor(mood[channel]);
+        if (color) {
+          target.moods[moodKey][channel] = color;
+          changed = true;
+        }
+      }
+    }
+  }
+
+  return changed;
+}
+
+export function normalizeHexColor(raw: unknown): string | null {
+  if (typeof raw !== 'string') return null;
+  const value = raw.trim();
+  const short = value.match(/^#?([0-9a-f]{3})$/i);
+  if (short) {
+    return `#${short[1]
+      .split('')
+      .map((char) => `${char}${char}`)
+      .join('')
+      .toLowerCase()}`;
+  }
+  const long = value.match(/^#?([0-9a-f]{6})$/i);
+  return long ? `#${long[1].toLowerCase()}` : null;
+}
+
 export type Rgb = [number, number, number];
 
 export function hexToRgb(hex: string): Rgb {
@@ -102,4 +195,12 @@ export function mixRgb(a: Rgb, b: Rgb, t: number): Rgb {
     a[1] + (b[1] - a[1]) * t,
     a[2] + (b[2] - a[2]) * t,
   ];
+}
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === 'object' && value !== null && !Array.isArray(value);
+}
+
+function isProjectsVariant(value: unknown): value is ProjectsVariant {
+  return PROJECTS_VARIANTS.includes(value as ProjectsVariant);
 }
