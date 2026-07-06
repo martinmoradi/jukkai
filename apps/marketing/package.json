@@ -12,7 +12,6 @@
   "scripts": {
     "build": "bun ../../scripts/fonts-generated-check.ts && astro build",
     "dev": "bun ../../scripts/fonts-generated-check.ts && astro dev --host 0.0.0.0",
-    "fixture:mood-scroll-v1": "bun scripts/generate-mood-scroll-v1-parity.ts",
     "hero:bake": "python3 scripts/bake-home-hero-assets.py",
     "lint": "eslint . --ext .js,.mjs,.cjs,.ts,.astro && stylelint \"src/**/*.css\"",
     "lint:fix": "eslint . --ext .js,.mjs,.cjs,.ts,.astro --fix && stylelint \"src/**/*.css\" --fix",
