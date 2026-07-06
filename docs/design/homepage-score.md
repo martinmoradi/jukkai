@@ -46,20 +46,21 @@ trust strip stay freely scrollable, never pinned.
    Typography per `homepage-exploration.md`.
 2. **Umbrella.** `100vh`. Field present, quieter. Color candidate: lavender
    over paper (open, tune live).
-3. **Galerie (projects proof).** `400vh` pinned takeover (experiment #58,
-   PR #66; length from the Obsidian reference pacing). The first set piece.
-   The field snaps to punchy cobalt right at the pin, an editorial beat
-   (giant display type) opens the dark room, a loose collage assembles,
-   then the featured frame is promoted to full bleed while the blues deepen
-   to their darkest. Scroll drives geometry only; the featured image cycles
-   by timer and prev/next buttons. Detailed spec below.
-4. **The hand-off.** `200vh` pinned takeover (`handoff`, experiment #57,
-   PR #66). The signature transition out of the dark chapter: the full-bleed
-   image shrinks into an arch-masked door while the light chapter's panel
-   rises to the seam in the same gesture; the field mutes toward zero and
-   flips to light under the risen panel (fast offer-ladder enter band). The
-   arch ends sitting across the seam and scrolls away with the page.
-   Detailed spec below.
+3. **Galerie (projects proof).** `400vh` sticky-runway takeover (experiment
+   #58, PR #66; length from the Obsidian reference pacing). The first set
+   piece. The block scrolls in as a composed dark room on its own cobalt
+   wall (editorial display type visible, collage assembling on the way up),
+   the wall fades to the living field once the stage sticks, then the
+   featured frame is promoted to full bleed while the blues deepen to their
+   darkest. Scroll drives geometry only; the featured image cycles by timer
+   and prev/next buttons. Detailed spec below.
+4. **The hand-off.** `200vh` sticky-runway takeover (`handoff`, experiment
+   #57, PR #66). The signature transition out of the dark chapter: the
+   full-bleed image shrinks into an arch-masked door while the light
+   chapter's panel rises to the seam in the same gesture; the field mutes
+   toward zero and flips to light under the risen panel (fast offer-ladder
+   enter band). The arch ends sitting across the seam and scrolls away with
+   the page. Detailed spec below.
 5. **Light chapter (offer ladder, art shop invitation, trust).** Three
    scenes: `offerLadder 130vh`, `artShop 120vh`, `trust 100vh`. Flat light
    ground, field presence at or near zero. Art and prints read as objects on
@@ -72,9 +73,15 @@ trust strip stay freely scrollable, never pinned.
 The "pousser la porte" idea found its home (July 6 session): it is not an
 entry mechanism into the galerie but the exit's meaning. The arch the
 hand-off leaves at the seam is the door, and the light chapter opens on the
-sentence that invites you to push it. The entry into the dark chapter is
-deliberately field-only: a fast cobalt snap at the takeover's start (first
-galerie stops), saving the page's one big shape reveal for the exit arch.
+sentence that invites you to push it. The entry into the dark chapter went
+through two takes: the first was field-only (a cobalt snap after the pin),
+which read as an empty room recoloring — the shared fixed canvas cannot
+produce the reference's arriving-dark-room boundary. The sticky iteration
+gives the galerie block its own cobalt backdrop that scrolls in with it
+(the hard section boundary), with the field snapping to the same cobalt
+beneath it and the backdrop fading out just after the stick. The wall is a
+surface, not a framed shape, so the page's one big shape reveal is still
+saved for the exit arch.
 
 ## The galerie beat, detailed
 
@@ -92,8 +99,20 @@ exit; scrolling back rewinds the journey. Which image is featured is
 time-driven (auto-advance interval) plus prev/next buttons with a counter,
 never scroll, so the takeover can never trap the visitor. Built in PR #66:
 the choreography segments (editorial exit, collage enter/recede, featured
-appear, grow phase, chrome timing) and the carousel timing are tunables
-under the `galerie` panel group.
+appear, grow phase, chrome timing, backdrop fade) and the carousel timing
+are tunables under the `galerie` panel group.
+
+Implementation shape (sticky iteration, PR #66): the section is a tall
+block (`scene.length`) holding a 100vh `position: sticky` stage — no GSAP
+pin. The scrub trigger spans the whole block from first entry, so the
+timeline's first viewport is an entrance window: the room arrives composed
+on its backdrop wall while the collage staggers in, and the tunable phase
+values keep their meaning as fractions of the stuck runway (mapped in
+code). Below 1024px and under reduced motion the choreography is skipped
+entirely, per the reference (`references/obsidian-assembly/gallery-mobile.png`
+and `gallery-tablet.png`): the typographic beat, then the carousel with its
+chrome on the image (timer still runs while the section is on screen), on
+the same cobalt-to-dark wall, gradient pre-baked. No collage, no arch.
 
 ## The hand-off, detailed
 
@@ -112,18 +131,20 @@ project image becomes a framed work, the arch is the door, and the light
 chapter's editorial sentence below the galerie is the invitation to push it
 ("Venez pousser la porte") — which is where the old entry idea landed.
 
-Implementation (PR #66): the `handoff` scene is a pinned takeover so the
-morph gets scrubbed runway. One fixed featured overlay is shared by the
-galerie and hand-off timelines (the galerie grows it, the hand-off shrinks
-it), which also hides the section seam during the unpin traversal between
-the two pins; at the end of the morph the overlay swaps into an inline arch
-slot so the door scrolls away with the page. The visible dark-to-light flip
-is the DOM panel rising to the seam plus a fast offer-ladder enter band
-that flips the field underneath it. All taste values (shrink phase and ease
-shape, arch width/height/radius, seam position, overlap, panel rise, type
-entrance) are tunables under the `handoff` panel group. Mobile/tablet and
-reduced motion use a static equivalent: arch and light block in flow, tonal
-journey intact, no morph.
+Implementation (PR #66): the `handoff` scene is a sticky-runway takeover so
+the morph gets scrubbed travel; its entrance window (the first viewport of
+the block) is the traversal between the two sticky stages. One fixed
+featured overlay is shared by the galerie and hand-off timelines (the
+galerie grows it, the hand-off shrinks it), which also hides the section
+seam during that traversal; at the end of the morph the overlay swaps into
+an inline arch slot so the door scrolls away with the page. The visible
+dark-to-light flip is the DOM panel rising to the seam plus a fast
+offer-ladder enter band that flips the field underneath it. All taste
+values (shrink phase and ease shape, arch width/height/radius, seam
+position, overlap, panel rise, type entrance) are tunables under the
+`handoff` panel group. Below 1024px and under reduced motion there is no
+arch at all, per the reference: the hand-off reduces to the light block
+with the sentence, and the next section follows directly.
 
 ## The model: conductor v2
 
@@ -175,10 +196,10 @@ scenes: [
 Definitions:
 
 - **Scene**: one DOM section plus a declared scroll length (100vh default;
-  a pinned scene's length is its total scroll footprint, pin travel plus one
-  viewport). Since the blockout, unpinned sections take their min-height
-  from `scene.length`, and every scene group in the panel has a length
-  control (declare-reinit). `key` must match the current page section
+  a takeover scene's length is its sticky-runway block height, which is
+  also its total scroll footprint — entrance viewport plus stuck travel).
+  Since the blockout, sections take their min-height from `scene.length`,
+  and every scene group in the panel has a length control (declare-reinit). `key` must match the current page section
   vocabulary (`hero`, `umbrella`, `galerie`, `handoff`, `offerLadder`,
   `artShop`, `trust`, `finale`); `label` is optional panel copy.
   Content-anchored, so copy edits never invalidate tuning.
@@ -195,8 +216,10 @@ Definitions:
     per boundary.
   - `cut`: instant flip at a line (a degenerate crossfade). At most one or
     two per page; it is punctuation.
-  - `takeover`: the scene pins and its internal choreography plays as the
-    transition (the galerie).
+  - `takeover`: the scene is a sticky runway (tall block, 100vh sticky
+    stage) and its internal choreography plays as the transition, entrance
+    included (the galerie). Stop fractions cover the whole block from
+    first entry.
   - `hand-off` is the first new mechanism, built as an experiment on top of
     this model, then promoted into the vocabulary if kept.
 - **Render loop**: unchanged in spirit. Each frame: find active scene and
@@ -274,8 +297,8 @@ Martin designs from references, not briefs. The loop, per idea:
 | Mechanism                                                                  | Source                | Verdict                             | Where          |
 | -------------------------------------------------------------------------- | --------------------- | ----------------------------------- | -------------- |
 | Mood field (blob + grain, scroll-blended)                                  | Codrops depth gallery | kept                                | whole page     |
-| Pin takeover (image grows, room dims)                                      | comp v1               | kept                                | galerie        |
-| Cobalt snap entry (field-only, no DOM seam)                                | July 6 session        | built (PR #66), awaiting taste gate | galerie entry  |
+| Sticky takeover runway (image grows, room dims; was the pin takeover)      | comp v1 → sticky      | kept                                | galerie        |
+| Dark-room entrance (backdrop wall scrolls in, cobalt snap beneath)         | July 6 session        | built (PR #66), awaiting taste gate | galerie entry  |
 | Gallery promotion (collage, grow to full bleed; content by time + buttons) | Obsidian Assembly     | built (PR #66), awaiting taste gate | galerie        |
 | Hand-off (dominant image shrinks into framed arch, tonal flip)             | Obsidian Assembly     | built (PR #66), awaiting taste gate | galerie exit   |
 | Idle texture (field life while not scrolling)                              | none yet              | candidate, needs refs               | ambient scenes |
@@ -308,8 +331,10 @@ porte" became the exit's meaning).
 - Umbrella color (lavender candidate, tune live).
 - Idle texture treatment and its references.
 - Hero intro/loader idea (exploration doc), unchanged, not designed.
-- Mobile: pins and the hand-off need a designed mobile answer, not a
-  degraded desktop one. Reduced motion stays a parallel design.
+- Mobile: answered in PR #66 per the reference (`gallery-mobile.png`,
+  `gallery-tablet.png`): below 1024px the choreography is skipped — the
+  typographic beat, the carousel on the dark wall, no collage, no arch.
+  Reduced motion shares that version. Still placeholder art direction.
 - Perf posture: raw WebGL stays (comp is ~4 KB gzip vs 170 KB for the
   Three.js reference); keep the hero stream transform-only (see commit
   b2e8db9 rationale).
