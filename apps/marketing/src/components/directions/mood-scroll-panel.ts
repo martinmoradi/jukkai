@@ -63,8 +63,18 @@ export interface MoodPanelClasses {
   groupMeta: string;
   groupToggle: string;
   groupBody: string;
+  groupBulkToggle: string;
+  subGroup: string;
+  subGroupHeader: string;
+  subGroupTitle: string;
+  subGroupMeta: string;
+  subGroupToggle: string;
+  subGroupBody: string;
+  subGroupSwatches: string;
+  subGroupSwatch: string;
   subheading: string;
   row: string;
+  rowHint: string;
   value: string;
   colorInput: string;
   presetList: string;
