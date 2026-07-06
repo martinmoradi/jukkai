@@ -200,6 +200,11 @@ interface GroupControl {
   setExpanded(expanded: boolean): void;
 }
 
+interface SubGroupEntry {
+  key: string;
+  control: GroupControl;
+}
+
 export function initMoodPanel(
   config: MoodScrollConfig,
   tunables: MoodTunableRegistry,
@@ -399,6 +404,7 @@ export function initMoodPanel(
     parentBody: HTMLElement,
     sceneKey: string,
     handles: MoodTunableHandle[],
+    collect?: SubGroupEntry[],
   ) => {
     if (handles.length === 0) return;
 
@@ -422,16 +428,51 @@ export function initMoodPanel(
     }
 
     for (const [groupName, bucket] of clusters) {
-      const card = subGroup(
-        `${sceneKey}::phase::${tunablePhaseSlug(groupName)}`,
-        parentBody,
-        groupName,
-        { defaultExpanded: false, meta: String(bucket.length) },
-      );
+      const key = `${sceneKey}::phase::${tunablePhaseSlug(groupName)}`;
+      const card = subGroup(key, parentBody, groupName, {
+        defaultExpanded: false,
+        meta: String(bucket.length),
+      });
+      collect?.push({ key, control: card });
       for (const handle of bucket) {
         addTunableSlider(card.body, classes, handle);
       }
     }
+  };
+
+  // One-click open/close for every collapsible inside a scene group. Reads
+  // live state on click, so it does the right thing even after individual
+  // toggles; the label is refreshed on hover/focus to stay honest.
+  const addBulkToggle = (
+    parentBody: HTMLElement,
+    entries: SubGroupEntry[],
+  ): void => {
+    if (entries.length === 0) return;
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = classes.groupBulkToggle;
+
+    const anyExpanded = () =>
+      entries.some(
+        (entry) =>
+          entry.control.header.getAttribute('aria-expanded') === 'true',
+      );
+    const syncLabel = () => {
+      button.textContent = anyExpanded() ? 'collapse all' : 'expand all';
+    };
+    button.addEventListener('click', () => {
+      const next = !anyExpanded();
+      for (const entry of entries) {
+        entry.control.setExpanded(next);
+        expandedState[entry.key] = next;
+      }
+      persistExpanded();
+      syncLabel();
+    });
+    button.addEventListener('pointerenter', syncLabel);
+    button.addEventListener('focus', syncLabel);
+    syncLabel();
+    parentBody.insertBefore(button, parentBody.firstChild);
   };
 
   const jumpToScene = (scene: MoodScene, stopAt: number) => {
@@ -507,6 +548,10 @@ export function initMoodPanel(
       scenePanelLabel(scene, index),
       sceneMeta(scene, index),
     );
+
+    // Every collapsible built inside this scene, so one control can open or
+    // close them all.
+    const sceneSubGroups: SubGroupEntry[] = [];
 
     // Scene length is data (blockout contract): editing it reshapes the
     // section and rebuilds the conductor. For pinned scenes this is the
@@ -652,12 +697,14 @@ export function initMoodPanel(
             swatches.set(channel, dot);
           }
 
+          const cardKey = `${scene.key}::${kind}::${index}`;
           const card = subGroup(
-            `${scene.key}::${kind}::${index}`,
+            cardKey,
             body,
             `${stopLabel} · ${formatStopAt(stop.at)}`,
             { defaultExpanded: false, accessory: strip },
           );
+          sceneSubGroups.push({ key: cardKey, control: card });
           target = card.body;
           const titleEl = card.header.firstElementChild;
 
@@ -733,7 +780,10 @@ export function initMoodPanel(
       body,
       scene.key,
       tunables.entries().filter((handle) => handle.sceneKey === scene.key),
+      sceneSubGroups,
     );
+
+    addBulkToggle(body, sceneSubGroups);
   };
 
   const renderGlobalGroup = () => {
