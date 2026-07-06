@@ -113,12 +113,13 @@
    boundary the reference shows. It hosts its own mood surface (the sticky
    canvas below), so the wall is alive from arrival; the flat background is
    the fail-open ground if WebGL init fails. Color comes inline from the
-   scene's punch stop on every conductor rebuild. The overflow clip is safe
-   here: the sticky stage is a sibling, not a descendant. */
+   scene's punch stop on every conductor rebuild. `overflow: clip`, not
+   `hidden`: hidden would make this box a scroll container and the canvas
+   would stick to it instead of the viewport. */
 .galerieBackdrop {
   position: absolute;
   inset: 0;
-  overflow: hidden;
+  overflow: clip;
   background: #2036a8;
   border-radius: 24px 24px 0 0;
 
