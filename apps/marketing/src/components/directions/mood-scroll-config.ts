@@ -121,13 +121,12 @@ export function createDefaultConfig(): MoodScrollConfig {
     ...overrides,
   });
 
-  // The galerie middle stop is the v1 umbrella->projects blend at 45%.
-  // Keeping it explicit proves the three-stop scene path without changing
-  // the first visual pass.
-  const galerieMid = {
-    ground: '#919093',
-    blob1: '#898ab7',
-    blob2: '#b08f8c',
+  // The galerie's darkest state also opens the hand-off seam, so the pinned
+  // shrink-to-arch plays over a continuous ground.
+  const galerieDarkest = {
+    ground: '#10182b',
+    blob1: '#29405f',
+    blob2: '#5c3a26',
   };
 
   return {
@@ -161,10 +160,16 @@ export function createDefaultConfig(): MoodScrollConfig {
           }),
         ],
       },
+      // Galerie takeover (experiment #57/#58): the field snaps to punchy
+      // cobalt just after the pin engages, then deepens continuously so the
+      // darkest blue lands with the full-bleed featured image. The last stop
+      // holds through the plateau. Length follows the Obsidian reference
+      // pacing (~2 wheel notches per captured frame, 11 of 15 intervals
+      // inside the dark room).
       {
         key: 'galerie',
         label: 'galerie',
-        length: '270vh',
+        length: '400vh',
         pin: true,
         enter: { mechanism: 'takeover' },
         stops: [
@@ -173,42 +178,49 @@ export function createDefaultConfig(): MoodScrollConfig {
             blob1: '#cdb9e8',
             blob2: '#e6cbd9',
           }),
-          field(0.45, galerieMid),
-          field(1, {
-            ground: '#1a2334',
-            blob1: '#35507c',
-            blob2: '#6f462e',
+          field(0.07, {
+            ground: '#2036a8',
+            blob1: '#4f74e8',
+            blob2: '#8fb0ff',
           }),
+          field(
+            0.5,
+            {
+              ground: '#18265f',
+              blob1: '#35507c',
+              blob2: '#4a6ea0',
+            },
+            { drift: 0.16 },
+          ),
+          field(0.85, galerieDarkest, { drift: 0.1 }),
         ],
       },
-      // Hand-off seam: the tonal flip out of the dark chapter. The enter
-      // band is the flip; the rest of the declared length is quiet runway so
-      // the page rhythm is tuned with the seam in place before #57 builds
-      // the real hand-off mechanism here.
+      // Hand-off seam (experiment #57): a pinned takeover so the
+      // shrink-to-arch morph gets scrubbed runway. The field stays on the
+      // dark chapter's ground while presence mutes; the visible dark-to-light
+      // flip is the DOM light panel rising inside the same gesture, then the
+      // offer ladder's fast enter band flips the field underneath it.
       {
         key: 'handoff',
         label: 'hand-off seam',
-        length: '120vh',
-        enter: { mechanism: 'crossfade', band: [0.6, 0.2], ease: 'smoothstep' },
+        length: '200vh',
+        pin: true,
+        enter: { mechanism: 'takeover' },
         stops: [
-          field(
-            0,
-            {
-              ground: '#ece3d6',
-              blob1: '#cbb9a4',
-              blob2: '#ddcab4',
-            },
-            { presence: 0.2, drift: 0.18 },
-          ),
+          field(0, galerieDarkest, { presence: 0.5, drift: 0.08 }),
+          field(1, galerieDarkest, { presence: 0.08, drift: 0.06 }),
         ],
       },
       // Light chapter: flat light ground, field presence at or near zero,
       // freely scrollable (hard constraint: no pin, no scroll hijack).
+      // The offer ladder's enter band is deliberately fast and early: it
+      // flips the field to light while the hand-off's risen panel still
+      // covers most of the viewport.
       {
         key: 'offerLadder',
         label: 'offer ladder',
         length: '130vh',
-        enter: { mechanism: 'crossfade', band: [0.85, 0.2], ease: 'none' },
+        enter: { mechanism: 'crossfade', band: [1, 0.55], ease: 'smoothstep' },
         stops: [
           field(
             0,

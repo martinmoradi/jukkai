@@ -31,6 +31,20 @@ describe('mood scroll blockout scene model', () => {
     expect(keys.indexOf('offerLadder')).toBe(keys.indexOf('handoff') + 1);
   });
 
+  it('pins the galerie and the hand-off so their choreography gets runway', () => {
+    const config = createDefaultConfig();
+    const galerie = config.scenes.find((scene) => scene.key === 'galerie');
+    const handoff = config.scenes.find((scene) => scene.key === 'handoff');
+
+    expect(galerie?.pin).toBe(true);
+    expect(galerie?.enter.mechanism).toBe('takeover');
+    expect(handoff?.pin).toBe(true);
+    expect(handoff?.enter.mechanism).toBe('takeover');
+    // The hand-off's field stays on the dark ground with presence muting;
+    // the visible tonal flip is DOM plus the offer ladder's enter band.
+    expect(handoff?.stops.at(-1)?.presence).toBeLessThanOrEqual(0.1);
+  });
+
   it('keeps the light chapter unpinned with field presence near zero', () => {
     const config = createDefaultConfig();
 
@@ -135,7 +149,9 @@ describe('mood scroll config dev helpers', () => {
     const changed = applyMoodScrollConfig(config, next);
 
     expect(changed).toBe(true);
-    expect(config.scenes[2].stops.map((stop) => stop.at)).toEqual([0, 0.45, 1]);
+    expect(config.scenes[2].stops.map((stop) => stop.at)).toEqual([
+      0, 0.07, 0.5, 0.85,
+    ]);
   });
 
   it('rejects old-shape or unknown JSON roots', () => {
