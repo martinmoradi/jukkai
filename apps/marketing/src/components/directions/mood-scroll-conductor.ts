@@ -2,10 +2,7 @@ import {
   findMoodScene,
   hexToRgb,
   mixRgb,
-  MOOD_FIELD_COLOR_CHANNELS,
-  MOOD_FIELD_NUMBER_CHANNELS,
-  type MoodFieldColorChannel,
-  type MoodFieldNumberChannel,
+  type MoodEnterEase,
   type MoodFieldStop,
   type MoodScene,
   type MoodSceneEnter,
@@ -34,7 +31,14 @@ export type ConductorTarget =
       progress: number;
     }
   | {
-      mechanism: 'crossfade' | 'cut';
+      mechanism: 'crossfade';
+      fromSceneKey: string;
+      toSceneKey: string;
+      progress: number;
+      ease: MoodEnterEase;
+    }
+  | {
+      mechanism: 'cut';
       fromSceneKey: string;
       toSceneKey: string;
       progress: number;
@@ -61,7 +65,7 @@ export function resolveSceneStop(
   scene: MoodScene,
   progress: number,
 ): ResolvedMoodField {
-  const stops = [...scene.stops].sort((a, b) => a.at - b.at);
+  const stops = scene.stops;
   if (stops.length === 0) {
     return stopToResolved(fallbackStop());
   }
@@ -100,10 +104,16 @@ export function resolveConductorTarget(
 
   const fromScene = requireScene(config, target.fromSceneKey);
   const toScene = requireScene(config, target.toSceneKey);
+  const progress =
+    target.mechanism === 'crossfade'
+      ? easeMoodProgress(target.progress, target.ease)
+      : target.progress > 0
+        ? 1
+        : 0;
   return mixResolved(
     resolveSceneStop(fromScene, 1),
     resolveSceneStop(toScene, 0),
-    target.mechanism === 'cut' && target.progress > 0 ? 1 : target.progress,
+    progress,
   );
 }
 
@@ -207,12 +217,21 @@ function createConductorWindows(config: MoodScrollConfig): ConductorWindow[] {
     windows.push({
       startVh: window.startVh,
       endVh: window.endVh,
-      target: {
-        mechanism,
-        fromSceneKey: previous.scene.key,
-        toSceneKey: current.scene.key,
-        progress: 0,
-      },
+      target:
+        mechanism === 'crossfade'
+          ? {
+              mechanism,
+              fromSceneKey: previous.scene.key,
+              toSceneKey: current.scene.key,
+              progress: 0,
+              ease: current.scene.enter.ease,
+            }
+          : {
+              mechanism,
+              fromSceneKey: previous.scene.key,
+              toSceneKey: current.scene.key,
+              progress: 0,
+            },
     });
   }
 
@@ -260,23 +279,28 @@ function mixResolved(
   progress: number,
 ): ResolvedMoodField {
   const t = clamp01(progress);
-  const colors = Object.fromEntries(
-    MOOD_FIELD_COLOR_CHANNELS.map((channel) => [
-      channel,
-      mixRgb(from[channel], to[channel], t),
-    ]),
-  ) as Record<MoodFieldColorChannel, Rgb>;
-  const numbers = Object.fromEntries(
-    MOOD_FIELD_NUMBER_CHANNELS.map((channel) => [
-      channel,
-      mixNumber(from[channel], to[channel], t),
-    ]),
-  ) as Record<MoodFieldNumberChannel, number>;
-
   return {
-    ...colors,
-    ...numbers,
+    ground: mixRgb(from.ground, to.ground, t),
+    blob1: mixRgb(from.blob1, to.blob1, t),
+    blob2: mixRgb(from.blob2, to.blob2, t),
+    radius: mixNumber(from.radius, to.radius, t),
+    radiusRatio: mixNumber(from.radiusRatio, to.radiusRatio, t),
+    strength: mixNumber(from.strength, to.strength, t),
+    roundness: mixNumber(from.roundness, to.roundness, t),
+    noise: mixNumber(from.noise, to.noise, t),
+    drift: mixNumber(from.drift, to.drift, t),
+    presence: mixNumber(from.presence, to.presence, t),
   };
+}
+
+export function easeMoodProgress(
+  progress: number,
+  ease: MoodEnterEase,
+): number {
+  const t = clamp01(progress);
+  if (ease === 'smoothstep') return t * t * (3 - 2 * t);
+  if (ease === 'sine.inOut') return -(Math.cos(Math.PI * t) - 1) / 2;
+  return t;
 }
 
 function mixNumber(from: number, to: number, progress: number): number {

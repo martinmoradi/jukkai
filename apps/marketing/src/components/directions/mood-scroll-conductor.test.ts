@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 
 import {
   resolveConductorFrameAt,
+  resolveConductorTarget,
   resolveEnterWindow,
   resolveSceneStop,
   toMoodGlFrame,
@@ -32,7 +33,7 @@ describe('mood scroll scene conductor', () => {
   });
 
   it('interpolates scene stops at boundaries and between stops', () => {
-    const scene = testScene([
+    const scene = testScene('test', [
       stop({ at: 0, ground: '#000000', strength: 0, presence: 1 }),
       stop({ at: 0.5, ground: '#808080', strength: 0.5, presence: 0.5 }),
       stop({ at: 1, ground: '#ffffff', strength: 1, presence: 0 }),
@@ -60,6 +61,27 @@ describe('mood scroll scene conductor', () => {
         100,
       ),
     ).toEqual({ startVh: 15, endVh: 80 });
+  });
+
+  it('applies crossfade enter ease to blend progress', () => {
+    const config = {
+      colorSmoothing: 0.14,
+      velocityInfluence: 1,
+      scenes: [
+        testScene('from', [stop({ at: 0, ground: '#000000' })]),
+        testScene('to', [stop({ at: 0, ground: '#ffffff' })]),
+      ],
+    };
+
+    const frame = resolveConductorTarget(config, {
+      mechanism: 'crossfade',
+      fromSceneKey: 'from',
+      toSceneKey: 'to',
+      progress: 0.25,
+      ease: 'smoothstep',
+    });
+
+    expect(frame.ground).toBeCloseRgb([0.15625, 0.15625, 0.15625]);
   });
 
   it('applies presence to rendered field strength and grain', () => {
@@ -105,9 +127,9 @@ function stop(overrides: Partial<MoodFieldStop>): MoodFieldStop {
   };
 }
 
-function testScene(stops: MoodFieldStop[]): MoodScene {
+function testScene(key: string, stops: MoodFieldStop[]): MoodScene {
   return {
-    key: 'test',
+    key,
     length: '100vh',
     enter: { mechanism: 'crossfade', band: [0.85, 0.2], ease: 'none' },
     stops,

@@ -17,6 +17,10 @@ agents iterate. Update it as experiments settle or kill beats. Do not create
   `apps/marketing/src/components/directions/mood-scroll-*`.
   Press `D` on the page for the dev panel. Presets save to
   `apps/marketing/dev/mood-scroll-presets/` through a dev-server API.
+- The frozen v1 parity fixture is generated with
+  `bun run --cwd apps/marketing fixture:mood-scroll-v1`. It samples the
+  legacy field boundary chain in conductor-v2 coordinates (550vh), not the
+  full DOM page scroll height.
 - Goal Martin set: push this page to awwwards honorable-mention quality.
 
 ## The thesis
@@ -123,6 +127,7 @@ Conductor v2 replaces this with an ordered list of scenes:
 scenes: [
   {
     key: 'umbrella',
+    label: 'umbrella',
     length: '100vh',
     enter: { mechanism: 'crossfade', band: [0.85, 0.2], ease: 'none' },
     stops: [
@@ -133,7 +138,9 @@ scenes: [
         blob2: '#e6cbd9',
         drift: 0.28,
         radius: 0.65,
+        radiusRatio: 0.78,
         strength: 0.9,
+        roundness: 0,
         noise: 0.05,
         presence: 1,
       },
@@ -157,18 +164,21 @@ scenes: [
 Definitions:
 
 - **Scene**: one DOM section plus a declared scroll length (100vh default;
-  pinned scenes declare their pin distance). Content-anchored, so copy edits
+  pinned scenes declare their pin distance). `key` must match the current
+  page section vocabulary (`hero`, `umbrella`, `galerie`, `artShop`,
+  `finale`); `label` is optional panel copy. Content-anchored, so copy edits
   never invalidate tuning.
-- **Stop**: a full field state at a fraction of the scene's progress. Every
-  field parameter lives on stops (colors, radius, ratio, strength,
+- **Stop**: a full field state at `at`, a fraction of the scene's progress.
+  Every field parameter lives on stops (colors, radius, ratio, strength,
   roundness, noise, drift, and **presence** 0..1, the field's opacity in the
   composition). Per-scene granularity and intermediate states both fall out
   of stops. The schema stays open for future texture params (idle warp,
   pulse) without migration.
 - **Enter**: how the scene arrives, conceptually a boundary object, stored
   on the entering scene. v1 mechanisms:
-  - `crossfade`: colors melt across a parameterized band with an ease.
-    Today's behavior, now tunable per boundary.
+  - `crossfade`: colors melt across a parameterized band with an ease
+    (`none`, `smoothstep`, or `sine.inOut`). Today's behavior, now tunable
+    per boundary.
   - `cut`: instant flip at a line (a degenerate crossfade). At most one or
     two per page; it is punctuation.
   - `takeover`: the scene pins and its internal choreography plays as the
@@ -214,9 +224,11 @@ same repo-backed API. Agents wire tunables and never guess at feel;
 Martin drives the sliders.
 
 - The dev panel mirrors the scene model: one collapsible group per scene
-  (enter controls, stops, that scene's tunables), a jump row at the top
-  (click a scene or stop, the page scrolls there instantly), a small global
-  group. Panel styling stays utilitarian; no beauty pass.
+  (enter controls and stops) plus a small global group. Issue #53 ships live
+  enter-band, cut-line, ease, color, and field sliders. Jump navigation,
+  registered foreground tunables, markers, and GSDevTools remain follow-up
+  tooling, not part of the current implementation. Panel styling stays
+  utilitarian; no beauty pass.
 - **GSDevTools** (free since GSAP 3.13) is the timeline counterpart of the
   panel: scrub and slow-mo any scene timeline while tuning. ScrollTrigger
   `markers` per scene, toggleable from the panel. Panel = taste values,
