@@ -17,6 +17,7 @@ export interface MoodScrollConfig {
   blobRadius: number;
   blobRadiusRatio: number;
   blobStrength: number;
+  blobRoundness: number;
   noiseStrength: number;
   driftSpeed: number;
   velocityInfluence: number;
@@ -42,24 +43,30 @@ export const MOOD_SEQUENCE = [
 export type MoodStop = (typeof MOOD_SEQUENCE)[number];
 
 export function createDefaultConfig(): MoodScrollConfig {
+  // Palette discipline (learned against the reference demo): blob colors
+  // stay within a tight lightness band of their ground and differ mainly in
+  // saturation/hue. A blob much darker than a light ground reads as a stain,
+  // not as light. On dark grounds the blobs sit slightly lighter instead:
+  // they are the light sources in the room.
   return {
     blobRadius: 0.65,
     blobRadiusRatio: 0.78,
     blobStrength: 0.9,
+    blobRoundness: 0,
     noiseStrength: 0.05,
     driftSpeed: 0.28,
     velocityInfluence: 1,
     projectsVariant: 'aubergine',
     moods: {
-      hero: { ground: '#f6d9b4', blob1: '#ff9d4d', blob2: '#d96f34' },
-      umbrella: { ground: '#f2eae0', blob1: '#c5b0e4', blob2: '#e3c4d6' },
-      projectsBlue: { ground: '#1a2334', blob1: '#3d5f94', blob2: '#8a4b2e' },
+      hero: { ground: '#f7ddba', blob1: '#ffb160', blob2: '#eb9c55' },
+      umbrella: { ground: '#f2eae0', blob1: '#cdb9e8', blob2: '#e6cbd9' },
+      projectsBlue: { ground: '#1a2334', blob1: '#35507c', blob2: '#6f462e' },
       projectsAubergine: {
         ground: '#291a2b',
-        blob1: '#6c3b63',
-        blob2: '#a0522f',
+        blob1: '#5b3459',
+        blob2: '#8f4d31',
       },
-      artShop: { ground: '#f4e0dd', blob1: '#e0348c', blob2: '#ff8a5c' },
+      artShop: { ground: '#f4e0dd', blob1: '#ec5ea4', blob2: '#ffa075' },
       finale: { ground: '#211913', blob1: '#33261d', blob2: '#3d2b20' },
     },
   };

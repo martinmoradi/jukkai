@@ -22,6 +22,7 @@ interface SliderSpec {
     | 'blobRadius'
     | 'blobRadiusRatio'
     | 'blobStrength'
+    | 'blobRoundness'
     | 'noiseStrength'
     | 'driftSpeed'
     | 'velocityInfluence';
@@ -41,6 +42,7 @@ const SLIDERS: SliderSpec[] = [
     step: 0.01,
   },
   { key: 'blobStrength', label: 'blob strength', min: 0, max: 1.5, step: 0.01 },
+  { key: 'blobRoundness', label: 'roundness', min: 0, max: 1, step: 0.05 },
   { key: 'noiseStrength', label: 'grain', min: 0, max: 0.2, step: 0.005 },
   { key: 'driftSpeed', label: 'drift speed', min: 0, max: 1, step: 0.01 },
   {
