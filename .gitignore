@@ -23,6 +23,10 @@ apps/marketing/public/fonts/generated/
 # local browser evidence
 .browser-evidence/
 
+# local marketing dev presets
+apps/marketing/dev/mood-scroll-presets/*.json
+!apps/marketing/dev/mood-scroll-presets/.gitkeep
+
 # coverage
 coverage/
 
