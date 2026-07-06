@@ -211,6 +211,7 @@ export function initMoodScroll(
       noise: config.noiseStrength,
       time,
       velocity,
+      roundness: config.blobRoundness,
     });
   };
 
