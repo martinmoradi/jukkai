@@ -1,10 +1,23 @@
 // Dev tweak panel for the /directions/mood-scroll/ comp. Toggled with "D".
 //
 // Writes straight into the shared config object; the render loop reads the
-// config every frame, so every edit is live. "Copier JSON" dumps the current
-// state so a good tuning session survives the tab.
+// config every frame, so every edit is live. JSON actions exist only so a good
+// tuning session can leave the tab and come back intact.
 
-import type { MoodScrollConfig, ProjectsVariant } from './mood-scroll-config';
+import '@melloware/coloris/dist/coloris.css';
+
+import Coloris from '@melloware/coloris';
+
+import {
+  applyMoodScrollConfig,
+  cloneMoodScrollConfig,
+  MOOD_COLOR_CHANNELS,
+  type MoodColorChannel,
+  type MoodKey,
+  type MoodScrollConfig,
+  normalizeHexColor,
+  type ProjectsVariant,
+} from './mood-scroll-config';
 
 export interface MoodPanelClasses {
   panel: string;
@@ -14,7 +27,11 @@ export interface MoodPanelClasses {
   groupTitle: string;
   row: string;
   value: string;
+  colorInput: string;
+  actions: string;
   copy: string;
+  fileInput: string;
+  status: string;
 }
 
 interface SliderSpec {
@@ -54,7 +71,7 @@ const SLIDERS: SliderSpec[] = [
   },
 ];
 
-const MOOD_LABELS: Array<[keyof MoodScrollConfig['moods'], string]> = [
+const MOOD_LABELS: Array<[MoodKey, string]> = [
   ['hero', 'hero (orange)'],
   ['umbrella', 'umbrella (lavande)'],
   ['projectsBlue', 'projets — variante bleue'],
@@ -71,6 +88,9 @@ export function initMoodPanel(
   panel.className = `${classes.panel} ${classes.hidden}`;
   panel.setAttribute('aria-label', 'Réglages du fond (dev)');
 
+  const syncControls: Array<() => void> = [];
+  const colorInputs: HTMLInputElement[] = [];
+
   const title = document.createElement('p');
   title.className = classes.title;
   title.textContent = 'mood-scroll — D pour fermer';
@@ -84,7 +104,11 @@ export function initMoodPanel(
     const input = document.createElement('input');
     input.type = 'radio';
     input.name = 'mood-projects-variant';
-    input.checked = config.projectsVariant === variant;
+    const sync = () => {
+      input.checked = config.projectsVariant === variant;
+    };
+    syncControls.push(sync);
+    sync();
     input.addEventListener('change', () => {
       config.projectsVariant = variant;
     });
@@ -101,13 +125,17 @@ export function initMoodPanel(
     text.textContent = spec.label;
     const value = document.createElement('span');
     value.className = classes.value;
-    value.textContent = String(config[spec.key]);
     const input = document.createElement('input');
     input.type = 'range';
     input.min = String(spec.min);
     input.max = String(spec.max);
     input.step = String(spec.step);
-    input.value = String(config[spec.key]);
+    const sync = () => {
+      input.value = String(config[spec.key]);
+      value.textContent = input.value;
+    };
+    syncControls.push(sync);
+    sync();
     input.addEventListener('input', () => {
       config[spec.key] = Number.parseFloat(input.value);
       value.textContent = input.value;
@@ -120,37 +148,127 @@ export function initMoodPanel(
   for (const [key, label] of MOOD_LABELS) {
     const moodGroup = group(panel, classes, label);
     const mood = config.moods[key];
-    for (const channel of ['ground', 'blob1', 'blob2'] as const) {
+    for (const channel of MOOD_COLOR_CHANNELS) {
       const row = document.createElement('label');
       row.className = classes.row;
       const text = document.createElement('span');
       text.textContent = channel;
       const input = document.createElement('input');
-      input.type = 'color';
-      input.value = mood[channel];
+      input.type = 'text';
+      input.autocomplete = 'off';
+      input.spellcheck = false;
+      input.inputMode = 'text';
+      input.className = classes.colorInput;
+      input.setAttribute('data-coloris', '');
+      input.setAttribute('aria-label', `${label} ${channel}`);
+      const sync = () => {
+        input.value = mood[channel];
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+      };
+      syncControls.push(sync);
+      sync();
       input.addEventListener('input', () => {
-        mood[channel] = input.value;
+        const next = normalizeHexColor(input.value);
+        if (next) {
+          mood[channel] = next;
+        }
       });
+      input.addEventListener('change', () => {
+        commitColorInput(input, mood, channel);
+      });
+      colorInputs.push(input);
       row.append(text, input);
       moodGroup.append(row);
     }
   }
 
-  const copy = document.createElement('button');
-  copy.type = 'button';
-  copy.className = classes.copy;
-  copy.textContent = 'Copier JSON';
+  const status = document.createElement('p');
+  status.className = classes.status;
+  status.setAttribute('role', 'status');
+
+  let statusTimer: number | undefined;
+  const setStatus = (message: string) => {
+    status.textContent = message;
+    if (statusTimer) window.clearTimeout(statusTimer);
+    statusTimer = window.setTimeout(() => {
+      status.textContent = '';
+    }, 2400);
+  };
+
+  const syncAll = () => {
+    for (const sync of syncControls) sync();
+  };
+
+  const actions = document.createElement('div');
+  actions.className = classes.actions;
+
+  const copy = actionButton(classes, 'Copier JSON');
   copy.addEventListener('click', () => {
     void navigator.clipboard
-      .writeText(JSON.stringify(config, null, 2))
+      .writeText(serializeConfig(config))
       .then(() => {
-        copy.textContent = 'Copié ✓';
-        window.setTimeout(() => {
-          copy.textContent = 'Copier JSON';
-        }, 1200);
+        setStatus('JSON copié');
+      })
+      .catch(() => {
+        setStatus('Copie impossible');
       });
   });
-  panel.append(copy);
+
+  const save = actionButton(classes, 'Exporter JSON');
+  save.addEventListener('click', () => {
+    saveJsonFile(serializeConfig(config));
+    setStatus('JSON exporté');
+  });
+
+  const load = actionButton(classes, 'Charger JSON');
+  const fileInput = document.createElement('input');
+  fileInput.type = 'file';
+  fileInput.accept = 'application/json,.json';
+  fileInput.className = classes.fileInput;
+  load.addEventListener('click', () => {
+    fileInput.click();
+  });
+  fileInput.addEventListener('change', () => {
+    const file = fileInput.files?.[0];
+    if (!file) return;
+    void file
+      .text()
+      .then((text) => {
+        const result = loadJsonConfig(config, text);
+        if (result.ok) {
+          syncAll();
+          setStatus(`${file.name} chargé`);
+        } else {
+          setStatus(result.message);
+        }
+      })
+      .catch(() => {
+        setStatus('Lecture impossible');
+      })
+      .finally(() => {
+        fileInput.value = '';
+      });
+  });
+
+  actions.append(copy, save, load, fileInput);
+  panel.append(actions, status);
+
+  document.body.append(panel);
+
+  Coloris.init();
+  Coloris({
+    el: colorInputs,
+    parent: panel,
+    theme: 'polaroid',
+    themeMode: 'dark',
+    alpha: false,
+    format: 'hex',
+    formatToggle: false,
+    closeButton: true,
+    closeLabel: 'OK',
+    margin: 8,
+    swatches: collectSwatches(config),
+  });
 
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'd' && event.key !== 'D') return;
@@ -163,9 +281,9 @@ export function initMoodPanel(
       return;
     }
     panel.classList.toggle(classes.hidden);
+    Coloris.updatePosition();
   });
 
-  document.body.append(panel);
   return panel;
 }
 
@@ -182,4 +300,72 @@ function group(
   section.append(heading);
   panel.append(section);
   return section;
+}
+
+function actionButton(
+  classes: Pick<MoodPanelClasses, 'copy'>,
+  label: string,
+): HTMLButtonElement {
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = classes.copy;
+  button.textContent = label;
+  return button;
+}
+
+function serializeConfig(config: MoodScrollConfig): string {
+  return JSON.stringify(cloneMoodScrollConfig(config), null, 2);
+}
+
+function saveJsonFile(json: string): void {
+  const blob = new Blob([json], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  const stamp = new Date().toISOString().slice(0, 19).replace(/[:T]/g, '-');
+  link.href = url;
+  link.download = `mood-scroll-${stamp}.json`;
+  document.body.append(link);
+  link.click();
+  link.remove();
+  window.setTimeout(() => URL.revokeObjectURL(url), 0);
+}
+
+function loadJsonConfig(
+  config: MoodScrollConfig,
+  text: string,
+): { ok: true } | { ok: false; message: string } {
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(text);
+  } catch {
+    return { ok: false, message: 'JSON invalide' };
+  }
+
+  if (!applyMoodScrollConfig(config, parsed)) {
+    return { ok: false, message: 'Aucun réglage reconnu' };
+  }
+  return { ok: true };
+}
+
+function commitColorInput(
+  input: HTMLInputElement,
+  mood: Record<MoodColorChannel, string>,
+  channel: MoodColorChannel,
+): void {
+  const next = normalizeHexColor(input.value);
+  if (next) {
+    mood[channel] = next;
+  }
+  input.value = mood[channel];
+  input.dispatchEvent(new Event('input', { bubbles: true }));
+}
+
+function collectSwatches(config: MoodScrollConfig): string[] {
+  const colors = new Set<string>();
+  for (const [, mood] of Object.entries(config.moods)) {
+    for (const channel of MOOD_COLOR_CHANNELS) {
+      colors.add(mood[channel]);
+    }
+  }
+  return [...colors];
 }
