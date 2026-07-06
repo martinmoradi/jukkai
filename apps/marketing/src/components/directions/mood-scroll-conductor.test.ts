@@ -67,6 +67,7 @@ describe('mood scroll scene conductor', () => {
     const config = {
       colorSmoothing: 0.14,
       velocityInfluence: 1,
+      tunables: {},
       scenes: [
         testScene('from', [stop({ at: 0, ground: '#000000' })]),
         testScene('to', [stop({ at: 0, ground: '#ffffff' })]),

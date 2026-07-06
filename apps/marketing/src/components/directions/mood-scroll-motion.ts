@@ -22,6 +22,11 @@ import {
   MOOD_SCROLL_STRUCTURE_CHANGE_EVENT,
 } from './mood-scroll-config';
 import { createMoodGl } from './mood-scroll-gl';
+import {
+  type MoodTunableHandle,
+  type MoodTunableRegistry,
+  tunable,
+} from './mood-scroll-tunables';
 
 const VELOCITY_SMOOTHING = 0.12;
 const VELOCITY_NORM_PX = 60;
@@ -33,19 +38,48 @@ type ConductorLink = {
 
 type ConductorState = {
   chain: ConductorLink[];
+  renderers: Map<string, () => void>;
+  timelines: Map<string, gsap.core.Timeline>;
   dispose: () => void;
 };
+
+interface GalerieTunables {
+  growStartScale: MoodTunableHandle;
+  captionStart: MoodTunableHandle;
+  captionDuration: MoodTunableHandle;
+  captionLiftY: MoodTunableHandle;
+  pinLengthVh: MoodTunableHandle;
+}
+
+export interface MoodDevToggleResult {
+  ok: boolean;
+  message?: string;
+}
+
+export interface MoodScrollDevTools {
+  markersEnabled(): boolean;
+  gsDevToolsEnabled(): boolean;
+  setMarkers(enabled: boolean): MoodDevToggleResult;
+  setGsDevTools(enabled: boolean): Promise<MoodDevToggleResult>;
+}
+
+export interface MoodScrollInstance {
+  devTools: MoodScrollDevTools;
+  dispose(): void;
+}
 
 export function initMoodScroll(
   root: HTMLElement,
   config: MoodScrollConfig,
-): (() => void) | null {
+  tunables: MoodTunableRegistry,
+): MoodScrollInstance | null {
   const canvas = root.querySelector('[data-mood-canvas]');
   if (!(canvas instanceof HTMLCanvasElement)) return null;
   const moodGl = createMoodGl(canvas);
   if (!moodGl) return null;
 
   gsap.registerPlugin(ScrollTrigger);
+  const galerieTunables = registerGalerieTunables(tunables);
 
   const reducedMotion = window.matchMedia(
     '(prefers-reduced-motion: reduce)',
@@ -53,15 +87,54 @@ export function initMoodScroll(
   const frozen =
     new URLSearchParams(window.location.search).get('frozen') === '1';
 
-  let conductor = createConductorState(root, config);
+  let markersEnabled = false;
+  let gsDevToolsEnabled = false;
+  let gsDevToolsInstance: { kill: () => void } | null = null;
+  let conductor = createConductorState(root, config, {
+    galerieTunables,
+    markers: markersEnabled,
+  });
   let chain = conductor.chain;
   let conductorRebuildFrame: number | null = null;
 
+  const killGsDevTools = () => {
+    gsDevToolsInstance?.kill();
+    gsDevToolsInstance = null;
+  };
+
+  const syncGsDevTools = async (): Promise<MoodDevToggleResult> => {
+    killGsDevTools();
+    if (!gsDevToolsEnabled) return { ok: true };
+
+    if (!import.meta.env.DEV) {
+      gsDevToolsEnabled = false;
+      return { ok: false, message: 'GSDevTools is dev-server only' };
+    }
+
+    const timeline = conductor.timelines.get('galerie');
+    if (!timeline) {
+      gsDevToolsEnabled = false;
+      return { ok: false, message: 'No galerie timeline to inspect' };
+    }
+
+    const { GSDevTools } = await import('gsap/GSDevTools');
+    gsap.registerPlugin(GSDevTools);
+    gsDevToolsInstance = GSDevTools.create({
+      animation: timeline,
+      id: 'mood-scroll-galerie',
+    });
+    return { ok: true, message: 'GSDevTools ready for galerie' };
+  };
+
   const rebuildConductor = () => {
     conductor.dispose();
-    conductor = createConductorState(root, config);
+    conductor = createConductorState(root, config, {
+      galerieTunables,
+      markers: markersEnabled,
+    });
     chain = conductor.chain;
     ScrollTrigger.refresh();
+    void syncGsDevTools();
   };
 
   const scheduleConductorRebuild = () => {
@@ -76,6 +149,13 @@ export function initMoodScroll(
     MOOD_SCROLL_STRUCTURE_CHANGE_EVENT,
     scheduleConductorRebuild,
   );
+  const unsubscribeTunables = tunables.subscribe((handle) => {
+    if (handle.requiresReinit) {
+      scheduleConductorRebuild();
+      return;
+    }
+    conductor.renderers.get(handle.sceneKey)?.();
+  });
 
   const section = (scene: MoodScene) =>
     root.querySelector(`[data-mood-section='${scene.key}']`);
@@ -179,27 +259,91 @@ export function initMoodScroll(
   const onResize = () => moodGl.resize();
   window.addEventListener('resize', onResize);
 
-  return () => {
-    gsap.ticker.remove(tick);
-    window.removeEventListener('resize', onResize);
-    window.removeEventListener(
-      MOOD_SCROLL_STRUCTURE_CHANGE_EVENT,
-      scheduleConductorRebuild,
-    );
-    if (conductorRebuildFrame !== null) {
-      window.cancelAnimationFrame(conductorRebuildFrame);
-    }
-    conductor.dispose();
-    moodGl.dispose();
+  const devTools: MoodScrollDevTools = {
+    markersEnabled: () => markersEnabled,
+    gsDevToolsEnabled: () => gsDevToolsEnabled,
+    setMarkers: (enabled) => {
+      if (!import.meta.env.DEV) {
+        return { ok: false, message: 'ScrollTrigger markers are dev-only' };
+      }
+      markersEnabled = enabled;
+      scheduleConductorRebuild();
+      return {
+        ok: true,
+        message: enabled ? 'Markers on' : 'Markers off',
+      };
+    },
+    setGsDevTools: async (enabled) => {
+      gsDevToolsEnabled = enabled;
+      return syncGsDevTools();
+    },
+  };
+
+  return {
+    devTools,
+    dispose: () => {
+      gsap.ticker.remove(tick);
+      window.removeEventListener('resize', onResize);
+      window.removeEventListener(
+        MOOD_SCROLL_STRUCTURE_CHANGE_EVENT,
+        scheduleConductorRebuild,
+      );
+      unsubscribeTunables();
+      if (conductorRebuildFrame !== null) {
+        window.cancelAnimationFrame(conductorRebuildFrame);
+      }
+      killGsDevTools();
+      conductor.dispose();
+      moodGl.dispose();
+    },
+  };
+}
+
+function registerGalerieTunables(
+  registry: MoodTunableRegistry,
+): GalerieTunables {
+  return {
+    growStartScale: tunable(registry, 'galerie.growStartScale', 0.5, {
+      min: 0.2,
+      max: 1,
+      step: 0.01,
+    }),
+    captionStart: tunable(registry, 'galerie.captionStart', 0.6, {
+      min: 0,
+      max: 1,
+      step: 0.01,
+    }),
+    captionDuration: tunable(registry, 'galerie.captionDuration', 0.35, {
+      min: 0.05,
+      max: 1,
+      step: 0.01,
+    }),
+    captionLiftY: tunable(registry, 'galerie.captionLiftY', 24, {
+      min: 0,
+      max: 80,
+      step: 1,
+    }),
+    pinLengthVh: tunable(registry, 'galerie.pinLengthVh', 270, {
+      min: 120,
+      max: 420,
+      step: 5,
+      requiresReinit: true,
+    }),
   };
 }
 
 function createConductorState(
   root: HTMLElement,
   config: MoodScrollConfig,
+  options: {
+    galerieTunables: GalerieTunables;
+    markers: boolean;
+  },
 ): ConductorState {
   const chain: ConductorLink[] = [];
   const disposers: Array<() => void> = [];
+  const renderers = new Map<string, () => void>();
+  const timelines = new Map<string, gsap.core.Timeline>();
   const section = (scene: MoodScene) =>
     root.querySelector(`[data-mood-section='${scene.key}']`);
 
@@ -211,7 +355,7 @@ function createConductorState(
   for (let index = 0; index < config.scenes.length; index += 1) {
     const scene = config.scenes[index];
     const previous = config.scenes[index - 1];
-    const lengthVh = parseSceneLengthVh(scene.length);
+    const lengthVh = sceneLengthVh(scene, options.galerieTunables);
 
     if (index === 0 || !previous) {
       sceneStartVh += lengthVh;
@@ -225,28 +369,40 @@ function createConductorState(
     }
 
     if (scene.enter.mechanism === 'takeover') {
-      const pinTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: el,
-          start: 'top top',
-          end: `+=${scenePinTravelVh(scene)}%`,
-          pin: scene.pin === true,
-          scrub: true,
+      const timeline = createGalerieTakeoverTimeline(
+        root,
+        scene.key,
+        options.galerieTunables,
+      );
+      const trigger = ScrollTrigger.create({
+        trigger: el,
+        start: 'top top',
+        end: `+=${scenePinTravelVh(scene, options.galerieTunables)}%`,
+        markers: options.markers,
+        pin: scene.pin === true,
+        scrub: true,
+        onUpdate: (self) => {
+          timeline.progress(self.progress);
         },
       });
-      const pinTrigger = pinTimeline.scrollTrigger;
-      if (pinTrigger) {
-        chain.push({
-          target: { mechanism: 'takeover', sceneKey: scene.key, progress: 0 },
-          st: pinTrigger,
-        });
-      }
+      timeline.progress(trigger.progress);
+      chain.push({
+        target: { mechanism: 'takeover', sceneKey: scene.key, progress: 0 },
+        st: trigger,
+      });
+      timelines.set(scene.key, timeline);
+      renderers.set(scene.key, () => {
+        renderGalerieTakeover(
+          root,
+          timeline.progress(),
+          options.galerieTunables,
+        );
+      });
       disposers.push(() => {
-        pinTimeline.scrollTrigger?.kill();
-        pinTimeline.kill();
+        trigger.kill();
+        timeline.kill();
       });
 
-      wireGalerieTakeover(root, pinTimeline, scene.key);
       sceneStartVh += lengthVh;
       continue;
     }
@@ -274,6 +430,7 @@ function createConductorState(
         scene.enter.mechanism === 'cut' || startLine === endLine
           ? '+=1'
           : `top ${endLine}%`,
+      markers: options.markers,
       scrub: true,
     });
     disposers.push(() => trigger.kill());
@@ -301,39 +458,75 @@ function createConductorState(
 
   return {
     chain,
+    renderers,
+    timelines,
     dispose: () => {
       for (const dispose of disposers.splice(0).reverse()) dispose();
     },
   };
 }
 
-function wireGalerieTakeover(
+function createGalerieTakeoverTimeline(
   root: HTMLElement,
-  pinTimeline: gsap.core.Timeline,
   sceneKey: string,
-): void {
-  if (sceneKey !== 'galerie') return;
+  galerieTunables: GalerieTunables,
+): gsap.core.Timeline {
+  const timeline = gsap.timeline({
+    paused: true,
+    onUpdate: () => {
+      renderGalerieTakeover(root, timeline.progress(), galerieTunables);
+    },
+  });
 
+  if (sceneKey === 'galerie') {
+    timeline.to({}, { duration: 1, ease: 'none' }, 0);
+    renderGalerieTakeover(root, 0, galerieTunables);
+  }
+
+  return timeline;
+}
+
+function renderGalerieTakeover(
+  root: HTMLElement,
+  progress: number,
+  tunables: GalerieTunables,
+): void {
   const growEl = root.querySelector('[data-mood-grow]');
   const captionEl = root.querySelector('[data-mood-caption]');
+  const clampedProgress = clamp01(progress);
+
   if (growEl) {
-    pinTimeline.fromTo(
-      growEl,
-      { scale: 0.5 },
-      { scale: 1, ease: 'none', duration: 1 },
-      0,
-    );
+    gsap.set(growEl, {
+      scale: mixNumber(tunables.growStartScale.get(), 1, clampedProgress),
+    });
   }
+
   if (captionEl) {
-    // The stance is light ink: it only becomes readable once the room has
-    // dimmed, so it rides the back half of the pin.
-    pinTimeline.fromTo(
-      captionEl,
-      { autoAlpha: 0, y: 24 },
-      { autoAlpha: 1, y: 0, duration: 0.35 },
-      0.6,
+    const captionProgress = clamp01(
+      (clampedProgress - tunables.captionStart.get()) /
+        tunables.captionDuration.get(),
     );
+    gsap.set(captionEl, {
+      autoAlpha: captionProgress,
+      y: mixNumber(tunables.captionLiftY.get(), 0, captionProgress),
+    });
   }
+}
+
+function clamp01(value: number): number {
+  return Math.min(Math.max(value, 0), 1);
+}
+
+function mixNumber(from: number, to: number, progress: number): number {
+  return from + (to - from) * progress;
+}
+
+function sceneLengthVh(
+  scene: MoodScene,
+  galerieTunables: GalerieTunables,
+): number {
+  if (scene.key === 'galerie') return galerieTunables.pinLengthVh.get();
+  return parseSceneLengthVh(scene.length);
 }
 
 function viewportLineForStart(
@@ -350,6 +543,9 @@ function viewportLineForStart(
   return 0;
 }
 
-function scenePinTravelVh(scene: MoodScene): number {
-  return Math.max(parseSceneLengthVh(scene.length) - 100, 1);
+function scenePinTravelVh(
+  scene: MoodScene,
+  galerieTunables: GalerieTunables,
+): number {
+  return Math.max(sceneLengthVh(scene, galerieTunables) - 100, 1);
 }
