@@ -523,6 +523,8 @@ function createConductorState(
   }
 
   applyGalerieBackdropTreatment(root, config, options.mode);
+  const approachDispose = applyGalerieApproachTreatment(root, options);
+  if (approachDispose) disposers.push(approachDispose);
 
   // Mood conductor: an ordered chain of scene enter triggers. The palette is
   // NOT written from competing onUpdate callbacks (an instant jump makes the
@@ -703,6 +705,69 @@ function applyGalerieBackdropTreatment(
     mode === 'static'
       ? `linear-gradient(${punch.ground}, ${darkest.ground} 90%)`
       : punch.ground;
+}
+
+/**
+ * The approach treatment sells the galerie as its own plane arriving over
+ * the umbrella: the block can overlap the previous section (negative
+ * margin), its top edge carries a tunable shadow, and the umbrella content
+ * recedes (lags, dims, shrinks) while the wall's edge rises across the
+ * viewport. Rebuilt with the conductor so every tunable edit is live.
+ */
+function applyGalerieApproachTreatment(
+  root: HTMLElement,
+  options: { choreography: GalerieChoreographyTunables; mode: MoodScrollMode },
+): (() => void) | null {
+  const galerieEl = root.querySelector("[data-mood-section='galerie']");
+  if (!(galerieEl instanceof HTMLElement)) return null;
+
+  if (options.mode === 'static') {
+    galerieEl.style.removeProperty('margin-top');
+    root.style.removeProperty('--galerie-edge-shadow');
+    return null;
+  }
+
+  const t = options.choreography;
+  const overlapVh = t.approachOverlapVh.get();
+  if (overlapVh > 0) {
+    galerieEl.style.marginTop = `-${overlapVh}vh`;
+  } else {
+    galerieEl.style.removeProperty('margin-top');
+  }
+  root.style.setProperty(
+    '--galerie-edge-shadow',
+    String(t.edgeShadowAlpha.get()),
+  );
+
+  const clearInline = () => {
+    galerieEl.style.removeProperty('margin-top');
+  };
+
+  const targets = root.querySelectorAll('[data-umbrella-parallax]');
+  if (targets.length === 0) return clearInline;
+
+  const tween = gsap.fromTo(
+    targets,
+    { y: 0, autoAlpha: 1, scale: 1 },
+    {
+      y: `${t.approachParallaxShiftVh.get()}vh`,
+      autoAlpha: 1 - t.approachDim.get(),
+      scale: 1 - t.approachScale.get(),
+      transformOrigin: 'center bottom',
+      ease: 'none',
+      scrollTrigger: {
+        trigger: galerieEl,
+        start: 'top bottom',
+        end: 'top top',
+        scrub: true,
+      },
+    },
+  );
+  return () => {
+    tween.scrollTrigger?.kill();
+    tween.kill();
+    clearInline();
+  };
 }
 
 function createGuardedTimelineApply(

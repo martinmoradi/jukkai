@@ -385,10 +385,6 @@ export function normalizeHexColor(raw: unknown): string | null {
   return long ? `#${long[1].toLowerCase()}` : null;
 }
 
-export function sortMoodSceneStops(scene: MoodScene): void {
-  scene.stops.sort((a, b) => a.at - b.at);
-}
-
 export function hexToRgb(hex: string): Rgb {
   const raw = hex.replace('#', '');
   if (!/^[0-9a-f]{6}$/i.test(raw)) {

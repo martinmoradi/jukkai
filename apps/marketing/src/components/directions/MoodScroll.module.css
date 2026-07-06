@@ -121,6 +121,10 @@
   overflow: hidden;
   background: #2036a8;
   border-radius: 24px 24px 0 0;
+
+  /* The plane's top edge floats over the receding umbrella; the alpha is a
+     tunable, written as a custom property on the root per rebuild. */
+  box-shadow: 0 -18px 60px rgb(4 8 24 / var(--galerie-edge-shadow, 0.35));
 }
 
 /* Sticky like the stage: anchored at the section top during the approach

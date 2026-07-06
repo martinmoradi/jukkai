@@ -31,10 +31,10 @@ import {
   MOOD_SCROLL_STRUCTURE_CHANGE_EVENT,
   type MoodFieldColorChannel,
   type MoodFieldNumberChannel,
+  type MoodFieldStop,
   type MoodScene,
   type MoodScrollConfig,
   normalizeHexColor,
-  sortMoodSceneStops,
 } from './mood-scroll-config';
 import type { MoodScrollDevTools } from './mood-scroll-motion';
 import type {
@@ -466,53 +466,71 @@ export function initMoodPanel(
       );
     }
 
-    const multiStop = scene.stops.length > 1;
-    for (const stop of scene.stops) {
-      if (multiStop) {
-        const heading = subheading(
-          body,
-          classes,
-          `stop · ${formatStopAt(stop.at)}`,
-        );
-        addNumberSlider(
-          body,
-          classes,
-          { key: 'at', label: 'at', min: 0, max: 1, step: 0.01 },
-          {
-            get: () => stop.at,
-            set: (value) => {
-              stop.at = value;
-              sortMoodSceneStops(scene);
-              heading.textContent = `stop · ${formatStopAt(stop.at)}`;
+    const renderStopTrack = (
+      stops: MoodFieldStop[],
+      stopLabel: string,
+      ariaScope: string,
+    ) => {
+      const multiStop = stops.length > 1;
+      for (const stop of stops) {
+        if (multiStop) {
+          const heading = subheading(
+            body,
+            classes,
+            `${stopLabel} · ${formatStopAt(stop.at)}`,
+          );
+          addNumberSlider(
+            body,
+            classes,
+            { key: 'at', label: 'at', min: 0, max: 1, step: 0.01 },
+            {
+              get: () => stop.at,
+              set: (value) => {
+                stop.at = value;
+                stops.sort((a, b) => a.at - b.at);
+                heading.textContent = `${stopLabel} · ${formatStopAt(stop.at)}`;
+              },
+              // Stop order and jump pills may be stale after a drag; rebuild
+              // the controls once the drag commits.
+              onCommit: () => rerenderControls(),
             },
-            // Stop order and jump pills may be stale after a drag; rebuild
-            // the controls once the drag commits.
-            onCommit: () => rerenderControls(),
-          },
-        );
-      }
+          );
+        }
 
-      for (const channel of MOOD_FIELD_COLOR_CHANNELS) {
-        addColorInput(body, classes, {
-          label: CHANNEL_LABELS[channel],
-          ariaLabel: multiStop
-            ? `${scene.key} stop ${formatStopAt(stop.at)} ${CHANNEL_LABELS[channel]}`
-            : `${scene.key} ${CHANNEL_LABELS[channel]}`,
-          get: () => stop[channel],
-          set: (value) => {
-            stop[channel] = value;
-          },
-        });
-      }
+        for (const channel of MOOD_FIELD_COLOR_CHANNELS) {
+          addColorInput(body, classes, {
+            label: CHANNEL_LABELS[channel],
+            ariaLabel: multiStop
+              ? `${ariaScope} ${stopLabel} ${formatStopAt(stop.at)} ${CHANNEL_LABELS[channel]}`
+              : `${ariaScope} ${CHANNEL_LABELS[channel]}`,
+            get: () => stop[channel],
+            set: (value) => {
+              stop[channel] = value;
+            },
+          });
+        }
 
-      for (const spec of STOP_SLIDERS) {
-        addNumberSlider(body, classes, spec, {
-          get: () => stop[spec.key],
-          set: (value) => {
-            stop[spec.key] = value;
-          },
-        });
+        for (const spec of STOP_SLIDERS) {
+          addNumberSlider(body, classes, spec, {
+            get: () => stop[spec.key],
+            set: (value) => {
+              stop[spec.key] = value;
+            },
+          });
+        }
       }
+    };
+
+    renderStopTrack(scene.stops, 'stop', scene.key);
+    // The scene's contained surface (the galerie's living wall) edits like
+    // any other stop list; its colors resolve per tick, so tweaks land live
+    // even while the section is only approaching.
+    if (scene.surfaceStops && scene.surfaceStops.length > 0) {
+      renderStopTrack(
+        scene.surfaceStops,
+        'surface stop',
+        `${scene.key} surface`,
+      );
     }
 
     const sceneTunables = tunables
@@ -1406,7 +1424,7 @@ function commitColorInput(
 function collectSwatches(config: MoodScrollConfig): string[] {
   const colors = new Set<string>();
   for (const scene of config.scenes) {
-    for (const stop of scene.stops) {
+    for (const stop of [...scene.stops, ...(scene.surfaceStops ?? [])]) {
       for (const channel of MOOD_FIELD_COLOR_CHANNELS) {
         colors.add(stop[channel]);
       }

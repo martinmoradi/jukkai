@@ -28,6 +28,12 @@ import {
 
 export interface GalerieChoreographyTunables {
   growStartScale: MoodTunableHandle;
+  /** Approach treatment: the galerie plane arriving over the umbrella. */
+  approachParallaxShiftVh: MoodTunableHandle;
+  approachDim: MoodTunableHandle;
+  approachScale: MoodTunableHandle;
+  approachOverlapVh: MoodTunableHandle;
+  edgeShadowAlpha: MoodTunableHandle;
   editorialExitStart: MoodTunableHandle;
   editorialExitDuration: MoodTunableHandle;
   /** Entrance-space: fractions of the scroll-in window, not the stick. */
@@ -69,6 +75,36 @@ export function registerGalerieChoreographyTunables(
       min: 0.2,
       max: 1,
       step: 0.01,
+    }),
+    approachParallaxShiftVh: tunable(
+      registry,
+      'galerie.approachParallaxShiftVh',
+      12,
+      { min: 0, max: 40, step: 1, ...reinit },
+    ),
+    approachDim: tunable(registry, 'galerie.approachDim', 0.35, {
+      min: 0,
+      max: 1,
+      step: 0.01,
+      ...reinit,
+    }),
+    approachScale: tunable(registry, 'galerie.approachScale', 0.04, {
+      min: 0,
+      max: 0.2,
+      step: 0.005,
+      ...reinit,
+    }),
+    approachOverlapVh: tunable(registry, 'galerie.approachOverlapVh', 0, {
+      min: 0,
+      max: 30,
+      step: 1,
+      ...reinit,
+    }),
+    edgeShadowAlpha: tunable(registry, 'galerie.edgeShadowAlpha', 0.35, {
+      min: 0,
+      max: 1,
+      step: 0.01,
+      ...reinit,
     }),
     editorialExitStart: tunable(registry, 'galerie.editorialExitStart', 0.16, {
       ...phase,
@@ -344,6 +380,7 @@ function clamp01(value: number): number {
 export const HANDOFF_SWAP_AT = 0.985;
 
 const CHOREOGRAPHY_SELECTORS = [
+  '[data-umbrella-parallax]',
   '[data-galerie-editorial]',
   '[data-collage-item]',
   '[data-galerie-inline]',
