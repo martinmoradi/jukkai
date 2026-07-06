@@ -1,7 +1,8 @@
-// Dev tweak panel for the /directions/mood-scroll/ comp. Toggled with "D".
+// Frozen v1 dev tweak panel for issue #53 parity checks. Toggled with "D".
+// Do not edit this copy except to remove it in the blockout slice (#56).
 //
-// Writes straight into the shared scene config object; the render loop reads
-// the config every frame, so every edit is live. JSON actions are dev-server
+// Writes straight into the shared config object; the render loop reads the
+// config every frame, so every edit is live. JSON actions are dev-server
 // backed so good tuning sessions are saved inside the repo worktree.
 
 import '@melloware/coloris/dist/coloris.css';
@@ -11,9 +12,9 @@ import Coloris from '@melloware/coloris';
 import {
   applyMoodScrollConfig,
   cloneMoodScrollConfig,
-  MOOD_FIELD_COLOR_CHANNELS,
-  type MoodFieldColorChannel,
-  type MoodFieldNumberChannel,
+  MOOD_COLOR_CHANNELS,
+  type MoodColorChannel,
+  type MoodKey,
   type MoodScrollConfig,
   normalizeHexColor,
 } from './mood-scroll-config';
@@ -42,8 +43,15 @@ export interface MoodPanelClasses {
   status: string;
 }
 
-interface NumberSliderSpec<Key extends string> {
-  key: Key;
+interface SliderSpec {
+  key:
+    | 'blobRadius'
+    | 'blobRadiusRatio'
+    | 'blobStrength'
+    | 'blobRoundness'
+    | 'noiseStrength'
+    | 'driftSpeed'
+    | 'velocityInfluence';
   label: string;
   min: number;
   max: number;
@@ -55,16 +63,19 @@ interface PresetListItem {
   updatedAt: string;
 }
 
-const GLOBAL_SLIDERS: Array<
-  NumberSliderSpec<'colorSmoothing' | 'velocityInfluence'>
-> = [
+const SLIDERS: SliderSpec[] = [
+  { key: 'blobRadius', label: 'blob radius', min: 0.2, max: 1.3, step: 0.01 },
   {
-    key: 'colorSmoothing',
-    label: 'color smoothing',
-    min: 0.02,
-    max: 0.5,
+    key: 'blobRadiusRatio',
+    label: 'blob 2 ratio',
+    min: 0.3,
+    max: 1,
     step: 0.01,
   },
+  { key: 'blobStrength', label: 'blob strength', min: 0, max: 1.5, step: 0.01 },
+  { key: 'blobRoundness', label: 'roundness', min: 0, max: 1, step: 0.05 },
+  { key: 'noiseStrength', label: 'grain', min: 0, max: 0.2, step: 0.005 },
+  { key: 'driftSpeed', label: 'drift speed', min: 0, max: 1, step: 0.01 },
   {
     key: 'velocityInfluence',
     label: 'velocity lift',
@@ -74,17 +85,15 @@ const GLOBAL_SLIDERS: Array<
   },
 ];
 
-const STOP_SLIDERS: Array<NumberSliderSpec<MoodFieldNumberChannel>> = [
-  { key: 'radius', label: 'radius', min: 0.2, max: 1.3, step: 0.01 },
-  { key: 'radiusRatio', label: 'blob 2 ratio', min: 0.3, max: 1, step: 0.01 },
-  { key: 'strength', label: 'strength', min: 0, max: 1.5, step: 0.01 },
-  { key: 'roundness', label: 'roundness', min: 0, max: 1, step: 0.05 },
-  { key: 'noise', label: 'grain', min: 0, max: 0.2, step: 0.005 },
-  { key: 'drift', label: 'drift', min: 0, max: 1, step: 0.01 },
-  { key: 'presence', label: 'presence', min: 0, max: 1, step: 0.01 },
+const MOOD_LABELS: Array<[MoodKey, string]> = [
+  ['hero', 'hero (orange)'],
+  ['umbrella', 'umbrella (lavender)'],
+  ['projects', 'projects (blue)'],
+  ['artShop', 'art shop (magenta)'],
+  ['finale', 'finale (settle)'],
 ];
 
-const CHANNEL_LABELS: Record<MoodFieldColorChannel, string> = {
+const CHANNEL_LABELS: Record<MoodColorChannel, string> = {
   ground: 'ground',
   blob1: 'blob 1',
   blob2: 'blob 2',
@@ -103,9 +112,9 @@ export function initMoodPanel(
   panel.className = `${classes.panel} ${classes.hidden}`;
   panel.setAttribute('aria-label', 'Mood background dev settings');
 
+  const syncControls: Array<() => void> = [];
+  const colorInputs: HTMLInputElement[] = [];
   const presetState: { fileName: string | null } = { fileName: null };
-  let syncControls: Array<() => void> = [];
-  let colorInputs: HTMLInputElement[] = [];
 
   const status = document.createElement('p');
   status.className = classes.status;
@@ -128,129 +137,8 @@ export function initMoodPanel(
   title.className = classes.title;
   panel.append(title);
 
-  const controlsRoot = document.createElement('div');
   const presetList = document.createElement('div');
   presetList.className = `${classes.presetList} ${classes.hidden}`;
-
-  const mountColoris = () => {
-    Coloris({
-      el: colorInputs,
-      parent: panel,
-      theme: 'polaroid',
-      themeMode: 'dark',
-      alpha: false,
-      format: 'hex',
-      formatToggle: false,
-      closeButton: true,
-      closeLabel: 'OK',
-      margin: 8,
-      swatches: collectSwatches(config),
-    });
-  };
-
-  const renderControls = () => {
-    syncControls = [];
-    colorInputs = [];
-    controlsRoot.replaceChildren();
-
-    const globalGroup = group(controlsRoot, classes, 'global');
-    for (const spec of GLOBAL_SLIDERS) {
-      addNumberSlider(globalGroup, classes, spec, {
-        get: () => config[spec.key],
-        set: (value) => {
-          config[spec.key] = value;
-        },
-      });
-    }
-
-    for (const scene of config.scenes) {
-      const sceneGroup = group(controlsRoot, classes, scene.label ?? scene.key);
-
-      if (scene.enter.mechanism === 'crossfade') {
-        addNumberSlider(
-          sceneGroup,
-          classes,
-          {
-            key: 'enterStart',
-            label: 'enter start',
-            min: 0,
-            max: 1,
-            step: 0.01,
-          },
-          {
-            get: () =>
-              scene.enter.mechanism === 'crossfade' ? scene.enter.band[0] : 0,
-            set: (value) => {
-              if (scene.enter.mechanism === 'crossfade')
-                scene.enter.band[0] = value;
-            },
-          },
-        );
-        addNumberSlider(
-          sceneGroup,
-          classes,
-          { key: 'enterEnd', label: 'enter end', min: 0, max: 1, step: 0.01 },
-          {
-            get: () =>
-              scene.enter.mechanism === 'crossfade' ? scene.enter.band[1] : 0,
-            set: (value) => {
-              if (scene.enter.mechanism === 'crossfade')
-                scene.enter.band[1] = value;
-            },
-          },
-        );
-      }
-
-      if (scene.enter.mechanism === 'cut') {
-        addNumberSlider(
-          sceneGroup,
-          classes,
-          { key: 'cutLine', label: 'cut line', min: 0, max: 1, step: 0.01 },
-          {
-            get: () => (scene.enter.mechanism === 'cut' ? scene.enter.at : 0),
-            set: (value) => {
-              if (scene.enter.mechanism === 'cut') scene.enter.at = value;
-            },
-          },
-        );
-      }
-
-      for (const stop of scene.stops) {
-        addNumberSlider(
-          sceneGroup,
-          classes,
-          { key: 'at', label: `stop ${stop.at}`, min: 0, max: 1, step: 0.01 },
-          {
-            get: () => stop.at,
-            set: (value) => {
-              stop.at = value;
-            },
-          },
-        );
-
-        for (const channel of MOOD_FIELD_COLOR_CHANNELS) {
-          addColorInput(sceneGroup, classes, {
-            label: `${stop.at} ${CHANNEL_LABELS[channel]}`,
-            get: () => stop[channel],
-            set: (value) => {
-              stop[channel] = value;
-            },
-          });
-        }
-
-        for (const spec of STOP_SLIDERS) {
-          addNumberSlider(sceneGroup, classes, spec, {
-            get: () => stop[spec.key],
-            set: (value) => {
-              stop[spec.key] = value;
-            },
-          });
-        }
-      }
-    }
-
-    syncControls.push(...collectInputSyncs(controlsRoot));
-  };
 
   const saveCurrentPreset = async (): Promise<boolean> => {
     try {
@@ -366,7 +254,72 @@ export function initMoodPanel(
   };
 
   renderPresetHeader();
-  renderControls();
+
+  // Global sliders.
+  const globalGroup = group(panel, classes, 'global');
+  for (const spec of SLIDERS) {
+    const row = document.createElement('label');
+    row.className = classes.row;
+    const text = document.createElement('span');
+    text.textContent = spec.label;
+    const value = document.createElement('span');
+    value.className = classes.value;
+    const input = document.createElement('input');
+    input.type = 'range';
+    input.min = String(spec.min);
+    input.max = String(spec.max);
+    input.step = String(spec.step);
+    const sync = () => {
+      input.value = String(config[spec.key]);
+      value.textContent = input.value;
+    };
+    syncControls.push(sync);
+    sync();
+    input.addEventListener('input', () => {
+      config[spec.key] = Number.parseFloat(input.value);
+      value.textContent = input.value;
+    });
+    row.append(text, input, value);
+    globalGroup.append(row);
+  }
+
+  // Per-mood colors.
+  for (const [key, label] of MOOD_LABELS) {
+    const moodGroup = group(panel, classes, label);
+    const mood = config.moods[key];
+    for (const channel of MOOD_COLOR_CHANNELS) {
+      const row = document.createElement('label');
+      row.className = classes.row;
+      const text = document.createElement('span');
+      text.textContent = CHANNEL_LABELS[channel];
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.autocomplete = 'off';
+      input.spellcheck = false;
+      input.inputMode = 'text';
+      input.className = classes.colorInput;
+      input.setAttribute('data-coloris', '');
+      input.setAttribute('aria-label', `${label} ${CHANNEL_LABELS[channel]}`);
+      const sync = () => {
+        input.value = mood[channel];
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+      };
+      syncControls.push(sync);
+      sync();
+      input.addEventListener('input', () => {
+        const next = normalizeHexColor(input.value);
+        if (next) {
+          mood[channel] = next;
+        }
+      });
+      input.addEventListener('change', () => {
+        commitColorInput(input, mood, channel);
+      });
+      colorInputs.push(input);
+      row.append(text, input);
+      moodGroup.append(row);
+    }
+  }
 
   const actions = document.createElement('div');
   actions.className = classes.actions;
@@ -423,8 +376,6 @@ export function initMoodPanel(
       }
 
       presetState.fileName = fileName;
-      renderControls();
-      mountColoris();
       syncAll();
       renderPresetHeader();
       presetList.classList.add(classes.hidden);
@@ -435,12 +386,24 @@ export function initMoodPanel(
   };
 
   actions.append(save, load);
-  panel.append(controlsRoot, actions, presetList, status);
+  panel.append(actions, presetList, status);
 
   document.body.append(panel);
 
   Coloris.init();
-  mountColoris();
+  Coloris({
+    el: colorInputs,
+    parent: panel,
+    theme: 'polaroid',
+    themeMode: 'dark',
+    alpha: false,
+    format: 'hex',
+    formatToggle: false,
+    closeButton: true,
+    closeLabel: 'OK',
+    margin: 8,
+    swatches: collectSwatches(config),
+  });
 
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'd' && event.key !== 'D') return;
@@ -459,94 +422,8 @@ export function initMoodPanel(
   return panel;
 }
 
-function addNumberSlider<Key extends string>(
-  parent: HTMLElement,
-  classes: Pick<MoodPanelClasses, 'row' | 'value'>,
-  spec: NumberSliderSpec<Key>,
-  binding: {
-    get: () => number;
-    set: (value: number) => void;
-  },
-): void {
-  const row = document.createElement('label');
-  row.className = classes.row;
-  const text = document.createElement('span');
-  text.textContent = spec.label;
-  const value = document.createElement('span');
-  value.className = classes.value;
-  const input = document.createElement('input');
-  input.type = 'range';
-  input.min = String(spec.min);
-  input.max = String(spec.max);
-  input.step = String(spec.step);
-  input.dataset.syncNumber = 'true';
-
-  const sync = () => {
-    input.value = String(binding.get());
-    value.textContent = input.value;
-  };
-  input.addEventListener('input', () => {
-    binding.set(Number.parseFloat(input.value));
-    value.textContent = input.value;
-  });
-  row.append(text, input, value);
-  parent.append(row);
-  sync();
-  input.addEventListener('mood-scroll-sync', sync);
-}
-
-function addColorInput(
-  parent: HTMLElement,
-  classes: Pick<MoodPanelClasses, 'row' | 'colorInput'>,
-  binding: {
-    label: string;
-    get: () => string;
-    set: (value: string) => void;
-  },
-): void {
-  const row = document.createElement('label');
-  row.className = classes.row;
-  const text = document.createElement('span');
-  text.textContent = binding.label;
-  const input = document.createElement('input');
-  input.type = 'text';
-  input.autocomplete = 'off';
-  input.spellcheck = false;
-  input.inputMode = 'text';
-  input.className = classes.colorInput;
-  input.setAttribute('data-coloris', '');
-  input.setAttribute('aria-label', binding.label);
-  input.dataset.syncColor = 'true';
-  input.addEventListener('input', () => {
-    const next = normalizeHexColor(input.value);
-    if (next) binding.set(next);
-  });
-  input.addEventListener('change', () => {
-    commitColorInput(input, binding);
-  });
-  row.append(text, input);
-  parent.append(row);
-  input.value = binding.get();
-  input.dispatchEvent(new Event('input', { bubbles: true }));
-}
-
-function collectInputSyncs(root: HTMLElement): Array<() => void> {
-  return [
-    ...Array.from(
-      root.querySelectorAll<HTMLInputElement>('[data-sync-number]'),
-    ).map((input) => () => {
-      input.dispatchEvent(new Event('mood-scroll-sync'));
-    }),
-    ...Array.from(
-      root.querySelectorAll<HTMLInputElement>('[data-sync-color]'),
-    ).map((input) => () => {
-      input.dispatchEvent(new Event('input', { bubbles: true }));
-    }),
-  ];
-}
-
 function group(
-  parent: HTMLElement,
+  panel: HTMLElement,
   classes: MoodPanelClasses,
   label: string,
 ): HTMLElement {
@@ -584,7 +461,7 @@ function group(
 
   header.append(heading, toggle);
   section.append(header, body);
-  parent.append(section);
+  panel.append(section);
   return body;
 }
 
@@ -618,24 +495,22 @@ function loadJsonConfig(
 
 function commitColorInput(
   input: HTMLInputElement,
-  binding: {
-    get: () => string;
-    set: (value: string) => void;
-  },
+  mood: Record<MoodColorChannel, string>,
+  channel: MoodColorChannel,
 ): void {
   const next = normalizeHexColor(input.value);
-  if (next) binding.set(next);
-  input.value = binding.get();
+  if (next) {
+    mood[channel] = next;
+  }
+  input.value = mood[channel];
   input.dispatchEvent(new Event('input', { bubbles: true }));
 }
 
 function collectSwatches(config: MoodScrollConfig): string[] {
   const colors = new Set<string>();
-  for (const scene of config.scenes) {
-    for (const stop of scene.stops) {
-      for (const channel of MOOD_FIELD_COLOR_CHANNELS) {
-        colors.add(stop[channel]);
-      }
+  for (const [, mood] of Object.entries(config.moods)) {
+    for (const channel of MOOD_COLOR_CHANNELS) {
+      colors.add(mood[channel]);
     }
   }
   return [...colors];

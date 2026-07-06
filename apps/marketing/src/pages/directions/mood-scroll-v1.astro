@@ -1,0 +1,30 @@
+---
+// Frozen v1 reference for issue #53 parity checks.
+// Do not edit this route except to remove it in the blockout slice (#56).
+import {
+  GENERATED_FONTS_CSS_FILE,
+  GENERATED_FONTS_PUBLIC_BASE_PATH,
+} from '../../../../../scripts/generated-font-assets';
+import MoodScroll from '../../components/directions/mood-scroll-v1/MoodScroll.astro';
+
+const fontsHref = `${GENERATED_FONTS_PUBLIC_BASE_PATH}/${GENERATED_FONTS_CSS_FILE}`;
+---
+
+<!doctype html>
+<html lang='fr'>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <meta name='robots' content='noindex, nofollow' />
+    <title>Mood scroll v1 — frozen reference</title>
+    <link rel='stylesheet' href={fontsHref} />
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <MoodScroll />
+  </body>
+</html>
