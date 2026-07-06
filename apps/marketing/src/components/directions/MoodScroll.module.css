@@ -100,13 +100,34 @@
 
 /* --- Galerie takeover (experiment #57+#58) --- */
 
-/* The pinned dark room: a full-viewport stage whose children are layered
-   absolutely; the choreography timeline owns their entrances. */
+/* The dark room is a sticky runway: the section is the tall block (its
+   min-height comes inline from the scene length), the stage inside sticks
+   for a viewport-tall stretch. No overflow on the block: an overflow-hidden
+   ancestor would break position: sticky. */
 .galerie {
-  gap: 0;
+  display: block;
+  padding: 0;
+}
+
+/* The room's own wall: scrolls in with the block as the hard section
+   boundary the reference shows, then the timeline fades it to reveal the
+   field, already snapped to the same cobalt. Color comes inline from the
+   scene's punch stop on every conductor rebuild. */
+.galerieBackdrop {
+  position: absolute;
+  inset: 0;
+  background: #2036a8;
+  border-radius: 24px 24px 0 0;
+}
+
+.galerieStage {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -254,31 +275,40 @@
   letter-spacing: 0.08em;
 }
 
-/* Static fallback carousel: hidden while the full choreography runs. */
+/* Static-version carousel: hidden while the full choreography runs. The
+   chrome (name, arrows, counter) reuses .featuredChrome inside the stage,
+   matching the reference's on-image layout. */
 .staticFeatured {
   position: relative;
   display: none;
-  width: min(92vw, 680px);
+  width: 100%;
+  max-width: 900px;
 }
 
 .staticStage {
   position: relative;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
-.staticChrome {
-  display: grid;
-  grid-template-columns: 1fr auto auto;
-  gap: 1rem;
-  align-items: center;
-  margin-top: 0.8rem;
+@media (min-width: 640px) {
+  .staticStage {
+    aspect-ratio: 4 / 3;
+  }
 }
 
 /* --- Hand-off seam (experiment #57) --- */
 
 .handoff {
-  gap: 0;
+  display: block;
   padding: 0;
+}
+
+.handoffStage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -324,37 +354,33 @@
   text-wrap: balance;
 }
 
-/* --- Static fallback (mobile / tablet / reduced motion) ---
-   No pins, no morph: sections in normal flow, carousel by buttons only.
-   Deliberately rough for now. */
+/* --- Static version (below 1024px / reduced motion) ---
+   The reference skips the whole choreography on small screens
+   (gallery-mobile.png / gallery-tablet.png): the typographic beat, then the
+   carousel, straight into the next section. No collage, no arch. */
 
 [data-mood-static] .featuredOverlay {
   display: none;
 }
 
-[data-mood-static] .galerie {
-  gap: 2rem;
-  align-items: flex-start;
+/* The dark room keeps its wall; the scroll-driven deepening is pre-baked
+   into the gradient (set inline from the scene stops). */
+[data-mood-static] .galerieBackdrop {
+  background: linear-gradient(#2036a8, #10182b 90%);
+  border-radius: 16px 16px 0 0;
+}
+
+[data-mood-static] .galerieStage {
+  position: static;
+  gap: clamp(2rem, 6vh, 3.5rem);
+  height: auto;
   min-height: 100vh;
-  padding: clamp(4rem, 10vh, 8rem) clamp(1.5rem, 7vw, 7rem);
+  padding: clamp(3.5rem, 9vh, 6rem) clamp(1rem, 4vw, 3rem);
   overflow: visible;
 }
 
-[data-mood-static] .galerieEditorial {
-  justify-items: start;
-  text-align: left;
-}
-
 [data-mood-static] .collage {
-  position: static;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-[data-mood-static] .collageItem {
-  position: static;
-  width: clamp(110px, 26vw, 220px);
+  display: none;
 }
 
 [data-mood-static] .staticFeatured {
@@ -362,29 +388,22 @@
 }
 
 [data-mood-static] .handoff {
-  gap: 2rem;
-  align-items: stretch;
-  min-height: 100vh;
-  padding: clamp(4rem, 10vh, 8rem) 0 0;
+  min-height: 0;
+}
+
+[data-mood-static] .handoffStage {
+  position: static;
+  height: auto;
   overflow: visible;
 }
 
-/* Stays positioned so its absolute slides keep anchoring to the arch. */
 [data-mood-static] .handoffSlot {
-  position: relative;
-  top: auto;
-  left: auto;
-  visibility: visible;
-  align-self: center;
-  width: min(70vw, 340px);
-  height: min(56vh, 440px);
-  border-radius: min(35vw, 170px) min(35vw, 170px) 0 0;
-  opacity: 1;
-  transform: none;
+  display: none;
 }
 
 [data-mood-static] .handoffPanel {
   position: static;
+  min-height: 46vh;
 }
 
 /* Blockout placeholder: a neutral media box standing in for an image at its

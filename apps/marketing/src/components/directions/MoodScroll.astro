@@ -80,73 +80,84 @@ const collageItemStyle = (item: (typeof collageItems)[number]): string =>
       </p>
     </section>
 
-    <!-- Galerie takeover (experiment #57+#58): editorial beat, collage
-         assembly, then the featured frame (a fixed overlay, below) grows to
-         full bleed. Scroll drives geometry; the carousel drives content. -->
+    <!-- Galerie takeover (experiment #57+#58): a sticky runway block. The
+         backdrop is the dark room's own wall (hard section boundary while
+         the composed room scrolls in), the sticky stage holds the beats:
+         editorial, collage assembly, then the featured frame (a fixed
+         overlay, below) grows to full bleed. Scroll drives geometry; the
+         carousel drives content. -->
     <section
       class={`${styles.section} ${styles.inkLight} ${styles.galerie}`}
       data-mood-section='galerie'>
-      <div class={styles.galerieEditorial} data-galerie-editorial>
-        <p class={styles.galerieDisplay}>Les projets</p>
-        <p class={styles.galerieKicker}>
-          Des lieux habités, pas des décors. [placeholder]
-        </p>
+      <div
+        class={styles.galerieBackdrop}
+        data-galerie-backdrop
+        aria-hidden='true'>
       </div>
-      <div class={styles.collage} data-galerie-collage aria-hidden='true'>
-        {
-          collageItems.map((item, index) => (
-            <div
-              class={`${styles.mediaBox} ${styles.collageItem}`}
-              style={collageItemStyle(item)}
-              data-collage-item
-              data-label={`image projet · ${index + 1}`}
-            />
-          ))
-        }
-      </div>
-      <!-- Static fallback (mobile/tablet/reduced motion): the carousel in
-           normal flow, buttons only, no growth choreography. -->
-      <div class={styles.staticFeatured} data-galerie-static>
-        <div class={styles.staticStage} data-carousel-stage>
+      <div class={styles.galerieStage} data-galerie-stage>
+        <div class={styles.galerieEditorial} data-galerie-editorial>
+          <p class={styles.galerieDisplay}>Les projets</p>
+          <p class={styles.galerieKicker}>
+            Des lieux habités, pas des décors. [placeholder]
+          </p>
+        </div>
+        <div class={styles.collage} data-galerie-collage aria-hidden='true'>
           {
-            featuredProjects.map((project, index) => (
+            collageItems.map((item, index) => (
               <div
-                class={styles.slide}
-                style={`--slide-tint: ${project.tint}`}
-                data-carousel-slide
-                data-project-name={project.name}
-                data-label={project.name}
-                aria-hidden={index === 0 ? undefined : 'true'}
+                class={`${styles.mediaBox} ${styles.collageItem}`}
+                style={collageItemStyle(item)}
+                data-collage-item
+                data-label={`image projet · ${index + 1}`}
               />
             ))
           }
         </div>
-        <div class={styles.staticChrome}>
-          <p class={styles.featuredName} data-carousel-name>
-            {featuredProjects[0].name}
-          </p>
-          <div class={styles.featuredNav}>
-            <button
-              class={styles.navButton}
-              type='button'
-              data-carousel-prev
-              aria-label='Projet précédent'>←</button
-            >
-            <button
-              class={styles.navButton}
-              type='button'
-              data-carousel-next
-              aria-label='Projet suivant'>→</button
-            >
+        <!-- Static version (below 1024px / reduced motion), per
+             gallery-mobile.png + gallery-tablet.png: the typographic beat,
+             then the carousel with its chrome on the image. No collage. -->
+        <div class={styles.staticFeatured} data-galerie-static>
+          <div class={styles.staticStage} data-carousel-stage>
+            {
+              featuredProjects.map((project, index) => (
+                <div
+                  class={styles.slide}
+                  style={`--slide-tint: ${project.tint}`}
+                  data-carousel-slide
+                  data-project-name={project.name}
+                  data-label={project.name}
+                  aria-hidden={index === 0 ? undefined : 'true'}
+                />
+              ))
+            }
+            <div class={styles.featuredChrome}>
+              <p class={styles.featuredName} data-carousel-name>
+                {featuredProjects[0].name}
+              </p>
+              <div class={styles.featuredNav}>
+                <button
+                  class={styles.navButton}
+                  type='button'
+                  data-carousel-prev
+                  aria-label='Projet précédent'>←</button
+                >
+                <button
+                  class={styles.navButton}
+                  type='button'
+                  data-carousel-next
+                  aria-label='Projet suivant'>→</button
+                >
+              </div>
+              <p class={styles.featuredCounter} data-carousel-counter>
+                1/{featuredProjects.length}
+              </p>
+            </div>
           </div>
-          <p class={styles.featuredCounter} data-carousel-counter>
-            1/{featuredProjects.length}
-          </p>
         </div>
       </div>
     </section>
 
-    <!-- Hand-off seam (experiment #57): pinned runway where the full-bleed
+    <!-- Hand-off seam (experiment #57): a sticky runway where the full-bleed
          featured image shrinks into an arch-masked door while the light
          chapter rises to the seam. The arch is the door; the sentence below
          invites you to push it. -->
@@ -154,29 +165,31 @@ const collageItemStyle = (item: (typeof collageItems)[number]): string =>
       class={`${styles.section} ${styles.handoff}`}
       style={sectionStyle('handoff')}
       data-mood-section='handoff'>
-      <div class={styles.handoffSlot} data-handoff-slot aria-hidden='true'>
-        <div class={styles.slotStage} data-carousel-stage>
-          {
-            featuredProjects.map((project) => (
-              <div
-                class={styles.slide}
-                style={`--slide-tint: ${project.tint}`}
-                data-carousel-slide
-                data-project-name={project.name}
-                data-label={project.name}
-              />
-            ))
-          }
+      <div class={styles.handoffStage} data-handoff-stage>
+        <div class={styles.handoffSlot} data-handoff-slot aria-hidden='true'>
+          <div class={styles.slotStage} data-carousel-stage>
+            {
+              featuredProjects.map((project) => (
+                <div
+                  class={styles.slide}
+                  style={`--slide-tint: ${project.tint}`}
+                  data-carousel-slide
+                  data-project-name={project.name}
+                  data-label={project.name}
+                />
+              ))
+            }
+          </div>
         </div>
-      </div>
-      <div
-        class={`${styles.handoffPanel} ${styles.inkDark}`}
-        data-handoff-panel>
-        <div class={styles.handoffType} data-handoff-type>
-          <p class={styles.handoffDisplay}>Venez pousser la porte.</p>
-          <p class={styles.meta}>
-            L'art shop ouvre en octobre 2026 · Châteaugiron [placeholder]
-          </p>
+        <div
+          class={`${styles.handoffPanel} ${styles.inkDark}`}
+          data-handoff-panel>
+          <div class={styles.handoffType} data-handoff-type>
+            <p class={styles.handoffDisplay}>Venez pousser la porte.</p>
+            <p class={styles.meta}>
+              L'art shop ouvre en octobre 2026 · Châteaugiron [placeholder]
+            </p>
+          </div>
         </div>
       </div>
     </section>
