@@ -125,11 +125,12 @@ mood-scroll comp (PR #51) is the winning direction; iteration happens on
 → light editorial paper (umbrella/about) → dark gallery (projects proof;
 art-lit-in-a-dark-room, color comes from the images) → paper (offer ladder)
 → shop invitation (second color moment) → quiet trust → closing. The
-light→dark entry into the gallery ("pousser la porte") is still an open
-signature moment; its exit twin, the Obsidian hand-off (full-bleed image
-shrinks into an arched frame while the light chapter rises,
-`references/obsidian-assembly/gallery-handoff-01..03.png`), is specced in
-the score. Matches wireframe section order §1.4.
+"pousser la porte" idea settled on July 6, 2026 as the exit's meaning, not
+an entry mechanism: the Obsidian hand-off (full-bleed image shrinks into an
+arch-masked door while the light chapter rises,
+`references/obsidian-assembly/01..16`) leaves the door at the seam, and the
+light chapter opens on the sentence inviting you to push it. Specced in the
+score. Matches wireframe section order §1.4.
 
 ## Section stances (draft system)
 

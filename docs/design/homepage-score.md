@@ -46,18 +46,20 @@ trust strip stay freely scrollable, never pinned.
    Typography per `homepage-exploration.md`.
 2. **Umbrella.** `100vh`. Field present, quieter. Color candidate: lavender
    over paper (open, tune live).
-3. **Galerie (projects proof).** `270vh` pinned takeover. The first set
-   piece. Space opens, big typography, the field goes cobalt. Project images
-   get promoted one at a time; the featured image grows to full bleed while
-   the blues deepen and darken. The room dims because the artwork takes
-   over. Detailed spec below.
-4. **The hand-off.** `120vh` seam scene (`handoff`), reserved runway between
-   the dark and light chapters; a default fast crossfade occupies it until
-   the experiment (#57) lands. The signature transition out of the dark
-   chapter: the full-bleed image shrinks back into a small framed object
-   (arched or rounded frame) while a light chapter rises behind it; the page
-   flips from near-black to light ground in one gesture; the field mutes to
-   zero. Detailed spec below.
+3. **Galerie (projects proof).** `400vh` pinned takeover (experiment #58,
+   PR #66; length from the Obsidian reference pacing). The first set piece.
+   The field snaps to punchy cobalt right at the pin, an editorial beat
+   (giant display type) opens the dark room, a loose collage assembles,
+   then the featured frame is promoted to full bleed while the blues deepen
+   to their darkest. Scroll drives geometry only; the featured image cycles
+   by timer and prev/next buttons. Detailed spec below.
+4. **The hand-off.** `200vh` pinned takeover (`handoff`, experiment #57,
+   PR #66). The signature transition out of the dark chapter: the full-bleed
+   image shrinks into an arch-masked door while the light chapter's panel
+   rises to the seam in the same gesture; the field mutes toward zero and
+   flips to light under the risen panel (fast offer-ladder enter band). The
+   arch ends sitting across the seam and scrolls away with the page.
+   Detailed spec below.
 5. **Light chapter (offer ladder, art shop invitation, trust).** Three
    scenes: `offerLadder 130vh`, `artShop 120vh`, `trust 100vh`. Flat light
    ground, field presence at or near zero. Art and prints read as objects on
@@ -67,56 +69,61 @@ trust strip stay freely scrollable, never pinned.
 6. **Finale.** `140vh`. The field returns and settles: drift calms, blobs
    fade, parallax lines land the page. Exists in the comp already.
 
-The old "pousser la porte" idea (light-to-dark entry into the galerie) is
-still live as the _entry_ signature moment; the hand-off is its exit twin.
-Entry mechanism is an open experiment (see forks).
+The "pousser la porte" idea found its home (July 6 session): it is not an
+entry mechanism into the galerie but the exit's meaning. The arch the
+hand-off leaves at the seam is the door, and the light chapter opens on the
+sentence that invites you to push it. The entry into the dark chapter is
+deliberately field-only: a fast cobalt snap at the takeover's start (first
+galerie stops), saving the page's one big shape reveal for the exit arch.
 
 ## The galerie beat, detailed
 
-Reference: The Obsidian Assembly places gallery. Screenshot sequences in
-`references/obsidian-assembly/`:
+Reference: The Obsidian Assembly, hero through gallery into the next
+chapter. The committed sequence is `references/obsidian-assembly/01..16`
+(1400x900, two wheel notches between frames; it supersedes the earlier
+`gallery-approach` / `gallery-handoff` sets). Frames 04..14 are the dark
+room: oversized display headline, loose collage, one image promoted toward
+full bleed with a name and counter while the others recede.
 
-- `gallery-approach-01..05.png`: the approach. A dark room with a loose
-  collage of images and an oversized display headline. Scrolling promotes one
-  image at a time: it grows toward full bleed, gets a name and a counter
-  (2/7, 3/7), the others recede. `gallery-approach-05.png` is the full-bleed
-  end state.
-- The existing projects pin in the comp (image scales 0.5 to 1 over a 170%
-  pin while the mood deepens and a caption fades in late) is the embryo of
-  this beat. It matures into: approach collage, then promotion sequence,
-  then full-bleed takeover with the deep blue mood at its darkest.
-
-Open interaction fork, decide by experiment, not discussion: the reference
-gallery is not purely scroll-driven (it has prev/next arrows and a counter,
-a stepped slideshow). Ours can be (a) fully scroll-scrubbed, one promoted
-image per scroll segment, or (b) stepped like the reference. Build the
-cheapest version of both with placeholder images and let Martin drive.
+Interaction fork RESOLVED (Martin, July 6 session): neither pure variant.
+Scroll and content are decoupled. Scroll drives geometry only — the entry,
+the collage assembly, the single promotion journey to full bleed, and the
+exit; scrolling back rewinds the journey. Which image is featured is
+time-driven (auto-advance interval) plus prev/next buttons with a counter,
+never scroll, so the takeover can never trap the visitor. Built in PR #66:
+the choreography segments (editorial exit, collage enter/recede, featured
+appear, grow phase, chrome timing) and the carousel timing are tunables
+under the `galerie` panel group.
 
 ## The hand-off, detailed
 
-Reference sequence `references/obsidian-assembly/gallery-handoff-01..03.png`:
-
-1. `handoff-01`: featured image is full bleed, dark chrome, name + counter.
-2. `handoff-02`: the image has shrunk into a rounded frame floating on
-   near-black; everything else has receded.
-3. `handoff-03`: the image is now a small arch-shaped frame sitting at the
-   seam; behind and below it a light parchment chapter has risen with giant
-   serif typography, an illustrated texture, and a 3D object. The arch reads
-   as a door back into the previous chapter.
+Reference: frames 10..16 of `references/obsidian-assembly/01..16`. Full
+bleed with dark chrome, then the image shrinks back into a rounded frame on
+near-black, resolves into a small arch-shaped frame sitting at the seam,
+and a light parchment chapter rises beneath it with giant serif typography.
+The arch reads as a door back into the previous chapter.
 
 Mechanism, named for the library: **hand-off**. The element that dominated
 the previous chapter shrinks into a small framed object that sits inside the
 first view of the next chapter. The tonal flip (deep blue-black to light
-parchment) happens in the same gesture, and the field presence drops to zero
-as the light chapter takes over. Semantically perfect here: the project
-image becomes a framed work, and the light chapter is the gallery wall where
-the art shop lives.
+parchment) happens in the same gesture, and the field presence drops toward
+zero as the light chapter takes over. Semantically perfect here: the
+project image becomes a framed work, the arch is the door, and the light
+chapter's editorial sentence below the galerie is the invitation to push it
+("Venez pousser la porte") — which is where the old entry idea landed.
 
-Implementation shape: this is the `enter` spec of the light chapter, with
-real scroll runway. The morphing element (scale down, border-radius toward
-arch, reposition to seam) rides the enter progress; the ground flip is
-either a fast crossfade or a cut inside the same band. All taste values
-(shrink curve, arch radius, seam position, flip timing) are tunables.
+Implementation (PR #66): the `handoff` scene is a pinned takeover so the
+morph gets scrubbed runway. One fixed featured overlay is shared by the
+galerie and hand-off timelines (the galerie grows it, the hand-off shrinks
+it), which also hides the section seam during the unpin traversal between
+the two pins; at the end of the morph the overlay swaps into an inline arch
+slot so the door scrolls away with the page. The visible dark-to-light flip
+is the DOM panel rising to the seam plus a fast offer-ladder enter band
+that flips the field underneath it. All taste values (shrink phase and ease
+shape, arch width/height/radius, seam position, overlap, panel rise, type
+entrance) are tunables under the `handoff` panel group. Mobile/tablet and
+reduced motion use a static equivalent: arch and light block in flow, tonal
+journey intact, no morph.
 
 ## The model: conductor v2
 
@@ -264,13 +271,14 @@ Martin designs from references, not briefs. The loop, per idea:
 4. The mechanism library below gets one line either way. The score's beats
    update when a verdict changes them.
 
-| Mechanism                                                      | Source                | Verdict               | Where          |
-| -------------------------------------------------------------- | --------------------- | --------------------- | -------------- |
-| Mood field (blob + grain, scroll-blended)                      | Codrops depth gallery | kept                  | whole page     |
-| Pin takeover (image grows, room dims)                          | comp v1               | kept                  | galerie        |
-| Gallery promotion (collage, featured image cycle)              | Obsidian Assembly     | candidate             | galerie        |
-| Hand-off (dominant image shrinks into framed arch, tonal flip) | Obsidian Assembly     | candidate             | galerie exit   |
-| Idle texture (field life while not scrolling)                  | none yet              | candidate, needs refs | ambient scenes |
+| Mechanism                                                                  | Source                | Verdict                             | Where          |
+| -------------------------------------------------------------------------- | --------------------- | ----------------------------------- | -------------- |
+| Mood field (blob + grain, scroll-blended)                                  | Codrops depth gallery | kept                                | whole page     |
+| Pin takeover (image grows, room dims)                                      | comp v1               | kept                                | galerie        |
+| Cobalt snap entry (field-only, no DOM seam)                                | July 6 session        | built (PR #66), awaiting taste gate | galerie entry  |
+| Gallery promotion (collage, grow to full bleed; content by time + buttons) | Obsidian Assembly     | built (PR #66), awaiting taste gate | galerie        |
+| Hand-off (dominant image shrinks into framed arch, tonal flip)             | Obsidian Assembly     | built (PR #66), awaiting taste gate | galerie exit   |
+| Idle texture (field life while not scrolling)                              | none yet              | candidate, needs refs               | ambient scenes |
 
 ## Build order
 
@@ -289,9 +297,12 @@ Martin designs from references, not briefs. The loop, per idea:
 
 ## Parked forks (decide by experiment or later)
 
-- Galerie interaction: scroll-scrubbed vs stepped slideshow.
+Resolved July 6 (see the galerie and hand-off sections): galerie
+interaction (decoupled: scroll = geometry, time + buttons = content) and
+the entry into the dark chapter (field-only cobalt snap; "pousser la
+porte" became the exit's meaning).
+
 - Where (and whether) a hard `cut` lands; the hand-off may be enough.
-- Entry into the dark chapter ("pousser la porte"): mechanism unpicked.
 - Offer ladder vs art shop order inside the light chapter (wireframe wins
   by default).
 - Umbrella color (lavender candidate, tune live).
