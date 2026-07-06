@@ -1,8 +1,22 @@
 ---
-// Direction comp: scroll-reactive mood background (see docs/design/
-// homepage-exploration.md, "page tonal script"). Placeholder copy comes from
-// the hero text inventory; nothing here is frozen. Press D for the dev panel.
+// Direction comp: the six-beat homepage blockout over the scroll-reactive
+// mood field (spec: docs/design/homepage-score.md). Everything here is
+// placeholder discipline: grey media boxes at intended aspect ratios, dummy
+// type at real target sizes, copy borrowed from homepage-exploration.md as
+// length-realistic filler. Nothing is frozen. Press D for the dev panel.
+import { parseSceneLengthVh } from './mood-scroll-conductor';
+import { createDefaultConfig } from './mood-scroll-config';
 import styles from './MoodScroll.module.css';
+
+// Sections render at their declared scene lengths before the conductor
+// boots; the motion code re-applies the same data on every rebuild, so
+// panel length edits reshape the page live.
+const config = createDefaultConfig();
+const sectionStyle = (key: string): string | undefined => {
+  const scene = config.scenes.find((entry) => entry.key === key);
+  if (!scene || scene.pin) return undefined;
+  return `min-height: ${parseSceneLengthVh(scene.length)}vh`;
+};
 ---
 
 <div class={styles.page} data-mood-root>
@@ -11,6 +25,7 @@ import styles from './MoodScroll.module.css';
   <main class={styles.main}>
     <section
       class={`${styles.section} ${styles.inkDark}`}
+      style={sectionStyle('hero')}
       data-mood-section='hero'>
       <p class={styles.eyebrow}>Jukkai by Crystelle Terrasson</p>
       <h1 class={styles.display}>Des lieux dont on se souvient.</h1>
@@ -29,6 +44,7 @@ import styles from './MoodScroll.module.css';
 
     <section
       class={`${styles.section} ${styles.inkDark}`}
+      style={sectionStyle('umbrella')}
       data-mood-section='umbrella'>
       <p class={styles.statement}>
         Jukkai est un studio d'architecture d'intérieur et un art shop, sous le
@@ -43,45 +59,102 @@ import styles from './MoodScroll.module.css';
       class={`${styles.section} ${styles.inkLight} ${styles.projects}`}
       data-mood-section='galerie'>
       <div class={styles.growFrame} data-mood-grow>
-        <img
-          src='/home/hero/prints/waouh-theatre.webp'
-          alt=''
-          decoding='async'
-        />
+        <div class={styles.mediaBox} data-label='image projet · 3:2'></div>
       </div>
       <p class={styles.stance} data-mood-caption>
         « On n'aurait jamais fait ça. »
       </p>
     </section>
 
+    <!-- Hand-off seam: reserved runway between the dark and light chapters.
+         The mood crossfade is the content; #57 builds the real hand-off
+         mechanism (image shrinks into an arched frame) inside this band. -->
+    <section
+      class={styles.section}
+      style={sectionStyle('handoff')}
+      data-mood-section='handoff'
+      aria-hidden='true'>
+    </section>
+
     <section
       class={`${styles.section} ${styles.inkDark}`}
+      style={sectionStyle('offerLadder')}
+      data-mood-section='offerLadder'>
+      <p class={styles.eyebrow}>Prestations</p>
+      <p class={styles.statement}>
+        Des missions à la mesure du projet, du conseil à la rénovation complète.
+      </p>
+      <ul class={styles.offerGrid}>
+        <li class={styles.offerCard}>
+          <p class={styles.offerName}>Conseil & mission déco</p>
+          <p class={styles.offerLine}>
+            [offre d'entrée — nom, prix et périmètre à valider]
+          </p>
+        </li>
+        <li class={styles.offerCard}>
+          <p class={styles.offerName}>Transformation ciblée</p>
+          <p class={styles.offerLine}>
+            Une pièce, une ambiance, un chantier maîtrisé. [fourchette]
+          </p>
+        </li>
+        <li class={styles.offerCard}>
+          <p class={styles.offerName}>Rénovation complète</p>
+          <p class={styles.offerLine}>
+            De la conception au suivi de chantier. 8-15% des travaux.
+          </p>
+        </li>
+        <li class={styles.offerCard}>
+          <p class={styles.offerName}>Espaces professionnels</p>
+          <p class={styles.offerLine}>
+            Bureaux, commerces, lieux qui reçoivent. [carte de renvoi]
+          </p>
+        </li>
+      </ul>
+      <a class={styles.cta} href='#'>Découvrir les prestations →</a>
+    </section>
+
+    <section
+      class={`${styles.section} ${styles.inkDark}`}
+      style={sectionStyle('artShop')}
       data-mood-section='artShop'>
       <p class={styles.eyebrow}>L'art shop ouvre en octobre 2026</p>
       <p class={styles.statement}>
         Une galerie vivante, pensée comme un art shop.
       </p>
       <div class={styles.printsRow}>
-        <img
-          src='/home/hero/prints/tournesol-jaune.webp'
-          alt=''
-          decoding='async'
-        />
-        <img
-          src='/home/hero/prints/fonderie-rouge.webp'
-          alt=''
-          decoding='async'
-        />
-        <img
-          src='/home/hero/prints/geometrie-spirale.webp'
-          alt=''
-          decoding='async'
-        />
+        <div
+          class={`${styles.mediaBox} ${styles.printBox}`}
+          data-label='œuvre · 3:4'>
+        </div>
+        <div
+          class={`${styles.mediaBox} ${styles.printBox}`}
+          data-label='œuvre · 3:4'>
+        </div>
+        <div
+          class={`${styles.mediaBox} ${styles.printBox}`}
+          data-label='œuvre · 3:4'>
+        </div>
       </div>
+      <a class={styles.cta} href='#'>Venez pousser la porte →</a>
+    </section>
+
+    <section
+      class={`${styles.section} ${styles.inkDark}`}
+      style={sectionStyle('trust')}
+      data-mood-section='trust'>
+      <p class={styles.trustLine}>
+        Deux architectes d'intérieur, un art shop, une même exigence.
+      </p>
+      <p class={styles.meta}>
+        2 architectes · 30 ans de métier · depuis 2012 · UNAID
+      </p>
+      <p class={styles.meta}>★ 4,9 · [XX] avis Google</p>
+      <a class={styles.cta} href='#'>Découvrir l'atelier →</a>
     </section>
 
     <section
       class={`${styles.section} ${styles.inkLight} ${styles.finale}`}
+      style={sectionStyle('finale')}
       data-mood-section='finale'>
       <p class={styles.finaleLine} data-mood-parallax='0.22'>Des lieux</p>
       <p class={styles.finaleLine} data-mood-parallax='0.08'>dont on</p>
