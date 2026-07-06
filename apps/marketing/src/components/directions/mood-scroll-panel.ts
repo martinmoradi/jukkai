@@ -313,6 +313,27 @@ export function initMoodPanel(
     return control.body;
   };
 
+  // Nested collapsible inside a scene group (a stop card or a tunable phase
+  // cluster). Unlike scene groups it defaults per-type (mostly collapsed) and
+  // stays out of `groupControls`, so it never gets the active-scene highlight.
+  const subGroup = (
+    key: string,
+    parentBody: HTMLElement,
+    label: string,
+    opts: { defaultExpanded: boolean; meta?: string; accessory?: HTMLElement },
+  ): GroupControl =>
+    createGroup(parentBody, classes, {
+      label,
+      meta: opts.meta,
+      accessory: opts.accessory,
+      variant: 'sub',
+      expanded: expandedState[key] ?? opts.defaultExpanded,
+      onToggle: (expanded) => {
+        expandedState[key] = expanded;
+        persistExpanded();
+      },
+    });
+
   const jumpToScene = (scene: MoodScene, stopAt: number) => {
     if (!devTools) return;
     const result = devTools.jumpTo(scene.key, stopAt);
@@ -480,17 +501,39 @@ export function initMoodPanel(
       stops: MoodFieldStop[],
       stopLabel: string,
       ariaScope: string,
+      kind: 'stop' | 'surface',
     ) => {
       const multiStop = stops.length > 1;
-      for (const stop of stops) {
+      // A multi-stop track is a long wall of rows; collapse each stop into a
+      // card whose header carries its `at` and a live 3-colour swatch strip,
+      // so the whole track reads as a short list of identifiable stops.
+      stops.forEach((stop, index) => {
+        const swatches = new Map<MoodFieldColorChannel, HTMLSpanElement>();
+        let target = body;
+
         if (multiStop) {
-          const heading = subheading(
+          const strip = document.createElement('span');
+          strip.className = classes.subGroupSwatches;
+          strip.setAttribute('aria-hidden', 'true');
+          for (const channel of MOOD_FIELD_COLOR_CHANNELS) {
+            const dot = document.createElement('span');
+            dot.className = classes.subGroupSwatch;
+            dot.style.backgroundColor = stop[channel];
+            strip.append(dot);
+            swatches.set(channel, dot);
+          }
+
+          const card = subGroup(
+            `${scene.key}::${kind}::${index}`,
             body,
-            classes,
             `${stopLabel} · ${formatStopAt(stop.at)}`,
+            { defaultExpanded: false, accessory: strip },
           );
+          target = card.body;
+          const titleEl = card.header.firstElementChild;
+
           addNumberSlider(
-            body,
+            target,
             classes,
             { key: 'at', label: 'at', min: 0, max: 1, step: 0.01 },
             {
@@ -498,7 +541,9 @@ export function initMoodPanel(
               set: (value) => {
                 stop.at = value;
                 stops.sort((a, b) => a.at - b.at);
-                heading.textContent = `${stopLabel} · ${formatStopAt(stop.at)}`;
+                if (titleEl) {
+                  titleEl.textContent = `${stopLabel} · ${formatStopAt(stop.at)}`;
+                }
               },
               // Stop order and jump pills may be stale after a drag; rebuild
               // the controls once the drag commits.
@@ -508,7 +553,7 @@ export function initMoodPanel(
         }
 
         for (const channel of MOOD_FIELD_COLOR_CHANNELS) {
-          addColorInput(body, classes, {
+          addColorInput(target, classes, {
             label: CHANNEL_LABELS[channel],
             ariaLabel: multiStop
               ? `${ariaScope} ${stopLabel} ${formatStopAt(stop.at)} ${CHANNEL_LABELS[channel]}`
@@ -516,22 +561,24 @@ export function initMoodPanel(
             get: () => stop[channel],
             set: (value) => {
               stop[channel] = value;
+              const dot = swatches.get(channel);
+              if (dot) dot.style.backgroundColor = value;
             },
           });
         }
 
         for (const spec of STOP_SLIDERS) {
-          addNumberSlider(body, classes, spec, {
+          addNumberSlider(target, classes, spec, {
             get: () => stop[spec.key],
             set: (value) => {
               stop[spec.key] = value;
             },
           });
         }
-      }
+      });
     };
 
-    renderStopTrack(scene.stops, 'stop', scene.key);
+    renderStopTrack(scene.stops, 'stop', scene.key, 'stop');
     // The scene's contained surface (the galerie's living wall) edits like
     // any other stop list; its colors resolve per tick, so tweaks land live
     // even while the section is only approaching.
@@ -540,6 +587,7 @@ export function initMoodPanel(
         scene.surfaceStops,
         'surface stop',
         `${scene.key} surface`,
+        'surface',
       );
     }
 
@@ -1089,6 +1137,37 @@ function collectInputSyncs(root: HTMLElement): Array<() => void> {
   ];
 }
 
+type GroupVariant = 'scene' | 'sub';
+
+const GROUP_CLASS_SETS: Record<
+  GroupVariant,
+  {
+    section: keyof MoodPanelClasses;
+    header: keyof MoodPanelClasses;
+    title: keyof MoodPanelClasses;
+    meta: keyof MoodPanelClasses;
+    toggle: keyof MoodPanelClasses;
+    body: keyof MoodPanelClasses;
+  }
+> = {
+  scene: {
+    section: 'group',
+    header: 'groupHeader',
+    title: 'groupTitle',
+    meta: 'groupMeta',
+    toggle: 'groupToggle',
+    body: 'groupBody',
+  },
+  sub: {
+    section: 'subGroup',
+    header: 'subGroupHeader',
+    title: 'subGroupTitle',
+    meta: 'subGroupMeta',
+    toggle: 'subGroupToggle',
+    body: 'subGroupBody',
+  },
+};
+
 function createGroup(
   parent: HTMLElement,
   classes: MoodPanelClasses,
@@ -1097,35 +1176,44 @@ function createGroup(
     meta?: string;
     expanded: boolean;
     onToggle: (expanded: boolean) => void;
+    variant?: GroupVariant;
+    // Extra header content (e.g. a stop's color swatch strip), placed before
+    // the toggle. Sub-groups only.
+    accessory?: HTMLElement;
   },
 ): GroupControl {
+  const variant = options.variant ?? 'scene';
+  const set = GROUP_CLASS_SETS[variant];
+
   const section = document.createElement('section');
-  section.className = classes.group;
+  section.className = classes[set.section];
 
   const bodyId = `mood-panel-group-${nextGroupId}`;
   nextGroupId += 1;
 
   const header = document.createElement('button');
   header.type = 'button';
-  header.className = classes.groupHeader;
+  header.className = classes[set.header];
   header.setAttribute('aria-controls', bodyId);
 
   const heading = document.createElement('span');
-  heading.className = classes.groupTitle;
+  heading.className = classes[set.title];
   heading.textContent = options.label;
 
   const toggle = document.createElement('span');
-  toggle.className = classes.groupToggle;
+  toggle.className = classes[set.toggle];
   toggle.setAttribute('aria-hidden', 'true');
 
   const body = document.createElement('div');
   body.id = bodyId;
-  body.className = classes.groupBody;
+  body.className = classes[set.body];
 
   const setExpanded = (expanded: boolean) => {
     header.setAttribute('aria-expanded', String(expanded));
     body.hidden = !expanded;
-    toggle.textContent = expanded ? '−' : '+';
+    // Sub-groups show a chevron that CSS rotates via aria-expanded; scene
+    // groups keep the +/− glyph.
+    toggle.textContent = variant === 'sub' ? '›' : expanded ? '−' : '+';
   };
   setExpanded(options.expanded);
 
@@ -1135,14 +1223,16 @@ function createGroup(
     options.onToggle(!expanded);
   });
 
+  header.append(heading);
   if (options.meta) {
     const meta = document.createElement('span');
-    meta.className = classes.groupMeta;
+    meta.className = classes[set.meta];
     meta.textContent = options.meta;
-    header.append(heading, meta, toggle);
-  } else {
-    header.append(heading, toggle);
+    header.append(meta);
   }
+  if (options.accessory) header.append(options.accessory);
+  header.append(toggle);
+
   section.append(header, body);
   parent.append(section);
   return { header, body, setExpanded };
