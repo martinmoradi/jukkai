@@ -142,7 +142,9 @@
   pointer-events: none;
 }
 
-.collageItem {
+/* Scoped under .collage so the scatter geometry beats .mediaBox's
+   fill-the-parent sizing regardless of rule order. */
+.collage .collageItem {
   position: absolute;
   top: var(--collage-top);
   left: var(--collage-left);
@@ -367,8 +369,11 @@
   overflow: visible;
 }
 
+/* Stays positioned so its absolute slides keep anchoring to the arch. */
 [data-mood-static] .handoffSlot {
-  position: static;
+  position: relative;
+  top: auto;
+  left: auto;
   visibility: visible;
   align-self: center;
   width: min(70vw, 340px);

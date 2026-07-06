@@ -267,12 +267,18 @@ const CHOREOGRAPHY_SELECTORS = [
 ].join(', ');
 
 /**
- * Drop every inline style the choreography wrote, so a rebuild (or a switch
- * to the static fallback) starts from the stylesheet's truth.
+ * Drop the inline styles the choreography wrote, so a rebuild (or a switch
+ * to the static fallback) starts from the stylesheet's truth. Only the
+ * animated properties are cleared: `clearProps: 'all'` would also wipe the
+ * server-rendered CSS custom properties (collage scatter, slide tints).
  */
 export function clearGalerieChoreographyStyles(root: HTMLElement): void {
   const elements = root.querySelectorAll(CHOREOGRAPHY_SELECTORS);
-  if (elements.length > 0) gsap.set(elements, { clearProps: 'all' });
+  if (elements.length > 0) {
+    gsap.set(elements, {
+      clearProps: 'opacity,visibility,transform,width,height,borderRadius',
+    });
+  }
 }
 
 function handoffGeometry(t: GalerieChoreographyTunables): HandoffGeometry {
