@@ -115,13 +115,21 @@ about-section pattern).
   reduced-motion aware) intro carries the « Jukkai by Crystelle Terrasson »
   ceremony, so the static hero eyebrow stays tiny. Not designed yet.
 
-## Page tonal script (draft)
+## Page tonal script (superseded by the score)
 
-Warm gradient hero → light editorial paper (umbrella/about) → dark gallery
-(projects proof; art-lit-in-a-dark-room, color comes from the images) → paper
-(offer ladder) → shop invitation (second color moment) → quiet trust → closing.
-The light→dark transition into the gallery is the candidate signature GSAP
-moment (the "pousser la porte" gesture). Matches wireframe section order §1.4.
+The tonal script grew into a full choreography score on July 6, 2026:
+`docs/design/homepage-score.md` now owns the beats, the scene model
+(conductor v2), the transition vocabulary, and the tooling contract. The
+mood-scroll comp (PR #51) is the winning direction; iteration happens on
+`integration/homepage`. Original shape, kept for context: warm gradient hero
+→ light editorial paper (umbrella/about) → dark gallery (projects proof;
+art-lit-in-a-dark-room, color comes from the images) → paper (offer ladder)
+→ shop invitation (second color moment) → quiet trust → closing. The
+light→dark entry into the gallery ("pousser la porte") is still an open
+signature moment; its exit twin, the Obsidian hand-off (full-bleed image
+shrinks into an arched frame while the light chapter rises,
+`references/obsidian-assembly/gallery-handoff-01..03.png`), is specced in
+the score. Matches wireframe section order §1.4.
 
 ## Section stances (draft system)
 
