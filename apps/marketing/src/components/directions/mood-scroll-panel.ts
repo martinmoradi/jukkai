@@ -88,6 +88,7 @@ interface NumberSliderSpec<Key extends string> {
   min: number;
   max: number;
   step: number;
+  description?: string;
 }
 
 interface PresetListItem {
@@ -104,6 +105,7 @@ const GLOBAL_SLIDERS: Array<
     min: 0.02,
     max: 0.5,
     step: 0.01,
+    description: 'How slowly colours ease toward their target between stops.',
   },
   {
     key: 'velocityInfluence',
@@ -111,23 +113,79 @@ const GLOBAL_SLIDERS: Array<
     min: 0,
     max: 2,
     step: 0.05,
+    description: 'How much scroll speed energises the field.',
   },
 ];
 
 const STOP_SLIDERS: Array<NumberSliderSpec<MoodFieldNumberChannel>> = [
-  { key: 'radius', label: 'radius', min: 0.2, max: 1.3, step: 0.01 },
-  { key: 'radiusRatio', label: 'blob 2 ratio', min: 0.3, max: 1, step: 0.01 },
-  { key: 'strength', label: 'strength', min: 0, max: 1.5, step: 0.01 },
-  { key: 'roundness', label: 'roundness', min: 0, max: 1, step: 0.05 },
-  { key: 'noise', label: 'grain', min: 0, max: 0.2, step: 0.005 },
-  { key: 'drift', label: 'drift', min: 0, max: 1, step: 0.01 },
-  { key: 'presence', label: 'presence', min: 0, max: 1, step: 0.01 },
+  {
+    key: 'radius',
+    label: 'radius',
+    min: 0.2,
+    max: 1.3,
+    step: 0.01,
+    description: 'Base size of the blob field at this stop.',
+  },
+  {
+    key: 'radiusRatio',
+    label: 'blob 2 ratio',
+    min: 0.3,
+    max: 1,
+    step: 0.01,
+    description: 'Size of the second blob relative to the first.',
+  },
+  {
+    key: 'strength',
+    label: 'strength',
+    min: 0,
+    max: 1.5,
+    step: 0.01,
+    description: "Intensity of the field's colour push at this stop.",
+  },
+  {
+    key: 'roundness',
+    label: 'roundness',
+    min: 0,
+    max: 1,
+    step: 0.05,
+    description: 'How circular vs. organic the blobs read.',
+  },
+  {
+    key: 'noise',
+    label: 'grain',
+    min: 0,
+    max: 0.2,
+    step: 0.005,
+    description: 'Amount of film grain over the field.',
+  },
+  {
+    key: 'drift',
+    label: 'drift',
+    min: 0,
+    max: 1,
+    step: 0.01,
+    description: 'How much the blobs wander over time.',
+  },
+  {
+    key: 'presence',
+    label: 'presence',
+    min: 0,
+    max: 1,
+    step: 0.01,
+    description: 'Overall opacity and weight of the field at this stop.',
+  },
 ];
 
 const CHANNEL_LABELS: Record<MoodFieldColorChannel, string> = {
   ground: 'ground',
   blob1: 'blob 1',
   blob2: 'blob 2',
+};
+
+const CHANNEL_DESCRIPTIONS: Record<MoodFieldColorChannel, string> = {
+  ground: 'Background wash colour behind the blobs.',
+  blob1: 'Colour of the primary blob.',
+  blob2: 'Colour of the secondary blob.',
 };
 
 const PRESET_API = '/__mood-scroll-presets';
@@ -462,6 +520,9 @@ export function initMoodPanel(
         min: 40,
         max: 600,
         step: 5,
+        description: scene.pin
+          ? 'Total scroll footprint of the pinned section (pin travel + one viewport).'
+          : 'Scroll height of this section, in viewport heights.',
       },
       {
         get: () => parseSceneLengthVh(scene.length),
@@ -477,7 +538,15 @@ export function initMoodPanel(
       addNumberSlider(
         body,
         classes,
-        { key: 'enterStart', label: 'band start', min: 0, max: 1, step: 0.01 },
+        {
+          key: 'enterStart',
+          label: 'band start',
+          min: 0,
+          max: 1,
+          step: 0.01,
+          description:
+            'Where the crossfade into this scene begins (fraction of the overlap).',
+        },
         {
           get: () =>
             scene.enter.mechanism === 'crossfade' ? scene.enter.band[0] : 0,
@@ -492,7 +561,14 @@ export function initMoodPanel(
       addNumberSlider(
         body,
         classes,
-        { key: 'enterEnd', label: 'band end', min: 0, max: 1, step: 0.01 },
+        {
+          key: 'enterEnd',
+          label: 'band end',
+          min: 0,
+          max: 1,
+          step: 0.01,
+          description: 'Where the crossfade into this scene completes.',
+        },
         {
           get: () =>
             scene.enter.mechanism === 'crossfade' ? scene.enter.band[1] : 0,
@@ -507,7 +583,11 @@ export function initMoodPanel(
       addSelect(
         body,
         classes,
-        { label: 'ease', options: MOOD_ENTER_EASES },
+        {
+          label: 'ease',
+          options: MOOD_ENTER_EASES,
+          description: 'Easing curve applied to the crossfade.',
+        },
         {
           get: () =>
             scene.enter.mechanism === 'crossfade' ? scene.enter.ease : 'none',
@@ -526,7 +606,14 @@ export function initMoodPanel(
       addNumberSlider(
         body,
         classes,
-        { key: 'cutLine', label: 'cut line', min: 0, max: 1, step: 0.01 },
+        {
+          key: 'cutLine',
+          label: 'cut line',
+          min: 0,
+          max: 1,
+          step: 0.01,
+          description: 'Scroll fraction where this scene hard-cuts in.',
+        },
         {
           get: () => (scene.enter.mechanism === 'cut' ? scene.enter.at : 0),
           set: (value) => {
@@ -577,7 +664,15 @@ export function initMoodPanel(
           addNumberSlider(
             target,
             classes,
-            { key: 'at', label: 'at', min: 0, max: 1, step: 0.01 },
+            {
+              key: 'at',
+              label: 'at',
+              min: 0,
+              max: 1,
+              step: 0.01,
+              description:
+                'Position of this stop along the section (0 = start, 1 = end).',
+            },
             {
               get: () => stop.at,
               set: (value) => {
@@ -600,6 +695,7 @@ export function initMoodPanel(
             ariaLabel: multiStop
               ? `${ariaScope} ${stopLabel} ${formatStopAt(stop.at)} ${CHANNEL_LABELS[channel]}`
               : `${ariaScope} ${CHANNEL_LABELS[channel]}`,
+            description: CHANNEL_DESCRIPTIONS[channel],
             get: () => stop[channel],
             set: (value) => {
               stop[channel] = value;
@@ -954,7 +1050,7 @@ export function initMoodPanel(
 
 function addNumberSlider<Key extends string>(
   parent: HTMLElement,
-  classes: Pick<MoodPanelClasses, 'row' | 'value'>,
+  classes: Pick<MoodPanelClasses, 'row' | 'value' | 'rowHint'>,
   spec: NumberSliderSpec<Key>,
   binding: {
     get: () => number;
@@ -966,6 +1062,7 @@ function addNumberSlider<Key extends string>(
   row.className = classes.row;
   const text = document.createElement('span');
   text.textContent = spec.label;
+  applyRowHint(text, classes, spec.description);
   const value = document.createElement('input');
   value.type = 'number';
   value.className = classes.value;
@@ -1022,10 +1119,11 @@ function addNumberSlider<Key extends string>(
 
 function addSelect<Value extends string>(
   parent: HTMLElement,
-  classes: Pick<MoodPanelClasses, 'row'>,
+  classes: Pick<MoodPanelClasses, 'row' | 'rowHint'>,
   spec: {
     label: string;
     options: readonly Value[];
+    description?: string;
   },
   binding: {
     get: () => Value;
@@ -1036,6 +1134,7 @@ function addSelect<Value extends string>(
   row.className = classes.row;
   const text = document.createElement('span');
   text.textContent = spec.label;
+  applyRowHint(text, classes, spec.description);
   const input = document.createElement('select');
   input.dataset.syncSelect = 'true';
   for (const optionValue of spec.options) {
@@ -1059,17 +1158,19 @@ function addSelect<Value extends string>(
 
 function addCheckbox(
   parent: HTMLElement,
-  classes: Pick<MoodPanelClasses, 'row'>,
+  classes: Pick<MoodPanelClasses, 'row' | 'rowHint'>,
   label: string,
   binding: {
     get: () => boolean;
     set: (value: boolean, sync: () => void) => void;
+    description?: string;
   },
 ): void {
   const row = document.createElement('label');
   row.className = classes.row;
   const text = document.createElement('span');
   text.textContent = label;
+  applyRowHint(text, classes, binding.description);
   const input = document.createElement('input');
   input.type = 'checkbox';
   input.dataset.syncCheckbox = 'true';
@@ -1088,7 +1189,7 @@ function addCheckbox(
 
 function addTunableSlider(
   parent: HTMLElement,
-  classes: Pick<MoodPanelClasses, 'row' | 'value'>,
+  classes: Pick<MoodPanelClasses, 'row' | 'value' | 'rowHint'>,
   handle: MoodTunableHandle,
 ): void {
   addNumberSlider(
@@ -1100,6 +1201,7 @@ function addTunableSlider(
       min: handle.min,
       max: handle.max,
       step: handle.step,
+      description: handle.description,
     },
     {
       get: () => handle.get(),
@@ -1112,10 +1214,11 @@ function addTunableSlider(
 
 function addColorInput(
   parent: HTMLElement,
-  classes: Pick<MoodPanelClasses, 'row' | 'colorInput'>,
+  classes: Pick<MoodPanelClasses, 'row' | 'colorInput' | 'rowHint'>,
   binding: {
     label: string;
     ariaLabel: string;
+    description?: string;
     get: () => string;
     set: (value: string) => void;
   },
@@ -1124,6 +1227,7 @@ function addColorInput(
   row.className = classes.row;
   const text = document.createElement('span');
   text.textContent = binding.label;
+  applyRowHint(text, classes, binding.description);
   const input = document.createElement('input');
   input.type = 'text';
   input.autocomplete = 'off';
@@ -1270,6 +1374,18 @@ function createGroup(
   section.append(header, body);
   parent.append(section);
   return { header, body, setExpanded };
+}
+
+// A control's label gets a native-title hover explanation plus a dotted
+// underline so users know the hint is there. No-op when there's no text.
+function applyRowHint(
+  label: HTMLElement,
+  classes: Pick<MoodPanelClasses, 'rowHint'>,
+  description?: string,
+): void {
+  if (!description) return;
+  label.title = description;
+  label.classList.add(classes.rowHint);
 }
 
 function subheading(
