@@ -70,155 +70,278 @@ export function registerGalerieChoreographyTunables(
   const phase = { min: 0, max: 1, step: 0.01, ...reinit };
   const span = { min: 0.02, max: 1, step: 0.01, ...reinit };
 
+  // Groups mirror the score doc's sub-phases; the dev panel clusters rows by
+  // them. Registration order (which the panel renders in) is grouped so each
+  // cluster's rows are contiguous — growStartScale sits with the grow phase,
+  // not up top where it was originally declared.
+  const approach = 'approach';
+  const editorial = 'editorial exit';
+  const collage = 'collage';
+  const featured = 'featured';
+  const grow = 'grow';
+  const chrome = 'chrome';
+  const carousel = 'carousel';
+  const shrink = 'shrink';
+  const arch = 'arch & seam';
+  const panelRise = 'panel rise';
+  const type = 'type';
+
   return {
-    growStartScale: tunable(registry, 'galerie.growStartScale', 0.46, {
-      min: 0.2,
-      max: 1,
-      step: 0.01,
-    }),
     approachParallaxShiftVh: tunable(
       registry,
       'galerie.approachParallaxShiftVh',
       12,
-      { min: 0, max: 40, step: 1, ...reinit },
+      {
+        min: 0,
+        max: 40,
+        step: 1,
+        ...reinit,
+        group: approach,
+        description:
+          'How far (vh) the galerie plane travels over the umbrella as it approaches.',
+      },
     ),
     approachDim: tunable(registry, 'galerie.approachDim', 0.35, {
       min: 0,
       max: 1,
       step: 0.01,
       ...reinit,
+      group: approach,
+      description:
+        'How much the umbrella dims as the galerie plane slides over it (0–1).',
     }),
     approachScale: tunable(registry, 'galerie.approachScale', 0.04, {
       min: 0,
       max: 0.2,
       step: 0.005,
       ...reinit,
+      group: approach,
+      description:
+        'How much the umbrella shrinks under the incoming galerie plane.',
     }),
     approachOverlapVh: tunable(registry, 'galerie.approachOverlapVh', 0, {
       min: 0,
       max: 30,
       step: 1,
       ...reinit,
+      group: approach,
+      description:
+        "Vertical overlap (vh) pulling the galerie block up over the umbrella's tail.",
     }),
     edgeShadowAlpha: tunable(registry, 'galerie.edgeShadowAlpha', 0.35, {
       min: 0,
       max: 1,
       step: 0.01,
       ...reinit,
+      group: approach,
+      description:
+        "Opacity of the shadow along the galerie plane's leading edge.",
     }),
     editorialExitStart: tunable(registry, 'galerie.editorialExitStart', 0.16, {
       ...phase,
       max: 0.8,
+      group: editorial,
+      description:
+        'Fraction of the stick where the editorial headline begins to leave.',
     }),
     editorialExitDuration: tunable(
       registry,
       'galerie.editorialExitDuration',
       0.12,
-      { ...span, max: 0.5 },
+      {
+        ...span,
+        max: 0.5,
+        group: editorial,
+        description:
+          'How long (fraction of the stick) the editorial exit takes.',
+      },
     ),
     collageEnterStart: tunable(registry, 'galerie.collageEnterStart', 0.1, {
       ...phase,
       max: 0.8,
+      group: collage,
+      description:
+        'Fraction of the scroll-in window where the collage starts assembling.',
     }),
     collageEnterDuration: tunable(
       registry,
       'galerie.collageEnterDuration',
       0.75,
-      { ...span, min: 0.05, max: 1 },
+      {
+        ...span,
+        min: 0.05,
+        max: 1,
+        group: collage,
+        description:
+          'How long (fraction of the window) the collage takes to assemble.',
+      },
     ),
-    collageRecedeStart: tunable(
-      registry,
-      'galerie.collageRecedeStart',
-      0.34,
-      phase,
-    ),
+    collageRecedeStart: tunable(registry, 'galerie.collageRecedeStart', 0.34, {
+      ...phase,
+      group: collage,
+      description:
+        'Fraction of the stick where the collage begins receding behind the featured frame.',
+    }),
     collageRecedeDuration: tunable(
       registry,
       'galerie.collageRecedeDuration',
       0.26,
-      { ...span, max: 0.8 },
+      {
+        ...span,
+        max: 0.8,
+        group: collage,
+        description:
+          'How long (fraction of the stick) the collage recede takes.',
+      },
     ),
     collageRecedeDim: tunable(registry, 'galerie.collageRecedeDim', 0.22, {
       min: 0,
       max: 1,
       step: 0.01,
+      group: collage,
+      description: 'How much the collage dims as it recedes (0–1).',
     }),
     featuredAppearStart: tunable(
       registry,
       'galerie.featuredAppearStart',
       0.24,
-      phase,
+      {
+        ...phase,
+        group: featured,
+        description: 'Fraction of the stick where the featured frame appears.',
+      },
     ),
-    growPhaseStart: tunable(registry, 'galerie.growPhaseStart', 0.3, phase),
+    growStartScale: tunable(registry, 'galerie.growStartScale', 0.46, {
+      min: 0.2,
+      max: 1,
+      step: 0.01,
+      group: grow,
+      description: 'Scale of the featured frame when the grow phase begins.',
+    }),
+    growPhaseStart: tunable(registry, 'galerie.growPhaseStart', 0.3, {
+      ...phase,
+      group: grow,
+      description:
+        'Fraction of the stick where the featured frame starts growing to full.',
+    }),
     growPhaseDuration: tunable(registry, 'galerie.growPhaseDuration', 0.34, {
       ...span,
       min: 0.05,
+      group: grow,
+      description: 'How long (fraction of the stick) the grow phase takes.',
     }),
-    chromeStart: tunable(registry, 'galerie.chromeStart', 0.24, phase),
+    chromeStart: tunable(registry, 'galerie.chromeStart', 0.24, {
+      ...phase,
+      group: chrome,
+      description:
+        "Fraction of the stick where the frame's name/counter chrome fades in.",
+    }),
     slideIntervalSec: tunable(registry, 'galerie.slideIntervalSec', 4, {
       min: 1,
       max: 12,
       step: 0.5,
+      group: carousel,
+      description: 'Seconds each image stays featured before auto-advancing.',
     }),
     slideFadeSec: tunable(registry, 'galerie.slideFadeSec', 0.6, {
       min: 0,
       max: 2,
       step: 0.05,
+      group: carousel,
+      description: 'Crossfade duration (seconds) between featured images.',
     }),
     shrinkStart: tunable(registry, 'handoff.shrinkStart', 0.02, {
       ...phase,
       max: 0.5,
+      group: shrink,
+      description:
+        'Fraction of the stick where the featured frame starts shrinking into the arch.',
     }),
     shrinkDuration: tunable(registry, 'handoff.shrinkDuration', 0.55, {
       ...span,
       min: 0.1,
+      group: shrink,
+      description: 'How long (fraction of the stick) the shrink-to-arch takes.',
     }),
     shrinkShape: tunable(registry, 'handoff.shrinkShape', 1.4, {
       min: 0.4,
       max: 3,
       step: 0.05,
+      group: shrink,
+      description: 'Ease shape of the shrink; higher bites harder at the end.',
     }),
     archWidthVw: tunable(registry, 'handoff.archWidthVw', 24, {
       min: 10,
       max: 60,
       step: 1,
       ...reinit,
+      group: arch,
+      description: 'Width (vw) of the arch-shaped frame at the seam.',
     }),
     archHeightVh: tunable(registry, 'handoff.archHeightVh', 46, {
       min: 16,
       max: 80,
       step: 1,
       ...reinit,
+      group: arch,
+      description: 'Height (vh) of the arch-shaped frame at the seam.',
     }),
     archRadius: tunable(registry, 'handoff.archRadius', 1, {
       min: 0,
       max: 1,
       step: 0.01,
       ...reinit,
+      group: arch,
+      description: 'Roundness of the arch top (0 = square, 1 = full arch).',
     }),
     seamY: tunable(registry, 'handoff.seamY', 0.56, {
       min: 0.3,
       max: 0.9,
       step: 0.01,
       ...reinit,
+      group: arch,
+      description:
+        'Vertical position of the seam where the arch sits (fraction of viewport).',
     }),
     archOverlap: tunable(registry, 'handoff.archOverlap', 0.22, {
       min: 0,
       max: 1,
       step: 0.01,
       ...reinit,
+      group: arch,
+      description:
+        'How far the arch overlaps the light chapter rising beneath it.',
     }),
-    panelRiseStart: tunable(registry, 'handoff.panelRiseStart', 0.3, phase),
+    panelRiseStart: tunable(registry, 'handoff.panelRiseStart', 0.3, {
+      ...phase,
+      group: panelRise,
+      description:
+        'Fraction of the stick where the light parchment panel begins rising.',
+    }),
     panelRiseDuration: tunable(registry, 'handoff.panelRiseDuration', 0.45, {
       ...span,
       min: 0.05,
+      group: panelRise,
+      description: 'How long (fraction of the stick) the panel rise takes.',
     }),
-    typeStart: tunable(registry, 'handoff.typeStart', 0.55, phase),
+    typeStart: tunable(registry, 'handoff.typeStart', 0.55, {
+      ...phase,
+      group: type,
+      description:
+        'Fraction of the stick where the giant serif typography enters.',
+    }),
     typeDuration: tunable(registry, 'handoff.typeDuration', 0.3, {
       ...span,
       min: 0.05,
+      group: type,
+      description: 'How long (fraction of the stick) the type entrance takes.',
     }),
-    chromeFadeStart: tunable(registry, 'handoff.chromeFadeStart', 0.22, phase),
+    chromeFadeStart: tunable(registry, 'handoff.chromeFadeStart', 0.22, {
+      ...phase,
+      group: chrome,
+      description:
+        'Fraction of the stick where the dark frame chrome fades out.',
+    }),
   };
 }
 
