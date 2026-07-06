@@ -28,7 +28,10 @@ export interface MoodPanelClasses {
   renameStamp: string;
   renameInput: string;
   group: string;
+  groupHeader: string;
   groupTitle: string;
+  groupToggle: string;
+  groupBody: string;
   row: string;
   value: string;
   colorInput: string;
@@ -98,6 +101,7 @@ const CHANNEL_LABELS: Record<MoodColorChannel, string> = {
 const PRESET_API = '/__mood-scroll-presets';
 const PRESET_NAME_PATTERN =
   /^(\d{2}-\d{4})(?:-([a-z0-9]+(?:-[a-z0-9]+)*))?\.json$/;
+let nextGroupId = 0;
 
 export function initMoodPanel(
   config: MoodScrollConfig,
@@ -424,12 +428,40 @@ function group(
 ): HTMLElement {
   const section = document.createElement('section');
   section.className = classes.group;
-  const heading = document.createElement('p');
+
+  const bodyId = `mood-panel-group-${nextGroupId}`;
+  nextGroupId += 1;
+
+  const header = document.createElement('button');
+  header.type = 'button';
+  header.className = classes.groupHeader;
+  header.setAttribute('aria-controls', bodyId);
+  header.setAttribute('aria-expanded', 'true');
+
+  const heading = document.createElement('span');
   heading.className = classes.groupTitle;
   heading.textContent = label;
-  section.append(heading);
+
+  const toggle = document.createElement('span');
+  toggle.className = classes.groupToggle;
+  toggle.setAttribute('aria-hidden', 'true');
+  toggle.textContent = '-';
+
+  const body = document.createElement('div');
+  body.id = bodyId;
+  body.className = classes.groupBody;
+
+  header.addEventListener('click', () => {
+    const expanded = header.getAttribute('aria-expanded') === 'true';
+    header.setAttribute('aria-expanded', String(!expanded));
+    body.hidden = expanded;
+    toggle.textContent = expanded ? '+' : '-';
+  });
+
+  header.append(heading, toggle);
+  section.append(header, body);
   panel.append(section);
-  return section;
+  return body;
 }
 
 function actionButton(
