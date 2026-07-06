@@ -38,7 +38,7 @@ type ConductorLink = {
 
 type ConductorState = {
   chain: ConductorLink[];
-  renderers: Map<string, () => void>;
+  renderers: Map<string, (invalidate?: boolean) => void>;
   timelines: Map<string, gsap.core.Timeline>;
   dispose: () => void;
 };
@@ -149,7 +149,7 @@ export function initMoodScroll(
       scheduleConductorRebuild();
       return;
     }
-    conductor.renderers.get(handle.sceneKey)?.();
+    conductor.renderers.get(handle.sceneKey)?.(true);
   });
 
   const section = (scene: MoodScene) =>
@@ -306,16 +306,19 @@ function registerGalerieTunables(
       min: 0,
       max: 1,
       step: 0.01,
+      requiresReinit: true,
     }),
     captionDuration: tunable(registry, 'galerie.captionDuration', 0.35, {
       min: 0.05,
       max: 1,
       step: 0.01,
+      requiresReinit: true,
     }),
     captionLiftY: tunable(registry, 'galerie.captionLiftY', 24, {
       min: 0,
       max: 80,
       step: 1,
+      requiresReinit: true,
     }),
     pinLengthVh: tunable(registry, 'galerie.pinLengthVh', 270, {
       min: 120,
@@ -336,7 +339,7 @@ function createConductorState(
 ): ConductorState {
   const chain: ConductorLink[] = [];
   const disposers: Array<() => void> = [];
-  const renderers = new Map<string, () => void>();
+  const renderers = new Map<string, (invalidate?: boolean) => void>();
   const timelines = new Map<string, gsap.core.Timeline>();
   const section = (scene: MoodScene) =>
     root.querySelector(`[data-mood-section='${scene.key}']`);
@@ -376,21 +379,17 @@ function createConductorState(
         pin: scene.pin === true,
         scrub: true,
         onUpdate: (self) => {
-          timeline.progress(self.progress);
+          timeline.time(self.progress);
         },
       });
-      timeline.progress(trigger.progress);
+      timeline.time(trigger.progress);
       chain.push({
         target: { mechanism: 'takeover', sceneKey: scene.key, progress: 0 },
         st: trigger,
       });
       timelines.set(scene.key, timeline);
-      renderers.set(scene.key, () => {
-        renderGalerieTakeover(
-          root,
-          timeline.progress(),
-          options.galerieTunables,
-        );
+      renderers.set(scene.key, (invalidate = false) => {
+        renderGalerieTimeline(timeline, trigger.progress, invalidate);
       });
       disposers.push(() => {
         trigger.kill();
@@ -465,54 +464,59 @@ function createGalerieTakeoverTimeline(
   sceneKey: string,
   galerieTunables: GalerieTunables,
 ): gsap.core.Timeline {
-  const timeline = gsap.timeline({
-    paused: true,
-    onUpdate: () => {
-      renderGalerieTakeover(root, timeline.progress(), galerieTunables);
-    },
-  });
+  const timeline = gsap.timeline({ paused: true });
 
   if (sceneKey === 'galerie') {
-    timeline.to({}, { duration: 1, ease: 'none' }, 0);
-    renderGalerieTakeover(root, 0, galerieTunables);
+    const growEl = root.querySelector('[data-mood-grow]');
+    const captionEl = root.querySelector('[data-mood-caption]');
+
+    if (growEl) {
+      timeline.fromTo(
+        growEl,
+        { scale: () => galerieTunables.growStartScale.get() },
+        { scale: 1, ease: 'none', duration: 1 },
+        0,
+      );
+    }
+
+    if (captionEl) {
+      timeline.fromTo(
+        captionEl,
+        { autoAlpha: 0, y: () => galerieTunables.captionLiftY.get() },
+        {
+          autoAlpha: 1,
+          y: 0,
+          ease: 'none',
+          duration: galerieTunables.captionDuration.get(),
+        },
+        galerieTunables.captionStart.get(),
+      );
+    }
+    renderGalerieTimeline(timeline, 0);
   }
 
   return timeline;
 }
 
-function renderGalerieTakeover(
-  root: HTMLElement,
+function renderGalerieTimeline(
+  timeline: gsap.core.Timeline,
   progress: number,
-  tunables: GalerieTunables,
+  invalidate = false,
 ): void {
-  const growEl = root.querySelector('[data-mood-grow]');
-  const captionEl = root.querySelector('[data-mood-caption]');
-  const clampedProgress = clamp01(progress);
-
-  if (growEl) {
-    gsap.set(growEl, {
-      scale: mixNumber(tunables.growStartScale.get(), 1, clampedProgress),
-    });
+  if (invalidate) {
+    timeline.invalidate();
+    const duration = timeline.duration();
+    if (duration > 0) {
+      // Force a render even when the playhead is already at this time, so
+      // function-based tween values are read again after panel edits.
+      const nudge =
+        progress <= 0
+          ? Math.min(duration, 0.001)
+          : Math.max(progress - 0.001, 0);
+      timeline.time(nudge, true);
+    }
   }
-
-  if (captionEl) {
-    const captionProgress = clamp01(
-      (clampedProgress - tunables.captionStart.get()) /
-        tunables.captionDuration.get(),
-    );
-    gsap.set(captionEl, {
-      autoAlpha: captionProgress,
-      y: mixNumber(tunables.captionLiftY.get(), 0, captionProgress),
-    });
-  }
-}
-
-function clamp01(value: number): number {
-  return Math.min(Math.max(value, 0), 1);
-}
-
-function mixNumber(from: number, to: number, progress: number): number {
-  return from + (to - from) * progress;
+  timeline.time(progress, false);
 }
 
 function sceneLengthVh(
