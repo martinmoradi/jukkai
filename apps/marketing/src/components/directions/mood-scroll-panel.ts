@@ -10,6 +10,17 @@
 import '@melloware/coloris/dist/coloris.css';
 
 import Coloris from '@melloware/coloris';
+import {
+  Check,
+  createElement as createIconElement,
+  FolderOpen,
+  GripVertical,
+  type IconNode,
+  RotateCcw,
+  Save,
+  Trash2,
+  X,
+} from 'lucide';
 
 import {
   applyMoodScrollConfig,
@@ -34,8 +45,8 @@ export interface MoodPanelClasses {
   panel: string;
   hidden: string;
   title: string;
+  dragHandle: string;
   presetButton: string;
-  titleHint: string;
   titleActions: string;
   titleAction: string;
   rename: string;
@@ -55,8 +66,6 @@ export interface MoodPanelClasses {
   row: string;
   value: string;
   colorInput: string;
-  actions: string;
-  button: string;
   presetList: string;
   presetListItem: string;
   status: string;
@@ -132,6 +141,7 @@ export function initMoodPanel(
   panel.className = `${classes.panel} ${classes.hidden}`;
   panel.setAttribute('aria-label', 'Mood background dev settings');
 
+  const defaultSnapshot = cloneMoodScrollConfig(config);
   const presetState: { fileName: string | null } = { fileName: null };
   const loadedSnapshot: { config: MoodScrollConfig } = {
     config: cloneMoodScrollConfig(config),
@@ -170,6 +180,7 @@ export function initMoodPanel(
   const controlsRoot = document.createElement('div');
   const presetList = document.createElement('div');
   presetList.className = `${classes.presetList} ${classes.hidden}`;
+  panel.append(presetList);
 
   // Collapse memory: which groups are open survives reloads. First-ever open
   // falls back to expanding the scene currently in view.
@@ -191,6 +202,7 @@ export function initMoodPanel(
     );
 
   let activeSceneKey: string | null = null;
+  let autoExpanded = false;
 
   const computeActiveScene = (): string | null => {
     // The section covering the viewport midline wins; a pinned section keeps
@@ -240,6 +252,31 @@ export function initMoodPanel(
     if (scrollFrame !== null) {
       window.cancelAnimationFrame(scrollFrame);
       scrollFrame = null;
+    }
+  };
+
+  const resetPanelPosition = () => {
+    panel.style.removeProperty('top');
+    panel.style.removeProperty('right');
+    panel.style.removeProperty('bottom');
+    panel.style.removeProperty('left');
+  };
+
+  const hidePanel = () => {
+    panel.classList.add(classes.hidden);
+    presetList.classList.add(classes.hidden);
+    resetPanelPosition();
+    stopSceneTracking();
+  };
+
+  const showPanel = () => {
+    resetPanelPosition();
+    panel.classList.remove(classes.hidden);
+    Coloris.updatePosition();
+    startSceneTracking();
+    if (!autoExpanded && !hadStoredState) {
+      autoExpanded = true;
+      if (activeSceneKey) expandGroup(activeSceneKey);
     }
   };
 
@@ -296,8 +333,8 @@ export function initMoodPanel(
     jumpButtons.clear();
     if (!devTools) return;
 
-    for (const scene of config.scenes) {
-      const label = scene.label ?? scene.key;
+    for (const [index, scene] of config.scenes.entries()) {
+      const label = scenePanelLabel(scene, index);
       const cluster = document.createElement('div');
       cluster.className = classes.jumpScene;
 
@@ -335,7 +372,7 @@ export function initMoodPanel(
   const renderSceneGroup = (scene: MoodScene, index: number) => {
     const body = group(
       scene.key,
-      scene.label ?? scene.key,
+      scenePanelLabel(scene, index),
       sceneMeta(scene, index),
     );
 
@@ -517,8 +554,8 @@ export function initMoodPanel(
     controlsRoot.replaceChildren();
 
     renderJumpRow();
-    config.scenes.forEach(renderSceneGroup);
     renderGlobalGroup();
+    config.scenes.forEach(renderSceneGroup);
 
     colorInputs = Array.from(
       controlsRoot.querySelectorAll<HTMLInputElement>('input[data-coloris]'),
@@ -574,8 +611,103 @@ export function initMoodPanel(
     });
   };
 
+  const refreshPresetList = async () => {
+    presetList.textContent = 'Loading saved JSON...';
+    try {
+      renderPresetList(await listPresetFiles());
+    } catch (error) {
+      presetList.textContent = errorMessage(error, 'Could not read presets');
+    }
+  };
+
+  const togglePresetList = () => {
+    presetList.classList.toggle(classes.hidden);
+    if (!presetList.classList.contains(classes.hidden)) {
+      void refreshPresetList();
+    }
+  };
+
+  const renderPresetList = (presets: PresetListItem[]) => {
+    presetList.replaceChildren();
+    if (presets.length === 0) {
+      presetList.textContent = 'No saved JSON yet.';
+      return;
+    }
+
+    for (const preset of presets) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = classes.presetListItem;
+      button.textContent = presetDisplayName(preset.name);
+      button.title = `Updated ${new Date(preset.updatedAt).toLocaleString()}`;
+      button.addEventListener('click', () => {
+        void loadPresetFile(preset.name);
+      });
+      presetList.append(button);
+    }
+  };
+
+  const loadPresetFile = async (fileName: string) => {
+    try {
+      const text = await readPresetFile(fileName);
+      const result = loadJsonConfig(config, text, tunables);
+      if (!result.ok) {
+        setStatus(result.message);
+        return;
+      }
+
+      presetState.fileName = fileName;
+      loadedSnapshot.config = cloneMoodScrollConfig(config);
+      rerenderControls();
+      notifyStructureChange();
+      renderPresetHeader();
+      presetList.classList.add(classes.hidden);
+      setStatus(`Loaded ${fileName}`);
+    } catch (error) {
+      setStatus(errorMessage(error, 'Could not load JSON'));
+    }
+  };
+
+  const deleteCurrentPreset = async (): Promise<boolean> => {
+    if (!presetState.fileName) return false;
+    const fileName = presetState.fileName;
+
+    try {
+      await deletePresetFile(fileName);
+      presetState.fileName = null;
+      loadedSnapshot.config = cloneMoodScrollConfig(defaultSnapshot);
+      applyMoodScrollConfig(config, defaultSnapshot, tunables);
+      rerenderControls();
+      notifyStructureChange();
+      renderPresetHeader();
+      presetList.classList.add(classes.hidden);
+      setStatus(`Deleted ${fileName}; restored default`);
+      return true;
+    } catch (error) {
+      setStatus(errorMessage(error, 'Could not delete JSON'));
+      return false;
+    }
+  };
+
+  const renderHeaderActions = () =>
+    createHeaderActions(classes, {
+      onClose: hidePanel,
+      onDelete: presetState.fileName
+        ? () => {
+            void deleteCurrentPreset();
+          }
+        : undefined,
+      onLoad: togglePresetList,
+      onReset: resetUnsavedTweaks,
+      onSave: () => {
+        void saveCurrentPreset();
+      },
+      setStatus,
+    });
+
   const renderPresetHeader = (editing = false) => {
     title.replaceChildren();
+    const dragHandle = createDragHandle(classes, panel);
 
     if (editing && presetState.fileName) {
       const parsed = parsePresetFileName(presetState.fileName);
@@ -640,13 +772,7 @@ export function initMoodPanel(
       });
 
       label.append(stamp, input);
-      title.append(
-        label,
-        createHeaderActions(classes, resetUnsavedTweaks, () => {
-          panel.classList.add(classes.hidden);
-          stopSceneTracking();
-        }),
-      );
+      title.append(dragHandle, label, renderHeaderActions());
       window.setTimeout(() => {
         input.focus();
         input.select();
@@ -663,93 +789,19 @@ export function initMoodPanel(
       : 'Save JSON to name this preset';
     button.addEventListener('click', beginRename);
 
-    title.append(
-      button,
-      createHeaderActions(classes, resetUnsavedTweaks, () => {
-        panel.classList.add(classes.hidden);
-        stopSceneTracking();
-      }),
-    );
+    title.append(dragHandle, button, renderHeaderActions());
   };
 
   renderPresetHeader();
   renderControls();
 
-  const actions = document.createElement('div');
-  actions.className = classes.actions;
-
-  const save = actionButton(classes, 'Save JSON');
-  save.addEventListener('click', () => {
-    void saveCurrentPreset();
-  });
-
-  const load = actionButton(classes, 'Load JSON');
-  load.addEventListener('click', () => {
-    presetList.classList.toggle(classes.hidden);
-    if (!presetList.classList.contains(classes.hidden)) {
-      void refreshPresetList();
-    }
-  });
-
-  const refreshPresetList = async () => {
-    presetList.textContent = 'Loading saved JSON...';
-    try {
-      renderPresetList(await listPresetFiles());
-    } catch (error) {
-      presetList.textContent = errorMessage(error, 'Could not read presets');
-    }
-  };
-
-  const renderPresetList = (presets: PresetListItem[]) => {
-    presetList.replaceChildren();
-    if (presets.length === 0) {
-      presetList.textContent = 'No saved JSON yet.';
-      return;
-    }
-
-    for (const preset of presets) {
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.className = classes.presetListItem;
-      button.textContent = presetDisplayName(preset.name);
-      button.title = `Updated ${new Date(preset.updatedAt).toLocaleString()}`;
-      button.addEventListener('click', () => {
-        void loadPresetFile(preset.name);
-      });
-      presetList.append(button);
-    }
-  };
-
-  const loadPresetFile = async (fileName: string) => {
-    try {
-      const text = await readPresetFile(fileName);
-      const result = loadJsonConfig(config, text, tunables);
-      if (!result.ok) {
-        setStatus(result.message);
-        return;
-      }
-
-      presetState.fileName = fileName;
-      loadedSnapshot.config = cloneMoodScrollConfig(config);
-      rerenderControls();
-      notifyStructureChange();
-      renderPresetHeader();
-      presetList.classList.add(classes.hidden);
-      setStatus(`Loaded ${fileName}`);
-    } catch (error) {
-      setStatus(errorMessage(error, 'Could not load JSON'));
-    }
-  };
-
-  actions.append(save, load);
-  panel.append(jumpRoot, controlsRoot, actions, presetList, status);
+  panel.append(jumpRoot, controlsRoot, status);
 
   document.body.append(panel);
 
   Coloris.init();
   mountColoris();
 
-  let autoExpanded = false;
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'd' && event.key !== 'D') return;
     if (event.metaKey || event.ctrlKey || event.altKey) return;
@@ -760,18 +812,8 @@ export function initMoodPanel(
     ) {
       return;
     }
-    panel.classList.toggle(classes.hidden);
-    Coloris.updatePosition();
-
-    if (panel.classList.contains(classes.hidden)) {
-      stopSceneTracking();
-      return;
-    }
-    startSceneTracking();
-    if (!autoExpanded && !hadStoredState) {
-      autoExpanded = true;
-      if (activeSceneKey) expandGroup(activeSceneKey);
-    }
+    if (panel.classList.contains(classes.hidden)) showPanel();
+    else hidePanel();
   });
 
   return panel;
@@ -1075,6 +1117,10 @@ function sceneMeta(scene: MoodScene, index: number): string {
   return scene.enter.mechanism;
 }
 
+function scenePanelLabel(scene: MoodScene, index: number): string {
+  return `${String(index + 1).padStart(2, '0')} ${scene.label ?? scene.key}`;
+}
+
 function sceneScopedTunableLabel(handle: MoodTunableHandle): string {
   const prefix = `${handle.sceneKey} `;
   return handle.label.startsWith(prefix)
@@ -1104,41 +1150,203 @@ function parsePanelNumber(
   return Math.min(Math.max(value, spec.min), spec.max);
 }
 
+function createDragHandle(
+  classes: Pick<MoodPanelClasses, 'dragHandle'>,
+  panel: HTMLElement,
+): HTMLElement {
+  const handle = document.createElement('span');
+  handle.className = classes.dragHandle;
+  handle.title = 'Drag panel';
+  handle.setAttribute('aria-hidden', 'true');
+  handle.append(createPanelIcon(GripVertical));
+  installPanelDrag(handle, panel);
+  return handle;
+}
+
+function installPanelDrag(handle: HTMLElement, panel: HTMLElement): void {
+  handle.addEventListener('pointerdown', (event) => {
+    if (event.button !== 0) return;
+    event.preventDefault();
+
+    const rect = panel.getBoundingClientRect();
+    const startLeft = rect.left;
+    const startTop = rect.top;
+    const startX = event.clientX;
+    const startY = event.clientY;
+
+    panel.style.left = `${startLeft}px`;
+    panel.style.top = `${startTop}px`;
+    panel.style.right = 'auto';
+    panel.style.bottom = 'auto';
+    try {
+      handle.setPointerCapture(event.pointerId);
+    } catch {
+      // Synthetic pointer events have no active pointer to capture.
+    }
+    handle.dataset.dragging = 'true';
+
+    const move = (moveEvent: PointerEvent) => {
+      const margin = 8;
+      const maxLeft = Math.max(margin, window.innerWidth - rect.width - margin);
+      const maxTop = Math.max(
+        margin,
+        window.innerHeight - rect.height - margin,
+      );
+      panel.style.left = `${clamp(
+        startLeft + moveEvent.clientX - startX,
+        margin,
+        maxLeft,
+      )}px`;
+      panel.style.top = `${clamp(
+        startTop + moveEvent.clientY - startY,
+        margin,
+        maxTop,
+      )}px`;
+      Coloris.updatePosition();
+    };
+
+    const stop = (stopEvent: PointerEvent) => {
+      handle.removeEventListener('pointermove', move);
+      handle.removeEventListener('pointerup', stop);
+      handle.removeEventListener('pointercancel', stop);
+      handle.dataset.dragging = 'false';
+      if (handle.hasPointerCapture(stopEvent.pointerId)) {
+        handle.releasePointerCapture(stopEvent.pointerId);
+      }
+    };
+
+    handle.addEventListener('pointermove', move);
+    handle.addEventListener('pointerup', stop);
+    handle.addEventListener('pointercancel', stop);
+  });
+}
+
 function createHeaderActions(
   classes: Pick<MoodPanelClasses, 'titleActions' | 'titleAction'>,
-  onReset: () => void,
-  onClose: () => void,
+  options: {
+    onClose: () => void;
+    onDelete?: () => void;
+    onLoad: () => void;
+    onReset: () => void;
+    onSave: () => void;
+    setStatus: (message: string) => void;
+  },
 ): HTMLElement {
   const actions = document.createElement('div');
   actions.className = classes.titleActions;
 
-  const reset = document.createElement('button');
-  reset.type = 'button';
-  reset.className = classes.titleAction;
-  reset.textContent = 'Reset';
-  reset.title = 'Reset unsaved tweaks to the loaded JSON or defaults';
-  reset.addEventListener('click', onReset);
+  actions.append(
+    createIconButton(classes, {
+      action: 'save',
+      icon: Save,
+      label: 'Save JSON',
+      onClick: options.onSave,
+    }),
+    createIconButton(classes, {
+      action: 'load',
+      icon: FolderOpen,
+      label: 'Load JSON',
+      onClick: options.onLoad,
+    }),
+    createIconButton(classes, {
+      action: 'reset',
+      icon: RotateCcw,
+      label: 'Reset unsaved tweaks',
+      onClick: options.onReset,
+    }),
+  );
 
-  const close = document.createElement('button');
-  close.type = 'button';
-  close.className = classes.titleAction;
-  close.textContent = 'Close';
-  close.dataset.panelAction = 'close';
-  close.addEventListener('click', onClose);
+  if (options.onDelete) {
+    actions.append(
+      createDeleteButton(classes, options.onDelete, options.setStatus),
+    );
+  }
 
-  actions.append(reset, close);
+  actions.append(
+    createIconButton(classes, {
+      action: 'close',
+      icon: X,
+      label: 'Close',
+      onClick: options.onClose,
+    }),
+  );
+
   return actions;
 }
 
-function actionButton(
-  classes: Pick<MoodPanelClasses, 'button'>,
-  label: string,
+function createIconButton(
+  classes: Pick<MoodPanelClasses, 'titleAction'>,
+  options: {
+    action: string;
+    icon: IconNode;
+    label: string;
+    onClick: () => void;
+  },
 ): HTMLButtonElement {
   const button = document.createElement('button');
   button.type = 'button';
-  button.className = classes.button;
-  button.textContent = label;
+  button.className = classes.titleAction;
+  button.dataset.panelAction = options.action;
+  button.title = options.label;
+  button.setAttribute('aria-label', options.label);
+  button.append(createPanelIcon(options.icon));
+  button.addEventListener('click', options.onClick);
   return button;
+}
+
+function createDeleteButton(
+  classes: Pick<MoodPanelClasses, 'titleAction'>,
+  onDelete: () => void,
+  setStatus: (message: string) => void,
+): HTMLButtonElement {
+  const button = createIconButton(classes, {
+    action: 'delete',
+    icon: Trash2,
+    label: 'Delete loaded JSON',
+    onClick: () => {
+      if (button.dataset.confirming !== 'true') {
+        armDeleteButton(button, setStatus);
+        return;
+      }
+
+      onDelete();
+    },
+  });
+  return button;
+}
+
+function armDeleteButton(
+  button: HTMLButtonElement,
+  setStatus: (message: string) => void,
+): void {
+  button.dataset.confirming = 'true';
+  button.title = 'Confirm delete';
+  button.setAttribute('aria-label', 'Confirm delete');
+  button.replaceChildren(createPanelIcon(Check));
+  setStatus('Click delete again to confirm');
+
+  window.setTimeout(() => {
+    if (!button.isConnected || button.dataset.confirming !== 'true') return;
+    button.dataset.confirming = 'false';
+    button.title = 'Delete loaded JSON';
+    button.setAttribute('aria-label', 'Delete loaded JSON');
+    button.replaceChildren(createPanelIcon(Trash2));
+  }, 2600);
+}
+
+function createPanelIcon(icon: IconNode): SVGElement {
+  const el = createIconElement(icon, {
+    'aria-hidden': 'true',
+    focusable: 'false',
+    height: 15,
+    width: 15,
+  });
+  el.setAttribute('stroke-width', '2.1');
+  return el;
+}
+
+function clamp(value: number, min: number, max: number): number {
+  return Math.min(Math.max(value, min), max);
 }
 
 function loadJsonConfig(
@@ -1233,6 +1441,13 @@ async function renamePresetFile(
 ): Promise<{ fileName: string }> {
   return requestPreset('/rename', {
     body: JSON.stringify({ fileName, slug }),
+    method: 'POST',
+  });
+}
+
+async function deletePresetFile(fileName: string): Promise<void> {
+  await requestPreset<{ ok: true }>('/delete', {
+    body: JSON.stringify({ fileName }),
     method: 'POST',
   });
 }
