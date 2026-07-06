@@ -1,9 +1,9 @@
 // Palette and tuning config for the /directions/mood-scroll/ comp.
 //
 // Grounds stay on the warm ramp (July 5 color decision); the hue journey
-// (lavender, blue/aubergine, magenta) lives in the blob atmosphere so the
-// closed color system is not reopened by default. Every value here is a
-// stage anchor to point at in the browser, not a token.
+// (lavender, blue, magenta) lives in the blob atmosphere so the closed color
+// system is not reopened by default. Every value here is a stage anchor to
+// point at in the browser, not a token.
 
 export interface Mood {
   ground: string;
@@ -14,9 +14,6 @@ export interface Mood {
 export const MOOD_COLOR_CHANNELS = ['ground', 'blob1', 'blob2'] as const;
 export type MoodColorChannel = (typeof MOOD_COLOR_CHANNELS)[number];
 
-export type ProjectsVariant = 'blue' | 'aubergine';
-export const PROJECTS_VARIANTS = ['blue', 'aubergine'] as const;
-
 export interface MoodScrollConfig {
   blobRadius: number;
   blobRadiusRatio: number;
@@ -25,12 +22,10 @@ export interface MoodScrollConfig {
   noiseStrength: number;
   driftSpeed: number;
   velocityInfluence: number;
-  projectsVariant: ProjectsVariant;
   moods: {
     hero: Mood;
     umbrella: Mood;
-    projectsBlue: Mood;
-    projectsAubergine: Mood;
+    projects: Mood;
     artShop: Mood;
     finale: Mood;
   };
@@ -39,8 +34,7 @@ export interface MoodScrollConfig {
 export const MOOD_KEYS = [
   'hero',
   'umbrella',
-  'projectsBlue',
-  'projectsAubergine',
+  'projects',
   'artShop',
   'finale',
 ] as const;
@@ -81,16 +75,10 @@ export function createDefaultConfig(): MoodScrollConfig {
     noiseStrength: 0.05,
     driftSpeed: 0.28,
     velocityInfluence: 1,
-    projectsVariant: 'aubergine',
     moods: {
       hero: { ground: '#f7ddba', blob1: '#ffb160', blob2: '#eb9c55' },
       umbrella: { ground: '#f2eae0', blob1: '#cdb9e8', blob2: '#e6cbd9' },
-      projectsBlue: { ground: '#1a2334', blob1: '#35507c', blob2: '#6f462e' },
-      projectsAubergine: {
-        ground: '#291a2b',
-        blob1: '#5b3459',
-        blob2: '#8f4d31',
-      },
+      projects: { ground: '#1a2334', blob1: '#35507c', blob2: '#6f462e' },
       artShop: { ground: '#f4e0dd', blob1: '#ec5ea4', blob2: '#ffa075' },
       finale: { ground: '#211913', blob1: '#33261d', blob2: '#3d2b20' },
     },
@@ -98,11 +86,6 @@ export function createDefaultConfig(): MoodScrollConfig {
 }
 
 export function resolveMood(config: MoodScrollConfig, stop: MoodStop): Mood {
-  if (stop === 'projects') {
-    return config.projectsVariant === 'blue'
-      ? config.moods.projectsBlue
-      : config.moods.projectsAubergine;
-  }
   return config.moods[stop];
 }
 
@@ -114,8 +97,7 @@ export function cloneMoodScrollConfig(
     moods: {
       hero: { ...config.moods.hero },
       umbrella: { ...config.moods.umbrella },
-      projectsBlue: { ...config.moods.projectsBlue },
-      projectsAubergine: { ...config.moods.projectsAubergine },
+      projects: { ...config.moods.projects },
       artShop: { ...config.moods.artShop },
       finale: { ...config.moods.finale },
     },
@@ -135,11 +117,6 @@ export function applyMoodScrollConfig(
       target[key] = value;
       changed = true;
     }
-  }
-
-  if (isProjectsVariant(raw.projectsVariant)) {
-    target.projectsVariant = raw.projectsVariant;
-    changed = true;
   }
 
   if (isRecord(raw.moods)) {
@@ -199,8 +176,4 @@ export function mixRgb(a: Rgb, b: Rgb, t: number): Rgb {
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
-}
-
-function isProjectsVariant(value: unknown): value is ProjectsVariant {
-  return PROJECTS_VARIANTS.includes(value as ProjectsVariant);
 }
