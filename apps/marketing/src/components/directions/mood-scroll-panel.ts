@@ -11,11 +11,14 @@ import Coloris from '@melloware/coloris';
 import {
   applyMoodScrollConfig,
   cloneMoodScrollConfig,
+  MOOD_ENTER_EASES,
   MOOD_FIELD_COLOR_CHANNELS,
+  MOOD_SCROLL_STRUCTURE_CHANGE_EVENT,
   type MoodFieldColorChannel,
   type MoodFieldNumberChannel,
   type MoodScrollConfig,
   normalizeHexColor,
+  sortMoodSceneStops,
 } from './mood-scroll-config';
 
 export interface MoodPanelClasses {
@@ -123,6 +126,9 @@ export function initMoodPanel(
   const syncAll = () => {
     for (const sync of syncControls) sync();
   };
+  const notifyStructureChange = () => {
+    window.dispatchEvent(new CustomEvent(MOOD_SCROLL_STRUCTURE_CHANGE_EVENT));
+  };
 
   const title = document.createElement('div');
   title.className = classes.title;
@@ -181,8 +187,10 @@ export function initMoodPanel(
             get: () =>
               scene.enter.mechanism === 'crossfade' ? scene.enter.band[0] : 0,
             set: (value) => {
-              if (scene.enter.mechanism === 'crossfade')
+              if (scene.enter.mechanism === 'crossfade') {
                 scene.enter.band[0] = value;
+                notifyStructureChange();
+              }
             },
           },
         );
@@ -194,8 +202,28 @@ export function initMoodPanel(
             get: () =>
               scene.enter.mechanism === 'crossfade' ? scene.enter.band[1] : 0,
             set: (value) => {
-              if (scene.enter.mechanism === 'crossfade')
+              if (scene.enter.mechanism === 'crossfade') {
                 scene.enter.band[1] = value;
+                notifyStructureChange();
+              }
+            },
+          },
+        );
+        addSelect(
+          sceneGroup,
+          classes,
+          {
+            label: 'enter ease',
+            options: MOOD_ENTER_EASES,
+          },
+          {
+            get: () =>
+              scene.enter.mechanism === 'crossfade' ? scene.enter.ease : 'none',
+            set: (value) => {
+              if (scene.enter.mechanism === 'crossfade') {
+                scene.enter.ease = value;
+                notifyStructureChange();
+              }
             },
           },
         );
@@ -209,7 +237,10 @@ export function initMoodPanel(
           {
             get: () => (scene.enter.mechanism === 'cut' ? scene.enter.at : 0),
             set: (value) => {
-              if (scene.enter.mechanism === 'cut') scene.enter.at = value;
+              if (scene.enter.mechanism === 'cut') {
+                scene.enter.at = value;
+                notifyStructureChange();
+              }
             },
           },
         );
@@ -224,6 +255,7 @@ export function initMoodPanel(
             get: () => stop.at,
             set: (value) => {
               stop.at = value;
+              sortMoodSceneStops(scene);
             },
           },
         );
@@ -426,6 +458,7 @@ export function initMoodPanel(
       renderControls();
       mountColoris();
       syncAll();
+      notifyStructureChange();
       renderPresetHeader();
       presetList.classList.add(classes.hidden);
       setStatus(`Loaded ${fileName}`);
@@ -495,6 +528,43 @@ function addNumberSlider<Key extends string>(
   input.addEventListener('mood-scroll-sync', sync);
 }
 
+function addSelect<Value extends string>(
+  parent: HTMLElement,
+  classes: Pick<MoodPanelClasses, 'row'>,
+  spec: {
+    label: string;
+    options: readonly Value[];
+  },
+  binding: {
+    get: () => Value;
+    set: (value: Value) => void;
+  },
+): void {
+  const row = document.createElement('label');
+  row.className = classes.row;
+  const text = document.createElement('span');
+  text.textContent = spec.label;
+  const input = document.createElement('select');
+  input.dataset.syncSelect = 'true';
+  for (const optionValue of spec.options) {
+    const option = document.createElement('option');
+    option.value = optionValue;
+    option.textContent = optionValue;
+    input.append(option);
+  }
+
+  const sync = () => {
+    input.value = binding.get();
+  };
+  input.addEventListener('change', () => {
+    binding.set(input.value as Value);
+  });
+  row.append(text, input);
+  parent.append(row);
+  sync();
+  input.addEventListener('mood-scroll-sync', sync);
+}
+
 function addColorInput(
   parent: HTMLElement,
   classes: Pick<MoodPanelClasses, 'row' | 'colorInput'>,
@@ -541,6 +611,11 @@ function collectInputSyncs(root: HTMLElement): Array<() => void> {
       root.querySelectorAll<HTMLInputElement>('[data-sync-color]'),
     ).map((input) => () => {
       input.dispatchEvent(new Event('input', { bubbles: true }));
+    }),
+    ...Array.from(
+      root.querySelectorAll<HTMLSelectElement>('[data-sync-select]'),
+    ).map((input) => () => {
+      input.dispatchEvent(new Event('mood-scroll-sync'));
     }),
   ];
 }

@@ -1,5 +1,10 @@
 {
-  "source": "v1 mood-scroll conductor before issue #53",
+  "source": "frozen v1 mood-scroll boundary chain projected into conductor-v2 coordinates",
+  "generatedBy": "bun run --cwd apps/marketing fixture:mood-scroll-v1",
+  "coordinateSpace": {
+    "journeyEndVh": 550,
+    "note": "samples field windows, not full DOM page scroll height"
+  },
   "samples": [
     {
       "scrollFraction": 0,

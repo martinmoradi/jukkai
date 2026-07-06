@@ -17,7 +17,10 @@ import {
   toMoodGlFrame,
 } from './mood-scroll-conductor';
 import type { MoodScene, MoodScrollConfig, Rgb } from './mood-scroll-config';
-import { mixRgb } from './mood-scroll-config';
+import {
+  mixRgb,
+  MOOD_SCROLL_STRUCTURE_CHANGE_EVENT,
+} from './mood-scroll-config';
 import { createMoodGl } from './mood-scroll-gl';
 
 const VELOCITY_SMOOTHING = 0.12;
@@ -26,6 +29,11 @@ const VELOCITY_NORM_PX = 60;
 type ConductorLink = {
   target: ConductorTarget;
   st: ScrollTrigger;
+};
+
+type ConductorState = {
+  chain: ConductorLink[];
+  dispose: () => void;
 };
 
 export function initMoodScroll(
@@ -45,79 +53,32 @@ export function initMoodScroll(
   const frozen =
     new URLSearchParams(window.location.search).get('frozen') === '1';
 
+  let conductor = createConductorState(root, config);
+  let chain = conductor.chain;
+  let conductorRebuildFrame: number | null = null;
+
+  const rebuildConductor = () => {
+    conductor.dispose();
+    conductor = createConductorState(root, config);
+    chain = conductor.chain;
+    ScrollTrigger.refresh();
+  };
+
+  const scheduleConductorRebuild = () => {
+    if (conductorRebuildFrame !== null) return;
+    conductorRebuildFrame = window.requestAnimationFrame(() => {
+      conductorRebuildFrame = null;
+      rebuildConductor();
+    });
+  };
+
+  window.addEventListener(
+    MOOD_SCROLL_STRUCTURE_CHANGE_EVENT,
+    scheduleConductorRebuild,
+  );
+
   const section = (scene: MoodScene) =>
     root.querySelector(`[data-mood-section='${scene.key}']`);
-
-  // Mood conductor: an ordered chain of scene enter triggers. The palette is
-  // NOT written from competing onUpdate callbacks (an instant jump makes the
-  // last-created trigger stomp the others); instead the render loop walks
-  // the chain each frame and takes the deepest link with progress > 0.
-  const chain: ConductorLink[] = [];
-
-  let sceneStartVh = 0;
-  for (let index = 0; index < config.scenes.length; index += 1) {
-    const scene = config.scenes[index];
-    const previous = config.scenes[index - 1];
-    const lengthVh = parseSceneLengthVh(scene.length);
-
-    if (index === 0 || !previous) {
-      sceneStartVh += lengthVh;
-      continue;
-    }
-
-    const el = section(scene);
-    if (!el) {
-      sceneStartVh += lengthVh;
-      continue;
-    }
-
-    if (scene.enter.mechanism === 'takeover') {
-      const pinTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: el,
-          start: 'top top',
-          end: `+=${scenePinTravelVh(scene)}%`,
-          pin: scene.pin === true,
-          scrub: true,
-        },
-      });
-      const pinTrigger = pinTimeline.scrollTrigger;
-      if (pinTrigger) {
-        chain.push({
-          target: { mechanism: 'takeover', sceneKey: scene.key, progress: 0 },
-          st: pinTrigger,
-        });
-      }
-
-      wireGalerieTakeover(root, pinTimeline, scene.key);
-      sceneStartVh += lengthVh;
-      continue;
-    }
-
-    const enterWindow = resolveEnterWindow(
-      scene.enter,
-      sceneStartVh,
-      lengthVh,
-      scene.pin === true,
-    );
-    const trigger = ScrollTrigger.create({
-      trigger: el,
-      start: `top ${viewportLineForStart(scene, enterWindow.startVh, sceneStartVh)}%`,
-      end: `top ${viewportLineForStart(scene, enterWindow.endVh, sceneStartVh)}%`,
-      scrub: true,
-    });
-
-    chain.push({
-      target: {
-        mechanism: scene.enter.mechanism,
-        fromSceneKey: previous.key,
-        toSceneKey: scene.key,
-        progress: 0,
-      },
-      st: trigger,
-    });
-    sceneStartVh += lengthVh;
-  }
 
   // Finale parallax: layers translate at different rates over the settled
   // field, an opaque texture change from the ambient sections above.
@@ -221,7 +182,128 @@ export function initMoodScroll(
   return () => {
     gsap.ticker.remove(tick);
     window.removeEventListener('resize', onResize);
+    window.removeEventListener(
+      MOOD_SCROLL_STRUCTURE_CHANGE_EVENT,
+      scheduleConductorRebuild,
+    );
+    if (conductorRebuildFrame !== null) {
+      window.cancelAnimationFrame(conductorRebuildFrame);
+    }
+    conductor.dispose();
     moodGl.dispose();
+  };
+}
+
+function createConductorState(
+  root: HTMLElement,
+  config: MoodScrollConfig,
+): ConductorState {
+  const chain: ConductorLink[] = [];
+  const disposers: Array<() => void> = [];
+  const section = (scene: MoodScene) =>
+    root.querySelector(`[data-mood-section='${scene.key}']`);
+
+  // Mood conductor: an ordered chain of scene enter triggers. The palette is
+  // NOT written from competing onUpdate callbacks (an instant jump makes the
+  // last-created trigger stomp the others); instead the render loop walks
+  // the chain each frame and takes the deepest link with progress > 0.
+  let sceneStartVh = 0;
+  for (let index = 0; index < config.scenes.length; index += 1) {
+    const scene = config.scenes[index];
+    const previous = config.scenes[index - 1];
+    const lengthVh = parseSceneLengthVh(scene.length);
+
+    if (index === 0 || !previous) {
+      sceneStartVh += lengthVh;
+      continue;
+    }
+
+    const el = section(scene);
+    if (!el) {
+      sceneStartVh += lengthVh;
+      continue;
+    }
+
+    if (scene.enter.mechanism === 'takeover') {
+      const pinTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: el,
+          start: 'top top',
+          end: `+=${scenePinTravelVh(scene)}%`,
+          pin: scene.pin === true,
+          scrub: true,
+        },
+      });
+      const pinTrigger = pinTimeline.scrollTrigger;
+      if (pinTrigger) {
+        chain.push({
+          target: { mechanism: 'takeover', sceneKey: scene.key, progress: 0 },
+          st: pinTrigger,
+        });
+      }
+      disposers.push(() => {
+        pinTimeline.scrollTrigger?.kill();
+        pinTimeline.kill();
+      });
+
+      wireGalerieTakeover(root, pinTimeline, scene.key);
+      sceneStartVh += lengthVh;
+      continue;
+    }
+
+    const enterWindow = resolveEnterWindow(
+      scene.enter,
+      sceneStartVh,
+      lengthVh,
+      scene.pin === true,
+    );
+    const startLine = viewportLineForStart(
+      scene,
+      enterWindow.startVh,
+      sceneStartVh,
+    );
+    const endLine = viewportLineForStart(
+      scene,
+      enterWindow.endVh,
+      sceneStartVh,
+    );
+    const trigger = ScrollTrigger.create({
+      trigger: el,
+      start: `top ${startLine}%`,
+      end:
+        scene.enter.mechanism === 'cut' || startLine === endLine
+          ? '+=1'
+          : `top ${endLine}%`,
+      scrub: true,
+    });
+    disposers.push(() => trigger.kill());
+
+    chain.push({
+      target:
+        scene.enter.mechanism === 'crossfade'
+          ? {
+              mechanism: 'crossfade',
+              fromSceneKey: previous.key,
+              toSceneKey: scene.key,
+              progress: 0,
+              ease: scene.enter.ease,
+            }
+          : {
+              mechanism: 'cut',
+              fromSceneKey: previous.key,
+              toSceneKey: scene.key,
+              progress: 0,
+            },
+      st: trigger,
+    });
+    sceneStartVh += lengthVh;
+  }
+
+  return {
+    chain,
+    dispose: () => {
+      for (const dispose of disposers.splice(0).reverse()) dispose();
+    },
   };
 }
 

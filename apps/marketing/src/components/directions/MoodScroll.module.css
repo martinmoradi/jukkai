@@ -320,6 +320,22 @@
   min-width: 0;
 }
 
+.panelRow select {
+  flex: 1;
+  min-width: 0;
+  padding: 0.34rem 0.45rem;
+  font: inherit;
+  color: #ece4d8;
+  background: rgb(236 228 216 / 0.08);
+  border: 1px solid rgb(236 228 216 / 0.18);
+  border-radius: 5px;
+}
+
+.panelRow select:focus {
+  outline: 2px solid rgb(236 228 216 / 0.42);
+  outline-offset: 1px;
+}
+
 /* stylelint-disable selector-pseudo-class-no-unknown */
 .panelRow :global(.clr-field) {
   flex: 1;
