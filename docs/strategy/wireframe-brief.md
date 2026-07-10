@@ -1,7 +1,7 @@
 # Jukkai wireframe brief (Phase 3.5)
 
 **Phase 3.5 candidate, produced July 2, 2026 and reconciled July 10.** Derived from
-`docs/strategy/foundation.md` (v1.7, truth), `docs/strategy/messaging.md`, `docs/strategy/sitemap.md` and
+`docs/strategy/foundation.md` (v1.8, truth), `docs/strategy/messaging.md`, `docs/strategy/sitemap.md` and
 `docs/strategy/content-matrix.md` (IA and content source). Audience: a Figma/wireframe agent.
 
 This document preserves section-level page hypotheses: what each current candidate
@@ -59,7 +59,7 @@ Reference these by ID in the per-page briefs; design each once, reuse everywhere
 
 | ID   | Module                    | Contents                                                                                                                                                                  |
 | ---- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| PM1  | Qualification strip       | 2 architectes · 30 ans de métier · UNAID · current insurance. The 2012 founding story never appears as a contextless badge. Compact; qualifies, never persuades.          |
+| PM1  | Qualification strip       | 30 ans de métier · UNAID · current insurance. Team size and the 2012 founding story never appear as contextless badges. Compact; qualifies, never persuades.              |
 | PM2  | Testimonial card          | Client quote slot + attribution (first name + commune + project type). Content is C4-gated: slots only.                                                                   |
 | PM3  | Project card              | Photo, creative title (Jukkai register), descriptive subtitle, commune, project type. Dual naming always.                                                                 |
 | PM4  | Before/after or 3D module | Transformation proof; optional per project (not all rows have it).                                                                                                        |
@@ -378,13 +378,15 @@ Reference these by ID in the per-page briefs; design each once, reuse everywhere
    name.
 2. **Lead register.** Blend: the story in Jukkai warmth, the credentials in
    architecture precision. Never alternate registers within one block.
-3. **Above the fold.** The people (2 architectes: Crystelle and Laura) and the
-   story opening. Not a keyword surface; no SEO hero mechanics.
+3. **Above the fold.** Crystelle and Laura, both introduced accurately as
+   architectes d'intérieur diplômées, and the story opening. This is team context,
+   not a proof badge. Not a keyword surface; no SEO hero mechanics.
 4. **Section order.**
    1. Story opening: Crystelle, 30 ans de métier, the move to Châteaugiron
       (Jukkai warmth).
    2. The umbrella: what Jukkai is, connecting the studio and the Galerie.
-   3. The two architects (both present, roles).
+   3. Crystelle and Laura as architectes d'intérieur diplômées, with their distinct
+      roles clear.
    4. How she thinks: neuro-architecture as a narrative lens inside the story,
       grounded in real training and used only where the project makes it
       relevant (C6-gated wording), plus « Chaque contrainte est un terrain de

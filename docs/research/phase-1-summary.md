@@ -20,8 +20,8 @@ two amendments after review, and two items remain conditional/later.
   pricing is both a trust move and a competitive wedge.
 - The market leaves an empty position for Jukkai: a designed emotional world, public
   architecture pricing, and real proof in one place.
-- The proof layer is unusually valuable. UNAID, 30 ans de métier, 2 architectes,
-  carried-over Google reviews, and selected projects can beat a field where many
+- The proof layer is unusually valuable. UNAID, 30 ans de métier, current
+  insurance, carried-over Google reviews, and selected projects can beat a field where many
   competitors show either proof or pricing, rarely both.
 - Châteaugiron is a local-discovery opportunity, but mostly through GBP, citations,
   physical-anchor copy, and later proof-backed local content.

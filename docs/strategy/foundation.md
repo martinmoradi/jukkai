@@ -1,10 +1,11 @@
 # Jukkai marketing foundation
 
-**Version 1.7. Frozen July 2, 2026 (v1.0), amended same day after the cross-model
+**Version 1.8. Frozen July 2, 2026 (v1.0), amended same day after the cross-model
 critic pass (v1.1), Phase 1 research reconciliation (v1.2), Martin's Phase 2
 clarifications (v1.3), the name-weight ruling (v1.4), and the GBP/signage
 decoupling (v1.5), Martin's geography / gallery-language clarification (v1.6),
-and the July 10 Crystelle checkpoint reconciliation (v1.7).**
+the July 10 Crystelle checkpoint reconciliation (v1.7), and the team-title
+correction (v1.8).**
 
 This is the canonical source of truth for all marketing phases (see `docs/operations/method.md`).
 It was produced in Phase 0 from the five source docs plus the July 2, 2026 grilling
@@ -21,7 +22,8 @@ adapter is generated from this file and regenerated on every change, never hand-
 
 - Crystelle Terrasson is an interior architect (architecte d'intérieur, UNAID-qualified),
   with 30 years in the profession and her own studio since 2012.
-- The practice has two architects: Crystelle Terrasson and Laura Corbel.
+- The practice team is Crystelle Terrasson and her collaboratrice Laura Corbel;
+  both are architectes d'intérieur diplômées.
 - The practice moves from Vern-sur-Seiche to Châteaugiron (Petite Cité de Caractère,
   Ille-et-Vilaine, about 20 minutes from Rennes), into a space shared with the Jukkai
   galerie. Operational opening target: October 1, 2026. Public teaser copy uses
@@ -38,15 +40,15 @@ adapter is generated from this file and regenerated on every change, never hand-
 
 ## 2. Public claims canon
 
-The only experience and identity numbers allowed in public copy:
+The only public identity and experience claims allowed in copy:
 
-| Claim                                                               | Basis                             | Rule                                                                                             |
-| ------------------------------------------------------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------ |
-| "2 architectes"                                                     | Crystelle + Laura Corbel          | Canonical                                                                                        |
-| "30 ans de métier"                                                  | Crystelle's total personal career | Hers alone; survives staffing changes; never phrased as studio age                               |
-| "studio fondé en 2012"                                              | Studio founding                   | Always contextualised: Crystelle founded the studio in 2012; Jukkai itself is new in 2026        |
-| "labellisée en 2023 Professionnel de la décoration éco-responsable" | My Green Cocoon label             | Supporting proof only; use the exact label name, never a broad environmental-performance promise |
-| "ouverture octobre 2026"                                            | Confirmed opening window          | Temporary teaser/pre-opening state, removed after opening                                        |
+| Claim                                                               | Basis                             | Rule                                                                                                |
+| ------------------------------------------------------------------- | --------------------------------- | --------------------------------------------------------------------------------------------------- |
+| "Crystelle et Laura, toutes deux architectes d'intérieur diplômées" | Their qualifications              | Team description only; never shorten to « 2 architectes » and never use as a standalone proof badge |
+| "30 ans de métier"                                                  | Crystelle's total personal career | Hers alone; survives staffing changes; never phrased as studio age                                  |
+| "studio fondé en 2012"                                              | Studio founding                   | Always contextualised: Crystelle founded the studio in 2012; Jukkai itself is new in 2026           |
+| "labellisée en 2023 Professionnel de la décoration éco-responsable" | My Green Cocoon label             | Supporting proof only; use the exact label name, never a broad environmental-performance promise    |
+| "ouverture octobre 2026"                                            | Confirmed opening window          | Temporary teaser/pre-opening state, removed after opening                                           |
 
 The two experience numbers must never blur: 30 is her career; 2012 is the founding
 year of the former studio. The old site's "30 années" survives only in the career
@@ -383,8 +385,9 @@ content freeze.
   inversion frame work.
 - Current RC Pro and décennale coverage. Final public wording must mirror the insured
   activities and mission scope on the current attestation.
-- The claims canon: 2 architectes and 30 ans de métier; the 2012 founding story only
-  with context.
+- The claims canon: 30 ans de métier; Crystelle and Laura described accurately as
+  architectes d'intérieur diplômées where the team is introduced; the 2012 founding
+  story only with context.
 - The 2023 My Green Cocoon label « Professionnel de la décoration éco-responsable ».
   The old website contains a crop-ready visual carrying the label wording. Use it as
   a small supporting design touch in the umbrella/about area and relevant cases, not
@@ -536,6 +539,11 @@ and the conditional pricing simulator.
   with multi-channel contact intent and qualified conversation as the conversion
   model. Demoted new Google-review outreach, a dedicated artist page, and exact
   opening-date copy from launch dependencies.
+- **2026-07-10, v1.8 (team-title correction).** Removed « 2 architectes » from the
+  claims canon and proof system. Crystelle and Laura are both architectes d'intérieur
+  diplômées, not architectes in the protected professional sense. Public French may
+  introduce them as « toutes deux architectes d'intérieur diplômées », but this is a
+  team fact, not a proof badge, and must never be shortened to « 2 architectes ».
 
 _Later phases append here with date and reason; Phase 1 research that overturns
 anything above must amend explicitly, never silently._
