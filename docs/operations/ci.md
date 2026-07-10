@@ -25,6 +25,10 @@ while still giving branch protection a stable required check.
 - `ci / build`: Astro static build through Turbo.
 - `ci / required`: Stable branch-protection gate.
 
+After issue #72, the Astro workspace intentionally builds zero pages. The build
+job remains active so the retained toolchain and generated-font preflight cannot
+drift while the content pipeline is rebuilt.
+
 Each job restores Bun's package cache and `.turbo/cache`. The cache keys are
 job-specific to avoid parallel cache write conflicts, with broad restore keys so
 tasks can still reuse previous Turbo artifacts.
@@ -53,10 +57,10 @@ dismissal once someone else regularly reviews product changes.
 
 Do not put Playwright in the required gate yet.
 
-For the current Astro static website, `astro build`, Astro type checking, unit
-tests, ESLint, Stylelint, and formatting catch the valuable early failures
-without spending CI minutes on browser provisioning. Add Playwright when the
-site has real navigation, forms, CMS data, or production-critical visual states.
+For the Astro workspace, `astro build`, Astro type checking, unit tests, ESLint,
+Stylelint, and formatting catch the valuable early failures without spending CI
+minutes on browser provisioning. Add Playwright when the rebuilt site has real
+navigation, forms, CMS data, or production-critical visual states.
 
 When it is added, start with a narrow Chromium smoke suite in a separate job:
 home page renders, primary navigation works, and one representative content page

@@ -115,36 +115,42 @@ PR CI uses `bun run fonts:fixture` before the build job. That command writes a
 tiny generated fixture for hermetic build verification only; production and
 local typography checks should use `bun run fonts:prefetch`.
 
-The marketing app links generated `fonts.css` and uses its exported
-`--jukkai-generated-font-family` variable in the page font stack. That proves
-local dev and builds run against Jukkai-owned generated font URLs without making
-the browser contact `fonts.martinmoradi.com`.
+Issue #72 removed the exploratory frontend, including the page-level font
+consumer and its integration test. The generator, output contract, preflight
+check, and Astro build hook remain. Until a new page exists, the build proves the
+font assets are present and the empty workspace compiles; it does not prove that
+a browser consumes the generated family.
+
+The future frontend must link generated `fonts.css`, use its exported
+`--jukkai-generated-font-family` variable, and restore a consumer-level test that
+proves the browser-facing build uses Jukkai-owned font URLs without contacting
+`fonts.martinmoradi.com`.
 
 `fonts.css` is the primary marketing-app contract. It should contain the
 generated `@font-face` declarations and the selected generated-family variable.
 `manifest.json` is for tests, diagnostics, and later tooling; app styling should
 not need to know registry internals to use the generated fonts.
 
-Issue #12 owns the final typography choices and should consume `fonts.css` or
-`manifest.json` rather than scan the generated directory or guess font
-filenames.
+The future typography slice should consume `fonts.css` or `manifest.json` rather
+than scan the generated directory or guess font filenames.
 
 The expected local flow is:
 
 1. Source the local `~/.config/fonts/` environment files or project them into an
    ignored `.env.local`.
 2. Run `bun run fonts:prefetch`.
-3. Start the marketing app.
+3. Start the marketing app once a route exists.
 4. Verify the browser requests font bytes from Jukkai-owned local asset URLs,
-   not from `fonts.martinmoradi.com`.
+   not from `fonts.martinmoradi.com`, once font consumption is restored.
 
 A fresh checkout without generated fonts should fail with a clear message that
 points to the prefetch command.
 
-Once issue #12 wires marketing typography to generated fonts, missing generated
-files must not silently fall back to system fonts. Local development should fail
-with an actionable message such as "run `bun run fonts:prefetch`"; production
-and CI builds should fail hard when required generated font files are absent.
+When the new frontend wires marketing typography to generated fonts, missing
+generated files must not silently fall back to system fonts. Local development
+should fail with an actionable message such as "run `bun run fonts:prefetch`";
+production and CI builds should fail hard when required generated font files are
+absent.
 
 ## Cloudflare Pages
 
@@ -165,7 +171,8 @@ preview build logs, and deployed browser verification without leaking secrets.
 Use the linked issue suite as the verification ladder:
 
 - #11: config, prefetch command, generated dirs, and clear local failure modes.
-- #12: marketing typography consumes generated output and uses self-hosted URLs.
+- #12: historical marketing consumer proof, removed with the exploratory
+  frontend by #72 and required again for the future implementation.
 - #13: Cloudflare Pages secrets and production build prefetch are verified as a
   human-in-the-loop operator step.
 - #14: fresh checkout, local dev, Cloudflare build, deployed browser, and
@@ -193,8 +200,9 @@ The first test cycles should cover:
 Use a fake local server or mock the network at the command's public fetch
 boundary. Keep live registry access for the HITL verification slices.
 
-Issue #12 is also TDD-friendly. It should use generated fixture output rather
-than the real registry and test the public marketing-app contract:
+The future consumer integration is also TDD-friendly. It should use generated
+fixture output rather than the real registry and test the public marketing-app
+contract:
 
 - the marketing app imports or links generated `fonts.css`
 - missing required generated files fail with a clear message
