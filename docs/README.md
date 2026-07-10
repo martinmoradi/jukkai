@@ -2,34 +2,30 @@
 
 This folder is organized by how the docs are used.
 
-## Current Working Docs
+## Current working docs
 
-- `strategy/` - canonical marketing and launch planning docs. Start here for the
-  current website direction.
+- `strategy/` - canonical business truth and unresolved client questions. The
+  sitemap, matrix, messaging, and copy/design brief will be recreated by the
+  reset tracked in issue #71.
 - `operations/` - process, CI, and delivery notes. Start here for how the project
   is run.
 - `adr/` - architecture decision records. Start here before changing deployment,
   backend, or cross-cutting product decisions.
 - `agents/` - repo-local instructions for coding agents.
 
-## Inputs And Evidence
+## Inputs and evidence
 
-- `research/` - synthesized research outputs: audience, competitors, keywords,
-  and phase summaries.
 - `source-material/` - frozen source docs imported from the previous project.
 - `reference/` - bulky reference crawls and inventories. Load only when a task
   needs that raw evidence.
+- `archive/2026-07-reset/` - superseded research and strategy outputs retained
+  for provenance only. Do not load them as current inputs.
 
-## Main Files
+## Main files
 
 - `strategy/foundation.md` - canonical marketing truth.
 - `strategy/questions-for-crystelle.md` - unresolved business/content questions,
   bucketed by what they block.
-- `strategy/sitemap.md` and `strategy/content-matrix.md` - the buildable website
-  structure.
-- `strategy/wireframe-brief.md` - section-level brief for wireframes and visual
-  design.
 - `operations/method.md` - how the marketing docs are produced phase by phase.
 - `operations/ci.md` - pull request and branch protection policy.
-- `operations/homepage-browser-regression-gate.md` - browser evidence contract
-  for homepage visual slices.
+- `operations/fonts.md` - the retained generated-font pipeline contract.
