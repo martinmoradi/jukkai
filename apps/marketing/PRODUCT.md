@@ -5,6 +5,10 @@ the settled strategy stack (`docs/strategy/*`) plus the direction decisions
 from the July 5, 2026 grilling session. Where this file and the strategy docs
 conflict, the strategy docs win.
 
+July 10 reconciliation: `Galerie` is the canonical category. The sitemap,
+homepage H1/hierarchy, and contact mechanism remain provisional until the focused
+IA/SEO and contact reviews land.
+
 **DESIGN.md is deliberately absent.** The visual system is in exploration;
 Martin decides when direction freezes. Do not create DESIGN.md or run
 `/impeccable document` until he says so. Current design state lives in
@@ -17,27 +21,27 @@ brand
 ## Users
 
 - **Primary: referred particuliers** around Rennes and the région rennaise.
-  Châteaugiron is the real place / shop anchor, not a co-primary acquisition
+  Châteaugiron is the real place / Galerie anchor, not a co-primary acquisition
   market. Roughly 93% of old-site traffic was branded; hero visitors arrive
-  pre-convinced and need a visible door handle (« Parlons de votre projet »),
-  not persuasion.
+  pre-convinced and need an obvious contact path, not persuasion.
 - **Permission seekers**: smaller-budget déco clients asking "is my project
   too small? what will it cost?". They need legible offers and public ranges,
   not spectacle.
-- **B2B fit-outs**: need budget and délais confidence, one contact, visible
-  process.
+- **B2B and professional spaces, explicit growth target**: need budget and délais
+  confidence, responsibility/insurance, one contact, visible process, and strong
+  references.
 - **Cold visitors** arrive via acquisition pages (service page, cost guide)
   and scan. Conversion sections must stay scannable.
-- **Art shop audience** exists but the shop invitation is section 5, secondary
-  weight, never the hero.
+- **Galerie audience** needs the place to feel visitable, alive, and approachable.
+  Its exact homepage weight remains part of the IA/design exploration.
 
 ## Product Purpose
 
-Marketing site for Jukkai: an interior architecture studio and an art shop
+Marketing site for Jukkai: an interior architecture studio and a Galerie
 under one roof in Châteaugiron. The site's job is to make that fusion legible
 (the brand carries the fusion; Crystelle's spontaneous voice does not), to
-convert referred visitors through « Parlons de votre projet », and to grow
-toward higher-budget clients without pricing out small ones. Success
+convert referred visitors through the contact paths they actually use, and to
+raise the practice's perceived ceiling without pricing out small ones. Success
 reactions: recognition plus intrigue in the hero, « on n'aurait jamais fait
 ça » at the projects proof.
 
@@ -73,7 +77,7 @@ reactions: recognition plus intrigue in the hero, « on n'aurait jamais fait
 
 1. **Grounds carry warmth.** Each section commits to a ground from the warm
    ramp (caramel, paper, dark-warm) following the tonal script. Muted paper is
-   rhythm between identity moments; identity moments (hero, gallery, shop) are
+   rhythm between identity moments; identity moments (hero, projects, Galerie) are
    never muted.
 2. **Imagery carries color.** Art, project photography, and the place itself
    are the color system. UI surfaces do not compete with them.
@@ -110,8 +114,9 @@ reactions: recognition plus intrigue in the hero, « on n'aurait jamais fait
   mechanism ships with its `prefers-reduced-motion` counterpart designed.
 - Contrast holds on gradients: body text 4.5:1, large display 3:1, including
   the kicker H1 over the hero ground (the current draft fails this; known).
-- French-language audience; the H1 stays the clean SEO kicker string
-  « Architecte d'intérieur à Rennes ». Châteaugiron / région rennaise belong in
-  nearby support copy.
+- French-language audience; every final H1 is visible, useful, and semantically
+  real. Exact-match « Architecte d'intérieur à Rennes » is a candidate, not a
+  frozen homepage string. Rennes, Châteaugiron, and région rennaise remain
+  truthful geography to compose according to the selected IA.
 - Motion must hold 60fps on mid-range hardware; transform-only discipline for
   scroll-driven work.

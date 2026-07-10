@@ -1,108 +1,110 @@
-# Questions for Crystelle
+# Questions and validation queue
 
-Bucketed by what each answer blocks. Produced by Phase 0 on July 2, 2026, alongside
-`docs/strategy/foundation.md`. Each question ships with a proposed default where one exists, so a
-"yes, fine" answer is cheap for her.
+Updated July 10, 2026 after Martin's conversation with Crystelle and the Annexe D
+working session. `docs/strategy/foundation.md` v1.7 is canonical.
 
----
-
-## Blocking for sitemap
-
-1. **The launch portfolio, exactly.** Which finished projects go on the site: for
-   each, the location, project type, the photos we may use, and the client's
-   permission to publish. Same for B2B: which references may be named or described
-   recognizably. The /projets/ branch pattern is already decided; this list fills the
-   content-matrix rows in Phase 3 and drives the Phase 4 redirect map (old
-   /particulier/* URLs need real destinations), so it is the one Crystelle input the
-   sitemap phase should not start without.
+This file no longer treats every unknown as a Crystelle question. It separates
+operational inputs only she can provide from research/IA decisions Martin must make.
 
 ---
 
-## Blocking for copy
+## Crystelle inputs still needed for copy
 
-1. **The entry offer (conseil / mission déco).** The frame is validated (Martin,
-   July 2, 2026: "une mission déco avec l'exigence d'une architecte d'intérieur"
-   works; Crystelle agreed with the underlying read). What remains for her:
-   - Define the offer: exact name, price, and what it includes. This needs concrete
-     detail from Crystelle before copy freezes. Proposed default for discussion only:
-     a flat-fee "rendez-vous conseil" (fixed price, fixed duration, concrete
-     recommendations), deliverable optional.
-   - Where and how prominently it is communicated is Phase 2/3 work, within the
-     ceiling already set (the word "déco" allowed in names and copy).
-2. **Offer names using "déco/décoration".** She vetoes each name individually. The
-   ceiling agreed in Phase 0: the word may appear in offer names and copy, carried by
-   the frame above.
-3. **Budget-band field on the enquiry form.** The form asks project type, commune,
-   and a budget band with a "je ne sais pas encore" option. Does asking budget up
-   front fit how she wants the first conversation to feel? Proposed default: yes.
-4. **Written testimonials.** We need 3-5 short quotes from past clients, attributable
-   as first name + commune + project type, for the service page trust block. She
-   picks the clients and asks; there are months of runway before copy freeze.
-5. **Experience claims, public phrasing.** "30 ans de métier" (her personal career)
-   alongside "un studio depuis 2012". Confirm she is comfortable with both numbers in
-   public copy, phrased so her career and the studio's age never blur.
-6. **Neuro-architecture in the à-propos.** One modest line as a lens, not a
-   credential. Which phrasing feels true to her: "formée à la neuro-architecture"
-   (claims the training) or something softer like "nourrie par la neuro-architecture"
-   (claims the interest)?
-7. **The art×architecture bridge.** Is there any single past project where a placed
-   artwork is visible in the photos and the story can be told with the client's
-   permission? If yes, the differentiator upgrades from vision to proof. If no, the
-   site claims the eye, not the track record (already the default).
-8. **The exact shop French.** "L'art shop" remains the working nav label, but
-   Martin's July 5 clarification reopened the thesis language. The question for
-   Crystelle is whether Jukkai rejects the word "galerie" or only the cold,
-   intimidating gallery codes. Candidate territory: "une galerie vivante, pensée
-   comme un art shop", "une galerie qui ne chuchote pas", and language around
-   "repartir avec un coup de cœur". She validates or adjusts the exact phrasing,
-   including any signage pairing of galerie / art shop.
-9. **Artist dépôt / commission terms.** The artist block can say "vous êtes artiste ?"
-   and it may state that there is no fee to exhibit. The remaining mechanics need
-   Crystelle's concrete terms: whether Jukkai buys and resells the work, uses a
-   time-bound sale / dépôt contract with commission, how insurance / responsibility is
-   handled, and who artists contact. Proposed default: do not publish commission
-   numbers or imply one universal model pre-launch, but do state the no-fee rule and
-   any seriousness promises that are operationally true.
+1. **Entry offer details.** The public frame is approved: « une mission déco avec
+   l'exigence d'une architecte d'intérieur ». Still needed: exact offer name, fixed
+   price or range, duration, inclusions, deliverable, and any travel boundary.
+2. **Current fee rules.** Working full-mission norm: roughly 12–14% of works for
+   standard budgets. Confirm from current lettres de mission: exact bands, minimums,
+   fixed-fee thresholds, and how conception-only / technical-preparation / full
+   chantier missions differ.
+3. **Portfolio content freeze.** Annexe D is a living shortlist. For each final row:
+   real location, project type, usable assets, naming/privacy constraints, and enough
+   facts to tell the project honestly. Existing public projects are working candidates,
+   not irrevocable launch promises.
+4. **Buisine scope.** Capture the broad furnishing/detail mission accurately. It is a
+   high-ceiling residential proof story, not currently proof of an artwork-placement
+   service.
+5. **Neuro-architecture examples.** For relevant crèche, healthcare/waiting-room, and
+   other B2B cases, identify the concrete design choices the training informed. Avoid
+   general health or performance promises.
+6. **Current insurance wording.** Read the live RC Pro and décennale attestation and
+   mirror its declared activities and mission scope exactly.
+7. **Galerie thesis.** `Galerie` is settled as category/nav language. Exact public
+   writing remains open. Candidate territory may be affirmative or contrastive:
+   « une galerie où l'on ne chuchote pas », « une galerie vivante », pushing the door,
+   and leaving with a coup de cœur.
+8. **Testimonials.** Identify a handful of clients for richer written testimonials
+   when time allows. This is desirable, not launch-blocking.
 
----
+## Operational inputs for content freeze / launch
 
-## Blocking for launch
+1. New Châteaugiron address, public phone, opening hours, and itinerary/map details.
+2. Approved Galerie photography/renders for the temporary pre-opening state and the
+   steady-state page.
+3. Which existing Google-review excerpts may appear in the optional review module;
+   preserve exact wording, public attribution, and source.
+4. Final portfolio assets as they arrive:
+   - Tiers-Lieu and Nortene photography expected in September;
+   - Besnard photography expected in October, fast-follow;
+   - Le Capri new intervention, with the earlier Waouh work used only if it strengthens
+     the repeat-client story;
+   - Buisine if its assets and client context clear.
+5. The Galerie's post-opening visit state. Teaser copy uses « ouverture octobre 2026 »;
+   after opening, remove the temporary claim and show actual visit information.
 
-1. **Opening date copy.** October 1, 2026 is the real deadline. The shop page may
-   print either "ouverture le 1er octobre 2026" or the softer "ouverture octobre
-   2026"; downgrade only if the date actually moves.
-2. **Storefront signage text.** The Google Business Profile name must match the
-   real-world signage. What will the sign actually say: "Jukkai", "Jukkai by
-   Crystelle Terrasson", something else? Proposed default: "Jukkai by Crystelle
-   Terrasson" somewhere on the facade so the GBP name is defensible.
-3. **Google review push.** Ask 5-10 recent happy clients for Google reviews on the
-   current profile before migration; reviews carry over with the profile update. She
-   picks the clients.
-4. **Shop page visuals.** Which space photos/renders are approved for the pre-opening
-   page?
-5. **Visit practicalities.** Opening hours, phone number for the shop, and anything
-   else the GBP and shop page need once known.
-6. **Contact flow preference.** The new site's primary conversion is the enquiry
-   form; her existing Calendly stays as the accelerator offered right after
-   submission. Does she want prospects booking a slot instantly, or does she prefer
-   to reply personally first and send the booking link herself? Proposed default:
-   instant booking offered on the confirmation step, since the form data arrives
-   with the booking.
+## Martin research / decision gates
 
----
+These are not Crystelle homework and must not be silently resolved by downstream copy
+or design.
 
-## Later (blocks nothing now)
+1. **IA / SEO confidence review.** Compare integrated, separated, and hybrid models.
+   Reassess primary navigation, homepage hierarchy/H1, B2B visibility, service-page
+   role, cost-guide priority, and the difference between indexed URLs and visible
+   storytelling. Until then, the current sitemap and exact homepage H1 are hypotheses.
+2. **Contact / conversion review.** Compare direct phone, direct Calendly, email, a
+   short form, and a contact-choice surface against Crystelle's actual recent leads.
+   Conversion means contact intent across channels, later reconciled to qualified
+   conversations. Contact-page views do not count.
+3. **Pricing simulator validation.** Conditional mini-product only. Prototype an
+   editable model offline, test it against historical quotes, and ship only if the
+   ranges remain useful and defensible. Real dated case studies come first.
+4. **Method follow-through.** The July 10 amendment already adds the missing Phase 3
+   comparison gate. Once a model is chosen, refine it if the research exposes another
+   blind spot.
 
-1. **Art-buyer persona.** Let real foot traffic define it after opening; the brand
-   stays flexible until then.
-2. **Three-year art-shop economics.** The strategic frame (studio sustains, Jukkai
-   carries the brand) holds regardless.
-3. **Event calendar.** Vernissages and live painting come after the first three
-   months; the site stays silent about events until they are real.
-4. **Artist lineup and naming consent.** No artist names on the site until both the
-   artist and Crystelle confirm (Emmery, Bonneville, and whoever follows).
-5. **Post-opening prices on the shop page.** Once inventory is real, add honest
-   ranges as a dated amendment to `docs/strategy/foundation.md`.
-6. **Furniture partnerships / kickbacks.** Business-model exploration only; stays off
-   the site.
-7. **Client portal.** Parked until after the marketing launch; needs its own PRD.
+## Resolved at the July 10 checkpoint
+
+- `Galerie` replaces `L'art shop` as the working category and nav label; proposed URL
+  `/galerie/`.
+- The category may be framed affirmatively or by contrast as long as Jukkai makes it
+  its own. No exact thesis sentence is frozen.
+- Crystelle liked « une mission déco avec l'exigence d'une architecte d'intérieur ».
+- `30 ans de métier` is approved. The 2012 founding year appears only in narrative
+  context: Crystelle founded the studio in 2012; the story becomes Jukkai in 2026.
+- The 2023 My Green Cocoon label « Professionnel de la décoration éco-responsable »
+  is real. It is supporting proof, not a positioning pillar.
+- Neuro-architecture comes from real multi-month training and has concrete
+  project-specific applications. It is a design lens, not a degree badge.
+- Crystelle has current RC Pro and décennale coverage.
+- The commercial objective is to attract more substantial residential and B2B work
+  while preserving accessible entry missions.
+- Offer architecture has two axes: project size and mission depth.
+- The Galerie primarily enriches the brand, taste signal, and discovery. Artwork
+  placement may emerge naturally with receptive clients, but it is not a core service
+  or public financial-value promise.
+- Annexe D is a mutable shortlist. New projects do not block launch.
+- A new Google-review push is low priority. Existing reviews and future testimonials
+  may populate an optional module.
+- A dedicated artist page is not a priority. Instagram/direct networking remain the
+  real artist channel; the Galerie page needs at most a quiet contact route.
+- October 1 is the operational target. Public teaser language uses October 2026; the
+  full site transitions to steady-state visit information.
+
+## Later, blocks nothing now
+
+1. Exact art-buyer persona and three-year Galerie economics.
+2. Event calendar and artist-lineup publication.
+3. Post-opening art-price behaviour after real inventory exists.
+4. Client portal.
+5. Furniture partnerships / kickbacks.
+6. Dedicated artist page.

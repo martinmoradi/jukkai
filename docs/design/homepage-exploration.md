@@ -7,43 +7,47 @@ validation gates; where this file and the strategy conflict, the strategy wins.
 Copy lines below are candidates to design around, all subject to Phase 4 freeze
 and Crystelle's validation. Update or delete freely as iteration invalidates it.
 
+**July 10 reconciliation:** foundation v1.7 reopened the sitemap, homepage H1,
+hero hierarchy, and contact mechanism. `Galerie` is now the canonical category;
+the 2023 eco-responsible label is usable supporting proof; a contextless
+« depuis 2012 » is not. The composition below remains valuable exploration, but
+its former structural claims are hypotheses until the IA/SEO review lands.
+
 ## What this file is for
 
 Carry design-session context across fresh agent sessions: the current hero/copy
 candidates, the composition mechanisms extracted from references, and the open
 questions. Read alongside the wireframe brief (`docs/strategy/wireframe-brief.md` §1).
 
-## Hero: the frozen skeleton (from strategy, not draft)
+## Hero: previous skeleton candidate (reopened by foundation v1.7)
 
-One viewport: emotional display headline (display text, never a heading) +
-kicker H1 (« Architecte d'intérieur à Rennes » territory, real visible text) +
-nearby support copy for Châteaugiron / région rennaise + primary CTA (« Parlons
+One viewport candidate: emotional display headline + a real visible descriptive
+H1 + nearby support copy for Rennes / Châteaugiron / région rennaise + primary CTA (« Parlons
 de votre projet » territory, V5-gated) + compact proof cue (reviews placeholder
 
 - UNAID claims canon) + the compound « Jukkai by Crystelle Terrasson » exactly
   once, eyebrow weight, never a third headline. Vocabulary discipline follows
-  foundation v1.6: reject cold-gallery codes, not necessarily the word « galerie »
-  when it is reclaimed. Shop invitation is NOT in the hero (section 5 only).
+  foundation v1.7: Galerie is the category and the writing makes it Jukkai.
+  Whether the Galerie is named or invited in the hero remains open.
 
 ## Hero text inventory (all candidate slots for composition trials)
 
 Principle Martin set on July 4: a visitor who only ever sees the hero must
 understand what this place is (architecture AND art), because the umbrella
-section is a scroll away and the shop invitation four sections away. Saying
-what Jukkai is in the hero is allowed; _inviting_ to the shop is not (the
-invitation stays section 5, secondary weight). The H1 stays a clean SEO string;
-the fusion is completed by sibling text outside the `<h1>` element that shares
-its visual style.
+section is a scroll away and the Galerie invitation four sections away. Saying
+what Jukkai is in the hero is allowed. The exact H1, sibling-text device, and
+invitation hierarchy now belong to the IA/SEO comparison.
 
 Every slot below is optional except the skeleton items. Mix and match per
 composition; do not use two slots that both say « art shop » (pick one).
 
 1. **Eyebrow (skeleton):** « Jukkai by Crystelle Terrasson » — tiny, once.
-2. **Kicker pair:** H1 « Architecte d'intérieur à Rennes » (element contains
-   only this), plus styled sibling text completing the place/fusion identity.
+2. **Kicker pair candidate:** H1 « Architecte d'intérieur à Rennes » plus styled
+   sibling text completing the place/fusion identity. This exact split is not
+   frozen.
    Candidates:
-   - « & un art shop, sous le même toit »
-   - « et bientôt un art shop » [L1: "bientôt"/date form gated]
+   - « & une galerie, sous le même toit »
+   - « et bientôt une galerie » [temporary opening state]
    - « et un lieu où l'art est chez lui » (softer, no label commitment)
    - « installée à Châteaugiron, au service de la région rennaise »
 3. **Display stance (skeleton):** current candidates
@@ -51,8 +55,8 @@ composition; do not use two slots that both say « art shop » (pick one).
    « On se souvient des lieux ».
 4. **Support line** (1 short sentence, umbrella-lite, small text):
    - « Ici, on dessine des espaces et on accroche des œuvres. »
-   - « Deux architectes d'intérieur, un art shop, une même exigence. »
-   - « Un studio d'architecture d'intérieur et un art shop, sous le même toit,
+   - « Deux architectes d'intérieur, une galerie, une même exigence. »
+   - « Un studio d'architecture d'intérieur et une galerie, sous le même toit,
      à Châteaugiron. » (same line as the umbrella statement; if used here,
      the umbrella section needs a different opening)
 5. **Name gloss / kanji micro-label:** « jukkai 述懐, n. jap. : se souvenir à
@@ -61,15 +65,16 @@ composition; do not use two slots that both say « art shop » (pick one).
 6. **Scattered micro-labels** (Obsidian "Coordinates Withheld" register, pick
    1-3):
    - « Châteaugiron, à 20 minutes de Rennes »
-   - « L'art shop ouvre en octobre 2026 » [L1-gated date form]
+   - « La Galerie ouvre en octobre 2026 » [temporary copy]
    - « Habitat & espaces professionnels »
    - vertical 述懐 as pure texture
    - No art prices anywhere (banned register).
 7. **Media-window captions** (if the shuffling window ships): project type +
    commune only, S1-gated placeholders; never invented names.
 8. **CTA (skeleton):** « Parlons de votre projet → », quiet text-link weight.
-9. **Proof line (skeleton):** ★ 4,9 · [XX] avis Google — UNAID · 30 ans de
-   métier · 2 architectes · depuis 2012.
+9. **Proof line candidate:** ★ 4,9 · [XX] avis Google — UNAID · 30 ans de
+   métier · 2 architectes. The 2023 eco-responsible label may be a small design
+   touch nearby; 2012 belongs in narrative context, not this badge line.
 
 Comprehension test for any composition: cover everything except the hero; a
 stranger should be able to answer "who, where, and what two things happen
@@ -93,7 +98,8 @@ editorial texture, meaning echoed by the display stance.
   draft; voices should map to meaning (architecture voice vs art voice).
 - CTA: quiet text-link register, not a button (header carries the button).
 - Proof line at baseline, small caps, metadata register:
-  ★ 4,9 · [XX] avis Google — UNAID · 30 ans de métier · 2 architectes · depuis 2012. Review numbers stay placeholders until real (launch task).
+  ★ 4,9 · [XX] avis Google — UNAID · 30 ans de métier · 2 architectes. Review
+  numbers stay placeholders until real; 2012 is not a standalone badge.
 
 ### Composition mechanisms (from reference teardown)
 
@@ -119,7 +125,7 @@ about-section pattern).
 
 Warm gradient hero → light editorial paper (umbrella/about) → dark gallery
 (projects proof; art-lit-in-a-dark-room, color comes from the images) → paper
-(offer ladder) → shop invitation (second color moment) → quiet trust → closing.
+(offer ladder) → Galerie invitation (second color moment) → quiet trust → closing.
 The light→dark transition into the gallery is the candidate signature GSAP
 moment (the "pousser la porte" gesture). Matches wireframe section order §1.4.
 
@@ -135,7 +141,7 @@ One short stance line anchors each major section, editorial-poster style:
   Placement near missions/projects per Martin's instinct. DRAFT.
 - Missions/offer ladder area: the waouh idea lives here or in projects, not the
   hero.
-- Shop page (not homepage): thesis line appears once, there only (V2-gated).
+- Galerie page (not homepage): thesis line appears once, there only.
   Current preferred territory after the July 5 discussion: « une galerie
   vivante, pensée comme un art shop », « une galerie qui ne chuchote pas », or
   « repartir avec un coup de cœur ». The old « Ni galerie, ni boutique déco. Un
@@ -147,7 +153,7 @@ One short stance line anchors each major section, editorial-poster style:
 ## Umbrella/about section draft (Telha Clarke shape)
 
 Statement (giant type, the section body):
-« Jukkai est un studio d'architecture d'intérieur et un art shop, sous le même
+« Jukkai est un studio d'architecture d'intérieur et une galerie, sous le même
 toit, à Châteaugiron. Le même œil choisit les œuvres et dessine les espaces. »
 (Second sentence optional; vision-tense only per bridge-claim rule.)
 
@@ -156,7 +162,8 @@ missions déco, pour les particuliers et les espaces professionnels. » +
 « Découvrir les prestations → »
 
 Metadata card (overlapping portrait/image, Japanese-studio style):
-« Châteaugiron — à 20 minutes de Rennes / Depuis 2012 ». A portrait of
+« Châteaugiron — à 20 minutes de Rennes ». The 2012 studio origin needs a
+sentence explaining that Crystelle founded the former studio then. A portrait of
 Crystelle is the one photo that can be art-directed to order (photo-quality
 problem doesn't apply).
 
@@ -176,29 +183,28 @@ name was Megalaya at discovery-transcript time (March 2026); renamed since.
 
 ## CTA rationale (so future sessions don't relitigate)
 
-Primary CTA in hero is frozen structure (foundation §5; header + hero + closing
-band). It is not a persuasion checkpoint: ~93% of old-site traffic was branded,
+Primary contact intent in the hero remains a strong candidate, but exact
+placement, label, and destination are open. It is not a persuasion checkpoint:
+~93% of old-site traffic was branded,
 the hero's audience arrives referred and largely pre-convinced; the CTA is the
 visible door handle for them. Cold visitors scroll; they're served by the page
 body and by the acquisition pages (service page, guide coût), which carry their
-own conversion paths. No second CTA (art shop) in the hero: reopens the settled
-foundation §5 slot fight; shop invitation runs secondary weight in section 5.
+own contact paths. The IA review decides whether a Galerie action belongs in the
+hero or remains secondary in a later section.
 
 ## Galerie / naming (so future sessions don't relitigate)
 
-July 5 clarification: the problem is not necessarily the word « galerie »; the
-problem is the cold/intimidating gallery code (white cube, silence, hidden
-prices, conceptual snobbery, collector-only posture). « Galerie » gives category
-fluency and legitimacy. « Art shop » gives permission to browse, buy, offer, and
-leave with a coup de cœur. The strongest working frame is: « une galerie
-vivante, pensée comme un art shop ».
+July 10 decision: `Galerie` is the real category used on the façade and business
+material. It gives category fluency and legitimacy; « art shop » may remain only
+as explanatory texture. The problem to solve is the cold/intimidating gallery
+code (white cube, silence, hidden prices, conceptual snobbery, collector-only
+posture). Exact thesis writing remains open and may be affirmative or contrastive.
 
 « galerie châteaugiron » discovery is still mostly carried by GBP secondary
-category, ArtGallery schema on `/art-shop/`, third-party listings, and maybe
-signage/category language. On-page copy may use « galerie » only if it is
-qualified/reclaimed by the warm, alive, purchasable Jukkai frame. Do not smuggle
-a cold gallery page into the hero; the exact public label remains C8/V1/V2
-validation with Crystelle.
+category, ArtGallery schema on `/galerie/`, third-party listings, and signage.
+On-page copy uses Galerie confidently and makes the Jukkai version warm, alive,
+purchasable, and non-intimidating. Do not smuggle a cold gallery code into the
+hero.
 
 ## Design principles mined from the discovery transcript
 

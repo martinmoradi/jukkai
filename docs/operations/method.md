@@ -4,9 +4,13 @@ How the Jukkai marketing documentation gets built. Read this before starting any
 phase. It exists so each phase can run in a fresh, clean context and still produce
 work that fits the whole.
 
+**July 10, 2026 correction.** The commercial priority does not mechanically
+determine the navigation, homepage H1, page count, or contact mechanism. Phase 3
+must compare plausible IA models before those become build constraints.
+
 ## The principle
 
-**Foundation-first, one frozen artifact bundle per phase, fresh context per phase.**
+**Foundation-first, one stable artifact bundle per phase, fresh context per phase.**
 
 Each phase reads only the frozen artifacts above it, produces its own bundle (one or
 more docs, listed in the phase map), then the context is thrown away. The artifacts
@@ -17,9 +21,9 @@ Consequences worth stating:
 
 - A new context is safe to open the moment the docs it depends on are frozen. The
   dependency graph below tells you when.
-- Grilling is context-heavy but happens in exactly one phase (Foundation). Its only
-  output is a clean doc, so the bloat dies with that session. You get the grill
-  without paying for it downstream.
+- Grilling is concentrated in the Foundation phase. Later client conversations may
+  still amend the foundation explicitly; the downstream docs then need a
+  reconciliation pass before work continues.
 - Doing the top of the chain properly buys the right to be cheap and mechanical
   downstream. That is the whole point.
 
@@ -67,32 +71,31 @@ The `marketingskills` repo expects its shared context at
 `docs/strategy/foundation.md`: never hand-edit it, and regenerate it whenever the
 foundation changes. Foundation is truth; the adapter is a projection for the tools.
 
-## The strategic joint this method must force
+## The strategic joint this method must preserve
 
 Do not frame it as a binary ("architecture or Jukkai"). The resolution is two
 distinct centers that must not be collapsed:
 
-- **Commercial / site-architecture center: interior architecture.** Acquisition and
-  referral validation. Owns page structure, primary navigation, conversion paths,
-  SEO, and measurement. It is where the searchable, monetizable demand is (the
-  `architecte d'intérieur Rennes` cluster) and what sustains the business.
-- **Brand / experience center: Jukkai.** The art shop, the physical place, the
+- **Commercial center: interior architecture.** Acquisition and referral
+  validation. It is where the searchable, monetizable demand is (the `architecte
+d'intérieur Rennes` cluster) and what sustains the business.
+- **Brand / experience center: Jukkai.** The Galerie, the physical place, the
   fusion of art and interiors. Owns the opening emotional register, the visual
   world, and the differentiation that makes the architecture offer distinct from
   every other studio in the region.
 
-The site can open with the Jukkai world and still be built, structurally, around
-architecture leads. The two layers are complementary, not competing, most of the
-time. Crystelle leads emotionally with the galerie; that weighting belongs to the
-physical space and the voice, not the site structure.
+The site can open with the Jukkai world while architecture remains the commercial
+priority. The two layers are complementary, not competing, most of the time. This
+business hierarchy is an input to the IA, not a predetermined navigation tree,
+page count, homepage H1, or visual hierarchy.
 
-**Tiebreak rule (use when they compete for the same slot).** The two-layer frame is
-not permission to avoid deciding. When architecture and Jukkai contend for one
-scarce slot — the homepage hero, the primary nav, the title tag, the first
-conversion path, the primary tracked event — **architecture wins the structural,
-SEO, and conversion decision; Jukkai wins the emotional opening and the
-differentiator role.** If a phase cannot apply this rule to a concrete choice, that
-choice is a Phase 0 gap, not a Phase 3+ detail.
+**Decision rule.** Protect architecture search relevance, qualified contact intent,
+and Galerie legibility. Do not assume that each objective needs its own navigation
+item or page. When they compete for a scarce slot, compare concrete IA models and
+show what each model gains or sacrifices. The homepage can contribute to sitewide
+trust without carrying the exact-match query as its visible headline, provided the
+search-intent page and internal linking are strong. This is a Phase 3 decision, not
+a mechanical Phase 0 deduction.
 
 ### Phase 0 decides (the grill agenda)
 
@@ -101,7 +104,7 @@ Resolve each explicitly. Anything only Crystelle can answer goes to
 blocking-for-copy, blocking-for-launch, later. Not a junk drawer.
 
 1. **Primary website job** — the evidence points to qualified architecture enquiries.
-2. **Secondary jobs** — validate referrals, make the shop visitable, invite
+2. **Secondary jobs** — validate referrals, make the Galerie visitable, invite
    Instagram / foot traffic, support artist credibility.
 3. **Brand / name architecture** — exact public phrasing (Jukkai by Crystelle
    Terrasson), handling of the old studio name, GBP name, title-tag pattern.
@@ -109,17 +112,17 @@ blocking-for-copy, blocking-for-launch, later. Not a junk drawer.
    with artists as credibility/community. Confirm or revise this order.
 5. **Offer architecture** — full mission, targeted déco, pro spaces, art integration.
 6. **SEO posture** — how explicitly to claim Rennes, Châteaugiron, Ille-et-Vilaine.
-7. **Shop promise** — physical place and emotional world, not ecommerce unless
+7. **Galerie promise** — physical place and emotional world, not ecommerce unless
    Crystelle can actually operate inventory and content.
 8. **Proof bank** — projects, testimonials, locations, credentials, and concrete
    art/architecture bridge examples.
-9. **Public French language** — the exact French framing for "art shop, not gallery,"
-   and the pre-launch shop promise: what the shop page may say before opening without
-   implying ecommerce or a confirmed event program.
+9. **Public French language** — how Galerie becomes distinctly Jukkai, and what the
+   page may say before opening without implying ecommerce or a confirmed event
+   program.
 
 **Does not block the sitemap — defer to the "later" bucket in
 `docs/strategy/questions-for-crystelle.md`:** exact art-buyer persona, three-year
-art-shop economics, full event calendar, full artist lineup, the future client
+Galerie economics, full event calendar, full artist lineup, the future client
 portal. Phase 0 must not stall on these.
 
 ### How Phase 0 runs
@@ -158,17 +161,23 @@ Notes:
   The matrix is the hinge deliverable where strategy becomes buildable — page, URL,
   purpose, audience, keyword, CTA, proof, status — not admin. Fill its left half
   (strategy/IA) in Phase 3; the right half (copy, meta, schema, status) fills in
-  Phase 4.
+  Phase 4. Before choosing one, compare at least three plausible models: an
+  integrated portfolio model, a separated acquisition-page model, and a hybrid.
+  For each, distinguish URL/indexation needs from primary navigation, homepage
+  storytelling, visual hierarchy, and internal linking. Reference sites are useful
+  category evidence, not templates to copy.
 - Phase 3 is the second and last human-judgment point besides Phase 0.
-- Everything in Phase 4 is pure derivation once 0 through 3 are frozen, and its items
-  are independent, so they can run in parallel isolated contexts.
+- Everything in Phase 4 is derivation only once the Phase 3 confidence review has
+  made the competing IA, H1, contact-path, and measurement assumptions explicit.
+  If those remain unresolved, content and design may explore but must not silently
+  promote the provisional sitemap to a build contract.
 
 ## Skill triage
 
 Marketing skills library: `github.com/coreyhaines31/marketingskills`. It is
 SaaS-heavy. Record the exact source and a pinned commit or date when you install, so
 later agents consume a known version, not floating memory (reviewed against the repo
-as of July 2026). In scope for a local service business plus art shop:
+as of July 2026). In scope for a local service business plus Galerie:
 
 - Foundation and research: `product-marketing`, `customer-research`,
   `competitor-profiling`, `seo-audit` (baseline already done).
