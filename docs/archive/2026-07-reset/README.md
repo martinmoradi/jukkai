@@ -42,3 +42,32 @@ new research.
 
 The Git history and this archive remain available when provenance is useful, but
 none of the purged or archived material is a contract for the future frontend.
+
+## Issue verdicts
+
+Closed as dead because their implementation or approval target was discarded:
+#39, #40, #41, #42, #52, #57, and #58.
+
+Closed to re-create later from post-reset inputs rather than inherit the old
+contract: #45, #59, #60, #67, and #68.
+
+## Branch cleanup
+
+Deleted locally:
+
+- `agent/53-conductor-v2`, `agent/54-tunables-devtools-markers`,
+  `agent/55-panel-scene-model`, and `agent/57-58-galerie-choreography`
+- `chore/marketing-astro-tooling` and `chore/marketing-production-basics`
+- `codex/add-marketing-wordmark-asset`, `codex/remove-astro-baseurl`, and
+  `codex/typed-marketing-pages`
+- `design/hero`, `design/hero-exploration`,
+  `design/homepage-art-direction-cleanup`, `design/mood-scroll`, and
+  `design/visual-directions`
+- `feat/home-hero-motion`, `feat/homepage-blockout`, and
+  `feat/homepage-static-hero`
+- `integration/homepage` and `issue-36-homepage-shell`
+
+Deleted from `origin`: `agent/57-58-galerie-choreography`,
+`design/hero-exploration`, `design/visual-directions`, and
+`integration/homepage`. The stale `docs/marketing-asset-pipeline` remote-tracking
+reference was pruned because the remote branch was already absent.
