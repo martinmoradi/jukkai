@@ -45,11 +45,12 @@ none of the purged or archived material is a contract for the future frontend.
 
 ## Issue verdicts
 
-Closed as dead because their implementation or approval target was discarded:
-#39, #40, #41, #42, #52, #57, and #58.
+Closed as not planned with a dead verdict because their implementation or
+approval target was discarded: #39, #40, #41, #42, #52, #57, and #58.
 
-Closed to re-create later from post-reset inputs rather than inherit the old
-contract: #45, #59, #60, #67, and #68.
+Closed as not planned with a re-create-later verdict so future work starts from
+post-reset inputs rather than inheriting the old contract: #45, #59, #60, #67,
+and #68.
 
 ## Branch cleanup
 
@@ -71,3 +72,6 @@ Deleted from `origin`: `agent/57-58-galerie-choreography`,
 `design/hero-exploration`, `design/visual-directions`, and
 `integration/homepage`. The stale `docs/marketing-asset-pipeline` remote-tracking
 reference was pruned because the remote branch was already absent.
+
+The clean, detached `jukkai-worktrees/mood-scroll` worktree was also removed. It
+contained no uncommitted work and retained only the discarded exploration.
