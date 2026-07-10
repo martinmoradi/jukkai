@@ -1,9 +1,10 @@
 # Jukkai marketing foundation
 
-**Version 1.6. Frozen July 2, 2026 (v1.0), amended same day after the cross-model
+**Version 1.7. Frozen July 2, 2026 (v1.0), amended same day after the cross-model
 critic pass (v1.1), Phase 1 research reconciliation (v1.2), Martin's Phase 2
 clarifications (v1.3), the name-weight ruling (v1.4), and the GBP/signage
-decoupling (v1.5), and Martin's geography / gallery-language clarification (v1.6).**
+decoupling (v1.5), Martin's geography / gallery-language clarification (v1.6),
+and the July 10 Crystelle checkpoint reconciliation (v1.7).**
 
 This is the canonical source of truth for all marketing phases (see `docs/operations/method.md`).
 It was produced in Phase 0 from the five source docs plus the July 2, 2026 grilling
@@ -23,10 +24,15 @@ adapter is generated from this file and regenerated on every change, never hand-
 - The practice has two architects: Crystelle Terrasson and Laura Corbel.
 - The practice moves from Vern-sur-Seiche to Châteaugiron (Petite Cité de Caractère,
   Ille-et-Vilaine, about 20 minutes from Rennes), into a space shared with the Jukkai
-  art shop. Opening deadline: October 1, 2026. This is the real target, not a soft
-  window; downgrade public copy only if the date actually moves.
+  galerie. Operational opening target: October 1, 2026. Public teaser copy uses
+  « ouverture octobre 2026 »; the full site removes the opening state after launch.
 - Economics (closed decision): the studio sustains the business, Jukkai carries the
   brand. The website's primary job serves the studio's client pipeline.
+- Commercial direction (confirmed informally with Crystelle, July 10): raise the
+  perceived ceiling of the practice and attract more substantial residential and
+  B2B missions, while keeping smaller conseil and transformation work visibly
+  welcome. This is a portfolio, proof, and presentation objective, not permission to
+  use « haut de gamme » as public copy.
 - Leads today come almost entirely through referral and word of mouth. The current
   site's proven role is validation: 93% of its search clicks are branded queries.
 
@@ -34,15 +40,18 @@ adapter is generated from this file and regenerated on every change, never hand-
 
 The only experience and identity numbers allowed in public copy:
 
-| Claim                                                      | Basis                             | Rule                                                                |
-| ---------------------------------------------------------- | --------------------------------- | ------------------------------------------------------------------- |
-| "2 architectes"                                            | Crystelle + Laura Corbel          | Canonical                                                           |
-| "30 ans de métier"                                         | Crystelle's total personal career | Hers alone; survives staffing changes; never phrased as studio age  |
-| "depuis 2012" / "14 ans de studio"                         | Studio founding                   | Prefer the founding-year form so it doesn't rot                     |
-| "ouverture le 1er octobre 2026" / "ouverture octobre 2026" | Confirmed opening deadline        | Allowed on the shop page; downgrade only if the date actually moves |
+| Claim                                                               | Basis                             | Rule                                                                                             |
+| ------------------------------------------------------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------ |
+| "2 architectes"                                                     | Crystelle + Laura Corbel          | Canonical                                                                                        |
+| "30 ans de métier"                                                  | Crystelle's total personal career | Hers alone; survives staffing changes; never phrased as studio age                               |
+| "studio fondé en 2012"                                              | Studio founding                   | Always contextualised: Crystelle founded the studio in 2012; Jukkai itself is new in 2026        |
+| "labellisée en 2023 Professionnel de la décoration éco-responsable" | My Green Cocoon label             | Supporting proof only; use the exact label name, never a broad environmental-performance promise |
+| "ouverture octobre 2026"                                            | Confirmed opening window          | Temporary teaser/pre-opening state, removed after opening                                        |
 
-The two experience numbers must never blur: 30 is her career, 14 is the studio. The
-old site's "30 années" survives only in the career framing above.
+The two experience numbers must never blur: 30 is her career; 2012 is the founding
+year of the former studio. The old site's "30 années" survives only in the career
+framing above. Never present a contextless « depuis 2012 » badge that implies Jukkai
+itself has existed since 2012.
 
 No art prices appear anywhere pre-opening (see section 9). Architecture pricing is
 public on the Prestations page (see section 7); the two rules are different on
@@ -55,43 +64,41 @@ is the mechanism that serves the existing branded pipeline (someone hears the na
 Googles it, needs fast confirmation and a path to contact). Non-branded local search
 acquisition is the growth layer built on top of the same job. One job, two feeds.
 
-**Conversion definition.** The tracked conversion is an enquiry form submission. The
-form forces light qualification: project type (rénovation complète / transformation
-ciblée / espace professionnel / conseil déco / artiste), commune, and a budget band
-with an explicit "je ne sais pas encore" option. Phone optional. Every submission
-counts; there is no budget floor, because the 40-50k déco client is a real persona.
-Secondary tracked events: click-to-call, click-to-email, itinerary click on the shop
-page, outbound Instagram click.
+**Conversion definition (v1.7).** A business conversion is any visitor deciding to
+get in touch about a project, regardless of channel. Website proxies include a
+completed booking, form submission, click-to-call, and click-to-email; Google
+Business Profile contributes its own call, website, booking, and direction signals.
+A contact-page view or calculator completion is consideration, not conversion. The
+real downstream outcome is a qualified conversation, reconciled lightly with
+Crystelle's actual lead handling.
 
-**Contact mechanics.** The current site's contact surface is a Calendly booking and
-Crystelle reports it works fine. The ruling: the form is the primary conversion, and
-booking becomes the post-submission accelerator, offered on the form's confirmation
-step ("choisissez un créneau si vous voulez avancer tout de suite"). This keeps the
-low-friction entry for prospects not ready to commit to a meeting slot, captures the
-lead and its qualification data even when no booking happens, keeps the tracked
-conversion clean, and preserves the booking path that already works for hot referrals.
-Calendly is never the only door. Whether Crystelle prefers instant booking or a
-personal reply first is her workflow call (logged, launch bucket).
+**Contact mechanics reopened (v1.7).** The current site exposes phone, email, a form,
+and Calendly, but current usage by channel is unknown. The previous ruling that the
+form must be primary and Calendly post-submit only is withdrawn. A focused contact /
+conversion review must compare direct phone, direct booking, form, and a contact-choice
+surface against recent real lead behaviour. Do not hide the phone number to improve
+attribution, and do not force one channel merely to create a cleaner analytics event.
 
 **Secondary jobs, ranked:**
 
-1. Make the shop visitable: address, hours, what you'll find when you push the door.
-2. Artist credibility and courting: a section on the shop page; the separate teaser
-   page carries the near-term artist push before the full site exists.
+1. Make the galerie visitable: address, hours, what you'll find when you push the door.
+2. Artist credibility: a quiet route on the Galerie page. Instagram and Crystelle's
+   direct relationships do the actual artist networking; a dedicated artist page is
+   not a current priority.
 3. Instagram and foot-traffic landing surface.
 
 ## 4. Brand and name architecture
 
-- **Jukkai denotes the umbrella**: the whole world, architecture practice plus art shop
-  plus the place. It is not the shop's name alone, whatever Crystelle's private mental
-  model is. The shop therefore needs its own referent (see below).
+- **Jukkai denotes the umbrella**: the whole world, architecture practice plus galerie
+  plus the place. It is not the galerie's name alone. The physical category is clear;
+  the writing and design make Jukkai's version of that category distinctive.
 - Public brand at launch: **Jukkai by Crystelle Terrasson** (closed decision). The "by"
   can quietly drop in about three years once Jukkai has its own equity.
 - **The connector is "by", generic on purpose (v1.4).** Its only job is transferring
   Crystelle's name equity onto "Jukkai"; a cleverer construction would build equity in
   the phrase itself, which is exactly what the three-year drop must avoid. "par" reads
-  as a byline, not a brand; bare juxtaposition loses the endorsement meaning; the
-  anglicism matches the "L'art shop" register. The connector freezes at signage lock
+  as a byline, not a brand; bare juxtaposition loses the endorsement meaning. The
+  connector freezes at signage lock
   (the GBP name must match the signage and citations must stay byte-identical), so any
   change happens before the sign is ordered, with Crystelle's veto, and never after.
   Cleverer French phrasings ("le studio de Crystelle Terrasson", "fondé par Crystelle
@@ -107,7 +114,7 @@ personal reply first is her workflow call (logged, launch bucket).
      the homepage hero's first viewport, and it never gains weight beyond that.
   3. _Woven layer, running copy_: body copy says "Jukkai" and "Crystelle", never the
      full compound. Her name appears as a person at conversion trust moments: the
-     à-propos narrative, near the enquiry form, project-story context.
+     à-propos narrative, near the chosen contact action, project-story context.
 - **Never, on any surface (v1.4)**: the compound next to every wordmark instance, in
   section headings, in CTAs, or as a repeated social-caption motif. Rationale:
   familiarity accrues to whatever string repeats most; "Jukkai" alone must be that
@@ -120,14 +127,14 @@ personal reply first is her workflow call (logged, launch bucket).
   Studio Crystelle Terrasson" appears in the à-propos page and in meta descriptions
   during the migration window, then fades. Her personal name, which is what referrals
   actually pass around, is preserved inside the brand itself.
-- **The shop language is under active validation (v1.6).** "L'art shop" remains the
-  working nav/running-copy referent because it gives visitors permission to browse,
-  buy, gift, and leave with a coup de cœur. The project rejects the cold, expensive,
-  intimidating gallery codes, not necessarily the word "galerie" in every layer.
-  "Galerie" may appear in controlled category, signage, SEO, citation, schema, or
-  contrast contexts if it is reclaimed with a living/accessibility frame. Candidate
-  direction: "une galerie vivante, pensée comme un art shop." Do not let galerie,
-  boutique, magasin, or objets become unqualified dominant self-labels in running copy.
+- **The public category is Galerie (v1.7).** It is already the physical truth used on
+  signage and business material, and « L'art shop » is too ambiguous to carry the
+  navigation label. Use `Galerie` in navigation and `/galerie/` as the proposed page
+  URL. « Art shop » may survive as explanatory texture where useful, never as the noun
+  visitors must decode. The approved direction is to make the category Jukkai's own,
+  affirmatively or by contrast; exact thesis copy remains open. Candidate territory:
+  « une galerie où l'on ne chuchote pas », « une galerie vivante », and language around
+  pushing the door or leaving with a coup de cœur.
 - **Google Business Profile**: one profile, not two. Name "Jukkai by Crystelle
   Terrasson", full compound, regardless of what the main sign says (v1.5). The name
   evidence Google actually weighs is the real-world identity as consistently
@@ -143,47 +150,42 @@ personal reply first is her workflow call (logged, launch bucket).
   discovery is not.
 - **Signage carries the lockup, not necessarily the compound on the main sign
   (v1.5).** The main sign may be the Jukkai wordmark alone; "by Crystelle Terrasson"
-  must appear somewhere on the physical frontage in small lettering (door vitrine,
-  hours plaque, window lettering). That satisfies the real-world name evidence and
-  does the credibility-bridge job for foot traffic in Châteaugiron, where her name is
-  known and "Jukkai" is not. Launch task: the signage brief includes this line;
-  exact placement is a design decision, its presence is not.
+  may appear on physical support such as the door, hours plaque, window lettering, or
+  business card. Exact façade composition does not block the website or GBP continuity;
+  the full compound remains present across the website's machine/legal layer and on
+  Crystelle's business material.
 - **Title pattern**: `{Page} — Jukkai by Crystelle Terrasson` sitewide. Keyword-first
   titles only on acquisition surfaces: the Rennes service page, the cost guide, and
   the B2B page. Brand-first everywhere else.
 
-## 5. Center of gravity: the two layers and the slot rulings
+## 5. Center of gravity: the two layers and the open IA seam
 
 The frame (from the method, confirmed here): two centers that must not collapse into
 each other.
 
-- **Commercial / site-architecture center: interior architecture.** Owns page
-  structure, navigation, conversion paths, SEO, measurement.
+- **Commercial center: interior architecture.** Owns the revenue objective, qualified
+  lead priority, offer clarity, and search-acquisition responsibility.
 - **Brand / experience center: Jukkai.** Owns the opening emotional register, the
   visual world, and the differentiator role.
 
-Tiebreak rule: when they compete for one scarce slot, architecture wins the
-structural, SEO, and conversion decision; Jukkai wins the emotional opening and the
-differentiator role. Crystelle's emotional weighting of the art shop belongs to the
-physical space and the voice, not the site structure.
+The former tiebreak rule was useful for preventing the galerie from displacing the
+revenue engine, but it was too mechanically applied to navigation, page count, the
+homepage H1, and the contact path before competing IA models were compared. Those
+slots are reopened in v1.7. The business priority remains closed; its exact expression
+in sitemap and interface does not.
 
-The rule applied to the six contested slots (all ruled, none deferred):
+| Slot                     | Current status                                                                                                                                                |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Homepage title tag       | Must remain descriptive and preserve brand/geography, exact pattern pending IA confidence review                                                              |
+| Homepage H1              | Must be visible, helpful, and semantically real; exact-match « Architecte d'intérieur à Rennes » is a researched candidate, not a frozen homepage requirement |
+| Homepage hero            | Jukkai may lead the felt experience while architecture remains quickly understandable; exact hierarchy is design/IA work                                      |
+| Primary nav              | Provisional. `Galerie` replaces `L'art shop`; B2B and service-page visibility require comparison across integrated, separated, and hybrid IA models           |
+| Primary CTA              | A warm invitation to contact about an architecture project; whether it opens phone, booking, form, or a contact-choice surface is open                        |
+| Primary measured outcome | Contact intent across channels, reconciled toward qualified conversations; never contact-page views alone                                                     |
 
-| Slot                  | Ruling                                                                                                                                                                                                                                                                                            |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Homepage title tag    | Brand-first with keyword, but Rennes carries the commercial/search phrase and Châteaugiron carries the physical anchor. Example territory: "Jukkai by Crystelle Terrasson — Architecte d'intérieur à Rennes, installée à Châteaugiron". The service page carries the keyword-first title.         |
-| Homepage H1           | The architecture claim ("Architecte d'intérieur à Rennes" territory), rendered as the hero's kicker line. A nearby support line carries Châteaugiron / région rennaise. The visually dominant emotional headline is display text, not a heading. The old site died on this exact hill; not again. |
-| Homepage hero         | Fusion in one frame: the Jukkai world sets the register (colour, art, alive), with the architecture kicker, the primary CTA, and a proof cue anchored in the same viewport.                                                                                                                       |
-| Primary nav           | Projets / Prestations / L'art shop / À propos / Contact. Architecture owns two items; the shop comes immediately after.                                                                                                                                                                           |
-| Primary CTA           | The architecture enquiry, warm register ("Parlons de votre projet" territory), sitewide. The shop's "venez pousser la porte" is secondary and never competes at the same visual weight.                                                                                                           |
-| Primary tracked event | Architecture enquiry form submission. One number defines success.                                                                                                                                                                                                                                 |
-
-Implementation guardrail on the H1 ruling (from the critic pass): the architecture
-kicker must be real, visible, styled text in normal document order, a legitimate part
-of the hero composition. It is never hidden, sr-only, or visually orphaned keyword
-text, and the heading hierarchy below it must stay coherent for accessibility. If the
-design cannot make the kicker feel intentional, that is a design problem to solve in
-Phase 3, not a license to demote the H1.
+Any final H1 must remain visible text in normal document order, never hidden or
+keyword-stuffed. That accessibility and semantic guardrail survives; the exact phrase
+and homepage role do not freeze before the IA confidence review.
 
 ## 6. Audiences
 
@@ -194,24 +196,27 @@ Priority order (confirmed as stated in the method):
    young couple (guidance within constraints), the déco client (targeted
    transformation, ~40-50k). Shared traits: referral-driven, emotional before
    rational, the question is "can I trust her eye?"
-2. **B2B clients.** Conception and prescription for office spaces; rational plus
-   emotional; need credentials, process, references. Structural surface: a dedicated
-   page under Prestations (own URL for the office-fit-out intent, own line in the
-   form's project-type field). No top-level nav slot.
+2. **B2B clients, explicit growth target.** Conception, prescription, and chantier
+   follow-up for workplaces and other professional/ERP spaces; rational plus
+   emotional; need credentials, process, responsibility, and references. Their exact
+   navigation and page treatment is open in the IA confidence review, but their
+   commercial importance is not.
 3. **Art visitors.** Not a collector; sees something, wants it home; aesthetic and
    emotional decision. Served primarily by Instagram and the physical space; the
    website's duty to them is visitability (section 3, job #1 of the secondary set).
-4. **Artists** (credibility and community). Surface: a "vous êtes artiste ?" block on
-   the shop page with a direct contact route. The full site is built for steady state;
-   the teaser page carries the pre-opening artist courting window.
+4. **Artists** (credibility and community, low website priority). Instagram and direct
+   networking are the real acquisition surfaces. The site needs at most a quiet
+   « vous êtes artiste ? » route on the Galerie page.
 
 Not for: people who negotiate prices without understanding there is an artist behind
 the work. Accessible, not cheap.
 
 ## 7. Offer architecture
 
-One identity, always "architecte d'intérieur", with a full ladder of mission sizes
-beneath it:
+One identity, always "architecte d'intérieur", with two dimensions that must remain
+legible: project size and mission depth.
+
+**Project-size ladder:**
 
 1. **Conseil / mission déco** (entry level). Exists by Crystelle's explicit intent
    (volume, pathway to bigger projects, gateway to art). Exact name, price, and scope
@@ -220,48 +225,83 @@ beneath it:
 3. **Rénovation complète / mission complète** (the ~100-150k personas).
 4. **Espaces professionnels** (B2B, dedicated page).
 
-**The décoratrice tension, adjudicated: premium inversion.** Crystelle wants light
+**Mission-depth ladder (v1.7):**
+
+1. **Conception / travail intellectuel**: brief, plans, variants, visualisation,
+   materials, and design recommendations; the client may stop before chantier.
+2. **Préparation technique**: codified plans, descriptions, material choices, and
+   consultation documents for the companies that will build.
+3. **Mission complète avec suivi de chantier**: trusted contractor network, planning,
+   coordination, regular meetings and reports, assistance through reception, within
+   the exact scope of Crystelle's contract and insurance.
+
+The website must never blur design-only and full-mission responsibility. Crystelle's
+current working norm for a standard full mission is roughly 12–14% of the works
+budget; treat that as a content placeholder until current lettres de mission confirm
+the exact range, minimums, and exceptions. Smaller projects may move to a fixed fee;
+the threshold and amount remain operational inputs.
+
+**The décoratrice tension, adjudicated and wording-approved (v1.7).** Crystelle wants light
 décor missions but fears the word "décoration" dilutes the architecte d'intérieur
 identity (she is personally attached to not being mistaken for an unqualified
 décoratrice). The ruling inverts the fear: a décor mission executed by an architecte
 d'intérieur is the premium version of décor, not the diluted version of architecture.
-The identity never changes; only the mission scope does. Frame: "une mission déco avec
-l'exigence d'une architecte d'intérieur." The credential (UNAID, 30 ans de métier)
-protects the identity, so "déco/décoration" is allowed in offer names and copy, which
-also captures real search intent. Crystelle holds a veto on the frame and on each
-offer name (logged).
+The identity never changes; only the mission scope does. Crystelle explicitly liked
+the frame « une mission déco avec l'exigence d'une architecte d'intérieur ». The
+credential (UNAID, 30 ans de métier) and the full-project scope protect the identity,
+so « déco/décoration » is allowed in offer names and copy. Exact offer names, fixed
+fees, and inclusions still require her operational validation.
 
-**Art integration is a woven differentiator, not a named prestation.** It appears
-inside offer descriptions and as the closing move of case studies. It is claimed as
-vision, never as track record (see section 10). It upgrades to a named offer only
-once real projects prove it.
+**The Galerie is a halo and natural opportunity, not a cross-sell strategy.** It makes
+Crystelle's universe richer, raises perceived taste, and gives receptive clients a
+natural route into art. Very few architecture clients are expected to request art
+placement explicitly. Do not promote a named art-sourcing service or financial-value
+claim until real projects and an operational offer justify it.
 
-**Pricing is public**: ranges or "à partir de" per offer on the Prestations page, plus
-content explicitly targeting "combien coûte un architecte d'intérieur à Rennes". The
-"tarif" query variant is the only non-branded query the old site ever nearly ranked
-for (position 9-12); that demand is proven.
+**Pricing clarity starts with real cases and dated ranges.** Prestations explains how
+scope and mission depth affect fees. Recent case studies may publish approximate
+envelopes and coarse allocations where Crystelle is comfortable; older cases explain
+relative allocation and trade-offs without pretending their historical euros are
+current. The cost guide remains a researched candidate. A public simulator is a
+conditional mini-product only: first build an editable offline model, calibrate it
+against real quotes, and publish only if its ranges stay useful and defensible.
+It must estimate Jukkai's likely mission from declared scope and budget, not pretend
+there is one objective project cost: technical discoveries can consume or reallocate
+the envelope before visible furnishing and decoration begin.
 
 **Process trust signal**: before paid design work begins, the mission is framed by a
 clear contrat de mission or lettre de mission. The site may name this plainly in the
 process/prestations content; it answers the documented fear of being billed without a
 clear agreement.
 
+Crystelle does offer a free first project meeting, but Martin's current understanding
+is that it happens after she has qualified the lead. Do not turn that into an
+unqualified instant-booking promise; confirm the exact sequence while reviewing real
+lead handling.
+
 Future note, not public: the furniture-partnership / kickback idea is unresolved
 business-model exploration. It stays off the site entirely.
 
-## 8. SEO posture
+## 8. SEO posture and IA confidence gate
+
+The geography, migration, and truthful-content rules below remain canonical. The
+current page split, primary navigation, homepage H1, B2B placement, and cost-guide
+priority are Phase 3 hypotheses awaiting a dedicated IA/SEO confidence review. That
+review must compare integrated, separated, and hybrid models and distinguish indexed
+URLs from navigation and homepage storytelling.
 
 - **Geography: Rennes is the commercial claim, Châteaugiron is the physical anchor.**
   The service page claims Rennes head-on (title, H1, URL `/architecte-interieur-rennes/`,
   body "Rennes et sa région"). Châteaugiron anchors everything physically ("à
-  Châteaugiron, à 20 minutes de Rennes") and owns the shop-side local claims; it is
+  Châteaugiron, à 20 minutes de Rennes") and owns the Galerie-side local claims; it is
   not a co-primary acquisition market in homepage or service-page H1s. "La région
   rennaise" is the human service-area phrase. "Ille-et-Vilaine (35)" is supporting
   body vocabulary, used sparingly and never as a standalone headline target. The
   honest operational frame is Rennes and the région rennaise first, with wider
   Ille-et-Vilaine reach depending on project scope. This matches documented
   competitor practice (Le Rheu, Cesson) and is honest.
-- **One canonical service page at launch.** Service-area pages: none at launch. A
+- **Current service-page hypothesis.** One canonical Rennes service page at launch;
+  service-area pages: none at launch. A
   post-launch tier of at most 2-3 honest commune pages (Cesson-Sévigné, Le Rheu,
   Châteaugiron), each shipped only when it can carry a real project as proof. Never
   doorway-page soup.
@@ -271,34 +311,34 @@ business-model exploration. It stays off the site entirely.
   impressions and zero clicks.
 - **Portfolio pages carry dual naming**: creative title for the brand ("Belle Époque")
   plus descriptive subtitle and URL for search ("Rénovation maison années 30, Rennes").
-- **The homepage serves the branded searcher; the service page serves the stranger.**
-  Both exist, neither does the other's job.
+- **Current role-split hypothesis.** The homepage serves the branded searcher and a
+  Rennes service page serves the stranger. This is plausible, not frozen, until the
+  confidence review tests whether a hybrid/integrated model communicates better.
 - **Migration non-negotiables (closed, restated for completeness)**: page-by-page 301
-  map, GA4 + Search Console from day one with form-submission conversion tracking, GBP
+  map, GA4 + Search Console from day one with multi-channel contact-intent tracking, GBP
   update (name, URL, Châteaugiron address), external profile updates (Linktr.ee,
   Pages Jaunes, social bios, directories).
 
-## 9. The shop promise (pre-opening)
+## 9. The Galerie promise (pre-opening)
 
-What the shop page may say before opening:
+What the Galerie page may say before opening:
 
 - **The scene**: you push the door into a colourful, alive interior; art on the walls,
   sculptures on columns, iconic furniture; the interior architects visible at work
   behind the vitrines; someone offers you a coffee. All confirmed launch scope.
-- **The opening date**: "ouverture le 1er octobre 2026" or "ouverture octobre 2026"
-  (date-level or month-level, per section 2).
+- **The opening state**: teaser copy says « ouverture octobre 2026 ». The exact October
+  1 date is an internal target, not permanent page copy. After opening, replace the
+  state with actual hours and visit information.
 - **The pre-opening CTA**: newsletter signup and Instagram follow, carried over from
   the teaser.
 - **Visuals**: space photos/renders exist and may be used (Crystelle approves the
   selection; launch bucket).
-- **The shop thesis line, once**: the old candidate "Ni galerie, ni boutique déco. Un
-  art shop." is no longer frozen as the default. It may still be useful as a contrast
-  line, but if signage or public category language uses "galerie", the copy should
-  reject the intimidating gallery code rather than deny the category. Stronger
-  candidate territory: "une galerie vivante, pensée comme un art shop"; "une galerie
-  qui ne chuchote pas"; "un lieu vivant où l'on peut repartir avec un coup de cœur."
-  The final French is Crystelle-validation work.
-- **The artist block**: "vous êtes artiste ?" with a direct contact route. It may
+- **The Galerie thesis line, once**: the category itself is settled; the exact frame is
+  not. It may be affirmative or contrastive as long as it makes the category Jukkai's
+  own. Candidate territory: « une galerie où l'on ne chuchote pas », « une galerie
+  vivante », and « un lieu vivant où l'on peut repartir avec un coup de cœur ».
+- **The artist route**: one quiet « vous êtes artiste ? » line with a direct contact
+  route near the bottom. It may
   state that artists pay no fee to exhibit. Do not imply a single commercial model:
   Crystelle works artist by artist, either buying and reselling pieces or using a
   time-bound contract where Jukkai sells the work and takes a commission.
@@ -317,44 +357,62 @@ What it may not say:
 
 ## 10. Proof bank
 
-**Exists, pending Crystelle's selection and sign-off** (existence confirmed by
-Martin; the exact set is not, see questions file):
+**Working portfolio slate (v1.7).** Annexe D in Crystelle's July working document is a
+living shortlist, not a launch promise. Current old-site keep candidates include
+Belle Époque, Wood Loft, Sa Majesté l'Escalier, Arrondir les Angles, Pop Color, and
+Orange Dynamique. `OUI` means worth carrying for now; rows may still move before
+content freeze.
 
-- 3+ publishable projects with photos, location, and project type (dual naming per
-  section 8). Which projects, which photos, and each client's publication permission
-  need her confirmation; the list also feeds the content matrix and the Phase 4
-  redirect map.
-- Nameable B2B references for the espaces-professionnels page, same condition.
+**New proof coming online:**
+
+- Le Capri is a repeat-client story roughly ten years after the earlier Waouh
+  intervention. The new restaurant work should lead; the earlier intervention may
+  become a compact continuity chapter rather than a duplicate page.
+- Buisine is strategically important as an unusually broad furnishing/detail mission
+  with enough budget to show the perceived ceiling Crystelle wants to raise. It does
+  not currently prove an art-placement service.
+- Tiers-Lieu and Nortene may join when September photography clears. Besnard is an
+  October fast-follow. None blocks launch.
 
 **Verified and usable at launch:**
 
-- Google reviews on the existing GBP (they carry over with the profile update; a
-  pre-migration review push is a launch task).
+- Existing Google reviews on the GBP. A new review push is optional and does not block
+  launch; Crystelle has already tried, lacks time, and should not carry another launch
+  dependency.
 - UNAID qualification. Load-bearing: it is the credential that makes the premium
   inversion frame work.
-- The claims canon: 2 architectes, 30 ans de métier, depuis 2012.
-- Space photos/renders for the shop page.
+- Current RC Pro and décennale coverage. Final public wording must mirror the insured
+  activities and mission scope on the current attestation.
+- The claims canon: 2 architectes and 30 ans de métier; the 2012 founding story only
+  with context.
+- The 2023 My Green Cocoon label « Professionnel de la décoration éco-responsable ».
+  The old website contains a crop-ready visual carrying the label wording. Use it as
+  a small supporting design touch in the umbrella/about area and relevant cases, not
+  as an official certification seal unless a source badge is recovered.
+- Space photos/renders for the Galerie page.
 
-**To collect (logged to Crystelle, months of runway):** 3-5 written client
-testimonials, attributable as first name + commune + project type, for the service
-page trust block.
+**To collect, not launch-blocking:** 3-5 written client testimonials. Until then, an
+optional content-controlled module may use a few exact, source-checked excerpts from
+existing Google reviews and disappear cleanly when disabled.
 
 **Positioned carefully:**
 
-- Neuro-architecture: real short training plus reading, deployed selectively by
-  Crystelle in person. On the site it is a lens in the à-propos narrative (how she
-  thinks about what a space does to the people in it), never a credential in a trust
-  block. Exact phrasing gets her veto.
+- Neuro-architecture: real training delivered over several months, deployed
+  selectively by Crystelle. Mention it lightly as a design lens in the umbrella/about
+  story and substantiate it project by project, especially in relevant B2B work such
+  as crèches and medical waiting spaces. It is not a degree or a causal health claim.
+- Eco-responsibility: the label is real supporting proof. Show concrete material,
+  reuse, sourcing, or healthier-product choices only where the project evidence
+  supports them; do not turn the label into a sweeping positioning pillar.
 
 **Banned claims:**
 
-- Eco-responsible label: no label exists and it is not her DNA. No eco positioning
-  pillar. Material care may appear inside project stories where factually true.
 - The art×architecture bridge as track record: it is aspirational (no confirmed
   placement yet). Vision framing only ("le même œil choisit les œuvres et dessine les
   espaces"), never past tense, until a first documented placement exists.
-- Art as investment: directly contradicts the closed audience decision (aesthetic and
-  emotional purchase). Never in public copy.
+- Art as financial investment or future-value promise. The Galerie may communicate
+  provenance, artist trajectory, durability, identity, and curation, never expected
+  appreciation or resale return.
 - "30 années" as studio age; guaranteed price floors; any event or lineup promise.
 
 ## 11. Voice and public French
@@ -366,23 +424,20 @@ applies to every decision.
 
 Language rulings from this phase:
 
-- The shop working label is "L'art shop". The anglicism is hers and it gives permission
-  to buy, offer, and leave with a piece; exact public label remains Crystelle-validation
-  work.
-- The phrase "galerie" is no longer treated as absolutely banned. The category may be
-  reclaimed if the frame makes the place warm, alive, colourful, purchasable, and
-  non-intimidating. The thing to avoid is the cold gallery code: white cube, silence,
-  hidden prices, conceptual snobbery, collector-only posture.
-- Candidate thesis territory, not frozen copy: "une galerie vivante, pensée comme un
-  art shop"; "une galerie qui ne chuchote pas"; "un lieu vivant où l'on peut
-  repartir avec un coup de cœur."
+- The public label is `Galerie`; « art shop » is optional explanatory language.
+- The task is not merely to reject a cold code. It is to make the category Jukkai's
+  own, affirmatively or by contrast, while remaining warm, alive, colourful,
+  purchasable, and non-intimidating.
+- Candidate thesis territory, not frozen copy: « une galerie où l'on ne chuchote
+  pas »; « une galerie vivante »; « un lieu vivant où l'on peut repartir avec un coup
+  de cœur ».
 - These are canonical direction but publicly exposed language; Crystelle validates
   the exact French before copy freeze (logged, blocking-for-copy).
 - "Démocratiser l'art" is acceptable copy register (her own words), expressed through
   scene and behaviour rather than as a slogan.
-- Avoid as dominant unqualified shop self-labels: galerie, boutique, magasin, objets.
-  Boutique, magasin, product-grid, catalogue, and ecommerce codes remain out. Galerie is
-  allowed only when qualified/reclaimed, not as the default cold category. Also avoid
+- Avoid as dominant self-labels: boutique, magasin, objets, product-grid, catalogue,
+  and ecommerce codes. `Galerie` itself is canonical; the surrounding language must
+  prevent it inheriting the cold code. Also avoid
   influenceuse registers and art-world or architectural jargon without translation.
 - The two registers (architecture and Jukkai) get their full definition in Phase 2
   messaging. This document fixes only the canonical nouns and claims.
@@ -392,23 +447,23 @@ Language rulings from this phase:
 Explicit deltas versus the source material, per the method's "newer conversations win"
 rule:
 
-| Was (source material)                                           | Now (this document)                                                                            |
-| --------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| Art prices: 100€ entry, heart at 300-400€, top 2-3k             | Entry ~200-350€ not guaranteed, core 500-800€, up to multiple thousands, under 10k (section 9) |
-| "Eco-responsible label" as trust signal (audit Tier 2.1)        | No label exists; no eco claim (section 10)                                                     |
-| Neuro-architecture on the service page (audit Tier 2.1)         | À-propos lens only, never a trust-block credential (section 10)                                |
-| Bridge "has already happened a few times" implying track record | Aspirational; vision framing only (section 10)                                                 |
-| "14 years" as a hardcoded age                                   | Founding-year form ("depuis 2012"); "30 ans" is her career, distinct                           |
-| Live site's "30 années" unexplained                             | Reconciled: Crystelle's total career; usable only in that framing                              |
-| Audit's "new Next.js build"                                     | Stale; tech stack decided outside this document                                                |
-| "Studio Crystelle Terrasson" ambient survival                   | Retired publicly with "anciennement" transition (section 4)                                    |
+| Was (source material)                                           | Now (this document)                                                                                                                             |
+| --------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Art prices: 100€ entry, heart at 300-400€, top 2-3k             | Entry ~200-350€ not guaranteed, core 500-800€, up to multiple thousands, under 10k (section 9)                                                  |
+| "Eco-responsible label" ruled nonexistent in v1.0               | Label confirmed: My Green Cocoon « Professionnel de la décoration éco-responsable », obtained in 2023; supporting proof, not positioning pillar |
+| Neuro-architecture as unsupported credential                    | Multi-month training confirmed; use as a case-substantiated design lens, especially in relevant B2B work                                        |
+| Bridge "has already happened a few times" implying track record | Aspirational; vision framing only (section 10)                                                                                                  |
+| "14 years" or contextless « depuis 2012 » as a Jukkai age       | Narrative continuity only: Crystelle founded the studio in 2012; the story becomes Jukkai in 2026                                               |
+| Live site's "30 années" unexplained                             | Reconciled: Crystelle's total career; usable only in that framing                                                                               |
+| Audit's "new Next.js build"                                     | Stale; tech stack decided outside this document                                                                                                 |
+| "Studio Crystelle Terrasson" ambient survival                   | Retired publicly with "anciennement" transition (section 4)                                                                                     |
 
 ## 13. Deferred (later bucket)
 
-These do not block the sitemap, copy, or launch, and live in
-`docs/strategy/questions-for-crystelle.md` under "Later": exact art-buyer persona, three-year
-art-shop economics, event calendar, artist lineup and naming consent, post-opening
-price display, the client portal, the furniture-partnership idea.
+These do not block sitemap, copy, or launch: exact art-buyer persona, three-year
+Galerie economics, event calendar, artist lineup and naming consent, post-opening
+price display, the client portal, furniture partnerships, a dedicated artist page,
+and the conditional pricing simulator.
 
 ---
 
@@ -467,6 +522,20 @@ price display, the client portal, the furniture-partnership idea.
   about the cold/intimidating gallery image, not necessarily the word itself. The docs
   now reject gallery codes rather than absolutely banning "galerie"; candidate language
   shifts toward "une galerie vivante, pensée comme un art shop."
+- **2026-07-10, v1.7 (Crystelle checkpoint reconciliation).** Reconciled the July
+  conversation and Annexe D working session. Confirmed `Galerie` and `/galerie/` as
+  the category/URL direction; the 2023 My Green Cocoon eco-responsible label; the
+  approved mission-déco frame; the commercial objective of attracting more
+  substantial residential and B2B work; a two-axis offer model (project size and
+  mission depth); real RC Pro/décennale proof; project-specific neuro-architecture;
+  and the updated portfolio candidates/timing. Reframed pricing clarity around dated
+  case studies and made the simulator conditional on an offline calibrated model.
+  Withdrew three over-frozen downstream assumptions: the exact homepage H1, current
+  sitemap/navigation model, and form-first contact path are now researched hypotheses
+  awaiting focused IA/SEO and contact/conversion reviews. Replaced form submission
+  with multi-channel contact intent and qualified conversation as the conversion
+  model. Demoted new Google-review outreach, a dedicated artist page, and exact
+  opening-date copy from launch dependencies.
 
 _Later phases append here with date and reason; Phase 1 research that overturns
 anything above must amend explicitly, never silently._
