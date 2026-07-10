@@ -1,5 +1,10 @@
 # Homepage Browser Regression Gate
 
+> **Status: suspended after issue #72.** `apps/marketing` currently has no
+> homepage route or visual implementation. Do not run or attach this gate until a
+> future homepage slice restores `/`, reviews the assertions below against its
+> approved contract, and records that the gate is active again.
+
 Use this gate for every Full Website homepage visual slice before asking for a
 human taste review. It is a local evidence contract, not a CI replacement. The
 goal is to prove that `/` still holds its layout, semantic landmarks, reduced

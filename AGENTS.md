@@ -62,23 +62,23 @@ remove them when the convention changes.
 
 - Use `agent-browser` for browser automation. Do not use Chrome MCP or the Codex
   in-app browser for this repo.
-- For substantial homepage visual slices, run
-  `docs/operations/homepage-browser-regression-gate.md` before asking for taste
-  review. Tiny copy/style edits can use judgment and the narrow relevant checks.
+- The homepage browser gate is suspended while `apps/marketing` has no routes.
+  The first future homepage slice must reactivate and revalidate
+  `docs/operations/homepage-browser-regression-gate.md` before using it as a PR
+  contract.
 
 ## Marketing App
 
-- The current public site app is `apps/marketing` (Astro). Most current work is
-  frontend-heavy.
-- For marketing copy, IA, SEO, and homepage structure, read `docs/strategy/*`
-  first. Treat those docs as research-backed working context: preserve settled
-  business constraints, but challenge sitemap, section density, copy volume, and
-  wireframe choices when they make the implementation bloated or dull.
-- Strategic design context lives in `apps/marketing/PRODUCT.md` (register,
-  users, personality, design principles). `DESIGN.md` is deliberately deferred:
-  the visual system is in exploration, so do not create `DESIGN.md` or freeze
-  tokens until Martin says the direction is ready. Current design state lives
-  in `docs/design/homepage-exploration.md`.
+- `apps/marketing` is a configured Astro workspace shell with no pages or visual
+  implementation after the July 2026 reset. Keep its Astro, Turbo, Stylelint,
+  Vitest, and generated-font tooling intact while the content pipeline is rebuilt.
+- Current strategy is limited to `docs/strategy/foundation.md` and
+  `docs/strategy/questions-for-crystelle.md`. Files under
+  `docs/archive/2026-07-reset/` are provenance, not implementation inputs.
+- There is no current `PRODUCT.md`, `DESIGN.md`, or `docs/design/` contract. Do
+  not restore the deleted homepage or promote archived design choices. New
+  product/design context starts only after the reset map produces approved
+  inputs.
 - For substantial visual or interaction work, prefer the local `impeccable`
   skill when invoked or clearly useful.
 - Protect conversion and SEO intent, but allow visual implementation to
