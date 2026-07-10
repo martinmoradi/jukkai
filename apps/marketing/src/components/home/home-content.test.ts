@@ -28,12 +28,7 @@ describe('homepage content contracts', () => {
   });
 
   it('keeps the proof claims in the canonical order', () => {
-    expect(HOME_PROOF_CLAIMS).toEqual([
-      'UNAID',
-      '30 ans de métier',
-      '2 architectes',
-      'depuis 2012',
-    ]);
+    expect(HOME_PROOF_CLAIMS).toEqual(['UNAID', '30 ans de métier']);
   });
 
   it('labels every placeholder surface as pending validation', () => {

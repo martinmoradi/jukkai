@@ -1,7 +1,7 @@
 # Jukkai messaging system
 
 **Phase 2 (messaging) deliverable. Produced July 2, 2026 and reconciled July 10
-against `docs/strategy/foundation.md` v1.7 and `docs/research/audience.md`.**
+against `docs/strategy/foundation.md` v1.8 and `docs/research/audience.md`.**
 
 `docs/strategy/foundation.md` stays canonical; where this document restates a foundation
 ruling, the foundation wins. This document is the reusable messaging contract for
@@ -56,8 +56,9 @@ academic, rock but not punk); they weight the axes differently.
 - **Job**: convert. Validate the referral in seconds; give the service-page
   stranger a credible, complete answer; make an appropriate contact path obvious.
 - **Axis weighting**: expert-but-not-academic and warm-but-not-soft dominate.
-- **Moves**: name the credential (UNAID, 30 ans de métier, 2 architectes,
-  contextual studio founding in 2012, current insurance), state prices in the market's numeric frame, name the process and
+- **Moves**: name the credential (UNAID, 30 ans de métier, current insurance),
+  introduce Crystelle and Laura accurately as architectes d'intérieur diplômées
+  where the team matters, state prices in the market's numeric frame, name the process and
   the contrat de mission, show écoute through client words, show transformation
   through before/after and 3D projection.
 - **Grammar**: concrete nouns, numbers, commitments. Budget, délais, phases,
@@ -223,7 +224,8 @@ Register assignment per surface (binds Phase 3 page briefs):
 | Transformation                   | Before/after, 3D perspectives, « le résultat est bluffant » client language                                                        | Projets pages, case studies, homepage proof cue                                                                              |
 | Price clarity                    | Two-axis offer model, dated ranges, recent case-budget stories, and older cases using relative allocation                          | Prestations, project pages, cost-guide candidate, B2B fee section                                                            |
 | Process cleanliness              | The contrat de mission / lettre de mission named plainly; phases; suivi                                                            | Prestations process section, B2B page                                                                                        |
-| Qualification and responsibility | UNAID, 30 ans de métier, 2 architectes, current RC Pro/décennale, contextual 2012 continuity                                       | Near contact choices and in À propos; exact insurance wording follows the attestation                                        |
+| Qualification and responsibility | UNAID, 30 ans de métier, current RC Pro/décennale, contextual 2012 continuity                                                      | Near contact choices and in À propos; exact insurance wording follows the attestation                                        |
+| Team                             | Crystelle and Laura, both architectes d'intérieur diplômées; never shortened to « 2 architectes »                                  | À propos and other places where roles are genuinely useful; not in a proof strip                                             |
 | Eco-responsible practice         | 2023 My Green Cocoon label plus concrete material/reuse/sourcing choices                                                           | Compact umbrella/about proof and relevant case studies; never a sweeping positioning pillar                                  |
 | Neuro-architecture               | Multi-month training plus concrete project-specific design decisions                                                               | Light umbrella/about mention and relevant B2B/project stories; never a degree or health-outcome promise                      |
 | Local anchoring                  | Rennes commercial claim, Châteaugiron physical anchor, Google reviews, testimonials attributed first name + commune + project type | Service page, footer/NAP, GBP, case-study locations                                                                          |
@@ -241,7 +243,7 @@ persuade. The credential sits close to the contact action; the stories fill the 
 | "Will I get billed without a clear agreement?"        | Name the contrat de mission / lettre de mission before paid design work, plainly                                                                                                    | Process sections                           |
 | "A décoratrice is cheaper and maybe enough"           | Premium inversion: « une mission déco avec l'exigence d'une architecte d'intérieur »; the « architecte d'intérieur ou décorateur ? » FAQ answers the real fork                      | Offer pages, FAQ content                   |
 | "For structural work I need a real architect"         | Honest scoping; a factual line on the 150 m² / Ordre threshold where relevant                                                                                                       | B2B and process content                    |
-| "Is this person even qualified?" (unregulated title)  | UNAID + 30 ans de métier + 2 architectes, visible near the conversion point                                                                                                         | Service page, à propos, contact vicinity   |
+| "Is this person even qualified?" (unregulated title)  | UNAID, 30 ans de métier, and current insurance, visible near the conversion point                                                                                                   | Service page, à propos, contact vicinity   |
 | "Is my project too small for her?"                    | The full mission ladder down to conseil / mission déco; accessible entry work remains welcome without weakening the full-project offer                                              | Prestations, contact                       |
 | "Is Jukkai the architecture practice or the Galerie?" | Jukkai is the umbrella: the practice, the Galerie, and the place. Architecture is the commercial center; the Galerie enriches the world                                             | Homepage, à propos                         |
 | "Is Châteaugiron too far?"                            | Basée à Châteaugiron, à 20 minutes de Rennes; the working territory is Rennes / région rennaise, with wider Ille-et-Vilaine (35) reach depending on project scope                   | Service page, contact, footer              |
@@ -252,8 +254,9 @@ persuade. The credential sits close to the contact action; the stories fill the 
 ## 7. Words and phrases to use
 
 **Brand nouns (canonical, foundation §2/§4):** Jukkai by Crystelle Terrasson;
-architecte d'intérieur (the identity, always); Galerie; 2 architectes; 30 ans
-de métier (her career only); studio fondé en 2012 only inside the transition
+architecte d'intérieur (the identity, always); architectes d'intérieur diplômées
+when introducing Crystelle and Laura; Galerie; 30 ans de métier (her career only);
+studio fondé en 2012 only inside the transition
 narrative; ouverture octobre 2026 as temporary teaser copy.
 
 **Geography:** Rennes; Châteaugiron; « à 20 minutes de Rennes »; Rennes et sa

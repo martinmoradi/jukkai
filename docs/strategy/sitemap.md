@@ -1,7 +1,7 @@
 # Jukkai sitemap (Phase 3, IA)
 
 **Phase 3 deliverable, produced July 2, 2026 and reconciled July 10.** Reads
-`docs/strategy/foundation.md` (v1.7), `docs/research/audience.md`,
+`docs/strategy/foundation.md` (v1.8), `docs/research/audience.md`,
 `docs/strategy/messaging.md`, `docs/research/keywords.md`,
 `docs/research/competitors.md`, and `docs/strategy/questions-for-crystelle.md`. Mines the old-site
 crawl (`docs/reference/studioterrasson/`) and the March 2026 SEO audit as

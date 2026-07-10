@@ -255,8 +255,9 @@ vous faire économiser de l'argent ? », « architecte d'intérieur ou décorate
    screening criterion. **[E/I]**
 3. **Make projection possible**: before/after and 3D perspectives in portfolio
    pages. **[E/I]**
-4. **Neutralize the title fear**: UNAID, 30 ans de métier, 2 architectes, visible
-   near the first conversion point. **[F/E]**
+4. **Neutralize the title fear**: UNAID, 30 ans de métier, and current insurance,
+   visible near the first conversion point. Crystelle and Laura's status as
+   architectes d'intérieur diplômées is team context, not a proof badge. **[F/E]**
 5. **Signal contractual cleanliness**: the process section should mention the
    contrat de mission / lettre de mission explicitly. Cheap to say, answers the
    worst documented story. **[E/I]**

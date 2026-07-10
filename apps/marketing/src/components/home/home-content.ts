@@ -12,12 +12,7 @@ export const HOME_SECTION_ORDER = [
 
 export type HomeSectionId = (typeof HOME_SECTION_ORDER)[number];
 
-export const HOME_PROOF_CLAIMS = [
-  'UNAID',
-  '30 ans de métier',
-  '2 architectes',
-  'depuis 2012',
-] as const;
+export const HOME_PROOF_CLAIMS = ['UNAID', '30 ans de métier'] as const;
 
 export const HOME_PENDING_VALIDATION_LABELS = {
   art: 'Art shop à valider',

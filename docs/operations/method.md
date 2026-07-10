@@ -56,8 +56,11 @@ one against (Phase 2), and the URL inventory for the Phase 4 redirect map.
 
 One fact from that crawl is needed in Phase 0 and is inlined here so no reference
 load is required: the live site claims "30 années" and "2 architectes," while the
-brand docs say 14 years. Reconcile the canonical public claims in Phase 0 using these
-inlined facts plus the decision log; do not open the crawl for it.
+brand docs say 14 years. The second phrase is ambiguous and must not survive as a
+proof claim: Crystelle and Laura are architectes d'intérieur diplômées, not
+architectes in the protected professional sense. Reconcile the canonical public
+claims in Phase 0 using these inlined facts plus the decision log; do not open the
+crawl for it.
 
 ## Canonical truth and the skill adapter
 

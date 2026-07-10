@@ -1,6 +1,6 @@
 # Product Marketing Context
 
-_Last regenerated: 2026-07-10 from `docs/strategy/foundation.md` v1.7._
+_Last regenerated: 2026-07-10 from `docs/strategy/foundation.md` v1.8._
 
 ## Adapter contract
 
@@ -128,7 +128,9 @@ diagnosis.
 
 Allowed claims:
 
-- **2 architectes:** Crystelle Terrasson and Laura Corbel.
+- **Team wording:** « Crystelle et Laura, toutes deux architectes d'intérieur
+  diplômées ». This is an accurate team description, not a standalone proof badge.
+  Never shorten it to « 2 architectes ».
 - **30 ans de métier:** Crystelle's personal career only.
 - **Studio founded in 2012:** always contextualise that Crystelle founded the
   former studio in 2012; Jukkai is new in 2026.
@@ -208,5 +210,5 @@ expert but not academic; rock but not punk. Direct, sensory, local, and precise.
   existing Google reviews in the meantime.
 - Confirm opening hours, phone/NAP, temporary opening copy, and launch visuals.
 
-**Canonical source:** `docs/strategy/foundation.md` v1.7, especially sections
+**Canonical source:** `docs/strategy/foundation.md` v1.8, especially sections
 1–13 and the July 10 amendment.

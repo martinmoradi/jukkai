@@ -55,7 +55,7 @@ composition; do not use two slots that both say « art shop » (pick one).
    « On se souvient des lieux ».
 4. **Support line** (1 short sentence, umbrella-lite, small text):
    - « Ici, on dessine des espaces et on accroche des œuvres. »
-   - « Deux architectes d'intérieur, une galerie, une même exigence. »
+   - « Deux architectes d'intérieur diplômées, une galerie, une même exigence. »
    - « Un studio d'architecture d'intérieur et une galerie, sous le même toit,
      à Châteaugiron. » (same line as the umbrella statement; if used here,
      the umbrella section needs a different opening)
@@ -73,7 +73,7 @@ composition; do not use two slots that both say « art shop » (pick one).
    commune only, S1-gated placeholders; never invented names.
 8. **CTA (skeleton):** « Parlons de votre projet → », quiet text-link weight.
 9. **Proof line candidate:** ★ 4,9 · [XX] avis Google — UNAID · 30 ans de
-   métier · 2 architectes. The 2023 eco-responsible label may be a small design
+   métier. The 2023 eco-responsible label may be a small design
    touch nearby; 2012 belongs in narrative context, not this badge line.
 
 Comprehension test for any composition: cover everything except the hero; a
@@ -98,7 +98,7 @@ editorial texture, meaning echoed by the display stance.
   draft; voices should map to meaning (architecture voice vs art voice).
 - CTA: quiet text-link register, not a button (header carries the button).
 - Proof line at baseline, small caps, metadata register:
-  ★ 4,9 · [XX] avis Google — UNAID · 30 ans de métier · 2 architectes. Review
+  ★ 4,9 · [XX] avis Google — UNAID · 30 ans de métier. Review
   numbers stay placeholders until real; 2012 is not a standalone badge.
 
 ### Composition mechanisms (from reference teardown)
@@ -157,7 +157,7 @@ Statement (giant type, the section body):
 toit, à Châteaugiron. Le même œil choisit les œuvres et dessine les espaces. »
 (Second sentence optional; vision-tense only per bridge-claim rule.)
 
-Micro-column: « Deux architectes d'intérieur. Des rénovations complètes aux
+Micro-column: « Deux architectes d'intérieur diplômées. Des rénovations complètes aux
 missions déco, pour les particuliers et les espaces professionnels. » +
 « Découvrir les prestations → »
 

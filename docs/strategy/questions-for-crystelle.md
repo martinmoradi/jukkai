@@ -1,7 +1,7 @@
 # Questions and validation queue
 
 Updated July 10, 2026 after Martin's conversation with Crystelle and the Annexe D
-working session. `docs/strategy/foundation.md` v1.7 is canonical.
+working session. `docs/strategy/foundation.md` v1.8 is canonical.
 
 This file no longer treats every unknown as a Crystelle question. It separates
 operational inputs only she can provide from research/IA decisions Martin must make.

@@ -441,7 +441,7 @@ architecture pricing, section 7; Jukkai world as emotional register, section 5).
    shows a CFAI or UNAID credential on site; none embeds Google reviews; several
    show no testimonials at all. Jukkai launches with UNAID, 30 ans de métier (a
    bigger number than any competitor claims: the field claims 7, 15, 15, 20, since
-   2006), 2 architectes, carried-over Google reviews, and named projects pending
+   2006), current insurance, carried-over Google reviews, and named projects pending
    selection. Displaying reviews and the credential prominently is table stakes
    nowhere and differentiating everywhere.
 4. **Qualified enquiries are nearly unpracticed.** Most funnels are bare contact
