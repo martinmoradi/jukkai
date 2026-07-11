@@ -9,6 +9,9 @@
     "apps/*",
     "packages/*"
   ],
+  "overrides": {
+    "@astrojs/language-server": "2.16.11"
+  },
   "scripts": {
     "build": "turbo run build",
     "check": "bun run format:check && bun run lint && bun run typecheck && bun run test",
