@@ -58,12 +58,13 @@ reach into Rennes-metro map packs (Run C).
 
 ## 3. Data layer (issue #74 contract)
 
-- **DataForSEO: yes.** $50 minimum deposit, standard cost preset ($10/day,
-  $0.50 approval threshold) via `dataforseo_costs.py`. Rationale: AFK runs must
-  be able to complete unattended (a Run B day can legitimately spend a few
-  dollars), and the runaway protection is already double: the daily cap plus
-  the deposit itself as a hard ceiling. The full program below is estimated
-  well under $20 total. Acceptance: one live
+- **DataForSEO: yes.** $50 minimum deposit, aggressive cost preset ($50/day,
+  $2 approval threshold) via `dataforseo_costs.py`. No artificial limits: the
+  deposit itself is the budget and the only ceiling that matters. The preset
+  exists solely so a misfiring loop cannot silently burn credits between
+  ledger checks; it is set high enough that no legitimate run ever stalls
+  waiting for approval. The full program below is estimated well under $20
+  total. Acceptance: one live
   `serp_organic_live_advanced` call for "architecte d'intérieur rennes" with
   French parameters, returning verifiably French results.
 - **Google APIs: Tiers 0, 1, and 2** on the existing studioterrasson.fr
