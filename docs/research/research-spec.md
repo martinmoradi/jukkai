@@ -58,9 +58,12 @@ reach into Rennes-metro map packs (Run C).
 
 ## 3. Data layer (issue #74 contract)
 
-- **DataForSEO: yes.** $50 minimum deposit, conservative cost preset ($2/day,
-  $0.10 approval threshold) via `dataforseo_costs.py`. The full program below
-  is estimated well under $20 total. Acceptance: one live
+- **DataForSEO: yes.** $50 minimum deposit, standard cost preset ($10/day,
+  $0.50 approval threshold) via `dataforseo_costs.py`. Rationale: AFK runs must
+  be able to complete unattended (a Run B day can legitimately spend a few
+  dollars), and the runaway protection is already double: the daily cap plus
+  the deposit itself as a hard ceiling. The full program below is estimated
+  well under $20 total. Acceptance: one live
   `serp_organic_live_advanced` call for "architecte d'intérieur rennes" with
   French parameters, returning verifiably French results.
 - **Google APIs: Tiers 0, 1, and 2** on the existing studioterrasson.fr
@@ -139,6 +142,16 @@ Two confound controls are mandatory in every teardown:
   crafted editorial site would lose. That question is answered by rings 2 and 3,
   never by ring 1 alone.
 
+One standing capture rule alongside them: **reviews are a column of every
+competitor teardown row** (rings 1 and 2). Counts and velocity are captured as a
+ranking signal; the review text is captured as customer voice, exact quotes with
+sources. There is no standalone audience-research run in this pipeline: customer
+voice accumulates from this column plus the question phrasings the SERP work
+harvests (PAA, tarif-query composition), and the foundation's personas stay
+canonical unless the translation grill amends them from that evidence or from
+Crystelle's real lead handling. Run E is exempt: specimen reviews from other
+markets and verticals say nothing about Rennes clients.
+
 ## 7. The runs
 
 Each run becomes one `wayfinder:task` issue under #71, executed in a fresh
@@ -194,7 +207,8 @@ carries a one-line recheck trigger (what event or date invalidates it).
   presence); GBP layer: geo-grid centered on Rennes (not Châteaugiron)
   measuring how peripherally-pinned competitors (Le Rheu, Cesson, Vern) reach
   into metro packs, plus a winning-profile signal table (review counts and
-  velocity, categories, photos). Roughly $0.10 per keyword per 7x7 grid.
+  velocity, categories, photos) and the review-voice harvest per the standing
+  column rule in section 6. Roughly $0.10 per keyword per 7x7 grid.
 - **HITL pause:** after the discovery sweep produces the candidate table, Martin
   picks the teardown shortlist; the run resumes.
 - **Feeds:** matrix obligations; the website-vs-GBP investment weighting; the
@@ -274,11 +288,9 @@ Martin adjudicates.
 ## 10. Out of scope and deferred
 
 - GBP and citation execution (evidence gathered in Run C feeds it later).
-- A dedicated audience-research refresh. The July audience doc is archived; this
-  spec deliberately does not recreate it as a standalone run. Audience evidence
-  arrives indirectly (PAA questions, tarif-query composition, B2B SERP intent);
-  whether a deeper refresh is needed is decided at the translation grill, from
-  gaps, not upfront.
+- A standalone audience/persona study. Customer voice is a standing column of
+  every competitor teardown (section 6), not a separate run; personas stay
+  foundation-owned and are only revised at the translation grill.
 - Messaging, sitemap, and matrix construction themselves (downstream phases).
 - Anything requiring Crystelle's input beyond measured questions the runs
   generate.
