@@ -81,19 +81,25 @@ reach into Rennes-metro map packs (Run C).
 ## 4. Keyword territories
 
 Whole territories are the one thing machine expansion cannot invent, so they are
-seeded by hand from the foundation. Coverage rule: every foundation audience and
-every offer rung must map to at least one territory. Current list:
+seeded from the foundation. **Status: this list is a seed hypothesis, not a
+decision.** It is a row-by-row projection of the foundation (source column
+below), it exists only to start the machine expansion, and it is self-correcting
+twice: the surprise sweep catches anything it missed, and Martin prunes the
+expanded output at Run B's HITL pause. Coverage rule: every foundation audience
+and every offer rung must map to at least one territory. One deliberate
+exclusion: artists are unseeded because the foundation routes artist acquisition
+through Instagram and direct relationships, not search.
 
-| #   | Territory       | Notes                                                                                                                                                                                                                                |
-| --- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 1   | Core service    | architecte d'intérieur + rennes/agence variants                                                                                                                                                                                      |
-| 2   | Décoration      | décoratrice, mission déco, conseil déco; exists because of the foundation §7 ruling; research question is whether demand justifies its own page and when                                                                             |
-| 3   | Price and trust | combien coûte, tarif, honoraires, "architecte d'intérieur ou décorateur"                                                                                                                                                             |
-| 4   | Project types   | rénovation maison/appartement, aménagement, regional flavors (longère, maison années 30); national-topic ban applies as a pruning rule                                                                                               |
-| 5   | B2B             | aménagement bureaux, agencement commerce/restaurant, neuro-architecture niches (crèche, cabinet médical)                                                                                                                             |
-| 6   | Galerie         | galerie d'art rennes + châteaugiron pin; an asymmetric bet: measure demand AND competitive weakness; if ranking is cheap the galerie page earns its keywords as bonus discoverability without competing with the architecture center |
-| 7   | Local anchor    | Châteaugiron hygiene terms plus the 2-3 honest communes from foundation §8; anchor layer, not acquisition                                                                                                                            |
-| 8   | Branded         | crystelle terrasson variants, jukkai; migration protection, not acquisition                                                                                                                                                          |
+| #   | Territory       | Foundation source                        | Notes                                                                                                                                                                                                                                |
+| --- | --------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1   | Core service    | §3 primary job, §8 Rennes claim          | architecte d'intérieur + rennes/agence variants                                                                                                                                                                                      |
+| 2   | Décoration      | §7 décoratrice ruling, offer rung 1      | décoratrice, mission déco, conseil déco; research question is whether demand justifies its own page and when                                                                                                                         |
+| 3   | Price and trust | §7 pricing clarity, cost-guide candidate | combien coûte, tarif, honoraires, "architecte d'intérieur ou décorateur"                                                                                                                                                             |
+| 4   | Project types   | §7 offer rungs 2-3, §6 personas          | rénovation maison/appartement, aménagement, regional flavors (longère, maison années 30); national-topic ban applies as a pruning rule                                                                                               |
+| 5   | B2B             | §7 offer rung 4, §6 audience 2           | aménagement bureaux, agencement commerce/restaurant, neuro-architecture niches (crèche, cabinet médical)                                                                                                                             |
+| 6   | Galerie         | §3 secondary job 1, §9                   | galerie d'art rennes + châteaugiron pin; an asymmetric bet: measure demand AND competitive weakness; if ranking is cheap the galerie page earns its keywords as bonus discoverability without competing with the architecture center |
+| 7   | Local anchor    | §8 geography ruling                      | Châteaugiron hygiene terms plus the 2-3 honest communes; anchor layer, not acquisition                                                                                                                                               |
+| 8   | Branded         | §4 name architecture, §8 migration       | crystelle terrasson variants, jukkai; migration protection, not acquisition                                                                                                                                                          |
 
 Expansion is the machine's job (keyword ideas, related searches, PAA harvest,
 competitor `ranked_keywords`). A **surprise sweep** is mandatory: competitor
