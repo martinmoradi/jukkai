@@ -142,17 +142,25 @@ shape the resulting doc if useful.
 Order is top to bottom. "Grill" = human in the loop. "Derive" = autonomous, reads
 docs and produces. Model tiers and roles are defined in the next section.
 
-| Phase                       | Reads                                       | Skills                                                                                                                                                 | Produces                                                                                 | Mode        |
-| --------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- | ----------- |
-| 0. Foundation               | the 5 source docs                           | `product-marketing` (adapter only)                                                                                                                     | `docs/strategy/foundation.md` + `docs/strategy/questions-for-crystelle.md`               | grill       |
-| 1. Research refresh         | frozen foundation                           | `customer-research`, `competitor-profiling`, live SERP                                                                                                 | `docs/research/audience.md`, `docs/research/competitors.md`, `docs/research/keywords.md` | derive      |
-| 2. Messaging                | foundation, audience                        | (part of `product-marketing`)                                                                                                                          | `docs/strategy/messaging.md`                                                             | derive      |
-| 3. IA / Sitemap (the hinge) | foundation, audience, keywords, competitors | `site-architecture`, `marketing-plan`                                                                                                                  | `docs/strategy/sitemap.md` + `docs/strategy/content-matrix.md`                           | short grill |
-| 4. Execution (parallel)     | everything above                            | `content-strategy`, `copywriting`, `copy-editing`, `ai-seo`, `schema`, `analytics`, local-citations/GBP checklist, (`programmatic-seo` if constrained) | content matrix, SEO spec, schema, redirect map, tracking plan                            | derive      |
-| 5. Launch / growth (later)  | the built site                              | `launch`, `public-relations`, `social`, `cro`, `referrals`, `video`, `ab-testing`                                                                      | ongoing                                                                                  | derive      |
+| Phase                       | Reads                                       | Skills                                                                                                                                                 | Produces                                                                   | Mode        |
+| --------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------- | ----------- |
+| 0. Foundation               | the 5 source docs                           | `product-marketing` (adapter only)                                                                                                                     | `docs/strategy/foundation.md` + `docs/strategy/questions-for-crystelle.md` | grill       |
+| 1. Research refresh         | frozen foundation                           | claude-seo suite + DataForSEO, per `docs/research/research-spec.md`                                                                                    | `docs/research/` run outputs per the spec                                  | derive      |
+| 2. Messaging                | foundation, audience                        | (part of `product-marketing`)                                                                                                                          | `docs/strategy/messaging.md`                                               | derive      |
+| 3. IA / Sitemap (the hinge) | foundation, audience, keywords, competitors | `site-architecture`, `marketing-plan`                                                                                                                  | `docs/strategy/sitemap.md` + `docs/strategy/content-matrix.md`             | short grill |
+| 4. Execution (parallel)     | everything above                            | `content-strategy`, `copywriting`, `copy-editing`, `ai-seo`, `schema`, `analytics`, local-citations/GBP checklist, (`programmatic-seo` if constrained) | content matrix, SEO spec, schema, redirect map, tracking plan              | derive      |
+| 5. Launch / growth (later)  | the built site                              | `launch`, `public-relations`, `social`, `cro`, `referrals`, `video`, `ab-testing`                                                                      | ongoing                                                                    | derive      |
 
 Notes:
 
+- **2026-07-11 amendment: Phase 1 engine v2.** The July 2026 Phase 1 run was
+  archived as untrusted (non-geolocated SERPs, no volume data, unreproducible
+  claims, strategy conclusions produced inside derive-mode research). The phase
+  architecture holds; the engine is replaced. Phase 1 now executes as the
+  discrete, geolocated, paid-data research runs specified in
+  `docs/research/research-spec.md`. Research runs may not conclude strategy:
+  interpretation happens in a translation grill before anything amends the
+  foundation.
 - **Phase 0 before Phase 1, strictly. Do not overlap them.** Phase 0 decides from the
   existing evidence and freezes `docs/strategy/foundation.md`. Phase 1 then refreshes
   research; if it overturns something, it amends the foundation with an explicit
