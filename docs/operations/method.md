@@ -1,255 +1,150 @@
-# Marketing foundation build method
+# Jukkai website-planning method
 
-How the Jukkai marketing documentation gets built. Read this before starting any
-phase. It exists so each phase can run in a fresh, clean context and still produce
-work that fits the whole.
+> Status: working prototype for Martin's review. It does not yet establish
+> canonical strategy, research obligations, pages, or implementation
+> requirements.
 
-**July 10, 2026 correction.** The commercial priority does not mechanically
-determine the navigation, homepage H1, page count, or contact mechanism. Phase 3
-must compare plausible IA models before those become build constraints.
+This document is the durable mental model for moving from a broad, uncertain
+website problem to a site structure Martin understands and can confidently use
+to begin copy and design.
 
-## The principle
+It is not the current plan. The evolving plan lives in the
+[site-planning inquiry](../research/site-planning-inquiry.md).
 
-**Foundation-first, one stable artifact bundle per phase, fresh context per phase.**
+## Destination
 
-Each phase reads only the frozen artifacts above it, produces its own bundle (one or
-more docs, listed in the phase map), then the context is thrown away. The artifacts
-are the memory between contexts. Never carry a conversation forward; carry the
-artifacts it produced.
+The effort is ready when Martin has an evidence-backed and personally understood
+model for the Jukkai website:
 
-Consequences worth stating:
+- the future `jukkai.fr` pages are known;
+- the business and discovery job of each meaningful page is understood;
+- what each page must communicate and prove is clear;
+- real constraints are distinguished from conventions and agent preferences;
+- the creative freedom available to copy and design is explicit;
+- remaining uncertainty is visible rather than silently resolved.
 
-- A new context is safe to open the moment the docs it depends on are frozen. The
-  dependency graph below tells you when.
-- Grilling is concentrated in the Foundation phase. Later client conversations may
-  still amend the foundation explicitly; the downstream docs then need a
-  reconciliation pass before work continues.
-- Doing the top of the chain properly buys the right to be cheap and mechanical
-  downstream. That is the whole point.
+The concrete output is a selected IA and sitemap plus a short responsibility
+brief for every meaningful content page. Final copy, wireframes, visual design,
+motion, implementation, and launch come later.
 
-## Source material
+## The path
 
-The clean repo starts empty on purpose. The prior project lives in the archived
-`jukkai-atelier` repo. A frozen snapshot of the five docs worth mining is copied
-into `docs/source-material/` for easy referencing during grilling. Treat them as
-raw material to mine, not files to edit. When they contradict this method or each
-other, this method and the newer conversations win; they are a June 2026 snapshot.
+| Layer                           | Question                                               | Result                                                      |
+| ------------------------------- | ------------------------------------------------------ | ----------------------------------------------------------- |
+| 1. Destination                  | What state are we trying to reach?                     | A bounded readiness condition                               |
+| 2. Outcomes                     | What should Jukkai be able to achieve?                 | Outcomes to investigate and later prioritize                |
+| 3. Questions and decisions      | What must be understood or chosen?                     | A living inquiry map                                        |
+| 4. Evidence needs               | What could materially inform each question?            | Bounded evidence requirements                               |
+| 5. Evidence sources             | Which source can legitimately inform which part?       | An authority-aware source plan                              |
+| 6. Tools                        | How can the useful evidence be obtained?               | Calibrated evidence adapters                                |
+| 7. Observations and data        | What did the sources directly show?                    | Traceable evidence with limits                              |
+| 8. Interpretation               | What might the combined evidence mean?                 | Competing explanations and hypotheses                       |
+| 9. Decisions                    | What will Jukkai choose, defer, or test?               | Owned decisions with rationale and uncertainty              |
+| 10. Site models                 | How could the accepted decisions coexist as a website? | Coherent alternatives and trade-offs                        |
+| 11. Selected IA and page briefs | Which model will shape the site?                       | Sitemap and page responsibilities ready for copy and design |
 
-- `source-material/brand-strategy.md` — the existing foundation. Genuinely good.
-  Needs a v2, not a rewrite.
-- `source-material/project-context.md` — ecosystem and phase context.
-- `source-material/discovery-transcript.md` — the richest artifact. The March 2026
-  client interview.
-- `source-material/seo-digital-performance-audit.md` — the studioterrasson.fr
-  baseline and the keyword clusters. Your keyword research is mostly already here.
-- `source-material/decision-log.md` — **closed decisions with rationale.** Read this
-  during the "settled vs open" pass so Phase 0 does not relitigate settled calls:
-  one site (not two), jukkai.fr as primary domain, "Jukkai by Crystelle Terrasson"
-  naming, no ecommerce/catalogue, migration requirements. Do not reopen without new
-  evidence.
+These layers form a path, not a conveyor belt.
 
-Deep reference, **load per phase, never in the Phase 0 context**:
-`docs/reference/studioterrasson/` — a June 2026 crawl of the current site (37 pages
-of text; screenshots stay in the atelier repo). Mine it for the proof bank (real
-projects, types, locations, materials), the current public voice to define the new
-one against (Phase 2), and the URL inventory for the Phase 4 redirect map.
+Investigation may reveal a missing question. Synthesis may expose insufficient
+evidence. A site model may uncover unresolved business truth. Return to the
+relevant earlier layer, update the inquiry, and continue instead of forcing
+later work to compensate.
 
-One fact from that crawl is needed in Phase 0 and is inlined here so no reference
-load is required: the live site claims "30 années" and "2 architectes," while the
-brand docs say 14 years. The second phrase is ambiguous and must not survive as a
-proof claim: Crystelle and Laura are architectes d'intérieur diplômées, not
-architectes in the protected professional sense. Reconcile the canonical public
-claims in Phase 0 using these inlined facts plus the decision log; do not open the
-crawl for it.
+## How the path becomes a plan
 
-## Canonical truth and the skill adapter
+The living inquiry begins with Martin's real questions, desired outcomes, and
+current uncertainty. It records what is known, what evidence is missing, which
+sources may help, who owns the decision, what depends on it, and the next useful
+work.
 
-`docs/strategy/foundation.md` is the single canonical source of truth. It is **versioned and
-amendable**, not entombed: "freeze" means "stable enough for the next phase to
-depend on," and a later phase may amend it with an explicit, dated note (see the
-Phase 1 rule below).
+It is intentionally incomplete. Research may add, combine, sharpen, reframe, or
+retire questions. When a question becomes precise enough to investigate, it
+graduates from fog into concrete work.
 
-The `marketingskills` repo expects its shared context at
-`.agents/product-marketing.md`. Generate that file as a **derived adapter** from
-`docs/strategy/foundation.md`: never hand-edit it, and regenerate it whenever the
-foundation changes. Foundation is truth; the adapter is a projection for the tools.
+Evidence collection does not mechanically generate strategy:
 
-## The strategic joint this method must preserve
+1. frame what must be understood;
+2. identify evidence that could change the answer;
+3. choose and calibrate legitimate sources and tools;
+4. gather observations with provenance and limitations;
+5. synthesize agreements, contradictions, confounds, and alternatives;
+6. decide, defer, escalate, or define an experiment;
+7. compare coherent whole-site models;
+8. translate the selected model into IA, sitemap, and page responsibilities.
 
-Do not frame it as a binary ("architecture or Jukkai"). The resolution is two
-distinct centers that must not be collapsed:
+The sitemap translates accepted decisions into structure. It does not translate
+raw SEO output mechanically into pages.
 
-- **Commercial center: interior architecture.** Acquisition and referral
-  validation. It is where the searchable, monetizable demand is (the `architecte
-d'intérieur Rennes` cluster) and what sustains the business.
-- **Brand / experience center: Jukkai.** The Galerie, the physical place, the
-  fusion of art and interiors. Owns the opening emotional register, the visual
-  world, and the differentiation that makes the architecture offer distinct from
-  every other studio in the region.
+## Who owns what
 
-The site can open with the Jukkai world while architecture remains the commercial
-priority. The two layers are complementary, not competing, most of the time. This
-business hierarchy is an input to the IA, not a predetermined navigation tree,
-page count, homepage H1, or visual hierarchy.
+Martin owns the site-planning inquiry. He brings established knowledge of
+Crystelle, Jukkai, and the project; interprets evidence; develops
+recommendations; and makes most website and marketing decisions.
 
-**Decision rule.** Protect architecture search relevance, qualified contact intent,
-and Galerie legibility. Do not assume that each objective needs its own navigation
-item or page. When they compete for a scarce slot, compare concrete IA models and
-show what each model gains or sacrifices. The homepage can contribute to sitewide
-trust without carrying the exact-match query as its visible headline, provided the
-search-intent page and internal linking are strong. This is a Phase 3 decision, not
-a mechanical Phase 0 deduction.
+Crystelle is consulted when a finding would create or materially change a
+business commitment Martin cannot confidently represent. She receives a
+prepared explanation, recommendation, and clear alternatives rather than raw
+data or an open-ended request to design the sitemap.
 
-### Phase 0 decides (the grill agenda)
+Evidence sources and tools answer only the parts they are capable of answering.
+Search data does not choose Jukkai's business. Competitors do not prove why they
+rank. Editorial references show possibilities, not page obligations. Existing
+documents provide source material, not authority merely because they already
+exist.
 
-Resolve each explicitly. Anything only Crystelle can answer goes to
-`docs/strategy/questions-for-crystelle.md`, **bucketed** by what it blocks: blocking-for-sitemap,
-blocking-for-copy, blocking-for-launch, later. Not a junk drawer.
+## The artifact map
 
-1. **Primary website job** — the evidence points to qualified architecture enquiries.
-2. **Secondary jobs** — validate referrals, make the Galerie visitable, invite
-   Instagram / foot traffic, support artist credibility.
-3. **Brand / name architecture** — exact public phrasing (Jukkai by Crystelle
-   Terrasson), handling of the old studio name, GBP name, title-tag pattern.
-4. **Audience priority** — private architecture clients, then B2B, then art visitors,
-   with artists as credibility/community. Confirm or revise this order.
-5. **Offer architecture** — full mission, targeted déco, pro spaces, art integration.
-6. **SEO posture** — how explicitly to claim Rennes, Châteaugiron, Ille-et-Vilaine.
-7. **Galerie promise** — physical place and emotional world, not ecommerce unless
-   Crystelle can actually operate inventory and content.
-8. **Proof bank** — projects, testimonials, locations, credentials, and concrete
-   art/architecture bridge examples.
-9. **Public French language** — how Galerie becomes distinctly Jukkai, and what the
-   page may say before opening without implying ecommerce or a confirmed event
-   program.
+- **This method** owns the durable path, decision boundaries, backward loops,
+  and readiness definition.
+- **The Wayfinder map** owns the current destination, visible frontier,
+  decisions reached while finding the route, and unresolved fog.
+- **The living inquiry** owns evolving outcomes, questions, evidence needs,
+  dependencies, ownership, and current uncertainty. It is not canonical
+  strategy.
+- **Evidence and synthesis artifacts** preserve observations, provenance,
+  limitations, interpretations, and hypotheses. Being checked into the
+  repository does not give them decision authority.
+- **Reviewed decisions** graduate into the appropriate durable strategy or
+  site-planning artifact.
+- **The final site plan** records the selected model, IA, sitemap, page
+  responsibilities, rationale, transferable existing-site value, remaining
+  uncertainty, and later experiments.
 
-**Does not block the sitemap — defer to the "later" bucket in
-`docs/strategy/questions-for-crystelle.md`:** exact art-buyer persona, three-year
-Galerie economics, full event calendar, full artist lineup, the future client
-portal. Phase 0 must not stall on these.
+Keep this system small. Create another artifact only when a real coordination or
+reasoning problem earns it.
 
-### How Phase 0 runs
+## How agents use the method
 
-Phase 0 is **custom and decision-led**, driven by the agenda above against the five
-source docs, not by a template. Open a fresh strong-model context with this method
-and the five source docs, nothing else. The external `product-marketing` skill is an
-output _adapter_, not the driver: it is too SaaS-shaped and too tidy to adjudicate
-this contradiction. Let the decision agenda above lead; borrow the skill only to
-shape the resulting doc if useful.
+Agents distinguish their current kind of work: orientation, framing, capability
+mapping, investigation, synthesis, decision support, or site modeling. When the
+work becomes legible, they state the current mode and its stopping boundary
+briefly, and make any later transition visible.
 
-## Phase map
+The subject is not the authority. An SEO investigation still produces evidence,
+not pages. An editorial study still demonstrates possibility, not Jukkai's IA.
+Agreement expressed with uncertainty permits continued exploration; it does not
+turn an assumption or agent recommendation into a decision.
 
-Order is top to bottom. "Grill" = human in the loop. "Derive" = autonomous, reads
-docs and produces. Model tiers and roles are defined in the next section.
+## Ready for copy and design
 
-| Phase                       | Reads                                       | Skills                                                                                                                                                 | Produces                                                                                 | Mode        |
-| --------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- | ----------- |
-| 0. Foundation               | the 5 source docs                           | `product-marketing` (adapter only)                                                                                                                     | `docs/strategy/foundation.md` + `docs/strategy/questions-for-crystelle.md`               | grill       |
-| 1. Research refresh         | frozen foundation                           | `customer-research`, `competitor-profiling`, live SERP                                                                                                 | `docs/research/audience.md`, `docs/research/competitors.md`, `docs/research/keywords.md` | derive      |
-| 2. Messaging                | foundation, audience                        | (part of `product-marketing`)                                                                                                                          | `docs/strategy/messaging.md`                                                             | derive      |
-| 3. IA / Sitemap (the hinge) | foundation, audience, keywords, competitors | `site-architecture`, `marketing-plan`                                                                                                                  | `docs/strategy/sitemap.md` + `docs/strategy/content-matrix.md`                           | short grill |
-| 4. Execution (parallel)     | everything above                            | `content-strategy`, `copywriting`, `copy-editing`, `ai-seo`, `schema`, `analytics`, local-citations/GBP checklist, (`programmatic-seo` if constrained) | content matrix, SEO spec, schema, redirect map, tracking plan                            | derive      |
-| 5. Launch / growth (later)  | the built site                              | `launch`, `public-relations`, `social`, `cro`, `referrals`, `video`, `ab-testing`                                                                      | ongoing                                                                                  | derive      |
+Before copy and design begin, every meaningful content page in the selected
+sitemap should answer:
 
-Notes:
+| Dimension  | Question                                                                                     |
+| ---------- | -------------------------------------------------------------------------------------------- |
+| Business   | Why does this page exist for Jukkai?                                                         |
+| Audience   | Who needs it, and in what situation?                                                         |
+| Discovery  | How may people reach it through search, GBP, referrals, navigation, social, or another path? |
+| Promise    | What can Jukkai truthfully communicate here?                                                 |
+| Proof      | What must support that promise?                                                              |
+| Action     | What useful next step should be possible?                                                    |
+| Story      | What role does the page play in the larger Jukkai experience?                                |
+| Constraint | What must remain clear, present, accessible, measurable, or technically valid?               |
+| Freedom    | What may copy and design challenge or reinvent?                                              |
 
-- **Phase 0 before Phase 1, strictly. Do not overlap them.** Phase 0 decides from the
-  existing evidence and freezes `docs/strategy/foundation.md`. Phase 1 then refreshes
-  research; if it overturns something, it amends the foundation with an explicit
-  dated note. Never let research "run alongside and get folded in" — that dissolves
-  the freeze boundary the whole method depends on.
-- **Phase 1 does live checks.** Competitor and keyword reality drifts; the 2025 audit
-  is a baseline, not current truth. Re-verify SERP and competitors live.
-- **Phase 3 has two co-equal outputs: the sitemap and the content-matrix skeleton.**
-  The matrix is the hinge deliverable where strategy becomes buildable — page, URL,
-  purpose, audience, keyword, CTA, proof, status — not admin. Fill its left half
-  (strategy/IA) in Phase 3; the right half (copy, meta, schema, status) fills in
-  Phase 4. Before choosing one, compare at least three plausible models: an
-  integrated portfolio model, a separated acquisition-page model, and a hybrid.
-  For each, distinguish URL/indexation needs from primary navigation, homepage
-  storytelling, visual hierarchy, and internal linking. Reference sites are useful
-  category evidence, not templates to copy.
-- Phase 3 is the second and last human-judgment point besides Phase 0.
-- Everything in Phase 4 is derivation only once the Phase 3 confidence review has
-  made the competing IA, H1, contact-path, and measurement assumptions explicit.
-  If those remain unresolved, content and design may explore but must not silently
-  promote the provisional sitemap to a build contract.
+Legal and utility pages may use a reduced form.
 
-## Skill triage
-
-Marketing skills library: `github.com/coreyhaines31/marketingskills`. It is
-SaaS-heavy. Record the exact source and a pinned commit or date when you install, so
-later agents consume a known version, not floating memory (reviewed against the repo
-as of July 2026). In scope for a local service business plus Galerie:
-
-- Foundation and research: `product-marketing`, `customer-research`,
-  `competitor-profiling`, `seo-audit` (baseline already done).
-- Structure and content: `site-architecture`, `marketing-plan`, `content-strategy`,
-  `copywriting`, `copy-editing`.
-- SEO and technical: `ai-seo`, `schema`, `analytics`. Use `programmatic-seo` only if
-  constrained to a few honest service-area pages (Cesson-Sévigné, Le Rheu, la région
-  rennaise), never doorway-page soup. Replace `directory-submissions` (SaaS-directory
-  shaped) with a **local SEO citation + Google Business Profile checklist**: NAP
-  consistency, GBP completeness and reviews, local directories like Pages Jaunes.
-- Launch and later: `launch`, `public-relations`, `social`, `cro`, `referrals`,
-  `video`, `ab-testing`.
-
-Skip (SaaS / product-growth, no fit): `churn-prevention`, `paywalls`, `pricing`,
-`onboarding`, `signup`, `aso`, `sms`, `cold-email`, `prospecting`,
-`sales-enablement`, `revops`, `lead-magnets`, `free-tools`, `offers`, `popups`,
-`co-marketing`, `community-marketing`. `ads` / `ad-creative` and `emails` are "maybe
-later," not foundation work. `marketing-psychology` is optional flavor for Phase 4
-copy.
-
-## Model and multi-agent allocation
-
-Rule: **capability pays where the output is under-constrained and high-blast-radius.
-Structure substitutes for capability everywhere else.** Do not spread the frontier
-model evenly. It is barbell-shaped.
-
-A scarce frontier model is usually worth more as a second-pass critic than as a
-first drafter. Generation pays full token cost over a large output space; critique
-reads a bounded artifact and finds what is wrong or missing, which is where the
-frontier edge (seeing tension, catching blind spots) actually lives.
-
-Roles, not just phases:
-
-- **Drafter** — standard model. Bulk generation, tightly constrained by frozen
-  upstream docs. Most of Phase 4, and first drafts everywhere.
-- **Grill-partner** — frontier model, Phase 0 only. Grilling quality depends on the
-  questioner, so this is the one place a frontier model helps generate. Claude
-  preferred here (thinking).
-- **Critic / adversary** — frontier model, second pass on the two hinges
-  (Foundation, Sitemap). Reads the frozen artifact cold and attacks it: what did you
-  assume, what tension did you paper over, who is missing from the audience, which
-  page has no search intent.
-- **Reconciler** — human or Claude, integrates the critique.
-
-Cross-model (a second family such as GPT-5.5) buys divergent blind spots, not more
-capability. Spend it only on the two hinges:
-
-- Foundation: two divergent critics (e.g. Fable 5 and GPT-5.5) reading
-  `docs/strategy/foundation.md` cold, then reconcile. Best defense against a papered-over
-  center-of-gravity decision. This is the `crossed-review` pattern applied to a
-  strategy doc.
-- Sitemap: one divergent critic attacking the IA.
-- Messaging: optional single second opinion on voice.
-- Phase 4: no cross-model. Mechanical and already constrained; a second model just
-  doubles cost.
-
-Concrete default: Claude drafts and grills the judgment-heavy top; GPT-5.5 is the
-divergent critic; the scarcest strongest model (Fable 5) is spent as the critic or
-final reconciler on the foundation, and later on the landing-page prototype (design
-and motion taste is under-constrained and high-visibility, so it earns the frontier
-model too). Standard models carry the entire mechanical tail in Phase 4.
-
-## Context hygiene checklist
-
-Before opening a fresh context for a phase:
-
-1. Confirm every doc that phase reads is frozen (not mid-edit).
-2. Load this method doc plus only those input docs. Nothing else.
-3. Produce the one output doc for that phase.
-4. If the phase is a hinge (0 or 3), run the critic pass in another fresh context
-   that reads only the just-produced doc.
-5. Freeze the output. Discard the context. Move on.
+This method does not predetermine the complete question list, exact
+investigations, tool stack, markets, competitors, specimens, number of pages,
+keyword-to-page model, content convention, or final artifact file structure.
+Those answers emerge through the path.

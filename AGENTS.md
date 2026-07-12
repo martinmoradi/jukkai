@@ -72,6 +72,10 @@ remove them when the convention changes.
 - `apps/marketing` is a configured Astro workspace shell with no pages or visual
   implementation after the July 2026 reset. Keep its Astro, Turbo, Stylelint,
   Vitest, and generated-font tooling intact while the content pipeline is rebuilt.
+- Before marketing research, strategy, IA, content, or design work, read
+  `docs/operations/method.md`. Keep observations, interpretations, hypotheses,
+  decisions, and experiments distinct; tools and competitor patterns do not own
+  Jukkai's business or creative trade-offs.
 - Current strategy is limited to `docs/strategy/foundation.md` and
   `docs/strategy/questions-for-crystelle.md`. Files under
   `docs/archive/2026-07-reset/` are provenance, not implementation inputs.
