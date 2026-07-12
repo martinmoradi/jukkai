@@ -1,20 +1,19 @@
 # Jukkai marketing foundation
 
-**Version 1.8. Frozen July 2, 2026 (v1.0), amended same day after the cross-model
-critic pass (v1.1), Phase 1 research reconciliation (v1.2), Martin's Phase 2
-clarifications (v1.3), the name-weight ruling (v1.4), and the GBP/signage
-decoupling (v1.5), Martin's geography / gallery-language clarification (v1.6),
-the July 10 Crystelle checkpoint reconciliation (v1.7), and the team-title
-correction (v1.8).**
+**Version 1.9, July 12, 2026.** The full version history lives in the
+Amendments section at the bottom.
 
 This is the canonical source of truth for all marketing phases (see `docs/operations/method.md`).
 It was produced in Phase 0 from the five source docs plus the July 2, 2026 grilling
 session with Martin. Where this document contradicts the source material, this document
 wins; superseded facts are listed in section 12.
 
-Amendment rule: later phases may amend this file with an explicit, dated note in the
-Amendments section at the bottom. Never silently. The `.agents/product-marketing.md`
-adapter is generated from this file and regenerated on every change, never hand-edited.
+Amendment rule: substance changes require an explicit, dated note in the
+Amendments section at the bottom — never silent. Hygiene passes (condensing,
+rewriting for clarity, folding stale amendment narrative into the body) are
+allowed when Martin asks for them; git history preserves provenance. The
+`.agents/product-marketing.md` adapter is generated from this file and
+regenerated on every change, never hand-edited.
 
 ---
 
@@ -545,5 +544,14 @@ and the conditional pricing simulator.
   introduce them as « toutes deux architectes d'intérieur diplômées », but this is a
   team fact, not a proof badge, and must never be shortened to « 2 architectes ».
 
-_Later phases append here with date and reason; Phase 1 research that overturns
+- **2026-07-12, v1.9 (amendment-rule hygiene).** Relaxed the append-only
+  amendment rule: substance changes still require dated notes, but condensing
+  and clarity rewrites are allowed on Martin's request, with git history as
+  provenance. Compressed the header version litany. Additionally, per the
+  reset inquiry, the SEO/IA rulings in sections 4, 5, and 8 are treated as
+  claims to be tested by the discovery pass in
+  `docs/research/site-planning-inquiry.md`; business facts, claims canon,
+  audiences, offer architecture, and voice remain trusted.
+
+_Later phases append here with date and reason; research that overturns
 anything above must amend explicitly, never silently._
