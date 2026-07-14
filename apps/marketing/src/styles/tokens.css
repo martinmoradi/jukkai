@@ -1,0 +1,92 @@
+/*
+ * Jukkai design tokens — CSS expression of DESIGN.md (v0.1).
+ * DESIGN.md is the source of truth; change it first, then mirror here.
+ */
+
+@font-face {
+  font-family: Hellix;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/brand/HellixVF-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Voyage;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/brand/Voyage-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Voyage;
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/brand/Voyage-Bold.woff2') format('woff2');
+  font-display: swap;
+}
+
+:root {
+  /* Color roles (OKLCH). `accent`, `field-2`, `field-3` are open slots. */
+  --color-canvas: oklch(91.5% 0.023 85deg);
+  --color-ink: oklch(23% 0.004 107deg);
+  --color-ink-muted: oklch(48% 0.012 95deg);
+  --color-hairline: oklch(78% 0.02 85deg);
+  --color-field-terracotta: oklch(71.9% 0.118 34deg);
+
+  /* Type voices */
+  --font-sans: Hellix, 'Helvetica Neue', Arial, sans-serif;
+  --font-display: Voyage, Georgia, 'Times New Roman', serif;
+
+  /* Functional ladder (Hellix) */
+  --text-caption: 0.875rem;
+  --text-body: 1rem;
+  --text-body-editorial: 1.125rem;
+  --text-lead: 1.375rem;
+  --text-sans-head: 1.5625rem;
+
+  /* Editorial set (Voyage) — semantic fluid ranges */
+  --text-h3: clamp(2rem, 1.6rem + 1.7vw, 2.75rem);
+  --text-h2: clamp(2.5rem, 1.75rem + 3.2vw, 4rem);
+  --text-h1: clamp(3.25rem, 1.9rem + 5.7vw, 6rem);
+  --text-statement: clamp(4.5rem, 2.4rem + 9vw, 10rem);
+
+  /* Letterspaced caps (brand style) */
+  --tracking-caps-display: 0.15em;
+  --tracking-caps-small: 0.18em;
+
+  /* Spacing — fixed primitives */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-96: 96px;
+  --space-128: 128px;
+  --space-160: 160px;
+
+  /* Spacing — fluid layout aliases */
+  --space-gutter: clamp(16px, 4vw, 64px);
+  --space-grid-gap: clamp(16px, 2.5vw, 32px);
+  --space-section: clamp(64px, 10vw, 160px);
+  --space-hero: clamp(96px, 14vw, 240px);
+
+  /* Layout widths */
+  --width-rail: 1280px;
+  --measure-body: 65ch;
+  --measure-lead: 45ch;
+
+  /* Surfaces */
+  --hairline: 1px;
+  --radius-surface: 0;
+
+  /* Motion */
+  --duration-hover: 120ms;
+  --duration-state: 200ms;
+  --duration-reveal: 500ms;
+  --ease-editorial: cubic-bezier(0.23, 1, 0.32, 1);
+}

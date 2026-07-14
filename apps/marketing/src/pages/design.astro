@@ -1,0 +1,311 @@
+---
+import '../styles/tokens.css';
+import '../styles/design.css';
+
+const fixedScale = [4, 8, 12, 16, 24, 32, 48, 64, 96, 128, 160];
+---
+
+<!doctype html>
+<html lang='fr'>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <meta name='robots' content='noindex' />
+    <title>Jukkai — Système de design</title>
+  </head>
+  <body>
+    <div class='rail'>
+      <header class='masthead'>
+        <p class='section__label'>Système de design · Document vivant · v0.1</p>
+        <img
+          class='masthead__wordmark'
+          src='/marks/wordmark.svg'
+          alt='Jukkai'
+          width='887'
+          height='348'
+        />
+        <h1 class='masthead__statement'>Une encre, un monde en couleurs.</h1>
+        <p class='masthead__intro'>
+          Ce document rassemble les décisions réglées et les défauts de travail
+          du système Jukkai. Il évolue avec les cartes, les flyers et les
+          maquettes&nbsp;: rien ici n'est définitif, tout est utilisable.
+        </p>
+      </header>
+
+      <section class='section' aria-labelledby='couleurs'>
+        <p class='section__label'>01 · Couleurs</p>
+        <h2 class='section__title' id='couleurs'>
+          Des rôles avant des teintes
+        </h2>
+        <ul class='swatches'>
+          <li>
+            <div class='swatch__chip swatch__chip--canvas'></div>
+            <p class='swatch__name'>Canvas — ivoire</p>
+            <p class='annotation'>oklch(0.915 0.023 85) · #EAE2D2</p>
+          </li>
+          <li>
+            <div class='swatch__chip swatch__chip--ink'></div>
+            <p class='swatch__name'>Encre</p>
+            <p class='annotation'>
+              oklch(0.23 0.004 107) · #1D1D1B · 13,1:1 sur canvas
+            </p>
+          </li>
+          <li>
+            <div class='swatch__chip swatch__chip--ink-muted'></div>
+            <p class='swatch__name'>Encre atténuée</p>
+            <p class='annotation'>oklch(0.48 0.012 95) · 5:1 sur canvas</p>
+          </li>
+          <li>
+            <div class='swatch__chip swatch__chip--hairline'></div>
+            <p class='swatch__name'>Filet</p>
+            <p class='annotation'>oklch(0.78 0.02 85) · filets, jamais texte</p>
+          </li>
+          <li>
+            <div class='swatch__chip swatch__chip--terracotta'></div>
+            <p class='swatch__name'>Champ — terracotta</p>
+            <p class='annotation'>
+              oklch(0.719 0.118 34) · champ seulement, jamais encre sur ivoire
+            </p>
+          </li>
+          <li>
+            <div class='swatch__chip swatch__chip--slot'>
+              Champ 2 — à mesurer
+            </div>
+            <p class='swatch__name'>Bleu poudré</p>
+            <p class='annotation'>L 0.67–0.77 · C 0.09–0.15</p>
+          </li>
+          <li>
+            <div class='swatch__chip swatch__chip--slot'>
+              Champ 3 — à mesurer
+            </div>
+            <p class='swatch__name'>Ambre</p>
+            <p class='annotation'>L 0.67–0.77 · C 0.09–0.15</p>
+          </li>
+          <li>
+            <div class='swatch__chip swatch__chip--slot'>
+              Accent — à choisir
+            </div>
+            <p class='swatch__name'>Accent</p>
+            <p class='annotation'>une seule intervention par composition</p>
+          </li>
+        </ul>
+        <ul class='rules'>
+          <li>
+            Budget de chroma&nbsp;: un champ dominant, un neutre, l'encre — au
+            plus un accent vif par composition.
+          </li>
+          <li>
+            Les champs forment une famille&nbsp;: L et C partagés, seule la
+            teinte varie.
+          </li>
+          <li>
+            Le contraste est un portail, pas un goût&nbsp;: 4,5:1 pour le texte,
+            3:1 pour les grands titres et les éléments actifs.
+          </li>
+          <li>
+            Cartes de visite&nbsp;: une couleur de champ par personne, même
+            système pour tous.
+          </li>
+        </ul>
+      </section>
+
+      <section class='section' aria-labelledby='typographie'>
+        <p class='section__label'>02 · Typographie</p>
+        <h2 class='section__title' id='typographie'>
+          Deux voix, pas de troisième
+        </h2>
+
+        <div class='type-specimen'>
+          <p class='type-specimen__statement'>Œuvres &amp; espaces</p>
+          <p class='annotation'>Voyage · statement · 72 → 160 px · lh 0.95</p>
+        </div>
+        <div class='type-specimen'>
+          <p class='type-specimen__h1'>
+            Architecture intérieure à Châteaugiron
+          </p>
+          <p class='annotation'>Voyage · H1 · 52 → 96 px · lh 1.02</p>
+        </div>
+        <div class='type-specimen'>
+          <p class='type-specimen__h2'>
+            Le même œil choisit les œuvres et dessine les espaces.
+          </p>
+          <p class='annotation'>Voyage · H2 · 40 → 64 px · lh 1.08</p>
+        </div>
+        <div class='type-specimen'>
+          <p class='type-specimen__lead'>
+            Jukkai réunit une galerie d'art et un studio d'architecture
+            intérieure sous un même regard.
+          </p>
+          <p class='annotation'>
+            Hellix · lead · 22 px · lh 1.4 · mesure 35–50 ch
+          </p>
+        </div>
+        <div class='type-specimen'>
+          <p class='type-specimen__body'>
+            La discipline éditoriale gouverne le système&nbsp;; les
+            interventions expressives restent des accents. Les choses liées
+            demeurent proches, les scènes distinctes sont séparées avec
+            décision. C'est cette retenue — peu d'ingrédients, des rôles nets —
+            qui rend le monde coloré de Jukkai précieux plutôt que bruyant.
+          </p>
+          <p class='annotation'>
+            Hellix · corps éditorial · 18 px · lh 1.6 · mesure 55–68 ch
+          </p>
+        </div>
+        <div class='type-specimen'>
+          <p class='type-specimen__caps'>
+            Architecture intérieure <span class='dot'>●</span> Galerie d'art
+          </p>
+          <p class='annotation'>
+            Capitales espacées · Hellix · 15&nbsp;% — la graisse Light attend la
+            licence, rendu ici en Regular · le point porte la couleur
+          </p>
+        </div>
+        <div class='type-specimen'>
+          <p class='type-specimen__caption'>
+            Légende — métadonnées secondaires seulement, jamais la couche de
+            lecture principale. 14 px · lh 1.4
+          </p>
+        </div>
+      </section>
+
+      <section class='section' aria-labelledby='espace'>
+        <p class='section__label'>03 · Espace</p>
+        <h2 class='section__title' id='espace'>Deux vitesses</h2>
+        <p class='spacing-rule'>
+          Serré à l'intérieur, décisif entre les scènes.
+        </p>
+        <ul class='scale'>
+          {
+            fixedScale.map((step) => (
+              <li class='scale__row'>
+                <div class='scale__bar' style={`width: ${step}px`} />
+                <span class='scale__value'>{step}</span>
+              </li>
+            ))
+          }
+        </ul>
+        <dl class='aliases'>
+          <div>
+            <dt>Gouttière</dt>
+            <dd>clamp(16px, 4vw, 64px)</dd>
+          </div>
+          <div>
+            <dt>Grille</dt>
+            <dd>clamp(16px, 2.5vw, 32px)</dd>
+          </div>
+          <div>
+            <dt>Section</dt>
+            <dd>clamp(64px, 10vw, 160px)</dd>
+          </div>
+          <div>
+            <dt>Héro</dt>
+            <dd>clamp(96px, 14vw, 240px)</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class='section' aria-labelledby='marques'>
+        <p class='section__label'>04 · Marques</p>
+        <h2 class='section__title' id='marques'>Une encre unique</h2>
+        <div class='marks'>
+          <div class='marks__panel'>
+            <img
+              class='marks__wordmark'
+              src='/marks/wordmark.svg'
+              alt='Wordmark Jukkai'
+              width='887'
+              height='348'
+            />
+            <img
+              class='marks__byline'
+              src='/marks/byline.svg'
+              alt='by Crystelle Terrasson'
+              width='560'
+              height='26'
+            />
+            <p class='annotation'>
+              Le lockup apparaît aux moments de confiance&nbsp;; partout
+              ailleurs, le wordmark seul.
+            </p>
+          </div>
+          <div class='marks__panel marks__panel--field'>
+            <div class='marks__row'>
+              <img
+                class='marks__seal'
+                src='/marks/seal-square-minimal.svg'
+                alt='Sceau 述懐, cadre carré'
+                width='240'
+                height='240'
+              />
+              <img
+                class='marks__seal'
+                src='/marks/seal-octagon-solid-minimal.svg'
+                alt='Sceau 述懐, octogone plein'
+                width='200'
+                height='240'
+              />
+              <img
+                class='marks__tittle'
+                src='/marks/tittle.svg'
+                alt='Point du j'
+                width='64'
+                height='65'
+              />
+            </div>
+            <p class='annotation'>
+              Sur un champ coloré, la marque reste une seule encre. Le sceau à
+              l'échelle d'un talisman, jamais dans le nom.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class='section' aria-labelledby='impression'>
+        <p class='section__label'>05 · Impression</p>
+        <h2 class='section__title' id='impression'>Correspondance papier</h2>
+        <table class='print-table'>
+          <tbody>
+            <tr>
+              <th>Unité de base</th>
+              <td>4 mm — marges et interlettres en unités entières ou demies</td
+              >
+            </tr>
+            <tr>
+              <th>Carte de visite</th>
+              <td>85 × 55 mm ≈ grille de 21 × 13 unités</td>
+            </tr>
+            <tr>
+              <th>Échelle typographique</th>
+              <td>ratio 1,333 · corps 9 pt → 12 / 16 / 21,3 / 28,4 / 37,9 pt</td
+              >
+            </tr>
+            <tr>
+              <th>Plancher légendes</th>
+              <td>7 pt</td>
+            </tr>
+            <tr>
+              <th>Couleur</th>
+              <td>
+                les valeurs OKLCH sont des valeurs écran&nbsp;: rôles et
+                relations verrouillés ici, épreuve CMJN chez l'imprimeur
+              </td>
+            </tr>
+            <tr>
+              <th>Licences</th>
+              <td>
+                Hellix et Voyage sont des versions d'essai — licences requises
+                avant toute impression
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <footer class='colophon'>
+        Source&nbsp;: DESIGN.md · Journal d'identité&nbsp;:
+        docs/research/visual-identity-capture.md · v0.1 — juillet 2026
+      </footer>
+    </div>
+  </body>
+</html>
