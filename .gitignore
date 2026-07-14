@@ -12,6 +12,10 @@ dist/
 .cache/mm-fonts/
 apps/marketing/public/fonts/generated/
 
+# brand font binaries (ADR-0003: font bytes are never committed)
+assets/fonts/
+apps/marketing/public/fonts/brand/
+
 # env / secrets
 .env
 .env.*

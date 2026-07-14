@@ -62,16 +62,22 @@ remove them when the convention changes.
 
 - Use `agent-browser` for browser automation. Do not use Chrome MCP or the Codex
   in-app browser for this repo.
-- The homepage browser gate is suspended while `apps/marketing` has no routes.
-  The first future homepage slice must reactivate and revalidate
-  `docs/operations/homepage-browser-regression-gate.md` before using it as a PR
-  contract.
+- The homepage browser gate remains suspended; the `/design` specimen route
+  does not reactivate it. The first future homepage slice must reactivate and
+  revalidate `docs/operations/homepage-browser-regression-gate.md` before using
+  it as a PR contract.
 
 ## Marketing App
 
-- `apps/marketing` is a configured Astro workspace shell with no pages or visual
-  implementation after the July 2026 reset. Keep its Astro, Turbo, Stylelint,
-  Vitest, and generated-font tooling intact while the content pipeline is rebuilt.
+- `apps/marketing` is a configured Astro workspace shell. Its only route is
+  `/design`, the living token specimen page for `DESIGN.md`; there is still no
+  homepage or content implementation after the July 2026 reset. Keep its Astro,
+  Turbo, Stylelint, Vitest, and generated-font tooling intact while the content
+  pipeline is rebuilt.
+- Brand font binaries (Hellix, Voyage trials) live gitignored in `assets/fonts/`
+  and are copied to `apps/marketing/public/fonts/brand/` (also gitignored) for
+  local dev. Per ADR-0003 font bytes are never committed; before deploy they
+  must flow through the `@mm/fonts` pipeline.
 - Before marketing research, strategy, IA, content, or design work, read
   `docs/operations/method.md`. Keep observations, interpretations, hypotheses,
   decisions, and experiments distinct; tools and competitor patterns do not own
@@ -79,10 +85,12 @@ remove them when the convention changes.
 - Current strategy is limited to `docs/strategy/foundation.md` and
   `docs/strategy/questions-for-crystelle.md`. Files under
   `docs/archive/2026-07-reset/` are provenance, not implementation inputs.
-- There is no current `PRODUCT.md`, `DESIGN.md`, or `docs/design/` contract. Do
-  not restore the deleted homepage or promote archived design choices. New
-  product/design context starts only after the reset map produces approved
-  inputs.
+- `DESIGN.md` is the living design system: Martin-owned, iterated in place,
+  provenance-labeled. Treat `[settled]` entries as working contract for visual
+  work; `[provisional]`, `[derived]`, and `[open]` entries are defaults to
+  build with and challenge, not canon. There is no current `PRODUCT.md` or
+  `docs/design/` contract. Do not restore the deleted homepage or promote
+  archived design choices.
 - For substantial visual or interaction work, prefer the local `impeccable`
   skill when invoked or clearly useful.
 - Protect conversion and SEO intent, but allow visual implementation to
