@@ -12,7 +12,7 @@ export const DEFAULT_GENERATED_FONTS_OUTPUT_DIR =
   'apps/marketing/public/fonts/generated';
 export const APPROVED_MARKETING_FONT_SET = {
   slug: 'jukkai-starter',
-  version: 3,
+  version: 4,
 } as const;
 
 const REPO_ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
@@ -33,6 +33,8 @@ export interface GeneratedFontManifestEntry {
   axes: GeneratedFontAxis[];
   familySlug: string;
   outputPath: string;
+  style: string | null;
+  weight: number | null;
 }
 
 export interface GeneratedFontsManifest {
@@ -93,11 +95,15 @@ export async function writeGeneratedFontAssets(params: {
   const stagingDir = `${params.outputDir}.tmp-${process.pid}-${Date.now()}`;
   const manifest: GeneratedFontsManifest = {
     fontCount: params.fonts.length,
-    fonts: params.fonts.map(({ axes, familySlug, outputPath }) => ({
-      axes,
-      familySlug,
-      outputPath,
-    })),
+    fonts: params.fonts.map(
+      ({ axes, familySlug, outputPath, style, weight }) => ({
+        axes,
+        familySlug,
+        outputPath,
+        style,
+        weight,
+      }),
+    ),
     set: params.set,
     snapshotDigest: params.snapshotDigest,
     version: params.version,
@@ -151,19 +157,34 @@ function buildFontsCss(manifest: GeneratedFontsManifest) {
       const weightAxis = font.axes.find((axis) => axis.tag === 'wght');
       const fontWeight = weightAxis
         ? `${weightAxis.min} ${weightAxis.max}`
-        : '400';
+        : String(font.weight ?? 400);
+      const fontStyle = getCssFontStyle(font.style);
 
       return [
         '@font-face {',
         `  font-family: "${escapeCssString(font.familySlug)}";`,
         `  src: url("${buildGeneratedFontPublicUrl(font.outputPath)}") format("woff2");`,
         `  font-weight: ${fontWeight};`,
-        '  font-style: normal;',
+        `  font-style: ${fontStyle};`,
         '  font-display: swap;',
         '}',
       ].join('\n');
     })
     .join('\n\n')}\n`;
+}
+
+function getCssFontStyle(style: string | null) {
+  const normalizedStyle = style?.toLowerCase() ?? '';
+
+  if (normalizedStyle.includes('italic')) {
+    return 'italic';
+  }
+
+  if (normalizedStyle.includes('oblique')) {
+    return 'oblique';
+  }
+
+  return 'normal';
 }
 
 function escapeCssString(value: string) {

@@ -87,7 +87,7 @@ describe('generated font check', () => {
     await writeFile(join(outputDir, 'fonts', 'demo.woff2'), 'fake-font');
 
     await expect(ensureGeneratedFonts({ outputDir })).rejects.toThrow(
-      'Generated fonts must be prefetched from jukkai-starter@3.',
+      'Generated fonts must be prefetched from jukkai-starter@4.',
     );
   });
 
