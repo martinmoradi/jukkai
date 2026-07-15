@@ -5,7 +5,7 @@ import json
 S_HELLIX = 0.349180
 S_MAXI   = 0.371958
 W0 = 41.574
-TARGETS = {"current": W0, "t17": W0 * 0.83, "t26": W0 * 0.74}
+TARGETS = {"baseline": W0, "t17": W0 * 0.83, "t26": W0 * 0.74}
 
 def hellix_stem(wght):
     f = load("hellix", wght=round(wght, 1))
