@@ -1,5 +1,12 @@
 import { createHash } from 'node:crypto';
-import { mkdtemp, readFile, rm } from 'node:fs/promises';
+import {
+  mkdir,
+  mkdtemp,
+  readdir,
+  readFile,
+  rm,
+  writeFile,
+} from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterEach, describe, expect, it } from 'bun:test';
@@ -32,12 +39,20 @@ describe('fonts prefetch command', () => {
 
   it('prefetches a pinned Set into generated CSS, manifest, and cache files', async () => {
     const workspace = await createWorkspace();
+    const outputDir = join(workspace, 'public', 'fonts', 'generated');
+    const staleFontPath = join(outputDir, 'fonts', 'stale.woff2');
+    const cacheSentinelPath = join(workspace, 'cache', 'keep.txt');
     const fontBytes = new TextEncoder().encode('fake-woff2-bytes');
     const digest = createHash('sha256').update(fontBytes).digest('hex');
     const token = 'secret-fetch-token';
     const accessClientId = 'secret-access-client-id';
     const accessClientSecret = 'secret-access-client-secret';
     const requests: Request[] = [];
+
+    await mkdir(join(outputDir, 'fonts'), { recursive: true });
+    await mkdir(join(workspace, 'cache'), { recursive: true });
+    await writeFile(staleFontPath, 'stale-font');
+    await writeFile(cacheSentinelPath, 'keep-cache');
 
     const server = Bun.serve({
       fetch(request) {
@@ -99,7 +114,7 @@ describe('fonts prefetch command', () => {
           MM_FONTS_ACCESS_CLIENT_SECRET: accessClientSecret,
           MM_FONTS_CACHE_DIR: join(workspace, 'cache'),
           MM_FONTS_FETCH_TOKEN: token,
-          MM_FONTS_OUTPUT_DIR: join(workspace, 'public', 'fonts', 'generated'),
+          MM_FONTS_OUTPUT_DIR: outputDir,
           MM_FONTS_SERVICE_URL: server.url.origin,
         },
       });
@@ -107,7 +122,7 @@ describe('fonts prefetch command', () => {
       expect(result).toEqual({
         cacheDir: join(workspace, 'cache'),
         fontCount: 1,
-        outputDir: join(workspace, 'public', 'fonts', 'generated'),
+        outputDir,
         set: 'jukkai-starter',
         version: 1,
       });
@@ -133,6 +148,10 @@ describe('fonts prefetch command', () => {
       expect(Array.from(await readFile(cacheFontPath))).toEqual(
         Array.from(fontBytes),
       );
+      expect(await readFile(cacheSentinelPath, 'utf8')).toBe('keep-cache');
+      expect(await readdir(join(outputDir, 'fonts'))).toEqual([
+        `${digest}.woff2`,
+      ]);
 
       const css = await readFile(
         join(workspace, 'public', 'fonts', 'generated', 'fonts.css'),

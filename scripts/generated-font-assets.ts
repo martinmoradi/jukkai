@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, rename, rm, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -90,6 +90,7 @@ export async function writeGeneratedFontAssets(params: {
   snapshotDigest: string;
   version: number;
 }) {
+  const stagingDir = `${params.outputDir}.tmp-${process.pid}-${Date.now()}`;
   const manifest: GeneratedFontsManifest = {
     fontCount: params.fonts.length,
     fonts: params.fonts.map(({ axes, familySlug, outputPath }) => ({
@@ -102,27 +103,36 @@ export async function writeGeneratedFontAssets(params: {
     version: params.version,
   };
 
-  await mkdir(getGeneratedFontFilesDir(params.outputDir), { recursive: true });
+  await rm(stagingDir, { force: true, recursive: true });
 
-  await Promise.all(
-    params.fonts.map(async (font) => {
-      const outputPath = getGeneratedFontAssetPath(
-        params.outputDir,
-        font.outputPath,
-      );
-      await mkdir(dirname(outputPath), { recursive: true });
-      await writeFile(outputPath, font.bytes);
-    }),
-  );
+  try {
+    await mkdir(getGeneratedFontFilesDir(stagingDir), { recursive: true });
 
-  await writeFile(
-    getGeneratedFontCssPath(params.outputDir),
-    buildFontsCss(manifest),
-  );
-  await writeFile(
-    getGeneratedFontManifestPath(params.outputDir),
-    `${JSON.stringify(manifest, null, 2)}\n`,
-  );
+    await Promise.all(
+      params.fonts.map(async (font) => {
+        const outputPath = getGeneratedFontAssetPath(
+          stagingDir,
+          font.outputPath,
+        );
+        await mkdir(dirname(outputPath), { recursive: true });
+        await writeFile(outputPath, font.bytes);
+      }),
+    );
+
+    await writeFile(
+      getGeneratedFontCssPath(stagingDir),
+      buildFontsCss(manifest),
+    );
+    await writeFile(
+      getGeneratedFontManifestPath(stagingDir),
+      `${JSON.stringify(manifest, null, 2)}\n`,
+    );
+
+    await rm(params.outputDir, { force: true, recursive: true });
+    await rename(stagingDir, params.outputDir);
+  } finally {
+    await rm(stagingDir, { force: true, recursive: true });
+  }
 }
 
 function buildFontsCss(manifest: GeneratedFontsManifest) {
