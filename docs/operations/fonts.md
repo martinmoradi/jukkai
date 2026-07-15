@@ -115,11 +115,9 @@ PR CI uses `bun run fonts:fixture` before the build job. That command writes a
 tiny generated fixture for hermetic build verification only; production and
 local typography checks should use `bun run fonts:prefetch`.
 
-Issue #72 removed the exploratory frontend, including the page-level font
-consumer and its integration test. The generator, output contract, preflight
-check, and Astro build hook remain. Until a new page exists, the build proves the
-font assets are present and the empty workspace compiles; it does not prove that
-a browser consumes the generated family.
+The generator, output contract, preflight check, and Astro build hook remain.
+Until a page consumes the generated family, the build proves only that the font
+assets are present and the workspace compiles; it does not prove browser usage.
 
 The future frontend must link generated `fonts.css`, use its exported
 `--jukkai-generated-font-family` variable, and restore a consumer-level test that
@@ -171,8 +169,8 @@ preview build logs, and deployed browser verification without leaking secrets.
 Use the linked issue suite as the verification ladder:
 
 - #11: config, prefetch command, generated dirs, and clear local failure modes.
-- #12: historical marketing consumer proof, removed with the exploratory
-  frontend by #72 and required again for the future implementation.
+- #12: historical marketing consumer proof; a current consumer test is required
+  with the next implementation.
 - #13: Cloudflare Pages secrets and production build prefetch are verified as a
   human-in-the-loop operator step.
 - #14: fresh checkout, local dev, Cloudflare build, deployed browser, and
