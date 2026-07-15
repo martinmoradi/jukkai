@@ -23,6 +23,8 @@ export async function writeGeneratedFontFixture(options?: {
         bytes: fontBytes,
         familySlug: 'jukkai-ci-fixture',
         outputPath,
+        style: 'Regular',
+        weight: 400,
       },
     ],
     outputDir,

@@ -24,9 +24,9 @@ The current Set reflects the provisional family lock while retaining every
 available cut until the exact weights and styles are chosen:
 
 - Set slug: `jukkai-starter`
-- Set version: `3`
+- Set version: `4`
 - Snapshot digest:
-  `157b78a7ccb44e3fd888366528485f3a561977fa0ee0a23132963eb055e63dbd`
+  `4619e572a4d3589cce7753f46dacc5e2f76ce24a61deff42f5cd5650f21c0e80`
 - Snapshot count: `32` Fonts
 - Voyage: 2 cuts
 - PP Hatton: 10 upright and italic cuts
@@ -109,7 +109,7 @@ The generated output can be checked without contacting `@mm/fonts`:
 bun run fonts:check
 ```
 
-That check verifies the generated manifest is for `jukkai-starter@3`, then
+That check verifies the generated manifest is for `jukkai-starter@4`, then
 checks that `fonts.css`, `manifest.json`, and the referenced `.woff2` files are
 present.
 
@@ -236,6 +236,6 @@ version in `@mm/fonts`, update `APPROVED_MARKETING_FONT_SET` in
 deployed font URLs. If the Set slug changes, also check whether Consumer
 Authorization or token rotation is required.
 
-`jukkai-starter@3` is intentionally broad within Voyage, Hatton, and Frama. Do
+`jukkai-starter@4` is intentionally broad within Voyage, Hatton, and Frama. Do
 not remove cuts merely because the pipeline works; publish another Set version
 when the actual marketing weights and styles are locked.

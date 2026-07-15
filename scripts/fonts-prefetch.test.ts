@@ -66,20 +66,22 @@ describe('fonts prefetch command', () => {
 
         const url = new URL(request.url);
 
-        if (url.pathname === '/api/sets/jukkai-starter/versions/3/snapshot') {
+        if (url.pathname === '/api/sets/jukkai-starter/versions/4/snapshot') {
           return Response.json({
             snapshot: {
               digest: 'snapshot-digest',
               manifest: {
                 count: 1,
-                emitterVersion: 2,
+                emitterVersion: 3,
                 fonts: [
                   {
-                    axes: [{ def: 400, max: 700, min: 300, tag: 'wght' }],
+                    axes: [],
                     cutIndex: 0,
                     familySlug: 'demo-sans',
                     fontDigest: `sha256:${digest}`,
                     sourcePath: `fonts/${digest}.woff2`,
+                    style: 'Bold Italic',
+                    weight: 700,
                   },
                 ],
                 version: 1,
@@ -88,14 +90,14 @@ describe('fonts prefetch command', () => {
                 name: 'Jukkai Starter',
                 slug: 'jukkai-starter',
               },
-              setVersion: 3,
+              setVersion: 4,
             },
           });
         }
 
         if (
           url.pathname ===
-          `/api/sets/jukkai-starter/versions/3/fonts/${digest}.woff2`
+          `/api/sets/jukkai-starter/versions/4/fonts/${digest}.woff2`
         ) {
           return new Response(fontBytes, {
             headers: { 'content-type': 'font/woff2' },
@@ -124,7 +126,7 @@ describe('fonts prefetch command', () => {
         fontCount: 1,
         outputDir,
         set: 'jukkai-starter',
-        version: 3,
+        version: 4,
       });
 
       const outputFontPath = join(
@@ -161,6 +163,8 @@ describe('fonts prefetch command', () => {
       expect(css).toContain('--jukkai-generated-font-family: "demo-sans"');
       expect(css).toContain('font-family: "demo-sans"');
       expect(css).toContain(`url("/fonts/generated/fonts/${digest}.woff2")`);
+      expect(css).toContain('font-weight: 700');
+      expect(css).toContain('font-style: italic');
 
       const manifest = JSON.parse(
         await readFile(
@@ -172,14 +176,16 @@ describe('fonts prefetch command', () => {
         fontCount: 1,
         fonts: [
           {
-            axes: [{ def: 400, max: 700, min: 300, tag: 'wght' }],
+            axes: [],
             familySlug: 'demo-sans',
             outputPath: `fonts/${digest}.woff2`,
+            style: 'Bold Italic',
+            weight: 700,
           },
         ],
         set: 'jukkai-starter',
         snapshotDigest: 'snapshot-digest',
-        version: 3,
+        version: 4,
       });
 
       expect(requests).toHaveLength(2);
@@ -203,19 +209,21 @@ describe('fonts prefetch command', () => {
       async fetch(request) {
         const url = new URL(request.url);
 
-        if (url.pathname === '/api/sets/jukkai-starter/versions/3/snapshot') {
+        if (url.pathname === '/api/sets/jukkai-starter/versions/4/snapshot') {
           return Response.json({
             snapshot: {
               digest: 'snapshot-digest',
               manifest: {
                 count: fonts.length,
-                emitterVersion: 2,
+                emitterVersion: 3,
                 fonts: fonts.map((font) => ({
                   axes: [],
                   cutIndex: 0,
                   familySlug: font.familySlug,
                   fontDigest: `sha256:${font.digest}`,
                   sourcePath: `fonts/${font.digest}.woff2`,
+                  style: 'Regular',
+                  weight: 400,
                 })),
                 version: 1,
               },
@@ -223,7 +231,7 @@ describe('fonts prefetch command', () => {
                 name: 'Jukkai Starter',
                 slug: 'jukkai-starter',
               },
-              setVersion: 3,
+              setVersion: 4,
             },
           });
         }
@@ -231,7 +239,7 @@ describe('fonts prefetch command', () => {
         const font = fonts.find(
           (candidate) =>
             url.pathname ===
-            `/api/sets/jukkai-starter/versions/3/fonts/${candidate.digest}.woff2`,
+            `/api/sets/jukkai-starter/versions/4/fonts/${candidate.digest}.woff2`,
         );
 
         if (font) {
@@ -285,13 +293,13 @@ describe('fonts prefetch command', () => {
       fetch(request) {
         const url = new URL(request.url);
 
-        if (url.pathname === '/api/sets/jukkai-starter/versions/3/snapshot') {
+        if (url.pathname === '/api/sets/jukkai-starter/versions/4/snapshot') {
           return Response.json({
             snapshot: {
               digest: 'snapshot-digest',
               manifest: {
                 count: 1,
-                emitterVersion: 2,
+                emitterVersion: 3,
                 fonts: [
                   {
                     axes: [],
@@ -299,6 +307,8 @@ describe('fonts prefetch command', () => {
                     familySlug: 'demo-sans',
                     fontDigest: `sha256:${digest}`,
                     sourcePath: `fonts/${digest}.woff2`,
+                    style: 'Regular',
+                    weight: 400,
                   },
                 ],
                 version: 1,
@@ -307,14 +317,14 @@ describe('fonts prefetch command', () => {
                 name: 'Jukkai Starter',
                 slug: 'jukkai-starter',
               },
-              setVersion: 3,
+              setVersion: 4,
             },
           });
         }
 
         if (
           url.pathname ===
-          `/api/sets/jukkai-starter/versions/3/fonts/${digest}.woff2`
+          `/api/sets/jukkai-starter/versions/4/fonts/${digest}.woff2`
         ) {
           return new Response(fontBytes, {
             headers: { 'content-type': 'font/woff2' },
@@ -351,7 +361,7 @@ describe('fonts prefetch command', () => {
 
       expect(exitCode).toBe(0);
       expect(stdout).toContain(
-        'Prefetched 1 @mm/fonts Fonts for jukkai-starter@3',
+        'Prefetched 1 @mm/fonts Fonts for jukkai-starter@4',
       );
       expect(output).not.toContain(token);
       expect(output).not.toContain(accessClientId);

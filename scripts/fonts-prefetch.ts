@@ -35,6 +35,8 @@ interface SnapshotFont {
   familySlug: string;
   fontDigest: string;
   sourcePath: string;
+  style: string | null;
+  weight: number | null;
 }
 
 interface Snapshot {
@@ -93,6 +95,8 @@ export async function runFontsPrefetch(options: {
         bytes,
         familySlug: font.familySlug,
         outputPath: sourcePath,
+        style: font.style,
+        weight: font.weight,
       };
     },
   );
