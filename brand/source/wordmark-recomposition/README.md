@@ -1,8 +1,12 @@
-# Recomposed wordmark + thin variants
+# Wordmark reconstruction study — not current exports
 
-Built 2026-07-13 from the raw letterforms, not by eroding the current outlines.
-The required font files are local working assets and are not tracked. Reference:
-`reference/wordmark.svg`.
+> **Do not use these SVGs as current wordmarks.** The current exports are in
+> [`../../marks/wordmark/`](../../marks/wordmark/). This directory preserves a
+> captured construction baseline and thinning studies from 2026-07-13.
+
+The baseline was built from raw letterforms rather than by eroding the captured
+outlines. The required font files are local working assets and are not tracked.
+Reference: `reference/wordmark-baseline.svg`.
 
 By default, the tools look in `brand/fonts/` for:
 
@@ -12,7 +16,7 @@ By default, the tools look in `brand/fonts/` for:
 
 Set `JUKKAI_BRAND_FONTS_DIR` to use another local font directory.
 
-## How the current wordmark is constructed (verified)
+## How the captured baseline was constructed
 
 All coordinates in the reference SVG space (887×348, baseline y = 258.789).
 
@@ -35,14 +39,14 @@ k2 leg ends in a sharp baseline point with a concave underside bracket.
 
 Thinning is defined as a uniform stem-width reduction, same equalization logic:
 
-| Variant | Stem target   | Hellix wght | Maxi Sharp wght | K                                                        |
-| ------- | ------------- | ----------- | --------------- | -------------------------------------------------------- |
-| current | 41.574        | 625         | 455             | parametric w = 41.574 (byte-identical to Martin's paths) |
-| −17     | 34.51 (−17 %) | 533         | 361             | parametric w = 34.51                                     |
-| −26     | 30.77 (−26 %) | 480         | 323             | parametric w = 30.77                                     |
+| Variant  | Stem target   | Hellix wght | Maxi Sharp wght | K                                                            |
+| -------- | ------------- | ----------- | --------------- | ------------------------------------------------------------ |
+| baseline | 41.574        | 625         | 455             | parametric w = 41.574 (byte-identical to the captured paths) |
+| −17      | 34.51 (−17 %) | 533         | 361             | parametric w = 34.51                                         |
+| −26      | 30.77 (−26 %) | 480         | 323             | parametric w = 30.77                                         |
 
 j/u/a/i are true variable-font instances at those weights, each placed with its
-bounding-box center on the current letter's center (spacing preserved), baseline fixed.
+bounding-box center on the captured letter's center (spacing preserved), baseline fixed.
 The K pair is regenerated parametrically: Martin's skeleton (stem centerlines, diagonal
 angles, 86.7 arm-tip line, junction jogs, ligature) is kept; stroke thicknesses, cap
 radius, and the foot/bracket terminals scale with the stem ratio; the foot always
@@ -66,4 +70,4 @@ overlays a build against the reference and reports IoU per letter.
 Known sub-unit deviations from the reference (invisible at size, listed for honesty):
 the reference has u/i/j stem tops manually snapped up ~1 unit to exactly 86.7,
 and its j/i stems are ~0.5 unit wider than the raw font instance. The recomposed
-current scores IoU 0.992 against the reference at 4× resolution.
+baseline scores IoU 0.992 against the reference at 4× resolution.

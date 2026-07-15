@@ -1,6 +1,6 @@
 """Parametric rebuild of Martin's authored K pair (National 2 Medium base).
 
-All constants are Martin's current path coordinates (wordmark.svg). k1(w)/k2(w)
+All constants are the captured baseline path coordinates. k1(w)/k2(w)
 regenerate the pair at stem width w, preserving the authored skeleton:
 stem centerlines, diagonal angles, flat arm tips on the x-height line,
 rounded stem cap (radius scales with weight), junction jogs (grow slightly
@@ -8,7 +8,7 @@ as the font does), the k1->k2 ligature foot, and the k2 leg bracket.
 """
 import math
 
-W0 = 41.574                    # current stem width (all letters)
+W0 = 41.574                    # captured baseline stem width (all letters)
 
 # --- k1 constants (Martin's path) ---
 K1_XL, K1_XR = 298.507, 340.081

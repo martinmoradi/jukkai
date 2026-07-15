@@ -9,8 +9,8 @@ runtime asset directory.
 
 - `marks/wordmark/` - current wordmark exports and byline.
 - `marks/seal/` - current seal exports.
-- `source/` - construction files, generators, references, and superseded
-  variants that may still be useful when revising a mark.
+- `source/` - non-current construction files, generators, captured references,
+  and superseded studies. Never use this as the export folder.
 - `fonts/` - local working copies for design tools. Font binaries are ignored;
   only the usage note is committed.
 
@@ -18,8 +18,8 @@ runtime asset directory.
 
 - Files under `marks/` are the easiest exports to share or place in a design.
   Their presence here does not by itself mean every variant is approved.
-- Files under `source/` explain or reproduce an export. They are not the first
-  files to hand to a client.
+- Files under `source/` explain or reproduce an export. They are not current
+  marks and should not be placed in designs or handed to a client.
 - Session reasoning, open questions, and provisional specifications belong in
   `docs/working-notes/`, not inside the export folders.
 

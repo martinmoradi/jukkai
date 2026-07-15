@@ -12,7 +12,7 @@ S_HELLIX = 0.349180
 S_MAXI   = 0.371958
 BASELINE = 258.789
 
-# current letter placement (from reference wordmark)
+# captured baseline letter placement (from reference wordmark)
 CENTERS = {"j": 30.361, "u": 174.745, "a": 705.633, "i": 856.643}
 DOT_TOP = {"j": 0.0, "i": 0.34}
 K1_BASE_Y, K2_BASE_Y = 258.74, 258.825
@@ -96,8 +96,8 @@ def compose(name, hellix_wght, maxi_wght, k_w):
 if __name__ == "__main__":
     w = json.load(open("weights.json"))
     files = [
-        compose("recomposed-current", 625, 455, W0),
-        compose("variant-17", 533, 361, W0 * 0.83),
-        compose("variant-26", 480, 323, W0 * 0.74),
+        compose("recomposition-baseline", 625, 455, W0),
+        compose("study-thin-17", 533, 361, W0 * 0.83),
+        compose("study-thin-26", 480, 323, W0 * 0.74),
     ]
     print("\n".join(files))
