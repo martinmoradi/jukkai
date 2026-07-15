@@ -66,7 +66,7 @@ describe('fonts prefetch command', () => {
 
         const url = new URL(request.url);
 
-        if (url.pathname === '/api/sets/jukkai-starter/versions/1/snapshot') {
+        if (url.pathname === '/api/sets/jukkai-starter/versions/3/snapshot') {
           return Response.json({
             snapshot: {
               digest: 'snapshot-digest',
@@ -88,14 +88,14 @@ describe('fonts prefetch command', () => {
                 name: 'Jukkai Starter',
                 slug: 'jukkai-starter',
               },
-              setVersion: 1,
+              setVersion: 3,
             },
           });
         }
 
         if (
           url.pathname ===
-          `/api/sets/jukkai-starter/versions/1/fonts/${digest}.woff2`
+          `/api/sets/jukkai-starter/versions/3/fonts/${digest}.woff2`
         ) {
           return new Response(fontBytes, {
             headers: { 'content-type': 'font/woff2' },
@@ -124,7 +124,7 @@ describe('fonts prefetch command', () => {
         fontCount: 1,
         outputDir,
         set: 'jukkai-starter',
-        version: 1,
+        version: 3,
       });
 
       const outputFontPath = join(
@@ -179,7 +179,7 @@ describe('fonts prefetch command', () => {
         ],
         set: 'jukkai-starter',
         snapshotDigest: 'snapshot-digest',
-        version: 1,
+        version: 3,
       });
 
       expect(requests).toHaveLength(2);
@@ -203,7 +203,7 @@ describe('fonts prefetch command', () => {
       async fetch(request) {
         const url = new URL(request.url);
 
-        if (url.pathname === '/api/sets/jukkai-starter/versions/1/snapshot') {
+        if (url.pathname === '/api/sets/jukkai-starter/versions/3/snapshot') {
           return Response.json({
             snapshot: {
               digest: 'snapshot-digest',
@@ -223,7 +223,7 @@ describe('fonts prefetch command', () => {
                 name: 'Jukkai Starter',
                 slug: 'jukkai-starter',
               },
-              setVersion: 1,
+              setVersion: 3,
             },
           });
         }
@@ -231,7 +231,7 @@ describe('fonts prefetch command', () => {
         const font = fonts.find(
           (candidate) =>
             url.pathname ===
-            `/api/sets/jukkai-starter/versions/1/fonts/${candidate.digest}.woff2`,
+            `/api/sets/jukkai-starter/versions/3/fonts/${candidate.digest}.woff2`,
         );
 
         if (font) {
@@ -285,7 +285,7 @@ describe('fonts prefetch command', () => {
       fetch(request) {
         const url = new URL(request.url);
 
-        if (url.pathname === '/api/sets/jukkai-starter/versions/1/snapshot') {
+        if (url.pathname === '/api/sets/jukkai-starter/versions/3/snapshot') {
           return Response.json({
             snapshot: {
               digest: 'snapshot-digest',
@@ -307,14 +307,14 @@ describe('fonts prefetch command', () => {
                 name: 'Jukkai Starter',
                 slug: 'jukkai-starter',
               },
-              setVersion: 1,
+              setVersion: 3,
             },
           });
         }
 
         if (
           url.pathname ===
-          `/api/sets/jukkai-starter/versions/1/fonts/${digest}.woff2`
+          `/api/sets/jukkai-starter/versions/3/fonts/${digest}.woff2`
         ) {
           return new Response(fontBytes, {
             headers: { 'content-type': 'font/woff2' },
@@ -351,7 +351,7 @@ describe('fonts prefetch command', () => {
 
       expect(exitCode).toBe(0);
       expect(stdout).toContain(
-        'Prefetched 1 @mm/fonts Fonts for jukkai-starter@1',
+        'Prefetched 1 @mm/fonts Fonts for jukkai-starter@3',
       );
       expect(output).not.toContain(token);
       expect(output).not.toContain(accessClientId);
