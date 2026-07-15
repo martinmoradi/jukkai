@@ -7,13 +7,17 @@ binaries are ignored by git.
 Current local working set:
 
 - Voyage: Regular and Bold (`.otf`)
-- PP Hatton: all 10 supplied upright and italic cuts (`.otf` and `.ttf`)
-- PP Frama and PP Frama Text: all 20 supplied upright and italic cuts (`.otf`
-  and `.ttf`)
+- PP Hatton: all 10 supplied upright and italic cuts (`.otf`)
+- PP Frama and PP Frama Text: all 20 supplied upright and italic cuts (`.otf`)
 
 The working copies come from `/home/martin/Documents/Fonts`. Preserve that
 directory as the original package source; files here are disposable local
 copies for brand tools.
+
+Keep one desktop-design format here. For the currently supplied Hatton and
+Frama packages, the OTF and TTF files expose matching family, style, weight,
+and version metadata; this workspace keeps the OTF editions and leaves both
+vendor formats untouched in the original package source.
 
 Possession of these files is not proof of public-web, client, or font-file
 modification rights. Confirm the applicable purchase licence and invoice before
