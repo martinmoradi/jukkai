@@ -12,7 +12,7 @@ export const DEFAULT_GENERATED_FONTS_OUTPUT_DIR =
   'apps/marketing/public/fonts/generated';
 export const APPROVED_MARKETING_FONT_SET = {
   slug: 'jukkai-starter',
-  version: 1,
+  version: 3,
 } as const;
 
 const REPO_ROOT = dirname(dirname(fileURLToPath(import.meta.url)));

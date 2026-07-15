@@ -15,20 +15,26 @@ source-of-truth decision.
 - Serve generated font files from Jukkai-owned assets.
 - Do not commit `.woff2` font binaries.
 - Do not fetch private registry font bytes from the browser at runtime.
-- Treat broad starter Sets as exploratory and narrowed Set versions as typography
-  lock-in.
+- Keep exploratory Sets broad enough for active typography decisions, then
+  publish new immutable versions as the family and cut choices narrow.
 
 ## Current Set
 
-The starter Set is intentionally broad while typography is exploratory:
+The current Set reflects the provisional family lock while retaining every
+available cut until the exact weights and styles are chosen:
 
 - Set slug: `jukkai-starter`
-- Set version: `1`
+- Set version: `3`
 - Snapshot digest:
-  `3629dc2a7305b505806d924a9e49276865ede10de291954a67a569c42a0fd664`
-- Snapshot count: `1927` Fonts
+  `157b78a7ccb44e3fd888366528485f3a561977fa0ee0a23132963eb055e63dbd`
+- Snapshot count: `32` Fonts
+- Voyage: 2 cuts
+- PP Hatton: 10 upright and italic cuts
+- PP Frama: 14 upright and italic cuts
+- PP Frama Text: 6 upright and italic cuts
 
-Issue #20 owns the later narrowed Set version after typography is locked.
+Issue #20 owns the later exact cut-and-weight reduction after typography is
+fully locked.
 The repo-owned source of truth is `APPROVED_MARKETING_FONT_SET` in
 `scripts/generated-font-assets.ts`; both `fonts:prefetch` and `fonts:check`
 consume that contract.
@@ -103,9 +109,13 @@ The generated output can be checked without contacting `@mm/fonts`:
 bun run fonts:check
 ```
 
-That check verifies the generated manifest is for `jukkai-starter@1`, then
+That check verifies the generated manifest is for `jukkai-starter@3`, then
 checks that `fonts.css`, `manifest.json`, and the referenced `.woff2` files are
 present.
+
+Prefetch replaces the complete generated output directory after successfully
+staging the new assets. Stale font files from older Set versions cannot remain
+in the served directory; the separate download cache is preserved.
 
 The marketing app's local dev and build commands run this check before Astro
 starts. If generated files are absent, they fail with an actionable message to
@@ -175,7 +185,8 @@ Use the linked issue suite as the verification ladder:
   human-in-the-loop operator step.
 - #14: fresh checkout, local dev, Cloudflare build, deployed browser, and
   registry authorization are verified end to end.
-- #20: narrowed Set version is published and pinned after typography lock-in.
+- #20: the provisional family Set is narrowed to the final cuts and weights
+  after typography lock-in.
 
 Issue #14 should start as an operator checklist. It may add scriptable smoke
 helpers after #11 and #12 exist, but the first proof should explicitly walk the
@@ -225,7 +236,6 @@ version in `@mm/fonts`, update `APPROVED_MARKETING_FONT_SET` in
 deployed font URLs. If the Set slug changes, also check whether Consumer
 Authorization or token rotation is required.
 
-Do not narrow the Set only because the pipeline works. Issue #20 should remain
-blocked until the actual marketing typography direction is locked. The broad
-`jukkai-starter@1` version is acceptable during exploration; the narrowed Set is
-the design lock-in step.
+`jukkai-starter@3` is intentionally broad within Voyage, Hatton, and Frama. Do
+not remove cuts merely because the pipeline works; publish another Set version
+when the actual marketing weights and styles are locked.
