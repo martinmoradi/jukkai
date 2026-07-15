@@ -4,22 +4,23 @@ This folder is organized by how the docs are used.
 
 ## Current working docs
 
-- `strategy/` - canonical business truth and unresolved client questions. The
-  sitemap, matrix, messaging, and copy/design brief will be recreated by the
-  reset tracked in issue #71.
+- `strategy/` - canonical business truth and unresolved client questions.
 - `operations/` - process, CI, and delivery notes. Start here for how the project
   is run.
 - `adr/` - architecture decision records. Start here before changing deployment,
   backend, or cross-cutting product decisions.
 - `agents/` - repo-local instructions for coding agents.
+- `working-notes/` - provisional captures that make a session resumable without
+  turning it into project truth.
 
 ## Inputs and evidence
 
 - `source-material/` - frozen source docs imported from the previous project.
 - `reference/` - bulky reference crawls and inventories. Load only when a task
   needs that raw evidence.
-- `archive/2026-07-reset/` - superseded research and strategy outputs retained
-  for provenance only. Do not load them as current inputs.
+- `research/` - current investigation artifacts and evidence maps.
+- `archive/` - superseded material retained for provenance. Do not load it as a
+  current input unless the task explicitly calls for historical comparison.
 
 ## Main files
 

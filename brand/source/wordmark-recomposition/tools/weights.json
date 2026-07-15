@@ -1,0 +1,23 @@
+{
+  "baseline": {
+    "target_stem": 41.574,
+    "hellix_wght": 625.0,
+    "hellix_stem": 41.55,
+    "maxi_wght": 449.0,
+    "maxi_stem": 41.66
+  },
+  "t17": {
+    "target_stem": 34.506,
+    "hellix_wght": 533.3,
+    "hellix_stem": 34.57,
+    "maxi_wght": 361.2,
+    "maxi_stem": 34.59
+  },
+  "t26": {
+    "target_stem": 30.765,
+    "hellix_wght": 479.6,
+    "hellix_stem": 30.9,
+    "maxi_wght": 323.3,
+    "maxi_stem": 30.69
+  }
+}

@@ -12,6 +12,11 @@ dist/
 .cache/mm-fonts/
 apps/marketing/public/fonts/generated/
 
+# local brand working files
+/brand/fonts/*
+!/brand/fonts/README.md
+/docs/research/references-screenshots/
+
 # env / secrets
 .env
 .env.*

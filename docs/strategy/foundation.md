@@ -548,7 +548,7 @@ and the conditional pricing simulator.
   amendment rule: substance changes still require dated notes, but condensing
   and clarity rewrites are allowed on Martin's request, with git history as
   provenance. Compressed the header version litany. Additionally, per the
-  reset inquiry, the SEO/IA rulings in sections 4, 5, and 8 are treated as
+  site-planning inquiry, the SEO/IA rulings in sections 4, 5, and 8 are treated as
   claims to be tested by the discovery pass in
   `docs/research/site-planning-inquiry.md`; business facts, claims canon,
   audiences, offer architecture, and voice remain trusted.
