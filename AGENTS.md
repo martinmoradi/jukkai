@@ -62,27 +62,22 @@ remove them when the convention changes.
 
 - Use `agent-browser` for browser automation. Do not use Chrome MCP or the Codex
   in-app browser for this repo.
-- The homepage browser gate is suspended while `apps/marketing` has no routes.
-  The first future homepage slice must reactivate and revalidate
-  `docs/operations/homepage-browser-regression-gate.md` before using it as a PR
-  contract.
 
 ## Marketing App
 
-- `apps/marketing` is a configured Astro workspace shell with no pages or visual
-  implementation after the July 2026 reset. Keep its Astro, Turbo, Stylelint,
-  Vitest, and generated-font tooling intact while the content pipeline is rebuilt.
+- `apps/marketing` is a configured Astro workspace with no current page route.
+  Keep its Astro, Turbo, Stylelint, Vitest, and generated-font tooling intact as
+  design and implementation resume.
 - Before marketing research, strategy, IA, content, or design work, read
   `docs/operations/method.md`. Keep observations, interpretations, hypotheses,
   decisions, and experiments distinct; tools and competitor patterns do not own
   Jukkai's business or creative trade-offs.
 - Current strategy is limited to `docs/strategy/foundation.md` and
-  `docs/strategy/questions-for-crystelle.md`. Files under
-  `docs/archive/2026-07-reset/` are provenance, not implementation inputs.
-- There is no current `PRODUCT.md`, `DESIGN.md`, or `docs/design/` contract. Do
-  not restore the deleted homepage or promote archived design choices. New
-  product/design context starts only after the reset map produces approved
-  inputs.
+  `docs/strategy/questions-for-crystelle.md`. Working notes can inform active
+  sessions, while files under `docs/archive/` are provenance to consult only
+  when intentionally requested.
+- Brand masters and supporting source material live under `brand/`; see its
+  README before adding assets or committing font binaries.
 - For substantial visual or interaction work, prefer the local `impeccable`
   skill when invoked or clearly useful.
 - Protect conversion and SEO intent, but allow visual implementation to
