@@ -17,6 +17,9 @@ apps/marketing/public/fonts/generated/
 !/brand/fonts/README.md
 /docs/research/references-screenshots/
 
+# local website asset intake
+/website-asset-inbox/
+
 # env / secrets
 .env
 .env.*
