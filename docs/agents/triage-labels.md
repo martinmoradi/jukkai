@@ -47,7 +47,7 @@ Do not add area labels to broad PRD issues by default.
 
 | Label            | Meaning                                                                                                            |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `area:marketing` | Astro marketing site, homepage, teaser page, SEO, or visual implementation                                         |
+| `area:marketing` | Astro marketing site, homepage, contact card pages, SEO, or visual implementation                                  |
 | `area:api`       | Jukkai Proper backend code, API contracts, data model, or service behavior                                         |
 | `area:ops`       | Cloudflare, Coolify, production branches, databases, secrets, observability, release checks, or operator workflows |
 
