@@ -141,7 +141,7 @@ export default tseslint.config(
             ['^node:', '^bun:'],
             ['^@(?!jukkai/)', '^\\w'],
             ['^@jukkai/'],
-            ['^#/'],
+            ['^#'],
             ['^\\.'],
           ],
         },

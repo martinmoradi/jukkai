@@ -1,0 +1,24 @@
+---
+interface Props {
+  /**
+   * Cloudflare Web Analytics site token. It is public by design — it appears
+   * in the page source — but it is environment-specific, so it comes from
+   * `PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN` rather than the repository.
+   */
+  token: string | undefined;
+}
+
+const { token } = Astro.props;
+---
+
+{
+  /* Cookieless and origin-side, so no consent banner is required. */
+  token && (
+    <script
+      is:inline
+      defer
+      src='https://static.cloudflareinsights.com/beacon.min.js'
+      data-cf-beacon={`{"token": "${token}"}`}
+    />
+  )
+}

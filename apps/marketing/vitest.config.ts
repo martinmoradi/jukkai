@@ -1,6 +1,10 @@
-import { defineConfig } from 'vitest/config';
+/// <reference types="vitest/config" />
 
-export default defineConfig({
+import { getViteConfig } from 'astro/config';
+
+// `getViteConfig` applies the Astro Vite plugins, which is what lets tests
+// render `.astro` pages through the Astro Container API.
+export default getViteConfig({
   test: {
     environment: 'jsdom',
     environmentOptions: {

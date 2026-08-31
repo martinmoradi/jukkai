@@ -1,0 +1,73 @@
+---
+import '#/styles/contact-card.css';
+
+import CloudflareAnalytics from '#/components/CloudflareAnalytics.astro';
+import {
+  CRYSTELLE,
+  CRYSTELLE_FULL_NAME,
+  CRYSTELLE_VCARD_FILENAME,
+  CRYSTELLE_VCARD_PATH,
+} from '#/data/crystelle';
+import wordmark from '#brand/marks/wordmark/jukkai-wordmark-primary-no-byline.svg?raw';
+
+const title = `${CRYSTELLE_FULL_NAME} — Jukkai`;
+const description = `Coordonnées de ${CRYSTELLE_FULL_NAME}, dirigeante de Jukkai.`;
+---
+
+<!doctype html>
+<html lang='fr'>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <title>{title}</title>
+    <meta name='description' content={description} />
+    {/* A destination for people holding a printed card, not site content. */}
+    <meta name='robots' content='noindex, follow' />
+    <meta name='theme-color' content='#EAE2D2' />
+    <link rel='stylesheet' href='/fonts/generated/fonts.css' />
+    <CloudflareAnalytics
+      token={import.meta.env.PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN}
+    />
+  </head>
+  <body>
+    <main class='card'>
+      <span
+        class='card__mark'
+        role='img'
+        aria-label='Jukkai'
+        set:html={wordmark}
+      />
+
+      <header class='card__identity'>
+        <h1 class='card__name'>{CRYSTELLE_FULL_NAME}</h1>
+        <p class='card__role'>{CRYSTELLE.role}</p>
+      </header>
+
+      <ul class='card__contact'>
+        <li>
+          <a class='card__line' href={`tel:${CRYSTELLE.phoneTel}`}>
+            {CRYSTELLE.phoneDisplay}
+          </a>
+        </li>
+        <li>
+          <a class='card__line' href={`mailto:${CRYSTELLE.email}`}>
+            {CRYSTELLE.email}
+          </a>
+        </li>
+      </ul>
+
+      <div class='card__actions'>
+        <a
+          class='card__action card__action--primary'
+          href={CRYSTELLE_VCARD_PATH}
+          download={CRYSTELLE_VCARD_FILENAME}
+          type='text/vcard'>
+          Enregistrer le contact
+        </a>
+        <a class='card__action card__action--secondary' href='/'>
+          Découvrir Jukkai
+        </a>
+      </div>
+    </main>
+  </body>
+</html>
