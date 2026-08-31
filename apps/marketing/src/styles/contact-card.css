@@ -189,7 +189,11 @@ body {
     flex-direction: row;
   }
 
+  /* Side by side the labels must hold one line each, or the pair reads as
+     two mismatched blocks rather than one control group. */
   .card__action {
     flex: 1;
+    padding-inline: 1rem;
+    white-space: nowrap;
   }
 }
