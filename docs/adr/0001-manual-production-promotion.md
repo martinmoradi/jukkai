@@ -1,6 +1,8 @@
 # Manual Production Promotion
 
-Jukkai uses `main` as the dev integration branch for the full website, a temporary `launch/teaser` release branch for the teaser landing page, and `production` as the only production release branch. Cloudflare Pages deploys the teaser landing page from `production`, and the Jukkai Proper backend Coolify service also deploys from `production`. The teaser branch may intentionally diverge from `main`; shared foundations should be cherry-picked or merged deliberately, while the full website continues on `main`. The manual release gate is branch promotion, so one promoted commit describes the frontend and backend versions that are live together.
+> **Amended by ADR-0005**: the teaser landing page will not be built and the `launch/teaser` branch is retired unused; the website ships directly from `main`. References to the teaser below describe the original phasing — the release model itself (`main` → `production`, manual promotion) is unchanged.
+
+Jukkai uses `main` as the dev integration branch for the full website and `production` as the only production release branch. Cloudflare Pages deploys the website from `production`, and the Jukkai Proper backend Coolify service also deploys from `production`. The manual release gate is branch promotion, so one promoted commit describes the frontend and backend versions that are live together.
 
 `main` is the collaboration gate and should keep the existing pull-request CI protection. `production` is a release pointer, not a collaboration branch: humans should not push it directly during normal work, force pushes should be blocked except for a deliberate admin emergency, and the promotion script should be the normal way to move it. Do not require a separate pull request into `production` if the promotion script already performs the release check, confirmation, push, and verification.
 

@@ -4,16 +4,20 @@ Jukkai's shared language for public-facing site and marketing artifacts. This gl
 
 ## Language
 
-**Teaser Landing Page**:
-A temporary one-screen public page that introduces the visual direction and captures email interest before the full website is ready. It has no navigation and no scroll-driven content structure.
+**Teaser Landing Page** _(retired)_:
+A temporary one-screen public page that was planned to precede the full website. It was never built — the website ships directly (ADR-0005). The term survives in older issues and documents as provenance only.
 _Avoid_: Teasing page, temporary homepage
+
+**Contact Card Page**:
+A small public page that is the target of a printed QR code on a person's business card, offering their contact details and a save-to-contacts action. Its printed pointer path is permanent once cards exist; only the redirect target behind it may change.
+_Avoid_: Digital business card, profile page
 
 **Jukkai Updates**:
 A lightweight, low-frequency email promise for people who want news about Jukkai's opening and the first life of the place. It can continue as occasional place news, but it is not a broad newsletter unless a later consent moment says so.
 _Avoid_: Opening updates, newsletter
 
 **Full Website**:
-The complete public Jukkai website that will replace the teaser landing page when the broader content, navigation, and conversion paths are ready.
+The complete public Jukkai website. It ships directly and keeps improving while live, rather than being preceded by a teaser.
 _Avoid_: Real website
 
 **Jukkai Proper**:
