@@ -4,14 +4,20 @@
  * needs a card of their own.
  */
 
-/** Where the printed `/c/crystelle` card path lands. */
+/**
+ * Where the printed `/c/crystelle` card path lands. Astro builds directory-form
+ * pages, so the canonical URL carries a trailing slash.
+ */
 export const CRYSTELLE_CONTACT_PATH = '/contact/crystelle';
 
-/** The vCard the page's primary action downloads. */
+/**
+ * The vCard the page's primary action downloads.
+ *
+ * Link to it plainly, with no `download` attribute: iOS Safari honours
+ * `download` by saving the file to Files, whereas a plain link to a
+ * `text/vcard` response is what opens the add-contact sheet.
+ */
 export const CRYSTELLE_VCARD_PATH = '/contact/crystelle.vcf';
-
-/** Filename the browser saves the vCard under. */
-export const CRYSTELLE_VCARD_FILENAME = 'crystelle-terrasson.vcf';
 
 export const CRYSTELLE = {
   email: 'ct@jukkai.fr',
