@@ -1,0 +1,195 @@
+/*
+ * Crystelle's contact card.
+ *
+ * Visual foundations v0 only: an ivory field, dark ink, Hatton for her name,
+ * Frama for everything functional. No accent colour is proposed here — every
+ * tint is derived from the two approved values, so a later palette decision
+ * changes two tokens and nothing else.
+ *
+ * Mobile-first: the base rules are the phone layout, since practically every
+ * visitor arrives by scanning a card with a phone in their hand.
+ */
+
+:root {
+  --field: #eae2d2;
+  --ink: #1d1d1b;
+  --hairline: color-mix(in oklab, var(--ink) 18%, transparent);
+  --ink-hover: color-mix(in oklab, var(--ink) 82%, var(--field));
+  --frama: 'pangram-pangram-frama', ui-sans-serif, system-ui, sans-serif;
+  --hatton: 'pangram-pangram-hatton', ui-serif, georgia, serif;
+  --gutter: clamp(1.5rem, 7vw, 3rem);
+
+  /* The palette is a deliberate single mode; nothing here should be inverted. */
+  color-scheme: light;
+}
+
+/* The field owns the whole viewport, including the overscroll rubber band. */
+html {
+  background-color: var(--field);
+}
+
+body {
+  margin: 0;
+}
+
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 9vw, 3.5rem);
+  justify-content: center;
+  min-height: 100svh;
+  padding: clamp(2.5rem, 12vw, 5rem) var(--gutter);
+  font-family: var(--frama);
+  font-weight: 400;
+  color: var(--ink);
+  background-color: var(--field);
+  -webkit-font-smoothing: antialiased;
+}
+
+.card *,
+.card *::before,
+.card *::after {
+  box-sizing: inherit;
+}
+
+/* The wordmark ships with a baked-in fill; take it over so one master file
+   serves every brand colour. */
+.card__mark {
+  display: block;
+  width: clamp(6.5rem, 34vw, 9rem);
+  color: var(--ink);
+}
+
+.card__mark svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.card__mark path {
+  fill: currentcolor;
+}
+
+.card__identity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.card__name {
+  margin: 0;
+  font-family: var(--hatton);
+  font-size: clamp(2.25rem, 12vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+/* Small letterspaced capitals gain weight rather than shrinking further. */
+.card__role {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.19em;
+}
+
+.card__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-top: 1px solid var(--hairline);
+}
+
+.card__contact li {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.card__line {
+  display: block;
+  padding: 1rem 0;
+  font-size: 1.125rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.card__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.card__action {
+  display: block;
+  padding: 1.0625rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: inherit;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  text-decoration: none;
+  border: 1px solid var(--ink);
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.card__action--primary {
+  color: var(--field);
+  background-color: var(--ink);
+}
+
+.card__action--secondary {
+  background-color: transparent;
+}
+
+.card :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+@media (hover: hover) {
+  .card__line:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+  }
+
+  .card__action--primary:hover {
+    background-color: var(--ink-hover);
+  }
+
+  .card__action--secondary:hover {
+    color: var(--field);
+    background-color: var(--ink);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card__action {
+    transition: none;
+  }
+}
+
+/* From tablet up the card stops filling the viewport and becomes a plate. */
+@media (min-width: 40rem) {
+  .card {
+    gap: 3.5rem;
+    max-width: 34rem;
+    margin-inline: auto;
+  }
+
+  .card__actions {
+    flex-direction: row;
+  }
+
+  .card__action {
+    flex: 1;
+  }
+}
