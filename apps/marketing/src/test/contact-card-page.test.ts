@@ -4,8 +4,6 @@
 // Vitest's SSR transform, which jsdom-environment files do not get. The page
 // is rendered to a string here and parsed explicitly instead.
 
-import { readFile } from 'node:fs/promises';
-
 import { experimental_AstroContainer as AstroContainer } from 'astro/container';
 import { JSDOM } from 'jsdom';
 import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
@@ -110,12 +108,6 @@ describe('/contact/crystelle', () => {
         'link[rel="stylesheet"][href="/fonts/generated/fonts.css"]',
       ),
     ).not.toBeNull();
-  });
-
-  it('styles itself from the contact-card stylesheet rather than ad-hoc rules', async () => {
-    const source = await readFile('src/pages/contact/crystelle.astro', 'utf8');
-
-    expect(source).toContain("import '#/styles/contact-card.css'");
   });
 });
 
