@@ -1,0 +1,52 @@
+/**
+ * Crystelle's contact card. One person, one route, one object: there is no
+ * person abstraction here and there should not be one until a second person
+ * needs a card of their own.
+ */
+
+/** Where the printed `/c/crystelle` card path lands. */
+export const CRYSTELLE_CONTACT_PATH = '/contact/crystelle';
+
+/** The vCard the page's primary action downloads. */
+export const CRYSTELLE_VCARD_PATH = '/contact/crystelle.vcf';
+
+/** Filename the browser saves the vCard under. */
+export const CRYSTELLE_VCARD_FILENAME = 'crystelle-terrasson.vcf';
+
+export const CRYSTELLE = {
+  email: 'ct@jukkai.fr',
+  familyName: 'Terrasson',
+  givenName: 'Crystelle',
+  /** French reading grouping; the dialable form lives in `phoneTel`. */
+  phoneDisplay: '06 62 72 87 99',
+  phoneTel: '+33662728799',
+  role: 'Dirigeante',
+} as const;
+
+export const CRYSTELLE_FULL_NAME = `${CRYSTELLE.givenName} ${CRYSTELLE.familyName}`;
+
+/**
+ * vCard 3.0 — the dialect iOS Contacts and Android both import cleanly.
+ *
+ * Properties are listed in emission order, so adding her portrait later is a
+ * single entry here: `PHOTO;ENCODING=b;TYPE=JPEG:<base64>`.
+ *
+ * The postal address is intentionally richer than the page, which shows no
+ * address at all.
+ */
+const CRYSTELLE_VCARD_PROPERTIES = [
+  'BEGIN:VCARD',
+  'VERSION:3.0',
+  `N:${CRYSTELLE.familyName};${CRYSTELLE.givenName};;;`,
+  `FN:${CRYSTELLE_FULL_NAME}`,
+  'ORG:Jukkai',
+  `TITLE:${CRYSTELLE.role}`,
+  'TEL;TYPE=CELL:+33 6 62 72 87 99',
+  `EMAIL;TYPE=INTERNET:${CRYSTELLE.email}`,
+  'ADR;TYPE=WORK:;;26 bis rue au Prévôt;Châteaugiron;;35410;France',
+  'URL:https://jukkai.fr',
+  'END:VCARD',
+] as const;
+
+/** RFC 6350 requires CRLF; some Android importers reject bare LF outright. */
+export const CRYSTELLE_VCARD = `${CRYSTELLE_VCARD_PROPERTIES.join('\r\n')}\r\n`;
