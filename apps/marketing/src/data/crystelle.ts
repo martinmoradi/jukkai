@@ -19,13 +19,20 @@ export const CRYSTELLE_CONTACT_PATH = '/contact/crystelle';
  */
 export const CRYSTELLE_VCARD_PATH = '/contact/crystelle.vcf';
 
+/**
+ * One number in three renderings. `06 …` is the French reading grouping shown
+ * on the page; dropping the trunk `0` behind `+33` derives the other two, so
+ * correcting the number stays a single edit.
+ */
+const PHONE_DISPLAY = '06 62 72 87 99';
+const PHONE_INTERNATIONAL = `+33 ${PHONE_DISPLAY.slice(1)}`;
+
 export const CRYSTELLE = {
   email: 'ct@jukkai.fr',
   familyName: 'Terrasson',
   givenName: 'Crystelle',
-  /** French reading grouping; the dialable form lives in `phoneTel`. */
-  phoneDisplay: '06 62 72 87 99',
-  phoneTel: '+33662728799',
+  phoneDisplay: PHONE_DISPLAY,
+  phoneTel: PHONE_INTERNATIONAL.replaceAll(' ', ''),
   role: 'Dirigeante',
 } as const;
 
@@ -47,7 +54,7 @@ const CRYSTELLE_VCARD_PROPERTIES = [
   `FN:${CRYSTELLE_FULL_NAME}`,
   'ORG:Jukkai',
   `TITLE:${CRYSTELLE.role}`,
-  'TEL;TYPE=CELL:+33 6 62 72 87 99',
+  `TEL;TYPE=CELL:${PHONE_INTERNATIONAL}`,
   `EMAIL;TYPE=INTERNET:${CRYSTELLE.email}`,
   'ADR;TYPE=WORK:;;26 bis rue au Prévôt;Châteaugiron;;35410;France',
   'URL:https://jukkai.fr',
