@@ -65,9 +65,19 @@ remove them when the convention changes.
 
 ## Marketing App
 
-- `apps/marketing` is a configured Astro workspace with no current page route.
-  Keep its Astro, Turbo, Stylelint, Vitest, and generated-font tooling intact as
-  design and implementation resume.
+- `apps/marketing` is an Astro workspace whose only route so far is Crystelle's
+  Contact Card Page at `/contact/crystelle`. Keep its Astro, Turbo, Stylelint,
+  Vitest, and generated-font tooling intact as design and implementation resume.
+- Cloudflare Pages reads `public/_redirects` and `public/_headers`. Printed
+  pointer paths live in `_redirects` and are permanent once cards exist; only
+  their targets may change.
+- `brand/` holds durable masters and is not the app's runtime asset directory.
+  Commit the curated web export into `apps/marketing/src/assets/` and import it
+  from there; a test holds the copy to its master.
+- Page-level styles belong in `src/styles/*.css` rather than an Astro `<style>`
+  block, because Stylelint globs `src/**/*.css`.
+- Astro components render in tests through the Container API, which needs
+  Vitest's SSR transform. Those files declare `@vitest-environment node`.
 - Before marketing research, strategy, IA, content, or design work, read
   `docs/operations/method.md`. Keep observations, interpretations, hypotheses,
   decisions, and experiments distinct; tools and competitor patterns do not own
