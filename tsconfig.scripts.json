@@ -9,5 +9,5 @@
     "target": "ESNext",
     "types": ["bun"]
   },
-  "include": ["scripts/**/*.ts"]
+  "include": ["brand/source/**/*.ts", "scripts/**/*.ts"]
 }
