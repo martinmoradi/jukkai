@@ -3,5 +3,6 @@
 # These source paths are printed on physical artefacts and are therefore
 # permanent: a card in someone's wallet cannot be reissued. Never delete or
 # repoint a rule to a dead route — repoint it at wherever the live page moved.
-# The `src` tag identifies the printed artefact the visit came from.
-/c/crystelle  /contact/crystelle?src=card-crystelle  302
+# The `src` tag identifies the printed artefact the visit came from. Targets
+# carry the trailing slash Astro builds, so a scan costs one hop, not two.
+/c/crystelle  /contact/crystelle/?src=card-crystelle  302
