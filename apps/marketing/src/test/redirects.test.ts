@@ -33,7 +33,7 @@ describe('_redirects', () => {
     expect(await readRedirectRules()).toContainEqual({
       from: '/c/crystelle',
       status: 302,
-      to: '/contact/crystelle?src=card-crystelle',
+      to: '/contact/crystelle/?src=card-crystelle',
     });
   });
 
