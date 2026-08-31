@@ -67,14 +67,13 @@ describe('/contact/crystelle', () => {
     expect(email?.textContent?.trim()).toBe('ct@jukkai.fr');
   });
 
-  it('leads with saving the contact', () => {
+  it('leads with saving the contact, as a plain link so iOS opens Contacts', () => {
     const save = page.querySelector<HTMLAnchorElement>(
       'a[href="/contact/crystelle.vcf"]',
     );
 
     expect(save?.textContent?.trim()).toBe('Enregistrer le contact');
-    expect(save?.getAttribute('download')).toBe('crystelle-terrasson.vcf');
-    expect(save?.getAttribute('type')).toBe('text/vcard');
+    expect(save?.hasAttribute('download')).toBe(false);
   });
 
   it('offers Jukkai itself as the second step', () => {

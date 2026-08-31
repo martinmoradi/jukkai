@@ -6,7 +6,6 @@ import CloudflareAnalytics from '#/components/CloudflareAnalytics.astro';
 import {
   CRYSTELLE,
   CRYSTELLE_FULL_NAME,
-  CRYSTELLE_VCARD_FILENAME,
   CRYSTELLE_VCARD_PATH,
 } from '#/data/crystelle';
 
@@ -59,9 +58,7 @@ const description = `Coordonnées de ${CRYSTELLE_FULL_NAME}, dirigeante de Jukka
       <div class='card__actions'>
         <a
           class='card__action card__action--primary'
-          href={CRYSTELLE_VCARD_PATH}
-          download={CRYSTELLE_VCARD_FILENAME}
-          type='text/vcard'>
+          href={CRYSTELLE_VCARD_PATH}>
           Enregistrer le contact
         </a>
         <a class='card__action card__action--secondary' href='/'>
