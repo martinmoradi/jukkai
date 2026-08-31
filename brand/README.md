@@ -9,6 +9,7 @@ runtime asset directory.
 
 - `marks/wordmark/` - current wordmark exports and byline.
 - `marks/seal/` - current seal exports.
+- `qr-codes/` - reproducible QR masters and convenience exports.
 - `source/` - non-current construction files, generators, captured references,
   and superseded studies. Never use this as the export folder.
 - `fonts/` - local working copies for design tools. Font binaries are ignored;

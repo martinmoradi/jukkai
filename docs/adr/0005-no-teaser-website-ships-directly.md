@@ -1,0 +1,5 @@
+# No teaser: the website ships directly
+
+The Teaser Landing Page will not be built. For lack of time, the full public website is built directly on `main` and goes live early, then keeps improving while live. This retires the temporary `launch/teaser` release branch from ADR-0001 before it was ever created; the rest of the ADR-0001 release model is unchanged — `main` stays the dev integration branch, `production` stays the only production release branch, and promotion stays a deliberate manual act.
+
+The first production deploy is driven by Crystelle's business card rather than a teaser: the printed QR code targets `https://jukkai.fr/c/crystelle`, a permanent pointer path served via a Cloudflare Pages redirect to her Contact Card Page. Printed paths are permanent once cards exist; only their redirect targets may change. Decisions that referenced the teaser as a phase (Jukkai Updates lead capture, consent evidence, backend foundation) carry over to the live website unchanged — the teaser was a delivery vehicle, not the reason for those decisions.
