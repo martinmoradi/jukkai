@@ -1,0 +1,19 @@
+---
+/**
+ * Holds the place where Crystelle's portrait will sit. No photograph has been
+ * approved yet (brand/ carries only working captures), so the slot is her
+ * monogram on a quietly tinted disc — the circle echoes the sphere on the
+ * printed card's recto. When a portrait is chosen, commit the curated export
+ * under src/assets/ and swap the monogram for an <img>; the shape, size, and
+ * position in the composition stay.
+ *
+ * Styles live in src/styles/contact-card.css so Stylelint sees them.
+ */
+import { CRYSTELLE } from '#/data/crystelle';
+
+const monogram = `${CRYSTELLE.givenName[0]}${CRYSTELLE.familyName[0]}`;
+---
+
+<div class='card__portrait' aria-hidden='true'>
+  <span class='card__monogram'>{monogram}</span>
+</div>
