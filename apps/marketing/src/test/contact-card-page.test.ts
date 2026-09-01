@@ -63,7 +63,9 @@ describe('/contact/crystelle', () => {
     expect(page.querySelector('h1')?.textContent?.trim()).toBe(
       'Crystelle Terrasson',
     );
-    expect(page.body.textContent).toContain('Dirigeante');
+    expect(page.querySelector('.card__role')?.textContent?.trim()).toBe(
+      'Dirigeante',
+    );
   });
 
   it('shows her real portrait with a useful text alternative', () => {

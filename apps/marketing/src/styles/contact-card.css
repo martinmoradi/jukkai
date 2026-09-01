@@ -650,9 +650,13 @@ body {
   }
 
   .card__identity {
-    gap: clamp(0.75rem, 2svh, 1rem);
+    gap: clamp(1rem, 2.75svh, 1.5rem);
     align-self: start;
     margin-bottom: 0;
+  }
+
+  .card__person {
+    gap: clamp(0.375rem, 1svh, 0.625rem);
   }
 
   .card__details {
