@@ -3,6 +3,7 @@ import '#/styles/contact-card.css';
 
 import wordmark from '#/assets/jukkai-wordmark-primary-no-byline.svg?raw';
 import CloudflareAnalytics from '#/components/CloudflareAnalytics.astro';
+import PortraitPlaceholder from '#/components/PortraitPlaceholder.astro';
 import {
   CRYSTELLE,
   CRYSTELLE_FULL_NAME,
@@ -38,9 +39,12 @@ const description = `Coordonnées de ${CRYSTELLE_FULL_NAME}, dirigeante de Jukka
       />
 
       <header class='card__identity'>
+        <PortraitPlaceholder />
         <h1 class='card__name'>{CRYSTELLE_FULL_NAME}</h1>
         <p class='card__role'>{CRYSTELLE.role}</p>
       </header>
+
+      <hr class='card__rule' />
 
       <ul class='card__contact'>
         <li>

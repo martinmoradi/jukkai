@@ -51,6 +51,13 @@ describe('/contact/crystelle', () => {
     expect(page.body.textContent).toContain('Dirigeante');
   });
 
+  it('holds a place for her portrait that screen readers skip', () => {
+    const portrait = page.querySelector('.card__portrait');
+
+    expect(portrait?.getAttribute('aria-hidden')).toBe('true');
+    expect(portrait?.textContent?.trim()).toBe('CT');
+  });
+
   it('dials the phone number shown in French grouping', () => {
     const phone = page.querySelector<HTMLAnchorElement>('a[href^="tel:"]');
 
