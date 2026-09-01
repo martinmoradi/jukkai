@@ -19,6 +19,7 @@ const mapsAddress = [
   CRYSTELLE.address.country,
 ].join(', ');
 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsAddress)}`;
+const appleMapsUrl = `https://maps.apple.com/?q=${encodeURIComponent(mapsAddress)}`;
 ---
 
 <!doctype html>
@@ -115,6 +116,8 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
           <a
             class='card__detail'
             href={mapsUrl}
+            data-maps-link
+            data-apple-maps-url={appleMapsUrl}
             aria-label={`Ouvrir ${CRYSTELLE.address.street}, ${CRYSTELLE.address.postalCode} ${CRYSTELLE.address.locality} dans l’application de cartes`}>
             <span class='card__detail-icon' aria-hidden='true'>
               <svg viewBox='0 0 24 24' focusable='false'>
@@ -198,6 +201,18 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
           </a>
         </nav>
       </div>
+
+      <script>
+        const mapsLink =
+          document.querySelector<HTMLAnchorElement>('[data-maps-link]');
+
+        if (
+          mapsLink?.dataset.appleMapsUrl &&
+          /iPhone|iPad|iPod|Macintosh/.test(navigator.userAgent)
+        ) {
+          mapsLink.href = mapsLink.dataset.appleMapsUrl;
+        }
+      </script>
     </main>
   </body>
 </html>
