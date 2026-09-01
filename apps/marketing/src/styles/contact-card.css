@@ -42,7 +42,7 @@ body {
   z-index: 0;
   box-sizing: border-box;
   min-height: 100svh;
-  padding: 1.5rem 1rem 3rem;
+  padding: 2rem 1rem 3rem;
   overflow: hidden;
   font-family: var(--frama);
   font-weight: 400;
@@ -96,30 +96,6 @@ body {
   gap: 1.5rem;
   width: min(100%, 39.5rem);
   margin-inline: auto;
-}
-
-.card__context {
-  display: flex;
-  gap: 0.65rem;
-  align-items: center;
-  align-self: center;
-  padding: 0.5rem 0.8rem 0.5rem 0.55rem;
-  margin: 0;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--muted);
-  letter-spacing: 0.055em;
-  background-color: color-mix(in oklab, var(--surface) 82%, transparent);
-  border: 1px solid color-mix(in oklab, var(--ink) 9%, transparent);
-  border-radius: 999px;
-  box-shadow: 0 0.65rem 2rem color-mix(in oklab, var(--ink) 5%, transparent);
-  backdrop-filter: blur(0.75rem);
-}
-
-.card__context-mark {
-  width: 1.75rem;
-  height: 1.75rem;
-  border-radius: 50%;
 }
 
 .card__identity {
@@ -225,14 +201,6 @@ body {
   letter-spacing: 0.13em;
 }
 
-.card__introduction {
-  max-width: 32ch;
-  margin: 0;
-  font-size: clamp(1.0625rem, 4.6vw, 1.25rem);
-  line-height: 1.5;
-  text-wrap: balance;
-}
-
 .card__details {
   display: flex;
   flex-direction: column;
@@ -263,10 +231,6 @@ body {
   border-top: 1px solid var(--hairline);
 }
 
-.card__detail:not(a) {
-  grid-template-columns: 2.75rem minmax(0, 1fr);
-}
-
 .card__detail-icon {
   display: grid;
   place-items: center;
@@ -281,8 +245,7 @@ body {
 .card__detail-icon svg,
 .card__detail-arrow,
 .card__action-icon,
-.card__action-arrow,
-.card__direct-actions svg {
+.card__action-arrow {
   fill: none;
   stroke: currentcolor;
   stroke-width: 1.6;
@@ -293,6 +256,11 @@ body {
 .card__detail-icon svg {
   width: 1.25rem;
   height: 1.25rem;
+}
+
+.card__detail-icon .card__detail-icon-dot {
+  fill: currentcolor;
+  stroke: none;
 }
 
 .card__detail-copy {
@@ -321,6 +289,11 @@ body {
 .card__detail-value--address {
   font-size: clamp(0.875rem, 3.6vw, 1rem);
   line-height: 1.45;
+}
+
+.card__detail-value--social {
+  font-size: clamp(0.8125rem, 3.45vw, 1rem);
+  letter-spacing: 0;
 }
 
 .card__detail-arrow {
@@ -388,72 +361,13 @@ body {
   transition: transform 160ms ease;
 }
 
-.card__direct {
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-}
-
-.card__direct-label {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 0.8rem;
-  align-items: center;
-}
-
-.card__direct-label span {
-  height: 1px;
-  background-color: var(--hairline);
-}
-
-.card__direct-label p {
-  margin: 0;
-  font-size: 0.6875rem;
-  font-weight: 500;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-}
-
-.card__direct-actions {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
-}
-
-.card__direct-actions a {
-  display: flex;
-  gap: 0.65rem;
-  align-items: center;
-  justify-content: center;
-  min-height: 3.5rem;
-  padding: 0.6rem 0.8rem;
-  font-size: 0.9375rem;
-  font-weight: 500;
-  color: inherit;
-  text-decoration: none;
-  background-color: color-mix(in oklab, var(--surface) 65%, transparent);
-  border: 1px solid var(--hairline);
-  border-radius: 0.85rem;
-  transition:
-    background-color 160ms ease,
-    border-color 160ms ease,
-    transform 160ms ease;
-}
-
-.card__direct-actions svg {
-  width: 1.25rem;
-  height: 1.25rem;
-}
-
 .card :focus-visible {
   outline: 2px solid var(--ink);
   outline-offset: 3px;
 }
 
 .card__detail:active,
-.card__action:active,
-.card__direct-actions a:active {
+.card__action:active {
   transform: translateY(1px);
 }
 
@@ -471,8 +385,7 @@ body {
     transform: translateX(0.2rem);
   }
 
-  .card__action:hover,
-  .card__direct-actions a:hover {
+  .card__action:hover {
     transform: translateY(-1px);
   }
 
@@ -481,8 +394,7 @@ body {
     box-shadow: 0 1.1rem 2.1rem color-mix(in oklab, var(--ink) 22%, transparent);
   }
 
-  .card__action--secondary:hover,
-  .card__direct-actions a:hover {
+  .card__action--secondary:hover {
     background-color: var(--surface-strong);
     border-color: color-mix(in oklab, var(--ink) 28%, transparent);
   }
@@ -502,8 +414,7 @@ body {
   }
 
   .card__details,
-  .card__actions,
-  .card__direct {
+  .card__actions {
     width: min(100%, 35rem);
     margin-inline: auto;
   }
@@ -512,10 +423,6 @@ body {
     grid-template-columns: 3rem minmax(0, 1fr) 1.25rem;
     min-height: 5.5rem;
     padding-inline: 1.25rem;
-  }
-
-  .card__detail:not(a) {
-    grid-template-columns: 3rem minmax(0, 1fr);
   }
 
   .card__detail-icon {
@@ -556,8 +463,7 @@ body {
   .card__detail,
   .card__detail-arrow,
   .card__action,
-  .card__action-arrow,
-  .card__direct-actions a {
+  .card__action-arrow {
     transition: none;
   }
 }
