@@ -63,8 +63,10 @@ describe('/contact/crystelle', () => {
   });
 
   it('dials the phone number shown in French grouping', () => {
-    const phone = page.querySelector<HTMLAnchorElement>('a[href^="tel:"]');
+    const phones = page.querySelectorAll<HTMLAnchorElement>('a[href^="tel:"]');
+    const phone = phones.item(0);
 
+    expect(phones).toHaveLength(1);
     expect(phone?.getAttribute('href')).toBe('tel:+33662728799');
     expect(
       phone?.querySelector('.card__detail-value')?.textContent?.trim(),
@@ -72,8 +74,11 @@ describe('/contact/crystelle', () => {
   });
 
   it('opens a compose window for her address', () => {
-    const email = page.querySelector<HTMLAnchorElement>('a[href^="mailto:"]');
+    const emails =
+      page.querySelectorAll<HTMLAnchorElement>('a[href^="mailto:"]');
+    const email = emails.item(0);
 
+    expect(emails).toHaveLength(1);
     expect(email?.getAttribute('href')).toBe('mailto:ct@jukkai.fr');
     expect(
       email?.querySelector('.card__detail-value')?.textContent?.trim(),
@@ -92,7 +97,7 @@ describe('/contact/crystelle', () => {
   it('offers Jukkai itself as the second step', () => {
     const discover = page.querySelector<HTMLAnchorElement>('a[href="/"]');
 
-    expect(discover?.textContent?.trim()).toBe('Découvrir Jukkai');
+    expect(discover?.textContent?.trim()).toBe('Visiter jukkai.fr');
   });
 
   it('carries the Jukkai wordmark as inline artwork that takes the ink colour', () => {
@@ -102,9 +107,32 @@ describe('/contact/crystelle', () => {
     expect(mark?.closest('[aria-label="Jukkai"]')).not.toBeNull();
   });
 
-  it('shows the same professional address the saved contact carries', () => {
-    expect(page.body.textContent).toContain('26 bis rue au Prévôt');
-    expect(page.body.textContent).toContain('35410 Châteaugiron');
+  it('opens the professional address in a mobile-friendly maps destination', () => {
+    const address = page.querySelector<HTMLAnchorElement>(
+      'a[href^="https://www.google.com/maps/search/"]',
+    );
+
+    expect(address?.textContent).toContain('26 bis rue au Prévôt');
+    expect(address?.textContent).toContain('35410 Châteaugiron');
+
+    const destination = new URL(address!.href);
+    expect(destination.searchParams.get('query')).toBe(
+      '26 bis rue au Prévôt, 35410 Châteaugiron, France',
+    );
+  });
+
+  it("links to Crystelle's current Instagram account", () => {
+    const instagram = page.querySelector<HTMLAnchorElement>(
+      'a[href="https://www.instagram.com/studiocrystelleterrasson/"]',
+    );
+
+    expect(instagram?.textContent).toContain('@studiocrystelleterrasson');
+  });
+
+  it('keeps the mobile card concise without redundant framing or actions', () => {
+    expect(html).not.toContain('Carte de contact Jukkai');
+    expect(html).not.toContain('Deux expressions d’un même regard');
+    expect(html).not.toContain('Ou directement');
   });
 
   it('never mentions the retired studioterrasson domain', () => {
