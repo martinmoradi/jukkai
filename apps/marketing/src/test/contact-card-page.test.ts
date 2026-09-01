@@ -100,14 +100,8 @@ describe('/contact/crystelle', () => {
     expect(discover?.textContent?.trim()).toBe('Visiter jukkai.fr');
   });
 
-  it('leads with the primary Jukkai wordmark and its byline', () => {
-    const mark = page.querySelector(
-      '[aria-label="Jukkai by Crystelle Terrasson"]',
-    );
-
-    expect(mark).not.toBeNull();
-    expect(mark?.querySelector('svg')).not.toBeNull();
-    expect(page.querySelector('.card__content')?.firstElementChild).toBe(mark);
+  it('keeps the identity compact without a redundant wordmark', () => {
+    expect(page.querySelector('.card__wordmark')).toBeNull();
   });
 
   it('opens the professional address in a mobile-friendly maps destination', () => {
