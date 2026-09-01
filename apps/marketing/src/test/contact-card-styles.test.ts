@@ -28,4 +28,10 @@ describe('contact-card.css', () => {
   it('is mobile-first: any viewport query widens rather than narrows', () => {
     expect(css).not.toMatch(/@media[^{]*max-width/);
   });
+
+  it('responds to short mobile viewports as well as narrow ones', () => {
+    expect(css).toContain('min(38vw, 18svh)');
+    expect(css).toContain('@media (max-height: 33rem)');
+    expect(css).toContain('@media (orientation: landscape)');
+  });
 });

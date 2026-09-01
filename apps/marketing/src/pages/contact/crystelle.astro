@@ -2,7 +2,6 @@
 import '#/styles/contact-card.css';
 
 import sphere from '#/assets/jukkai-sphere.svg';
-import wordmark from '#/assets/jukkai-wordmark-primary.svg?raw';
 import CloudflareAnalytics from '#/components/CloudflareAnalytics.astro';
 import CrystellePortrait from '#/components/CrystellePortrait.astro';
 import {
@@ -47,13 +46,6 @@ const appleMapsUrl = `https://maps.apple.com/?q=${encodeURIComponent(mapsAddress
       </div>
 
       <div class='card__content'>
-        <span
-          class='card__wordmark'
-          role='img'
-          aria-label='Jukkai by Crystelle Terrasson'
-          set:html={wordmark}
-        />
-
         <header class='card__identity'>
           <CrystellePortrait />
 
