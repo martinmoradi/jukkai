@@ -44,6 +44,21 @@ describe('/contact/crystelle', () => {
     ).toBe('#EAE2D2');
   });
 
+  it('publishes icons and social-card metadata from committed assets', () => {
+    expect(
+      page.querySelector('link[rel="icon"][type="image/svg+xml"][href]'),
+    ).not.toBeNull();
+    expect(
+      page.querySelector('link[rel="apple-touch-icon"][sizes="180x180"][href]'),
+    ).not.toBeNull();
+    expect(
+      page.querySelector<HTMLMetaElement>('meta[property="og:title"]')?.content,
+    ).toBe(page.title);
+    expect(
+      page.querySelector<HTMLMetaElement>('meta[property="og:image"]')?.content,
+    ).toMatch(/^https?:\/\//);
+  });
+
   it('introduces her by name and role', () => {
     expect(page.querySelector('h1')?.textContent?.trim()).toBe(
       'Crystelle Terrasson',
