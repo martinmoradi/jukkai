@@ -650,6 +650,7 @@ body {
   }
 
   .card__identity {
+    gap: clamp(0.75rem, 2svh, 1rem);
     align-self: start;
     margin-bottom: 0;
   }
