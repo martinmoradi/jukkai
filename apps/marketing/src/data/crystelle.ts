@@ -37,6 +37,10 @@ export const CRYSTELLE = {
   email: 'ct@jukkai.fr',
   familyName: 'Terrasson',
   givenName: 'Crystelle',
+  instagram: {
+    handle: '@studiocrystelleterrasson',
+    url: 'https://www.instagram.com/studiocrystelleterrasson/',
+  },
   phoneDisplay: PHONE_DISPLAY,
   phoneTel: PHONE_INTERNATIONAL.replaceAll(' ', ''),
   profession: 'Architecte d’intérieur',
