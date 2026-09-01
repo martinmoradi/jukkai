@@ -637,6 +637,32 @@ body {
   }
 }
 
+@media (min-height: 35rem) and (orientation: portrait) {
+  .card {
+    align-items: stretch;
+    padding-block: clamp(1rem, 4svh, 2.5rem);
+  }
+
+  .card__content {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    gap: clamp(0.75rem, 2.5svh, 1.5rem);
+  }
+
+  .card__identity {
+    align-self: start;
+    margin-bottom: 0;
+  }
+
+  .card__details {
+    align-self: center;
+  }
+
+  .card__actions {
+    align-self: end;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .card__identity,
   .card__details,
