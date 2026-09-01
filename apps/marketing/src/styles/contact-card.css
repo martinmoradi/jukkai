@@ -6,6 +6,11 @@
  * tint is derived from the two approved values, so a later palette decision
  * changes two tokens and nothing else.
  *
+ * Spacing runs on the spec's two gears: --rhythm-local spaces relationships
+ * inside a group (portrait to name, name to role), --rhythm-scene separates
+ * the scenes (mark, identity, coordinates, actions). The hairline rule marks
+ * the one editorial break — identity above, coordinates below.
+ *
  * Mobile-first: the base rules are the phone layout, since practically every
  * visitor arrives by scanning a card with a phone in their hand.
  */
@@ -15,9 +20,12 @@
   --ink: #1d1d1b;
   --hairline: color-mix(in oklab, var(--ink) 18%, transparent);
   --ink-hover: color-mix(in oklab, var(--ink) 82%, var(--field));
+  --portrait-field: color-mix(in oklab, var(--ink) 6%, var(--field));
   --frama: 'pangram-pangram-frama', ui-sans-serif, system-ui, sans-serif;
   --hatton: 'pangram-pangram-hatton', ui-serif, georgia, serif;
   --gutter: clamp(1.5rem, 7vw, 3rem);
+  --rhythm-local: 0.75rem;
+  --rhythm-scene: clamp(1.75rem, 8vw, 3.25rem);
 
   /* The palette is a deliberate single mode; nothing here should be inverted. */
   color-scheme: light;
@@ -36,10 +44,10 @@ body {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: clamp(2rem, 9vw, 3.5rem);
+  gap: var(--rhythm-scene);
   justify-content: center;
   min-height: 100svh;
-  padding: clamp(2.5rem, 12vw, 5rem) var(--gutter);
+  padding: clamp(2rem, 10vw, 5rem) var(--gutter);
   font-family: var(--frama);
   font-weight: 400;
   color: var(--ink);
@@ -51,6 +59,11 @@ body {
 .card *::before,
 .card *::after {
   box-sizing: inherit;
+}
+
+.card ::selection {
+  color: var(--field);
+  background-color: var(--ink);
 }
 
 /* The wordmark ships with a baked-in fill; take it over so one master file
@@ -74,7 +87,33 @@ body {
 .card__identity {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: var(--rhythm-local);
+  align-items: flex-start;
+}
+
+/* A held slot, not an approved portrait: her monogram on a quiet tinted disc
+   until a photograph is chosen. The extra margin keeps the disc a sibling
+   object rather than a glyph of the name. */
+.card__portrait {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(5rem, 26vw, 7rem);
+  aspect-ratio: 1;
+  margin-bottom: var(--rhythm-local);
+  background-color: var(--portrait-field);
+  border: 1px solid var(--hairline);
+  border-radius: 50%;
+}
+
+.card__monogram {
+  /* Tracking trails the last glyph; cancel it so the pair sits centred. */
+  margin-inline-end: -0.06em;
+  font-family: var(--hatton);
+  font-size: clamp(1.625rem, 8.5vw, 2.25rem);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0.06em;
 }
 
 .card__name {
@@ -93,28 +132,35 @@ body {
   font-size: 0.8125rem;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.19em;
+  letter-spacing: 0.14em;
+}
+
+/* The single editorial break of the composition: identity above it,
+   coordinates below. A short stroke of full ink, not a page-wide divider. */
+.card__rule {
+  width: 2.75rem;
+  height: 1px;
+  margin: 0;
+  background-color: var(--ink);
+  border: 0;
 }
 
 .card__contact {
   display: flex;
   flex-direction: column;
-  gap: 0;
   padding: 0;
   margin: 0;
   list-style: none;
-  border-top: 1px solid var(--hairline);
 }
 
-.card__contact li {
-  border-bottom: 1px solid var(--hairline);
-}
-
+/* The padding is invisible tap area; the visible gap between lines stays in
+   local rhythm while each target clears 40px. */
 .card__line {
   display: block;
-  padding: 1rem 0;
+  padding: 0.75rem 0;
   font-size: 1.125rem;
   color: inherit;
+  letter-spacing: 0.02em;
   text-decoration: none;
 }
 
@@ -133,7 +179,7 @@ body {
   color: inherit;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0.11em;
+  letter-spacing: 0.12em;
   text-decoration: none;
   border: 1px solid var(--ink);
   transition:
@@ -148,6 +194,16 @@ body {
 
 .card__action--secondary {
   background-color: transparent;
+}
+
+.card__action--primary:active {
+  background-color: var(--ink-hover);
+}
+
+.card__action--secondary:active,
+.card__line:active {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
 }
 
 .card :focus-visible {
@@ -180,7 +236,7 @@ body {
 /* From tablet up the card stops filling the viewport and becomes a plate. */
 @media (min-width: 40rem) {
   .card {
-    gap: 3.5rem;
+    gap: 3.25rem;
     max-width: 34rem;
     margin-inline: auto;
   }
