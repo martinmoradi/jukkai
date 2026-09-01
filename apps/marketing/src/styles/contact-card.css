@@ -17,7 +17,8 @@
   --surface: color-mix(in oklab, var(--field) 72%, white);
   --surface-strong: color-mix(in oklab, var(--field) 54%, white);
   --hairline: color-mix(in oklab, var(--ink) 14%, transparent);
-  --muted: color-mix(in oklab, var(--ink) 64%, var(--field));
+  --edge-strong: color-mix(in oklab, var(--ink) 24%, transparent);
+  --muted: color-mix(in oklab, var(--ink) 72%, var(--field));
   --quiet: color-mix(in oklab, var(--ink) 7%, var(--field));
   --sphere-cobalt: oklch(30.2% 0.202 264.157deg);
   --sphere-cobalt-hover: color-mix(
@@ -32,6 +33,9 @@
   );
   --frama: 'pangram-pangram-frama', ui-sans-serif, system-ui, sans-serif;
   --hatton: 'pangram-pangram-hatton', ui-serif, georgia, serif;
+  --micro-size: 0.625rem;
+  --micro-tracking: 0.12em;
+  --micro-weight: 500;
   --radius-control: 1rem;
   --radius-panel: 1.5rem;
 
@@ -125,7 +129,7 @@ body {
   margin: 0;
   overflow: hidden;
   background-color: var(--field);
-  border: 1px solid color-mix(in oklab, var(--ink) 10%, transparent);
+  border: 1px solid var(--hairline);
   border-radius: 50%;
   box-shadow:
     0 1.75rem 4rem color-mix(in oklab, var(--ink) 15%, transparent),
@@ -165,11 +169,11 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0;
-  font-size: clamp(0.625rem, min(2.8vw, 1.6svh), 0.75rem);
-  font-weight: 500;
+  font-size: clamp(0.6875rem, min(2.8vw, 1.6svh), 0.75rem);
+  font-weight: var(--micro-weight);
   line-height: 1.35;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: var(--micro-tracking);
 }
 
 .card__details {
@@ -178,7 +182,7 @@ body {
   overflow: hidden;
   font-style: normal;
   background-color: color-mix(in oklab, var(--surface-strong) 88%, transparent);
-  border: 1px solid color-mix(in oklab, var(--ink) 9%, transparent);
+  border: 1px solid var(--hairline);
   border-radius: var(--radius-panel);
   box-shadow:
     0 1.25rem 3rem color-mix(in oklab, var(--ink) 8%, transparent),
@@ -209,7 +213,7 @@ body {
   height: 2.25rem;
   color: var(--ink);
   background-color: var(--quiet);
-  border: 1px solid color-mix(in oklab, var(--ink) 8%, transparent);
+  border: 1px solid var(--hairline);
   border-radius: 50%;
 }
 
@@ -242,16 +246,17 @@ body {
 }
 
 .card__detail-label {
-  font-size: clamp(0.5625rem, 1.2svh, 0.625rem);
-  font-weight: 500;
+  font-size: var(--micro-size);
+  font-weight: var(--micro-weight);
   color: var(--muted);
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: var(--micro-tracking);
 }
 
 .card__detail-value {
   min-width: 0;
   font-size: clamp(0.875rem, min(3.5vw, 2.1svh), 1.0625rem);
+  font-variant-numeric: tabular-nums;
   line-height: 1.25;
   letter-spacing: 0.01em;
   overflow-wrap: anywhere;
@@ -279,11 +284,13 @@ body {
   width: 4.25rem;
   min-height: 2rem;
   padding: 0.375rem 0.3rem;
-  font-size: 0.625rem;
-  font-weight: 600;
+  font-size: var(--micro-size);
+  font-weight: var(--micro-weight);
   line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: var(--micro-tracking);
   background-color: var(--surface-strong);
-  border: 1px solid color-mix(in oklab, var(--ink) 18%, transparent);
+  border: 1px solid var(--edge-strong);
   border-radius: 999px;
   transition:
     color 160ms ease,
@@ -400,7 +407,7 @@ body {
 
   .card__action--secondary:hover {
     background-color: var(--surface-strong);
-    border-color: color-mix(in oklab, var(--ink) 28%, transparent);
+    border-color: var(--edge-strong);
   }
 }
 
@@ -431,7 +438,7 @@ body {
   }
 
   .card__role {
-    font-size: 0.5625rem;
+    font-size: 0.6875rem;
     line-height: 1.25;
   }
 
@@ -472,7 +479,7 @@ body {
   .card__detail-action {
     width: 4rem;
     min-height: 1.875rem;
-    font-size: 0.5938rem;
+    font-size: var(--micro-size);
   }
 
   .card__detail-action svg {
@@ -524,7 +531,7 @@ body {
 
   .card__role {
     max-width: 16rem;
-    font-size: 0.5rem;
+    font-size: 0.6875rem;
   }
 
   .card__details,
