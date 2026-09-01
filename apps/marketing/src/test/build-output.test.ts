@@ -1,8 +1,7 @@
 // @vitest-environment node
 
 import { execFile } from 'node:child_process';
-import { mkdtemp, readFile, rm, stat } from 'node:fs/promises';
-import { tmpdir } from 'node:os';
+import { mkdir, mkdtemp, readFile, rm, stat } from 'node:fs/promises';
 import { join } from 'node:path';
 import { promisify } from 'node:util';
 
@@ -33,8 +32,10 @@ async function exists(path: string) {
 }
 
 beforeAll(async () => {
+  const buildCache = join(process.cwd(), '.astro', 'test-builds');
+  await mkdir(buildCache, { recursive: true });
   outDir = join(
-    await mkdtemp(join(tmpdir(), 'jukkai-marketing-build-')),
+    await mkdtemp(join(buildCache, 'jukkai-marketing-build-')),
     'dist',
   );
 
@@ -59,13 +60,17 @@ describe('published site', () => {
     );
   });
 
-  it('bundles the contact-card styles into the page itself', async () => {
+  it('publishes the contact-card styles and links them from the page', async () => {
     const page = await published(
       `${CRYSTELLE_CONTACT_PATH.slice(1)}/index.html`,
     );
+    const cssPath = page.match(/href="\/(_astro\/[^"]+\.css)"/)?.[1];
 
-    expect(page).toContain('--field:#eae2d2');
-    expect(page).toContain('--ink:#1d1d1b');
+    expect(cssPath).toBeDefined();
+
+    const css = await published(cssPath!);
+    expect(css).toContain('--field:#eae2d2');
+    expect(css).toContain('--ink:#1d1d1b');
   });
 
   it('leaves the card page out of the generated sitemap', async () => {
