@@ -119,6 +119,7 @@ describe('/contact/crystelle', () => {
     expect(destination.searchParams.get('query')).toBe(
       '26 bis rue au Prévôt, 35410 Châteaugiron, France',
     );
+    expect(address?.dataset.appleMapsUrl).toContain('https://maps.apple.com/');
   });
 
   it("links to Crystelle's current Instagram account", () => {
