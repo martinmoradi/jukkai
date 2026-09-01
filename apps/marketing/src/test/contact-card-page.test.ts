@@ -51,25 +51,33 @@ describe('/contact/crystelle', () => {
     expect(page.body.textContent).toContain('Dirigeante');
   });
 
-  it('holds a place for her portrait that screen readers skip', () => {
-    const portrait = page.querySelector('.card__portrait');
+  it('shows her real portrait with a useful text alternative', () => {
+    const portrait = page.querySelector<HTMLImageElement>(
+      '.card__portrait-image',
+    );
 
-    expect(portrait?.getAttribute('aria-hidden')).toBe('true');
-    expect(portrait?.textContent?.trim()).toBe('CT');
+    expect(portrait).not.toBeNull();
+    expect(portrait?.alt).toBe(
+      'Crystelle Terrasson, architecte d’intérieur et dirigeante de Jukkai',
+    );
   });
 
   it('dials the phone number shown in French grouping', () => {
     const phone = page.querySelector<HTMLAnchorElement>('a[href^="tel:"]');
 
     expect(phone?.getAttribute('href')).toBe('tel:+33662728799');
-    expect(phone?.textContent?.trim()).toBe('06 62 72 87 99');
+    expect(
+      phone?.querySelector('.card__detail-value')?.textContent?.trim(),
+    ).toBe('06 62 72 87 99');
   });
 
   it('opens a compose window for her address', () => {
     const email = page.querySelector<HTMLAnchorElement>('a[href^="mailto:"]');
 
     expect(email?.getAttribute('href')).toBe('mailto:ct@jukkai.fr');
-    expect(email?.textContent?.trim()).toBe('ct@jukkai.fr');
+    expect(
+      email?.querySelector('.card__detail-value')?.textContent?.trim(),
+    ).toBe('ct@jukkai.fr');
   });
 
   it('leads with saving the contact, as a plain link so iOS opens Contacts', () => {
@@ -77,7 +85,7 @@ describe('/contact/crystelle', () => {
       'a[href="/contact/crystelle.vcf"]',
     );
 
-    expect(save?.textContent?.trim()).toBe('Enregistrer le contact');
+    expect(save?.textContent?.trim()).toBe('Ajouter à mes contacts');
     expect(save?.hasAttribute('download')).toBe(false);
   });
 
@@ -94,9 +102,9 @@ describe('/contact/crystelle', () => {
     expect(mark?.closest('[aria-label="Jukkai"]')).not.toBeNull();
   });
 
-  it('keeps her postal address off the page', () => {
-    expect(html).not.toContain('Châteaugiron');
-    expect(html).not.toContain('26 bis');
+  it('shows the same professional address the saved contact carries', () => {
+    expect(page.body.textContent).toContain('26 bis rue au Prévôt');
+    expect(page.body.textContent).toContain('35410 Châteaugiron');
   });
 
   it('never mentions the retired studioterrasson domain', () => {

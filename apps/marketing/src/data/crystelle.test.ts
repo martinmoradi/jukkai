@@ -31,7 +31,7 @@ describe('Crystelle vCard', () => {
     expect(properties()).toContain('EMAIL;TYPE=INTERNET:ct@jukkai.fr');
   });
 
-  it('carries the postal address the page deliberately does not display', () => {
+  it('carries the postal address shown on the page', () => {
     expect(properties()).toContain(
       'ADR;TYPE=WORK:;;26 bis rue au Prévôt;Châteaugiron;;35410;France',
     );

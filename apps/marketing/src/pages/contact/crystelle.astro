@@ -1,9 +1,10 @@
 ---
 import '#/styles/contact-card.css';
 
+import sphere from '#/assets/jukkai-sphere.svg';
 import wordmark from '#/assets/jukkai-wordmark-primary-no-byline.svg?raw';
 import CloudflareAnalytics from '#/components/CloudflareAnalytics.astro';
-import PortraitPlaceholder from '#/components/PortraitPlaceholder.astro';
+import CrystellePortrait from '#/components/CrystellePortrait.astro';
 import {
   CRYSTELLE,
   CRYSTELLE_FULL_NAME,
@@ -11,7 +12,7 @@ import {
 } from '#/data/crystelle';
 
 const title = `${CRYSTELLE_FULL_NAME} — Jukkai`;
-const description = `Coordonnées de ${CRYSTELLE_FULL_NAME}, dirigeante de Jukkai.`;
+const description = `Coordonnées de ${CRYSTELLE_FULL_NAME}, architecte d’intérieur et dirigeante de Jukkai.`;
 ---
 
 <!doctype html>
@@ -31,43 +32,166 @@ const description = `Coordonnées de ${CRYSTELLE_FULL_NAME}, dirigeante de Jukka
   </head>
   <body>
     <main class='card'>
-      <span
-        class='card__mark'
-        role='img'
-        aria-label='Jukkai'
-        set:html={wordmark}
-      />
+      <div class='card__ambient card__ambient--top' aria-hidden='true'>
+        <img src={sphere.src} alt='' />
+      </div>
+      <div class='card__ambient card__ambient--bottom' aria-hidden='true'>
+        <img src={sphere.src} alt='' />
+      </div>
 
-      <header class='card__identity'>
-        <PortraitPlaceholder />
-        <h1 class='card__name'>{CRYSTELLE_FULL_NAME}</h1>
-        <p class='card__role'>{CRYSTELLE.role}</p>
-      </header>
+      <div class='card__content'>
+        <p class='card__context'>
+          <img class='card__context-mark' src={sphere.src} alt='' />
+          <span>Carte de contact Jukkai</span>
+        </p>
 
-      <hr class='card__rule' />
+        <header class='card__identity'>
+          <CrystellePortrait />
 
-      <ul class='card__contact'>
-        <li>
-          <a class='card__line' href={`tel:${CRYSTELLE.phoneTel}`}>
-            {CRYSTELLE.phoneDisplay}
+          <div class='card__person'>
+            <h1 class='card__name'>{CRYSTELLE_FULL_NAME}</h1>
+            <p class='card__role'>
+              {CRYSTELLE.profession}
+              <span aria-hidden='true'>·</span>
+              {CRYSTELLE.role}
+            </p>
+          </div>
+
+          <div class='card__brand'>
+            <span
+              class='card__wordmark'
+              role='img'
+              aria-label='Jukkai'
+              set:html={wordmark}
+            />
+            <span class='card__brand-rule' aria-hidden='true'></span>
+            <p>
+              Architecture intérieure <span aria-hidden='true'>·</span> Galerie
+            </p>
+          </div>
+
+          <p class='card__introduction'>
+            Deux expressions d’un même regard, pour faire de chaque contrainte
+            un terrain de jeu.
+          </p>
+        </header>
+
+        <address class='card__details'>
+          <a class='card__detail' href={`tel:${CRYSTELLE.phoneTel}`}>
+            <span class='card__detail-icon' aria-hidden='true'>
+              <svg viewBox='0 0 24 24' focusable='false'>
+                <path
+                  d='M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.84.56 2.8.69A2 2 0 0 1 22 16.92Z'
+                ></path>
+              </svg>
+            </span>
+            <span class='card__detail-copy'>
+              <span class='card__detail-label'>Téléphone</span>
+              <span class='card__detail-value'>{CRYSTELLE.phoneDisplay}</span>
+            </span>
+            <svg
+              class='card__detail-arrow'
+              viewBox='0 0 24 24'
+              aria-hidden='true'>
+              <path d='m9 18 6-6-6-6'></path>
+            </svg>
           </a>
-        </li>
-        <li>
-          <a class='card__line' href={`mailto:${CRYSTELLE.email}`}>
-            {CRYSTELLE.email}
-          </a>
-        </li>
-      </ul>
 
-      <div class='card__actions'>
-        <a
-          class='card__action card__action--primary'
-          href={CRYSTELLE_VCARD_PATH}>
-          Enregistrer le contact
-        </a>
-        <a class='card__action card__action--secondary' href='/'>
-          Découvrir Jukkai
-        </a>
+          <a class='card__detail' href={`mailto:${CRYSTELLE.email}`}>
+            <span class='card__detail-icon' aria-hidden='true'>
+              <svg viewBox='0 0 24 24' focusable='false'>
+                <rect x='3' y='5' width='18' height='14' rx='1'></rect>
+                <path d='m3 7 9 6 9-6'></path>
+              </svg>
+            </span>
+            <span class='card__detail-copy'>
+              <span class='card__detail-label'>E-mail</span>
+              <span class='card__detail-value'>{CRYSTELLE.email}</span>
+            </span>
+            <svg
+              class='card__detail-arrow'
+              viewBox='0 0 24 24'
+              aria-hidden='true'>
+              <path d='m9 18 6-6-6-6'></path>
+            </svg>
+          </a>
+
+          <div class='card__detail'>
+            <span class='card__detail-icon' aria-hidden='true'>
+              <svg viewBox='0 0 24 24' focusable='false'>
+                <path d='M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z'></path>
+                <circle cx='12' cy='10' r='2.5'></circle>
+              </svg>
+            </span>
+            <span class='card__detail-copy'>
+              <span class='card__detail-label'>Jukkai</span>
+              <span class='card__detail-value card__detail-value--address'>
+                {CRYSTELLE.address.street}<br />
+                {CRYSTELLE.address.postalCode}{' '}
+                {CRYSTELLE.address.locality}
+              </span>
+            </span>
+          </div>
+        </address>
+
+        <nav class='card__actions' aria-label='Actions de contact'>
+          <a
+            class='card__action card__action--primary'
+            href={CRYSTELLE_VCARD_PATH}>
+            <svg
+              class='card__action-icon'
+              viewBox='0 0 24 24'
+              aria-hidden='true'>
+              <path d='M15 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2'></path>
+              <circle cx='8.5' cy='7' r='4'></circle>
+              <path d='M19 8v6M22 11h-6'></path>
+            </svg>
+            <span>Ajouter à mes contacts</span>
+            <svg
+              class='card__action-arrow'
+              viewBox='0 0 24 24'
+              aria-hidden='true'>
+              <path d='M5 12h14M13 6l6 6-6 6'></path>
+            </svg>
+          </a>
+
+          <a class='card__action card__action--secondary' href='/'>
+            <img class='card__action-sphere' src={sphere.src} alt='' />
+            <span>Découvrir Jukkai</span>
+            <svg
+              class='card__action-arrow'
+              viewBox='0 0 24 24'
+              aria-hidden='true'>
+              <path d='M5 12h14M13 6l6 6-6 6'></path>
+            </svg>
+          </a>
+        </nav>
+
+        <div class='card__direct'>
+          <div class='card__direct-label' aria-hidden='true'>
+            <span></span>
+            <p>Ou directement</p>
+            <span></span>
+          </div>
+
+          <div class='card__direct-actions'>
+            <a href={`tel:${CRYSTELLE.phoneTel}`}>
+              <svg viewBox='0 0 24 24' aria-hidden='true'>
+                <path
+                  d='M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.84.56 2.8.69A2 2 0 0 1 22 16.92Z'
+                ></path>
+              </svg>
+              Appeler
+            </a>
+            <a href={`mailto:${CRYSTELLE.email}`}>
+              <svg viewBox='0 0 24 24' aria-hidden='true'>
+                <rect x='3' y='5' width='18' height='14' rx='1'></rect>
+                <path d='m3 7 9 6 9-6'></path>
+              </svg>
+              Écrire
+            </a>
+          </div>
+        </div>
       </div>
     </main>
   </body>
