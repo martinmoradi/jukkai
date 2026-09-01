@@ -100,7 +100,7 @@ describe('/contact/crystelle', () => {
     ).toBe('ct@jukkai.fr');
   });
 
-  it('leads with saving the contact, as a plain link so iOS opens Contacts', () => {
+  it('offers saving the contact as a plain link so iOS opens Contacts', () => {
     const save = page.querySelector<HTMLAnchorElement>(
       'a[href="/contact/crystelle.vcf"]',
     );
@@ -109,10 +109,12 @@ describe('/contact/crystelle', () => {
     expect(save?.hasAttribute('download')).toBe(false);
   });
 
-  it('offers Jukkai itself as the second step', () => {
-    const discover = page.querySelector<HTMLAnchorElement>('a[href="/"]');
-
-    expect(discover?.textContent?.trim()).toBe('Visiter jukkai.fr');
+  it('places Jukkai discovery above the thumb-reachable primary action', () => {
+    expect(
+      [...page.querySelectorAll('.card__action')].map((action) =>
+        action.textContent?.trim(),
+      ),
+    ).toEqual(['Visiter jukkai.fr', 'Ajouter à mes contacts']);
   });
 
   it('keeps the identity compact without a redundant wordmark', () => {

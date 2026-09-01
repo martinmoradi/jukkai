@@ -173,6 +173,17 @@ const socialPortraitUrl = new URL(socialPortrait.src, siteUrl);
         </address>
 
         <nav class='card__actions' aria-label='Actions de contact'>
+          <a class='card__action card__action--secondary' href='/'>
+            <img class='card__action-sphere' src={sphere.src} alt='' />
+            <span>Visiter jukkai.fr</span>
+            <svg
+              class='card__action-arrow'
+              viewBox='0 0 24 24'
+              aria-hidden='true'>
+              <path d='M5 12h14M13 6l6 6-6 6'></path>
+            </svg>
+          </a>
+
           <a
             class='card__action card__action--primary'
             href={CRYSTELLE_VCARD_PATH}>
@@ -190,17 +201,6 @@ const socialPortraitUrl = new URL(socialPortrait.src, siteUrl);
               viewBox='0 0 24 24'
               aria-hidden='true'>
               <path d='M12 5v14M5 12h14'></path>
-            </svg>
-          </a>
-
-          <a class='card__action card__action--secondary' href='/'>
-            <img class='card__action-sphere' src={sphere.src} alt='' />
-            <span>Visiter jukkai.fr</span>
-            <svg
-              class='card__action-arrow'
-              viewBox='0 0 24 24'
-              aria-hidden='true'>
-              <path d='M5 12h14M13 6l6 6-6 6'></path>
             </svg>
           </a>
         </nav>
