@@ -1,6 +1,9 @@
 ---
 import '#/styles/contact-card.css';
 
+import { getImage } from 'astro:assets';
+
+import portrait from '#/assets/crystelle-contact-portrait.webp';
 import sphere from '#/assets/jukkai-sphere.svg';
 import CloudflareAnalytics from '#/components/CloudflareAnalytics.astro';
 import CrystellePortrait from '#/components/CrystellePortrait.astro';
@@ -19,6 +22,13 @@ const mapsAddress = [
 ].join(', ');
 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsAddress)}`;
 const appleMapsUrl = `https://maps.apple.com/?q=${encodeURIComponent(mapsAddress)}`;
+const [touchIcon, socialPortrait] = await Promise.all([
+  getImage({ src: sphere, width: 180, height: 180, format: 'png' }),
+  getImage({ src: portrait, width: 1200, height: 1200, format: 'jpeg' }),
+]);
+const siteUrl = Astro.site ?? Astro.url;
+const cardUrl = new URL(Astro.url.pathname, siteUrl);
+const socialPortraitUrl = new URL(socialPortrait.src, siteUrl);
 ---
 
 <!doctype html>
@@ -28,9 +38,17 @@ const appleMapsUrl = `https://maps.apple.com/?q=${encodeURIComponent(mapsAddress
     <meta name='viewport' content='width=device-width, initial-scale=1' />
     <title>{title}</title>
     <meta name='description' content={description} />
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content={description} />
+    <meta property='og:type' content='profile' />
+    <meta property='og:url' content={cardUrl.href} />
+    <meta property='og:image' content={socialPortraitUrl.href} />
+    <meta name='twitter:card' content='summary' />
     {/* A destination for people holding a printed card, not site content. */}
     <meta name='robots' content='noindex, follow' />
     <meta name='theme-color' content='#EAE2D2' />
+    <link rel='icon' type='image/svg+xml' href={sphere.src} />
+    <link rel='apple-touch-icon' sizes='180x180' href={touchIcon.src} />
     <link rel='stylesheet' href='/fonts/generated/fonts.css' />
     <CloudflareAnalytics
       token={import.meta.env.PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN}

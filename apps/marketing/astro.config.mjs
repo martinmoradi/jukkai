@@ -7,6 +7,9 @@ export default defineConfig({
   devToolbar: {
     enabled: false,
   },
+  image: {
+    dangerouslyProcessSVG: true,
+  },
   site: 'https://jukkai.fr',
   integrations: [sitemap({ filter: isListedInSitemap })],
   vite: {
