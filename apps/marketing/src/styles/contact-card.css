@@ -127,6 +127,7 @@ body {
   align-items: center;
   margin-bottom: clamp(0.25rem, 0.9svh, 0.625rem);
   text-align: center;
+  animation: card-enter 360ms ease-out backwards;
 }
 
 .card__portrait {
@@ -195,6 +196,7 @@ body {
     0 1.25rem 3rem color-mix(in oklab, var(--ink) 8%, transparent),
     inset 0 1px 0 color-mix(in oklab, white 75%, transparent);
   backdrop-filter: blur(1.25rem);
+  animation: card-enter 360ms ease-out 90ms backwards;
 }
 
 .card__detail {
@@ -310,6 +312,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: clamp(0.5rem, 1.2svh, 0.75rem);
+  animation: card-enter 360ms ease-out 180ms backwards;
 }
 
 .card__action {
@@ -425,6 +428,18 @@ body {
   .card__action--secondary:hover {
     background-color: var(--surface-strong);
     border-color: var(--edge-strong);
+  }
+}
+
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -623,6 +638,12 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .card__identity,
+  .card__details,
+  .card__actions {
+    animation: none;
+  }
+
   .card__detail,
   .card__detail-action,
   .card__detail-action svg,
