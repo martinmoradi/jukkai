@@ -28,11 +28,18 @@ const PHONE_DISPLAY = '06 62 72 87 99';
 const PHONE_INTERNATIONAL = `+33 ${PHONE_DISPLAY.slice(1)}`;
 
 export const CRYSTELLE = {
+  address: {
+    country: 'France',
+    locality: 'Châteaugiron',
+    postalCode: '35410',
+    street: '26 bis rue au Prévôt',
+  },
   email: 'ct@jukkai.fr',
   familyName: 'Terrasson',
   givenName: 'Crystelle',
   phoneDisplay: PHONE_DISPLAY,
   phoneTel: PHONE_INTERNATIONAL.replaceAll(' ', ''),
+  profession: 'Architecte d’intérieur',
   role: 'Dirigeante',
 } as const;
 
@@ -44,8 +51,8 @@ export const CRYSTELLE_FULL_NAME = `${CRYSTELLE.givenName} ${CRYSTELLE.familyNam
  * Properties are listed in emission order, so adding her portrait later is a
  * single entry here: `PHOTO;ENCODING=b;TYPE=JPEG:<base64>`.
  *
- * The postal address is intentionally richer than the page, which shows no
- * address at all.
+ * The postal address is shared with the Contact Card Page so the screen and
+ * saved contact cannot drift apart.
  */
 const CRYSTELLE_VCARD_PROPERTIES = [
   'BEGIN:VCARD',
@@ -56,7 +63,7 @@ const CRYSTELLE_VCARD_PROPERTIES = [
   `TITLE:${CRYSTELLE.role}`,
   `TEL;TYPE=CELL:${PHONE_INTERNATIONAL}`,
   `EMAIL;TYPE=INTERNET:${CRYSTELLE.email}`,
-  'ADR;TYPE=WORK:;;26 bis rue au Prévôt;Châteaugiron;;35410;France',
+  `ADR;TYPE=WORK:;;${CRYSTELLE.address.street};${CRYSTELLE.address.locality};;${CRYSTELLE.address.postalCode};${CRYSTELLE.address.country}`,
   'URL:https://jukkai.fr',
   'END:VCARD',
 ] as const;

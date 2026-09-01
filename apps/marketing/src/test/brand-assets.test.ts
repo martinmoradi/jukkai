@@ -2,6 +2,7 @@
 
 import { readFile } from 'node:fs/promises';
 
+import sharp from 'sharp';
 import { describe, expect, it } from 'vitest';
 
 /**
@@ -20,5 +21,28 @@ describe('committed brand exports', () => {
     ]);
 
     expect(appCopy).toBe(master);
+  });
+
+  it('keeps the sphere identical to its brand master', async () => {
+    const [master, appCopy] = await Promise.all([
+      readFile('../../brand/logo/circle_logo_master.svg', 'utf8'),
+      readFile('src/assets/jukkai-sphere.svg', 'utf8'),
+    ]);
+
+    expect(appCopy).toBe(master);
+  });
+
+  it("keeps Crystelle's contact portrait reproducible from its source", async () => {
+    const [expected, appCopy] = await Promise.all([
+      sharp('../../brand/ad/high-res-source.jpeg')
+        .rotate()
+        .extract({ height: 950, left: 2200, top: 2150, width: 950 })
+        .resize(800, 800, { fit: 'cover' })
+        .webp({ quality: 88 })
+        .toBuffer(),
+      readFile('src/assets/crystelle-contact-portrait.webp'),
+    ]);
+
+    expect(appCopy.equals(expected)).toBe(true);
   });
 });
