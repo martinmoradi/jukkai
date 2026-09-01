@@ -19,7 +19,17 @@
   --hairline: color-mix(in oklab, var(--ink) 14%, transparent);
   --muted: color-mix(in oklab, var(--ink) 64%, var(--field));
   --quiet: color-mix(in oklab, var(--ink) 7%, var(--field));
-  --ink-hover: color-mix(in oklab, var(--ink) 84%, var(--field));
+  --sphere-cobalt: oklch(30.2% 0.202 264.157deg);
+  --sphere-cobalt-hover: color-mix(
+    in oklab,
+    var(--sphere-cobalt) 88%,
+    var(--ink)
+  );
+  --sphere-cobalt-active: color-mix(
+    in oklab,
+    var(--sphere-cobalt) 78%,
+    var(--ink)
+  );
   --frama: 'pangram-pangram-frama', ui-sans-serif, system-ui, sans-serif;
   --hatton: 'pangram-pangram-hatton', ui-serif, georgia, serif;
   --radius-control: 1rem;
@@ -98,6 +108,23 @@ body {
   margin-inline: auto;
 }
 
+.card__wordmark {
+  display: block;
+  align-self: center;
+  width: clamp(9.25rem, 38vw, 11.5rem);
+  color: var(--ink);
+}
+
+.card__wordmark svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.card__wordmark path {
+  fill: currentcolor;
+}
+
 .card__identity {
   display: flex;
   flex-direction: column;
@@ -136,10 +163,10 @@ body {
 }
 
 .card__name {
-  max-width: 12ch;
+  max-width: 14ch;
   margin: 0;
   font-family: var(--hatton);
-  font-size: clamp(2.45rem, 11vw, 4rem);
+  font-size: clamp(2.125rem, 9vw, 3.25rem);
   font-weight: 300;
   line-height: 0.98;
   letter-spacing: -0.025em;
@@ -160,47 +187,6 @@ body {
   letter-spacing: 0.12em;
 }
 
-.card__brand {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
-  margin-top: 0.25rem;
-}
-
-.card__wordmark {
-  display: block;
-  width: clamp(6.8rem, 27vw, 8.25rem);
-  color: var(--ink);
-}
-
-.card__wordmark svg {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.card__wordmark path {
-  fill: currentcolor;
-}
-
-.card__brand-rule {
-  width: 1px;
-  height: 2.5rem;
-  background-color: var(--hairline);
-}
-
-.card__brand p {
-  max-width: 9.5rem;
-  margin: 0;
-  font-size: 0.6875rem;
-  font-weight: 500;
-  line-height: 1.55;
-  text-align: left;
-  text-transform: uppercase;
-  letter-spacing: 0.13em;
-}
-
 .card__details {
   display: flex;
   flex-direction: column;
@@ -217,11 +203,11 @@ body {
 
 .card__detail {
   display: grid;
-  grid-template-columns: 2.75rem minmax(0, 1fr) 1.25rem;
-  gap: 0.85rem;
+  grid-template-columns: 2.5rem minmax(0, 1fr) 4.5rem;
+  gap: 0.65rem;
   align-items: center;
   min-height: 5rem;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem;
   color: inherit;
   text-decoration: none;
   transition: background-color 160ms ease;
@@ -234,8 +220,8 @@ body {
 .card__detail-icon {
   display: grid;
   place-items: center;
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 2.5rem;
+  height: 2.5rem;
   color: var(--ink);
   background-color: var(--quiet);
   border: 1px solid color-mix(in oklab, var(--ink) 8%, transparent);
@@ -243,7 +229,7 @@ body {
 }
 
 .card__detail-icon svg,
-.card__detail-arrow,
+.card__detail-action svg,
 .card__action-icon,
 .card__action-arrow {
   fill: none;
@@ -292,14 +278,37 @@ body {
 }
 
 .card__detail-value--social {
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: clamp(0.8125rem, 3.45vw, 1rem);
   letter-spacing: 0;
+  overflow-wrap: normal;
+  white-space: nowrap;
 }
 
-.card__detail-arrow {
-  width: 1.125rem;
-  height: 1.125rem;
-  color: var(--muted);
+.card__detail-action {
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  min-height: 2.25rem;
+  padding: 0.45rem 0.35rem;
+  font-size: 0.6563rem;
+  font-weight: 600;
+  line-height: 1;
+  background-color: var(--surface-strong);
+  border: 1px solid color-mix(in oklab, var(--ink) 18%, transparent);
+  border-radius: 999px;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+
+.card__detail-action svg {
+  width: 0.875rem;
+  height: 0.875rem;
   transition: transform 160ms ease;
 }
 
@@ -334,8 +343,10 @@ body {
 
 .card__action--primary {
   color: var(--field);
-  background-color: var(--ink);
-  box-shadow: 0 0.9rem 1.75rem color-mix(in oklab, var(--ink) 18%, transparent);
+  background-color: var(--sphere-cobalt);
+  border-color: var(--sphere-cobalt);
+  box-shadow: 0 0.9rem 1.75rem
+    color-mix(in oklab, var(--sphere-cobalt) 28%, transparent);
 }
 
 .card__action--secondary {
@@ -372,7 +383,7 @@ body {
 }
 
 .card__action--primary:active {
-  background-color: var(--ink-hover);
+  background-color: var(--sphere-cobalt-active);
 }
 
 @media (hover: hover) {
@@ -380,9 +391,15 @@ body {
     background-color: color-mix(in oklab, var(--ink) 4%, transparent);
   }
 
-  .card__detail:hover .card__detail-arrow,
+  .card__detail:hover .card__detail-action svg,
   .card__action:hover .card__action-arrow {
     transform: translateX(0.2rem);
+  }
+
+  .card__detail:hover .card__detail-action {
+    color: var(--field);
+    background-color: var(--ink);
+    border-color: var(--ink);
   }
 
   .card__action:hover {
@@ -390,8 +407,10 @@ body {
   }
 
   .card__action--primary:hover {
-    background-color: var(--ink-hover);
-    box-shadow: 0 1.1rem 2.1rem color-mix(in oklab, var(--ink) 22%, transparent);
+    background-color: var(--sphere-cobalt-hover);
+    border-color: var(--sphere-cobalt-hover);
+    box-shadow: 0 1.1rem 2.1rem
+      color-mix(in oklab, var(--sphere-cobalt) 34%, transparent);
   }
 
   .card__action--secondary:hover {
@@ -420,7 +439,8 @@ body {
   }
 
   .card__detail {
-    grid-template-columns: 3rem minmax(0, 1fr) 1.25rem;
+    grid-template-columns: 3rem minmax(0, 1fr) 4.75rem;
+    gap: 0.85rem;
     min-height: 5.5rem;
     padding-inline: 1.25rem;
   }
@@ -428,6 +448,12 @@ body {
   .card__detail-icon {
     width: 3rem;
     height: 3rem;
+  }
+
+  .card__detail-action {
+    width: 4.75rem;
+    padding-inline: 0.5rem;
+    font-size: 0.6875rem;
   }
 
   .card__action {
@@ -461,7 +487,8 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .card__detail,
-  .card__detail-arrow,
+  .card__detail-action,
+  .card__detail-action svg,
   .card__action,
   .card__action-arrow {
     transition: none;

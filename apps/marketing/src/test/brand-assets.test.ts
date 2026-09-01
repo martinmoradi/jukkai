@@ -14,10 +14,10 @@ describe('committed brand exports', () => {
   it('keeps the wordmark identical to its master under brand/marks/', async () => {
     const [master, appCopy] = await Promise.all([
       readFile(
-        '../../brand/marks/wordmark/jukkai-wordmark-primary-no-byline.svg',
+        '../../brand/marks/wordmark/jukkai-wordmark-primary.svg',
         'utf8',
       ),
-      readFile('src/assets/jukkai-wordmark-primary-no-byline.svg', 'utf8'),
+      readFile('src/assets/jukkai-wordmark-primary.svg', 'utf8'),
     ]);
 
     expect(appCopy).toBe(master);

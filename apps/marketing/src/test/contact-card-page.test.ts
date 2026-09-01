@@ -100,11 +100,14 @@ describe('/contact/crystelle', () => {
     expect(discover?.textContent?.trim()).toBe('Visiter jukkai.fr');
   });
 
-  it('carries the Jukkai wordmark as inline artwork that takes the ink colour', () => {
-    const mark = page.querySelector('svg');
+  it('leads with the primary Jukkai wordmark and its byline', () => {
+    const mark = page.querySelector(
+      '[aria-label="Jukkai by Crystelle Terrasson"]',
+    );
 
     expect(mark).not.toBeNull();
-    expect(mark?.closest('[aria-label="Jukkai"]')).not.toBeNull();
+    expect(mark?.querySelector('svg')).not.toBeNull();
+    expect(page.querySelector('.card__content')?.firstElementChild).toBe(mark);
   });
 
   it('opens the professional address in a mobile-friendly maps destination', () => {
@@ -134,6 +137,15 @@ describe('/contact/crystelle', () => {
     expect(html).not.toContain('Carte de contact Jukkai');
     expect(html).not.toContain('Deux expressions d’un même regard');
     expect(html).not.toContain('Ou directement');
+    expect(html).not.toContain('Architecture intérieure');
+  });
+
+  it('names the action available from every contact row', () => {
+    expect(
+      [...page.querySelectorAll('.card__detail-action')].map((action) =>
+        action.textContent?.trim(),
+      ),
+    ).toEqual(['Appeler', 'Écrire', 'Plan', 'Voir']);
   });
 
   it('never mentions the retired studioterrasson domain', () => {
