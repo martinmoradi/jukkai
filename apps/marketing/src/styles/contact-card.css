@@ -85,8 +85,7 @@ body {
   z-index: -1;
   width: 21rem;
   pointer-events: none;
-  opacity: 0.1;
-  filter: blur(5rem) saturate(1.15);
+  filter: blur(3.5rem) saturate(1.2);
 }
 
 .card__ambient img {
@@ -96,13 +95,16 @@ body {
 }
 
 .card__ambient--top {
-  top: -11rem;
-  left: -11rem;
+  top: -6rem;
+  left: 50%;
+  opacity: 0.2;
+  transform: translateX(-50%);
 }
 
 .card__ambient--bottom {
   right: -13rem;
   bottom: -7rem;
+  opacity: 0.12;
   transform: rotate(155deg);
 }
 
@@ -133,12 +135,12 @@ body {
   padding: clamp(0.2rem, 0.6vw, 0.35rem);
   margin: 0;
   overflow: hidden;
-  background-color: var(--field);
+  background-color: color-mix(in oklab, var(--surface-strong) 84%, transparent);
   border: 1px solid var(--hairline);
   border-radius: 50%;
   box-shadow:
-    0 1.75rem 4rem color-mix(in oklab, var(--ink) 15%, transparent),
-    0 0.25rem 0.75rem color-mix(in oklab, var(--ink) 8%, transparent);
+    0 0.75rem 1.75rem color-mix(in oklab, var(--ink) 10%, transparent),
+    0 0.125rem 0.5rem color-mix(in oklab, var(--ink) 8%, transparent);
 }
 
 .card__portrait-image {
@@ -604,18 +606,19 @@ body {
 
   .card__ambient {
     width: 32rem;
-    opacity: 0.085;
-    filter: blur(7.5rem) saturate(1.1);
+    filter: blur(5rem) saturate(1.15);
   }
 
   .card__ambient--top {
-    top: -18rem;
-    left: calc(50% - 37rem);
+    top: -10rem;
+    left: 50%;
+    opacity: 0.18;
   }
 
   .card__ambient--bottom {
     right: calc(50% - 39rem);
     bottom: -14rem;
+    opacity: 0.1;
   }
 }
 
