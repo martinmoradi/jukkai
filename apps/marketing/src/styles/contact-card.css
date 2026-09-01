@@ -274,6 +274,11 @@ body {
   overflow-wrap: anywhere;
 }
 
+.card__detail-value--email {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0;
+}
+
 .card__detail-value--address {
   font-size: clamp(0.75rem, min(3.2vw, 1.9svh), 0.9375rem);
   line-height: 1.25;
