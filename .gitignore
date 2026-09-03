@@ -34,6 +34,9 @@ apps/marketing/public/fonts/generated/
 # coverage
 coverage/
 
+# affinity lock files, present only while a document is open
+*~lock~
+
 # os / editor
 .DS_Store
 .vscode/*
