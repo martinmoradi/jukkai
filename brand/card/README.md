@@ -35,9 +35,19 @@
 - `…-69mm-compact-fond-blanc.pdf` (impression / recto / verso) — the same three
   files with the ivory field removed, for stock that is already tinted. See
   [Bare-paper variant](#bare-paper-variant).
+- `jukkai-carte-visite-65x65-compact-signature.afpub`,
+  `…-impression-69mm-compact-signature.pdf`,
+  `…-recto-69mm-compact-signature.pdf` and their `-fond-blanc` pair — the same
+  card with the full lockup, byline included, on the recto. **Below the print
+  floor and shipped anyway at Crystelle's request.** The verso is untouched, so
+  the plain `…-verso-69mm-compact.pdf` serves this variant too. See
+  [Byline at card size](#byline-at-card-size).
 - `apercu-recto.png`, `apercu-verso.png`, `apercu-recto-verso.png` — 300 dpi
   trim-area previews of the chosen layout, rendered from the delivered PDF
   rather than from the working file.
+- `apercu-recto-signature.png`, `apercu-signature-agrandie.png` — the same for
+  the byline variant, the second one magnifying the byline against the 5.5 pt
+  descriptor at equal scale so the density difference is visible.
 - `sphere-fogra39-cmyk.json` — the sphere's SVG geometry with every gradient
   stop converted sRGB → Coated FOGRA39 (perceptual, black-point compensation,
   littleCMS). This is how the logo was rebuilt as native CMYK vector art rather
@@ -203,15 +213,20 @@ shape, so a later message can be matched against what she actually received:
 
 ```
 carte-visite-jukkai/
-  LISEZ-MOI.txt                  what to check, what to answer, what not to
-                                 judge on screen
+  LISEZ-MOI.txt                    what to check, what to answer, what not to
+                                   judge on screen
   apercus/
-    carte-recto.png              300 dpi trim-area previews, one per face
+    carte-recto.png                300 dpi trim-area previews, one per face
     carte-verso.png
+    signature-agrandie.png         byline against the 5.5 pt descriptor at
+                                   equal magnification
   fichiers-imprimeur/
-    carte-jukkai.pdf             = …-impression-69mm-compact.pdf
+    carte-jukkai.pdf               = …-69mm-compact-signature.pdf
     option-papier-teinte/
-      carte-jukkai-sans-fond.pdf = …-impression-69mm-compact-fond-blanc.pdf
+      carte-jukkai-sans-fond.pdf   = …-compact-signature-fond-blanc.pdf
+    variante-sans-signature/
+      carte-jukkai-sans-signature.pdf            = …-69mm-compact.pdf
+      carte-jukkai-sans-signature-sans-fond.pdf  = …-compact-fond-blanc.pdf
 ```
 
 No `.afpub`, and no A/B any more — the choice is made, so the package carries
@@ -227,6 +242,102 @@ proof-read, since that string is the whole point of this revision.
 
 An earlier package, sent before she chose, carried version A and version B side
 by side with a `comparatif-A-vs-B.png`. Superseded.
+
+## Byline at card size
+
+The recto normally uses `jukkai-wordmark-primary-no-byline.svg`. The
+`-signature` files use `jukkai-wordmark-primary.svg`, which adds
+`BY CRYSTELLE TERRASSON` under the wordmark. Crystelle asked to try it knowing
+it is too small. It is too small. This section is the measurement, so the next
+person does not have to re-derive it.
+
+### The swap is free
+
+Both SVGs share the 887 × 356 viewBox and an ink bbox of 881.956 units wide from
+the same origin, so the byline costs nothing in layout: at the card's 30 mm
+lockup the block grows from 11.831 to 11.850 mm — **0.019 mm**. The node's own
+transform already maps SVG units 1:1 into curve space (scale 0.40175554 px/unit,
+origin at 17.5 / 5.5 mm), so the paths were written in raw SVG units through
+`createSetCurves` and landed on x 17.500–47.500 exactly as before. Nothing else
+on the recto moved.
+
+### What was measured
+
+The byline is one compound path, 32 contours. Flattening it and running
+non-zero-winding scanlines across the x-height band gives 11 342 ink spans whose
+width clusters hard: p5 through p50 all sit at **1.620 SVG units**. That is the
+stem weight. Cap height measures 25.920 units against the 36-unit nominal size
+recorded in `brand/marks/wordmark/README.md`, a 0.720 ratio, which corroborates
+both figures.
+
+Everything else is linear in the lockup width `W`:
+
+| Quantity   | Value                  |
+| ---------- | ---------------------- |
+| Stem       | `W × 1.8368 × 10⁻³` mm |
+| Type size  | `W × 0.11571` pt       |
+| Cap height | `W × 2.9389 × 10⁻²` mm |
+
+At the card's `W` = 30 mm that is a **0.0551 mm stem** — 0.156 pt — at an
+effective **3.47 pt** type size.
+
+### Why that fails
+
+Three independent reasons, worst first:
+
+1. **It is a four-colour hairline.** The lockup carries the house rich black
+   C14 M34 J38 N90, confirmed in the exported PDF. Sheetfed registration
+   tolerance is about ±0.05 mm, which is **91 % of the entire stroke width**. A
+   press within tolerance can still lay the four separations beside each other
+   rather than on top, turning the line into colour fringing.
+2. **It is under every stroke floor.** 0.0551 mm against 0.09 mm (0.25 pt, the
+   usual trade minimum for a positive line on coated stock) and against 0.15 mm,
+   which is this card's own proven hairline — the contact icons are stroked at
+   exactly that. The byline is **2.72× thinner than the icons** and 6.26× thinner
+   than a QR module.
+3. **It is under the type floor.** 3.47 pt, where 5 pt is the practical minimum
+   and the card's own smallest type is the 5.5 pt descriptor.
+
+Rendering the exported PDF at 300 dpi shows it without any theory: the byline's
+darkest pixel reaches 81 % ink coverage and its darkest sixty average 66 %,
+where the descriptor on the same face reaches 100 %. The strokes are narrower
+than the device pixel, so they resolve grey rather than black.
+`apercu-signature-agrandie.png` shows both lines at equal magnification.
+
+### How much bigger it would have to be
+
+Invert the stem formula — `W = floor ÷ 1.8368 × 10⁻³`:
+
+| Stroke floor            | Lockup needed | Versus today |
+| ----------------------- | ------------- | ------------ |
+| 0.05 mm, absolute limit | 27.2 mm       | ×0.91        |
+| 0.09 mm, 0.25 pt trade  | 49.0 mm       | ×1.63        |
+| 0.10 mm, digital floor  | 54.4 mm       | ×1.81        |
+| 0.15 mm, this card's    | 81.7 mm       | ×2.72        |
+
+And the ceiling, from the other side: the recto locks the wordmark and the
+sphere to the same width, so the stack is `1.39435 W + 10.884` mm. Fitting that
+inside the 57 mm live height caps `W` at **33.1 mm**, where the stem reaches
+0.0608 mm — still two thirds of the way short of the 0.09 mm trade minimum.
+
+So the byline cannot be rescued by enlarging it. Reaching even the most
+permissive real floor needs a 49 mm lockup, which is 1.63× the sphere and
+therefore a different recto, not a bigger one. Reaching this card's own hairline
+standard needs 81.7 mm on a 65 mm card, which is impossible at any composition.
+
+### If it is tried anyway
+
+Print a physical proof before committing to a run, and take one cheap
+mitigation first: setting the byline to flat N100 instead of the rich black
+removes reason 1 entirely, since a single separation cannot misregister against
+itself. At 0.055 mm the two blacks are visually identical, so nothing is lost —
+it just is not what the mark specifies, which is why it was not done here.
+
+The wordmark note already reaches the same conclusion from the other direction:
+`docs/working-notes/visual-identity-wordmark.md` says to use the wordmark alone
+below the byline's legibility floor, and lists testing it at business-card size
+as an open check. This is that check, and the answer is that 65 mm is well
+below the floor.
 
 ## Grid
 
