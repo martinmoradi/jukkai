@@ -11,43 +11,35 @@
 > rows have moved, and the cuts in use are PP Hatton Ultralight and PP Frama
 > Text Light. Those three sections describe an earlier revision and need
 > rewriting against the file. _Files_, _Document setup_, _Printer template_,
-> _Bare-paper variant_, _Chosen layout_, _Grid_ and _Colour_ are current.
+> _Bare-paper variant_, _The card_, _Grid_ and _Colour_ are current.
 
 ## Files
 
-- `jukkai-carte-visite-65x65.afpub` — Affinity master, 2 pages (recto / verso).
-  **Now one revision behind:** it still carries the looser verso spacing and the
-  bare `FONDATRICE` title. Folding the compact file back into it is a pending
-  decision, not an oversight.
-- `jukkai-carte-visite-65x65-impression.pdf` — press-ready export of that
-  master, CMYK, MediaBox 71 mm, TrimBox 65 mm (3 mm bleed), fonts
-  subset-embedded, gradients as native `/Shading`, no rasters, no DeviceRGB.
-  Superseded for printing; kept because it is the 3 mm reference export.
-- `jukkai-carte-visite-65x65-compact.afpub` — **the live working file.**
-  Crystelle chose the compact verso over the master's spacing, and her job title
-  now runs `FONDATRICE · ARCHITECTE D’INTÉRIEUR`. Both changes live here and not
-  in the master. See [Chosen layout](#chosen-layout).
-- `…-impression-69mm-compact.pdf` — press-ready, 2 pages, MediaBox 69 mm,
-  TrimBox 65 mm. **This is the file to upload.** See
-  [Printer template](#printer-template).
-- `…-recto-69mm-compact.pdf`, `…-verso-69mm-compact.pdf` — the same two pages as
-  separate single-page files, for uploads that take one file per side.
-- `…-69mm-compact-fond-blanc.pdf` (impression / recto / verso) — the same three
-  files with the ivory field removed, for stock that is already tinted. See
-  [Bare-paper variant](#bare-paper-variant).
-- `jukkai-carte-visite-65x65-compact-signature.afpub`,
-  `…-impression-69mm-compact-signature.pdf`,
-  `…-recto-69mm-compact-signature.pdf` and their `-fond-blanc` pair — the same
-  card with the full lockup, byline included, on the recto. **Below the print
-  floor and shipped anyway at Crystelle's request.** The verso is untouched, so
-  the plain `…-verso-69mm-compact.pdf` serves this variant too. See
-  [Byline at card size](#byline-at-card-size).
-- `apercu-recto.png`, `apercu-verso.png`, `apercu-recto-verso.png` — 300 dpi
-  trim-area previews of the chosen layout, rendered from the delivered PDF
-  rather than from the working file.
-- `apercu-recto-signature.png`, `apercu-signature-agrandie.png` — the same for
-  the byline variant, the second one magnifying the byline against the 5.5 pt
-  descriptor at equal scale so the density difference is visible.
+- `jukkai-carte-visite-65x65.afpub` — the master, and the only Affinity file.
+  2 pages, recto / verso. The recto carries `Signature — BY CRYSTELLE TERRASSON`
+  as a layer that is **hidden by default**; showing it is the whole difference
+  between the two lockups. See [The card](#the-card).
+
+Four print files, all press-ready, all 2 pages (page 1 recto, page 2 verso), all
+MediaBox 69 mm / TrimBox 65 mm:
+
+| File                         | Ground | Byline |
+| ---------------------------- | ------ | ------ |
+| `…-ivoire.pdf`               | ivory  | no     |
+| `…-ivoire-signature.pdf`     | ivory  | yes    |
+| `…-fond-blanc.pdf`           | paper  | no     |
+| `…-fond-blanc-signature.pdf` | paper  | yes    |
+
+`-ivoire` prints its own ivory field. `-fond-blanc` has that field deleted so
+tinted stock supplies the ground — see [Bare-paper variant](#bare-paper-variant).
+`-signature` adds the byline, which is below the print floor; the measurement is
+in [Byline at card size](#byline-at-card-size).
+
+- `apercu-recto.png`, `apercu-recto-signature.png`, `apercu-verso.png` — 300 dpi
+  trim-area previews, rendered from the delivered PDFs rather than from the
+  master, so they show what the print files actually contain.
+- `apercu-signature-agrandie.png` — the byline against the 5.5 pt descriptor at
+  equal magnification, which is the evidence for the section that judges it.
 - `sphere-fogra39-cmyk.json` — the sphere's SVG geometry with every gradient
   stop converted sRGB → Coated FOGRA39 (perceptual, black-point compensation,
   littleCMS). This is how the logo was rebuilt as native CMYK vector art rather
@@ -73,10 +65,11 @@ A square-card printer template (_cartes de visite carrées_) specifies:
 | Zone de sécurité (safe) | 61 × 61 mm | −2 mm all round  |
 
 The master keeps its 3 mm bleed, which is the printer-agnostic setting. The
-69 mm PDF is produced by loading a copy of the master, setting its bleed to
-2 mm, and exporting `PDF (press ready)` — the only preset that emits bleed.
+69 mm files are produced by loading the master, setting its bleed to 2 mm and
+exporting `PDF (press ready)` — the only preset that emits bleed at all. The
+master itself is never saved at 2 mm.
 
-Verified on `jukkai-carte-visite-65x65-impression-69mm-compact.pdf`:
+Verified on each of the four files:
 
 - MediaBox 195.591 pt = 69.000 mm, TrimBox inset 5.6693 pt = 2.000 mm on every
   side, so trim is exactly 65.000 mm and the media edge _is_ the bleed edge.
@@ -101,15 +94,15 @@ Two caveats worth knowing before uploading:
 
 ## Bare-paper variant
 
-The `-compact-fond-blanc` files are the same layout with the `Fond — ivoire`
-rectangle deleted from both spreads. Nothing is painted white: in CMYK, white _is_ the
+The `-fond-blanc` files are the same card with the `Fond — ivoire` rectangle
+deleted from both spreads. Nothing is painted white: in CMYK, white _is_ the
 absence of ink, so the sheet shows through. On white stock the card reads white;
 on a tinted stock it takes the paper's colour, which is the point.
 
 Verified against the ivory files — the C10 M10 J20 N0 fill is gone from the PDF
 entirely, leaving only N100 and the house rich black C14 M34 J38 N90 plus the
 sphere's five `/Shading` gradients. Boxes, colour space, fonts and structure are
-otherwise identical to the ivory 69 mm export.
+otherwise identical to the ivory files.
 
 Three consequences to weigh before choosing this variant over ivory:
 
@@ -126,18 +119,24 @@ Three consequences to weigh before choosing this variant over ivory:
   paper. Light stock is fine; a dark or strongly coloured sheet will stop it
   scanning, and at 0.3448 mm per module there is no margin to give away.
 
-## Chosen layout
+## The card
 
-`jukkai-carte-visite-65x65-compact.afpub` is where the card actually lives now.
-It is the master plus two client decisions:
+The master is the card. Two client decisions were folded back into it rather
+than living in a side file:
 
-1. **The compact verso**, chosen by Crystelle over the master's spacing after
+1. **The compact verso**, chosen by Crystelle over the original spacing after
    seeing the two side by side.
-2. **The job title**, now `FONDATRICE · ARCHITECTE D’INTÉRIEUR`.
+2. **The job title**, `FONDATRICE · ARCHITECTE D’INTÉRIEUR`.
 
-It keeps the master's 3 mm bleed; the 69 mm exports set 2 mm at export time, as
-[Printer template](#printer-template) describes. The recto is untouched by
-either decision.
+A third change sits on the recto as a switch rather than a decision: the layer
+`Signature — BY CRYSTELLE TERRASSON`, hidden by default. Showing it is the only
+difference between the plain and `-signature` exports, which is why there is one
+Affinity file and not two. This follows what
+`docs/working-notes/visual-identity-wordmark.md` already asked for — the byline
+stays a removable layer and does not change the wordmark.
+
+The master keeps its 3 mm bleed. The 69 mm exports set 2 mm at export time and
+the master is never saved at that value.
 
 ### The title
 
@@ -207,59 +206,52 @@ on the 61 mm line at 2.000 mm.
 
 ## What went to Crystelle
 
-A zip was assembled for her, deliberately not kept in the repo — it is an
-outbound copy, and everything in it is regenerable from the files here. Its
-shape, so a later message can be matched against what she actually received:
+A zip is assembled for her, deliberately not kept in the repo — it is an
+outbound copy and everything in it regenerates from the files here. Its shape,
+so a later message can be matched against what she actually received:
 
 ```
 carte-visite-jukkai/
-  LISEZ-MOI.txt                    what to check, what to answer, what not to
-                                   judge on screen
+  LISEZ-MOI.txt
   apercus/
-    carte-recto.png                300 dpi trim-area previews, one per face
-    carte-verso.png
-    signature-agrandie.png         byline against the 5.5 pt descriptor at
-                                   equal magnification
+    recto-avec-signature.png       300 dpi, rendered from the delivered PDFs
+    recto-sans-signature.png
+    verso.png
+    signature-agrandie.png         the byline against the 5.5 pt descriptor
   fichiers-imprimeur/
-    carte-jukkai.pdf               = …-69mm-compact-signature.pdf
-    option-papier-teinte/
-      carte-jukkai-sans-fond.pdf   = …-compact-signature-fond-blanc.pdf
-    variante-sans-signature/
-      carte-jukkai-sans-signature.pdf            = …-69mm-compact.pdf
-      carte-jukkai-sans-signature-sans-fond.pdf  = …-compact-fond-blanc.pdf
+    carte-avec-signature.pdf       = …-ivoire-signature.pdf
+    carte-sans-signature.pdf       = …-ivoire.pdf
+    papier-teinte/
+      carte-avec-signature-sans-fond.pdf  = …-fond-blanc-signature.pdf
+      carte-sans-signature-sans-fond.pdf  = …-fond-blanc.pdf
 ```
 
-No `.afpub`, and no A/B any more — the choice is made, so the package carries
-one card in two grounds rather than four files to compare. The per-side PDFs are
-held back deliberately: they are in this folder if the printer asks for them,
-and the note tells her to ask, but putting four print files in front of her
-invites uploading the wrong one.
+No `.afpub`. The two ivory files sit at the top because that is the normal case;
+the bare-paper pair is one level down because it is only correct on tinted
+stock, and putting all four side by side invites uploading the wrong one.
 
-The previews are rendered from the delivered PDF rather than from the working
-file, so what she sees is what the print file actually contains, already through
-the CMYK separation. The note sets out the title as a literal line for her to
-proof-read, since that string is the whole point of this revision.
-
-An earlier package, sent before she chose, carried version A and version B side
-by side with a `comparatif-A-vs-B.png`. Superseded.
+She has one decision left — byline or no byline — so the note gives her the
+magnification and the numbers rather than an opinion, and tells her to order one
+printed proof rather than a run. If the byline fails on paper, switching to the
+`sans-signature` file is the whole fix.
 
 ## Byline at card size
 
-The recto normally uses `jukkai-wordmark-primary-no-byline.svg`. The
-`-signature` files use `jukkai-wordmark-primary.svg`, which adds
-`BY CRYSTELLE TERRASSON` under the wordmark. Crystelle asked to try it knowing
+The recto's `Logotype` layer is `jukkai-wordmark-primary-no-byline.svg`. The
+byline is the single path that `jukkai-wordmark-primary.svg` adds on top of it,
+lifted out and kept as its own hidden layer. Crystelle asked to try it knowing
 it is too small. It is too small. This section is the measurement, so the next
 person does not have to re-derive it.
 
 ### The swap is free
 
-Both SVGs share the 887 × 356 viewBox and an ink bbox of 881.956 units wide from
+Both SVGs share the 887 × 356 viewBox and an ink bbox 881.956 units wide from
 the same origin, so the byline costs nothing in layout: at the card's 30 mm
-lockup the block grows from 11.831 to 11.850 mm — **0.019 mm**. The node's own
-transform already maps SVG units 1:1 into curve space (scale 0.40175554 px/unit,
-origin at 17.5 / 5.5 mm), so the paths were written in raw SVG units through
-`createSetCurves` and landed on x 17.500–47.500 exactly as before. Nothing else
-on the recto moved.
+lockup the block grows from 11.831 to 11.850 mm — **0.019 mm**. The byline path
+was baked straight into spread coordinates through the `Logotype` node's own
+transform (scale 0.40175554 px/unit, origin 17.5 / 5.5 mm) and lands on
+x 27.899–46.923, y 16.468–17.350 mm. Nothing else on the recto moved, and the
+wordmark layer was not touched at all.
 
 ### What was measured
 
@@ -327,11 +319,12 @@ standard needs 81.7 mm on a 65 mm card, which is impossible at any composition.
 
 ### If it is tried anyway
 
-Print a physical proof before committing to a run, and take one cheap
-mitigation first: setting the byline to flat N100 instead of the rich black
-removes reason 1 entirely, since a single separation cannot misregister against
-itself. At 0.055 mm the two blacks are visually identical, so nothing is lost —
-it just is not what the mark specifies, which is why it was not done here.
+Print a physical proof before committing to a run, and take one cheap mitigation
+first: setting the `Signature` layer to flat N100 instead of the rich black it
+inherits from the wordmark removes reason 1 entirely, since a single separation
+cannot misregister against itself. At 0.055 mm the two blacks are visually
+identical, so nothing is lost — it just is not what the mark specifies, which is
+why it was not done here.
 
 The wordmark note already reaches the same conclusion from the other direction:
 `docs/working-notes/visual-identity-wordmark.md` says to use the wordmark alone
@@ -476,7 +469,10 @@ artwork, not brand marks — they do not belong in `brand/marks/`.
 
 ## Known deviations and open decisions
 
-- **The byline is off the recto.** The master lockup's byline cannot be printed
+- **The byline is a hidden layer, not a removal.** It ships in the
+  `-signature` files at Crystelle's request and is measured in
+  [Byline at card size](#byline-at-card-size); the paragraph below is why the
+  default is off. The master lockup's byline cannot be printed
   at any size this composition can carry: at 42 mm its stems measure 0.081 mm
   and at 30 mm they measure 0.058 mm, against a ~0.10 mm floor for a positive
   hairline. Reaching that floor needs the lockup at ~57 mm, the full live width.
