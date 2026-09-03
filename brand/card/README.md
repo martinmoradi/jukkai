@@ -212,7 +212,7 @@ so a later message can be matched against what she actually received:
 
 ```
 carte-visite-jukkai/
-  LISEZ-MOI.txt
+  LIS-MOI.txt
   apercus/
     recto-avec-signature.png       300 dpi, rendered from the delivered PDFs
     recto-sans-signature.png
