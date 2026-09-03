@@ -66,7 +66,7 @@ The master keeps its 3 mm bleed, which is the printer-agnostic setting. The
 69 mm PDF is produced by loading a copy of the master, setting its bleed to
 2 mm, and exporting `PDF (press ready)` — the only preset that emits bleed.
 
-Verified on `jukkai-carte-visite-65x65-impression-69mm.pdf`:
+Verified on `jukkai-carte-visite-65x65-impression-69mm-compact.pdf`:
 
 - MediaBox 195.591 pt = 69.000 mm, TrimBox inset 5.6693 pt = 2.000 mm on every
   side, so trim is exactly 65.000 mm and the media edge _is_ the bleed edge.
