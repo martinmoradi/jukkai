@@ -4,14 +4,40 @@
 > requirements in [`docs/working-notes/visual-foundations.SPEC.md`](../../docs/working-notes/visual-foundations.SPEC.md)
 > §11.1. Presence here does not mean approved.
 
+> **Stale below:** the card has been revised since the _Typography_,
+> _Composition_ and _Known deviations_ sections were written. In the current
+> file the role runs `FONDATRICE · ARCHITECTE D’INTÉRIEUR`, `jukkai.fr` sits
+> bottom-left rather than right-aligned above the QR, the verso rule and contact
+> rows have moved, and the cuts in use are PP Hatton Ultralight and PP Frama
+> Text Light. Those three sections describe an earlier revision and need
+> rewriting against the file. _Files_, _Document setup_, _Printer template_,
+> _Bare-paper variant_, _Chosen layout_, _Grid_ and _Colour_ are current.
+
 ## Files
 
 - `jukkai-carte-visite-65x65.afpub` — Affinity master, 2 pages (recto / verso).
-- `jukkai-carte-visite-65x65-impression.pdf` — press-ready export, CMYK,
-  MediaBox 71 mm, TrimBox 65 mm (3 mm bleed), fonts subset-embedded, gradients
-  as native `/Shading`, no rasters, no DeviceRGB.
+  **Now one revision behind:** it still carries the looser verso spacing and the
+  bare `FONDATRICE` title. Folding the compact file back into it is a pending
+  decision, not an oversight.
+- `jukkai-carte-visite-65x65-impression.pdf` — press-ready export of that
+  master, CMYK, MediaBox 71 mm, TrimBox 65 mm (3 mm bleed), fonts
+  subset-embedded, gradients as native `/Shading`, no rasters, no DeviceRGB.
+  Superseded for printing; kept because it is the 3 mm reference export.
+- `jukkai-carte-visite-65x65-compact.afpub` — **the live working file.**
+  Crystelle chose the compact verso over the master's spacing, and her job title
+  now runs `FONDATRICE · ARCHITECTE D’INTÉRIEUR`. Both changes live here and not
+  in the master. See [Chosen layout](#chosen-layout).
+- `…-impression-69mm-compact.pdf` — press-ready, 2 pages, MediaBox 69 mm,
+  TrimBox 65 mm. **This is the file to upload.** See
+  [Printer template](#printer-template).
+- `…-recto-69mm-compact.pdf`, `…-verso-69mm-compact.pdf` — the same two pages as
+  separate single-page files, for uploads that take one file per side.
+- `…-69mm-compact-fond-blanc.pdf` (impression / recto / verso) — the same three
+  files with the ivory field removed, for stock that is already tinted. See
+  [Bare-paper variant](#bare-paper-variant).
 - `apercu-recto.png`, `apercu-verso.png`, `apercu-recto-verso.png` — 300 dpi
-  trim-area previews.
+  trim-area previews of the chosen layout, rendered from the delivered PDF
+  rather than from the working file.
 - `sphere-fogra39-cmyk.json` — the sphere's SVG geometry with every gradient
   stop converted sRGB → Coated FOGRA39 (perceptual, black-point compensation,
   littleCMS). This is how the logo was rebuilt as native CMYK vector art rather
@@ -25,6 +51,182 @@
 | Bleed      | 3 mm all round                          |
 | Resolution | 300 dpi                                 |
 | Colour     | CMYK, Coated FOGRA39 (ISO 12647-2:2004) |
+
+## Printer template
+
+A square-card printer template (_cartes de visite carrées_) specifies:
+
+| Zone                    | Size       | Relative to trim |
+| ----------------------- | ---------- | ---------------- |
+| Marge perdue (bleed)    | 69 × 69 mm | +2 mm all round  |
+| Zone de coupe (trim)    | 65 × 65 mm | —                |
+| Zone de sécurité (safe) | 61 × 61 mm | −2 mm all round  |
+
+The master keeps its 3 mm bleed, which is the printer-agnostic setting. The
+69 mm PDF is produced by loading a copy of the master, setting its bleed to
+2 mm, and exporting `PDF (press ready)` — the only preset that emits bleed.
+
+Verified on `jukkai-carte-visite-65x65-impression-69mm.pdf`:
+
+- MediaBox 195.591 pt = 69.000 mm, TrimBox inset 5.6693 pt = 2.000 mm on every
+  side, so trim is exactly 65.000 mm and the media edge _is_ the bleed edge.
+- The ivory field spans −3 → 68 mm, so it overruns the 69 mm media by 1 mm on
+  every side; there is no white edge anywhere in the bleed.
+- Every element on both faces sits inside the 61 mm safe zone. The tightest is
+  `jukkai.fr` on the verso, whose descenders stop 3.32 mm from the trim edge —
+  1.32 mm of clearance inside safety.
+- 2 pages, zero rasters, zero `/DeviceRGB`, colour is DeviceCMYK plus the
+  FOGRA39 `/ICCBased` (`/N 4`), gradients are 5 native `/Shading` objects,
+  fonts are `/FontFile3` subsets, the only `/SMask` is `/SMask /None`.
+- Heaviest ink is a 227.5 % gradient stop, well inside FOGRA39's 330 % limit.
+
+Two caveats worth knowing before uploading:
+
+- There is no `/BleedBox`; `PDF (press ready)` writes MediaBox = bleed area and
+  omits it. Every RIP treats the media edge as the bleed edge in that case, but
+  a printer whose preflight demands an explicit BleedBox will flag it.
+- There is no `/OutputIntent`, because this is not a PDF/X file. If the printer
+  demands PDF/X-1a, re-export from the Affinity UI with _Include bleed_ ticked
+  and the bleed set to 2 mm — the SDK cannot set bleed on the X presets.
+
+## Bare-paper variant
+
+The `-compact-fond-blanc` files are the same layout with the `Fond — ivoire`
+rectangle deleted from both spreads. Nothing is painted white: in CMYK, white _is_ the
+absence of ink, so the sheet shows through. On white stock the card reads white;
+on a tinted stock it takes the paper's colour, which is the point.
+
+Verified against the ivory files — the C10 M10 J20 N0 fill is gone from the PDF
+entirely, leaving only N100 and the house rich black C14 M34 J38 N90 plus the
+sphere's five `/Shading` gradients. Boxes, colour space, fonts and structure are
+otherwise identical to the ivory 69 mm export.
+
+Three consequences to weigh before choosing this variant over ivory:
+
+- **Nothing bleeds any more.** The bleed area is empty, so trim variance shows
+  as bare paper instead of ivory. That is invisible on the stock this variant is
+  for, and it is the reason the variant exists — but it means the file is only
+  correct when the sheet supplies the ground.
+- **Process inks are transparent, so the paper tints the artwork.** The sphere's
+  gradients were separated for FOGRA39 on white coated stock. On a cream or
+  ivory sheet they land close to the original intent; on a saturated one they
+  will shift, and the shift is not correctable by reprinting — it needs a
+  re-separation against that stock.
+- **The QR needs contrast.** It is flat N100 with a quiet zone that is now bare
+  paper. Light stock is fine; a dark or strongly coloured sheet will stop it
+  scanning, and at 0.3448 mm per module there is no margin to give away.
+
+## Chosen layout
+
+`jukkai-carte-visite-65x65-compact.afpub` is where the card actually lives now.
+It is the master plus two client decisions:
+
+1. **The compact verso**, chosen by Crystelle over the master's spacing after
+   seeing the two side by side.
+2. **The job title**, now `FONDATRICE · ARCHITECTE D’INTÉRIEUR`.
+
+It keeps the master's 3 mm bleed; the 69 mm exports set 2 mm at export time, as
+[Printer template](#printer-template) describes. The recto is untouched by
+either decision.
+
+### The title
+
+Set as `FONDATRICE · ARCHITECTE D’INTÉRIEUR`, following the recto descriptor
+exactly: U+2019 apostrophe (not `'`), U+00B7 middle dot with a plain space on
+each side, accents kept on capitals.
+
+The text is stored lower case in the story — `fondatrice · architecte
+d’intérieur` — because the node carries a caps transform and the master already
+stored `fondatrice` that way. Writing the replacement in the same case means the
+new words inherit whatever that transform is rather than fighting it; the
+transform is what maps `é` to `É`.
+
+It landed on a coincidence worth keeping: the line runs to x 45.224 mm where the
+name above ends at x 45.108 mm, so title and name are flush right within
+0.12 mm and the identity now reads as one block rather than a name with a label
+under it. Any later change to either string breaks that, so re-measure if the
+title or the name is edited.
+
+The É lifts the line's ink top by 0.34 mm, which narrows the gap under the name
+from 2.25 to 1.91 mm. The accent sits at x ≈ 38 mm and the name's descender at
+x ≈ 8 mm, so nothing collides — it is a bounding-box change, not an optical one.
+
+### The rhythm
+
+Baseline-to-baseline, in millimetres:
+
+| Step                     | Master | Chosen | Rationale                          |
+| ------------------------ | ------ | ------ | ---------------------------------- |
+| Name → role              | 6.28   | 5.00   | binds the identity into one unit   |
+| Role → rule              | 5.47   | 5.20   | held, so the rule still divides    |
+| Rule → phone             | 6.63   | 6.30   | held, so the rule still divides    |
+| Phone → e-mail → address | 6.24   | 5.20   | the tightening Crystelle asked for |
+| Address wrap             | 3.38   | 3.38   | unchanged; a wrap, not a rank      |
+
+The rule keeps its clearance on purpose. Once the rows come in to 5.20, a rule
+sitting on the same rhythm stops reading as a divider and becomes just another
+row, so the two steps around it are the one place the block does not tighten.
+
+The wrap is left alone for the same reason in reverse: it has to stay clearly
+tighter than the row step or the address reads as two entries. Current contrast
+is 6.24 / 3.38 = 1.85; compact is 5.20 / 3.38 = 1.54, which is thinner but still
+holds. Tightening the wrap as well would have collapsed it.
+
+Applied as pure vertical translations, so no type was re-set and no icon
+re-optically-sized. Deltas in millimetres, positive = down: name +1.500, role
++0.225, rule −0.045, phone row −0.375, e-mail row −1.4105, address block −2.446;
+each icon moves with its row. QR and `jukkai.fr` do not move — they are pinned
+to the bottom margins.
+
+That collapses 3.95 mm out of the block, and the whole block is then nudged
+1.5 mm down so the card does not go top-heavy. The result keeps roughly the
+original optical balance: 8.59 mm of air above the name against 15.31 mm below
+the address, a ratio of 1.78 where the current card is 1.81.
+
+**The one open trade.** The void between the address and `jukkai.fr` grew from
+12.86 mm to 15.31 mm. That reinforces the two-blocks-on-opposite-corners logic
+the verso is built on, but it also makes `jukkai.fr` and the QR read more like a
+detached footer. Crystelle accepted the layout without raising it. If it comes
+up later, the 1.5 mm nudge is the knob — raising it moves the block down and
+closes the gap without touching the rhythm.
+
+Every element on both faces was re-checked against the 61 mm safe zone after the
+title change. Nothing is outside it. The tightest is still `jukkai.fr` at
+1.324 mm of clearance; the new title line has 2.232 mm, and the QR sits exactly
+on the 61 mm line at 2.000 mm.
+
+## What went to Crystelle
+
+A zip was assembled for her, deliberately not kept in the repo — it is an
+outbound copy, and everything in it is regenerable from the files here. Its
+shape, so a later message can be matched against what she actually received:
+
+```
+carte-visite-jukkai/
+  LISEZ-MOI.txt                  what to check, what to answer, what not to
+                                 judge on screen
+  apercus/
+    carte-recto.png              300 dpi trim-area previews, one per face
+    carte-verso.png
+  fichiers-imprimeur/
+    carte-jukkai.pdf             = …-impression-69mm-compact.pdf
+    option-papier-teinte/
+      carte-jukkai-sans-fond.pdf = …-impression-69mm-compact-fond-blanc.pdf
+```
+
+No `.afpub`, and no A/B any more — the choice is made, so the package carries
+one card in two grounds rather than four files to compare. The per-side PDFs are
+held back deliberately: they are in this folder if the printer asks for them,
+and the note tells her to ask, but putting four print files in front of her
+invites uploading the wrong one.
+
+The previews are rendered from the delivered PDF rather than from the working
+file, so what she sees is what the print file actually contains, already through
+the CMYK separation. The note sets out the title as a literal line for her to
+proof-read, since that string is the whole point of this revision.
+
+An earlier package, sent before she chose, carried version A and version B side
+by side with a `comparatif-A-vs-B.png`. Superseded.
 
 ## Grid
 
