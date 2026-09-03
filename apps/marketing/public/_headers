@@ -1,0 +1,4 @@
+# Cloudflare Pages serves built files with its own MIME table. Pin the vCard
+# type so iOS and Android open the add-contact flow instead of a text viewer.
+/contact/crystelle.vcf
+  Content-Type: text/vcard; charset=utf-8

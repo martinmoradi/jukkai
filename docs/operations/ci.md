@@ -25,9 +25,14 @@ while still giving branch protection a stable required check.
 - `ci / build`: Astro static build through Turbo.
 - `ci / required`: Stable branch-protection gate.
 
-After issue #72, the Astro workspace intentionally builds zero pages. The build
-job remains active so the retained toolchain and generated-font preflight cannot
-drift while the content pipeline is rebuilt.
+The Astro workspace built zero pages between issue #72 and issue #102; it now
+builds Crystelle's Contact Card Page and her vCard endpoint. The build job also
+guards the retained toolchain and the generated-font preflight while the rest of
+the content pipeline is rebuilt.
+
+The unit-test job runs one real `astro build` into a temporary directory, so
+redirect rules, headers, sitemap membership, and bundled styles are asserted on
+published artefacts rather than on the source that produces them.
 
 Each job restores Bun's package cache and `.turbo/cache`. The cache keys are
 job-specific to avoid parallel cache write conflicts, with broad restore keys so

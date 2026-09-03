@@ -1,0 +1,220 @@
+---
+import '#/styles/contact-card.css';
+
+import { getImage } from 'astro:assets';
+
+import portrait from '#/assets/crystelle-contact-portrait.webp';
+import sphere from '#/assets/jukkai-sphere.svg';
+import CloudflareAnalytics from '#/components/CloudflareAnalytics.astro';
+import CrystellePortrait from '#/components/CrystellePortrait.astro';
+import {
+  CRYSTELLE,
+  CRYSTELLE_FULL_NAME,
+  CRYSTELLE_VCARD_PATH,
+} from '#/data/crystelle';
+
+const title = `${CRYSTELLE_FULL_NAME} — Jukkai`;
+const description = `Coordonnées de ${CRYSTELLE_FULL_NAME}, architecte d’intérieur et dirigeante de Jukkai.`;
+const mapsAddress = [
+  CRYSTELLE.address.street,
+  `${CRYSTELLE.address.postalCode} ${CRYSTELLE.address.locality}`,
+  CRYSTELLE.address.country,
+].join(', ');
+const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsAddress)}`;
+const appleMapsUrl = `https://maps.apple.com/?q=${encodeURIComponent(mapsAddress)}`;
+const [touchIcon, socialPortrait] = await Promise.all([
+  getImage({ src: sphere, width: 180, height: 180, format: 'png' }),
+  getImage({ src: portrait, width: 1200, height: 1200, format: 'jpeg' }),
+]);
+const siteUrl = Astro.site ?? Astro.url;
+const cardUrl = new URL(Astro.url.pathname, siteUrl);
+const socialPortraitUrl = new URL(socialPortrait.src, siteUrl);
+---
+
+<!doctype html>
+<html lang='fr'>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <title>{title}</title>
+    <meta name='description' content={description} />
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content={description} />
+    <meta property='og:type' content='profile' />
+    <meta property='og:url' content={cardUrl.href} />
+    <meta property='og:image' content={socialPortraitUrl.href} />
+    <meta name='twitter:card' content='summary' />
+    {/* A destination for people holding a printed card, not site content. */}
+    <meta name='robots' content='noindex, follow' />
+    <meta name='theme-color' content='#EAE2D2' />
+    <link rel='icon' type='image/svg+xml' href={sphere.src} />
+    <link rel='apple-touch-icon' sizes='180x180' href={touchIcon.src} />
+    <link rel='stylesheet' href='/fonts/generated/fonts.css' />
+    <CloudflareAnalytics
+      token={import.meta.env.PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN}
+    />
+  </head>
+  <body>
+    <main class='card'>
+      <div class='card__ambient card__ambient--top' aria-hidden='true'>
+        <img src={sphere.src} alt='' />
+      </div>
+      <div class='card__ambient card__ambient--bottom' aria-hidden='true'>
+        <img src={sphere.src} alt='' />
+      </div>
+
+      <div class='card__content'>
+        <header class='card__identity'>
+          <CrystellePortrait />
+
+          <div class='card__person'>
+            <h1 class='card__name'>{CRYSTELLE_FULL_NAME}</h1>
+            <p class='card__role'>{CRYSTELLE.role}</p>
+          </div>
+        </header>
+
+        <address class='card__details'>
+          <a class='card__detail' href={`tel:${CRYSTELLE.phoneTel}`}>
+            <span class='card__detail-icon' aria-hidden='true'>
+              <svg viewBox='0 0 24 24' focusable='false'>
+                <path
+                  d='M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.84.56 2.8.69A2 2 0 0 1 22 16.92Z'
+                ></path>
+              </svg>
+            </span>
+            <span class='card__detail-copy'>
+              <span class='card__detail-label'>Téléphone</span>
+              <span class='card__detail-value'>{CRYSTELLE.phoneDisplay}</span>
+            </span>
+            <span class='card__detail-action' aria-hidden='true'>
+              <span>Appeler</span>
+              <svg viewBox='0 0 24 24'>
+                <path d='M5 12h14M13 6l6 6-6 6'></path>
+              </svg>
+            </span>
+          </a>
+
+          <a class='card__detail' href={`mailto:${CRYSTELLE.email}`}>
+            <span class='card__detail-icon' aria-hidden='true'>
+              <svg viewBox='0 0 24 24' focusable='false'>
+                <rect x='3' y='5' width='18' height='14' rx='1'></rect>
+                <path d='m3 7 9 6 9-6'></path>
+              </svg>
+            </span>
+            <span class='card__detail-copy'>
+              <span class='card__detail-label'>E-mail</span>
+              <span class='card__detail-value card__detail-value--email'>
+                {CRYSTELLE.email}
+              </span>
+            </span>
+            <span class='card__detail-action' aria-hidden='true'>
+              <span>Écrire</span>
+              <svg viewBox='0 0 24 24'>
+                <path d='M5 12h14M13 6l6 6-6 6'></path>
+              </svg>
+            </span>
+          </a>
+
+          <a
+            class='card__detail'
+            href={mapsUrl}
+            data-maps-link
+            data-apple-maps-url={appleMapsUrl}
+            aria-label={`Ouvrir ${CRYSTELLE.address.street}, ${CRYSTELLE.address.postalCode} ${CRYSTELLE.address.locality} dans l’application de cartes`}>
+            <span class='card__detail-icon' aria-hidden='true'>
+              <svg viewBox='0 0 24 24' focusable='false'>
+                <path d='M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z'></path>
+                <circle cx='12' cy='10' r='2.5'></circle>
+              </svg>
+            </span>
+            <span class='card__detail-copy'>
+              <span class='card__detail-label'>Adresse</span>
+              <span class='card__detail-value card__detail-value--address'>
+                {CRYSTELLE.address.street}<br />
+                {CRYSTELLE.address.postalCode}{' '}
+                {CRYSTELLE.address.locality}
+              </span>
+            </span>
+            <span class='card__detail-action' aria-hidden='true'>
+              <span>Plan</span>
+              <svg viewBox='0 0 24 24'>
+                <path d='M5 12h14M13 6l6 6-6 6'></path>
+              </svg>
+            </span>
+          </a>
+
+          <a class='card__detail' href={CRYSTELLE.instagram.url}>
+            <span class='card__detail-icon' aria-hidden='true'>
+              <svg viewBox='0 0 24 24' focusable='false'>
+                <rect x='3' y='3' width='18' height='18' rx='5'></rect>
+                <circle cx='12' cy='12' r='4'></circle>
+                <circle
+                  class='card__detail-icon-dot'
+                  cx='17.5'
+                  cy='6.5'
+                  r='0.75'></circle>
+              </svg>
+            </span>
+            <span class='card__detail-copy'>
+              <span class='card__detail-label'>Instagram</span>
+              <span class='card__detail-value card__detail-value--social'>
+                {CRYSTELLE.instagram.handle}
+              </span>
+            </span>
+            <span class='card__detail-action' aria-hidden='true'>
+              <span>Voir</span>
+              <svg viewBox='0 0 24 24'>
+                <path d='M5 12h14M13 6l6 6-6 6'></path>
+              </svg>
+            </span>
+          </a>
+        </address>
+
+        <nav class='card__actions' aria-label='Actions de contact'>
+          <a class='card__action card__action--secondary' href='/'>
+            <img class='card__action-sphere' src={sphere.src} alt='' />
+            <span>Visiter jukkai.fr</span>
+            <svg
+              class='card__action-arrow'
+              viewBox='0 0 24 24'
+              aria-hidden='true'>
+              <path d='M5 12h14M13 6l6 6-6 6'></path>
+            </svg>
+          </a>
+
+          <a
+            class='card__action card__action--primary'
+            href={CRYSTELLE_VCARD_PATH}>
+            <svg
+              class='card__action-icon'
+              viewBox='0 0 24 24'
+              aria-hidden='true'>
+              <path d='M15 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2'></path>
+              <circle cx='8.5' cy='7' r='4'></circle>
+              <path d='M19 8v6M22 11h-6'></path>
+            </svg>
+            <span>Ajouter à mes contacts</span>
+            <svg
+              class='card__action-arrow'
+              viewBox='0 0 24 24'
+              aria-hidden='true'>
+              <path d='M12 5v14M5 12h14'></path>
+            </svg>
+          </a>
+        </nav>
+      </div>
+
+      <script>
+        const mapsLink =
+          document.querySelector<HTMLAnchorElement>('[data-maps-link]');
+
+        if (
+          mapsLink?.dataset.appleMapsUrl &&
+          /iPhone|iPad|iPod|Macintosh/.test(navigator.userAgent)
+        ) {
+          mapsLink.href = mapsLink.dataset.appleMapsUrl;
+        }
+      </script>
+    </main>
+  </body>
+</html>
