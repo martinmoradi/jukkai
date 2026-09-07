@@ -1,3 +1,8 @@
+> Status: general explanatory reference, not Jukkai's current workflow or a
+> mandatory sequence. Updated status 2026-09-07: read `current-delivery.md` and
+> `method.md` first. Keyword evidence informs page decisions; it does not decide
+> the page list or require exhaustive research before building.
+
 # How a marketing website's content / SEO / sitemap layer gets made
 
 Notes on the professional process, then the same thing collapsed to a solo/small

@@ -232,7 +232,7 @@ legible: project size and mission depth.
    are hers to define: blocking-for-copy in the questions file.
 2. **Transformation ciblée** (the ~40-50k déco persona).
 3. **Rénovation complète / mission complète** (the ~100-150k personas).
-4. **Espaces professionnels** (B2B, dedicated page).
+4. **Espaces professionnels** (B2B; separate-page treatment remains open).
 
 **Mission-depth ladder (v1.7):**
 
@@ -301,8 +301,8 @@ indexed URLs from navigation and homepage storytelling. No specific site model,
 page count or broad comparison programme is a first-release prerequisite.
 
 - **Geography: Rennes is the commercial claim, Châteaugiron is the physical anchor.**
-  The service page claims Rennes head-on (title, H1, URL `/architecte-interieur-rennes/`,
-  body "Rennes et sa région"). Châteaugiron anchors everything physically ("à
+  If a separate Rennes service page is selected, the earlier candidate is
+  `/architecte-interieur-rennes/`, with descriptive Rennes-focused metadata and copy. Châteaugiron anchors everything physically ("à
   Châteaugiron, à 20 minutes de Rennes") and owns the Galerie-side local claims; it is
   not a co-primary acquisition market in homepage or service-page H1s. "La région
   rennaise" is the human service-area phrase. "Ille-et-Vilaine (35)" is supporting
@@ -310,15 +310,14 @@ page count or broad comparison programme is a first-release prerequisite.
   honest operational frame is Rennes and the région rennaise first, with wider
   Ille-et-Vilaine reach depending on project scope. This matches documented
   competitor practice (Le Rheu, Cesson) and is honest.
-- **Current service-page hypothesis.** One canonical Rennes service page at launch;
-  service-area pages: none at launch. A
-  post-launch tier of at most 2-3 honest commune pages (Cesson-Sévigné, Le Rheu,
+- **Earlier service-page hypothesis, not first-release scope.** A canonical Rennes
+  service page may be useful. Later, a small set of honest commune pages (Cesson-Sévigné, Le Rheu,
   Châteaugiron), each shipped only when it can carry a real project as proof. Never
   doorway-page soup.
-- **Local content only.** Case studies with location context, cost and process FAQ
-  ("Combien coûte...", "architecte d'intérieur ou décorateur ?"), regional guides.
-  National-topic blogging is dead: the cuisine écologique cluster produced 4,700
-  impressions and zero clicks.
+- **Earlier content hypothesis.** Prioritise locally grounded cases and useful
+  cost/process explanations over generic blogging. Historical evidence reported
+  4,700 impressions and zero clicks for the cuisine écologique cluster; that result
+  does not establish a universal rule or an obligation to create FAQ/guide pages.
 - **Portfolio pages carry dual naming**: creative title for the brand ("Belle Époque")
   plus descriptive subtitle and URL for search ("Rénovation maison années 30, Rennes").
 - **Current role-split hypothesis.** The homepage serves the branded searcher and a
@@ -394,7 +393,7 @@ content freeze.
 - Tiers-Lieu and Nortene may join when September photography clears. Besnard is an
   October fast-follow. None blocks launch.
 
-**Verified and usable at launch:**
+**Established proof sources; select and verify exact publication material:**
 
 - Existing Google reviews on the GBP. A new review push is optional and does not block
   launch; Crystelle has already tried, lacks time, and should not carry another launch

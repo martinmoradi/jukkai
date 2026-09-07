@@ -24,9 +24,12 @@ table.
 
 | Label                        | Meaning                                                                                     |
 | ---------------------------- | ------------------------------------------------------------------------------------------- |
-| `prd`                        | Parent/spec/roadmap issue. PRDs do not get readiness labels by default                      |
+| `spec`                       | Parent/spec/roadmap issue. PRDs do not get readiness labels by default                      |
 | `ready-for-supervised-agent` | Safe for Martin to paste into an agent thread, but the agent must stop at named human gates |
 | `deferred`                   | Valid and understood, but intentionally not a current paste-into-agent item                 |
+
+The canonical `prd` role maps to the existing GitHub label `spec`. Do not create a
+second parent label. A deferred issue should not also carry an active readiness label.
 
 ## Gate Labels
 
@@ -73,7 +76,7 @@ manual approval, or one-off production operation issues.
   add `ready-for-supervised-agent` plus relevant `gate:*` and `skill:*` labels.
 - HITL slice where the main action is Martin judgment, review, approval, or
   selection: add `ready-for-human` plus `gate:approval`.
-- Parent/spec/roadmap issue: add `prd`; do not add readiness labels by default.
+- Parent/spec/roadmap issue: add `spec`; do not add readiness labels by default.
 - Valid but intentionally later issue: add `deferred`.
 
 Do not close or relabel parent PRD issues when publishing child slices unless

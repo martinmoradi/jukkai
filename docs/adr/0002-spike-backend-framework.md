@@ -1,5 +1,11 @@
 # Validate Encore.ts Before Backend Lock-in
 
-Jukkai Proper is expected to grow from the first Jukkai Updates lead-capture slice into a modular monolith covering lead capture, content operations, client portal, and practice console workflows. Framework choice should therefore be judged on whether Martin and agents can keep the backend legible as it grows, not on raw HTTP performance. Encore.ts is the leading candidate because its conventions, local dashboard, and agent-oriented tooling match the desired workflow better than a lightweight HTTP layer alone.
+Status: inactive as of 2026-09-07. Martin has put the full-stack project outside the
+foreseeable scope. The former Encore.ts-versus-Hono spike and backend-growth model
+are historical proposals, not release prerequisites or a settled future framework.
 
-Before locking `apps/api`, validate Encore.ts against Martin's actual infrastructure. Use Encore if self-hosted Docker deployment to Coolify is boring and it can use the existing Coolify Postgres service with a separate Jukkai Proper database/role without making operations weird. Fall back to conventioned Hono if either kill-switch fails. The validation should prove `GET /healthz`, `POST /lead-capture`, Postgres migration, structured logs, Docker/Coolify viability, local dev ergonomics, and agent-readable module shape. The validation is tracked in GitHub issue #18.
+The original reasoning and spike contract remain in git history and
+[Validate Encore.ts for the Jukkai Proper backend](https://github.com/martinmoradi/jukkai/issues/18).
+A future backend effort must establish its actual requirements and deployment
+constraints before selecting a framework. Do not scaffold `apps/api` or a Portal
+in anticipation of that effort.
