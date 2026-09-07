@@ -1,9 +1,11 @@
 # Jukkai marketing foundation
 
-**Version 1.9, July 12, 2026.** The full version history lives in the
+**Version 1.10, September 7, 2026.** The full version history lives in the
 Amendments section at the bottom.
 
-This is the canonical source of truth for all marketing phases (see `docs/operations/method.md`).
+This is the canonical source for business facts, brand direction and public claims.
+Current release scope and timing live in `docs/operations/current-delivery.md`.
+Older page/phase language below does not require every future page at first release.
 It was produced in Phase 0 from the five source docs plus the July 2, 2026 grilling
 session with Martin. Where this document contradicts the source material, this document
 wins; superseded facts are listed in section 12.
@@ -23,10 +25,14 @@ regenerated on every change, never hand-edited.
   with 30 years in the profession and her own studio since 2012.
 - The practice team is Crystelle Terrasson and her collaboratrice Laura Corbel;
   both are architectes d'intérieur diplômées.
-- The practice moves from Vern-sur-Seiche to Châteaugiron (Petite Cité de Caractère,
-  Ille-et-Vilaine, about 20 minutes from Rennes), into a space shared with the Jukkai
-  galerie. Operational opening target: October 1, 2026. Public teaser copy uses
-  « ouverture octobre 2026 »; the full site removes the opening state after launch.
+- As confirmed September 7, the practice has just moved from Vern-sur-Seiche to
+  Châteaugiron (Ille-et-Vilaine, about 20 minutes from Rennes) and already receives
+  clients in the new office. Leads normally call first. Martin treats older address
+  updates as planned transition work, not an emergency.
+- The official Jukkai opening is October 2026; the practice move has already happened.
+  « ouverture octobre 2026 » describes the place's upcoming opening, not a paused
+  architecture practice. Actual Galerie hours and public visit arrangements remain
+  to confirm. The earlier October 1 target is not a newly confirmed exact date.
 - Economics (closed decision): the studio sustains the business, Jukkai carries the
   brand. The website's primary job serves the studio's client pipeline.
 - Commercial direction (confirmed informally with Crystelle, July 10): raise the
@@ -34,8 +40,10 @@ regenerated on every change, never hand-edited.
   B2B missions, while keeping smaller conseil and transformation work visibly
   welcome. This is a portfolio, proof, and presentation objective, not permission to
   use « haut de gamme » as public copy.
-- Leads today come almost entirely through referral and word of mouth. The current
-  site's proven role is validation: 93% of its search clicks are branded queries.
+- The established lead pattern is referral and word of mouth; Martin confirms that
+  leads normally call before visiting. Earlier search evidence supports a referral-
+  validation role. Historical branded-click percentages are dataset-specific, not
+  current measurements or a complete picture of future opportunity.
 
 ## 2. Public claims canon
 
@@ -47,15 +55,15 @@ The only public identity and experience claims allowed in copy:
 | "30 ans de métier"                                                  | Crystelle's total personal career | Hers alone; survives staffing changes; never phrased as studio age                                  |
 | "studio fondé en 2012"                                              | Studio founding                   | Always contextualised: Crystelle founded the studio in 2012; Jukkai itself is new in 2026           |
 | "labellisée en 2023 Professionnel de la décoration éco-responsable" | My Green Cocoon label             | Supporting proof only; use the exact label name, never a broad environmental-performance promise    |
-| "ouverture octobre 2026"                                            | Confirmed opening window          | Temporary teaser/pre-opening state, removed after opening                                           |
+| "ouverture octobre 2026"                                            | Confirmed opening window          | Temporary place-opening state, updated after the opening                                            |
 
 The two experience numbers must never blur: 30 is her career; 2012 is the founding
 year of the former studio. The old site's "30 années" survives only in the career
 framing above. Never present a contextless « depuis 2012 » badge that implies Jukkai
 itself has existed since 2012.
 
-No art prices appear anywhere pre-opening (see section 9). Architecture pricing is
-public on the Prestations page (see section 7); the two rules are different on
+No art prices appear anywhere pre-opening (see section 9). Architecture pricing may be
+public when current and qualified (see section 7); a Prestations page is not yet a first-release commitment; the two rules are different on
 purpose. Banned claims are listed in section 10.
 
 ## 3. Website jobs
@@ -75,9 +83,10 @@ Crystelle's actual lead handling.
 
 **Contact mechanics reopened (v1.7).** The current site exposes phone, email, a form,
 and Calendly, but current usage by channel is unknown. The previous ruling that the
-form must be primary and Calendly post-submit only is withdrawn. A focused contact /
-conversion review must compare direct phone, direct booking, form, and a contact-choice
-surface against recent real lead behaviour. Do not hide the phone number to improve
+form must be primary and Calendly post-submit only is withdrawn. The first-release contact choice should use real lead behaviour and current
+capabilities. Martin confirms that leads normally call first; the exact website
+contact hierarchy remains open. A new backend or exhaustive channel study is not
+required before offering a useful contact route. Do not hide the phone number to improve
 attribution, and do not force one channel merely to create a cleaner analytics event.
 
 **Secondary jobs, ranked:**
@@ -136,19 +145,18 @@ attribution, and do not force one channel merely to create a cleaner analytics e
   affirmatively or by contrast; exact thesis copy remains open. Candidate territory:
   « une galerie où l'on ne chuchote pas », « une galerie vivante », and language around
   pushing the door or leaving with a coup de cœur.
-- **Google Business Profile**: one profile, not two. Name "Jukkai by Crystelle
-  Terrasson", full compound, regardless of what the main sign says (v1.5). The name
-  evidence Google actually weighs is the real-world identity as consistently
-  represented across website, citations, social bios, and frontage together; all the
-  machine/legal-layer surfaces carry the full compound, so they carry the GBP name.
-  The rename continuity matters most: the existing profile ("Studio Crystelle
-  Terrasson", with its reviews) keeps "Crystelle Terrasson" as the recognizable
-  thread in the map pack, where 93%-branded demand looks for her name. The name is
-  not keyword-stuffed (no city or category terms; "Architecte d'intérieur" lives in
-  the category field). Primary category: Architecte d'intérieur. Secondary: art
-  gallery / art store equivalent. Address: Châteaugiron. Applying the tiebreak rule:
-  the map-pack slot for "architecte d'intérieur rennes" is a conversion asset; art
-  discovery is not.
+- **Google Business Profile direction:** preserve the practice's continuity and
+  existing profile/reviews where eligible. **Jukkai by Crystelle Terrasson is settled**
+  (reconfirmed September 7). The intended primary activity remains interior
+  architecture, with the Galerie represented accurately as it opens. The Google
+  procedure, timing and verification are operational work, not a reopening of the
+  name. Prior claims that a rename/review transfer is automatically assured are
+  withdrawn. Check the existing profile and real-world evidence against Google's
+  [representation/rebranding rules](https://support.google.com/business/answer/3038177?hl=en)
+  and [profile-editing guidance](https://support.google.com/business/answer/3039617?hl=en)
+  before executing. Do not create duplicate profiles or mark the practice closed
+  as an assumed shortcut. Address and visiting information must reflect reality;
+  the move has happened, while the official opening remains October.
 - **Signage carries the lockup, not necessarily the compound on the main sign
   (v1.5).** The main sign may be the Jukkai wordmark alone; "by Crystelle Terrasson"
   may appear on physical support such as the door, hours plaque, window lettering, or
@@ -287,9 +295,10 @@ business-model exploration. It stays off the site entirely.
 
 The geography, migration, and truthful-content rules below remain canonical. The
 current page split, primary navigation, homepage H1, B2B placement, and cost-guide
-priority are Phase 3 hypotheses awaiting a dedicated IA/SEO confidence review. That
-review must compare integrated, separated, and hybrid models and distinguish indexed
-URLs from navigation and homepage storytelling.
+priority remain hypotheses. Focused research should inform release and later-page
+choices without imposing exhaustive investigation before design/build. Distinguish
+indexed URLs from navigation and homepage storytelling. No specific site model,
+page count or broad comparison programme is a first-release prerequisite.
 
 - **Geography: Rennes is the commercial claim, Châteaugiron is the physical anchor.**
   The service page claims Rennes head-on (title, H1, URL `/architecte-interieur-rennes/`,
@@ -315,10 +324,18 @@ URLs from navigation and homepage storytelling.
 - **Current role-split hypothesis.** The homepage serves the branded searcher and a
   Rennes service page serves the stranger. This is plausible, not frozen, until the
   confidence review tests whether a hybrid/integrated model communicates better.
-- **Migration non-negotiables (closed, restated for completeness)**: page-by-page 301
-  map, GA4 + Search Console from day one with multi-channel contact-intent tracking, GBP
-  update (name, URL, Châteaugiron address), external profile updates (Linktr.ee,
-  Pages Jaunes, social bios, directories).
+- **Transition direction (September 7):** the old site initially remains available
+  with a banner inviting visitors to Jukkai. Prepare the old-to-new URL map and
+  Search Console transition before an actual domain migration; publishing the
+  magazine homepage is not the migration itself. Coordinate GBP and external
+  profiles with the business facts and the accepted transition plan. Preserve useful
+  content/search value without inheriting every old page or redirecting unrelated
+  pages to the homepage. Timing remains open.
+- **Measurement:** ADR-0006 supersedes the earlier GA4 requirement. Use Cloudflare
+  Web Analytics for ordinary website measurement, with one explicit production
+  beacon and separate previews. Contact intent is the business objective; current
+  analytics does not measure custom conversions or successful contact imports.
+  Search Console supports search/migration verification; it does not require GA4.
 
 ## 9. The Galerie promise (pre-opening)
 
@@ -327,13 +344,15 @@ What the Galerie page may say before opening:
 - **The scene**: you push the door into a colourful, alive interior; art on the walls,
   sculptures on columns, iconic furniture; the interior architects visible at work
   behind the vitrines; someone offers you a coffee. All confirmed launch scope.
-- **The opening state**: teaser copy says « ouverture octobre 2026 ». The exact October
-  1 date is an internal target, not permanent page copy. After opening, replace the
-  state with actual hours and visit information.
-- **The pre-opening CTA**: newsletter signup and Instagram follow, carried over from
-  the teaser.
-- **Visuals**: space photos/renders exist and may be used (Crystelle approves the
-  selection; launch bucket).
+- **The opening state:** « ouverture octobre 2026 ». Update with real visit
+  information when the place opens. The practice already receives architecture
+  clients at the new office; do not conflate that with public Galerie opening.
+- **The pre-opening action:** choose a truthful contact/discovery route for the
+  first-release page. Newsletter/signup and its backend are no longer requirements.
+- **Visuals:** good finished-Galerie photography is currently lacking. Martin plans
+  to select interior-design images and photograph newly received artworks this week.
+  These are expected inputs, not approved publication assets. Do not require a
+  Galerie photograph as the homepage hero or claim the space is already finished.
 - **The Galerie thesis line, once**: the category itself is settled; the exact frame is
   not. It may be affirmative or contrastive as long as it makes the category Jukkai's
   own. Candidate territory: « une galerie où l'on ne chuchote pas », « une galerie
@@ -391,7 +410,7 @@ content freeze.
   The old website contains a crop-ready visual carrying the label wording. Use it as
   a small supporting design touch in the umbrella/about area and relevant cases, not
   as an official certification seal unless a source badge is recovered.
-- Space photos/renders for the Galerie page.
+- Galerie/artwork assets remain to be selected; finished-space photography is not a release prerequisite.
 
 **To collect, not launch-blocking:** 3-5 written client testimonials. Until then, an
 optional content-controlled module may use a few exact, source-checked excerpts from
@@ -441,8 +460,8 @@ Language rulings from this phase:
   and ecommerce codes. `Galerie` itself is canonical; the surrounding language must
   prevent it inheriting the cold code. Also avoid
   influenceuse registers and art-world or architectural jargon without translation.
-- The two registers (architecture and Jukkai) get their full definition in Phase 2
-  messaging. This document fixes only the canonical nouns and claims.
+- Develop the architecture and Jukkai registers through the copy/design work needed
+  for each release. A separate Phase 2 messaging package is not a prerequisite.
 
 ## 12. Superseded facts
 
@@ -553,5 +572,13 @@ and the conditional pricing simulator.
   `docs/research/site-planning-inquiry.md`; business facts, claims canon,
   audiences, offer architecture, and voice remain trusted.
 
-_Later phases append here with date and reason; research that overturns
-anything above must amend explicitly, never silently._
+- **2026-09-07, v1.10 (Martin's delivery reset).** Confirmed the settled brand,
+  completed practice move, October official opening, magazine-driven first website,
+  staged old-site banner transition, scarce Galerie photography and forthcoming
+  selected images. Full-stack and signup work leave the foreseeable scope. Kept
+  SEO research useful without the old exhaustive gate; first-release pages remain
+  open. Separated Google's procedure from the brand decision and superseded the
+  stale GA4 requirement with ADR-0006. Historical amendment text above is provenance,
+  not a competing current schedule. Current scope lives in current-delivery.md.
+
+_Later substance changes append here with date and reason._

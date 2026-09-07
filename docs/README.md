@@ -24,9 +24,12 @@ This folder is organized by how the docs are used.
 
 ## Main files
 
+- `operations/current-delivery.md` - current release scope, milestones, settled
+  direction and open decisions; read before planning or implementation.
+
 - `strategy/foundation.md` - canonical marketing truth.
 - `strategy/questions-for-crystelle.md` - unresolved business/content questions,
   bucketed by what they block.
-- `operations/method.md` - how the marketing docs are produced phase by phase.
+- `operations/method.md` - how bounded evidence, decisions, copy and design connect.
 - `operations/ci.md` - pull request and branch protection policy.
 - `operations/fonts.md` - the retained generated-font pipeline contract.
