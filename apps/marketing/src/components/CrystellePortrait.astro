@@ -1,15 +1,15 @@
 ---
 import { Image } from 'astro:assets';
 
-import portrait from '#/assets/crystelle-contact-portrait.webp';
-import { CRYSTELLE_FULL_NAME } from '#/data/crystelle';
+import { CRYSTELLE_DESCRIPTION } from '#/data/crystelle';
+import { CRYSTELLE_PORTRAIT } from '#/data/crystelle-portrait';
 ---
 
 <figure class='card__portrait'>
   <Image
     class='card__portrait-image'
-    src={portrait}
-    alt={`${CRYSTELLE_FULL_NAME}, architecte d’intérieur et fondatrice de Jukkai`}
+    src={CRYSTELLE_PORTRAIT}
+    alt={CRYSTELLE_DESCRIPTION}
     width={640}
     height={640}
     quality={90}

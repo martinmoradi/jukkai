@@ -3,19 +3,20 @@ import '#/styles/contact-card.css';
 
 import { getImage } from 'astro:assets';
 
-import portrait from '#/assets/crystelle-contact-portrait.webp';
 import sphere from '#/assets/jukkai-sphere.svg';
 import CloudflareAnalytics from '#/components/CloudflareAnalytics.astro';
 import CrystellePortrait from '#/components/CrystellePortrait.astro';
 import {
   CRYSTELLE,
+  CRYSTELLE_DESCRIPTION,
   CRYSTELLE_FULL_NAME,
   CRYSTELLE_TITLE,
   CRYSTELLE_VCARD_PATH,
 } from '#/data/crystelle';
+import { CRYSTELLE_PORTRAIT } from '#/data/crystelle-portrait';
 
 const title = `${CRYSTELLE_FULL_NAME} — Jukkai`;
-const description = `Coordonnées de ${CRYSTELLE_FULL_NAME}, architecte d’intérieur et fondatrice de Jukkai.`;
+const description = `Coordonnées de ${CRYSTELLE_DESCRIPTION}.`;
 const mapsAddress = [
   CRYSTELLE.address.street,
   `${CRYSTELLE.address.postalCode} ${CRYSTELLE.address.locality}`,
@@ -25,7 +26,12 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
 const appleMapsUrl = `https://maps.apple.com/?q=${encodeURIComponent(mapsAddress)}`;
 const [touchIcon, socialPortrait] = await Promise.all([
   getImage({ src: sphere, width: 180, height: 180, format: 'png' }),
-  getImage({ src: portrait, width: 1200, height: 1200, format: 'jpeg' }),
+  getImage({
+    src: CRYSTELLE_PORTRAIT,
+    width: 1200,
+    height: 1200,
+    format: 'jpeg',
+  }),
 ]);
 const siteUrl = Astro.site ?? Astro.url;
 const cardUrl = new URL(Astro.url.pathname, siteUrl);
