@@ -10,11 +10,12 @@ import CrystellePortrait from '#/components/CrystellePortrait.astro';
 import {
   CRYSTELLE,
   CRYSTELLE_FULL_NAME,
+  CRYSTELLE_TITLE,
   CRYSTELLE_VCARD_PATH,
 } from '#/data/crystelle';
 
 const title = `${CRYSTELLE_FULL_NAME} — Jukkai`;
-const description = `Coordonnées de ${CRYSTELLE_FULL_NAME}, architecte d’intérieur et dirigeante de Jukkai.`;
+const description = `Coordonnées de ${CRYSTELLE_FULL_NAME}, architecte d’intérieur et fondatrice de Jukkai.`;
 const mapsAddress = [
   CRYSTELLE.address.street,
   `${CRYSTELLE.address.postalCode} ${CRYSTELLE.address.locality}`,
@@ -69,7 +70,7 @@ const socialPortraitUrl = new URL(socialPortrait.src, siteUrl);
 
           <div class='card__person'>
             <h1 class='card__name'>{CRYSTELLE_FULL_NAME}</h1>
-            <p class='card__role'>{CRYSTELLE.role}</p>
+            <p class='card__role'>{CRYSTELLE_TITLE}</p>
           </div>
         </header>
 
