@@ -68,6 +68,9 @@ remove them when the convention changes.
 - `apps/marketing` is an Astro workspace whose only route so far is Crystelle's
   Contact Card Page at `/contact/crystelle`. Keep its Astro, Turbo, Stylelint,
   Vitest, and generated-font tooling intact as design and implementation resume.
+- Contact details and portrait edits follow
+  `docs/operations/crystelle-contact-card.md`; keep the page portrait and social
+  preview on the shared image source in `src/data/crystelle-portrait.ts`.
 - Cloudflare Pages reads `public/_redirects` and `public/_headers`. Printed
   pointer paths live in `_redirects` and are permanent once cards exist; only
   their targets may change.
