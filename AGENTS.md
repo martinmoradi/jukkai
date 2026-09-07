@@ -48,6 +48,8 @@ remove them when the convention changes.
 ## Commands And Running Things
 
 - Bun is the package manager. Read `package.json` for the full script list.
+- Use a Node version supported by `package.json` engines; jsdom 30 sets the
+  minimum supported Node patch versions for the test toolchain.
 - Full repo gate: `bun run check`.
 - Marketing app narrow gates: `bun run --cwd apps/marketing typecheck`,
   `bun run --cwd apps/marketing lint`, `bun run --cwd apps/marketing test`, and
