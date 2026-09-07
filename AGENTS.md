@@ -72,8 +72,11 @@ remove them when the convention changes.
   `docs/operations/crystelle-contact-card.md`; keep the page portrait and social
   preview on the shared image source in `src/data/crystelle-portrait.ts`.
 - Cloudflare Pages reads `public/_redirects` and `public/_headers`. Printed
-  pointer paths live in `_redirects` and are permanent once cards exist; only
-  their targets may change.
+  pointer paths live in `_redirects`. Crystelle's cards have been sent to print:
+  `https://jukkai.fr/c/crystelle` is locked; only the redirect target may change.
+- Analytics follows ADR-0006: retain one explicit beacon, keep production data
+  separate from previews, and describe contact-page views without claiming QR
+  scan attribution or successful contact imports.
 - `brand/` holds durable masters and is not the app's runtime asset directory.
   Commit the curated web export into `apps/marketing/src/assets/` and import it
   from there; a test holds the copy to its master.
