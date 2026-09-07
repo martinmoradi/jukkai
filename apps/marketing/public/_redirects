@@ -3,6 +3,6 @@
 # These source paths are printed on physical artefacts and are therefore
 # permanent: a card in someone's wallet cannot be reissued. Never delete or
 # repoint a rule to a dead route — repoint it at wherever the live page moved.
-# Crystelle's cards were sent to print on 2026-09-07: /c/crystelle is locked.
+# Crystelle's cards have been sent to print: /c/crystelle is locked.
 # Targets carry the trailing slash Astro builds to avoid an extra redirect.
 /c/crystelle  /contact/crystelle/  302
