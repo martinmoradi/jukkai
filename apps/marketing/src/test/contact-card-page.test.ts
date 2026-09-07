@@ -64,7 +64,7 @@ describe('/contact/crystelle', () => {
       'Crystelle Terrasson',
     );
     expect(page.querySelector('.card__role')?.textContent?.trim()).toBe(
-      'Dirigeante',
+      'Fondatrice · Architecte d’intérieur',
     );
   });
 
@@ -75,7 +75,7 @@ describe('/contact/crystelle', () => {
 
     expect(portrait).not.toBeNull();
     expect(portrait?.alt).toBe(
-      'Crystelle Terrasson, architecte d’intérieur et dirigeante de Jukkai',
+      'Crystelle Terrasson, architecte d’intérieur et fondatrice de Jukkai',
     );
   });
 

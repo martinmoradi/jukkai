@@ -23,7 +23,7 @@ describe('Crystelle vCard', () => {
 
   it('carries her role at Jukkai', () => {
     expect(properties()).toContain('ORG:Jukkai');
-    expect(properties()).toContain('TITLE:Dirigeante');
+    expect(properties()).toContain('TITLE:Fondatrice · Architecte d’intérieur');
   });
 
   it('carries the phone and email printed on the card', () => {

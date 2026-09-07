@@ -44,10 +44,11 @@ export const CRYSTELLE = {
   phoneDisplay: PHONE_DISPLAY,
   phoneTel: PHONE_INTERNATIONAL.replaceAll(' ', ''),
   profession: 'Architecte d’intérieur',
-  role: 'Dirigeante',
+  role: 'Fondatrice',
 } as const;
 
 export const CRYSTELLE_FULL_NAME = `${CRYSTELLE.givenName} ${CRYSTELLE.familyName}`;
+export const CRYSTELLE_TITLE = `${CRYSTELLE.role} · ${CRYSTELLE.profession}`;
 
 /**
  * vCard 3.0 — the dialect iOS Contacts and Android both import cleanly.
@@ -64,7 +65,7 @@ const CRYSTELLE_VCARD_PROPERTIES = [
   `N:${CRYSTELLE.familyName};${CRYSTELLE.givenName};;;`,
   `FN:${CRYSTELLE_FULL_NAME}`,
   'ORG:Jukkai',
-  `TITLE:${CRYSTELLE.role}`,
+  `TITLE:${CRYSTELLE_TITLE}`,
   `TEL;TYPE=CELL:${PHONE_INTERNATIONAL}`,
   `EMAIL;TYPE=INTERNET:${CRYSTELLE.email}`,
   `ADR;TYPE=WORK:;;${CRYSTELLE.address.street};${CRYSTELLE.address.locality};;${CRYSTELLE.address.postalCode};${CRYSTELLE.address.country}`,
