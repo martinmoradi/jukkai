@@ -49,6 +49,7 @@ export const CRYSTELLE = {
 
 export const CRYSTELLE_FULL_NAME = `${CRYSTELLE.givenName} ${CRYSTELLE.familyName}`;
 export const CRYSTELLE_TITLE = `${CRYSTELLE.role} · ${CRYSTELLE.profession}`;
+export const CRYSTELLE_DESCRIPTION = `${CRYSTELLE_FULL_NAME}, ${CRYSTELLE.profession.toLocaleLowerCase('fr')} et ${CRYSTELLE.role.toLocaleLowerCase('fr')} de Jukkai`;
 
 /**
  * vCard 3.0 — the dialect iOS Contacts and Android both import cleanly.
