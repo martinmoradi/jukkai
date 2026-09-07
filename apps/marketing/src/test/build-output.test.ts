@@ -50,7 +50,9 @@ afterAll(async () => {
 
 describe('published site', () => {
   it('publishes the redirect and header rules Cloudflare Pages reads', async () => {
-    expect(await published('_redirects')).toContain('/c/crystelle');
+    expect(await published('_redirects')).toMatch(
+      /^\/c\/crystelle\s+\/contact\/crystelle\/\s+302\s*$/m,
+    );
     expect(await published('_headers')).toContain(CRYSTELLE_VCARD_PATH);
   });
 

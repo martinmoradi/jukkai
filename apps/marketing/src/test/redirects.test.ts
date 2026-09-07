@@ -29,11 +29,11 @@ async function readRedirectRules(): Promise<RedirectRule[]> {
 }
 
 describe('_redirects', () => {
-  it('sends the printed business-card path to the contact page with its source tag', async () => {
+  it('keeps the printed business-card path and redirects to the clean contact URL', async () => {
     expect(await readRedirectRules()).toContainEqual({
       from: '/c/crystelle',
       status: 302,
-      to: '/contact/crystelle/?src=card-crystelle',
+      to: '/contact/crystelle/',
     });
   });
 
