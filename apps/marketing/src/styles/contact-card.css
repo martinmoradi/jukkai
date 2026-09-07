@@ -581,7 +581,8 @@ body {
   }
 }
 
-@media (min-width: 40rem) and (min-height: 33.001rem) {
+/* The enlarged rows and outer spacing need height as well as width. */
+@media (min-width: 40rem) and (min-height: 58rem) {
   .card {
     padding: 2.5rem 2rem 4.5rem;
   }
@@ -619,7 +620,7 @@ body {
   }
 }
 
-@media (min-width: 64rem) and (min-height: 33.001rem) {
+@media (min-width: 64rem) and (min-height: 58rem) {
   .card {
     padding-block: 3.5rem 5rem;
   }

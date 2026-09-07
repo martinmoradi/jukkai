@@ -60,6 +60,16 @@ dismissal once someone else regularly reviews product changes.
 
 ## Playwright
 
+For Contact Card Page layout changes, build the marketing app, start an owned
+preview on a free non-default port, then run
+`bun scripts/contact-card-layout-check.ts http://127.0.0.1:<port>`.
+This local `agent-browser` check asserts that all six links fit the viewport,
+targets are at least 44px, and the document does not scroll across 18 phone,
+tablet, desktop, and height-breakpoint cases. It waits for fonts, images, and
+entrance animations and closes its own browser session. Stop the owned preview
+after verification. This is a local regression check, separate from CI; it does
+not establish native iPhone/Android contact import or deployed Pages behavior.
+
 Do not put Playwright in the required gate yet.
 
 For the Astro workspace, `astro build`, Astro type checking, unit tests, ESLint,
