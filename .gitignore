@@ -44,6 +44,7 @@ coverage/
 !.vscode/settings.json
 
 # local agent state
-/.agents/
+/.agents/*
+!/.agents/product-marketing.md
 /.claude/
 /.codex/

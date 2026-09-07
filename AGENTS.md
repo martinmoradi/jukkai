@@ -65,6 +65,12 @@ remove them when the convention changes.
 
 ## Marketing App
 
+- Start delivery, research, design, and planning work with
+  `docs/operations/current-delivery.md`. The magazine release and October opening
+  are separate milestones. No teaser or full-stack work is on the current path.
+  Keep focused SEO work active; do not require exhaustive research before building.
+  The brand name is settled; the exact first-release sitemap remains open.
+
 - `apps/marketing` is an Astro workspace whose only route so far is Crystelle's
   Contact Card Page at `/contact/crystelle`. Keep its Astro, Turbo, Stylelint,
   Vitest, and generated-font tooling intact as design and implementation resume.

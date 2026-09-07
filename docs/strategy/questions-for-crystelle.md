@@ -1,110 +1,60 @@
-# Questions and validation queue
+# Open content inputs and website decisions
 
-Updated July 10, 2026 after Martin's conversation with Crystelle and the Annexe D
-working session. `docs/strategy/foundation.md` v1.8 is canonical.
+Updated 2026-09-07. [The foundation](foundation.md) v1.10 owns business truth;
+[current delivery](../operations/current-delivery.md) owns release scope.
+Only an input needed by the selected release content blocks that content. This is
+not a questionnaire Crystelle must complete before the website can be built.
 
-This file no longer treats every unknown as a Crystelle question. It separates
-operational inputs only she can provide from research/IA decisions Martin must make.
+## Already established
 
----
+- Jukkai by Crystelle Terrasson is the settled public brand.
+- The architecture practice has moved and already receives clients in Châteaugiron.
+  Leads normally call first; Martin does not treat temporary older address references
+  as an emergency. The official Jukkai opening remains October 2026.
+- The magazine points to jukkai.fr and is expected about a week from September 7;
+  the exact publication day is still to confirm.
+- No teaser; publish a polished, useful first website and expand it.
+- The old site initially stays available with an invitation banner to Jukkai.
+- Full-stack, Portal and signup infrastructure are outside the foreseeable scope.
+- Brand claims, audience priorities and offer distinctions remain in the foundation.
 
-## Crystelle inputs still needed for copy
+## Martin's decisions
 
-1. **Entry offer details.** The public frame is approved: « une mission déco avec
-   l'exigence d'une architecte d'intérieur ». Still needed: exact offer name, fixed
-   price or range, duration, inclusions, deliverable, and any travel boundary.
-2. **Current fee rules.** Working full-mission norm: roughly 12–14% of works for
-   standard budgets. Confirm from current lettres de mission: exact bands, minimums,
-   fixed-fee thresholds, and how conception-only / technical-preparation / full
-   chantier missions differ.
-3. **Portfolio content freeze.** Annexe D is a living shortlist. For each final row:
-   real location, project type, usable assets, naming/privacy constraints, and enough
-   facts to tell the project honestly. Existing public projects are working candidates,
-   not irrevocable launch promises.
-4. **Buisine scope.** Capture the broad furnishing/detail mission accurately. It is a
-   high-ceiling residential proof story, not currently proof of an artwork-placement
-   service.
-5. **Neuro-architecture examples.** For relevant crèche, healthcare/waiting-room, and
-   other B2B cases, identify the concrete design choices the training informed. Avoid
-   general health or performance promises.
-6. **Current insurance wording.** Read the live RC Pro and décennale attestation and
-   mirror its declared activities and mission scope exactly.
-7. **Galerie thesis.** `Galerie` is settled as category/nav language. Exact public
-   writing remains open. Candidate territory may be affirmative or contrastive:
-   « une galerie où l'on ne chuchote pas », « une galerie vivante », pushing the door,
-   and leaving with a coup de cœur.
-8. **Testimonials.** Identify a handful of clients for richer written testimonials
-   when time allows. This is desirable, not launch-blocking.
+The active Wayfinder map tracks these decisions; this list describes ownership,
+not a second task queue.
 
-## Operational inputs for content freeze / launch
+- Select the magazine-release page/content contract. Homepage plus general contact
+  is a working preference; the general contact page's relationship to Crystelle's
+  existing Contact Card Page is not settled.
+- Choose usable architecture images, artwork images and the first visual direction.
+  Martin plans new artwork photographs this week. No finished-Galerie hero is required.
+- Bound useful SEO work, reusing the local Claude SEO setup and July audit. Determine
+  how its evidence becomes page priorities and copy inputs without an exhaustive gate.
+- Choose the release contact hierarchy. Direct phone, email, booking or another
+  surface may be compared without presuming a form or building a backend.
+- Set the old-site banner wording and migration sequence. Coordinate Search Console,
+  Business Profile and external identity updates while preserving truthful information.
+  Google's eligibility/procedure does not reopen the chosen name.
+- Select which extra pages earn a place before the magazine release, based on ready
+  content and review capacity; otherwise schedule them for following sprints.
 
-1. New Châteaugiron address, public phone, opening hours, and itinerary/map details.
-2. Approved Galerie photography/renders for the temporary pre-opening state and the
-   steady-state page.
-3. Which existing Google-review excerpts may appear in the optional review module;
-   preserve exact wording, public attribution, and source.
-4. Final portfolio assets as they arrive:
-   - Tiers-Lieu and Nortene photography expected in September;
-   - Besnard photography expected in October, fast-follow;
-   - Le Capri new intervention, with the earlier Waouh work used only if it strengthens
-     the repeat-client story;
-   - Buisine if its assets and client context clear.
-5. The Galerie's post-opening visit state. Teaser copy uses « ouverture octobre 2026 »;
-   after opening, remove the temporary claim and show actual visit information.
+## Inputs to obtain when selected content needs them
 
-## Martin research / decision gates
+- **Visits:** actual public Galerie opening/visit arrangements and hours. Existing
+  architecture appointments in the office do not establish walk-in availability.
+- **Photos and projects:** selected assets, rights/consent, project location/type,
+  naming/privacy constraints and sufficient facts for the story. July's Annexe D
+  shortlist and photography dates are historical candidates, not a content freeze.
+- **Public offer details:** current scope, name, duration and price of entry missions;
+  current letters of mission if publishing fees or comparing mission depths.
+- **Specific proof:** exact insured activities from the current attestation if used;
+  project-level evidence before publishing neuro-architecture or environmental claims.
+- **Galerie wording:** exact public language and any artwork/artist attribution that
+  needs approval. Do not invent a lineup, event programme, prices or finished space.
 
-These are not Crystelle homework and must not be silently resolved by downstream copy
-or design.
+## Later inputs, not global launch blockers
 
-1. **IA / SEO confidence review.** Compare integrated, separated, and hybrid models.
-   Reassess primary navigation, homepage hierarchy/H1, B2B visibility, service-page
-   role, cost-guide priority, and the difference between indexed URLs and visible
-   storytelling. Until then, the current sitemap and exact homepage H1 are hypotheses.
-2. **Contact / conversion review.** Compare direct phone, direct Calendly, email, a
-   short form, and a contact-choice surface against Crystelle's actual recent leads.
-   Conversion means contact intent across channels, later reconciled to qualified
-   conversations. Contact-page views do not count.
-3. **Pricing simulator validation.** Conditional mini-product only. Prototype an
-   editable model offline, test it against historical quotes, and ship only if the
-   ranges remain useful and defensible. Real dated case studies come first.
-4. **Method follow-through.** The July 10 amendment already adds the missing Phase 3
-   comparison gate. Once a model is chosen, refine it if the research exposes another
-   blind spot.
-
-## Resolved at the July 10 checkpoint
-
-- `Galerie` replaces `L'art shop` as the working category and nav label; proposed URL
-  `/galerie/`.
-- The category may be framed affirmatively or by contrast as long as Jukkai makes it
-  its own. No exact thesis sentence is frozen.
-- Crystelle liked « une mission déco avec l'exigence d'une architecte d'intérieur ».
-- `30 ans de métier` is approved. The 2012 founding year appears only in narrative
-  context: Crystelle founded the studio in 2012; the story becomes Jukkai in 2026.
-- The 2023 My Green Cocoon label « Professionnel de la décoration éco-responsable »
-  is real. It is supporting proof, not a positioning pillar.
-- Neuro-architecture comes from real multi-month training and has concrete
-  project-specific applications. It is a design lens, not a degree badge.
-- Crystelle has current RC Pro and décennale coverage.
-- The commercial objective is to attract more substantial residential and B2B work
-  while preserving accessible entry missions.
-- Offer architecture has two axes: project size and mission depth.
-- The Galerie primarily enriches the brand, taste signal, and discovery. Artwork
-  placement may emerge naturally with receptive clients, but it is not a core service
-  or public financial-value promise.
-- Annexe D is a mutable shortlist. New projects do not block launch.
-- A new Google-review push is low priority. Existing reviews and future testimonials
-  may populate an optional module.
-- A dedicated artist page is not a priority. Instagram/direct networking remain the
-  real artist channel; the Galerie page needs at most a quiet contact route.
-- October 1 is the operational target. Public teaser language uses October 2026; the
-  full site transitions to steady-state visit information.
-
-## Later, blocks nothing now
-
-1. Exact art-buyer persona and three-year Galerie economics.
-2. Event calendar and artist-lineup publication.
-3. Post-opening art-price behaviour after real inventory exists.
-4. Client portal.
-5. Furniture partnerships / kickbacks.
-6. Dedicated artist page.
+Richer testimonials, additional portfolio stories, pricing simulator calibration,
+art-buyer/economic exploration, event programming, post-opening art prices, furniture
+partnerships and a dedicated artist page. The full-stack project requires a fresh
+future scope decision; old backend tickets are not an approved implementation plan.

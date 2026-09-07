@@ -1,214 +1,125 @@
 # Product Marketing Context
 
-_Last regenerated: 2026-07-10 from `docs/strategy/foundation.md` v1.8._
+_Last regenerated: 2026-09-07 from `docs/strategy/foundation.md` v1.10._
 
 ## Adapter contract
 
-This file adapts the canonical foundation for marketing skills. If it conflicts
-with `docs/strategy/foundation.md`, the foundation wins. Do not settle open IA,
-copy, pricing, proof, or contact decisions here.
+This is a derived marketing-skill adapter. The foundation wins on business truth;
+`docs/operations/current-delivery.md` owns current delivery scope and timing. Do not
+settle page, copy, pricing, proof, contact or visual decisions in this adapter.
 
-## Product overview
+## Current delivery context
 
-**One-liner:** Jukkai by Crystelle Terrasson is the umbrella for Crystelle's
-interior-architecture practice, Galerie, and physical place in Châteaugiron,
-serving Rennes and the région rennaise.
+Jukkai by Crystelle Terrasson is the settled brand. The practice has just moved and
+already receives architecture clients in Châteaugiron. Leads normally call first;
+Martin treats older address updates as planned transition work, not an emergency.
+The official Jukkai opening remains October 2026, distinct from the completed move.
 
-**Category:** Architecte d'intérieur / interior-architecture studio with a
-physical Galerie.
+The September magazine points to jukkai.fr and is expected about a week from
+September 7. The first website should explain Jukkai and improve on Studio Terrasson
+in design and content. Homepage plus a general contact page is a working preference,
+not an approved sitemap. Publish a useful first version, then expand. The old site
+initially remains available with a banner to Jukkai; domain migration timing is open.
 
-**Business model:** The architecture practice sustains the business; Jukkai
-carries the brand. No ecommerce or online art catalogue. Architecture pricing
-can be public when current and properly qualified; art prices remain off the
-pre-opening site.
+No teaser, API, database, Portal, custom publishing platform or signup backend is a
+current prerequisite. Focused SEO research remains useful for sitemap/copy decisions;
+exhaustive research is not a global gate before design or implementation.
 
-**Commercial direction:** Raise the practice's perceived ceiling and attract
-more substantial residential and B2B missions while keeping smaller conseil,
-mission déco, and targeted-transformation work welcome. This is a proof and
-presentation goal, not permission to call the studio « haut de gamme ».
+## Business and website jobs
 
-## Website jobs and measurement
+**Jukkai:** the umbrella for Crystelle's interior-architecture practice, Galerie and
+physical place in Châteaugiron, serving Rennes and the région rennaise.
 
-**Primary job:** Produce qualified interior-architecture enquiries. The current
-site mainly validates referrals; non-branded local search is the growth layer.
+The architecture practice sustains the business; Jukkai carries the brand. The
+primary website job is qualified architecture enquiries, through referral validation
+and relevant search discovery. Secondary jobs are Galerie visitability/curiosity,
+Instagram and physical discovery, and a quiet artist-contact route.
 
-**Conversion:** A visitor deciding to get in touch about a project, through a
-completed booking, form submission, phone call, or email. A contact-page view or
-calculator completion is consideration, not conversion. The real downstream
-outcome is a qualified conversation.
+Commercial direction: attract more substantial residential and B2B work while
+keeping smaller conseil, mission déco and targeted transformations welcome. This is
+a proof and presentation objective, not permission to use « haut de gamme ».
+No ecommerce or online art catalogue.
 
-**Contact architecture is open:** Phone, direct booking, a short form, and a
-contact-choice surface must be compared against recent lead behaviour. Do not
-hide the phone number to create cleaner attribution. Do not assume form-first or
-Calendly-after-submit.
+## Audiences and offers
 
-**Secondary jobs:**
+Priority: private architecture clients; B2B clients as an explicit growth objective;
+art visitors; artists as a lower-priority website audience. Art is accessible without
+being cheap or sold as an investment.
 
-- Make the Galerie visitable: address, hours, scene, and expectations.
-- Offer artists a quiet contact route. Instagram and direct relationships remain
-  the real artist-networking surfaces.
-- Support Instagram discovery and physical foot traffic.
+One identity: architecte d'intérieur. Keep project size separate from mission depth.
+Project sizes include conseil/déco, targeted transformation, full renovation and
+professional spaces. Mission depths include conception, technical preparation and
+full mission with chantier follow-up within the actual contract/insurance scope.
 
-## Audiences
+Crystelle approved « une mission déco avec l'exigence d'une architecte d'intérieur ».
+Exact offer names, fees, minimums and inclusions remain operational inputs when the
+selected content needs them. The July 12–14% full-mission figure is an unconfirmed
+working range, not ready public copy. Do not promise an unqualified free instant
+booking; confirm the lead sequence before describing it.
 
-1. **Private architecture clients:** full renovation, modernisation, targeted
-   transformation, and smaller conseil or mission déco. Their central question
-   is whether they can trust Crystelle's eye and competence.
-2. **B2B clients, explicit growth target:** workplaces and other professional or
-   ERP spaces. They need process, responsibility, references, and a strong
-   aesthetic result. Their IA treatment remains open.
-3. **Art visitors:** not necessarily collectors. They need an approachable,
-   visitable Galerie where buying from a coup de cœur feels permitted.
-4. **Artists, low website priority:** served primarily through Instagram and
-   Crystelle's direct network.
+## Brand and voice
 
-**Anti-persona:** Cheap-decoration shoppers, catalogue-ecommerce visitors, or
-people who negotiate art prices without recognising the artist behind the work.
+- Jukkai by Crystelle Terrasson is settled; do not reopen the name through GBP work.
+- Keep the full brand in identity/machine contexts and its byline subordinate in
+  the lockup. Running copy weaves Jukkai and Crystelle rather than repeating the
+  compound everywhere. The foundation owns the detailed name-weight rules.
+- Architecture is the commercial center; Jukkai owns the brand/experience center.
+  This does not determine nav, page count, homepage H1 or CTA mechanically.
+- The Galerie enriches the world and signals taste. It is not a proven art-placement
+  service or forced cross-sell. Its public category is `Galerie`; `/galerie/` is a
+  proposed future URL, not a required first-release page.
+- Voice: warm but not soft, colourful but not loud, accessible but not cheap,
+  expert but not academic, rock but not punk. « Chaque contrainte est un terrain de jeu. »
 
-## Offer architecture
+## Claims and content
 
-One identity, always architecte d'intérieur, with two dimensions.
+- « Crystelle et Laura, toutes deux architectes d'intérieur diplômées » is a team
+  fact. Never shorten it to « 2 architectes » or use it as a standalone proof badge.
+- « 30 ans de métier » means Crystelle's career. The studio was founded in 2012;
+  Jukkai is new in 2026. Never imply Jukkai has existed since 2012.
+- The 2023 My Green Cocoon label is « Professionnel de la décoration éco-responsable ».
+  Supporting proof only, not a broad environmental guarantee or invented certification.
+- Neuro-architecture training may inform specific evidenced projects; it is not a
+  degree or universal health/performance claim.
+- Insurance statements must match current coverage and mission scope.
+- « ouverture octobre 2026 » describes the place's upcoming official opening. Do
+  not imply the architecture practice is waiting to start receiving clients.
+- Art-placement track record is unproven. Vision framing is possible; past-tense
+  claims, financial-return promises, invented lineup/events and art prices are not.
+- Architecture pricing may be public when current and qualified. A pricing page,
+  simulator, complete portfolio or bespoke testimonials are not launch prerequisites.
 
-**Project size:**
+Good finished-Galerie photography is lacking. Martin plans selected interior-design
+images and photographs of newly received artworks. Selection and publication rights
+remain to confirm. Do not make a Galerie photograph mandatory for the hero.
+Existing brand masters and contact-card work are useful; provisional visual studies
+do not automatically become approved website design.
 
-1. Conseil / mission déco. The concept exists; exact name, fee, and scope remain
-   operational inputs.
-2. Transformation ciblée.
-3. Rénovation complète.
-4. Espaces professionnels.
+## SEO, transition and measurement
 
-**Mission depth:**
+Rennes is the commercial/search geography; Châteaugiron is the physical anchor;
+« région rennaise » is the natural service-area phrase. Old sitemap, H1, B2B placement
+and service-page hypotheses require judgment; keywords do not mechanically create
+pages. Every H1 must be visible, useful and semantically real.
 
-1. Conception / travail intellectuel.
-2. Préparation technique for the companies that will execute.
-3. Mission complète avec suivi de chantier, contractor coordination, and
-   assistance through reception within the contract and insurance scope.
+Keep Studio Terrasson available with a banner initially. Prepare useful old-to-new
+URL destinations and Search Console operations for the actual migration. The public
+brand is settled; Google's rebrand eligibility, verification and review handling are
+external procedures to investigate, not guarantees or reasons to rename the brand.
 
-The site must not blur conception-only and full-mission responsibility. The
-working norm for a standard full mission is roughly 12–14% of the construction
-budget, pending confirmation of minimums, fixed-fee exceptions, and current
-letter-of-mission wording. Smaller projects may move to a fixed fee; the threshold
-and amount remain operational inputs.
+ADR-0006 owns analytics: one explicit Cloudflare Web Analytics beacon in production,
+separate from previews. Business conversion means contact intent leading toward a
+qualified conversation. Current page analytics does not establish custom conversions,
+QR attribution or successful contact import. Do not reintroduce GA4 by copying an old
+migration checklist.
 
-Crystelle offers a free first project meeting after qualification, according to
-Martin's current understanding. Do not present it as an unqualified instant-booking
-promise until the real lead sequence is confirmed.
+## Inputs and authority
 
-Crystelle approved the framing « une mission déco avec l'exigence d'une
-architecte d'intérieur ». Décoration is allowed when the architecte d'intérieur
-identity and scope remain clear.
+Martin owns page choices, research scope, content/design direction and transition
+planning. Crystelle supplies or validates business commitments Martin cannot
+confidently represent. Ask only for inputs the selected content needs; do not turn
+every unknown into homework or a site-wide launch blocker.
 
-Pricing clarity should begin with dated real cases and explain the split between
-technical necessities, construction, fit-out/furnishing, and fees. A simulator
-is a conditional later tool: build it only with an editable model, honest ranges,
-and non-contractual caveats. It should estimate a likely Jukkai mission from
-declared scope and budget, not claim one objective project cost before technical
-diagnosis.
-
-## Positioning and differentiation
-
-- Jukkai is one umbrella: architecture practice, Galerie, and place.
-- The public brand is **Jukkai by Crystelle Terrasson**, preserving referral and
-  SEO continuity. The full compound belongs in machine/legal layers and the
-  subordinate lockup; running copy weaves « Jukkai » and « Crystelle »
-  separately.
-- Interior architecture remains the commercial center. Jukkai and the Galerie
-  own the emotional world and differentiation. This does not mechanically decide
-  the nav, page count, homepage H1, or CTA destination.
-- The Galerie enriches Crystelle's universe, signals taste, and raises the
-  practice's perceived ceiling. It is a halo and a natural opportunity for
-  receptive clients, not a forced cross-sell or a named art-investment service.
-- Art, B2B work, a substantial furnished restaurant project, and strong detail
-  photography can expand the portfolio's visible ceiling without excluding
-  accessible missions.
-- Architecture credibility includes UNAID, 30 years in the profession, current
-  insurance, contractor coordination, and full-project responsibility.
-
-## Public claims and proof
-
-Allowed claims:
-
-- **Team wording:** « Crystelle et Laura, toutes deux architectes d'intérieur
-  diplômées ». This is an accurate team description, not a standalone proof badge.
-  Never shorten it to « 2 architectes ».
-- **30 ans de métier:** Crystelle's personal career only.
-- **Studio founded in 2012:** always contextualise that Crystelle founded the
-  former studio in 2012; Jukkai is new in 2026.
-- **2023 label:** exact wording « Professionnel de la décoration
-  éco-responsable », awarded by My Green Cocoon. Supporting proof only, never a
-  broad environmental-performance promise.
-- **Opening October 2026:** temporary teaser/pre-opening copy, removed after
-  opening.
-- **Neuro-architecture:** Crystelle completed substantive training. Use as a
-  project-relevant lens, especially for crèches, medical waiting rooms, and B2B,
-  not as an official degree or universal badge.
-
-Proof candidates still need per-project confirmation: Annexe D candidates,
-Buisine, Le Capri as a repeat-client restaurant transformation with broader
-furnishing scope, and other named residential/B2B projects listed in the
-foundation. Existing Google reviews can be used while bespoke testimonials are
-collected. A pre-migration review campaign is helpful but does not block launch.
-
-## Galerie promise
-
-**Canonical category:** Galerie in navigation and public structure, with
-`/galerie/` as the proposed URL. « Art shop » may be explanatory texture but is
-too ambiguous to be the category label.
-
-The exact thesis remains open. The accepted direction is to make Galerie feel
-distinctly Jukkai, affirmatively or by contrast. Candidate territory includes
-« une galerie où l'on ne chuchote pas », « une galerie vivante », pushing the
-door, and leaving with a coup de cœur.
-
-No ecommerce, product-grid, catalogue, invented artist lineup, invented events,
-or public art-as-financial-investment claim. A full artist page is deliberately
-low priority.
-
-## Customer language
-
-**Use:** Jukkai; Crystelle; architecte d'intérieur; Rennes; Châteaugiron; région
-rennaise; Ille-et-Vilaine (35); Galerie; coup de cœur; mission déco;
-transformation ciblée; rénovation complète; espaces professionnels; « Chaque
-contrainte est un terrain de jeu ».
-
-**Avoid:** « haut de gamme », « luxe », generic QVT copy, cold-gallery jargon,
-boutique/magasin/product-grid language, « prix sur demande », invented eco
-claims, public financial-investment promises, and past-tense art/architecture
-track-record claims without proof.
-
-**Voice:** Warm but not soft; colourful but not loud; accessible but not cheap;
-expert but not academic; rock but not punk. Direct, sensory, local, and precise.
-
-## IA and SEO guardrails
-
-- Architecture is the commercial priority, but the current sitemap, homepage
-  H1, primary nav, service-page role, B2B visibility, and contact hierarchy are
-  provisional until the IA/SEO confidence review.
-- Compare integrated, separated, and hybrid site models. Distinguish indexable
-  URLs from primary navigation and visible storytelling.
-- Every final H1 must be visible, useful, and semantically real. Exact-match
-  « Architecte d'intérieur à Rennes » is a candidate, not a mandatory homepage
-  string.
-- Rennes is the commercial/search claim; Châteaugiron is the physical anchor;
-  région rennaise is the natural service-area phrase; Ille-et-Vilaine (35) is
-  supporting vocabulary.
-- Preserve migration continuity from Studio Crystelle Terrasson and one Google
-  Business Profile.
-
-## Open inputs
-
-- Choose the IA model, primary navigation, homepage semantics, B2B visibility,
-  and cost-guide timing through the dedicated research context.
-- Decide the contact-path hierarchy and analytics model from research plus
-  Crystelle's real lead behaviour.
-- Confirm exact offer names, current fees, minimums, exceptions, and scope.
-- Confirm project slate, permissions, facts, budgets, dates, and available
-  photography per case.
-- Obtain current insurance wording suitable for public use.
-- Choose exact Galerie thesis and price-behaviour wording.
-- Collect 3–5 first-party testimonials when operationally possible; use real
-  existing Google reviews in the meantime.
-- Confirm opening hours, phone/NAP, temporary opening copy, and launch visuals.
-
-**Canonical source:** `docs/strategy/foundation.md` v1.8, especially sections
-1–13 and the July 10 amendment.
+See `docs/strategy/questions-for-crystelle.md` for current input ownership and the
+Wayfinder map for live decisions. Evidence, proposals, working preferences and
+settled decisions must remain distinct.
