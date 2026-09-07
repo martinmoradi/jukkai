@@ -2,9 +2,9 @@
 
 Bun + Turborepo workspace for the Jukkai product repo.
 
-`apps/marketing` contains the configured Astro frontend toolchain. It currently
-has no page route; brand, design, research, and content work can progress while
-the next implementation takes shape.
+`apps/marketing` contains the Astro frontend and Crystelle’s Contact Card Page
+at `/contact/crystelle/`. See the short
+[contact details and portrait editing guide](docs/operations/crystelle-contact-card.md).
 
 ## Commands
 
