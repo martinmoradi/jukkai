@@ -1,134 +1,203 @@
-# Claude SEO capability map for the site-planning inquiry
+# Claude SEO capability map and prompting guide
 
-**Status:** provisional tool calibration note, not Jukkai strategy or a research-run plan  
-**Checked:** 2026-07-12  
-**Installed suite:** AgriciDaniel/claude-seo v2.2.0, commit `6cf1ea9fe4c2088b2ad3089797f846850fd66164`
+**Status:** working tool guidance, not approved Jukkai strategy or a queued run plan.
 
-## Bottom line
+**Updated:** 2026-09-08 against upstream documentation, local plugin source and the
+[research log](seo-research-log.md), through reviewed run 18.
 
-The installed suite can retrieve most of the evidence needed to begin the
-site-planning inquiry: the current site's public pages, owned GSC/GA4 data,
-localized synthetic SERPs, keyword datasets, public Maps/GBP/review data, and
-vendor-indexed competitor and backlink data. It can also derive comparisons,
-scores, clusters, geo-grids, and action lists.
+## Use this alongside the research log
 
-Those are not the same kind of claim. The suite's audit reports routinely mix:
+The log owns accumulated findings, evidence paths, corrections and the next
+conversation. This map helps the reviewing agent choose a tool and formulate the
+next useful prompt. Read the log first, then consult the relevant row here; do not
+restart July's calibration sequence. Research remains bounded by
+[current delivery](../operations/current-delivery.md) and
+[method](../operations/method.md), with business facts in the
+[foundation](../strategy/foundation.md). Neither tool output nor this map approves
+pages, offers, copy or migration actions.
 
-- **Retrieved data:** API responses, rendered pages, GSC rows, public reviews.
-- **Derived analysis:** health scores, difficulty, intent, traffic estimates,
-  sentiment, Share of Local Voice, overlap and clustering.
-- **Prescriptions:** proposed fixes, priorities, pages, briefs and roadmaps.
+Martin runs Claude SEO in `/home/martin/src/pro/seo`, usually in fresh contexts.
+His September 8 preference is **native commands with necessary measurement and
+scope settings, without loading Jukkai strategy into Claude**. Claude's analysis
+is useful input; the Jukkai-aware reviewer interprets saved evidence, compares runs
+and discusses implications here. Explain what a proposed query will resolve before
+recommending it. Question quality matters more than minimising every API call.
 
-For Jukkai, persist the retrieved response and its parameters first. Keep the
-derived layer labelled. Do not let the suite's prescriptions decide strategy,
-page architecture, comparison cities, editorial direction, or business fit.
+## Documentation and local availability
 
-The plugin and its DataForSEO and Firecrawl MCP servers are currently wired in
-the dedicated `/home/martin/src/pro/seo` workspace, not this repository. Its
-[smoke-test log](/home/martin/src/pro/seo/smoke-tests.md) records successful live
-calls for a Rennes/French organic SERP, GSC, GA4, PSI/CrUX fallback and a
-Firecrawl scrape. The installed commit matches current upstream `main`.
-[Upstream commands](https://github.com/AgriciDaniel/claude-seo/blob/6cf1ea9fe4c2088b2ad3089797f846850fd66164/docs/COMMANDS.md)
+Sources checked September 8:
 
-## Capability map
+- Upstream [Commands Reference](https://github.com/AgriciDaniel/claude-seo/blob/a1480c7e590b16001bd9dc1627eacdcd44d580f9/docs/COMMANDS.md)
+  and [DataForSEO extension README](https://github.com/AgriciDaniel/claude-seo/blob/a1480c7e590b16001bd9dc1627eacdcd44d580f9/extensions/dataforseo/README.md),
+  pinned to the observed `main` commit `a1480c7e590b16001bd9dc1627eacdcd44d580f9`.
+  The [moving command reference](https://github.com/AgriciDaniel/claude-seo/blob/main/docs/COMMANDS.md)
+  is the discovery source for later updates.
+- Local [workspace instructions](/home/martin/src/pro/seo/AGENTS.md),
+  [vendoring notes](/home/martin/src/pro/seo/vendor/claude-seo-marketplace/README.md)
+  and [plugin manifest](/home/martin/src/pro/seo/vendor/claude-seo-marketplace/claude-seo/.claude-plugin/plugin.json):
+  upstream base **2.2.5**, local manifest **2.2.5-local.1**, with workspace patches
+  for MCP access, findings persistence, audit delegation and model/effort settings.
+  This replaces the July v2.2.0 baseline; it does not claim local source equals
+  current upstream or that a running Claude session has reloaded it.
+- The [research log](seo-research-log.md#reviewed-runs) records September 8 use of
+  DataForSEO SERPs, keywords, volume, ranked terms, SXO and Google Search Console.
+  GA4, Firecrawl and performance smoke records are historical; not every documented
+  command has been exercised today. No live API or runtime test was made for this
+  documentation refresh.
 
-| Need                                                   | Smallest relevant surface                                                                                                     | Retrieved                                                                                                                                           | Derived or prescribed                                                                                                                          | Required scope and provenance                                                                                                                                                                                                                                 | Cost, risk and inability                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Existing-site inventory and crawl                      | `/seo firecrawl map`, `crawl`, `scrape`; `/seo page`; `/seo audit` only after calibration                                     | URLs, rendered Markdown/HTML, metadata, links, screenshots; raw fetch/render results                                                                | URL-pattern counts, thin/duplicate-content flags, health scores, priorities                                                                    | URL; for crawl: limit, depth, include/exclude paths, formats. Save raw URL inventory and crawl payload with timestamp and parameters before an audit report. Full audit writes `{domain}-audit/`; individual Firecrawl calls do not promise repo persistence. | Firecrawl is credit-metered. Map before crawl; target a small sample. A crawl sees public/renderable pages, not CMS truth, analytics, indexation or business value. DataForSEO `/onpage` is page analysis, not proven exhaustive domain crawling. JS/interactions and crawl blocks can produce gaps. [Firecrawl skill](https://github.com/AgriciDaniel/claude-seo/blob/6cf1ea9fe4c2088b2ad3089797f846850fd66164/extensions/firecrawl/skills/seo-firecrawl/SKILL.md)                                                        |
-| Owned search performance                               | `/seo google gsc`; `inspect`; `sitemaps`                                                                                      | Clicks, impressions, CTR, average position grouped by query/page; indexed-version status; submitted sitemap status                                  | “Quick wins”, anomaly labels and recommended fixes                                                                                             | Correct GSC property, date range, search type, dimensions, filters and row pagination. Default suite query is 28 days, `query,page`, web, 1,000 rows. Save JSON plus property form and dates.                                                                 | Free API quota. Search Analytics returns top rows, not guaranteed exhaustive data; country is its geographic dimension, not city. URL Inspection describes Google's indexed version, not a live test. It cannot establish Rennes-vs-other-city demand or SERP composition. [Search Analytics API](https://developers.google.com/webmaster-tools/v1/searchanalytics/query), [URL Inspection](https://developers.google.com/webmaster-tools/v1/urlInspection.index/inspect)                                                  |
-| Owned audience behaviour                               | `/seo google ga4`; `ga4-pages`                                                                                                | Organic sessions/users/pageviews and landing pages; further GA4 dimensions can be queried directly                                                  | Engagement interpretations and page priorities                                                                                                 | Authorized GA4 property, date range, channel filter, dimensions and metrics. Save request and response, including sampling/quota metadata where present.                                                                                                      | Free, token-quota based; high-cardinality or complex reports cost more quota and data can be sampled or thresholded. GA4 city describes visitor/event geography, not the location of a simulated SERP and not unmet demand. [GA4 reporting](https://developers.google.com/analytics/devguides/reporting/data/v1/basics), [data expectations](https://developers.google.com/analytics/devguides/reporting/data/v1/reporting-data-expectations)                                                                              |
-| Real-user performance                                  | `/seo google pagespeed`, `crux`, `crux-history`                                                                               | Lighthouse lab data plus CrUX LCP/INP/CLS at URL or origin level and historical collection periods                                                  | Good/poor ratings, trend direction and performance recommendations                                                                             | URL/origin, form factor and collection dates. Save raw JSON and state whether URL or origin data was returned.                                                                                                                                                | Free API quota. Small sites may have no eligible CrUX data; that is absence of field data, not good performance. CrUX is 28-day aggregated experience data and cannot establish demand, ranking causation or content value. History defaults to 25 periods but supports 1–40. [CrUX API](https://developer.chrome.com/docs/crux/guides/crux-api), [History API](https://developer.chrome.com/docs/crux/history-api)                                                                                                        |
-| Keyword discovery, volume, trends and difficulty       | `/seo dataforseo keywords`, `volume`, `difficulty`, `intent`, `trends`; Google Ads commands only at suite Tier 3              | Vendor keyword ideas; approximate monthly volume/CPC/paid competition; monthly history; Trends series                                               | DataForSEO organic difficulty and intent are proprietary estimates/classifications; trend direction and opportunity labels are interpretations | Explicit France/French and the intended location code for every call; seed/list; date range for trends. Never accept suite defaults (`US`, `en`). Save returned update timestamps and raw rows.                                                               | Paid per API task/batch. Batch first. Ads competition is paid competition, not organic difficulty; Trends is relative, not volume; small/local phrases may be zero or absent. Vendor coverage and update cadence limit conclusions. [DataForSEO Labs overview](https://docs.dataforseo.com/v3/dataforseo_labs-google-overview/), [Google Ads volume](https://docs.dataforseo.com/v3/keywords_data-google_ads-search_volume-live/), [Trends overview](https://docs.dataforseo.com/v3/keywords_data-google_trends-overview/) |
-| Localized organic SERPs                                | `/seo dataforseo serp <keyword>` using `serp_organic_live_advanced`                                                           | Ordered organic items and SERP features, including local pack/PAA/featured elements when returned                                                   | Intent/page-type summaries, domain dominance and “opportunity” conclusions                                                                     | Keyword, Rennes location code/name or coordinate, `fr`, device, depth, timestamp and endpoint/method. Hold all parameters constant across comparisons. Save the complete response, including `check_url`, task id and returned cost.                          | Paid per task; depth and operators can multiply price. It is a controlled, non-personalized synthetic snapshot, not every resident's SERP and not stable rank truth. It can show result composition, not why Google ranked it or which Jukkai page should exist. [Organic Live Advanced](https://docs.dataforseo.com/v3/serp-se-type-live-advanced/)                                                                                                                                                                       |
-| Maps, public GBP, reviews and nearby entities          | `/seo maps gbp`, `reviews`, `competitors`; DataForSEO Maps SERP, My Business Info and Google Reviews                          | Public profile fields, categories, address/contact/hours, rating distribution, review text/timestamps/responses, and location-specific Maps results | Completeness score, sentiment, velocity, competitor density, fake-review flags and recommendations                                             | Resolve target identity by CID/place ID first. For each call record keyword, coordinates/location, language, device, depth/sort, timestamp and target identifier. Save raw profiles/reviews separately from scoring.                                          | Paid; public observation is not authenticated GBP management/performance data. Reviews are incomplete social evidence; sentiment/fake flags are heuristics. A public profile audit cannot reveal owner-console settings, actions or edits. [Business Data overview](https://docs.dataforseo.com/v3/business_data-google-overview/), [Google Business Profile APIs](https://developers.google.com/my-business/content/overview)                                                                                             |
-| Geo-grid visibility                                    | `/seo maps grid`; repeated Maps SERP calls using coordinates                                                                  | Target position returned at each coordinate for a fixed query/time                                                                                  | Grid generation, average rank and Share of Local Voice are suite calculations                                                                  | Verified CID/place ID, one keyword, center, radius/grid, zoom, language, device and collection window. Save every point-level response.                                                                                                                       | Potentially many paid tasks: a 7x7 grid means 49 tasks per keyword. Bundled price examples have drifted, so use the suite's pre-call cost guard and current provider calculator/returned cost. One grid is a volatile diagnostic, not a durable market boundary or ranking cause. [Maps task parameters](https://docs.dataforseo.com/v3/serp/google/maps/task_post/), [suite Maps method](https://github.com/AgriciDaniel/claude-seo/blob/6cf1ea9fe4c2088b2ad3089797f846850fd66164/skills/seo-maps/SKILL.md)               |
-| Competitor domains, ranked terms and estimated traffic | `/seo dataforseo competitors`, `ranked`, `traffic`, `subdomains`, `top-searches`; use `relevant_pages` utility where useful   | Vendor-indexed ranking keywords/pages, overlap, positions, SERP features and estimated traffic                                                      | Competitor designation, traffic value and opportunity/gap conclusions                                                                          | Domain plus explicit France/French database/location, result limit and timestamp. Candidate domains should come from the calibrated local SERPs/Maps or business knowledge, not from the tool alone. Save raw records and vendor update times.                | Paid. “Competitor” means search-result overlap, not commercial or creative comparability. Traffic is an estimate, not competitor analytics. Weakly indexed domains can look falsely unimportant. [DataForSEO Labs capabilities](https://docs.dataforseo.com/v3/dataforseo_labs-google-overview/)                                                                                                                                                                                                                           |
-| Keyword/backlink intersections                         | `/seo dataforseo intersection`; domain/page intersection utilities                                                            | Shared/unique vendor-indexed keywords or referring sources                                                                                          | Gap, relevance, attainability and priority are interpretations                                                                                 | Two or more evidence-selected domains/pages, France/French for keyword intersections, filters/limits and timestamp. Persist domain sets and raw rows.                                                                                                         | Paid; backlink intersection is an always-confirm operation in the suite. Overlap does not prove topical authority, link quality, attainable coverage, or a page requirement. [Domain intersection](https://docs.dataforseo.com/v3/dataforseo_labs-google-domain_intersection-live/), [page intersection](https://docs.dataforseo.com/v3/dataforseo_labs-google-page_intersection-live/)                                                                                                                                    |
-| Backlinks                                              | `/seo dataforseo backlinks`; `/seo backlinks` has Common Crawl/Moz/Bing alternatives                                          | Vendor index summary, referring domains/pages, anchors and new/lost records                                                                         | Domain rank, spam/toxicity and link-priority judgments                                                                                         | Exact domain/URL mode, filters/limits, timestamp and data source. Save the actual links behind summaries.                                                                                                                                                     | Paid multi-call workflow; full backlink retrieval requires confirmation. Every index has coverage bias; vendor rank/spam metrics are heuristics. It cannot establish relationship quality, editorial endorsement or whether a link is realistically obtainable. [Backlinks API overview](https://docs.dataforseo.com/v3/backlinks-overview/)                                                                                                                                                                               |
-| Cross-city comparable queries                          | Repeat the localized SERP and keyword calls; no special command is needed                                                     | Like-for-like SERP composition and, where supported, location-specific keyword rows                                                                 | Differences in dominant page types, entities, local-pack presence and intent pattern                                                           | One stable query corpus; same French language, device, depth, endpoint and collection window; only location changes. Store a comparison manifest.                                                                                                             | Each city multiplies paid tasks. GSC cannot do city comparison; GA4 city is audience location. Separate Trends requests are not directly comparable. The instrument can reveal differences, but cannot select the right comparison cities or prove Rennes will evolve like them.                                                                                                                                                                                                                                           |
-| Editorial specimens and domain checks                  | Firecrawl `scrape`/`search`; `/seo page`, `content`, `sxo`; DataForSEO `ranked`, `relevant_pages`, `content`, `tech`, `whois` | Page content/structure/media/metadata; search visibility; vendor content metrics; detected technology and WHOIS fields                              | Specimen coding, quality/readability/sentiment, editorial lessons and recommendations                                                          | Choose specimens from recurring SERP domains plus intentional non-search references. Save rendered source and a human observation sheet separately from vendor scores. Record URL and capture date.                                                           | Scraping and some vendor calls consume credits. WHOIS is not domain-history or editorial-provenance proof; the suite has no documented archive/Wayback workflow. A visible or high-scoring specimen cannot establish Jukkai's voice, production capacity, business relevance or page architecture. [suite DataForSEO surface](https://github.com/AgriciDaniel/claude-seo/blob/6cf1ea9fe4c2088b2ad3089797f846850fd66164/skills/seo-dataforseo/SKILL.md)                                                                     |
+The upstream `/seo` spelling is shorthand; Martin uses `/claude-seo:seo …`.
+Slash commands orchestrate workflows and can make multiple calls. Before using
+unfamiliar syntax, inspect the corresponding local skill under
+`/home/martin/src/pro/seo/vendor/claude-seo-marketplace/claude-seo/` and the tools
+available in that Claude session. These tools are not automatically exposed here.
+Do not reinstall working tooling as a research prerequisite. For an actual runtime
+problem, `/seo doctor` is diagnostic; `/seo setup` changes the runtime.
 
-## Provenance contract for any paid or comparative call
+## Choose the surface by the question
 
-Save a small manifest beside the raw result:
+Commands below follow the two upstream references above. Examples identify the
+workflow, not guaranteed endpoint coverage, billing or approved follow-up work.
 
-```yaml
-instrument: dataforseo | firecrawl | google
-endpoint_or_command: ...
-collected_at: ...
-target_or_query: ...
-location: { method: code|name|coordinate, value: ... }
-language: fr
-device: mobile|desktop|null
-depth_or_limit: ...
-date_range: ...
-provider_task_id: ...
-returned_cost_usd: ...
-source_kind: retrieved
+| Question                                                                  | Relevant native surface                                                                                                                 | What to retain and how to use it                                                                                                                                                                                                                                                             |
+| ------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Which results and discovery surfaces appear for this phrase?              | `/seo dataforseo serp <keyword>`                                                                                                        | Fixed location, language, device and depth; organic URLs, absolute positions and returned Maps, images, PAA and AIO items. A saved SERP is a dated synthetic observation, not a traffic share or ranking explanation.                                                                        |
+| What adjacent vocabulary is worth investigating?                          | `/seo dataforseo keywords <seed>`                                                                                                       | Suggestions, ideas and related terms with seeds, limits, totals and dates. Record noise and separately seeded expansions. Exhausting an endpoint result set does not exhaust the topic.                                                                                                      |
+| Can a fixed phrase list be compared numerically?                          | `/seo dataforseo volume <keywords>`; `difficulty`, `intent`, `trends` when relevant                                                     | Keep each metric's source and geography separate. Ads competition is not organic difficulty; intent is vendor classification; Trends is relative interest. Missing values and close variants cannot produce a market-size total.                                                             |
+| Which pages and terms appear in a domain's indexed footprint?             | `/seo dataforseo ranked <domain>`                                                                                                       | Preserve ranking dates, URLs, organic/local distinctions, limits and vendor estimates. Runs 3 and 14 are reusable examples. A Labs footprint is neither a full site inventory nor current competitor analytics.                                                                              |
+| Which domains overlap, or which gaps deserve examination?                 | `/seo dataforseo competitors <domain>`, `intersection <domains>`                                                                        | Start with domains selected for the question. Distinguish keyword from backlink intersection. Search overlap does not establish commercial comparability or a page requirement. `traffic`, `subdomains` and `top-searches` are additional domain lenses, not automatic next steps.           |
+| How does a particular page address a search need?                         | `/seo sxo <url> <keyword>`                                                                                                              | Pair the actual page with a specified query and a reusable SERP where suitable. Save HTML and rendered evidence for layout claims. Run 5 demonstrates reuse. Scores, personas and proposed wireframes are interpretations, not observed users or Google requirements.                        |
+| Do candidate phrases suggest shared or separate content?                  | `/seo cluster plan <seed>`; bare `/seo cluster <seed>` is shorthand                                                                     | Supply the bounded comparison question and existing captures. The native workflow expands keywords and proposes architecture; it is larger than a simple overlap calculation. For two already captured queries, compare saved URL lists here first. Thresholds do not approve separate URLs. |
+| What source content exists, or what does this specific page actually say? | `/seo firecrawl map <url>`, `scrape <url>`, `crawl <url>`; `/seo page <url>`, `/seo content <url>` for analysis                         | Map for inventory, scrape for a named content question, scope a crawl explicitly. Preserve source separately from audits. Open competitor pages when their content can resolve an uncertainty, not as a routine second audit.                                                                |
+| What already brings visitors to Studio Terrasson?                         | `/seo google gsc <property>`; `ga4`, `ga4-pages` for audience behaviour                                                                 | Reuse run 8 first. GSC property is `https://www.studioterrasson.fr/`; the workspace records no data in its domain property. Save actual dates, dimensions, filters and coverage. GSC query omissions prevent a complete branded share; GA4 geography is audience location, not unmet demand. |
+| What URLs, links and indexing state need preservation?                    | Firecrawl inventory; `/seo google inspect <url>`, `sitemaps <property>`; `/seo backlinks <url>` or `/seo dataforseo backlinks <domain>` | Combine owned performance, URL inventory and link evidence for a later mapping question. Index inspection is distinct from live-page checking; sitemap submission is not indexation. Backlink sources have coverage bias. None of these commands authorises redirects or a domain move.      |
+| What is publicly visible about a local business?                          | `/seo local <url>`; `/seo maps gbp`, `reviews`, `competitors`, `nap`; `/seo dataforseo listings <keyword>`                              | Resolve identity and preserve public fields, dates and locations. Public profiles do not reveal owner-console state or grant editing access. Review counts cannot establish a ranking threshold. `maps grid` multiplies requests: scope identity, coordinates and grid size first.           |
+| Are useful specimens outside text organic results?                        | `/seo dataforseo serp-images <keyword>`; `/seo images serp <keyword>`                                                                   | Run 18 already contains image destinations beyond its organic list. Inspect those saved destinations first if sufficient. Image SERP retrieval and image/search analysis are different workflows; neither measures image traffic or mandates a visual style.                                 |
+| Is a selected page technically ready?                                     | `/seo technical <url>`, `schema`, `images`, `sitemap`; `/seo google pagespeed`, `crux`, `crux-history`; `/seo dataforseo onpage <url>`  | Use for an implementation or release question. Lab and field measurements differ; missing CrUX is not a pass. `/seo audit` is a broad workflow, not the default continuation of keyword research.                                                                                            |
+
+### Analysis and generation have a different role
+
+`/seo content-brief <topic or url>` can turn a selected topic into a proposed
+outline. `/seo plan local` generates wider strategy; `/seo cluster plan --from
+strategy` imports a plan, `cluster map` redraws its visualization, and `cluster
+execute` proceeds toward content creation or briefs. Use these deliberately after
+identifying the question and relevant inputs. They do not own Jukkai's sitemap.
+
+SXO also offers `wireframe <url>` and `personas <url>` (the latter skips SERP
+analysis). Clustering and SXO share evidence but answer different questions:
+relationships among searches versus how a specific page serves a search need.
+Native templates, word counts, branded-query exclusions and persona assumptions
+remain tool judgments. In particular, branded-query exclusion cannot govern the
+Studio Terrasson transition. Local workflow details are in
+[seo-sxo](/home/martin/src/pro/seo/vendor/claude-seo-marketplace/claude-seo/skills/seo-sxo/SKILL.md)
+and [seo-cluster](/home/martin/src/pro/seo/vendor/claude-seo-marketplace/claude-seo/skills/seo-cluster/SKILL.md).
+
+The DataForSEO reference also lists `content`, `tech`, `whois`, `serp-youtube`,
+`youtube`, `ai-scrape` and `ai-mentions`. These address content-index, technology,
+registration, video or AI-platform questions; they are not missing mandatory
+research steps. An AIO captured in Google SERPs is different evidence from a
+ChatGPT scrape or LLM mention measurement. `/seo geo` adds analysis rather than
+turning those observations into ranking guarantees.
+
+Other documented workflows include FLOW, ecommerce, hreflang, programmatic pages,
+competitor-comparison generation and drift monitoring. Optional Ahrefs, Bing,
+Profound, SE Ranking, image-generation and Unlighthouse extensions have separate
+prerequisites. Their appearance in upstream docs does not establish local readiness
+or relevance to this static release.
+
+## Prompting strategy for the next run
+
+1. **Review here first.** Read the log's current synthesis and relevant run entries.
+   Identify what remains unknown and whether existing saved evidence answers it.
+2. **Explain the proposed measurement.** State the question, why it matters, the
+   chosen native command, expected output and stopping point. Do not turn a
+   report's automatic follow-up list into a research programme.
+3. **Give Claude a compact native prompt.** Include only the necessary query/URL,
+   measurement settings, reusable evidence paths and scope boundaries. Keep Jukkai
+   decisions and cross-run business synthesis with the reviewer.
+4. **Review and record.** Read saved data and report, reconcile material claims,
+   discuss the implications and update the log in the same session. Claude's final
+   commentary is optional context; do not make rebutting it the research objective.
+
+Illustrative prompt shape, **not a request to run this now**:
+
+```text
+/claude-seo:seo dataforseo serp <chosen phrase>
+
+Rennes, France; French (fr); desktop; depth 20.
+Question: <the specific uncertainty this capture should resolve>.
+Reuse <relevant existing report/data paths> where they answer the question;
+identify any new capture separately. Stop after this bounded measurement.
+Persist the request and captured response alongside the report under reports/.
+State capture limits and separate estimated cost from API-reported charge.
 ```
 
-Then put interpretations and recommendations in separate sections or files.
-The suite's DataForSEO guardrail must estimate before every call and log the
-returned cost afterwards. Its bundled cost tables are useful guardrails, not a
-current tariff; use provider-returned cost as the execution record.
+The lines after the command are natural-language instructions, not invented flags.
+For keyword discovery, specify France/French Labs and Rennes/French volume as
+separate layers. For a comparison, name the phrase list and hold measurement
+settings constant. For SXO, provide the actual URL, query and saved SERP path.
+For clustering, scope expansion and fresh captures explicitly because its default
+planning workflow can be much broader than the immediate question.
 
-## Smallest justified calibration probes
+The existing workspace instructions already require evidence persistence and
+result reconciliation. Do not paste this whole map or Jukkai's foundation into
+every fresh Claude context. Add only constraints relevant to the chosen run.
 
-These probes test the instruments. They are not fixed research runs and do not
-close strategy questions.
+## Evidence and cost contract
 
-1. **Ownership and no-cost check.** Run Google credential detection; list the
-   accessible GSC properties and confirm the intended property has data. Run
-   one 28-day GSC query/page export, one GA4 organic summary and PSI/CrUX for the
-   current origin. Stop if property identity or attribution is ambiguous.
-2. **Old-site shape before an audit.** Firecrawl-map the current public site,
-   then scrape only the homepage and one representative project/service page.
-   Compare rendered content with the suite's free raw fetch. Stop and resolve
-   rendering/link-extraction gaps before any full crawl.
-3. **Two-query Rennes SERP calibration.** Use two already plausible but
-   differently shaped French queries, including the previously smoke-tested
-   `architecte d'intérieur rennes`; run Rennes, `fr`, one fixed device, depth 10. Look for response coverage, result/page types, local-pack presence,
-   recurring domains and actual cost—not “the winning keyword.”
-4. **One batched keyword check.** Submit 5–10 terms from the observed SERPs in
-   one volume call, then difficulty/intent only if the batch has usable French
-   coverage. Test the finest supported Rennes geography against France once;
-   retain null/rounded results as a finding rather than broadening silently.
-5. **Identity before geo-grid.** Resolve Jukkai's existing public business to a
-   CID/place ID; fetch one public profile and a small newest-review sample. Run
-   one Maps SERP at the business center. Only if identity matching is reliable,
-   price a 3x3 one-keyword grid; do not start with the 7x7 default.
-6. **One evidence-discovered competitor.** From the two Rennes SERPs/Maps—not
-   from reputation alone—choose one recurring domain and request its top ranked
-   terms/relevant pages. Add the target domain only if it has enough vendor
-   coverage for an intersection to be meaningful. This tests database coverage,
-   not competitive strategy.
-7. **One temporary cross-city control.** Repeat the exact two SERP queries in a
-   single explicitly temporary comparison city, holding every other parameter
-   constant. Judge whether the instrument exposes intelligible differences in
-   result types and domains. Do not treat that city as an approved comparator.
-8. **Two direct editorial specimens.** Scrape two pages from one recurring
-   search-visible domain and two pages from one deliberately chosen editorial
-   reference. Record observable structure, evidence, media, CTA and freshness.
-   Use vendor content scores only as annotations; use WHOIS only for narrow
-   registration facts, never as provenance proof.
+The [SEO workspace instructions](/home/martin/src/pro/seo/AGENTS.md) own operational
+rules. These September 8 lessons must survive prompt and report handoffs:
 
-After these probes, the next planning session should review coverage, ambiguity,
-actual cost and evidential usefulness. Only then is it reasonable to size or
-order broader SEO investigations.
+- **Geography:** a city name in a keyword differs from the measurement location.
+  France Labs, Rennes Google Ads and Rennes synthetic SERPs answer different
+  questions. Override US/English defaults explicitly. Cross-city comparisons need
+  a manifest of what changed; GA4 city and country-level GSC cannot substitute.
+- **Coverage:** save actual requested lists and reconcile returned identities,
+  not just counts. The workspace temporarily caps keyword batches at ten because
+  captured responses have been shortened; this is not a documented API limit.
+  Record requested depth versus saved items, duplicates and missing fields.
+- **Unavailable values:** distinguish numeric estimates (including numeric zero),
+  returned rows without a metric, and requested rows absent from the capture.
+  Missing volume or difficulty is not zero; no threshold or cause is established
+  merely by absence. Do not sum close variants into unique audiences.
+- **Capture fidelity:** upstream documents field filtering. The workspace records
+  removal of the provider task envelope, and today's log includes reconstructed
+  extracts, omitted PAA answers, placeholder images and incomplete AIO citations.
+  A file named `raw.json` is not proof of an unfiltered provider response. Retain
+  what was captured and label omissions; do not reconstruct missing evidence as fact.
+- **Costs:** use the existing pre-call cost controls and agreed scope. Upstream
+  `costs today` and `costs summary` expose tracking, not necessarily an invoice.
+  The wrapper currently prevents recovering per-call charges: record
+  `cost_usd_reported_by_api: null` when unavailable and keep the cost-tier estimate
+  separate. Price tables in READMEs are not current billing evidence. Integration
+  means analysis commands may also make paid calls; a command is not one request.
+  Run 10 reused a SERP but added volume measurement, so reuse alone does not mean
+  no new spend.
+- **Interpretation:** separate retrieved data, vendor metrics, agent analysis and
+  recommendations. PAA/AIO topics, low KD, review counts, estimated traffic and
+  recurring page types do not establish unmet demand, easy rankings, lead value,
+  ranking causes or mandatory page formats. Reuse is not independent corroboration.
 
-## Source and implementation cautions
+For each run retain the question; command/workflow; source paths; endpoint where
+known; request parameters and keyword lists; capture and stored-ranking dates;
+limits/pagination; captured responses and fidelity; estimated and reported costs;
+and report/findings. Do not require envelope fields the wrapper did not preserve.
+Do not follow upstream troubleshooting examples that print credential files;
+workspace credential rules take precedence.
 
-- The installed v2.2.0 commit matches upstream `main`, but suite prose contains
-  internal drift in module/tool counts and some cost examples. Treat slash
-  commands as workflow recipes over MCP tools; verify the installed tool schema
-  before committing a run manifest.
-- The suite defaults many DataForSEO commands to US/English. Every Jukkai call
-  must set France/French and the intended geographic resolution explicitly.
-- The plugin's audit, Maps and content skills embed benchmarks and recommended
-  actions. Those are agent-authored analysis layers, not provider-returned facts.
-- Provider APIs and pricing change. The primary current references are the
-  [upstream repository](https://github.com/AgriciDaniel/claude-seo),
-  [DataForSEO API documentation](https://docs.dataforseo.com/v3/),
-  [Google Search Console API](https://developers.google.com/webmaster-tools/v1/api_reference_index),
-  [GA4 Data API](https://developers.google.com/analytics/devguides/reporting/data/v1),
-  and [CrUX documentation](https://developer.chrome.com/docs/crux/).
+## Where today's work leaves the tool choice
+
+Runs 1–18 already provide reusable architecture/Galerie SERPs, vocabulary, domain
+footprints, one SXO specimen, owned GSC performance and restaurant, office, medical
+and childcare evidence. July's ownership checks, generic SERP calibration and
+first competitor probe are no longer a prerequisite sequence.
+
+The log's current recommendation is a **discussion of B2B content** grounded in
+actual missions and project proof, with further measurements only for named gaps.
+Galerie buying vocabulary, closer combined-business examples and the later
+preservation/migration map remain open. Those are discussion inputs, not a new
+ordered run list; the log owns changes to that status. No B2B sector URL or final
+sitemap follows from this capability refresh.
+
+Update this map when command syntax, local capabilities, evidence handling or
+Martin's prompting preference changes. Update findings and the next discussion in
+the research log instead; approved decisions remain in GitHub.

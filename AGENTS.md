@@ -103,6 +103,8 @@ remove them when the convention changes.
 - For continuing SEO research, read `docs/research/seo-research-log.md` and update
   it after each reviewed run, following its update protocol. It holds provisional
   findings, source pointers and open questions; approved decisions stay in GitHub.
+  Use `docs/research/claude-seo-capability-map.md` alongside it for native command
+  selection and prompting; keep accumulated findings and next-run discussion in the log.
 - Brand masters and supporting source material live under `brand/`; see its
   README before adding assets or committing font binaries.
 - For substantial visual or interaction work, prefer the local `impeccable`
