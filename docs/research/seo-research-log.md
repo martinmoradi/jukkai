@@ -47,12 +47,13 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   old-site queries, pages, links and proof to preserve. Retain Martin's interest in
   selected regional/larger-city and combined art/interiors examples. Research should
   inform later pages too, without becoming an exhaustive magazine-release gate.
-- **Latest recommendation, not agreed sequence:** run 9 supplies the Nantes
-  comparison. Inspect CKTFC with SXO next: its retrieved homepage combines
-  residential/B2B work, process and project examples. Use that to explore content
-  organisation, then relate it to Jukkai's actual services and proof. Closer
-  combined-business/Galerie examples remain a gap. Do not automatically pursue
-  Nantes geo-grids/commune volumes or repeat the completed GSC baseline.
+- **Latest recommendation, not agreed sequence:** run 10 completes CKTFC SXO.
+  Its homepage previews residential/B2B work and process; a linked service/pricing
+  page explains missions and deliverables. This informs candidate content roles,
+  not a prescribed layout or tariff. Next suggested probe: restaurant interior
+  architecture in Rennes, tied to Jukkai's existing restaurant proof, to open one
+  B2B segment. Closer combined-business/Galerie examples remain a gap. Do not
+  automatically follow CKTFC's repair backlog or repeat the completed GSC baseline.
 - **Proposed eventual output:** connect each candidate page to visitor needs, related
   searches, truthful message/proof and next action. No sitemap or brief is approved.
 
@@ -75,7 +76,7 @@ mapping pass; these proposed surfaces are not redirect targets yet.
 
 ## Reviewed runs
 
-All nine runs below were captured on **2026-09-08**. Commands use the documented
+All ten runs below were captured on **2026-09-08**. Commands use the documented
 `/seo` shorthand; Martin invokes them as `/claude-seo:seo …`. Reviewer corrections
 below qualify the original reports, some of which still contain rejected conclusions.
 
@@ -257,6 +258,53 @@ below qualify the original reports, some of which still contain rejected conclus
   supplies no safe page-count or unique-content percentage: reject the report's
   “5–8 commune pages is safe” inference. A later service page ranking would show
   another viable type, not falsify the observation that homepages can rank.
+
+### 10. CKTFC SXO — how does the homepage explain the offer and guide visitors?
+
+`/seo sxo https://www.lagence-cktfc.com/ "architecte d'intérieur nantes"`
+
+- **Evidence:** `sxo-lagence-cktfc-2026-09-08/findings.md`, `findings/sxo.md`,
+  `data/PROVENANCE.md`, saved HTML/JSON and screenshots. Reuses run 9's desktop
+  SERP; this is not independent corroboration. Added Nantes/fr Google Ads volume:
+  requested/returned lists match 10/10; five numeric estimates, five unavailable.
+  Seed 320/month; commune measurements are searches from Nantes, not whole-commune
+  audiences. Saved volume JSON is processed (monthly dictionaries, added nulls/notes).
+- **Learned:** homepage explains process and previews residential/professional
+  work and projects. `/tarifs` separates conception, supervision, decoration and
+  feasibility with deliverables. Eight neighbourhood pages reproduce the homepage
+  body with location-only H1 changes; reviewer word comparison is ~99.7–99.8%
+  similar. Chantenay replaces `à` with `quartier Chantenay -`, rather than a pure
+  insertion. Exact similarity depends on extraction; near-duplication is supported.
+- **Jukkai implication:** consider homepage orientation/proof with accessible
+  service detail; make mission depth and deliverables understandable. Keep contact
+  easy to find while testing the visual hierarchy. Neither explicit prices in the
+  hero, a free-quote promise, a FAQ block nor separate service URLs are required
+  by this report. Real local project stories can supply evidence beyond place names.
+- **Material corrections:** `/tarifs` has five homepage links including `TARIFS`,
+  `NOS PRESTATIONS` and `NOS MÉTIERS`; price visibility is a prominence question,
+  not an absent route. Published supervision includes 7% above EUR 200,000, omitted
+  from the report's 8–15% range. These are CKTFC's published terms, not Jukkai rates.
+  Three distinct review counts (12/19/21), not four; conflicting rating values and
+  malformed schema phone strings are supported. FAQ strings are absent from saved
+  body text, but publishing all six is an editorial choice; removing inaccurate
+  markup is also valid. A complete rendered-page FAQ check remains unverified here.
+- **Measurement limits:** screenshot shows hamburger navigation as well as the hero
+  CTA, so “one interactive element” is incomplete. Saved geometry supports no
+  horizontal overflow in the tested state, not every device/state; exact emulation
+  setup and fold-count script are not saved. Desktop SERP order does not establish a
+  mobile visitor journey. 59/100 and persona scores are tool judgements; emotions,
+  conversion losses and volume-weighted persona priorities were not measured.
+  The same person can search both seed and commune phrases; absence of B2B signals
+  here does not exclude B2B. Duplication damage/urgency and zero neighbourhood
+  demand remain unproved. Run 9's business-classification correction still applies.
+- **Rules checked:** [structured data](https://developers.google.com/search/docs/appearance/structured-data/sd-policies)
+  must represent visible content; passing a validator cannot establish factual
+  correctness. [FAQ rich results ended May 7](https://developers.google.com/search/updates#may-2026).
+  Embedded maps and percentage-uniqueness gates are plugin preferences, not Google
+  mandates. [Empty alt can be appropriate](https://www.w3.org/WAI/tutorials/images/decorative/);
+  [accented URLs are supported](https://developers.google.com/search/docs/crawling-indexing/url-structure);
+  [root slash variants are equivalent](https://developers.google.com/search/blog/2010/04/to-slash-or-not-to-slash).
+  Do not inherit these as automatic repair tasks.
 
 ## Evidence rules and tool roles
 
