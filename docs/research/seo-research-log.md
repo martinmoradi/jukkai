@@ -68,13 +68,15 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   provider on-site; this is a hypothesis, not observed audience behaviour. Martin
   welcomes useful API spending; question quality, not minimising every call, matters.
 - **Latest learning/recommendation:** run 14 supports broad and specialised entry
-  pages coexisting, without identifying B2B searchers. Run 15 adds professional-space,
-  renovation and commercial-premises vocabulary plus measurable office terms.
-  Offices were a separately introduced seed with 50 suggestions, not the inevitable
-  outcome of an exhaustive B2B discovery. Compare medical and daycare vocabulary
-  next because both reflect Crystelle's actual work; these are coverage probes, not
-  settled priorities. Retain generic architecture discovery and use selected SERPs
-  afterward to distinguish designers, contractors, furniture and informational needs.
+  pages coexisting, without identifying B2B searchers. Runs 15–17 add office,
+  medical and childcare vocabulary. Medical searches express planning, waiting-room,
+  decoration/equipment and regulatory concerns; childcare adds room uses, pedagogy
+  and project-opening terms. These are needs, not verified buyer segments. Office
+  expansion was separately seeded; no sector priority follows from cluster totals.
+  Use this breadth to frame real project proof and mission explanations. Next
+  suggested bounded SERP: `aménagement crèche` from Rennes/fr/desktop, to identify
+  the provider/resource mix missing from run 17's stored feature metadata. Preserve
+  general architecture discovery; no global guide programme follows from these runs.
   Closer combined-business/Galerie examples remain a gap; no B2B URL is approved.
 - **Proposed eventual output:** connect each candidate page to visitor needs, related
   searches, truthful message/proof and next action. No sitemap or brief is approved.
@@ -101,7 +103,7 @@ mapping pass; these proposed surfaces are not redirect targets yet.
 
 ## Reviewed runs
 
-All fifteen reviewed runs below were captured on **2026-09-08**. Commands use the documented
+All seventeen reviewed runs below were captured on **2026-09-08**. Commands use the documented
 `/seo` shorthand; Martin invokes them as `/claude-seo:seo …`. Reviewer corrections
 below qualify the original reports, some of which still contain rejected conclusions.
 
@@ -509,6 +511,70 @@ commercial` and `agencement magasin rennes`. Thus not four numeric terms, not
   establish collapse of the agencement vocabulary or of a business market; the
   September spike has no established cause. No live SERP, audience or conversion
   measurement was made. Estimated cost about $0.36; API-reported charges unavailable.
+
+### 16. Medical premises — which needs accompany a professional project?
+
+`/seo dataforseo keywords aménagement cabinet médical`
+
+- **Evidence:** `keywords-amenagement-cabinet-medical-2026-09-08/report.md`, CSV and
+  `data/`: suggestions (13 saved), related keywords (40/47), requested lists,
+  France/Rennes volume, difficulty and structured live SERP. Irrelevant ideas discarded.
+  France volume: 30/30 requested terms, 16 numeric and 14 unavailable; Rennes only
+  measures the ten core terms (four numeric, six unavailable). City-suffixed terms
+  were measured at France geography, not Rennes. Head term 110 France / 10 Rennes;
+  France `décoration cabinet médical` 390, `plan aménagement cabinet médical` 40,
+  `aménagement salle d'attente cabinet médical` 20.
+- **Learned:** the vocabulary spans layout, waiting rooms, atmosphere/decoration,
+  furniture, accessibility and opening/conversion questions. Rennes/fr/desktop SERP
+  for the unmodified head term saves eight organic results mixing advice, provider
+  and equipment-related titles, with images at absolute 1, PAA and an AI Overview;
+  no local pack captured. The overview extract has two section summaries (regulatory
+  concerns and spatial organisation) and eight citation URLs across seven domains,
+  including a project URL. Full answer text and citation-to-claim mapping are absent.
+- **Jukkai implication:** explain actual constraints, design choices and mission scope
+  through relevant medical/waiting-room proof. The query does not mandate a compliance
+  guide or regulation-first hero. Decoration remains a candidate need: advertising
+  competition 100 cannot establish product-only intent or exclude design services.
+  Dental vocabulary exists, but CPC and summed variants do not establish better
+  economics or priority over Crystelle's existing proof. No page hierarchy approved.
+- **Limits:** complete seed suggestions are not the full topic universe. Related
+  geographic strings suggest a localisation angle, not measured local demand or
+  Google's trust in providers. No pack does not remove organic locality; full
+  provider geography was not established. Page-type labels are report interpretation;
+  interleaved service/advice results do not prove a winning hybrid format. All-AIO-
+  citations-are-regulatory is unproved. KD, CPC and September peaks establish neither
+  easy competition, lead value nor market trajectory. API charge unavailable;
+  no cost-tier estimate recorded. No reviewer website visits or paid calls.
+
+### 17. Childcare premises — what room-use and project vocabulary appears?
+
+`/seo dataforseo keywords aménagement crèche`
+
+- **Evidence:** `keywords-amenagement-creche-2026-09-08/REPORT.md`,
+  `findings/dataforseo-keywords.md` and `data/`: suggestions 60/60, related 27/27,
+  merged tables, two Rennes volume batches with requested lists and difficulty.
+  Ideas returned mostly unrelated topics; two generic daycare-finder terms do not
+  inform fit-out. Endpoint result sets were exhausted, not all possible vocabulary.
+- **Learned:** France estimates include `aménagement crèche` 170, `aménagement de
+l'espace en crèche` 140, `aménagement micro crèche` 90, reading-corner 70, garden
+  40 and `architecte aménagement crèche` 10. Room uses, pedagogical approaches,
+  opening/budget/plans and MAM vocabulary are useful distinctions. Rennes lists
+  match all 20 requests: nine numeric (all 10), eleven unavailable, correcting
+  the summary's seven unavailable. Sparse monthly entries limit interpretation.
+- **Jukkai implication:** real childcare work can explain decisions about room use,
+  circulation and the needs of children/staff within the documented mission.
+  Pedagogical searches do not identify non-buyers: operators can research daily use
+  while planning a commission. No user-role, procurement-stage or conversion evidence
+  separates those groups. MAM is an adjacent research possibility, not an assumed
+  equivalent mission or an approved offer.
+- **Limits:** no live SERP or ranking URL list was captured. Stored feature metadata
+  includes July 14 for the head term and much older adjacent snapshots; it cannot
+  establish present competitors or that proximity is irrelevant. Low KD/referring-
+  domain estimates do not show undefended rankings. Summing 41 keyword volumes
+  (including close variants) is not a unique-audience estimate or a reliable market
+  floor. A September 2025 peak alone does not establish recurring seasonality or its
+  cause. No sector-page requirement or priority over offices/medical work follows.
+  Cost-tier estimate $0.26; API charge unavailable. No reviewer website visits.
 
 ## Evidence rules and tool roles
 
