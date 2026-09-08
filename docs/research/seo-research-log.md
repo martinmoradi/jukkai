@@ -67,13 +67,14 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   priority. Business clients may use general architecture queries and qualify the
   provider on-site; this is a hypothesis, not observed audience behaviour. Martin
   welcomes useful API spending; question quality, not minimising every call, matters.
-- **Latest learning/recommendation:** run 14 shows CMC²'s homepage on a broad Rennes
-  architecture query alongside specialised ranking pages. It does not identify B2B
-  searchers or fully describe sector discovery. Broaden keyword discovery next,
-  starting with `aménagement locaux professionnels` (France/fr), then assess the
-  returned vocabulary against actual missions and selected competitor footprints.
-  This seed is a coverage hypothesis, not approved copy; retain generic discovery
-  from existing runs and use SERPs to resolve specific ambiguities afterward.
+- **Latest learning/recommendation:** run 14 supports broad and specialised entry
+  pages coexisting, without identifying B2B searchers. Run 15 adds professional-space,
+  renovation and commercial-premises vocabulary plus measurable office terms.
+  Offices were a separately introduced seed with 50 suggestions, not the inevitable
+  outcome of an exhaustive B2B discovery. Compare medical and daycare vocabulary
+  next because both reflect Crystelle's actual work; these are coverage probes, not
+  settled priorities. Retain generic architecture discovery and use selected SERPs
+  afterward to distinguish designers, contractors, furniture and informational needs.
   Closer combined-business/Galerie examples remain a gap; no B2B URL is approved.
 - **Proposed eventual output:** connect each candidate page to visitor needs, related
   searches, truthful message/proof and next action. No sitemap or brief is approved.
@@ -100,7 +101,7 @@ mapping pass; these proposed surfaces are not redirect targets yet.
 
 ## Reviewed runs
 
-All fourteen reviewed runs below were captured on **2026-09-08**. Commands use the documented
+All fifteen reviewed runs below were captured on **2026-09-08**. Commands use the documented
 `/seo` shorthand; Martin invokes them as `/claude-seo:seo …`. Reviewer corrections
 below qualify the original reports, some of which still contain rejected conclusions.
 
@@ -470,6 +471,44 @@ below qualify the original reports, some of which still contain rejected conclus
   and rank-change samples do not establish commercial focus, market contraction,
   conversion or a site's overall trajectory. No fresh SERP or website audit needed
   to answer this run's question; continue broader vocabulary discovery.
+
+### 15. Professional-premises vocabulary — what broader needs appear?
+
+`/seo dataforseo keywords aménagement locaux professionnels`
+
+- **Evidence:** `keywords-amenagement-locaux-pro-2026-09-08/findings/dataforseo-keywords.md`
+  and `data/`: suggestions, ideas, related-keyword extraction, two Rennes volume
+  batches with requested lists, difficulty and consolidated CSV. France/fr Labs;
+  Rennes/fr Google Ads. Original seed suggestions 3/3; agencement seed 2/2;
+  related extraction 16/16; ideas 50/2,362,124 with substantial residential/tool/career
+  noise. A separate `aménagement bureaux` seed supplies 50/121 suggestions.
+- **Learned:** France estimates include `aménagement locaux professionnels` 50,
+  `aménagement d espaces professionnels` 140 and `rénovation locaux professionnels`
+  170; commercial-premises cost/authorisation and workplace terms also appear.
+  Office expansion returns `aménagement bureaux` 3,600, `aménagement de bureaux`
+  880 and `aménagement de bureaux professionnels` 320. These are phrase estimates,
+  not additive audiences or measured provider demand.
+- **Local evidence:** all 20 requested terms returned; nine have numeric volumes,
+  eleven unavailable. `aménagement bureaux` returns 20 with twelve monthly entries;
+  eight others return 10 with sparse monthly entries, including the seed,
+  professional-space terms, `architecte aménagement bureaux`, `aménagement local
+commercial` and `agencement magasin rennes`. Thus not four numeric terms, not
+  only offices, and not all Rennes-suffixed terms unavailable. Missing values have
+  no established cause or proven threshold in these responses.
+- **Jukkai implication:** offices are a measurable branch worth assessing; the
+  broader professional category has not been replaced by it. The 72× national
+  seed comparison is 20 versus 10 in the local estimates and says nothing about
+  the relative commercial value of sectors. Medical/daycare discovery remains
+  unexamined; absence from this seed-biased sample is not evidence against it.
+  No office pillar, supporting-guide pair, geography split or agencement demotion
+  is established. Continue coverage from actual work before choosing priorities.
+- **Limits:** numeric KD 0 is distinct from unavailable, but neither it nor the
+  3.5 average referring domains establishes easy rankings. The latter is in the
+  office suggestions payload; independent corroboration is unproved. France CPC
+  estimates do not measure Rennes lead value. Trends for particular phrases do not
+  establish collapse of the agencement vocabulary or of a business market; the
+  September spike has no established cause. No live SERP, audience or conversion
+  measurement was made. Estimated cost about $0.36; API-reported charges unavailable.
 
 ## Evidence rules and tool roles
 
