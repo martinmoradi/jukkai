@@ -1,6 +1,6 @@
 # SEO research log
 
-Updated: 2026-09-08. **Working synthesis, not an approved sitemap, copy brief or
+Updated: 2026-09-09. **Working synthesis, not an approved sitemap, copy brief or
 SEO strategy.** Requested by Martin as the continuing agent's research entry point.
 
 ## Start here
@@ -167,9 +167,12 @@ bridge remains separate from later migration.
 
 ## Reviewed runs
 
-All twenty-five reviewed runs below are dated **2026-09-08**. Runs 19–25 were
-reviewed together after Martin supplied seven independently initiated commands;
-numbering is review order, not a prescribed research sequence. Commands use the documented
+The twenty-eight reviewed entries below record runs dated **2026-09-08**.
+Runs 19–25 were reviewed together after Martin supplied seven independently
+initiated commands. Entries 26–28, reviewed September 9, cover ten further SERP
+captures across three commands; kitchen provenance records writing after midnight,
+without a provider timestamp. Numbering groups reviewed questions, not API calls
+or a prescribed research sequence. Commands use the documented
 `/seo` shorthand; namespace resolution is automatic. Reviewer corrections
 below qualify the original reports, some of which still contain rejected conclusions.
 
@@ -913,6 +916,144 @@ vendre` can also describe a buyer's search; a phrase does not settle audience
   the childcare capture in run 18 already shows that other queries expose images
   differently. Recheck the missing-tool path if that capability is selected again,
   rather than automatically repeating the same substitute or starting integration work.
+
+### 26. Art-buying SERPs — what changes with the object and its style?
+
+`/seo dataforseo serp acheter tableau, acheter tableau pop art, acheter tableau abstrait, acheter tableau street art, acheter objet art`
+
+- **Evidence:** `serp-acheter-tableau-2026-09-08/findings/seo-dataforseo.md`,
+  `data/request_manifest.json` and five `data/serp_*.json` responses. Rennes/fr/desktop;
+  all five returned, with 10/9/10/10/10 organic results despite depth 20. Some items
+  are projections; later ranks and expanded PAA/AIO text are uncaptured. Estimated
+  $0.010 in Claude's summary; API charge unavailable.
+- **Learned:** buying/style wording brings sellers, galleries, prints and buying
+  advice, unlike run 7's public-art discovery. All ten head-term organic snippets
+  concern pictures/art: run 24's electrical-panel/whiteboard concern is not seen
+  in these organic results. The useful distinction is artist-attributed works
+  versus reproductions/decorative prints; a gallery name or `original` alone does
+  not establish a work's provenance. Other wording also changed versus run 7,
+  so the comparison does not isolate the buying verb's effect.
+- **Useful specimens:** abstract #3 is Âme Sauvage's artist/selection page;
+  street-art #5 is Art Génération's selection and #6 Priscilla Vettese's article.
+  Their snippets describe original works/artists, not independently verified stock.
+  Object-art adds Perrotin/Amélie du Chalard selections and buying advice, often
+  about art generally rather than only sculptures/small objects. Its organic
+  publisher set overlaps the other four only through Carré d'artistes, which
+  appears in all five. No audience split or search difficulty follows.
+- **Visual and purchase surfaces:** priced `popular_products` accompany all four
+  tableau queries; none is captured for objet art. Prints and artist-attributed works
+  coexist. Pop-art images at absolute 2 have eleven direct destinations to Vettese's
+  buying page plus one unresolved Google redirect. The abstract image block is only
+  an agent summary; its claimed twelve-item attribution cannot be checked from items.
+  These web surfaces complement runs 18/25; Google Images rankings remain unmeasured.
+- **Jukkai implication:** explain the actual selection and possibility of buying with
+  truthful work types, photographs, permitted authorship and an enquiry/visit route.
+  Selected visuals and short explanations are options; style labels cannot carry the
+  whole message. Retain no pre-opening art prices, artist consent and the foundation's
+  no-ecommerce/catalogue rule. No collection-page or Merchant Center plan follows.
+- **Limits/corrections:** seller classifications, opportunity scores and required page
+  formats are report judgements. Eleven organic URLs are opaque Google redirects;
+  readable publisher fields do not resolve final destinations. Local entries include
+  supplies/DIY, Razzia and Atelier Oompa; actual offers are unverified. No geographic
+  comparison supports a GBP-only strategy or excludes local buyers. First organic is
+  absolute 1 in every capture. No reviewer paid calls or destination-page visits.
+
+### 27. Architecture fees in three other cities — what transfers to Rennes?
+
+`/seo dataforseo serp tarif architecte d'intérieur nantes, tarif architecte d'intérieur lyon, tarif architecte d'intérieur paris`
+
+- **Evidence:** `serp-tarif-architecte-interieur-nantes-2026-09-08/`,
+  `serp-tarif-architecte-interieur-lyon-2026-09-08/` and
+  `serp-tarif-architecte-interieur-paris-2026-09-08/`: each `REPORT.md`,
+  `data/request_serp_organic.json`, `data/raw_serp_organic.json` and CSVs.
+  Each keyword was measured from its named city (Nantes `1006285`, Lyon `1006410`,
+  Paris `1006094`), fr/desktop/depth 100/`max_crawl_pages:1`. Query and measurement
+  geography both change; these are city samples, not a location-only experiment.
+  Nine/ten/nine organic results; estimated $0.006 total, API charges unavailable.
+- **Comparison:** numeric prices occur in 5/9 Nantes, 9/10 Lyon and 9/9 Paris organic
+  descriptions, versus the corrected 6/9 Rennes in run 22. These are not comparable
+  fee quotations: Lyon #4 describes works costs, and advice visits, conception,
+  complete missions, HT/TTC and surface bands coexist. The Nantes €420 package
+  includes preparation and an appointment, so dividing by its two meeting hours
+  would misrepresent its scope. Larger-city samples do not establish harder rankings.
+- **Page purposes:** Nantes has two dedicated tariff pages first and no homepage
+  URLs, unlike run 9's general architecture query with five homepages and six local
+  entries. Lyon has six local entries alongside pricing/service pages; no local pack
+  was saved for Nantes/Paris. Nantes/Paris include asynchronous AIO placeholders.
+  The fee question changes the visible answer mix, without requiring a pricing URL.
+- **Recurring publishers:** Nantes/Lyon #1 descriptions are identical; their city
+  domains and the Bretagne domain share a tariff path/title pattern. Lyon's Créateurs
+  local entry and Paris's Créateurs knowledge panel share a phone. This suggests a
+  connected operation; legal ownership and the cause of ranking were not verified.
+  The same Quimper URL appears at Rennes #5 and Paris #9. Therefore a non-city result
+  is not distinctive evidence that Rennes is underserved. Template replication is
+  not an acquisition plan for Jukkai; ownership research is unnecessary for this
+  content question.
+- **Page-content check, September 9:**
+  [Studio Anata's Lyon pricing page](https://studioanata.com/tarifs-architecte-interieur-lyon/)
+  separates conception, fuller accompaniment and smaller interventions, with
+  inclusions, exclusions and minimums. Its 12–18% snippet is a stated market average;
+  the practice describes its own fees as project-adjusted forfaits. This is a useful
+  specimen for explaining mission choices, not a source of Crystelle's prices or
+  a proven conversion format. CKTFC's Nantes tariff page already appeared in run 10.
+- **Jukkai implication:** connect the visitor's situation to the appropriate mission,
+  what is delivered, who handles the works, what remains outside the fee and how
+  a project-specific amount is established. Use current qualified terms from the
+  foundation; market ranges cannot supply them. This supports a fee/scope explanation
+  whether it sits within service content, a real case or a later dedicated page.
+- **Limits:** no demand, difficulty, click or enquiry measurement. Snippet years and
+  a 2025 timestamp beneath a 2026 title do not establish a page's last revision or a
+  freshness advantage. Missing packs/AIO are capture-specific; expanded answers and
+  later ranks are unknown. No reviewer paid calls; the one targeted page read above
+  answers a content question rather than repeating a whole-site audit.
+
+### 28. Kitchen renovation — can problem wording reach a local design prospect?
+
+`/seo dataforseo serp rénovation cuisine, rénovation cuisine rennes`
+
+- **Evidence:** `serp-renovation-cuisine-2026-09-08/findings/seo-dataforseo.md`,
+  `data/provenance.json`, `data/serp_renovation-cuisine_rennes_fr.json` and
+  `data/serp_renovation-cuisine-rennes_rennes_fr.json`. Both Rennes (`1005876`)/fr/
+  desktop/depth 100; page limit not explicitly supplied. Eight/ten organic results
+  saved, not 100. Claude's summary estimates $0.004 and records ledger entry after
+  midnight; API charges and provider timestamps are unavailable.
+- **Observed contrast:** the broad phrase returns Leroy Merlin, IKEA, kitchen brands
+  and renovation/advice sites, with images, videos and budget/how-to questions.
+  The Rennes phrase returns local providers, directories, a franchise's local project
+  and six local entries. Only Travaux.com shares an organic domain across both,
+  through different national-price and Rennes-provider pages; no exact organic URL
+  overlaps. This supports Martin's concern about the broad phrase's visible competition.
+  National organisations also appear through local pages; they have not disappeared.
+- **Locality without the modifier:** K.CREATION Rennes has a knowledge panel on the
+  broad phrase and local-pack #4 on the city phrase, with the same CID. That is a
+  local entity visible without typing Rennes. It does not establish Maps as the
+  only route, the effect of location alone, or the impossibility of local organic
+  rankings. Searcher location and typed geography remain separate dimensions.
+- **Relevant content specimens:** MCA Création holds local #1, organic #1 for its
+  Rennes kitchen page and organic #9 for its homepage. The reviewer read that
+  [service page](https://mcacreation.com/renovation-de-cuisine-a-rennes/) September 9:
+  it already discusses function, layout, storage and redesign. Design language is
+  not an uncontested distinction from kitchen providers. Organic #3 is
+  [La Maison des Travaux's Rennes-centre kitchen project](https://rennes.lamaisondestravaux.com/renovation-interieur/cuisine/realisations/renovation-dune-cuisine-dans-un-appartement-rennes-centre),
+  also read: client need, project choices and results accompany before/after material.
+  A real project story is therefore a concrete local-search specimen for Martin's
+  editorial idea; its format is not proved to cause the placement.
+- **Jukkai implication:** describe relevant residential problems in client language
+  and show Crystelle's actual design contribution, whether within service content or
+  selected projects. Clarify when the mission concerns layout or wider spatial choices
+  and how it relates to supply/installation. The captured market spans those roles;
+  no kitchen-installation offer or specialist kitchen page is approved. Helpful
+  explanation can also serve referrals and visitors who arrive through other pages.
+- **Next uncertainty:** which searches express wanting help, advice or a changed
+  layout, without already naming an interior architect? The broad query's related
+  search `entreprise pour rénovation cuisine` provides one concrete follow-up;
+  conseil/aménagement vocabulary can test another. Phrase relevance does not prove
+  willingness to commission Jukkai or sufficient local demand.
+- **Limits:** no volume, difficulty, searcher-role, traffic or conversion measurement;
+  no top-level AIO saved and expanded PAA answers absent. Small one-date page-one
+  samples cannot justify a generic-versus-local strategy for every room/problem.
+  This provider-mix question does not require recapturing 100 ranks. No reviewer
+  paid calls or SEO-workspace configuration/ledger changes.
 
 ## Evidence rules and tool roles
 
