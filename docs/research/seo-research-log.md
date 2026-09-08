@@ -29,6 +29,9 @@ the data rather than making rebuttal of Claude or tooling verification the task.
 Keep reads targeted and reuse context. Open public websites only for a specific
 page-content question, not as a routine second audit. Explain the next query before recommending it.
 Competitor recommendations are not Jukkai instructions; this log authorises no paid calls.
+Use the [capability map and prompting guide](claude-seo-capability-map.md) to choose
+the native workflow and scope the next prompt after reading this log. Its September 8
+refresh replaces the July calibration checklist; it does not queue new research.
 
 **Evidence:** run folders below are under `/home/martin/src/pro/seo/reports/`, local
 and gitignored in that workspace. This log is not their backup. Read that workspace's
