@@ -52,7 +52,9 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   project story. Run 29 adds local organic and Maps visibility for provider wording
   without Rennes; run 30 adds advice/mission vocabulary and distinguishes short
   versus long décoration phrases. Run 31 adds room geometry, combined uses,
-  openings, furniture and atmosphere as concrete problem vocabulary.
+  openings, furniture and atmosphere as concrete problem vocabulary. Run 32 shows
+  advice, practice, retail and visual answers to two room problems, with concrete
+  examples connecting a useful explanation to professional help.
   Search visibility, persuasion and enquiry
   conversion remain different measures; neither city size nor snippet quality
   measures easy competition.
@@ -80,22 +82,22 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   colourful, approachable street/pop/urban art, for buying as well as viewing.
   Actual offer scope, proof and the foundation's separate architecture/art pricing
   rules govern copy; tentative gift-price examples do not approve public art prices.
-- **What the latest run adds:** people can describe specific spatial constraints
-  without naming a profession. Small-room vocabulary connects the room's shape,
-  fixed features, existing furniture and overlapping uses with desired atmosphere.
-  These are useful prompts for project stories and mission explanations, not
-  confirmed buyer segments. They bridge the earlier kitchen/provider and conseil
-  research: a room label does not disclose budget, project extent or readiness to
-  hire. The keyword sum and conflicting intent scores cannot supply those facts,
-  and the fall within the captured series does not establish a year-on-year market decline.
-  Earlier pricing, project and buying captures supply specimens for that explanation,
-  alongside preservation targets and profile checks for
+- **What the latest run adds:** broad problem searches can surface a professional
+  practice alongside retailers and media. The small-room results include advice
+  connected to bespoke furniture, project evidence and enquiries; open-kitchen
+  answers emphasise the relationship between uses, circulation and visual coherence.
+  This makes the path from a recognised problem to an actual mission more concrete.
+  It does not measure local leads or show that national traffic is a good initial
+  acquisition investment. Distinct organic selections, shared image destinations
+  and project-based video examples inform possible answers, not a compulsory split
+  into two pages or a required medium. Room vocabulary and the earlier kitchen,
+  conseil and pricing runs can now inform content options without more measurements
+  for these two phrases. Preservation targets and profile checks remain relevant to
   [the Studio Terrasson/Google transition](https://github.com/martinmoradi/jukkai/issues/120).
-  It is more useful for content substance and continuity than for deciding how many
-  pages to publish. Scores and report checklists do not turn into launch work.
-- **Still open:** small-living-room vocabulary is now sampled, but the current
-  answers, providers and visual surfaces have not been captured. The conseil seed's
-  provider/advice/software result mix also remains unmeasured. Actual offers and visitor
+  Scores and report checklists do not turn into launch work.
+- **Still open:** the conseil seed's provider/advice/software result mix remains
+  unmeasured. The room sample supplies answer specimens, but no measure of qualified
+  local acquisition or a ready Jukkai project story. Actual offers and visitor
   experience of the new commercial-art specimens remain to examine, and a combined
   art/interiors example is still missing. The homepage/service/Galerie relationship
   and first/later page split remain decisions.
@@ -111,18 +113,18 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   to publish a project, stock, opening arrangements or the shared-brand expression.
   No sitemap, content brief or research sequence is approved by this synthesis.
 
-### Candidate content purposes after run 31
+### Candidate content purposes after run 32
 
 **Agent proposal for discussion, not five approved URLs or release commitments.**
 The foundation supplies business intent; research informs discovery and limits.
 
-| Candidate surface        | Visitor job and evidence basis                                                                                                                                                                  | Open page/content decision                                                                                                  |
-| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| Jukkai homepage          | Recognise Crystelle, understand architecture + Galerie, choose a path. GSC and backlink evidence both make old-homepage continuity relevant.                                                    | How much mission explanation and project/art proof belongs here; how to express one coherent identity?                      |
-| Interior architecture    | Recognise a need and understand suitable missions, scope, process, fees and how to enquire. Local/B2B, kitchen, conseil and pricing research supply questions.                                  | Separate page versus homepage sections; residential/B2B and lighter-mission treatment; fee explanation using current terms. |
-| Selected project stories | Recognise a problem through real briefs, spatial constraints, choices and outcomes. Room vocabulary supplies questions; B2B/kitchen SERPs add specimens; old links add preservation candidates. | Which stories/assets are ready; case pages versus compact features; which old material remains useful?                      |
-| Galerie                  | Understand the actual work types, selection, buying possibility and visit arrangements. Place/style/buying captures distinguish commercial, decorative and cultural results.                    | Pre-opening content and permissions; selected works and authorship; purchase explanation within the no-catalogue decision.  |
-| Contact / visit          | Reach the practice or plan a Galerie visit using current facts. Known lead behaviour, GSC contact clicks and historical profile inconsistencies support clarity.                                | General contact page versus shared sections; distinguish architecture appointments from public Galerie opening.             |
+| Candidate surface        | Visitor job and evidence basis                                                                                                                                                                                 | Open page/content decision                                                                                                  |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| Jukkai homepage          | Recognise Crystelle, understand architecture + Galerie, choose a path. GSC and backlink evidence both make old-homepage continuity relevant.                                                                   | How much mission explanation and project/art proof belongs here; how to express one coherent identity?                      |
+| Interior architecture    | Recognise a need and understand suitable missions, scope, process, fees and how to enquire. Local/B2B, kitchen, conseil and pricing research supply questions; room articles show how advice connects to help. | Separate page versus homepage sections; residential/B2B and lighter-mission treatment; fee explanation using current terms. |
+| Selected project stories | Recognise a problem through real briefs, spatial constraints, choices and outcomes. Room vocabulary and visual answers add prompts; B2B/kitchen SERPs add specimens; old links add preservation candidates.    | Which stories/assets are ready; case pages versus compact features; which old material remains useful?                      |
+| Galerie                  | Understand the actual work types, selection, buying possibility and visit arrangements. Place/style/buying captures distinguish commercial, decorative and cultural results.                                   | Pre-opening content and permissions; selected works and authorship; purchase explanation within the no-catalogue decision.  |
+| Contact / visit          | Reach the practice or plan a Galerie visit using current facts. Known lead behaviour, GSC contact clicks and historical profile inconsistencies support clarity.                                               | General contact page versus shared sections; distinguish architecture appointments from public Galerie opening.             |
 
 ### Residential discovery and project storytelling — September 8–9 discussion
 
@@ -156,18 +158,23 @@ The foundation supplies business intent; research informs discovery and limits.
   to hire. Run 30 measures some conseil/coaching searches and related room/atmosphere
   language, but captures no live conseil SERP. Run 31 expands a specific room problem
   into geometry, dimensions, fixed features, furniture, combined uses and atmosphere;
-  it captures vocabulary and estimates, not current answers or client behaviour.
+  run 32 captures the answers to the head phrase and an open-kitchen variant. A Lyon
+  decorator's article appears for the unmodified head, alongside other advice providers
+  and retailers. The open-kitchen results include specialist suppliers and project
+  videos. This broadens possible discovery beyond national retail dominance without
+  measuring client behaviour, local leads or the difficulty facing Jukkai.
 - **Open distinction:** "I want help but do not know which profession" differs from
   "I want this room to work better and have not considered hiring anyone". Provider
-  and conseil wording chiefly probed the former question; run 31 now supplies
-  room/constraint language for investigating the latter. These are useful research
+  and conseil wording chiefly probed the former question; runs 31–32 supply
+  room/constraint language and examples of answers for investigating the latter. These are useful research
   perspectives, not measured audience segments or an established sequence that
   every client follows. A small room is not evidence of a small budget or mission.
-- **Agent recommendation:** compare a live head-term SERP with one concrete combined-
-  use phrase, `aménager un petit salon avec cuisine ouverte`, to inspect answer and
-  provider types and possible project/plan/image specimens. Do not expand every room
-  or dimension before examining the answers to this sample. Separately,
-  a conseil SERP can clarify which kinds of answers and offers appear for that seed.
+- **Agent recommendation after run 32:** the paired SERPs and three targeted page
+  readings have answered that sample's content-landscape question. Compare a service
+  explanation, selected project feature and focused guide using the evidence already
+  gathered. No repeat volume/KD call or expansion across room sizes is needed for
+  that comparison. Separately, a conseil SERP can clarify which kinds of answers
+  and offers appear for that seed.
   Connect useful needs to the actual offer: room replacement, supply, fitting,
   design advice and wider reorganisation are not interchangeable missions. A
   profession search does not necessarily mean a full project; lighter help may need
@@ -191,6 +198,12 @@ The foundation supplies business intent; research informs discovery and limits.
   show the initial difficulty, the alternatives considered and the chosen plan,
   with Crystelle's actual role. No such project or outcome has been supplied here.
   This can inform an editorial feature without creating a page per size/shape query.
+  Run 32's specimens add a useful connection: after explaining the problem, identify
+  the decisions individual help can clarify and link them to the real mission.
+  This can begin in architecture copy even while project assets are unavailable.
+  A full guide needs a useful standalone answer; attaching a sales invitation to
+  generic tips does not establish its value. Area is context alongside shape,
+  openings, furniture and habits, not sufficient grounds for separate pages.
 
 ### Useful follow-ups to discuss
 
@@ -199,14 +212,14 @@ useful tool spending; use the capability map to explore other perspectives as we
 Each route below can change a content choice. There is no requirement to finish
 all of them before working on the magazine website.
 
-| Question worth resolving                                                             | Evidence route                                                                                                                                                                                                                                                                            | What would be enough for that question?                                                                                                                                    |
-| ------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| What answers appear for a broad room problem versus a combined-use constraint?       | `/seo dataforseo serp aménagement petit salon, aménager un petit salon avec cuisine ouverte` compares the head with a phrase returned in run 31. This remains an agent-selected residential probe, not an established speciality or publishing commitment.                                | Identify actual answer/provider types and useful project, plan or visual specimens. This tests the content landscape, not buyer shares or whether KD 0 guarantees ranking. |
-| What answers appear for conseil: advice, professional offers, retailers or software? | `/seo dataforseo serp conseil décoration intérieure` would resolve the provider-mix question left open by run 30. Its keyword estimates and older SERP metadata do not answer it.                                                                                                         | Identify one relevant offer/page specimen and how it explains scope and next action. A current result mix would not prove which searches turn into commissions.            |
-| How can a Galerie show actual work and make buying approachable?                     | Run 26 supplies Art Génération's street-art selection and Vettese's artist article. `/seo sxo https://artgeneration.fr/collections/tableaux-street-art "acheter tableau street art"` can examine one specimen's page/search fit.                                                          | Useful ways to present work types, authorship and an enquiry/visit step, within Jukkai's no-catalogue, consent and pre-opening price rules. No shop imitation required.    |
-| How can fees be explained alongside scope, value and next steps?                     | Compare run 27's targeted Studio Anata reading and run 10's CKTFC analysis with actual mission terms. If visitor experience needs closer study, `/seo sxo https://gaeleboutaud.com/combien-coute-architecte-interieur-rennes/ "tarif architecte d'intérieur rennes"` remains a candidate. | A concrete explanation of mission choices, inclusions and how a fee is set. Further cities or template-ownership research are unnecessary for that first content option.   |
-| How does a convincing site combine interiors, artworks and a physical place?         | Find a genuine combined-business reference, including a regional/larger-city example, then use `/seo page <url>` or `/seo sxo <url>` for a whole-page perspective. A native planning/brief workflow can separately propose alternative structures for comparison.                         | Concrete approaches to identity, navigation, selection and actions to compare with Jukkai. Ranking alone does not validate brand expression.                               |
-| What existing material and visibility should survive the transition?                 | Reconcile saved run 8 page data, run 21 backlink destinations and the existing content inventory; inspect particular source links/pages where necessary. Verify current profile facts and CTERRA history with the owner under issue 120.                                                  | A small preservation/verification list with evidence and unresolved destinations. A generic GSC rerun or another stale radius sample would not resolve ownership.          |
+| Question worth resolving                                                             | Evidence route                                                                                                                                                                                                                                                                            | What would be enough for that question?                                                                                                                                  |
+| ------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Which format could make a residential need and the available help understandable?    | Reuse runs 28–32 and their page specimens to compare architecture copy, a project feature and a focused guide. A fresh paid capture is not needed for this first comparison; choose a page-level workflow only if it answers a remaining question.                                        | One concrete content option connecting the need, useful explanation, available proof, real mission and next action. Mark missing project material without inventing it.  |
+| What answers appear for conseil: advice, professional offers, retailers or software? | `/seo dataforseo serp conseil décoration intérieure` would resolve the provider-mix question left open by run 30. Its keyword estimates and older SERP metadata do not answer it.                                                                                                         | Identify one relevant offer/page specimen and how it explains scope and next action. A current result mix would not prove which searches turn into commissions.          |
+| How can a Galerie show actual work and make buying approachable?                     | Run 26 supplies Art Génération's street-art selection and Vettese's artist article. `/seo sxo https://artgeneration.fr/collections/tableaux-street-art "acheter tableau street art"` can examine one specimen's page/search fit.                                                          | Useful ways to present work types, authorship and an enquiry/visit step, within Jukkai's no-catalogue, consent and pre-opening price rules. No shop imitation required.  |
+| How can fees be explained alongside scope, value and next steps?                     | Compare run 27's targeted Studio Anata reading and run 10's CKTFC analysis with actual mission terms. If visitor experience needs closer study, `/seo sxo https://gaeleboutaud.com/combien-coute-architecte-interieur-rennes/ "tarif architecte d'intérieur rennes"` remains a candidate. | A concrete explanation of mission choices, inclusions and how a fee is set. Further cities or template-ownership research are unnecessary for that first content option. |
+| How does a convincing site combine interiors, artworks and a physical place?         | Find a genuine combined-business reference, including a regional/larger-city example, then use `/seo page <url>` or `/seo sxo <url>` for a whole-page perspective. A native planning/brief workflow can separately propose alternative structures for comparison.                         | Concrete approaches to identity, navigation, selection and actions to compare with Jukkai. Ranking alone does not validate brand expression.                             |
+| What existing material and visibility should survive the transition?                 | Reconcile saved run 8 page data, run 21 backlink destinations and the existing content inventory; inspect particular source links/pages where necessary. Verify current profile facts and CTERRA history with the owner under issue 120.                                                  | A small preservation/verification list with evidence and unresolved destinations. A generic GSC rerun or another stale radius sample would not resolve ownership.        |
 
 The proposed next discussion can now compare an outline across architecture,
 Galerie and contact, including professional missions and their project proof.
