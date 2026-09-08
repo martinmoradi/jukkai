@@ -4,8 +4,8 @@
 
 **Status:** capability reference; no research sequence, sitemap or strategy approved.
 
-**Updated:** 2026-09-08, including the invocation contract and limitations observed
-in the independently run Maps and Images reports.
+**Updated:** 2026-09-09, including the invocation contract and limitations observed
+in the independently run Maps, Images and SERP reports.
 
 ## Agent contract
 
@@ -273,13 +273,17 @@ prompts. Apply the following distinctions while reviewing reports here:
 - **Coverage:** save actual requested lists and reconcile returned identities,
   not just counts. The workspace temporarily caps keyword batches at ten because
   captured responses have been shortened; this is not a documented API limit.
-  Record requested depth versus saved items, duplicates and missing fields.
+  Record requested depth versus saved items, duplicates and missing fields. For
+  SERPs, also check `max_crawl_pages`: the city-pricing requests explicitly limited
+  depth 100 to one page. The [provider reference](https://docs.dataforseo.com/v3/serp/google/organic/live/advanced/)
+  documents complementary depth/page limits; do not assume a missing parameter's
+  effective MCP default or attribute every short capture to the same layer.
 - **Unavailable values:** distinguish numeric estimates (including numeric zero),
   returned rows without a metric, and requested rows absent from the capture.
   Missing volume or difficulty is not zero; no threshold or cause is established
   merely by absence. Do not sum close variants into unique audiences.
 - **Capture fidelity:** upstream documents field filtering. The workspace records
-  removal of the provider task envelope, and today's log includes reconstructed
+  removal of the provider task envelope, and the reviewed log includes reconstructed
   extracts, omitted PAA answers, placeholder images and incomplete AIO citations.
   A file named `raw.json` is not proof of an unfiltered provider response. Retain
   what was captured and label omissions; do not reconstruct missing evidence as fact.
