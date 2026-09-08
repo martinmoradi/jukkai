@@ -275,7 +275,10 @@ prompts. Apply the following distinctions while reviewing reports here:
   captured responses have been shortened; this is not a documented API limit.
   Record requested depth versus saved items, duplicates and missing fields. For
   SERPs, also check `max_crawl_pages`: the city-pricing requests explicitly limited
-  depth 100 to one page. The [provider reference](https://docs.dataforseo.com/v3/serp/google/organic/live/advanced/)
+  depth 100 to one page. September 9's kitchen-provider run saved two pages at
+  depth 20/`max_crawl_pages:2`, with 19 organic placements but 18 unique URLs.
+  This demonstrates multi-page retrieval in that run, not the cause of every earlier
+  short response or a link to keyword-batch omissions. The [provider reference](https://docs.dataforseo.com/v3/serp/google/organic/live/advanced/)
   documents complementary depth/page limits; do not assume a missing parameter's
   effective MCP default or attribute every short capture to the same layer.
 - **Unavailable values:** distinguish numeric estimates (including numeric zero),
