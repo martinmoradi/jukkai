@@ -61,12 +61,20 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   phrases at Rennes or France targeting, and no difficulty scores. It cannot order
   the phrases by demand or competition. Intent labels are vendor classification,
   not observed buyer shares; `aménagement restaurant rennes` still has no reviewed SERP.
-- **Latest recommendation, not agreed sequence:** if broader restaurant demand remains
-  decision-relevant, measure the three restaurant phrases without `rennes` at France
-  targeting. This would describe broader vocabulary, not quantify Rennes demand.
-  Existing evidence already supports considering restaurant proof such as Le Capri;
-  do not keep querying until a number appears as a prerequisite to content work.
-  Closer combined-business/Galerie examples remain a gap; no restaurant URL is approved.
+- **B2B discussion clarified by Martin:** consider the breadth of Crystelle's work,
+  including daycares, medical/waiting spaces, offices and hospitality. Restaurants
+  were an agent-selected probe grounded in available proof, not a data-established
+  priority. Business clients may use general architecture queries and qualify the
+  provider on-site; this is a hypothesis, not observed audience behaviour. Martin
+  welcomes useful API spending; question quality, not minimising every call, matters.
+- **Latest learning/recommendation:** run 14 shows CMC²'s homepage on a broad Rennes
+  architecture query alongside specialised ranking pages. It does not identify B2B
+  searchers or fully describe sector discovery. Broaden keyword discovery next,
+  starting with `aménagement locaux professionnels` (France/fr), then assess the
+  returned vocabulary against actual missions and selected competitor footprints.
+  This seed is a coverage hypothesis, not approved copy; retain generic discovery
+  from existing runs and use SERPs to resolve specific ambiguities afterward.
+  Closer combined-business/Galerie examples remain a gap; no B2B URL is approved.
 - **Proposed eventual output:** connect each candidate page to visitor needs, related
   searches, truthful message/proof and next action. No sitemap or brief is approved.
 
@@ -83,16 +91,16 @@ The foundation supplies business intent; the research informs discovery and limi
 | Galerie                  | Understand the selection, possibility of buying and actual visit arrangements. Broad gallery SERP plus business intent; no agenda obligation.                           | Content available before opening; clearer buying vocabulary and relevant references.            |
 | Contact / visit          | Reach the practice or plan a Galerie visit with truthful information. Existing contact-page clicks and known lead behaviour support accessibility.                      | General contact page versus shared sections; distinguish appointment and public opening states. |
 
-Next discussion: distinguish the restaurant visitor's need for design, coordination
-or fabrication; the first volume comparison could not prioritise the local phrases.
-Sigrid's project and BOS's credited designer/fabricator split are useful specimens;
-Le Capri remains a proof candidate subject to actual scope and ready material.
+Next discussion: map broad versus specialised B2B discovery without assuming that
+clients name their sector in searches. Seek vocabulary for professional premises
+across actual project types; connect promising groups to business relevance, proof
+and useful content before deciding pages. Le Capri remains one proof candidate.
 Old-site URL preservation/migration needs a later
 mapping pass; these proposed surfaces are not redirect targets yet.
 
 ## Reviewed runs
 
-All thirteen reviewed runs below were captured on **2026-09-08**. Commands use the documented
+All fourteen reviewed runs below were captured on **2026-09-08**. Commands use the documented
 `/seo` shorthand; Martin invokes them as `/claude-seo:seo …`. Reviewer corrections
 below qualify the original reports, some of which still contain rejected conclusions.
 
@@ -433,6 +441,35 @@ below qualify the original reports, some of which still contain rejected conclus
   runs 11–12; this run adds no numerical priority or page decision. A broader national
   comparison without the city modifier is an optional next measurement, with local
   transfer explicitly unproved. No paid calls made by this reviewing session.
+
+### 14. CMC² ranking footprint — do broad and specialised discovery coexist?
+
+`/seo dataforseo ranked architecte-interieur-cmc2.com`
+
+- **Evidence:** `dataforseo-ranked-architecte-interieur-cmc2-2026-09-08/`:
+  `findings/ranked-keywords.md`, `data/requests.md`, two response JSON files and CSV.
+  France/fr Labs; 20 ranking rows (18 distinct keyword strings, including hyphen
+  variants; 18 organic and two local placements), nine returned page addresses.
+  Stored ranking dates span May 25–September 4, not a simultaneous live capture.
+  Returned counts match totals for these requests, not the site's entire visibility.
+- **Learned:** homepage ranks organic #6 for `architecte d'intérieur rennes`
+  (August 12 snapshot; France volume estimate 1,000). A Rennes maîtrise-d'œuvre
+  page appears for `maitre d'oeuvre rennes` (#13) and `maitrise d'oeuvre rennes`
+  (#14). A Saint-Brieuc restaurant page appears for `agenceur restaurant` (#22;
+  May 25 snapshot; France volume estimate 70). General city architecture terms,
+  mission vocabulary and a sector phrase thus coexist, using different page types.
+- **Jukkai implication:** a broad entry page with legible professional work remains
+  plausible alongside specialised content. No client-type or onward-journey data
+  proves B2B use of the broad query. Maîtrise d'œuvre adds vocabulary to investigate,
+  not a new Jukkai title/offer or a B2B-only label. The export is too sparse to map
+  all professional sectors; the Rennes restaurant page seen in runs 11–12 is absent.
+- **Interpretation limits:** homepage ranking does not establish the "wrong page"
+  or a missing required Rennes URL. Page metrics omit the homepage's #6 Rennes
+  placement and cannot be directly reconciled with the keyword table; do not use
+  combined totals as traffic shares. ETV is modelled, not visits. Geography, trend
+  and rank-change samples do not establish commercial focus, market contraction,
+  conversion or a site's overall trajectory. No fresh SERP or website audit needed
+  to answer this run's question; continue broader vocabulary discovery.
 
 ## Evidence rules and tool roles
 
