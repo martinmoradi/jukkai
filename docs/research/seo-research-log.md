@@ -54,7 +54,10 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   versus long décoration phrases. Run 31 adds room geometry, combined uses,
   openings, furniture and atmosphere as concrete problem vocabulary. Run 32 shows
   advice, practice, retail and visual answers to two room problems, with concrete
-  examples connecting a useful explanation to professional help.
+  examples connecting a useful explanation to professional help. Run 33 adds paid
+  conseil formats, free tools and local practices, with five local entities shared
+  with the architecture capture. Different mission vocabulary can discover overlapping
+  providers; it does not require a different professional identity.
   Search visibility, persuasion and enquiry
   conversion remain different measures; neither city size nor snippet quality
   measures easy competition.
@@ -66,7 +69,9 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   contamination. Local estimates do not exclude local buyers. Runs 25/26 expose
   different visual surfaces but leave Google Images unmeasured. Explain what the
   actual selection contains and how to discover/buy it, within opening, consent
-  and no-ecommerce/catalogue constraints.
+  and no-ecommerce/catalogue constraints. Run 33 adds Pigalle Matignon as an adjacent
+  reference combining collectible design, creator stories and décoration advice;
+  its shop model is not the Jukkai contract or a verified physical-gallery comparison.
 - **Supported continuity learning:** run 8 concentrates recorded old-site entry on
   the homepage, with incomplete query visibility. Run 21 adds linked destinations:
   the homepage, ecological-kitchen article and Zig Zag Wizz project merit a joint
@@ -82,25 +87,25 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   colourful, approachable street/pop/urban art, for buying as well as viewing.
   Actual offer scope, proof and the foundation's separate architecture/art pricing
   rules govern copy; tentative gift-price examples do not approve public art prices.
-- **What the latest run adds:** broad problem searches can surface a professional
-  practice alongside retailers and media. The small-room results include advice
-  connected to bespoke furniture, project evidence and enquiries; open-kitchen
-  answers emphasise the relationship between uses, circulation and visual coherence.
-  This makes the path from a recognised problem to an actual mission more concrete.
-  It does not measure local leads or show that national traffic is a good initial
-  acquisition investment. Distinct organic selections, shared image destinations
-  and project-based video examples inform possible answers, not a compulsory split
-  into two pages or a required medium. Room vocabulary and the earlier kitchen,
-  conseil and pricing runs can now inform content options without more measurements
-  for these two phrases. Preservation targets and profile checks remain relevant to
+- **What the latest run adds:** the conseil query brings paid consultation pages,
+  general advice and local businesses together. Targeted readings distinguish a
+  video conversation, an at-home appointment with preparation, and a retailer's free
+  AI/paid human/3D offers. Meeting format, preparation, outputs and mission boundaries
+  give substance to a broad label such as conseil. These are content questions for
+  Jukkai's existing welcome for lighter work, not approved packages or competitor-price
+  targets. Together with room and kitchen examples, they now support concrete copy
+  and page options. Local lead performance, buyer shares and ranking causes remain
+  unmeasured; the presence of free advice does not erase the paid offers. Preservation
+  targets and profile checks remain relevant to
   [the Studio Terrasson/Google transition](https://github.com/martinmoradi/jukkai/issues/120).
   Scores and report checklists do not turn into launch work.
-- **Still open:** the conseil seed's provider/advice/software result mix remains
-  unmeasured. The room sample supplies answer specimens, but no measure of qualified
-  local acquisition or a ready Jukkai project story. Actual offers and visitor
-  experience of the new commercial-art specimens remain to examine, and a combined
-  art/interiors example is still missing. The homepage/service/Galerie relationship
-  and first/later page split remain decisions.
+- **Still open:** precise Jukkai mission terms and available project material, rather
+  than another broad room/conseil capture, are the missing inputs for detailed offer
+  copy. Qualified local acquisition remains unmeasured. Actual offers and visitor
+  experience of the commercial-art specimens remain to examine. Pigalle Matignon
+  supplies an adjacent shared-brand reference; the combination of an architecture
+  practice and physical commercial gallery still lacks a closely matched specimen.
+  The homepage/service/Galerie relationship and first/later page split remain decisions.
   Preserve Martin's interest in regional and larger-city examples. Nantes, Lyon and
   Paris now supply pricing contrasts, not a difficulty hierarchy or a required
   competitor set. B2B breadth matters; restaurants were an agent-selected probe,
@@ -113,7 +118,7 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   to publish a project, stock, opening arrangements or the shared-brand expression.
   No sitemap, content brief or research sequence is approved by this synthesis.
 
-### Candidate content purposes after run 32
+### Candidate content purposes after run 33
 
 **Agent proposal for discussion, not five approved URLs or release commitments.**
 The foundation supplies business intent; research informs discovery and limits.
@@ -163,18 +168,21 @@ The foundation supplies business intent; research informs discovery and limits.
   and retailers. The open-kitchen results include specialist suppliers and project
   videos. This broadens possible discovery beyond national retail dominance without
   measuring client behaviour, local leads or the difficulty facing Jukkai.
+  Run 33 adds paid conseil pages and overlapping local practices, with concrete
+  consultation examples. Advice/provider/retailer/software is not an exclusive
+  classification: one retailer page presents a free AI diagnostic and paid human help.
 - **Open distinction:** "I want help but do not know which profession" differs from
   "I want this room to work better and have not considered hiring anyone". Provider
   and conseil wording chiefly probed the former question; runs 31–32 supply
   room/constraint language and examples of answers for investigating the latter. These are useful research
   perspectives, not measured audience segments or an established sequence that
   every client follows. A small room is not evidence of a small budget or mission.
-- **Agent recommendation after run 32:** the paired SERPs and three targeted page
-  readings have answered that sample's content-landscape question. Compare a service
+- **Agent recommendation after run 33:** the room and conseil SERPs and targeted page
+  readings have answered those samples' content-landscape questions. Compare a service
   explanation, selected project feature and focused guide using the evidence already
   gathered. No repeat volume/KD call or expansion across room sizes is needed for
-  that comparison. Separately, a conseil SERP can clarify which kinds of answers
-  and offers appear for that seed.
+  that comparison. The conseil examples add concrete ways to explain the help,
+  preparation and outputs, to compare with Jukkai's actual mission terms.
   Connect useful needs to the actual offer: room replacement, supply, fitting,
   design advice and wider reorganisation are not interchangeable missions. A
   profession search does not necessarily mean a full project; lighter help may need
@@ -212,14 +220,13 @@ useful tool spending; use the capability map to explore other perspectives as we
 Each route below can change a content choice. There is no requirement to finish
 all of them before working on the magazine website.
 
-| Question worth resolving                                                             | Evidence route                                                                                                                                                                                                                                                                            | What would be enough for that question?                                                                                                                                  |
-| ------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Which format could make a residential need and the available help understandable?    | Reuse runs 28–32 and their page specimens to compare architecture copy, a project feature and a focused guide. A fresh paid capture is not needed for this first comparison; choose a page-level workflow only if it answers a remaining question.                                        | One concrete content option connecting the need, useful explanation, available proof, real mission and next action. Mark missing project material without inventing it.  |
-| What answers appear for conseil: advice, professional offers, retailers or software? | `/seo dataforseo serp conseil décoration intérieure` would resolve the provider-mix question left open by run 30. Its keyword estimates and older SERP metadata do not answer it.                                                                                                         | Identify one relevant offer/page specimen and how it explains scope and next action. A current result mix would not prove which searches turn into commissions.          |
-| How can a Galerie show actual work and make buying approachable?                     | Run 26 supplies Art Génération's street-art selection and Vettese's artist article. `/seo sxo https://artgeneration.fr/collections/tableaux-street-art "acheter tableau street art"` can examine one specimen's page/search fit.                                                          | Useful ways to present work types, authorship and an enquiry/visit step, within Jukkai's no-catalogue, consent and pre-opening price rules. No shop imitation required.  |
-| How can fees be explained alongside scope, value and next steps?                     | Compare run 27's targeted Studio Anata reading and run 10's CKTFC analysis with actual mission terms. If visitor experience needs closer study, `/seo sxo https://gaeleboutaud.com/combien-coute-architecte-interieur-rennes/ "tarif architecte d'intérieur rennes"` remains a candidate. | A concrete explanation of mission choices, inclusions and how a fee is set. Further cities or template-ownership research are unnecessary for that first content option. |
-| How does a convincing site combine interiors, artworks and a physical place?         | Find a genuine combined-business reference, including a regional/larger-city example, then use `/seo page <url>` or `/seo sxo <url>` for a whole-page perspective. A native planning/brief workflow can separately propose alternative structures for comparison.                         | Concrete approaches to identity, navigation, selection and actions to compare with Jukkai. Ranking alone does not validate brand expression.                             |
-| What existing material and visibility should survive the transition?                 | Reconcile saved run 8 page data, run 21 backlink destinations and the existing content inventory; inspect particular source links/pages where necessary. Verify current profile facts and CTERRA history with the owner under issue 120.                                                  | A small preservation/verification list with evidence and unresolved destinations. A generic GSC rerun or another stale radius sample would not resolve ownership.        |
+| Question worth resolving                                                          | Evidence route                                                                                                                                                                                                                                                                             | What would be enough for that question?                                                                                                                                          |
+| --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Which format could make a residential need and the available help understandable? | Reuse runs 28–33 and their advice/offer specimens to compare architecture copy, a project feature and a focused guide. A fresh paid capture is not needed for this first comparison; choose a page-level workflow only if it answers a remaining question.                                 | One concrete content option connecting the need, useful explanation, available proof, real mission and next action. Include preparation/outputs where known; mark missing facts. |
+| How can a Galerie show actual work and make buying approachable?                  | Run 26 supplies Art Génération's street-art selection and Vettese's artist article. `/seo sxo https://artgeneration.fr/collections/tableaux-street-art "acheter tableau street art"` can examine one specimen's page/search fit.                                                           | Useful ways to present work types, authorship and an enquiry/visit step, within Jukkai's no-catalogue, consent and pre-opening price rules. No shop imitation required.          |
+| How can fees be explained alongside scope, value and next steps?                  | Compare runs 10/27's pricing specimens and run 33's consultation formats with actual mission terms. If visitor experience needs closer study, `/seo sxo https://gaeleboutaud.com/combien-coute-architecte-interieur-rennes/ "tarif architecte d'intérieur rennes"` remains a candidate.    | A concrete explanation of mission choices, inclusions and how a fee is set. Different competitor delivery models do not establish Jukkai's price or required packages.           |
+| How does a convincing site connect an authored selection, advice and a place?     | Run 33 identifies an adjacent design-gallery/advice brand: `/seo page https://www.pigallematignon.com/` could examine its homepage and paths. A closer architecture-practice/physical-gallery example remains to find; a native planning/brief workflow can separately propose structures. | Concrete approaches to identity, creator stories, navigation and actions to compare with Jukkai. Distinguish transferable presentation from its online-shop model.               |
+| What existing material and visibility should survive the transition?              | Reconcile saved run 8 page data, run 21 backlink destinations and the existing content inventory; inspect particular source links/pages where necessary. Verify current profile facts and CTERRA history with the owner under issue 120.                                                   | A small preservation/verification list with evidence and unresolved destinations. A generic GSC rerun or another stale radius sample would not resolve ownership.                |
 
 The proposed next discussion can now compare an outline across architecture,
 Galerie and contact, including professional missions and their project proof.
