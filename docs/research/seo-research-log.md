@@ -47,13 +47,13 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   old-site queries, pages, links and proof to preserve. Retain Martin's interest in
   selected regional/larger-city and combined art/interiors examples. Research should
   inform later pages too, without becoming an exhaustive magazine-release gate.
-- **Latest recommendation, not agreed sequence:** run 10 completes CKTFC SXO.
-  Its homepage previews residential/B2B work and process; a linked service/pricing
-  page explains missions and deliverables. This informs candidate content roles,
-  not a prescribed layout or tariff. Next suggested probe: restaurant interior
-  architecture in Rennes, tied to Jukkai's existing restaurant proof, to open one
-  B2B segment. Closer combined-business/Galerie examples remain a gap. Do not
-  automatically follow CKTFC's repair backlog or repeat the completed GSC baseline.
+- **Latest recommendation, not agreed sequence:** run 11 opens restaurant B2B:
+  service pages and project evidence both appear; no weak-market or dedicated-page
+  requirement is established. Next suggested probe: `agencement restaurant rennes`
+  to test alternative buyer vocabulary and the mix of designers, fit-out providers
+  and equipment suppliers before selecting phrases for volume measurement. Relate
+  findings to Crystelle's actual mission scope and restaurant proof. Closer
+  combined-business/Galerie examples remain a gap; no restaurant URL is approved.
 - **Proposed eventual output:** connect each candidate page to visitor needs, related
   searches, truthful message/proof and next action. No sitemap or brief is approved.
 
@@ -76,7 +76,7 @@ mapping pass; these proposed surfaces are not redirect targets yet.
 
 ## Reviewed runs
 
-All ten runs below were captured on **2026-09-08**. Commands use the documented
+All eleven reviewed runs below were captured on **2026-09-08**. Commands use the documented
 `/seo` shorthand; Martin invokes them as `/claude-seo:seo …`. Reviewer corrections
 below qualify the original reports, some of which still contain rejected conclusions.
 
@@ -305,6 +305,52 @@ below qualify the original reports, some of which still contain rejected conclus
   [accented URLs are supported](https://developers.google.com/search/docs/crawling-indexing/url-structure);
   [root slash variants are equivalent](https://developers.google.com/search/blog/2010/04/to-slash-or-not-to-slash).
   Do not inherit these as automatic repair tasks.
+
+### 11. Restaurant architecture, Rennes — does a B2B need change the results?
+
+`/seo dataforseo serp architecte d'intérieur restaurant rennes`
+
+- **Evidence:** `serp-architecte-interieur-restaurant-rennes-2026-09-08/findings.md`
+  and two `data/serp-organic-extract-*.json` files. A includes Rennes in the phrase;
+  B omits it. Both Rennes (`1005876`) / fr / desktop / depth 100; ten organic
+  results each. A matched the explicit request; B was Claude's additional comparison,
+  not a necessary resolution of ambiguous settings. Two successful calls estimated
+  at $0.004; API charges and billing of A's failed first attempt are unknown.
+- **Learned:** A includes restaurant service pages (CMC² #1, Ika #3), project
+  results (Wunder #2, Archibien #7, I AM DESIGN #8), broader agency pages and
+  social/directory results. B includes restaurant service pages, portfolio
+  collections, an article, a school and a marketplace. No shared organic URL;
+  Ynspir is the sole shared domain, using different pages. Local packs share five
+  of six entries (seven unique total); both start organic at absolute 1. This shows
+  city wording changes the sampled organic results even with location held constant.
+- **Jukkai implication:** explanatory service content and project proof are both
+  plausible discovery routes. A real restaurant story can serve persuasion and
+  search; it need not wait for a dedicated restaurant service URL. Decide scope
+  from actual work, ready proof and further vocabulary evidence. Neither one page
+  per project nor one page per sector is mandated by these captures.
+- **Page checks/corrections (September 8):** [CMC²](https://www.architecte-interieur-cmc2.com/agencement-restaurant-rennes/4-2.htm)
+  explains layout, kitchen, furniture, mission stages and carries restaurant
+  testimonials: `.htm` does not establish weakness. [Wunder's project](https://www.wunderarchitectes.fr/lebenedicte)
+  combines venue name, Rennes, mission labels and images, linked to a restaurant/
+  café/commerce portfolio collection; a site-wide absence of service content is
+  unproved. [Ynspir's Rennes page](https://ynspir.com/bretagne/ille-et-vilaine/rennes/)
+  has a restaurant/CHR section; [Ika](https://www.ikadesign.fr/architecte-interieur-agenceur-restaurant-rennes)
+  explicitly describes CHR work. Reject “only two relevant results”, “half the page
+  does not answer”, “unclaimed CHR terminology” and an easy competitive field.
+- **Limits:** missing specialism in captured GBP labels does not establish that
+  businesses/profiles lack it or explain Google's selection. Review counts provide
+  no low-entry-bar evidence. Related restaurant names and off-topic PAA suggest
+  ambiguity, not buyer/click shares, commercial-value caps or a cause attributable
+  to Wunder. B labels three organic entries Paris, not four; related searches are
+  not a fourth organic listing, and full provider geography was not established.
+  No volume, difficulty, conversion or ranking-cause data; 60/90-day outcomes and
+  1% CTR thresholds cannot isolate causes. Organic visibility for a Nantes-addressed
+  provider demonstrates possibility, not that organic geography is irrelevant.
+- **Evidence gap:** A's PAA file saves six questions and source-domain labels, not
+  the reported expanded answer text or complete citation URLs; two questions are
+  nested follow-ups. Archibien's destination is replaced by a truncated redirector.
+  B's PAA answers were not captured. Preserve these limits rather than calling the
+  structured extracts full raw responses.
 
 ## Evidence rules and tool roles
 
