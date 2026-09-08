@@ -114,7 +114,9 @@ mapping pass; these proposed surfaces are not redirect targets yet.
 
 ## Reviewed runs
 
-All eighteen reviewed runs below were captured on **2026-09-08**. Commands use the documented
+All twenty-five reviewed runs below are dated **2026-09-08**. Runs 19–25 were
+reviewed together after Martin supplied seven independently initiated commands;
+numbering is review order, not a prescribed research sequence. Commands use the documented
 `/seo` shorthand; namespace resolution is automatic. Reviewer corrections
 below qualify the original reports, some of which still contain rejected conclusions.
 
@@ -621,6 +623,242 @@ l'espace en crèche` 140, `aménagement micro crèche` 90, reading-corner 70, ga
   displayed dates do not establish freshness's general importance or last revisions.
   No market-share, conversion or required format established. Estimated $0.002;
   API-reported charge unavailable. No reviewer website visits or paid calls.
+
+### 19. Maps competitors — what does the indexed local landscape contain?
+
+`/seo maps competitors architecte d'intérieur Rennes`
+
+- **Evidence:** `maps-competitors-architecte-interieur-rennes-2026-09-08/`:
+  `MAPS-COMPETITORS-architecte-interieur-rennes.md`, `data/request-manifest.json`,
+  listing responses and merged table; run 1 supplies
+  the reused live web-SERP local results. Business Listings radius searches around
+  Rennes centre, with category totals 124 / 67 / 118 and union 252 at 15 km;
+  147 at 5 km. Eleven saved listing responses yield 68 distinct businesses, sorted
+  towards higher review counts; 60 records date from June–July 2026.
+- **Learned:** these category populations overlap and mix design practices with
+  retail, kitchens and other trades. Thirty-eight sampled businesses have an interior
+  primary category; this is not a verified pure-practice census. Eighteen have a
+  captured services field. The six local results reused from run 1 have indexed
+  coordinates 0.08–1.28 km from Rennes centre; review counts do not sort that list.
+- **Jukkai implication:** clear professional identity, actual missions and truthful
+  location information matter when the surrounding category is broad. Services are
+  a profile-content candidate to verify during the transition, not a demonstrated
+  ranking advantage. The practice already moved to Châteaugiron; this report's Vern
+  location is historical. Rennes remains the commercial audience in the foundation.
+- **Limits/corrections:** one centre-based SERP and a selected index sample cannot
+  establish a 1.3 km ranking boundary, rule out Rennes visibility or prescribe a
+  south-east-corridor sitemap. The 309 category memberships minus 252 businesses
+  are 57 extra memberships, not necessarily 57 multi-category businesses. Missing
+  services are not confirmed empty dashboards. Requests above ten returned ten;
+  the layer responsible is unproved and the one-item probe was not saved.
+  `is_claimed:false` showed no filtering effect; unclaimed coverage is unknown.
+  No Maps grid, live profile/review audit or ranking-cause measurement. Google's
+  [local-ranking guidance](https://support.google.com/business/answer/7091?hl=en)
+  identifies relevance, distance from the searcher and prominence together. Estimated
+  $0.60; API-reported charge unavailable. No reviewer paid calls or website visits.
+
+### 20. Studio Terrasson GBP — what should the transition preserve and verify?
+
+`/seo maps gbp "Studio Crystelle Terrasson" Vern-sur-Seiche`
+
+- **Evidence:** `maps-gbp-studio-crystelle-terrasson-2026-09-08/report.md`, findings,
+  target/sweep Business Listings responses, CTERRA web SERP and the saved website
+  extraction notes. Target record dated June 29: claimed, `Interior architect office`
+  plus `Interior Decorator`, 4.6/15 reviews, 43 photos, an HTTP website URL and no
+  returned services field. The website notes record matching historical Vern contact
+  information and existing process, credentials and professional-project material.
+- **Learned:** the indexed profile description leaves its actual mission breadth
+  mostly implicit. The separate `CTERRA - Terrasson Crystelle` Laillé entity appears
+  both in the index and the exact-name live SERP's knowledge graph. Its relationship
+  to Crystelle is unresolved. A single query returned no relevant independent organic
+  result; it cannot establish no presence anywhere online or a harmful duplicate.
+- **Jukkai implication:** this supplies a concrete verification list for
+  [the transition](https://github.com/martinmoradi/jukkai/issues/120): profile identity
+  and ownership, former addresses, website destination, actual services and current
+  visit arrangements. Consistency between two old Vern references is not proof of
+  current accuracy. For copy, retrieve the existing process/proof material, then use
+  the foundation's approved claim wording and qualify any old fees or meeting offer.
+  Architecture appointments and future public Galerie hours remain distinct.
+- **Limits/corrections:** 68/100 is a tool heuristic over 14/25 fields, not measured
+  ranking health. Four extra categories, a 250-character minimum, Saturday opening
+  and more services are not evidence-established requirements. A portrait image does
+  not establish that no cover was chosen; a topic labelled `clause` does not establish
+  contract friction. No field or review text was checked in the owner dashboard.
+  Ownership must be established before any duplicate action; profile changes are not
+  authorised here. The saved call inventory also includes a SERP beyond the summary's
+  two Business Listings calls. API charges unavailable; no reviewer paid calls.
+
+### 21. Backlinks — which relationships and old destinations merit preservation?
+
+`/seo backlinks studioterrasson.fr`
+
+- **Evidence:** `backlinks-studioterrasson-2026-09-08/REPORT.md`, reconciliation,
+  `data/backlinks_summary.json`, referring-domain projections, domain-page raw JSON,
+  gap data and saved host checks. DataForSEO reports 64 backlinks, 53 referring
+  domains including subdomains and 48 referring main domains; the main-domain list
+  is complete for this index. Competitor enumeration is partial; several saved
+  responses are field projections, not full payloads.
+- **Learned:** the four `.fr` domains are Ouest-France, Hexagone Architecture,
+  Cuisine Gibert and Délai Paiement. The first three are useful press/partner leads
+  to inspect and preserve; their exact link pages and endorsements are not verified.
+  Competitor data adds specialist-directory and commune/partner patterns, including
+  Batihome across five enumerated peers. Eligibility, placement and referral value
+  remain untested; no outreach or listing programme is approved.
+- **Preservation value:** domain-page records show backlinks to the HTTP/HTTPS www
+  homepage, `/concevoir-une-cuisine-ecologique/` (four links, three referring main
+  domains) and `/particulier/zig-zag-wizz/` (four links, one referring main domain).
+  Join these with run 8's GSC page evidence when mapping old URLs for issue 120.
+  They are concrete investigation candidates, not approved new pages or redirect
+  targets. The source-domain-to-destination pairs and link quality still need checking.
+  Keep the current old-site banner bridge and separate migration timing.
+- **Jukkai implication:** actual projects, collaborators and useful explanations can
+  serve prospective clients and provide something credible to reference. The evidence
+  supports exploring those assets; it does not prove a blog programme or copy format
+  earns links. The named kitchen guide is a specimen, not a demonstrated winning formula.
+- **Limits/corrections:** 32/100 and source confidence 1.0 are tool labels, not Google's
+  judgement or certainty. Four `.fr` domains do not establish exactly four genuine
+  editorial links; first-seen dates do not measure acquisition cadence. The shared
+  spam anchors on two peers counter a uniquely targeted interpretation but establish
+  neither origin nor harmlessness; a ranking peer is not a causal control. No penalty
+  or basis for submitting the saved disavow file is established; Google's
+  [disavow criteria](https://support.google.com/webmasters/answer/2648487?hl=en)
+  concern a manual action or its likelihood, not a vendor spam-score threshold. Run 8 already covered
+  GSC performance; manual-actions and Google link coverage are separate unreviewed
+  checks, not a reason to repeat a generic audit. Saved headers show the apex already
+  redirects to HTTPS www. Missing page backlink fields and stored 301 statuses cannot
+  prove zero links or that every historic destination is safely preserved. No new
+  reviewer paid calls or website visits; API charges unavailable, no run estimate.
+
+### 22. Architecture fees — what answers appear for a pricing question?
+
+`/seo dataforseo serp tarif architecte d'intérieur rennes`
+
+- **Evidence:** `serp-tarif-architecte-interieur-rennes-2026-09-08/REPORT.md`,
+  `data/request_serp_organic.json`, `data/raw_serp_organic.json` and CSV.
+  Rennes (`1005876`)/fr/desktop; depth 100, one page requested; nine organic
+  results, one AIO and one PAA saved. Estimated $0.002; API charge unavailable.
+- **Learned:** practitioner pricing articles lead (Olivia Ballet, Gaële Boutaud),
+  alongside provider pages and directories. **Six of nine** organic descriptions
+  state prices, correcting seven in the report. Hourly advice, design fees per m²
+  and full-mission percentages coexist; several snippets distinguish conception
+  from chantier follow-up. Three of four PAA questions concern fees; the fourth
+  asks the value of hiring an interior architect. This adds concrete questions
+  about cost, inclusions and professional contribution to the copy evidence.
+- **Jukkai implication:** explain what the mission covers, how its depth changes
+  fees, and how design fees relate to the works budget. This connects directly to
+  the foundation's mission ladder and current-letter-of-mission requirement.
+  A service-page section, relevant project example or later cost guide are options;
+  this capture does not choose a URL. Competitor figures are snippet evidence,
+  not verified comparable offers or Jukkai rates. Architecture pricing and the
+  pre-opening ban on art prices remain separate rules.
+- **Limits/corrections:** no AIO text/citations or expanded PAA answers captured;
+  no local pack item saved and ranks beyond page one unknown. Dates, Quimper
+  wording, aggregator results and a homepage do not establish weak competition or
+  Google's "padding" of an underserved query. Ynspir's provider role was already
+  established in run 11; do not inherit the directory label. Snippets do not
+  establish absent pricing elsewhere on a page. Run 23's unavailable volume
+  neither falsifies a content opportunity nor measures its demand; a populated
+  SERP establishes available answers, not how often people seek them.
+
+### 23. Six Rennes service phrases — how do the estimates compare?
+
+`/seo dataforseo volume architecte d'intérieur rennes, décorateur d'intérieur rennes, décoratrice d'intérieur rennes, rénovation intérieure rennes, aménagement intérieur rennes, tarif architecte d'intérieur rennes`
+
+- **Evidence:** `keywords-volume-rennes-6kw-2026-09-08/report.md`,
+  `data/requested_keywords.json`, `data/google_ads_volume_rennes.json` and CSV.
+  Rennes (`1005876`)/fr Google Ads; all six requested strings returned.
+  Estimated $0.05; API-reported charge unavailable.
+- **Learned:** monthly estimates are architecture 390; décorateur and décoratrice
+  30 each; rénovation and aménagement 10 each; tariff volume unavailable. The two
+  gendered variants have identical metrics and all twelve monthly values. Treat
+  them as overlapping estimates, consistent with close-variant grouping, rather
+  than adding to 60 or assigning separate pages. Architecture's 390 repeats run 2;
+  a repeated estimate is not an independent market-size measurement.
+- **Jukkai implication:** retain the architecte d'intérieur identity while making
+  lighter décoration, transformation and full missions understandable. These six
+  phrases reinforce existing offer language; they do not describe the entire
+  market, exclude B2B discovery through general queries or determine page count.
+  Low-volume wording may still answer an important visitor question.
+- **Limits/corrections:** the twelve-month series ends July 2026, so June–July's
+  architecture low and September 2025's 880 do not establish today's demand or
+  recurring seasonality. No August publishing deadline follows. Aménagement is
+  30 in January, not flat at 10; rénovation has only four monthly observations.
+  GSC impressions depend on visibility and cannot validate seasonality independently
+  of rankings. Advertising competition/CPC do not measure organic difficulty,
+  buyer value or why advertisers chose a phrase. Google's
+  [historical-metrics definitions](https://support.google.com/google-ads/answer/3022575?hl=en)
+  explain close variants, rounded volumes and advertiser competition.
+
+### 24. Buying a painting — what changes when discovery starts with an object?
+
+`/seo dataforseo keywords acheter tableau`
+
+- **Evidence:** `keywords-acheter-tableau-2026-09-08/findings.md` and `data/`:
+  France/fr Labs suggestions (200/257), related terms (61/61), classified CSV,
+  requested lists and France/Rennes Google Ads responses. Both volume lists match
+  all ten requests; three values unavailable in each. Difficulty returns 20 rows,
+  ten without scores; four numeric KD 0 values are distinct from unavailable.
+  Estimated $0.27; API-reported charge unavailable. No SERP captured.
+- **Learned:** `acheter tableau` is estimated at 260/month nationally and 10 at
+  Rennes; `galerie d'art rennes` returns 70 locally again. Six Rennes buying
+  strings return 10, some with only one or two monthly observations; three other
+  buying strings have unavailable volume. National vocabulary includes original,
+  contemporary, abstract, pop/street art, named artists, reproductions and framing,
+  alongside non-art meanings of tableau. This broadens the place-led Galerie
+  research with object, style and purchase language.
+- **Jukkai implication:** show what kinds of works visitors can discover and buy,
+  their authorship and how to enquire or visit, grounded in actual selection.
+  Buying language can serve the Galerie without promising checkout, shipping,
+  valuations or consignment. Named-artist content needs actual inventory/relationships;
+  neither a famous-name list nor search volume supplies that authority. Retain the
+  foundation's no-art-prices-before-opening rule. `acheter tableau pop art` and
+  `acheter tableau street art` occur in the national suggestions (10 each): useful
+  style-specific comparison candidates, not measured Rennes opportunities.
+- **Limits/corrections:** the report's 142 deduplicated rows and ~890 generic-buying
+  total are an agent's token-grouping/classification, not a unique audience or
+  addressable market. Close-variant duplication is real; the four head variants
+  share volume histories, with core-keyword metadata linking three to the fourth.
+  Homonyms in suggestions do not prove contamination of the head-term SERP.
+  Positive local estimates and missing values do not support "no local buying
+  demand" or a forced national/Maps strategy. Repeating 70 does not by itself
+  validate all request settings.
+- **Adjacent questions:** valuation (`estimation tableau`, France 720) and selling
+  (`vendre un tableau`, 140) have a different visitor job. No such Jukkai offer is
+  established; CPC/KD do not make it more valuable or uncontested. `œuvre d'art à
+vendre` can also describe a buyer's search; a phrase does not settle audience
+  direction. The head's Aug 2025–Jul 2026 fall (320→170) is one phrase series,
+  not gallery-market contraction. Unrelated keyword-ideas output was discarded;
+  its failure cause and general endpoint reliability remain unestablished.
+
+### 25. Galerie image discovery — which surface was actually captured?
+
+`/seo dataforseo serp-images galerie d'art rennes`
+
+- **Evidence:** `serp-images-galerie-art-rennes-2026-09-08/findings.md`,
+  `data/request-provenance.json` and `data/serp-organic-live-advanced-raw.json`.
+  The run records the requested Images tool as unavailable; it substituted
+  `serp_organic_live_advanced`, Rennes/fr/desktop/depth 100. Nineteen top-level
+  items saved: ten organic, six local entries, compare-sites, PAA and related
+  searches. Estimated $0.002; API charge unavailable. Google Images remains
+  **not captured**; this is a reviewed partial run, not a completed Images analysis.
+- **Learned:** no image-pack item appears in the saved web response. Eighteen
+  `image_url` fields belong to ten compare-sites entries and eight related results
+  under Pages Jaunes; nine are associated with Pages Jaunes overall. They reveal
+  third-party discovery surfaces alongside gallery-owned organic results, extending
+  run 4's directory/tourism context. These are result associations, not verified
+  ownership or original hosting of the photos.
+- **Jukkai implication:** consistent identity, selection and visit information
+  across useful external profiles could support discovery. Real artwork and place
+  images still have a website persuasion role. Review third-party relevance before
+  proposing inclusion; no listing acquisition or profile edit is approved here.
+- **Limits/corrections:** thumbnail proxies do not disclose source format or alt
+  text; local entries contain no image fields in this payload. Therefore the
+  report cannot establish every thumbnail Google rendered, image interception,
+  visual dominance of Maps, or GBP-photo/review velocity as the winning tactic.
+  No click shares, photo impact or Images-tab demand measured. Keep image SEO open;
+  the childcare capture in run 18 already shows that other queries expose images
+  differently. Recheck the missing-tool path if that capability is selected again,
+  rather than automatically repeating the same substitute or starting integration work.
 
 ## Evidence rules and tool roles
 
