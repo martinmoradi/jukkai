@@ -100,6 +100,9 @@ remove them when the convention changes.
   `docs/strategy/questions-for-crystelle.md`. Working notes can inform active
   sessions, while files under `docs/archive/` are provenance to consult only
   when intentionally requested.
+- For continuing SEO research, read `docs/research/seo-research-log.md` and update
+  it after each reviewed run, following its update protocol. It holds provisional
+  findings, source pointers and open questions; approved decisions stay in GitHub.
 - Brand masters and supporting source material live under `brand/`; see its
   README before adding assets or committing font binaries.
 - For substantial visual or interaction work, prefer the local `impeccable`

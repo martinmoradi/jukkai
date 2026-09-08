@@ -6,6 +6,10 @@ and [Wayfinder map](https://github.com/martinmoradi/jukkai/issues/84) govern act
 The July inquiry is archived; its broad expedition remains historical interest, not
 a prerequisite to publishing the first website.
 
+For reviewed runs, current findings and the next discussion, read the evolving
+[SEO research log](seo-research-log.md). Update that log as research progresses;
+this inquiry retains the framing rather than duplicating research status.
+
 ## What research should help us decide
 
 Martin wants organised SEO research that makes the sitemap and copy easier to plan.
