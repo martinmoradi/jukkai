@@ -218,12 +218,13 @@ bridge remains separate from later migration.
 
 ## Reviewed runs
 
-The thirty-one reviewed entries below record runs dated **2026-09-08–09**.
+The thirty-two reviewed entries below record runs dated **2026-09-08–09**.
 Runs 19–25 were reviewed together after Martin supplied seven independently
 initiated commands. Entries 26–28, reviewed September 9, cover ten further SERP
 captures across three commands; kitchen provenance records writing after midnight,
 without a provider timestamp. Entries 29–31 record September 9 provider-search,
-conseil and small-living-room keyword runs. Numbering groups reviewed questions, not API calls
+conseil and small-living-room keyword runs. Entry 32 adds the paired small-room
+SERPs and three targeted page readings. Numbering groups reviewed questions, not API calls
 or a prescribed research sequence. Commands use the documented
 `/seo` shorthand; namespace resolution is automatic. Reviewer corrections
 below qualify the original reports, some of which still contain rejected conclusions.
@@ -1244,6 +1245,65 @@ cuisine ?`, alongside budget and provider-trust questions. Five of eight unique
   bound. Neither these figures nor unavailable values exclude local discovery.
   Ads/Labs differences remain source differences; no suppression cause established.
   Estimated $0.52; API charges unavailable. No reviewer paid calls or competitor-page visits.
+
+### 32. Small living-room SERPs — what answers connect spatial problems to professional help?
+
+`/seo dataforseo serp aménagement petit salon, aménager un petit salon avec cuisine ouverte`
+
+- **Evidence:** `serp-amenagement-petit-salon-2026-09-09/findings/serp-analysis.md`
+  and `raw/`: `provenance.json`, `serp-amenagement-petit-salon.json` and
+  `serp-amenager-petit-salon-cuisine-ouverte.json`. Rennes / fr / desktop, depth 30
+  with `max_crawl_pages:3`; contiguous organic ranks 1–29 and 1–28 across three pages.
+  Provenance explicitly labels the files transcribed extracts, not byte-identical
+  responses. The reviewer also read three named destination pages below on September 9
+  to examine how their advice connects to an offer; this is not a second ranking capture.
+- **Learned:** no exact saved organic URL ranks on both; five root domains do, using
+  different URLs. The broad phrase mixes furniture retail, media, advice services,
+  Pinterest, Houzz and video. BeHome is organic #7 and Figurez-vous Design #15.
+  The open-kitchen first page includes four kitchen suppliers, La Redoute, Kamazza,
+  Pinterest and Dailymotion. These are distinct answer selections in this capture,
+  not a mandatory two-page hierarchy or a measured difficulty ordering. Broad advice
+  can surface a practice without a city phrase; this does not measure relevant local
+  visits or commissions, and does not make every problem keyword equally promising.
+- **Content specimens:** [Figurez-vous Design's article](https://www.figurez-vousdesign.fr/post/comment-amenager-un-petit-salon-conseils)
+  discusses openings, circulation, furniture and atmosphere, links its storage advice
+  to a bespoke-furniture service, and invites a project discussion. The site identifies
+  a Lyon decorator and lists coaching as well as fuller missions; the article credits
+  external imagery, so it is not evidence of a documented own-project case study.
+  [BeHome's article](https://behome-interiors.com/blog/astuces-pour-amenager-un-petit-salon/)
+  connects room advice to its custom furniture, salon projects and a quotation action;
+  its site lists several showrooms, so it is not a solo-practice control.
+  [Cuisine Plus's open-kitchen article](https://www.cuisine-plus.fr/article/amenager-un-petit-salon-avec-cuisine-ouverte-conseils-idees-et-inspirations)
+  discusses layouts, zoning, circulation and visual coherence while linking kitchen
+  and salon products; its navigation offers appointments. The useful comparison is
+  how an answer introduces the help a business sells, not a requirement to copy
+  its format or an observation that this journey converts.
+- **Visual learning:** image packs are recorded at absolute #1 for both queries.
+  Each extract saves nineteen deduplicated image destinations, with three exact URLs
+  shared; these are not slot counts or traffic shares. Organic URL separation does
+  not extend to every surface. Six organic video appearances across the pair are
+  attributed to Mira Lavandier, with two more in the open-kitchen carousel; titles
+  include concrete projects and 20/25 m² layouts. These are appearances, not verified
+  distinct productions. Visual explanation is a useful specimen to consider;
+  a vacant video opportunity, required medium and production capacity are unmeasured.
+- **Jukkai implication:** connect a recognisable problem to the decisions professional
+  help can clarify, the actual mission and a suitable enquiry. Service copy, a selected
+  real project or a focused guide could each do that. A project could show the initial
+  constraints, alternative arrangements, reasons for the chosen solution and Crystelle's
+  contribution. This develops Martin's storytelling proposal; no suitable project has
+  yet been supplied. A small room does not imply a small commission. Neither two articles,
+  a small-room speciality, a listicle template nor a video programme is approved.
+- **Limits/corrections and reuse:** nine of twelve saved related phrases mention area,
+  not all twelve. Dimensions are useful vocabulary already sampled in run 31, not
+  an established empty niche: the report did not read ranking pages, video titles
+  already name areas, and the Figurez-vous page discusses 10/15/20 m². Run 31 already
+  measures both phrases: France Ads 1,000/110 per month, Rennes 10/10, KD 0/0.
+  Repeating these calls would not establish easy rankings, buyer intent or page boundaries.
+  No local pack or top-level AIO is recorded; PAA questions survive but answer text
+  does not. These do not establish every user's rendered experience. Three-page
+  retrieval adds to run 29's two-page example, without identifying every earlier
+  shortening cause. Estimated $0.004; billed charge unavailable. No reviewer paid calls
+  or SEO-workspace edits.
 
 ## Evidence rules and tool roles
 
