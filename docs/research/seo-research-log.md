@@ -31,7 +31,9 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
 
 - **Supported:** architecture has relevant local search activity and overlapping
   service vocabulary. Galerie discovery mixes buying and cultural visits; the
-  street-art query favours public-art discovery. These are samples, not whole markets.
+  street-art query favours public-art discovery. Studio Terrasson's recorded search
+  clicks concentrate on its homepage; query visibility is too incomplete to quantify
+  branded traffic. These are samples, not whole markets.
 - **Martin's context:** both activities target the wider Rennes audience from
   Châteaugiron. Crystelle's authorship connects them. Galerie character discussed:
   colourful, approachable street/pop/urban art, for buying as well as viewing.
@@ -40,16 +42,34 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   old-site queries, pages, links and proof to preserve. Retain Martin's interest in
   selected regional/larger-city and combined art/interiors examples. Research should
   inform later pages too, without becoming an exhaustive magazine-release gate.
-- **Latest recommendation, not agreed sequence:** pause individual probes and scope
-  the next phase around page decisions. Promising inputs: Studio Terrasson's search
-  performance/content and closer business examples. Discuss this with Martin; do not
-  automatically run the last report's proposed command or close the scope ticket.
+- **Latest recommendation, not agreed sequence:** run 8 supplies the old-site search
+  baseline. Discuss the candidate purposes below, then inspect existing service copy
+  and selected residential/B2B project material to outline useful content. Closer
+  combined-business/Galerie examples remain a research gap. Do not automatically run
+  the report's indexation/speed sequence or close the scope ticket.
 - **Proposed eventual output:** connect each candidate page to visitor needs, related
   searches, truthful message/proof and next action. No sitemap or brief is approved.
 
+### Candidate content purposes after run 8
+
+**Agent proposal for discussion, not five approved URLs or release commitments.**
+The foundation supplies business intent; the research informs discovery and limits.
+
+| Candidate surface        | Visitor job and evidence basis                                                                                                                                          | Open page/content decision                                                                      |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Jukkai homepage          | Recognise Crystelle, understand architecture + Galerie, choose a path. Old-site search entry is concentrated on the homepage.                                           | How much service explanation and project proof belongs here?                                    |
+| Interior architecture    | Understand suitable missions, process, scope and how to enquire. Foundation plus local query research support this need.                                                | Separate page versus homepage sections; residential/B2B treatment; fees only when supported.    |
+| Selected project stories | Judge taste, range and ability through real briefs, constraints and outcomes. Supported by the business proof bank; low direct search clicks do not measure persuasion. | Which stories/assets are ready; case pages versus compact features?                             |
+| Galerie                  | Understand the selection, possibility of buying and actual visit arrangements. Broad gallery SERP plus business intent; no agenda obligation.                           | Content available before opening; clearer buying vocabulary and relevant references.            |
+| Contact / visit          | Reach the practice or plan a Galerie visit with truthful information. Existing contact-page clicks and known lead behaviour support accessibility.                      | General contact page versus shared sections; distinguish appointment and public opening states. |
+
+Next discussion: develop these into a content outline, starting with architecture
+explanations and project proof. Old-site URL preservation/migration needs a later
+mapping pass; these proposed surfaces are not redirect targets yet.
+
 ## Reviewed runs
 
-All seven probes below were captured on **2026-09-08**. Commands use the documented
+All eight runs below were captured on **2026-09-08**. Commands use the documented
 `/seo` shorthand; Martin invokes them as `/claude-seo:seo …`. Reviewer corrections
 below qualify the original reports, some of which still contain rejected conclusions.
 
@@ -163,6 +183,34 @@ below qualify the original reports, some of which still contain rejected conclus
 - **Limits/corrections:** low overlap suggests different needs, not mandatory separate
   pages. A mural itinerary must earn its business purpose. No ranking-cause or cheaper
   Maps route established; no demand measurement made for this phrase.
+
+### 8. Studio Terrasson GSC — what already attracts search visits?
+
+`/seo google gsc https://www.studioterrasson.fr/`
+
+- **Evidence:** `gsc-studioterrasson-2026-09-08/GOOGLE-API-REPORT-studioterrasson.fr.md`
+  and `data/gsc-*.json`. URL-prefix property, web search. Actual inclusive periods
+  are 26/88/478 days, despite filenames labelled 28/90/480.
+- **Learned:** Aug 11–Sep 5: 14 property clicks / 479 impressions; homepage 12 clicks,
+  contact and Waouh one each. Long window: homepage 390 clicks; all page rows total
+  447 versus 444 at property level (different aggregation). Apr–Aug monthly clicks
+  fall 40→31→24→23→10; cause unestablished. May–Aug impressions fall 938→496.
+- **Jukkai implication:** preserve brand recognition and a useful homepage/contact
+  route while developing service acquisition and real project proof. Search entry
+  and on-site persuasion are different jobs; GSC does not measure enquiry conversion.
+- **Limits/corrections:** short-window visible queries explain 0/14 clicks; longer
+  query export explains 8/54, all branded. This cannot establish the brand share of
+  remaining clicks (privacy omissions and other query limitations). “Converts
+  nothing”, “national audience cannot become local clients”, desktop/referral and US
+  bot diagnoses are unsupported. 24/37 page rows have zero clicks, but several B2B
+  pages do have clicks; the entire professional gallery is not unclicked. Submitted
+  sitemap counts are not indexation, nor does zero clicks imply not indexed. Google
+  confirms impressions/CTR/position logging problems May 13, 2025–Apr 27, 2026;
+  clicks unaffected. Avoid historical CTR/position comparisons spanning that period.
+  Current indexation and causes of decline remain open; no technical emergency proved.
+- **References checked:** [aggregation](https://support.google.com/webmasters/answer/17011364?hl=en),
+  [query omissions](https://support.google.com/webmasters/answer/17011259?hl=en),
+  [logging issue](https://support.google.com/webmasters/answer/6211453?hl=en).
 
 ## Evidence rules and tool roles
 
