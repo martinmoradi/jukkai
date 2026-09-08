@@ -105,6 +105,43 @@ The foundation supplies business intent; research informs discovery and limits.
 | Galerie                  | Understand the selection, possibility of buying and actual visit arrangements. Place/style/buying research distinguishes several discovery needs.                    | Pre-opening content; works and artist attribution available; purchase explanation and closer combined-business references.     |
 | Contact / visit          | Reach the practice or plan a Galerie visit using current facts. Known lead behaviour, GSC contact clicks and historical profile inconsistencies support clarity.     | General contact page versus shared sections; distinguish architecture appointments from public Galerie opening.                |
 
+### Residential discovery and project storytelling — September 8 discussion
+
+- **Martin's proposal to retain:** consider framing selected residential projects
+  around what the client wanted to solve, with editorial explanation accompanying
+  the imagery. This is a content direction to explore, not an approved template,
+  a requirement for every project or a mandate for longer text. No particular
+  project was available to discuss. Revisit when selecting project material:
+  initial need in the client's words, constraints, choices and trade-offs,
+  Crystelle's actual contribution, and the outcome supported by available evidence.
+- **Martin's open acquisition question:** prospective clients may describe a room,
+  renovation or everyday problem without knowing they need an interior architect.
+  Could Jukkai reach them through that language, especially without a city modifier,
+  or would national providers, retailers and publishers dominate the useful results?
+  Room/problem-led discovery and comparisons with other cities remain research
+  interests; neither is an approved content programme or settled target list.
+- **Established search behaviour:** Google can use the searcher's location when
+  selecting ordinary search results; local relevance does not require a city in
+  the query. Which result types appear also depends on the query. See Google's
+  [explanation of serving search results](https://developers.google.com/search/docs/fundamentals/how-search-works).
+  This establishes possibility, not the present composition of `rénovation cuisine`
+  or an advantage guaranteed to a nearby practice. Maps and organic placements
+  should be read separately.
+- **Agent recommendation:** test the search landscape before committing to broad
+  advice content. Compare `/seo dataforseo serp rénovation cuisine` with
+  `/seo dataforseo serp rénovation cuisine rennes`, both at Rennes geography.
+  Inspect providers, page purposes, useful answers and visual surfaces, then use
+  keyword expansion to investigate relevant problems and alternative wording.
+  A vocabulary seed is not automatically a ranking target or a future page.
+  These SERPs have not been reviewed; no new paid calls are authorised here.
+- **Content evaluation:** distinguish discovery potential from helping an existing
+  visitor recognise their problem and judge the practice. Selected project stories
+  could serve both; their enquiry or ranking effect remains unmeasured. Compare a
+  possible generic guide with what Jukkai can document firsthand and the mission
+  it could truthfully offer. More words, more articles or a narrower phrase alone
+  do not establish commercial value or easier rankings. The next useful output is
+  an evidence-backed content option, not a promise to capture national traffic.
+
 ### Useful follow-ups to discuss
 
 **Recommendations, not commands launched or an agreed queue.** Martin welcomes
