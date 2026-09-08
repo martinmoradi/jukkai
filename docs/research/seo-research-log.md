@@ -19,9 +19,11 @@ ticket, under the [Wayfinder map](https://github.com/martinmoradi/jukkai/issues/
 The research scope and first-release sitemap remain open.
 
 **Working loop:** Martin runs native Claude SEO commands, usually in fresh contexts.
-As clarified September 8, Claude works without Jukkai context: prefer native commands
-with necessary measurement/scope settings; comparisons and Jukkai synthesis happen
-with the reviewing agent here. Claude's report analysis remains useful input.
+As clarified September 8, invoke a bare command such as `/seo sxo <url> <keyword>`;
+shorthand is automatic. Claude works without Jukkai context and inherits run
+instructions from its workspace. Do not append measurement, reuse or reporting
+instructions to the prompt. Comparisons and Jukkai synthesis happen with the
+reviewing agent here. Claude's report analysis remains useful input.
 The Jukkai-aware reviewing agent reads reports AND evidence, discusses implications
 with Martin, and updates this log. Martin clarified September 8: saved paid API data
 is the primary evidence; Claude's final commentary supplies optional clues. Interpret
@@ -29,9 +31,10 @@ the data rather than making rebuttal of Claude or tooling verification the task.
 Keep reads targeted and reuse context. Open public websites only for a specific
 page-content question, not as a routine second audit. Explain the next query before recommending it.
 Competitor recommendations are not Jukkai instructions; this log authorises no paid calls.
-Use the [capability map and prompting guide](claude-seo-capability-map.md) to choose
-the native workflow and scope the next prompt after reading this log. Its September 8
-refresh replaces the July calibration checklist; it does not queue new research.
+Use the [agent capability map](claude-seo-capability-map.md) to consider the full
+command space alongside this log. It supports zooming out beyond completed runs;
+unused commands are not less useful by default. It owns command selection and the
+bare-command contract, not the current research agenda.
 
 **Evidence:** run folders below are under `/home/martin/src/pro/seo/reports/`, local
 and gitignored in that workspace. This log is not their backup. Read that workspace's
@@ -112,7 +115,7 @@ mapping pass; these proposed surfaces are not redirect targets yet.
 ## Reviewed runs
 
 All eighteen reviewed runs below were captured on **2026-09-08**. Commands use the documented
-`/seo` shorthand; Martin invokes them as `/claude-seo:seo …`. Reviewer corrections
+`/seo` shorthand; namespace resolution is automatic. Reviewer corrections
 below qualify the original reports, some of which still contain rejected conclusions.
 
 ### 1. Architecture SERP — who appears locally?
