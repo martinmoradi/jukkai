@@ -47,13 +47,18 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   old-site queries, pages, links and proof to preserve. Retain Martin's interest in
   selected regional/larger-city and combined art/interiors examples. Research should
   inform later pages too, without becoming an exhaustive magazine-release gate.
-- **Latest recommendation, not agreed sequence:** run 11 opens restaurant B2B:
-  service pages and project evidence both appear; no weak-market or dedicated-page
-  requirement is established. Next suggested probe: `agencement restaurant rennes`
-  to test alternative buyer vocabulary and the mix of designers, fit-out providers
-  and equipment suppliers before selecting phrases for volume measurement. Relate
-  findings to Crystelle's actual mission scope and restaurant proof. Closer
-  combined-business/Galerie examples remain a gap; no restaurant URL is approved.
+- **Latest learning:** runs 11–12 show restaurant service pages and project evidence
+  as discovery routes. `Agencement` brings a stronger joinery/fabrication/installation
+  mix alongside interior architects; only CMC² and Ika share exact URLs across the
+  two city-worded top tens. Search competitors may also be project collaborators.
+  This supports making Crystelle's mission and collaborators legible, not changing
+  her professional identity or promising in-house fabrication.
+- **Latest recommendation, not agreed sequence:** compare a small restaurant
+  vocabulary set with Rennes/fr volume estimates before prioritising these terms.
+  Start with `architecte d'intérieur restaurant rennes`, `agencement restaurant rennes`
+  and `aménagement restaurant rennes`; the last phrase's SERP remains unreviewed.
+  Relate estimates to actual missions and ready restaurant proof such as Le Capri.
+  Closer combined-business/Galerie examples remain a gap; no restaurant URL is approved.
 - **Proposed eventual output:** connect each candidate page to visitor needs, related
   searches, truthful message/proof and next action. No sitemap or brief is approved.
 
@@ -70,13 +75,16 @@ The foundation supplies business intent; the research informs discovery and limi
 | Galerie                  | Understand the selection, possibility of buying and actual visit arrangements. Broad gallery SERP plus business intent; no agenda obligation.                           | Content available before opening; clearer buying vocabulary and relevant references.            |
 | Contact / visit          | Reach the practice or plan a Galerie visit with truthful information. Existing contact-page clicks and known lead behaviour support accessibility.                      | General contact page versus shared sections; distinguish appointment and public opening states. |
 
-Next discussion: use selected competitor pages to examine architecture explanations
-and project proof before developing the candidate content outline. Old-site URL preservation/migration needs a later
+Next discussion: distinguish the restaurant visitor's need for design, coordination
+or fabrication, then use a bounded vocabulary comparison to inform content emphasis.
+Sigrid's project and BOS's credited designer/fabricator split are useful specimens;
+Le Capri remains a proof candidate subject to actual scope and ready material.
+Old-site URL preservation/migration needs a later
 mapping pass; these proposed surfaces are not redirect targets yet.
 
 ## Reviewed runs
 
-All eleven reviewed runs below were captured on **2026-09-08**. Commands use the documented
+All twelve reviewed runs below were captured on **2026-09-08**. Commands use the documented
 `/seo` shorthand; Martin invokes them as `/claude-seo:seo …`. Reviewer corrections
 below qualify the original reports, some of which still contain rejected conclusions.
 
@@ -351,6 +359,50 @@ below qualify the original reports, some of which still contain rejected conclus
   nested follow-ups. Archibien's destination is replaced by a truncated redirector.
   B's PAA answers were not captured. Preserve these limits rather than calling the
   structured extracts full raw responses.
+
+### 12. Restaurant agencement, Rennes — does different wording change the offer mix?
+
+`/seo dataforseo serp agencement restaurant rennes`
+
+- **Evidence:** `serp-agencement-restaurant-rennes-2026-09-08/findings/serp-analysis.md`,
+  `data/request.json` and `data/serp_organic_live_advanced.raw.json`. Rennes (`1005876`)
+  / fr / desktop / depth 20 / two pages. Saved wrapper payload has 20 organic rows
+  but 19 unique URLs (Méril #7/#11), and 12 local rows but 11 unique CIDs (Oser repeats).
+  Duplicate cause is unverified. Estimated $0.002; API-reported charge unavailable.
+- **Learned:** first three absolute positions are local entries, first organic at 4.
+  Top-ten exact URL overlap with run 11 A is CMC² (#1→#3) and Ika (#3→#10).
+  Joinery, custom furniture and installation are prominent alongside design practices.
+  [ACN](https://www.acn-menuiserie.fr/amenagement-restaurant.php) describes design,
+  fabrication and installation; [ConceptRenoDeco](https://conceptrenodeco.fr/agencement/bar-restaurant-rennes/)
+  identifies its workshop near Troyes and national coverage. Rennes targeting does
+  not establish a Rennes-based provider.
+- **Jukkai implication:** describe actual design/technical/coordination responsibilities
+  and project collaborators. A search competitor need not be a substitute for the
+  whole practice: [BOS's L'Antidote project](https://www.bos-amenagement.com/nos-realisations/restaurant/restaurant.html)
+  credits Atelier 5 as prescriber while describing its own fabrication/installation.
+  [Sigrid's project](https://www.sigridarchitecture.fr/galerie/creation-dun-restaurant-20)
+  combines expressive naming with Rennes, constraints and mission explanation:
+  a useful content specimen, not verified visual-design guidance or a ranking cause.
+  Le Capri is a relevant proof candidate; neither a dedicated restaurant URL nor
+  an in-house fabrication promise follows.
+- **Page checks/corrections (September 8):** claimed unserved topics are contradicted
+  by ranking pages: ConceptRenoDeco has budget guidance; ACN discusses accessibility;
+  [CMC²](https://www.architecte-interieur-cmc2.com/agencement-restaurant-rennes/4-2.htm)
+  names hygiene/accessibility; [Méril](https://www.meril.bzh/agencement-professionnel/restaurant-bar/)
+  gives circulation, zoning, storage and lighting advice. These are provider claims,
+  not validated prices or compliance advice. Absence of a dedicated guide result
+  does not establish absent answers. BOS #19 is a specific project, not a category:
+  at least four distinct project URLs appear. Reject the exact three-shape/11-city-page
+  tally and universal restaurant+city URL rule; ACN and Gautier already counter it.
+- **Limits:** no rendered SERP/viewport measurement, click shares, volume or difficulty.
+  Result order does not prove organic is below the fold or GBP is the primary lever.
+  PERENE has 59 reviews yet appears later than the top three (23–44); review count
+  does not explain this ordering or set a 20-review entry bar. [Google's local factors](https://support.google.com/business/answer/7091?hl=en)
+  include relevance, distance and prominence; distance is from the searcher, not
+  necessarily the city centre. Platforms/long URLs do not establish easy competition,
+  an unclaimed listing or cheap project rankings. PAA contains two fit-out and two
+  dining questions, not intent shares or measured Google confidence; expanded answers
+  were not saved. No standalone AI Overview block was captured, not proof of absence.
 
 ## Evidence rules and tool roles
 
