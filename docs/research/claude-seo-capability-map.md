@@ -4,7 +4,8 @@
 
 **Status:** capability reference; no research sequence, sitemap or strategy approved.
 
-**Updated:** 2026-09-08, including Martin's correction to the invocation contract.
+**Updated:** 2026-09-08, including the invocation contract and limitations observed
+in the independently run Maps and Images reports.
 
 ## Agent contract
 
@@ -72,6 +73,33 @@ Sources checked September 8:
   GA4, Firecrawl and performance smoke records are historical; not every documented
   command has been exercised today. No live API or runtime test was made for this
   documentation refresh.
+
+### Limitations observed in the September 8 reports
+
+These qualify the documented catalog below. They are saved run observations,
+not a fresh runtime test by the reviewing agent or a claim about all upstream builds.
+
+- **Maps, runs 19–20:** the runner records Business Listings search as available,
+  while Maps SERP, full profile and review endpoints were not exposed. The reports
+  therefore use an indexed radius/profile snapshot, with local web-SERP results
+  where available. This does not exercise live Maps grids, SoLV, review velocity
+  or a complete owner-profile audit. Passing a workflow's tier detector is not
+  proof that its whole capability is available.
+- **Google Images, run 25:** `serp_google_images_live_advanced` was recorded as
+  unavailable. `/seo dataforseo serp-images` produced a web-SERP substitute;
+  Google Images rankings remain unmeasured. The `/seo images serp` route may share
+  that dependency. Recheck tool exposure before selecting it; neither retrying the
+  same substitute nor adding an integration is automatically the next research step.
+- **Listing response handling:** the Maps run saved ten-row responses despite
+  larger requested limits and saw no filtering effect from `is_claimed:false`.
+  The responsible layer and unclaimed population remain unknown. Do not promote
+  these captures to a documented provider-wide cap or zero unclaimed businesses.
+
+Keep nominal commands available for future selection, with these limitations
+visible. An organic image pack, an organic-result thumbnail, a local profile photo
+and the Google Images tab are distinct evidence surfaces. Partial runs can still
+teach us something without answering the requested question completely. Source
+paths and analytical implications stay in the [reviewed-run log](seo-research-log.md#reviewed-runs).
 
 ## Native workflow catalog
 
