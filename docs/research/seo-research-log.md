@@ -73,10 +73,14 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   decoration/equipment and regulatory concerns; childcare adds room uses, pedagogy
   and project-opening terms. These are needs, not verified buyer segments. Office
   expansion was separately seeded; no sector priority follows from cluster totals.
-  Use this breadth to frame real project proof and mission explanations. Next
-  suggested bounded SERP: `aménagement crèche` from Rennes/fr/desktop, to identify
-  the provider/resource mix missing from run 17's stored feature metadata. Preserve
-  general architecture discovery; no global guide programme follows from these runs.
+  Run 18 now confirms a mixed childcare SERP: suppliers, conception/renovation
+  providers, advice, inspiration and video. Architecture/project URLs also appear
+  in images, so text organic results alone omit relevant specimens. The bounded
+  provider-mix question is answered; next recommendation is to discuss a B2B content
+  outline connecting real missions, visitor questions and project proof. Further
+  queries should resolve named uncertainties in that outline, not automatically
+  extend every report's follow-up list. Preserve general architecture discovery;
+  no global guide programme follows from these runs.
   Closer combined-business/Galerie examples remain a gap; no B2B URL is approved.
 - **Proposed eventual output:** connect each candidate page to visitor needs, related
   searches, truthful message/proof and next action. No sitemap or brief is approved.
@@ -94,16 +98,17 @@ The foundation supplies business intent; the research informs discovery and limi
 | Galerie                  | Understand the selection, possibility of buying and actual visit arrangements. Broad gallery SERP plus business intent; no agenda obligation.                           | Content available before opening; clearer buying vocabulary and relevant references.            |
 | Contact / visit          | Reach the practice or plan a Galerie visit with truthful information. Existing contact-page clicks and known lead behaviour support accessibility.                      | General contact page versus shared sections; distinguish appointment and public opening states. |
 
-Next discussion: map broad versus specialised B2B discovery without assuming that
-clients name their sector in searches. Seek vocabulary for professional premises
-across actual project types; connect promising groups to business relevance, proof
-and useful content before deciding pages. Le Capri remains one proof candidate.
+Next discussion: outline how a visitor recognises suitable professional missions,
+understands Crystelle's contribution and judges it through actual projects. Compare
+general architecture entry with sector-specific discovery without treating them as
+exclusive routes. Use the office/medical/childcare/restaurant evidence to inform the
+outline, not to prescribe one page per sector. Le Capri remains one proof candidate.
 Old-site URL preservation/migration needs a later
 mapping pass; these proposed surfaces are not redirect targets yet.
 
 ## Reviewed runs
 
-All seventeen reviewed runs below were captured on **2026-09-08**. Commands use the documented
+All eighteen reviewed runs below were captured on **2026-09-08**. Commands use the documented
 `/seo` shorthand; Martin invokes them as `/claude-seo:seo …`. Reviewer corrections
 below qualify the original reports, some of which still contain rejected conclusions.
 
@@ -575,6 +580,41 @@ l'espace en crèche` 140, `aménagement micro crèche` 90, reading-corner 70, ga
   floor. A September 2025 peak alone does not establish recurring seasonality or its
   cause. No sector-page requirement or priority over offices/medical work follows.
   Cost-tier estimate $0.26; API charge unavailable. No reviewer website visits.
+
+### 18. Childcare SERP — which providers and resources actually appear?
+
+`/seo dataforseo serp aménagement crèche`
+
+- **Evidence:** `serp-amenagement-creche-2026-09-08/findings/serp-amenagement-creche.md`,
+  `data/request.json` and `data/results.json`. Rennes/fr/desktop, depth 20 requested;
+  12 saved items, eight organic. Larger ranks not captured; cause unconfirmed.
+  Image CDN URLs are replaced with placeholders; destination URLs are saved.
+  PAA expanded answers absent; standalone AIO text and six references captured.
+- **Learned:** Mathou's supplier/agencement result is organic #1; advice from Les
+  Pros and Papouille, conception/renovation offers from Korus and Espace4, Pinterest,
+  Crèches&Co and YouTube coexist. Korus's breadcrumb says "Types de projets";
+  its URL alone does not establish an individual case study. Images at absolute 2
+  include architecture/project destinations (KAMI, Atelier Machurey, Hestaux) and
+  Marina Interior, outside the captured organic list. Suppliers and editorial
+  formats overlap rather than defining separate audiences.
+- **Content signals:** snippets, related searches and AIO organise some advice by
+  room/use; video snippet explicitly includes adults' needs. Three of six AIO URLs
+  are timestamped YouTube references, one matching the organic video after removing
+  its time anchor. Three cited resources have no matching captured organic result.
+  These are additional discovery surfaces, not measured traffic or a video mandate.
+- **Jukkai implication:** actual childcare project stories can explain use, constraints,
+  design contribution and collaborators with visual proof. Images make architecture
+  specimens visible beyond text organic rankings. Room/use explanations are a useful
+  editorial option, not a compulsory seven-section layout. This answers the provider-
+  mix question from run 17; use the broader B2B learning to discuss content next.
+- **Limits:** no pack captured does not establish zero geographic advantage or
+  localisation confined to city-modified phrases. Page patterns do not identify
+  ranking causes. Only the "5 protocoles obligatoires" PAA explicitly states an
+  obligation; "3 types d'accueil" does not by itself prove a second regulatory
+  question or an unmet compliance topic. Page contents were not inspected. Older
+  displayed dates do not establish freshness's general importance or last revisions.
+  No market-share, conversion or required format established. Estimated $0.002;
+  API-reported charge unavailable. No reviewer website visits or paid calls.
 
 ## Evidence rules and tool roles
 
