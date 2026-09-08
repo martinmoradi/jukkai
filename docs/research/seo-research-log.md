@@ -205,12 +205,12 @@ bridge remains separate from later migration.
 
 ## Reviewed runs
 
-The thirty reviewed entries below record runs dated **2026-09-08–09**.
+The thirty-one reviewed entries below record runs dated **2026-09-08–09**.
 Runs 19–25 were reviewed together after Martin supplied seven independently
 initiated commands. Entries 26–28, reviewed September 9, cover ten further SERP
 captures across three commands; kitchen provenance records writing after midnight,
-without a provider timestamp. Entries 29–30 record September 9 provider-search
-and conseil-keyword runs. Numbering groups reviewed questions, not API calls
+without a provider timestamp. Entries 29–31 record September 9 provider-search,
+conseil and small-living-room keyword runs. Numbering groups reviewed questions, not API calls
 or a prescribed research sequence. Commands use the documented
 `/seo` shorthand; namespace resolution is automatic. Reviewer corrections
 below qualify the original reports, some of which still contain rejected conclusions.
@@ -1183,6 +1183,54 @@ cuisine ?`, alongside budget and provider-trust questions. Five of eight unique
   Intent labels do not prove known-firm navigation, conversion rates or buyer shares;
   KD 0 does not establish easy rankings. Keyword neighbourhoods and old SERP metadata
   cannot establish the current provider mix. No reviewer paid calls or page visits.
+
+### 31. Small living rooms — which concrete constraints appear in problem searches?
+
+`/seo dataforseo keywords aménagement petit salon`
+
+- **Evidence:** `keywords-amenagement-petit-salon-2026-09-09/README.md`,
+  `discovery-universe.csv`, `keyword-matrix.csv`, `intent-conflicts.csv` and `data/`:
+  requested batches, six Google Ads volume responses, suggestions, two related-keyword
+  pages, difficulty and intent. France Labs saves 30/30 suggestions and 54/54 related
+  rows; their union has 82 distinct strings. These exhaust the returned sets, not
+  the topic. All thirty Ads requests return at each geography; 27 France and 21 Rennes
+  values are numeric, with three/nine unavailable. No live SERP was captured.
+- **Learned:** vocabulary identifies geometry and size (square, narrow, 10/15/20 m²),
+  fixed features (bay window, stairs), combined uses (living/dining/open kitchen),
+  existing furniture (oversized sofa, two sofas, TV placement) and atmosphere
+  (cosy, warm, bright). These are concrete client-language prompts for discussing
+  what does not work and which choices could help; their presence does not reveal
+  whether someone intends to hire a professional or how much help they need.
+- **Scale:** France Ads estimates include head term 1,000/month, square-room phrase
+  590, cosy phrase 590, 10 m² 390 and living/dining 210. Three pairs share complete
+  monthly histories; removing one representative each reproduces the report's
+  4,670 sum across 24 rows. It is not a unique audience or complete market. Related
+  vocabulary extends beyond the measured shortlist, including furniture constraints
+  and `cuisine ouverte sur salon 25m2` (France Labs 1,900).
+- **Jukkai implication:** selected project stories could explain how room uses,
+  geometry, openings and furniture affected the brief and choices. The same needs
+  can make conception/conseil scope easier to understand. An illustrative question
+  is how living, dining and cooking can coexist in a constrained space; an actual
+  answer requires real project evidence. Room size does not establish project budget
+  or mission depth. No size-specific page series, new offer or small-room speciality
+  is approved; this seed remains an agent-selected probe of broader residential needs.
+- **Trend correction:** the adjusted series falls from 5,980 in August 2025 to 2,350
+  in July 2026, with intervening rebounds. Those endpoints are not a same-month
+  year-on-year comparison. Labs returns a seed `yearly:-63` field, whose reference
+  period cannot be independently checked from this twelve-month series. Recent
+  estimates are lower; seasonality, lasting decline and migration to other platforms
+  are not separated. This does not justify automatically demoting the content topic.
+- **Limits/corrections:** 25/30 main intent labels disagree across saved sources.
+  A current SERP can reveal answer/provider types, not actual buyer shares; even a
+  buying query need not concern a design commission. KD has 23 zeros, two nonzeros
+  and five unavailable values. The [vendor's calculation](https://dataforseo.com/help-center/what-is-keyword-difficulty-and-how-is-it-calculated)
+  uses page and domain link ranks; the seed's April 11 link summary cannot establish
+  current competition or that links do not matter. All 21 Rennes averages are 10,
+  but monthly histories vary and are often sparse. Google's [metric definitions](https://support.google.com/google-ads/answer/3022575?hl=en)
+  describe rounded estimates including close variants, not a verified at-or-below-10
+  bound. Neither these figures nor unavailable values exclude local discovery.
+  Ads/Labs differences remain source differences; no suppression cause established.
+  Estimated $0.52; API charges unavailable. No reviewer paid calls or competitor-page visits.
 
 ## Evidence rules and tool roles
 
