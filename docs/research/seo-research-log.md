@@ -231,13 +231,14 @@ bridge remains separate from later migration.
 
 ## Reviewed runs
 
-The thirty-two reviewed entries below record runs dated **2026-09-08–09**.
+The thirty-three reviewed entries below record runs dated **2026-09-08–09**.
 Runs 19–25 were reviewed together after Martin supplied seven independently
 initiated commands. Entries 26–28, reviewed September 9, cover ten further SERP
 captures across three commands; kitchen provenance records writing after midnight,
 without a provider timestamp. Entries 29–31 record September 9 provider-search,
 conseil and small-living-room keyword runs. Entry 32 adds the paired small-room
-SERPs and three targeted page readings. Numbering groups reviewed questions, not API calls
+SERPs and three targeted page readings; entry 33 adds the conseil SERP and offer
+specimens. Numbering groups reviewed questions, not API calls
 or a prescribed research sequence. Commands use the documented
 `/seo` shorthand; namespace resolution is automatic. Reviewer corrections
 below qualify the original reports, some of which still contain rejected conclusions.
@@ -1317,6 +1318,73 @@ cuisine ?`, alongside budget and provider-trust questions. Five of eight unique
   retrieval adds to run 29's two-page example, without identifying every earlier
   shortening cause. Estimated $0.004; billed charge unavailable. No reviewer paid calls
   or SEO-workspace edits.
+
+### 33. Conseil décoration SERP — which kinds of advice and paid help appear together?
+
+`/seo dataforseo serp conseil décoration intérieure`
+
+- **Evidence:** `serp-conseil-decoration-interieure-2026-09-09/README.md`,
+  `serp-items.csv`, `data/request.json` and
+  `data/serp_organic_live_advanced_response.json`. Rennes / fr / desktop, depth 20,
+  explicitly `max_crawl_pages:1`. Nineteen top-level items include nine organic
+  results, six local entries, four PAA questions, three videos, eight related phrases
+  and a Google reviews element. Organic ranks are 1–9, absolute positions 1–19 span
+  all result types; these are not nineteen organic results. The saved request limits
+  crawling to one page, so this does not demonstrate unexplained response shortening.
+  Rank 10 onward in organic and further pages remain unmeasured. The README calls
+  the response verbatim; it is the exposed MCP response, without the provider envelope.
+- **Learned:** advice articles, paid services and local businesses coexist for a
+  phrase without Rennes. Pigalle Matignon is organic #3 / absolute #4; Laurie
+  Décoratrice is organic #7 / absolute #11. Maisons du Monde at organic #5 also
+  presents services, including its Rhinov partnership. The remaining organic results
+  are Rhinov's advice article, Mobilier de France, Marie Claire, Delafosse, Centre
+  Européen de Formation and Hexoa. The local entries are Le Coup de Crayon, SOS Design,
+  Oser Mon Intérieur, Satsuma, Stéphanie Startchenko and MDAIR, in groups at absolute
+  7–9 and 15–17. Five of these six CIDs also appear in run 1's architecture pack,
+  showing overlapping provider discovery. This is another example of implicit local
+  discovery, alongside broader organic results, not proof of the proportion of local
+  or hiring intent or the exact services supplied by each practice.
+- **Offer specimens, retrieved September 9:** [Pigalle Matignon](https://www.pigallematignon.com/products/conseil-deco-1h)
+  lists €120 for a one-hour video consultation to help with choices, sourcing and a
+  shopping list. [Laurie's page](https://www.laurie-decoratrice.com/service-decoration-amenagement/conseil-deco-a-domicile/)
+  lists €250 for two hours at home, requests photos, a plan and the problem in advance,
+  and describes sketches and colour tests during the visit. Its stated area for this
+  appointment is Lille/Baie de Somme; it is not a verified Rennes-local offer. The
+  retrieval provider reports a three-month-old crawl for this page, so treat its terms
+  as a retrieved specimen, not a freshly confirmed quote.
+  [Maisons du Monde](https://www.maisonsdumonde.com/FR/fr/edito/conseil-relooking-deco)
+  presents a free AI diagnostic, a €49 thirty-minute human video consultation, and
+  plans/3D from €99, with purchase-linked reimbursement conditions. It belongs in
+  the service comparison, not an undifferentiated editorial group. These prices
+  describe different scopes and delivery models; they are not a Jukkai tariff benchmark.
+- **Jukkai implication:** the foundation already welcomes lighter missions. Make
+  their substance understandable: which problem or decision is suitable, what happens
+  together, any preparation, what the client receives, and the boundary with a design
+  study or fuller mission. Formats, duration, deliverables and fees need the actual
+  offer's terms; none is approved by these examples. Human advice can coexist with
+  free tools on a commercial page, but a technology feature does not measure migration
+  from professionals or require a Jukkai tool. The useful next content comparison is
+  how to explain individual judgement and scope within Jukkai's architecture identity.
+- **Additional reference:** [Pigalle Matignon's about page](https://www.pigallematignon.com/pages/a-propos)
+  describes a collectible-design gallery, limited signed editions and creator stories;
+  the same navigation includes a décoration service. This is an adjacent specimen for
+  connecting selection, authorship and advice under one brand. Its online shop and
+  remote advice differ from Jukkai's model; a physical gallery experience and full
+  interior-architecture practice were not established. It does not approve a catalogue,
+  art-placement offer or cross-selling strategy for Jukkai.
+- **Limits and next use:** PAA asks about general decorating principles; three related
+  phrases explicitly request free help, another a PDF, alongside room, retail and
+  profession wording. No organic software-only destination is identified in the saved
+  results, while the Maisons du Monde page itself contains an AI offer. Neither that
+  mix nor the local pack establishes which surface produces commissions. A ranked-
+  keyword pull could describe another domain's footprint, but could not isolate why
+  these pages rank or settle whether organic visibility has commercial value. The
+  advice/provider specimen question is answered sufficiently for a content comparison;
+  another profile audit or difficulty test is not required for it. PAA answers and
+  top-level AIO text are unmeasured; the Google reviews element shares Le Coup de
+  Crayon's CID and is not a seventh business. Review counts of 13–53 do not establish
+  a ranking threshold. Billed cost is unavailable. No reviewer paid calls or
+  SEO-workspace edits; four public pages were read for specific content questions.
 
 ## Evidence rules and tool roles
 
