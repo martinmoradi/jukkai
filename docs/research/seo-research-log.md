@@ -187,11 +187,12 @@ bridge remains separate from later migration.
 
 ## Reviewed runs
 
-The twenty-eight reviewed entries below record runs dated **2026-09-08**.
+The thirty reviewed entries below record runs dated **2026-09-08–09**.
 Runs 19–25 were reviewed together after Martin supplied seven independently
 initiated commands. Entries 26–28, reviewed September 9, cover ten further SERP
 captures across three commands; kitchen provenance records writing after midnight,
-without a provider timestamp. Numbering groups reviewed questions, not API calls
+without a provider timestamp. Entries 29–30 record September 9 provider-search
+and conseil-keyword runs. Numbering groups reviewed questions, not API calls
 or a prescribed research sequence. Commands use the documented
 `/seo` shorthand; namespace resolution is automatic. Reviewer corrections
 below qualify the original reports, some of which still contain rejected conclusions.
@@ -1074,6 +1075,96 @@ vendre` can also describe a buyer's search; a phrase does not settle audience
   samples cannot justify a generic-versus-local strategy for every room/problem.
   This provider-mix question does not require recapturing 100 ranks. No reviewer
   paid calls or SEO-workspace configuration/ledger changes.
+
+### 29. Kitchen provider search — does local discovery require naming Rennes?
+
+`/seo dataforseo serp entreprise pour rénovation cuisine`
+
+- **Evidence:** `serp-entreprise-pour-renovation-cuisine-2026-09-09/`:
+  `findings/seo-dataforseo.md`, `data/provenance.json` and
+  `data/serp_entreprise-pour-renovation-cuisine_rennes_fr.json`. Rennes/fr/desktop,
+  depth 20/`max_crawl_pages:2`; 36 items across two pages, with 19 organic placements
+  but 18 unique URLs (GMAT repeats), and six local entries per page. First page
+  has nine organic results; ranks 20+ are unknown. Estimated $0.002 as logged;
+  API charge and provider timestamp unavailable. Run dated September 9 by the runner.
+- **Learned:** local entries occupy absolute 1–3; MCA's Rennes kitchen page is
+  organic #1 at absolute 6, and Avenir Rénovations' Pacé page is #4. Thus an
+  unmodified provider query exposes local organic pages as well as Maps. Compared
+  with run 28's first pages, four exact organic URLs recur from the Rennes phrase
+  and none from the broad `rénovation cuisine` phrase. Directories/intermediaries,
+  provider pages and advice coexist; seven placements explicitly name other cities.
+  Their presence does not establish a local content shortage or easy competition.
+- **Provider mix:** the first-page local results retain MCA, K.CREATION and Rennes
+  Services from the city phrase; illiCO and two Activ Travaux entries replace
+  PERENE, ARQUO and Des Plans Sur La Comète. More renovation-network names appear,
+  while kitchen specialists remain. Different dates and query wording prevent a
+  single-word causal claim; no tracked customer or verified category exclusion
+  proves these are two separate markets or that an interior architect cannot appear.
+- **Questions worth keeping:** PAA includes `Quel professionnel pour refaire une
+cuisine ?`, alongside budget and provider-trust questions. Five of eight unique
+  related searches mention poseurs, including independent, price and IKEA wording.
+  These raise distinctions between design, supply, fitting and coordinating works.
+  They do not measure commission size, customer readiness or unqualified traffic.
+- **Targeted page read, September 9:** the repeated
+  [GMAT article](https://www.gmat-courtage.fr/renover-une-cuisine-comment-trouver-la-bonne-entreprise-de-renovation-de-cuisine/)
+  asks about storage, meals, opening to the living room and the extent of changes,
+  then promotes a contractor/courtier. This supplies a need-to-service explanation
+  specimen, not an uncovered topic or evidence to adopt its technical advice/rates.
+  MCA's own design explanation was already read in run 28.
+- **Jukkai implication:** a relevant problem and accurate service-area context can
+  support discovery without the searcher naming the city or profession. Explain
+  Crystelle's actual contribution and mission depth, including how design relates
+  to installation and other participants. Use available project proof; neither the
+  winning URL nor provider wording mandates a kitchen page or a contractor offer.
+- **Limits/corrections:** no volume, difficulty or enquiry measurement, no expanded
+  PAA answers or top-level AIO captured. Business-model counts are report judgements;
+  the comparison carousel includes a media post, not eight directories. Review
+  counts do not sort this list, which does not make reviews irrelevant. Two-page
+  retrieval is now observed; it does not establish the cause of every earlier
+  short response. No reviewer paid calls, ledger or SEO-workspace rule changes.
+
+### 30. Conseil/décoration vocabulary — what might a lighter mission answer?
+
+`/seo dataforseo keywords conseil décoration intérieure`
+
+- **Evidence:** `keywords-conseil-decoration-interieure-2026-09-09/README.md`,
+  `data/requested_keyword_batches.json`, six Google Ads `data/volume_*_batch*.json`
+  responses, France Labs suggestions/related terms, difficulty and intent data.
+  All thirty requested phrases returned at each geography; five Rennes volumes and
+  four France volumes are unavailable. Decorator suggestions save 40/754 and the
+  Rennes `%déco%` expansion 40/234; related terms save forty full entries plus four
+  projected rows. Seed/coach suggestion captures are report-only. Estimated $0.67;
+  API-reported charges unavailable. No live SERP was captured.
+- **Learned:** `conseil décoration intérieure` and `conseil déco` each return 10/month
+  Rennes and 210 France; `coach déco` returns 10/390. Pricing, online help, free advice,
+  rooms, atmosphere, photo simulation and learning vocabulary broaden possible needs.
+  Positive estimates do not identify buyers, but contradict dismissing conseil as
+  wording nobody searches. Profession suggestions also contain substantial career/
+  training vocabulary; their larger totals are not measured demand for commissioned
+  work. Sparse city histories limit any claim about sustained monthly usage.
+- **Variant reconciliation:** `décorateur/décoratrice d'intérieur rennes` remain at
+  30 locally, matching run 23's metrics and monthly history. The shorter
+  `décorateur/décoratrice rennes` phrases return 110; this is different wording,
+  not a rise or a conflicting rerun. France estimates are 170 and 320 respectively.
+  Gender variants share histories and should not be added as separate audiences;
+  overlap between long and short forms is unmeasured. Architecture Rennes repeats 390.
+- **Jukkai implication:** make lighter help legible alongside full projects: what
+  the advice can resolve, what the client receives and where the mission stops.
+  These are content questions to connect to real scope, examples and terms. The
+  foundation already settles the architecte d'intérieur identity and permits mission
+  déco language; this report reopens neither. Exact offer name, inclusions and price
+  still need operational validation. No separate conseil URL, coaching service,
+  free offer or tool is established by this vocabulary. A profession query alone
+  does not disclose the size of the mission its searcher might need.
+- **Limits/corrections:** France/city estimates answer different geographic questions;
+  neither is the uniquely correct page-planning number or the whole reachable market.
+  Labs gives numeric `autour de moi`/`petit budget` estimates where Ads returns
+  unavailable; preserve the source difference. The `%déco%` sample includes shops,
+  Christmas, Découvertes and Décoiffé noise, not the whole local service vocabulary.
+  AI/simulator terms are present, but no migration from human advice was measured.
+  Intent labels do not prove known-firm navigation, conversion rates or buyer shares;
+  KD 0 does not establish easy rankings. Keyword neighbourhoods and old SERP metadata
+  cannot establish the current provider mix. No reviewer paid calls or page visits.
 
 ## Evidence rules and tool roles
 
