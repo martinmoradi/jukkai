@@ -19,6 +19,9 @@ ticket, under the [Wayfinder map](https://github.com/martinmoradi/jukkai/issues/
 The research scope and first-release sitemap remain open.
 
 **Working loop:** Martin runs native Claude SEO commands, usually in fresh contexts.
+As clarified September 8, Claude works without Jukkai context: prefer native commands
+with necessary measurement/scope settings; comparisons and Jukkai synthesis happen
+with the reviewing agent here. Claude's report analysis remains useful input.
 The Jukkai-aware reviewing agent reads reports AND evidence, discusses implications
 with Martin, and updates this log. Explain the next query before recommending it.
 Competitor recommendations are not Jukkai instructions; this log authorises no paid calls.
@@ -33,7 +36,9 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   service vocabulary. Galerie discovery mixes buying and cultural visits; the
   street-art query favours public-art discovery. Studio Terrasson's recorded search
   clicks concentrate on its homepage; query visibility is too incomplete to quantify
-  branded traffic. These are samples, not whole markets.
+  branded traffic. Nantes adds another homepage-heavy architecture sample, with
+  more directory/editorial organic results and a multi-city collective on a city
+  domain. These are samples, not whole markets or ranking-cause evidence.
 - **Martin's context:** both activities target the wider Rennes audience from
   Châteaugiron. Crystelle's authorship connects them. Galerie character discussed:
   colourful, approachable street/pop/urban art, for buying as well as viewing.
@@ -42,11 +47,12 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   old-site queries, pages, links and proof to preserve. Retain Martin's interest in
   selected regional/larger-city and combined art/interiors examples. Research should
   inform later pages too, without becoming an exhaustive magazine-release gate.
-- **Latest recommendation, not agreed sequence:** run 8 supplies the old-site search
-  baseline. Discuss the candidate purposes below, then inspect existing service copy
-  and selected residential/B2B project material to outline useful content. Closer
-  combined-business/Galerie examples remain a research gap. Do not automatically run
-  the report's indexation/speed sequence or close the scope ticket.
+- **Latest recommendation, not agreed sequence:** run 9 supplies the Nantes
+  comparison. Inspect CKTFC with SXO next: its retrieved homepage combines
+  residential/B2B work, process and project examples. Use that to explore content
+  organisation, then relate it to Jukkai's actual services and proof. Closer
+  combined-business/Galerie examples remain a gap. Do not automatically pursue
+  Nantes geo-grids/commune volumes or repeat the completed GSC baseline.
 - **Proposed eventual output:** connect each candidate page to visitor needs, related
   searches, truthful message/proof and next action. No sitemap or brief is approved.
 
@@ -63,13 +69,13 @@ The foundation supplies business intent; the research informs discovery and limi
 | Galerie                  | Understand the selection, possibility of buying and actual visit arrangements. Broad gallery SERP plus business intent; no agenda obligation.                           | Content available before opening; clearer buying vocabulary and relevant references.            |
 | Contact / visit          | Reach the practice or plan a Galerie visit with truthful information. Existing contact-page clicks and known lead behaviour support accessibility.                      | General contact page versus shared sections; distinguish appointment and public opening states. |
 
-Next discussion: develop these into a content outline, starting with architecture
-explanations and project proof. Old-site URL preservation/migration needs a later
+Next discussion: use selected competitor pages to examine architecture explanations
+and project proof before developing the candidate content outline. Old-site URL preservation/migration needs a later
 mapping pass; these proposed surfaces are not redirect targets yet.
 
 ## Reviewed runs
 
-All eight runs below were captured on **2026-09-08**. Commands use the documented
+All nine runs below were captured on **2026-09-08**. Commands use the documented
 `/seo` shorthand; Martin invokes them as `/claude-seo:seo …`. Reviewer corrections
 below qualify the original reports, some of which still contain rejected conclusions.
 
@@ -211,6 +217,46 @@ below qualify the original reports, some of which still contain rejected conclus
 - **References checked:** [aggregation](https://support.google.com/webmasters/answer/17011364?hl=en),
   [query omissions](https://support.google.com/webmasters/answer/17011259?hl=en),
   [logging issue](https://support.google.com/webmasters/answer/6211453?hl=en).
+
+### 9. Nantes architecture SERP — what changes in another city?
+
+`/seo dataforseo serp architecte d'intérieur nantes`
+
+- **Evidence:** `serp-architecte-interieur-nantes-2026-09-08/findings.md` and
+  `data/serp-organic-extract.json`. Nantes (`1006285`) / fr / desktop; depth 100
+  requested, ten organic results saved. Metadata records the location override and
+  lookup task; extract states it preserves the wrapper's items, not the full API
+  envelope. Cost $0.002 is estimated; reported API charge unavailable.
+- **Learned:** carousel at absolute 1, three local entries at 2–4, first organic
+  at 5; three further local entries at 8–10. Five business root URLs and five
+  directory/editorial organic results, versus three directory results in Rennes.
+  Two price questions recur, alongside profession-definition questions; answers
+  were not captured. CKTFC appears in both local (#4) and organic (#8) results.
+- **Jukkai implication:** homepages are viable search entry pages, but a ranking
+  URL does not reveal a site's full architecture or settle Jukkai's page split.
+  Pricing/scope explanations remain useful content questions, not mandatory URLs.
+  Reviewer retrieved [CKTFC](https://www.lagence-cktfc.com/) on September 8:
+  its homepage presents process, residential/professional sections and projects;
+  this makes it a useful next SXO specimen, not a validated design model.
+- **Limits/corrections (September 8):** fewer displayed reviews do not establish a
+  lower entry barrier or isolate proximity's weight. Missing phone/hours in a
+  snippet does not establish an incomplete profile. No demand, click distribution,
+  first-viewport measurement, or ranking causes were measured. A directory listing
+  does not guarantee a visible sitelink. The carousel includes Facebook, so it is
+  not nine directory listings. Related searches contain five communes plus the
+  department (six geographic extensions); tie-breaking psychology is conjecture.
+- **Business classification correction:** the #1 root URL,
+  [Créateurs d'intérieur Nantes](https://www.architectes-interieur-nantes.com/),
+  links under its own intervention list to Paris, Lyon, Bordeaux and many other
+  city domains. The three named Rennes location-page providers are absent from
+  this top ten; “no national/multi-city players” and “five local independents”
+  are unsupported. Root URL shape is not evidence of a single-city business.
+- **Rules checked:** [Google local ranking](https://support.google.com/business/answer/7091?hl=en)
+  names relevance, distance and prominence without establishing a review threshold.
+  [Doorway policy](https://developers.google.com/search/docs/essentials/spam-policies#doorway-abuse)
+  supplies no safe page-count or unique-content percentage: reject the report's
+  “5–8 commune pages is safe” inference. A later service page ranking would show
+  another viable type, not falsify the observation that homepages can rank.
 
 ## Evidence rules and tool roles
 
