@@ -23,7 +23,11 @@ As clarified September 8, Claude works without Jukkai context: prefer native com
 with necessary measurement/scope settings; comparisons and Jukkai synthesis happen
 with the reviewing agent here. Claude's report analysis remains useful input.
 The Jukkai-aware reviewing agent reads reports AND evidence, discusses implications
-with Martin, and updates this log. Explain the next query before recommending it.
+with Martin, and updates this log. Martin clarified September 8: saved paid API data
+is the primary evidence; Claude's final commentary supplies optional clues. Interpret
+the data rather than making rebuttal of Claude or tooling verification the task.
+Keep reads targeted and reuse context. Open public websites only for a specific
+page-content question, not as a routine second audit. Explain the next query before recommending it.
 Competitor recommendations are not Jukkai instructions; this log authorises no paid calls.
 
 **Evidence:** run folders below are under `/home/martin/src/pro/seo/reports/`, local
@@ -53,11 +57,15 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   two city-worded top tens. Search competitors may also be project collaborators.
   This supports making Crystelle's mission and collaborators legible, not changing
   her professional identity or promising in-house fabrication.
-- **Latest recommendation, not agreed sequence:** compare a small restaurant
-  vocabulary set with Rennes/fr volume estimates before prioritising these terms.
-  Start with `architecte d'intérieur restaurant rennes`, `agencement restaurant rennes`
-  and `aménagement restaurant rennes`; the last phrase's SERP remains unreviewed.
-  Relate estimates to actual missions and ready restaurant proof such as Le Capri.
+- **Latest measurement:** run 13 returns no volume for any of those three restaurant
+  phrases at Rennes or France targeting, and no difficulty scores. It cannot order
+  the phrases by demand or competition. Intent labels are vendor classification,
+  not observed buyer shares; `aménagement restaurant rennes` still has no reviewed SERP.
+- **Latest recommendation, not agreed sequence:** if broader restaurant demand remains
+  decision-relevant, measure the three restaurant phrases without `rennes` at France
+  targeting. This would describe broader vocabulary, not quantify Rennes demand.
+  Existing evidence already supports considering restaurant proof such as Le Capri;
+  do not keep querying until a number appears as a prerequisite to content work.
   Closer combined-business/Galerie examples remain a gap; no restaurant URL is approved.
 - **Proposed eventual output:** connect each candidate page to visitor needs, related
   searches, truthful message/proof and next action. No sitemap or brief is approved.
@@ -76,7 +84,7 @@ The foundation supplies business intent; the research informs discovery and limi
 | Contact / visit          | Reach the practice or plan a Galerie visit with truthful information. Existing contact-page clicks and known lead behaviour support accessibility.                      | General contact page versus shared sections; distinguish appointment and public opening states. |
 
 Next discussion: distinguish the restaurant visitor's need for design, coordination
-or fabrication, then use a bounded vocabulary comparison to inform content emphasis.
+or fabrication; the first volume comparison could not prioritise the local phrases.
 Sigrid's project and BOS's credited designer/fabricator split are useful specimens;
 Le Capri remains a proof candidate subject to actual scope and ready material.
 Old-site URL preservation/migration needs a later
@@ -84,7 +92,7 @@ mapping pass; these proposed surfaces are not redirect targets yet.
 
 ## Reviewed runs
 
-All twelve reviewed runs below were captured on **2026-09-08**. Commands use the documented
+All thirteen reviewed runs below were captured on **2026-09-08**. Commands use the documented
 `/seo` shorthand; Martin invokes them as `/claude-seo:seo …`. Reviewer corrections
 below qualify the original reports, some of which still contain rejected conclusions.
 
@@ -403,6 +411,28 @@ below qualify the original reports, some of which still contain rejected conclus
   an unclaimed listing or cheap project rankings. PAA contains two fit-out and two
   dining questions, not intent shares or measured Google confidence; expanded answers
   were not saved. No standalone AI Overview block was captured, not proof of absence.
+
+### 13. Restaurant vocabulary volumes — can estimates prioritise the three phrases?
+
+`/seo dataforseo volume architecte d'intérieur restaurant rennes, agencement restaurant rennes, aménagement restaurant rennes`
+
+- **Evidence:** `keywords-restaurant-rennes-2026-09-08/findings.md`,
+  `data/requested_keywords.json` and four response JSON files. Google Ads volume at
+  Rennes (`1005876`) and France (`2250`), France difficulty, and intent classification;
+  French requested. All three keywords appear in all four responses.
+- **Learned:** neither volume response contains a `search_volume` field for any
+  keyword; difficulty likewise contains no scores. The saved data cannot distinguish
+  demand or ranking difficulty among these phrases. Unavailable is not measured zero;
+  the responses do not establish why the estimates are unavailable.
+- **Intent output:** commercial is the primary vendor label for all three, with
+  probabilities 0.415 / 0.579 / 0.640 respectively. The architecture phrase also
+  returns informational 0.264 and navigational 0.238. These classify wording; they
+  do not measure the proportion of searchers seeking a provider, lead quality or
+  conversion. They provide no reason to prefer `aménagement` for Jukkai by themselves.
+- **Jukkai implication:** retain the service-scope and project-proof lessons from
+  runs 11–12; this run adds no numerical priority or page decision. A broader national
+  comparison without the city modifier is an optional next measurement, with local
+  transfer explicitly unproved. No paid calls made by this reviewing session.
 
 ## Evidence rules and tool roles
 
