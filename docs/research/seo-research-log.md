@@ -238,14 +238,15 @@ bridge remains separate from later migration.
 
 ## Reviewed runs
 
-The thirty-three reviewed entries below record runs dated **2026-09-08–09**.
+The thirty-four reviewed entries below record runs dated **2026-09-08–09**.
 Runs 19–25 were reviewed together after Martin supplied seven independently
 initiated commands. Entries 26–28, reviewed September 9, cover ten further SERP
 captures across three commands; kitchen provenance records writing after midnight,
 without a provider timestamp. Entries 29–31 record September 9 provider-search,
 conseil and small-living-room keyword runs. Entry 32 adds the paired small-room
 SERPs and three targeted page readings; entry 33 adds the conseil SERP and offer
-specimens. Numbering groups reviewed questions, not API calls
+specimens; entry 34 examines Pigalle Matignon's homepage and captured search footprint.
+Numbering groups reviewed questions, not API calls
 or a prescribed research sequence. Commands use the documented
 `/seo` shorthand; namespace resolution is automatic. Reviewer corrections
 below qualify the original reports, some of which still contain rejected conclusions.
@@ -1392,6 +1393,73 @@ cuisine ?`, alongside budget and provider-trust questions. Five of eight unique
   Crayon's CID and is not a seventh business. Review counts of 13–53 do not establish
   a ranking threshold. Billed cost is unavailable. No reviewer paid calls or
   SEO-workspace edits; four public pages were read for specific content questions.
+
+### 34. Pigalle Matignon homepage — how are selection, creators and advice connected?
+
+`/seo page https://www.pigallematignon.com/`
+
+- **Evidence:** `page-pigallematignon-2026-09-09/findings/page-analysis.md` and
+  `findings/provenance.md`; `data/homepage_raw.html`, `visible_text.txt`,
+  `links_audit.txt`, `ranked_keywords_fr_raw.txt`, `ranked_keywords_summary.txt`,
+  `pagespeed.json`, `images.json`; and
+  `screenshots/www_pigallematignon_com_desktop.png`. The supplied root `report.md`
+  is not present; the findings file is the report read. The reviewer inspected the
+  saved first-screen image and raw HTML content/order, and checked the public homepage
+  on September 9. Only the first desktop viewport was visually reviewed; this is
+  not a complete mobile or interaction audit. The question is how a reference site
+  connects its activities, not how to repair a client site.
+- **Page learning:** the [homepage](https://www.pigallematignon.com/) leads with a
+  named creator and object, followed in its body by bespoke pieces, an eight-item
+  selection, an explanation of the editions, creator interviews and newsletter.
+  Creator names accompany works. The consultation is linked as `Service Déco` in
+  the side menu but has no body explanation; bespoke-piece enquiries do. The gallery
+  identity receives more explanation later than in the captured hero. This supplies
+  an example of an unequal hierarchy under one identity, not two equal homepage
+  sections. It does not establish visitor confusion, comprehension or conversion.
+- **Search-footprint reconciliation:** France Labs returned 50 of 62 keyword rows.
+  Recalculation from the raw file gives **25** for the influential-architects article,
+  **20** for the consultation product, four for the art-definition article and one
+  for `/products/applique-iconique-de-designer`, organic #7 for `amande haeghen`.
+  Both report and derived summary use 24/21 for the first two groups; prefer the
+  raw file. The consultation's twenty rows span organic #1–18, with sixteen at #1–6.
+  These are variant keyword strings, not twenty distinct audiences or required pages.
+  Provider SERP dates span June 5–August 30; this is not fifty September 9 live captures.
+  No homepage or collection URL appears in these fifty rows; twelve rows are unreturned.
+  The tangible-product row precludes saying the whole catalogue has zero visibility.
+- **What this adds:** the service visibility from run 33 extends across related
+  wording in the provider database. One service page can answer several related
+  phrases within a brand whose homepage foregrounds objects. Creator-name discovery
+  supplies another concrete route. Homepage prominence and captured search entry
+  need not match. Whether those routes produce useful visits, product purchases or
+  commissions is unmeasured; article topics suggest a relevance question, not proof
+  of zero buying intent. Missing ranks are not missing demand, and a GSC property
+  was not queried. No revenue diagnosis or ranking cause follows from this sample.
+- **Jukkai implication — proposal:** compare a coherent introduction to Crystelle's
+  practice and selection with explicit routes to architecture, Galerie and contact.
+  Architecture's commercial priority is settled in the foundation; the visual balance,
+  page count and exact wording remain open. Make selected work and its authorship
+  understandable, then connect the visitor to the relevant offer or action. Artist
+  permissions, actual selection and real project evidence still govern what can be
+  shown. A person entering through advice or a project should be able to understand
+  Jukkai without first visiting the homepage. The reference does not require a podcast,
+  newsletter, catalogue, custom-furniture service or art cross-selling programme.
+- **Technical evidence in proportion:** PSI saves mobile LCP 4.3 s and desktop 1.1 s,
+  with no CrUX field data; mobile performance is 83, while 0.42 is the LCP audit score.
+  HTML and the failed image-discovery check support examining hero loading during
+  implementation, not a guaranteed performance or revenue result from one fix.
+  The 26 image tags/20 empty alternatives include `noscript` duplicates, not twenty
+  distinct works. The named works and founder prose are present in raw HTML; the
+  report's blanket claim that authorship is unindexable is unsupported. Its score
+  and schema/accessibility checklist are reference judgements, not Jukkai priorities.
+- **Limits and next use:** the brand-SERP and backlink responses are not saved in
+  this folder. Brand dominance, image repetition, directory addresses and link-profile
+  observations therefore remain report-only here; neither the alleged image/alt
+  relationship nor low traffic from absent CrUX is established. Technical fixes cannot
+  be declared commercially ineffective from this evidence. Do not follow the report's
+  owner-access, address, publication or catalogue-research questions for Pigalle as
+  though it were our client. This run supplies enough reference material to compare
+  homepage approaches. Billed costs are unavailable; no reviewer paid calls or edits
+  to Pigalle Matignon or the SEO workspace.
 
 ## Evidence rules and tool roles
 
