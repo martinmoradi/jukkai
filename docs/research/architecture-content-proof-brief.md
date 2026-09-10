@@ -58,6 +58,28 @@ can appear beside the relevant explanation. The homepage's relationship to a
 dedicated architecture page, residential/B2B treatment and Galerie balance remain
 open; this brief does not settle those wider choices.
 
+### Applying the practice comparisons
+
+Run 47's Anata reading adds a second concrete reference alongside CKTFC (runs
+10/35/42). These are proposed drafting checks, not new Jukkai offers:
+
+- **Separate project size from accompaniment and client involvement.** Explain
+  what the mission delivers and which decisions/actions remain with the client.
+  Confirm the actual responsibilities before naming a lighter or fuller offer.
+- **Put proof next to the claim.** For a case, connect the starting need, constraint,
+  important choice and supported outcome. Use a retained element or an underlying
+  works decision where a real Jukkai project supports it; no invented savings.
+- **Make professional relevance explicit.** Describe the commissioning client's
+  activity and the users' needs. A property photograph alone does not establish
+  whether the project answers a professional visitor's concern.
+- **Connect the explanation to a real next step.** A person entering through a
+  case should be able to reach mission detail and contact. Explain service-area
+  limits by mission and the actual first conversation; competitor booking formats
+  and response promises are not requirements.
+
+The aim is to test the developing content against a visitor's questions. Neither
+reference proves a preferred page count, polished visual execution or conversion.
+
 ## Budget explanation — draft direction
 
 Help visitors understand how the same envelope covers required underlying work,
