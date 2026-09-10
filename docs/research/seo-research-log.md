@@ -171,6 +171,15 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   directory share nor review count establishes easy rankings. The selected
   inventory, service-overlap and current-town phrase checks are now complete;
   page-outline comparison and content/proof selection are the next recommended work.
+- **Department wording:** run 46 captures twenty organic results each for
+  `architecte d'intérieur ille et vilaine` and `architecte d'intérieur 35`, from
+  Rennes. They share seven top-ten URLs; against the Rennes architecture head the
+  counts are five and seven respectively. Regional homepages, city service pages
+  and department listings coexist. This supports explaining the wider service area
+  within core architecture content, subject to actual mission/travel scope; it
+  establishes neither a Google rewrite nor a required department page. Local
+  features occupy early slots, but no click share, viewport or ranking cause was
+  measured. Fee questions reinforce the existing budget/mission brief.
 - **Still open:** precise Jukkai mission terms and available project material, rather
   than another broad room/conseil capture, are the missing inputs for detailed offer
   copy. Qualified local acquisition remains unmeasured. Art Génération's collection
@@ -196,7 +205,7 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   the developing site; a distinct conseil entrance remains a credible alternative.
   No sitemap, content brief or research sequence is approved by this synthesis.
 
-### Candidate content purposes after run 45
+### Candidate content purposes after run 46
 
 **Agent proposal for discussion, not five approved URLs or release commitments.**
 The foundation supplies business intent; research informs discovery and limits.
@@ -335,6 +344,17 @@ For clustering, distinguish measured pairs from the installed workflow's inferre
 overlaps and proposed hub/spoke templates. For geography, a Châteaugiron keyword
 from Rennes, a search from Châteaugiron and Galerie discovery are separate questions.
 
+**Later September 10 discussion:** Martin raised department wording and the value
+of deeper outside-Rennes comparisons. Run 46 now covers Ille-et-Vilaine/35 wording
+from Rennes; apply it to service-area copy, not an automatic geography-page family.
+The agent recommends one additional comparable practice across introduction,
+missions, project proof and contact, alongside drafting. CKTFC already has a deep
+Nantes review (9/10/35/42); Lyon/Paris mainly supply pricing contrasts, and the art
+references answer different questions. Studio Anata is a candidate from run 27,
+not a selected benchmark. Seek a few concrete lessons to adopt, adapt or reject;
+larger-city competition and better conversion remain unmeasured. This is not an
+approved extra city-wide research programme or a prerequisite to drafting.
+
 | Question worth resolving                                                          | Evidence route                                                                                                                                                                                                                                                                                      | What would be enough for that question?                                                                                                                                                                |
 | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | How do reference sites organise services, projects and explanations?              | Runs 42–43 join CKTFC and Le Coup de Crayon inventories to saved rankings and selective navigation/content readings. Use the contrast between broad audience entrances, a substantial homepage and project destinations; further competitor repair is outside this question.                        | A comparison of content organisation and captured search entry, with inventory coverage limits; no copied sitemap or inferred conversion performance.                                                  |
@@ -365,7 +385,7 @@ bridge remains separate from later migration.
 
 ## Reviewed runs
 
-The forty-five reviewed entries below record runs dated **2026-09-08–10**.
+The forty-six reviewed entries below record runs dated **2026-09-08–10**.
 Runs 19–25 were reviewed together after Martin supplied seven independently
 initiated commands. Entries 26–28, reviewed September 9, cover ten further SERP
 captures across three commands; kitchen provenance records writing after midnight,
@@ -2147,6 +2167,55 @@ cuisine ?`, alongside budget and provider-trust questions. Five of eight unique
   indexed business-listings runs do not establish live grid capability. Neither
   follow-up is launched or required for the next content decision, and no 8–12-week
   ranking outcome is promised.
+
+### 46. Department architecture phrases — does Ille-et-Vilaine/35 change the content need?
+
+`/seo dataforseo serp architecte d'intérieur ille et vilaine, architecte d'intérieur 35`
+
+- **Evidence:** `serp-architecte-interieur-35-2026-09-10/README.md`, both saved
+  responses with provenance, CSV and original analysis; added `reviewer-notes.md`,
+  `reviewer-analysis.py` and `reviewer-comparison.json`. Rennes/fr/desktop,
+  depth 20/page cap 2: twenty distinct organic URLs/domains each, ten per page;
+  twelve/nine local entries, one comparison block and one PAA block per query.
+  The CSV's 69 keyword/type/rank/URL rows match the captures. Location confirmation
+  is report-only; lookup JSON and full provider envelopes are not saved. Nominal
+  tier estimate $0.004, actual charge unavailable. No reviewer paid calls.
+- **Measured comparison:** the two phrases share 13/20 domains but 11/20 normalized
+  URLs: PagesJaunes returns department versus city pages, and Houzz Tinténiac versus
+  Rennes. First-ten URL overlap is 7/10; against the Rennes architecture head,
+  department-name wording shares 5/10 and `35` shares 7/10. Run 44's other two
+  architecture variants give 4/10 and 6/10 respectively. Comparisons use that run's
+  normalization and September 8–10 captures, not canonical verification or a
+  controlled geographic experiment. Homepages and Rennes service pages recur;
+  department listings and SAAC's Rennes/department page also appear. No saved
+  rewrite field proves that Google converted either query into Rennes wording.
+- **Interpretation corrections:** Notes de Styles and Ynspir are service providers.
+  Corrected third-party placements are 8/20 versus 5/20, with 2/10 in each first
+  ten; this includes individual practitioner profiles. Eight local entries overlap
+  by CID. Early local slots are not measured viewport/click share or proof that
+  organic acquisition requires a GBP. Review order and literal place wording do
+  not isolate ranking causes; [Google describes multiple local factors](https://support.google.com/business/answer/7091?hl=en).
+  The eight comparison sources include Facebook, and two captures do not establish
+  fixed membership or directory-listing value. Four of eight PAA occurrences ask
+  about fees, plus one about free advice. Async placeholders contain no answers or
+  citations. No full ranking-page content inspection establishes an unanswered-price
+  opportunity; existing fee/mission specimens remain relevant.
+- **Method qualification:** [DataForSEO confirms the page cap and depth interact](https://dataforseo.com/help-center/what-is-max-crawl-pages-and-how-does-it-work).
+  Explicit caps are useful, but these different keywords/dates do not reproduce
+  the September 8 art capture with only one change. Its manifest omits the cap.
+  The [upstream endpoint](https://docs.dataforseo.com/v3/serp/google/organic/live/advanced/)
+  documents a maximum of 100 pages, not the claimed wrapper
+  maximum of seven; the claimed default of one is not established by these files.
+  Neither wrapper detail nor universal historical closure is verified. Claude's
+  SEO AGENTS edit was left intact; no diagnostic rerun is needed for this decision.
+- **Jukkai implication — proposal:** explain Rennes/regional work, the Châteaugiron
+  office and appropriate wider Ille-et-Vilaine reach in core architecture/contact
+  content. Confirm how reach varies with mission scope before a broad promise.
+  One architecture destination can be evaluated for both formulations; neither
+  compulsory merging, inevitable cannibalisation nor an extra department URL follows.
+  Draft mission/budget/project content next and consider one additional nonlocal
+  practice journey as discussed above. Department-wide searcher coverage, qualified
+  demand and conversion remain unmeasured; none is a universal drafting prerequisite.
 
 ## Evidence rules and tool roles
 
