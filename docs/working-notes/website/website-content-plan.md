@@ -201,9 +201,9 @@ counterpart to the homepage, or starting the migration.
 established directions. Martin's account of budget concerns gives that explanation
 practical weight, without fixing visual hierarchy.
 
-**Research:** homepage concentration in the small old-site [GSC sample](../../research/seo-research-log.md#8-studio-terrasson-gsc--what-already-attracts-search-visits)
+**Research:** homepage concentration in the small old-site [GSC sample](../../research/seo-runs/001-010.md#8-studio-terrasson-gsc--what-already-attracts-search-visits)
 supports recognition and continuity. The September 8–10 Rennes/desktop
-[service comparison](../../research/seo-research-log.md#44-service-query-overlap--which-needs-warrant-combined-or-distinct-treatment)
+[service comparison](../../research/seo-runs/041-050.md#44-service-query-overlap--which-needs-warrant-combined-or-distinct-treatment)
 found closer overlap within architecture phrases and within décoration/aménagement/
 conseil phrases than between them. That supports considering a separate entrance;
 the words do not identify small budgets. Saved CKTFC/Anata readings demonstrate

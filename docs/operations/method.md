@@ -68,9 +68,17 @@ Additional pages need ready content and review capacity as well as cheap code.
   answers into another evolving roadmap.
 - **Inquiry/evidence:** useful questions and source limitations; not canonical
   strategy or an exhaustive prerequisite to building.
+- **SEO log:** concise current synthesis and a run index. Detailed reviewed
+  observations and corrections live in linked run records, not repeated in every
+  brief. The capability map separately owns command routing.
 - **Implementation issues:** approved behavior, dependencies and verification.
 - **Working notes:** provisional session captures, clearly labelled as such.
+  The [website working set](../working-notes/website/README.md) routes visitor
+  explanations, page alternatives, plans and draft copy by their distinct purpose.
 
 Keep this system small. Update the relevant document when a decision crystallises;
 create another artifact only for a real coordination need. Do not reopen settled
 choices because an older issue, tool recommendation or agent template says otherwise.
+Follow the [documentation map](../README.md#keep-docs-fresh) when updating authority,
+retiring a draft or moving files. Organization and review labels do not approve a
+business promise, page model or design.
