@@ -1,6 +1,6 @@
 # SEO research log
 
-Updated: 2026-09-09. **Working synthesis, not an approved sitemap, copy brief or
+Updated: 2026-09-10. **Working synthesis, not an approved sitemap, copy brief or
 SEO strategy.** Requested by Martin as the continuing agent's research entry point.
 
 ## Start here
@@ -59,7 +59,10 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   with the architecture capture. Different mission vocabulary can discover overlapping
   providers; it does not require a different professional identity. Run 34 adds
   twenty related keyword rows for one consultation page in a wider design brand,
-  without establishing its visits, conversions or ranking cause.
+  without establishing its visits, conversions or ranking cause. Run 35 adds CKTFC's
+  broader footprint: the homepage answers related local service phrases, while a
+  documented mezzanine project appears for an unmodified room problem. An explanation
+  of planches d'ambiance connects a design tool to actual project decisions and help.
   Search visibility, persuasion and enquiry
   conversion remain different measures; neither city size nor snippet quality
   measures easy competition.
@@ -91,16 +94,19 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   colourful, approachable street/pop/urban art, for buying as well as viewing.
   Actual offer scope, proof and the foundation's separate architecture/art pricing
   rules govern copy; tentative gift-price examples do not approve public art prices.
-- **What the latest run adds:** a shared brand can give activities different prominence
-  on its homepage while a service page supplies another search entrance. That observed
-  arrangement is a reference for comparing Jukkai content approaches, not evidence
-  of the right hierarchy or page count for Jukkai. Architecture's commercial priority
-  comes from the foundation. The captured footprint also distinguishes thematic
-  articles, a concrete paid service and creator-name discovery; keyword counts do
-  not tell us which produces business. The next useful comparison is what a visitor
-  understands and can do from the homepage or an inner entry page. Two provisional
-  homepage approaches below make that discussion concrete without requiring project
-  assets yet. Preservation targets and profile checks remain relevant to
+- **What the latest run adds:** CKTFC's homepage, explanatory content and specific
+  project pages supply different search entrances. Its salary and moodboard articles
+  have more keyword rows, but the homepage leads the provider's page-level organic
+  traffic estimate. Keyword count is therefore a poor stand-in for business relevance;
+  actual visits and enquiries remain unknown. The mezzanine page is a concrete
+  problem-led project specimen for Martin's storytelling idea, while the planche
+  d'ambiance page shows how explaining a deliverable can make professional judgement
+  understandable. Compare these with Le Coup de Crayon's broad homepage, CMC²'s
+  broad/specialised pages and Pigalle's consultation entrance. They support options,
+  not one winning hierarchy. We can now compare integrated and more separated
+  architecture content alongside the two homepage introductions below, using real
+  Jukkai material. Galerie presentation remains a useful further research branch.
+  Preservation targets and profile checks remain relevant to
   [the Studio Terrasson/Google transition](https://github.com/martinmoradi/jukkai/issues/120).
   Scores and report checklists do not turn into launch work.
 - **Still open:** precise Jukkai mission terms and available project material, rather
@@ -123,7 +129,7 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   to publish a project, stock, opening arrangements or the shared-brand expression.
   No sitemap, content brief or research sequence is approved by this synthesis.
 
-### Candidate content purposes after run 34
+### Candidate content purposes after run 35
 
 **Agent proposal for discussion, not five approved URLs or release commitments.**
 The foundation supplies business intent; research informs discovery and limits.
@@ -236,6 +242,13 @@ and visual work can change the preferred treatment. No new page is committed her
   A full guide needs a useful standalone answer; attaching a sales invitation to
   generic tips does not establish its value. Area is context alongside shape,
   openings, furniture and habits, not sufficient grounds for separate pages.
+- **September 10, run 35:** CKTFC's `/mezzanine` supplies a closer specimen for the
+  project-storytelling proposal: a named commission, 9 m² room, mission, constraints,
+  design choices and imagery accompany broader explanation and contact/tariff links.
+  It appears at organic #3 for an unmodified problem phrase in the saved database.
+  This supports comparing a project entrance with a separate guide; it establishes
+  neither the cause of ranking nor local enquiries. The actual page also contains
+  generic promotion and additional examples, so its full format is not a template.
 
 ### Useful follow-ups to discuss
 
@@ -246,7 +259,7 @@ all of them before working on the magazine website.
 
 | Question worth resolving                                                          | Evidence route                                                                                                                                                                                                                                                                          | What would be enough for that question?                                                                                                                                                                |
 | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Which format could make a residential need and the available help understandable? | Reuse runs 28–33 and their advice/offer specimens to compare architecture copy, a project feature and a focused guide. A fresh paid capture is not needed for this first comparison; choose a page-level workflow only if it answers a remaining question.                              | One concrete content option connecting the need, useful explanation, available proof, real mission and next action. Include preparation/outputs where known; mark missing facts.                       |
+| Which format could make a residential need and the available help understandable? | Reuse runs 28–33 and run 35's project/process specimens to compare architecture copy, a project feature and a focused guide. A fresh paid capture is not needed for this first comparison; choose a page-level workflow only if it answers a remaining question.                        | One concrete content option connecting the need, useful explanation, available proof, real mission and next action. Include preparation/outputs where known; mark missing facts.                       |
 | How can a Galerie show actual work and make buying approachable?                  | Run 26 supplies Art Génération's street-art selection and Vettese's artist article. `/seo sxo https://artgeneration.fr/collections/tableaux-street-art "acheter tableau street art"` can examine one specimen's page/search fit.                                                        | Useful ways to present work types, authorship and an enquiry/visit step, within Jukkai's no-catalogue, consent and pre-opening price rules. No shop imitation required.                                |
 | How can fees be explained alongside scope, value and next steps?                  | Compare runs 10/27's pricing specimens and run 33's consultation formats with actual mission terms. If visitor experience needs closer study, `/seo sxo https://gaeleboutaud.com/combien-coute-architecte-interieur-rennes/ "tarif architecte d'intérieur rennes"` remains a candidate. | A concrete explanation of mission choices, inclusions and how a fee is set. Different competitor delivery models do not establish Jukkai's price or required packages.                                 |
 | How should the homepage introduce the practice, Crystelle and the Galerie?        | Run 34 completes the Pigalle homepage reading. Compare the two provisional approaches above using the foundation, actual offer facts and available proof. A planning/brief workflow could propose another treatment if it answers a specific unresolved choice.                         | A visitor can explain what Jukkai offers, recognise the architecture service, understand the Galerie and find the appropriate next step. No new competitor capture is needed for the first comparison. |
@@ -262,7 +275,7 @@ bridge remains separate from later migration.
 
 ## Reviewed runs
 
-The thirty-four reviewed entries below record runs dated **2026-09-08–09**.
+The thirty-five reviewed entries below record runs dated **2026-09-08–10**.
 Runs 19–25 were reviewed together after Martin supplied seven independently
 initiated commands. Entries 26–28, reviewed September 9, cover ten further SERP
 captures across three commands; kitchen provenance records writing after midnight,
@@ -270,6 +283,8 @@ without a provider timestamp. Entries 29–31 record September 9 provider-search
 conseil and small-living-room keyword runs. Entry 32 adds the paired small-room
 SERPs and three targeted page readings; entry 33 adds the conseil SERP and offer
 specimens; entry 34 examines Pigalle Matignon's homepage and captured search footprint.
+Entry 35 adds CKTFC's wider ranking footprint, recovered MCP response and two focused
+page readings for project/process content.
 Numbering groups reviewed questions, not API calls
 or a prescribed research sequence. Commands use the documented
 `/seo` shorthand; namespace resolution is automatic. Reviewer corrections
@@ -1484,6 +1499,65 @@ cuisine ?`, alongside budget and provider-trust questions. Five of eight unique
   though it were our client. This run supplies enough reference material to compare
   homepage approaches. Billed costs are unavailable; no reviewer paid calls or edits
   to Pigalle Matignon or the SEO workspace.
+
+### 35. CKTFC ranking footprint — which pages connect service, project and explanatory discovery?
+
+`/seo dataforseo ranked lagence-cktfc.com`
+
+- **Evidence:** `ranked-lagence-cktfc-2026-09-10/findings/seo-dataforseo.md`,
+  `findings/reviewer-notes.md`, `data/ranked_keywords.csv`, the three endpoint JSON
+  files and recovered `data/ranked_keywords_France_fr.mcp-response.json` with its
+  `recovery.json` provenance. France/fr Labs; ranked limit 200 returns 82/82 items
+  across 74 keyword strings: 64 organic, 17 local-pack and one AI Overview reference.
+  Relevant pages returns 11/11 objects at limit 100; overview is a third call.
+  Counts match endpoint totals for this scope, not all Google visibility. Stored
+  SERP dates span **May 26–August 31**, correcting the report's July–September range.
+  This is a Nantes reference, as already established in runs 9–10; no Rennes recapture
+  or permanent location exception is needed for the country-level footprint question.
+- **Main learning:** the homepage supplies eight organic rows across architecture,
+  décoration, aménagement, designer and one third-party-name query; its best saved
+  position is #3. Salary and moodboard-definition content supplies 17 and 14 organic
+  rows respectively, but the homepage leads the separate page-level organic ETV
+  estimate (52.448 of 91.438). ETV means estimated traffic **volume**, not money or
+  measured visits. Keyword-row counts and topic labels do not establish commercial
+  contribution; the salary topic is poorly aligned with Jukkai's visitor job, while
+  explaining a design tool can help a prospective client understand the work.
+- **Project and professional entrances:** `/mezzanine` appears at organic #3 for
+  `faire une mezzanine dans une petite chambre`, plus an AI Overview reference for
+  that same query. `/studio-oléron` appears at #17/#19 for garage-to-studio wording;
+  `/suite-parentale` at #33–36 for garage-to-bedroom wording. Library, office and
+  restaurant URLs also occur (#35, #44 and #68–92 respectively). These add specific
+  content candidates, not evidence for sector-page priority or easier rankings.
+  `/tarifs` is absent from this dataset but was useful service content in run 10;
+  absent rankings do not make a page unnecessary.
+- **Focused page reads, September 10:** the
+  [mezzanine page](https://www.lagence-cktfc.com/mezzanine) identifies a 9 m² commission,
+  mission responsibilities, spatial/light constraints and design choices, alongside
+  project/plan imagery, general advice and tariff/contact links. Its mixed content
+  makes it a project-based explanation rather than a pure gallery or pure guide.
+  The [planche d'ambiance page](https://www.lagence-cktfc.com/planche-ambiance), whose
+  five saved organic rows rank #4–10, explains shared visual direction, materials and
+  decisions, then connects to help and residential examples. Those are useful ways
+  to make an actual mission/deliverable understandable; its broad promises and length
+  are not Jukkai copy requirements. No full visual audit or conversion test was made.
+- **Jukkai implication — proposal:** compare an architecture entrance, selected
+  problem-led projects and short process/deliverable explanations as complementary
+  content. Reuse Le Coup de Crayon, CMC² and Pigalle for the whole-site comparison.
+  A project can help someone recognise both a need and Crystelle's contribution;
+  the real project must supply that substance. Neither an extra guide for every
+  project nor a dedicated service URL follows automatically. No site model approved.
+- **Fidelity and limits:** the disclosed session tool-result file still existed.
+  The reviewer copied its exact bytes into the report folder and checked all 82
+  rows against the projection's eleven scalar fields; they agree. Dates, titles,
+  descriptions, core-keyword metadata and other omitted fields are now preserved
+  without a paid rerun. This is the complete saved MCP response, not the provider
+  task envelope. The projection's feature lists have errors; use recovered data
+  (25 rows with AIO present, ten with featured snippets), without treating feature
+  presence as domain occupancy or those rows as distinct audiences. The 64-versus-36
+  organic count difference remains unresolved despite matching overview/page totals;
+  synonym filtering is a hypothesis, not a verified complete reconciliation. No brand
+  absence, site-age, zero-enquiry or ranking-cause conclusion follows. Run estimate
+  $0.11 includes the overview; billed charges unavailable. No reviewer paid calls.
 
 ## Evidence rules and tool roles
 
