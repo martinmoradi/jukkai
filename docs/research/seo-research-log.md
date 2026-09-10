@@ -179,6 +179,10 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   Connect each candidate to a visitor job, truthful message, ready proof and useful
   next action. Search estimates cannot supply Crystelle's current fees, permission
   to publish a project, stock, opening arrangements or the shared-brand expression.
+  The [provisional sitemap-options memo](sitemap-options-memo.md) now compares
+  integrated, separated and hybrid models with content inputs, magazine/later scope
+  and a continuity review list. Hybrid is the agent's starting recommendation for
+  the developing site; a distinct conseil entrance remains a credible alternative.
   No sitemap, content brief or research sequence is approved by this synthesis.
 
 ### Candidate content purposes after run 44
