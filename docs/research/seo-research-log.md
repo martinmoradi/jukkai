@@ -76,6 +76,10 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   Run 40 adds selection questions around taste, relevant experience, collaboration,
   deliverables, fees and timing. Practitioner advice can connect these questions
   to project proof and contact; rankings do not measure conversion or easy access.
+  Run 41 adds local practices, office services, furniture and advice to the office
+  query, with a service page at organic 1 and additional providers in image packs.
+  Two professional-page readings connect workplace uses, mission stages and
+  project proof. These are content options, not a Maps-only acquisition conclusion.
   Search visibility, persuasion and enquiry
   conversion remain different measures; neither city size nor snippet quality
   measures easy competition.
@@ -120,7 +124,7 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   picture a finished interior, then necessary electricity, plumbing, insulation or
   other underlying work can leave less for visible transformation. Explain that
   expectation gap with actual scope and choices; no standard budget split is implied.
-- **What the latest run adds:** the practice-selection query supplies guidance on
+- **Residential application:** the practice-selection query supplies guidance on
   taste, relevant projects, geography, working method, deliverables, fees and timing.
   Several practices appear on page one; their size, authority and conversion are
   unmeasured. Xavier Lemoine connects selection advice to past work and a first
@@ -140,6 +144,15 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   Preservation targets and profile checks remain relevant to
   [the Studio Terrasson/Google transition](https://github.com/martinmoradi/jukkai/issues/120).
   Scores and report checklists do not turn into launch work.
+- **What the latest run adds:** the office SERP exposes Oser Mon Intérieur and
+  SOS Design locally, also present in the architecture and conseil captures, while
+  Korus leads organic results with office-service content. JPM Archi supplies an
+  image-pack specimen connecting workplace needs to scope, projects and contact.
+  Professional explanation can use actual activities, constraints and design
+  decisions alongside the real mission. Review counts and different image/organic
+  publishers do not establish easy entry or exclude organic acquisition. Run 41
+  answers this provider-mix question; the proposed next command maps CKTFC's URLs
+  to compare site organisation with its existing ranking footprint and page readings.
 - **Still open:** precise Jukkai mission terms and available project material, rather
   than another broad room/conseil capture, are the missing inputs for detailed offer
   copy. Qualified local acquisition remains unmeasured. Art Génération's collection
@@ -161,7 +174,7 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   to publish a project, stock, opening arrangements or the shared-brand expression.
   No sitemap, content brief or research sequence is approved by this synthesis.
 
-### Candidate content purposes after run 40
+### Candidate content purposes after run 41
 
 **Agent proposal for discussion, not five approved URLs or release commitments.**
 The foundation supplies business intent; research informs discovery and limits.
@@ -289,16 +302,34 @@ useful tool spending; use the capability map to explore other perspectives as we
 Each route below can change a content choice. There is no requirement to finish
 all of them before working on the magazine website.
 
+**September 10 discussion:** Martin shared a separate Claude assessment as food
+for thought and welcomed continued research toward firmer choices. The reviewing
+agent proposed raising competitor inventories, systematic service-query overlap
+and Châteaugiron research in priority, while retaining professional and Galerie
+content work. This is an exploratory direction, not an approved queue or sitemap.
+Compare site models with similar content before selecting first/later scope:
+homepage plus contact describes a release size, not the only integrated model.
+For clustering, distinguish measured pairs from the installed workflow's inferred
+overlaps and proposed hub/spoke templates. For geography, a Châteaugiron keyword
+from Rennes, a search from Châteaugiron and Galerie discovery are separate questions.
+
 | Question worth resolving                                                          | Evidence route                                                                                                                                                                                                                                                                          | What would be enough for that question?                                                                                                                                                                |
 | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| How do reference sites organise services, projects and explanations?              | Next proposal: `/seo firecrawl map https://www.lagence-cktfc.com/`, compared with runs 10/35; then one contrasting site if useful. Inspect navigation and selected pages after URL discovery.                                                                                           | A comparison of content organisation and captured search entry, with inventory coverage limits; no copied sitemap or inferred conversion performance.                                                  |
+| Which service needs could share a page, and which deserve distinct treatment?     | Compare proposed content models with a systematic architecture/décoration/conseil/renovation overlap analysis. Verify that a cluster run actually measures the relevant pairs.                                                                                                          | A supported preference, credible alternative and explicit uncertainty, tested against distinct content and available proof rather than overlap thresholds alone.                                       |
+| What does Châteaugiron add to local discovery?                                    | Select architecture or Galerie questions and distinguish geography in the phrase from the actual capture location; workspace defaults remain Rennes until explicitly scoped otherwise.                                                                                                  | Evidence for the selected local question, without treating an architecture capture as Galerie evidence or requiring commune pages.                                                                     |
 | Which format could make a residential need and the available help understandable? | Reuse runs 28–33 and run 35's project/process specimens to compare architecture copy, a project feature and a focused guide. A fresh paid capture is not needed for this first comparison; choose a page-level workflow only if it answers a remaining question.                        | One concrete content option connecting the need, useful explanation, available proof, real mission and next action. Include preparation/outputs where known; mark missing facts.                       |
 | How can a Galerie show actual work and make buying approachable?                  | Run 36 completes the Art Génération collection reading. Compare its named-work presentation and practical explanations with Jukkai's selected artworks, Crystelle's perspective and actual buying/visit arrangements.                                                                   | A provisional outline using real work, concise verified details and a truthful discovery/contact/visit step. Keep catalogue, pre-opening price, consent and promise boundaries explicit.               |
 | How can fees be explained alongside scope, value and next steps?                  | Compare runs 10/27's pricing specimens and run 33's consultation formats with actual mission terms. If visitor experience needs closer study, `/seo sxo https://gaeleboutaud.com/combien-coute-architecte-interieur-rennes/ "tarif architecte d'intérieur rennes"` remains a candidate. | A concrete explanation of mission choices, inclusions and how a fee is set. Different competitor delivery models do not establish Jukkai's price or required packages.                                 |
 | How should the homepage introduce the practice, Crystelle and the Galerie?        | Run 34 completes the Pigalle homepage reading. Compare the two provisional approaches above using the foundation, actual offer facts and available proof. A planning/brief workflow could propose another treatment if it answers a specific unresolved choice.                         | A visitor can explain what Jukkai offers, recognise the architecture service, understand the Galerie and find the appropriate next step. No new competitor capture is needed for the first comparison. |
 | What existing material and visibility should survive the transition?              | Reconcile saved run 8 page data, run 21 backlink destinations and the existing content inventory; inspect particular source links/pages where necessary. Verify current profile facts and CTERRA history with the owner under issue 120.                                                | A small preservation/verification list with evidence and unresolved destinations. A generic GSC rerun or another stale radius sample would not resolve ownership.                                      |
 
-The proposed next discussion can now compare an outline across architecture,
-Galerie and contact, including professional missions and their project proof.
+The office provider mix and two targeted service readings are now reviewed in
+run 41. The next proposed fresh run is CKTFC URL discovery above, then comparison
+across architecture, Galerie and contact, including professional missions and
+their project proof. Further physical-Galerie research remains available for a
+specific presentation or visit/buying question; missing business facts constrain
+dependent copy rather than making all Galerie research or drafting impossible.
 Further searches are useful when they uncover another visitor need or distinguish
 competing content choices. Stop a particular branch when it answers that question;
 missing volumes and unused commands are not reasons to keep it open indefinitely.
@@ -307,7 +338,7 @@ bridge remains separate from later migration.
 
 ## Reviewed runs
 
-The thirty-six reviewed entries below record runs dated **2026-09-08–10**.
+The forty-one reviewed entries below record runs dated **2026-09-08–10**.
 Runs 19–25 were reviewed together after Martin supplied seven independently
 initiated commands. Entries 26–28, reviewed September 9, cover ten further SERP
 captures across three commands; kitchen provenance records writing after midnight,
@@ -319,6 +350,8 @@ Entry 35 adds CKTFC's wider ranking footprint, recovered MCP response and two fo
 page readings for project/process content.
 Entry 36 reviews Art Génération's street-art collection, two purchase/style SERPs,
 keyword estimates and saved desktop/mobile screenshots.
+Entries 37–40 add residential renovation and professional-selection research;
+entry 41 adds the office SERP and two professional-service page readings.
 Numbering groups reviewed questions, not API calls
 or a prescribed research sequence. Commands use the documented
 `/seo` shorthand; namespace resolution is automatic. Reviewer corrections
@@ -1830,6 +1863,56 @@ cuisine ?`, alongside budget and provider-trust questions. Five of eight unique
   this nor hypothetical zero GSC impressions proves exclusion from Google's candidate
   set. Pasted USD 0.006 differs from the provenance's nominal 0.004 tier sum; actual
   multipage/PAA charges are unavailable. No reviewer paid calls or GSC query.
+
+### 41. Office planning SERP — how do workplace needs connect to design services?
+
+`/seo dataforseo serp aménagement bureaux`
+
+- **Evidence:** `serp-amenagement-bureaux-2026-09-10/findings/seo-dataforseo.md`,
+  `findings/reviewer-notes.md`, the request manifest and two saved JSON responses.
+  The lookup identifies Rennes 1005876; the manifest records the exact location
+  name, fr/desktop, depth 20 / max_crawl_pages 2. Thirty items include 19 organic
+  placements / 18 unique URLs, six local entries and two image packs across two
+  pages. Pousse repeats at organic 10/11; cause unverified. Organic 20+ is unobserved.
+- **Discovery learning:** three local entries precede organic 1, Korus's office
+  service page at absolute 4. The other three local entries are on page two.
+  Oser Mon Intérieur and SOS Design recur by CID in runs 1/33. Services, furniture,
+  advice, a retail hub, a blog index and visual inspiration coexist. The report's
+  exclusively editorial page-one framing omits Korus and Concept Bureau; La Poste
+  and Nexity are on page two. This broadens professional discovery without proving
+  organic acquisition inaccessible or local/image results easier for Jukkai.
+- **Visual and geographic learning:** 18 image slots have 16 destination URLs/domains;
+  three domains overlap captured organic results, leaving 13 additional domains.
+  These are web image packs, not Google Images-tab rankings or weak-competition
+  evidence. Deskeo's Paris/Île-de-France title at organic 16 shows coexistence in a
+  Rennes capture, not nationwide visibility. Five, not four, local profiles have
+  fewer than 40 reviews; no threshold, review velocity or ranking cause was measured.
+  Kytom's tracked URL does not identify a captured paid placement or justify a name change.
+- **Content questions and readings:** PAA raises ideas, standards and cost; related
+  wording adds plans, storage, small professional spaces, home working and retail.
+  These overlap rather than establish exclusive audiences. [Korus](https://www.korusgroup.com/fr/projet/bureau/)
+  connects workplace uses and levels of help to project cards and contact.
+  [JPM Archi](https://www.jpm-archi.com/amenagement-de-bureaux/), an image destination,
+  explains understanding the organisation, design proposals, works, furniture and
+  signage, then links named projects and contact. September 10 text retrievals
+  were cached last week/month respectively; visual usability, promises and conversion
+  were not independently verified. Their full delivery models are not Jukkai offers.
+- **Jukkai implication — proposal:** connect professional uses and constraints to
+  actual design decisions, mission responsibilities and relevant project proof.
+  This can inform architecture content or a distinct professional page; it mandates
+  neither an office URL nor a regulatory guide. Candidate explanations need actual
+  projects and current scope. This provider-mix question is sufficiently answered
+  to move next toward site organisation with
+  `/seo firecrawl map https://www.lagence-cktfc.com/`; compare discovered URLs with
+  runs 10/35 and inspect navigation/content where needed.
+- **Limits and reuse:** no new volume/KD; run 15 already records France Labs 3,600 /
+  Rennes Ads 20 for the head, as prior estimates. Four PAA expansions are asynchronous;
+  answer bodies and top-level AIO are unsaved. `ai-scrape` concerns ChatGPT, not recovery
+  of this Google AIO. Multiple-page retrieval already exists in runs 29/32/39/40;
+  no diagnostic A/B or standing-rule change is needed for this content question.
+  No rendered SERP, mobile or enquiry measurement. USD 0.002 is a recorded nominal
+  tier estimate, not verified multipage billing; API cost unavailable. No reviewer
+  paid calls, profile edits or SEO-tooling changes; details remain in reviewer notes.
 
 ## Evidence rules and tool roles
 
