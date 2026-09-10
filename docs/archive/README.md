@@ -17,3 +17,8 @@ sessions. They do not restore an old release gate or approve an abandoned propos
 Archiving preserves reasoning. It does not reject every preference or observation
 inside a note. Reconcile a specific useful detail with current evidence and Martin's
 direction before reusing it. No asset approval or business decision changes here.
+
+The [September 10 SEO discussion snapshot](seo-discussion-2026-09-10.md) preserves
+the expanded synthesis and exploratory alternatives from before the log was split.
+Use it only when that reasoning is needed. Detailed reviewed evidence remains in
+the active research collection, reached through the [SEO index](../research/seo-research-log.md).

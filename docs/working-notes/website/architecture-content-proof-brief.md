@@ -21,7 +21,7 @@ that necessary electricity, plumbing, insulation or other underlying work can
 leave much less for visible changes. This is the main expectation gap to explain;
 the required work and allocation depend on the actual property and mission.
 
-[Runs 37–40](../../research/seo-research-log.md#37-residential-renovation-vocabulary--which-larger-project-needs-deserve-closer-research)
+[Runs 37–40](../../research/seo-runs/031-040.md#37-residential-renovation-vocabulary--which-larger-project-needs-deserve-closer-research)
 connect broader renovation needs to local help, project evidence and professional
 selection. The two renovation SERPs differ on page one; the selection SERP includes
 practice-authored guidance. Neither pattern measures Jukkai enquiries or establishes

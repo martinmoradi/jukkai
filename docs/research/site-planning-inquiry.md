@@ -8,7 +8,9 @@ a prerequisite to publishing the first website.
 
 For reviewed runs, current findings and the next discussion, read the evolving
 [SEO research log](seo-research-log.md). Update that log as research progresses;
-this inquiry retains the framing rather than duplicating research status.
+it indexes detailed records in `seo-runs/`. This inquiry retains the framing
+rather than duplicating research status or the website proposals in
+[working notes](../working-notes/website/README.md).
 
 ## What research should help us decide
 

@@ -27,8 +27,8 @@ les espaces. » This expresses a vision; it does not claim completed art placeme
 **Basis — Business:** the umbrella identity, architecture's commercial priority and
 Crystelle's authorship are established ([foundation §§1–5](../../strategy/foundation.md#1-the-business-in-facts)).
 **Research:** old-site entry concentrates on the homepage in the sampled GSC period
-([run 8](../../research/seo-research-log.md#8-studio-terrasson-gsc--what-already-attracts-search-visits)).
-The shared-brand example in [run 34](../../research/seo-research-log.md#34-pigalle-matignon-homepage--how-are-selection-creators-and-advice-connected)
+([run 8](../../research/seo-runs/001-010.md#8-studio-terrasson-gsc--what-already-attracts-search-visits)).
+The shared-brand example in [run 34](../../research/seo-runs/031-040.md#34-pigalle-matignon-homepage--how-are-selection-creators-and-advice-connected)
 gives its activities unequal prominence. Recognition and activity balance are therefore
 useful questions for our introduction, without adopting that site's hierarchy.
 
@@ -50,7 +50,7 @@ smaller work while substantial transformations demonstrate the practice's range.
 ([foundation §7](../../strategy/foundation.md#7-offer-architecture)). **Research:**
 room searches expose circulation, openings, furniture and combined-use questions;
 CKTFC connects a real commission to such an explanation
-([runs 31–35](../../research/seo-research-log.md#31-small-living-rooms--which-concrete-constraints-appear-in-problem-searches)).
+([runs 31–35](../../research/seo-runs/031-040.md#31-small-living-rooms--which-concrete-constraints-appear-in-problem-searches)).
 Use that language without inferring project budget from room size.
 
 **Show / missing:** the historical [Belle Époque text](../../reference/studioterrasson/particulier--belle-epoque/content.md)
@@ -116,8 +116,8 @@ contribution and collaborators. Make professional relevance explicit beside the 
 ([foundation §6](../../strategy/foundation.md#6-audiences)). **Research:** restaurant,
 office, medical and childcare probes broaden the needs: circulation, storage,
 waiting, rest, atmosphere and staff use. They establish no sector priority
-([runs 11–18](../../research/seo-research-log.md#11-restaurant-architecture-rennes--does-a-b2b-need-change-the-results),
-[41–42](../../research/seo-research-log.md#41-office-planning-serp--how-do-workplace-needs-connect-to-design-services)).
+([runs 11–18](../../research/seo-runs/011-020.md#11-restaurant-architecture-rennes--does-a-b2b-need-change-the-results),
+[41–42](../../research/seo-runs/041-050.md#41-office-planning-serp--how-do-workplace-needs-connect-to-design-services)).
 
 **Show / missing:** Le Capri is a repeat-client candidate; [Orange Dynamique](../../reference/studioterrasson/professionnel--orange-dynamique/content.md)
 preserves an office-layout explanation. These are starting material, not a selected
@@ -140,8 +140,8 @@ giving art visitors a reason to come independently of an architecture project.
 ([foundation §9](../../strategy/foundation.md#9-the-galerie-promise-pre-opening)).
 **Research:** place/style searches mix cultural outings and commercial art; buying
 results mix artist-attributed work, editions and decorative prints
-([runs 24–26](../../research/seo-research-log.md#24-buying-a-painting--what-changes-when-discovery-starts-with-an-object)).
-The [run 36 specimen](../../research/seo-research-log.md#36-art-génération-sxo--how-does-a-commercial-art-page-make-its-selection-understandable)
+([runs 24–26](../../research/seo-runs/021-030.md#24-buying-a-painting--what-changes-when-discovery-starts-with-an-object)).
+The [run 36 specimen](../../research/seo-runs/031-040.md#36-art-génération-sxo--how-does-a-commercial-art-page-make-its-selection-understandable)
 identifies artist, title and dimensions beside the imagery: concrete content to
 consider beyond style labels.
 
@@ -166,7 +166,7 @@ As the place opens, replace that state with actual visiting information.
 **Basis — Business:** architecture clients are already received; leads normally
 call first; the official opening is October 2026 ([current delivery](../../operations/current-delivery.md#confirmed-direction)).
 **Research:** town service pages and regional homepages coexist in the local and
-department captures ([runs 45–46](../../research/seo-research-log.md#45-châteaugiron-architecture-discovery--how-should-the-current-place-enter-the-site));
+department captures ([runs 45–46](../../research/seo-runs/041-050.md#45-châteaugiron-architecture-discovery--how-should-the-current-place-enter-the-site));
 their appearance cannot set Jukkai's travel scope.
 
 **Show / missing:** verify contact details/address; explain useful project information.

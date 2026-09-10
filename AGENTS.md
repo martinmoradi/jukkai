@@ -109,7 +109,10 @@ remove them when the convention changes.
   observations and proposed copy distinct; organization does not approve their content.
 - For continuing SEO research, read `docs/research/seo-research-log.md` and update
   it after each reviewed run, following its update protocol. It holds provisional
-  findings, source pointers and open questions; approved decisions stay in GitHub.
+  synthesis, a linked run index and open questions; read only the relevant entries
+  in `docs/research/seo-runs/` for detailed findings, corrections and source paths.
+  Keep new records in groups of at most ten runs and update the index and changed
+  synthesis in the same session. Approved decisions stay in GitHub.
   Use `docs/research/claude-seo-capability-map.md` alongside it for native command
   selection across the full capability space. Recommend bare `/seo` commands; the
   SEO workspace owns run instructions. Keep findings and next-run discussion in the log.
