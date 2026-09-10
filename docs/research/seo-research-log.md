@@ -80,6 +80,10 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   query, with a service page at organic 1 and additional providers in image packs.
   Two professional-page readings connect workplace uses, mission stages and
   project proof. These are content options, not a Maps-only acquisition conclusion.
+  Run 42 adds CKTFC's returned URL inventory, its broad audience navigation and
+  an office page combining service explanation with a named case. All 13 paths
+  in the stored ranking export occur in the map, while several main navigation
+  destinations have no ranking row. Site organisation and search entry differ.
   Search visibility, persuasion and enquiry
   conversion remain different measures; neither city size nor snippet quality
   measures easy competition.
@@ -144,15 +148,15 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   Preservation targets and profile checks remain relevant to
   [the Studio Terrasson/Google transition](https://github.com/martinmoradi/jukkai/issues/120).
   Scores and report checklists do not turn into launch work.
-- **What the latest run adds:** the office SERP exposes Oser Mon Intérieur and
-  SOS Design locally, also present in the architecture and conseil captures, while
-  Korus leads organic results with office-service content. JPM Archi supplies an
-  image-pack specimen connecting workplace needs to scope, projects and contact.
-  Professional explanation can use actual activities, constraints and design
-  decisions alongside the real mission. Review counts and different image/organic
-  publishers do not establish easy entry or exclude organic acquisition. Run 41
-  answers this provider-mix question; the proposed next command maps CKTFC's URLs
-  to compare site organisation with its existing ranking footprint and page readings.
+- **What the latest run adds:** CKTFC's map returns 55 normalised paths, while its
+  main navigation has eight named destinations in the saved homepage. Broad
+  Professionnel/Résidentiel entrances coexist with project and explanatory content.
+  The office URL combines general help with the KNP Labs case, so service and
+  project roles do not form a clean count-based split. This makes a broad professional
+  entrance plus selected project stories a concrete Jukkai option to compare with
+  professional content within architecture. The next proposal maps Le Coup de Crayon
+  as a contrasting reference before systematic service-query overlap. No page count,
+  exact hierarchy or ranking outcome is established by copying CKTFC's inventory.
 - **Still open:** precise Jukkai mission terms and available project material, rather
   than another broad room/conseil capture, are the missing inputs for detailed offer
   copy. Qualified local acquisition remains unmeasured. Art Génération's collection
@@ -174,7 +178,7 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   to publish a project, stock, opening arrangements or the shared-brand expression.
   No sitemap, content brief or research sequence is approved by this synthesis.
 
-### Candidate content purposes after run 41
+### Candidate content purposes after run 42
 
 **Agent proposal for discussion, not five approved URLs or release commitments.**
 The foundation supplies business intent; research informs discovery and limits.
@@ -315,7 +319,7 @@ from Rennes, a search from Châteaugiron and Galerie discovery are separate ques
 
 | Question worth resolving                                                          | Evidence route                                                                                                                                                                                                                                                                          | What would be enough for that question?                                                                                                                                                                |
 | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| How do reference sites organise services, projects and explanations?              | Next proposal: `/seo firecrawl map https://www.lagence-cktfc.com/`, compared with runs 10/35; then one contrasting site if useful. Inspect navigation and selected pages after URL discovery.                                                                                           | A comparison of content organisation and captured search entry, with inventory coverage limits; no copied sitemap or inferred conversion performance.                                                  |
+| How do reference sites organise services, projects and explanations?              | Run 42 joins CKTFC's map with runs 10/35 and reads its professional entrance and office case. Next proposal: `/seo firecrawl map https://www.lecoupdecrayon.com/`, compared with run 3, then selective navigation/content reading.                                                      | A comparison of content organisation and captured search entry, with inventory coverage limits; no copied sitemap or inferred conversion performance.                                                  |
 | Which service needs could share a page, and which deserve distinct treatment?     | Compare proposed content models with a systematic architecture/décoration/conseil/renovation overlap analysis. Verify that a cluster run actually measures the relevant pairs.                                                                                                          | A supported preference, credible alternative and explicit uncertainty, tested against distinct content and available proof rather than overlap thresholds alone.                                       |
 | What does Châteaugiron add to local discovery?                                    | Select architecture or Galerie questions and distinguish geography in the phrase from the actual capture location; workspace defaults remain Rennes until explicitly scoped otherwise.                                                                                                  | Evidence for the selected local question, without treating an architecture capture as Galerie evidence or requiring commune pages.                                                                     |
 | Which format could make a residential need and the available help understandable? | Reuse runs 28–33 and run 35's project/process specimens to compare architecture copy, a project feature and a focused guide. A fresh paid capture is not needed for this first comparison; choose a page-level workflow only if it answers a remaining question.                        | One concrete content option connecting the need, useful explanation, available proof, real mission and next action. Include preparation/outputs where known; mark missing facts.                       |
@@ -324,10 +328,12 @@ from Rennes, a search from Châteaugiron and Galerie discovery are separate ques
 | How should the homepage introduce the practice, Crystelle and the Galerie?        | Run 34 completes the Pigalle homepage reading. Compare the two provisional approaches above using the foundation, actual offer facts and available proof. A planning/brief workflow could propose another treatment if it answers a specific unresolved choice.                         | A visitor can explain what Jukkai offers, recognise the architecture service, understand the Galerie and find the appropriate next step. No new competitor capture is needed for the first comparison. |
 | What existing material and visibility should survive the transition?              | Reconcile saved run 8 page data, run 21 backlink destinations and the existing content inventory; inspect particular source links/pages where necessary. Verify current profile facts and CTERRA history with the owner under issue 120.                                                | A small preservation/verification list with evidence and unresolved destinations. A generic GSC rerun or another stale radius sample would not resolve ownership.                                      |
 
-The office provider mix and two targeted service readings are now reviewed in
-run 41. The next proposed fresh run is CKTFC URL discovery above, then comparison
-across architecture, Galerie and contact, including professional missions and
-their project proof. Further physical-Galerie research remains available for a
+The office provider mix is reviewed in run 41; CKTFC's inventory, navigation sample
+and two further content readings are reviewed in run 42. The next proposed fresh
+run maps Le Coup de Crayon for a second view of site organisation. The comparison
+should distinguish broad audience entrances, mission information and project stories
+before using systematic search overlap to challenge page boundaries. Further
+physical-Galerie research remains available for a
 specific presentation or visit/buying question; missing business facts constrain
 dependent copy rather than making all Galerie research or drafting impossible.
 Further searches are useful when they uncover another visitor need or distinguish
@@ -338,7 +344,7 @@ bridge remains separate from later migration.
 
 ## Reviewed runs
 
-The forty-one reviewed entries below record runs dated **2026-09-08–10**.
+The forty-two reviewed entries below record runs dated **2026-09-08–10**.
 Runs 19–25 were reviewed together after Martin supplied seven independently
 initiated commands. Entries 26–28, reviewed September 9, cover ten further SERP
 captures across three commands; kitchen provenance records writing after midnight,
@@ -352,6 +358,7 @@ Entry 36 reviews Art Génération's street-art collection, two purchase/style SE
 keyword estimates and saved desktop/mobile screenshots.
 Entries 37–40 add residential renovation and professional-selection research;
 entry 41 adds the office SERP and two professional-service page readings.
+Entry 42 maps CKTFC's URLs and compares them with saved rankings and navigation.
 Numbering groups reviewed questions, not API calls
 or a prescribed research sequence. Commands use the documented
 `/seo` shorthand; namespace resolution is automatic. Reviewer corrections
@@ -1913,6 +1920,54 @@ cuisine ?`, alongside budget and provider-trust questions. Five of eight unique
   No rendered SERP, mobile or enquiry measurement. USD 0.002 is a recorded nominal
   tier estimate, not verified multipage billing; API cost unavailable. No reviewer
   paid calls, profile edits or SEO-tooling changes; details remain in reviewer notes.
+
+### 42. CKTFC URL inventory — how do audience entrances, services and projects coexist?
+
+`/seo firecrawl map https://www.lagence-cktfc.com/`
+
+- **Evidence:** `firecrawl-map-lagence-cktfc-2026-09-10/README.md`,
+  `reviewer-notes.md`, saved map links with added provenance, `url-inventory.csv`,
+  and reviewer ranking-join/navigation files in `data/`. Recalculated 67 rows /
+  55 percent-decoded paths / 12 encoded-decoded pairs. The request leaves limits
+  to server defaults; no independent total proves completeness. These are returned
+  paths, not 55 verified live or indexed pages. Billing is unavailable.
+- **Site-model learning:** run 10's saved homepage header links Accueil, Agence,
+  Professionnel, Résidentiel, Tarifs, Blog, Contact and Réalisations. Its body also
+  introduces audiences and selected projects. This known navigation sample shows
+  broader entry points than the full URL list; the map itself supplies no link graph.
+  The CSV labels 30 paths `other`, with eight quartiers, eleven posts, five blog
+  categories and a blog index. The report's finer service/project split is author
+  classification, not a measured set of mutually exclusive content roles.
+- **Targeted content readings:** the [professional entrance](https://www.lagence-cktfc.com/am%C3%A9nagement-tertiaire-et-commerciale)
+  presents several project types, named work, process and fee/enquiry routes.
+  The [office page](https://www.lagence-cktfc.com/amenagement-bureau-professionnel)
+  combines service explanation with the KNP Labs case, mission, area, duration,
+  constraints and design decisions. These September 10 text readings use web-reader
+  crawls labelled last week; visual usability, business promises and outcomes are
+  unverified. The mixed office page is useful for comparing service content and
+  project storytelling, without adopting its full scope or performance claims.
+- **Rankings joined to inventory:** all 13 distinct paths in run 35's 82-row
+  ranked-keyword response occur in the map; 42 mapped paths have no row in that
+  export. The homepage has eight organic rows, the office page one (#44 for
+  `entreprise bureaux`). Tarifs, Résidentiel and the broad professional entrance
+  are navigation destinations without a row. Stored dates remain May 26–August 31;
+  this adds no live ranking, traffic or conversion measurement. The 13 paths are
+  distinct from that run's separate 11-object relevant-pages response.
+- **Jukkai implication — proposal:** compare a broad professional entrance with
+  selected project stories against professional explanation within architecture
+  content. Specific cases can explain relevant needs without requiring one generic
+  service page per sector. Evaluate visitor clarity and ready proof alongside
+  search entry. Next proposal: `/seo firecrawl map https://www.lecoupdecrayon.com/`
+  for a contrasting inventory, using run 3's footprint, then systematic service-query
+  overlap. No sitemap model, office page or release split is approved here.
+- **Limits/corrections:** encoded-only metadata does not establish canonical choice
+  or duplicate served pages. Ten paths lack returned metadata, including four of
+  five blog categories; this is not Google non-indexation or a thin-content finding.
+  Five quartiers share returned description text, not freshly verified HTML tags.
+  Run 10 already examined their similar bodies; a workflow's 30-page warning supplies
+  no safe quota. The `old-` address does not establish a live superseded page or a
+  redirect requirement. No competitor repair, full crawl, sitemap/Google indexation
+  audit or new paid API call was performed; details remain in reviewer notes.
 
 ## Evidence rules and tool roles
 
