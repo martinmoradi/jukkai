@@ -6,6 +6,10 @@ for [issue 85](https://github.com/martinmoradi/jukkai/issues/85) and
 [issue 86](https://github.com/martinmoradi/jukkai/issues/86). Decisions stay in those
 tickets. The [research log](seo-research-log.md) owns findings and next-run discussion.
 
+The [visitor content brief](visitor-content-brief.md) now supplies the shared
+messages, evidence and missing inputs. Discuss those explanations with Martin
+before returning to the page models below; the brief approves none of them.
+
 ## What governs the comparison
 
 **Settled:** Jukkai by Crystelle Terrasson; architecture as the commercial centre;
