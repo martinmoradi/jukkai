@@ -70,6 +70,9 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   Run 38 finds guidance-heavy organic answers for older-house renovation, alongside
   project and provider destinations in the image pack and AIO. One project-page
   reading connects a concrete brief, constraints and design response to an enquiry.
+  Run 39 brings local service discovery forward for interior-renovation wording,
+  with a Rennes service page at organic 1. Different provider roles coexist; make
+  Jukkai's design contribution and actual mission depth understandable.
   Search visibility, persuasion and enquiry
   conversion remain different measures; neither city size nor snippet quality
   measures easy competition.
@@ -106,19 +109,18 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   colourful, approachable street/pop/urban art, for buying as well as viewing.
   Actual offer scope, proof and the foundation's separate architecture/art pricing
   rules govern copy; tentative gift-price examples do not approve public art prices.
-- **What the latest run adds:** `rénovation maison ancienne` now has a Rennes SERP
-  capture. Its seven organic links address risks, costs, sequence, assistance,
-  inspiration and architectural help. This does not validate an easy local acquisition
-  target, but neither does it exclude future clients. Image-pack destinations add
-  actual transformations: Créateurs d'intérieur explains a client's brief, an existing
-  building constraint and the design response before inviting a project conversation.
-  This strengthens the case for understandable real project evidence. Compare
-  `/seo dataforseo serp rénovation intérieure maison` next to see whether interior
-  wording brings spatial design and professional help forward. Run 37 already supplies
-  the volume estimates; repeating them or classifying intent would not establish
-  conversion. Buying/family-change triggers and actual client selection criteria
-  remain broader questions. The provisional Galerie outline from run 36 remains
-  supported; actual works, permissions and visit facts supply its content.
+- **What the latest run adds:** `rénovation intérieure maison` brings local packs
+  and a Rennes service page to the front of its first-page capture, while older-house
+  wording in run 38 foregrounded guidance. Renovation discovery can connect to local
+  help without a city in the phrase. The provider mix makes role clarity useful:
+  explain Jukkai's design contribution, mission depth, project proof, works budget
+  versus fees, and how to start. Runs 37–39 now support a provisional residential
+  content outline; exact page placement and wording remain open. The next proposed
+  lens is client choice: `/seo dataforseo serp comment choisir un architecte d'intérieur`
+  could reveal selection questions to compare with actual enquiries and Crystelle's
+  evidence. Existing volume/KD estimates can be reused. Broader project triggers,
+  professional-client journeys and Galerie discovery remain open. The provisional
+  Galerie outline from run 36 still depends on actual works, permissions and visit facts.
   Preservation targets and profile checks remain relevant to
   [the Studio Terrasson/Google transition](https://github.com/martinmoradi/jukkai/issues/120).
   Scores and report checklists do not turn into launch work.
@@ -143,7 +145,7 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   to publish a project, stock, opening arrangements or the shared-brand expression.
   No sitemap, content brief or research sequence is approved by this synthesis.
 
-### Candidate content purposes after run 38
+### Candidate content purposes after run 39
 
 **Agent proposal for discussion, not five approved URLs or release commitments.**
 The foundation supplies business intent; research informs discovery and limits.
@@ -1721,6 +1723,49 @@ cuisine ?`, alongside budget and provider-trust questions. Five of eight unique
   phrase; reuse as prior estimates, not this run's measurements. PAA answers remain
   unavailable. An intent classifier would not establish commercial reachability.
   Recorded estimate USD 0.002; API-reported cost unavailable. No reviewer paid calls.
+
+### 39. Interior-renovation SERP — does broader project wording find local help?
+
+`/seo dataforseo serp rénovation intérieure maison`
+
+- **Evidence:** `serp-renovation-interieure-maison-2026-09-10/report.md`,
+  `reviewer-notes.md`, `provenance.json`, saved endpoint JSON and derived CSV/features.
+  Rennes/fr/desktop, depth 100 / max_crawl_pages 7: 91 items on seven pages,
+  65 distinct organic URLs / rank groups 1–65; later ranks unobserved. This is
+  consistent with the page cap, not a repeat of the suspected earlier shortening.
+  No AIO item is saved. Compare first pages with run 38, not unequal total samples.
+- **Discovery learning:** three local entries and a comparison-sites module precede
+  Rennes La Maison Des Travaux at organic 1 / absolute 5. PAA is **absolute 6**,
+  three more local entries occupy 7–9, and images are **18**, correcting the report's
+  swapped positions. Twelve distinct local profiles span pages 1–2. The first-page
+  contrast with older-house wording supports exploring a local service route, not
+  measured qualified demand, a modifier's proven causal effect or easy rankings.
+- **Content questions:** three of four PAA questions and **three**, not four, of six
+  related searches concern cost. The other related phrases address providers, ideas
+  and starting points. Repetition on seven pages is one recurring block. Explain
+  how scope affects the works budget and distinguish professional fees; this does
+  not establish that clients choose mainly on price or require a generic cost guide.
+- **Targeted page learning:** [La Maison Des Travaux Rennes](https://rennes.lamaisondestravaux.com/renovation-interieur)
+  connects room/trade services, artisan/quotation promises, local projects and advice.
+  [BH Architecture's Rennes guide](https://bretagnehabitation-architecture.com/bha/renovation-dune-maison-a-rennes/),
+  organic 37 / absolute 59, connects process and design contribution to a preliminary
+  study; it is not a single-project case. These text readings help distinguish
+  provider roles and content purposes. Their promises, credentials, statutory scope,
+  funding guidance and conversion performance were not verified or adopted for Jukkai.
+- **Limits that matter:** 18–59 reviews describes the first three profiles, not a
+  competitive threshold. Four normalised domains have pack/organic overlap; Rennes
+  La Maison Des Travaux is not the only overlap, though it owns organic 1. National
+  and local pages need not represent the same entity. Tra-vis is pack-only in this
+  capture. The report's organic tables use absolute ranks. Review counts, franchise
+  subdomains and SERP presence do not establish ranking causes or new Jukkai locations.
+- **Jukkai implication and next discussion — proposal:** draft residential content
+  around transformation aims, design contribution, real mission depth, project
+  evidence, budget scope and first contact. Page count, copy and release placement
+  remain open. Move research toward client selection with
+  `/seo dataforseo serp comment choisir un architecte d'intérieur`, then compare
+  its questions with real enquiries and proof. Run 37 already supplies France 880 /
+  KD 4 and Rennes 30 for the interior phrase. Recorded USD 0.002 is a nominal tier
+  estimate, not a verified seven-page charge; API cost unavailable. No reviewer paid calls.
 
 ## Evidence rules and tool roles
 
