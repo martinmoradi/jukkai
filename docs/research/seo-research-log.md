@@ -73,6 +73,9 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   Run 39 brings local service discovery forward for interior-renovation wording,
   with a Rennes service page at organic 1. Different provider roles coexist; make
   Jukkai's design contribution and actual mission depth understandable.
+  Run 40 adds selection questions around taste, relevant experience, collaboration,
+  deliverables, fees and timing. Practitioner advice can connect these questions
+  to project proof and contact; rankings do not measure conversion or easy access.
   Search visibility, persuasion and enquiry
   conversion remain different measures; neither city size nor snippet quality
   measures easy competition.
@@ -109,18 +112,31 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   colourful, approachable street/pop/urban art, for buying as well as viewing.
   Actual offer scope, proof and the foundation's separate architecture/art pricing
   rules govern copy; tentative gift-price examples do not approve public art prices.
-- **What the latest run adds:** `rénovation intérieure maison` brings local packs
-  and a Rennes service page to the front of its first-page capture, while older-house
-  wording in run 38 foregrounded guidance. Renovation discovery can connect to local
-  help without a city in the phrase. The provider mix makes role clarity useful:
-  explain Jukkai's design contribution, mission depth, project proof, works budget
-  versus fees, and how to start. Runs 37–39 now support a provisional residential
-  content outline; exact page placement and wording remain open. The next proposed
-  lens is client choice: `/seo dataforseo serp comment choisir un architecte d'intérieur`
-  could reveal selection questions to compare with actual enquiries and Crystelle's
-  evidence. Existing volume/KD estimates can be reused. Broader project triggers,
-  professional-client journeys and Galerie discovery remain open. The provisional
-  Galerie outline from run 36 still depends on actual works, permissions and visit facts.
+  **Martin's September 10 account of enquiries:** price/budget is the main factor.
+  Much less often, larger projects raise a preference for hiring an architect
+  directly, including around permits; Crystelle is used to working with architects
+  when needed. This reports client concerns and collaboration experience, not a
+  legal equivalence of roles. He clarified that both works and fees matter: people
+  picture a finished interior, then necessary electricity, plumbing, insulation or
+  other underlying work can leave less for visible transformation. Explain that
+  expectation gap with actual scope and choices; no standard budget split is implied.
+- **What the latest run adds:** the practice-selection query supplies guidance on
+  taste, relevant projects, geography, working method, deliverables, fees and timing.
+  Several practices appear on page one; their size, authority and conversion are
+  unmeasured. Xavier Lemoine connects selection advice to past work and a first
+  conversation. This supports answering those questions through Jukkai's own offer,
+  project and contact content, without requiring a standalone guide or claiming the
+  query cannot produce local enquiries. The [provisional architecture content/proof
+  brief](architecture-content-proof-brief.md) combines runs 37–40. Martin's direct
+  account now gives budget the highest practical weight and architect collaboration
+  a secondary role; other selection themes remain hypotheses. Use actual project
+  examples and current mission terms to explain cost, contribution and responsibility.
+  The brief includes draft budget wording responding to his account of underlying
+  works consuming an envelope initially imagined for the finished interior.
+  Volume/KD would help evaluate a
+  dedicated acquisition article later; it is not the missing input for these copy
+  questions. Broader professional-client and Galerie research remains open. The
+  Galerie outline from run 36 still needs actual works, permissions and visit facts.
   Preservation targets and profile checks remain relevant to
   [the Studio Terrasson/Google transition](https://github.com/martinmoradi/jukkai/issues/120).
   Scores and report checklists do not turn into launch work.
@@ -145,7 +161,7 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   to publish a project, stock, opening arrangements or the shared-brand expression.
   No sitemap, content brief or research sequence is approved by this synthesis.
 
-### Candidate content purposes after run 39
+### Candidate content purposes after run 40
 
 **Agent proposal for discussion, not five approved URLs or release commitments.**
 The foundation supplies business intent; research informs discovery and limits.
@@ -1766,6 +1782,54 @@ cuisine ?`, alongside budget and provider-trust questions. Five of eight unique
   its questions with real enquiries and proof. Run 37 already supplies France 880 /
   KD 4 and Rennes 30 for the interior phrase. Recorded USD 0.002 is a nominal tier
   estimate, not a verified seven-page charge; API cost unavailable. No reviewer paid calls.
+
+### 40. Choosing an interior architect — which questions should Jukkai answer with proof?
+
+`/seo dataforseo serp comment choisir un architecte d'intérieur`
+
+- **Evidence:** `serp-comment-choisir-architecte-interieur-2026-09-10/report.md`,
+  `reviewer-notes.md`, `provenance.json`, saved endpoint JSON and derived CSV/features.
+  Rennes/fr/desktop, depth 100 / max_crawl_pages 7 / PAA click depth 1: 78 items,
+  69 distinct organic URLs / 61 domains, organic ranks 1–69. Page one has nine
+  organic results. AIO and six PAA expansions are asynchronous; bodies/citations
+  are unavailable. The unsaved probe's divergence remains report-only, not a
+  verified volatility study. Later results are unobserved.
+- **Selection learning:** PAA and titles address price, quality, usefulness, project
+  suitability and professional roles. Related searches mix places, fees, career,
+  study and online services. Five page-one domains are practice/studio specimens;
+  their presence does not establish small-business size or Jukkai attainability.
+  No local pack is saved, but this does not prove nationally invariant results,
+  zero local enquiries or an exclusively AI/authority purpose. The roughly 22%
+  role-comparison figure is agent coding, not a required page component or user share.
+- **Targeted readings:** [Xavier Lemoine's article](https://www.xavierlemoine.com/post/7-questions-indispensables-a-se-poser-avant-de-choisir-un-architecte-dinterieur),
+  organic 1 / absolute 2, connects taste, project fit, geography, availability,
+  process and fees to work/service links and an initial conversation. [Qualitel](https://www.qualitel.org/particuliers/pros-batiment/choisir-architecte-dinterieur/)
+  ties phases of help to concrete deliverables; its later selection section could
+  not be retrieved for review. These supply content examples, not measured client
+  behaviour, verified statutory guidance or Jukkai timing/appointment promises.
+- **Jukkai implication — proposal:** connect selected work to taste and comparable
+  needs; show actual design decisions, collaboration and outputs; explain mission
+  depth, fees and first contact; substantiate experience, qualifications and insured
+  scope with the foundation's proof sources. Compare these candidate concerns with
+  real enquiries. A role explanation can live within existing content purposes;
+  no profession-comparison article, standalone guide or page structure is required
+  by the SERP. The [working content/proof brief](architecture-content-proof-brief.md)
+  translates the learning for discussion while wider research continues.
+- **Martin's follow-up:** budget is the main factor in enquiries. A rarer concern
+  on larger projects is working directly with an architect, partly around permits;
+  Crystelle already collaborates with architects as needed. Prioritise budget/scope
+  explanation and a truthful account of that collaboration. This is direct business
+  context, not a quantified study, new fee policy or legal-role ruling. He clarified
+  that both works and fees matter, especially when necessary technical work leaves
+  less of the client's initial envelope for visible design. The working brief now
+  proposes explaining these costs and choices through a real example, with draft
+  wording and no invented budget allocation or savings promise.
+- **Limits and next use:** no volume/KD here. Evaluate those and authority if a
+  dedicated acquisition article becomes a candidate, rather than as prerequisites
+  to applying the learning. Studio Terrasson is absent from these 69 URLs; neither
+  this nor hypothetical zero GSC impressions proves exclusion from Google's candidate
+  set. Pasted USD 0.006 differs from the provenance's nominal 0.004 tier sum; actual
+  multipage/PAA charges are unavailable. No reviewer paid calls or GSC query.
 
 ## Evidence rules and tool roles
 
