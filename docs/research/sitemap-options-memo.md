@@ -1,6 +1,6 @@
 # Jukkai sitemap options for discussion
 
-Updated 2026-09-10 after research run 46. **Agent-authored proposal, not an approved
+Updated 2026-09-10 after research run 47. **Agent-authored proposal, not an approved
 sitemap, copy contract or release commitment.** This memo makes alternatives concrete
 for [issue 85](https://github.com/martinmoradi/jukkai/issues/85) and
 [issue 86](https://github.com/martinmoradi/jukkai/issues/86). Decisions stay in those
@@ -134,12 +134,14 @@ redirects. The old-site banner bridge and later Google migration remain separate
 The selected competitor-inventory, service-overlap and Châteaugiron-phrase checks
 are complete through run 45. No further search is a prerequisite to this comparison.
 
-Run 46 completes the added department-wording probe. A second comparable nonlocal
-practice, examined across introduction, missions, case proof and contact, could
-improve the drafts alongside this work. CKTFC is already a deep Nantes reference;
-Studio Anata is a candidate from the Lyon pricing sample, not a selected model or
-evidence that a larger city has better-performing sites. Seek a few specific lessons
-to adopt, adapt or reject rather than reproducing another city's whole keyword study.
+Run 46 completes the added department-wording probe. Run 47 adds the second
+nonlocal practice comparison: Anata's shared introduction, audience pages, mission
+detail, case proof and contact supply another concrete model alongside CKTFC.
+The useful question is how clearly a visitor understands their project fit, what
+they receive, who handles the works and how to start. Its smaller mapped inventory
+does not establish weaker content or better performance. Apply the lessons in the
+[architecture brief](architecture-content-proof-brief.md#applying-the-practice-comparisons)
+while drafting; a generic competitor technical/local audit adds no required input.
 
 1. Compare an outline of the hybrid model with the separated alternative using
    the same actual mission facts and selected project material. Begin drafting the

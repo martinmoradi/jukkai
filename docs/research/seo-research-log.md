@@ -180,6 +180,16 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   establishes neither a Google rewrite nor a required department page. Local
   features occupy early slots, but no click share, viewport or ranking cause was
   measured. Fee questions reinforce the existing budget/mission brief.
+- **Second architecture-practice reference:** run 47 joins Anata's 15-URL mapped
+  inventory to its saved homepage and targeted mission, residential, professional,
+  case and contact readings. The inventory is small, but the service explanation
+  is substantive. Alongside CKTFC, it supplies a concrete alternative: a shared
+  introduction, distinct audience entrances, understandable mission depth and
+  project proof linked to fees/contact. Client involvement in the works is another
+  useful offer question, separate from project size. A budget-led case demonstrates
+  the contribution through choices; professional content still needs relevant proof.
+  Apply these lessons to draft content. No page count, commercial performance,
+  visual quality or Lyon difficulty advantage is established.
 - **Still open:** precise Jukkai mission terms and available project material, rather
   than another broad room/conseil capture, are the missing inputs for detailed offer
   copy. Qualified local acquisition remains unmeasured. Art Génération's collection
@@ -205,7 +215,7 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   the developing site; a distinct conseil entrance remains a credible alternative.
   No sitemap, content brief or research sequence is approved by this synthesis.
 
-### Candidate content purposes after run 46
+### Candidate content purposes after run 47
 
 **Agent proposal for discussion, not five approved URLs or release commitments.**
 The foundation supplies business intent; research informs discovery and limits.
@@ -350,8 +360,9 @@ from Rennes; apply it to service-area copy, not an automatic geography-page fami
 The agent recommends one additional comparable practice across introduction,
 missions, project proof and contact, alongside drafting. CKTFC already has a deep
 Nantes review (9/10/35/42); Lyon/Paris mainly supply pricing contrasts, and the art
-references answer different questions. Studio Anata is a candidate from run 27,
-not a selected benchmark. Seek a few concrete lessons to adopt, adapt or reject;
+references answer different questions. Martin ran the Anata map after the agent's
+recommendation; run 47 now adds targeted content readings to that inventory.
+The second-practice content comparison supplies usable lessons for the drafts;
 larger-city competition and better conversion remain unmeasured. This is not an
 approved extra city-wide research programme or a prerequisite to drafting.
 
@@ -385,7 +396,7 @@ bridge remains separate from later migration.
 
 ## Reviewed runs
 
-The forty-six reviewed entries below record runs dated **2026-09-08–10**.
+The forty-seven reviewed entries below record runs dated **2026-09-08–10**.
 Runs 19–25 were reviewed together after Martin supplied seven independently
 initiated commands. Entries 26–28, reviewed September 9, cover ten further SERP
 captures across three commands; kitchen provenance records writing after midnight,
@@ -2216,6 +2227,52 @@ cuisine ?`, alongside budget and provider-trust questions. Five of eight unique
   Draft mission/budget/project content next and consider one additional nonlocal
   practice journey as discussed above. Department-wide searcher coverage, qualified
   demand and conversion remain unmeasured; none is a universal drafting prerequisite.
+
+### 47. Studio Anata inventory and content journey — what does a second nonlocal practice add?
+
+`/seo firecrawl map https://studioanata.com/`
+
+- **Evidence:** `firecrawl-map-studioanata-2026-09-10/report.md`, two map projections,
+  five child sitemaps/index, robots, home/legal HTML; added `reviewer-notes.md` and
+  `reviewer-inventory-check.json`. Sixteen child-sitemap entries reduce to fifteen
+  normalized URLs, matching the default map. The skip-sitemap projection contains
+  fourteen HTML and six XML URLs; `/blog/` is missing there but linked in saved
+  homepage HTML. Matching sets do not establish indexability, inventory completeness
+  or absence of orphan pages; mapping may reuse the sitemap. Cost is unavailable.
+- **Targeted content reading:** the saved homepage explains a shared process while
+  linking audiences, missions, cases and contact. The
+  [residential page](https://studioanata.com/particuliers/) explains deliverables
+  and six stages; the [mission/pricing page](https://studioanata.com/tarifs-architecte-interieur-lyon/)
+  distinguishes accompaniment and client responsibility. The lighter offer leaves
+  works management with the client. A fifteen-URL inventory is not evidence of
+  thin service content or a missing location/article programme.
+- **Proof and next action:** the [Le 7 case](https://studioanata.com/projets/renovation-dun-appartement-a-lyon-7/)
+  connects a budget choice and spatial constraint to design, with project facts,
+  credit and fee/contact links. The [professional page](https://studioanata.com/professionnels/)
+  discusses business aims and distant-project partners but features a house and an
+  apartment; professional-use context cannot be inferred from those labels alone.
+  [Contact](https://studioanata.com/contact/) combines a project-description form
+  with direct channels and a video-appointment offer. None was submitted or tested.
+- **Reading limits and corrections:** web-reader copies were labelled last week
+  (residential/case), six days ago (professional), three weeks ago (contact) and
+  today (pricing). This is content/link evidence, not rendered mobile usability,
+  verified service performance, live ranking or conversion. Saved legal HTML supports
+  mentions-legales noindex/nofollow only; privacy HTML and redirect headers are absent.
+  `/projets/` has two reported lastmod values, and one category sitemap is empty;
+  neither explains hypothetical GSC outcomes or requires competitor repair. Map
+  titles are returned metadata, not an all-page title audit. No locality-dependent
+  reviewer API call was made; Lyon market strength and local-profile dependence
+  remain unmeasured.
+- **Jukkai implication — proposal:** compare a substantial homepage with accessible
+  mission detail; describe deliverables and client/practice responsibilities using
+  actual terms. Explain budget choices through real projects, select professional
+  proof for the client's use, and describe geographic reach and the first conversation
+  truthfully. The [architecture brief](architecture-content-proof-brief.md) applies
+  these lessons. Anata adds a second concrete content model alongside CKTFC; it does
+  not supply Jukkai prices, packages, guarantees, a portal or appointment promises.
+  Move to draft comparison and proof selection. Full audit, local audit and another
+  city cluster are not required by this inventory result; further research remains
+  possible for a specific unresolved content, visual or acquisition question.
 
 ## Evidence rules and tool roles
 
