@@ -148,7 +148,7 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   Preservation targets and profile checks remain relevant to
   [the Studio Terrasson/Google transition](https://github.com/martinmoradi/jukkai/issues/120).
   Scores and report checklists do not turn into launch work.
-- **What the latest run adds:** run 44 reproduces 231 URL-overlap comparisons from
+- **Service-page evidence:** run 44 reproduces 231 URL-overlap comparisons from
   22 query captures. Architecture variants share 8–9 top-ten URLs; the five
   décoration/aménagement/conseil variants share 6–9; all fifteen cross-group pairs
   share 3–5. This strengthens the case for comparing a distinct conseil/décoration
@@ -160,6 +160,17 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   The Vern/Rennes comparison changes the query's place-name at the same Rennes
   capture location; it cannot establish a distance ceiling. Runs 42–43's inventories
   remain useful organisation alternatives, with their recorded coverage limits.
+- **Current-town discovery:** run 45 captures twenty organic results for the
+  Châteaugiron architecture phrase, from Rennes. Town service pages, a regional
+  homepage and a project page coexist. The first ten share no URL with the three
+  Rennes architecture variants or the Vern variant; Trait de Couleur's homepage
+  supplies one shared URL with each décoration-family query. This changes the
+  captured results, not the physical business facts or a universal page rule.
+  Explain Jukkai's Châteaugiron practice and Rennes/regional work clearly; a
+  separate town page needs a useful local purpose and proof. Neither URL appearance,
+  directory share nor review count establishes easy rankings. The selected
+  inventory, service-overlap and current-town phrase checks are now complete;
+  page-outline comparison and content/proof selection are the next recommended work.
 - **Still open:** precise Jukkai mission terms and available project material, rather
   than another broad room/conseil capture, are the missing inputs for detailed offer
   copy. Qualified local acquisition remains unmeasured. Art Génération's collection
@@ -185,7 +196,7 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   the developing site; a distinct conseil entrance remains a credible alternative.
   No sitemap, content brief or research sequence is approved by this synthesis.
 
-### Candidate content purposes after run 44
+### Candidate content purposes after run 45
 
 **Agent proposal for discussion, not five approved URLs or release commitments.**
 The foundation supplies business intent; research informs discovery and limits.
@@ -324,20 +335,21 @@ For clustering, distinguish measured pairs from the installed workflow's inferre
 overlaps and proposed hub/spoke templates. For geography, a Châteaugiron keyword
 from Rennes, a search from Châteaugiron and Galerie discovery are separate questions.
 
-| Question worth resolving                                                          | Evidence route                                                                                                                                                                                                                                                                          | What would be enough for that question?                                                                                                                                                                |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| How do reference sites organise services, projects and explanations?              | Runs 42–43 join CKTFC and Le Coup de Crayon inventories to saved rankings and selective navigation/content readings. Use the contrast between broad audience entrances, a substantial homepage and project destinations; further competitor repair is outside this question.            | A comparison of content organisation and captured search entry, with inventory coverage limits; no copied sitemap or inferred conversion performance.                                                  |
-| Which service needs could share a page, and which deserve distinct treatment?     | Run 44 supplies measured architecture/décoration/aménagement/conseil/renovation overlaps. Compare combined architecture content with a distinct conseil/décoration entrance using actual mission terms; fresh clustering is not needed for that comparison.                             | A supported preference, credible alternative and explicit uncertainty, tested against distinct content and available proof rather than overlap thresholds alone.                                       |
-| What does Châteaugiron add to local discovery?                                    | Proposed next command: `/seo dataforseo serp architecte d'intérieur châteaugiron`, retaining Rennes capture geography. This tests discovery with the current physical town named; a searcher in Châteaugiron and Galerie discovery remain separate questions.                           | Evidence for the selected local question, without treating an architecture capture as Galerie evidence or requiring commune pages.                                                                     |
-| Which format could make a residential need and the available help understandable? | Reuse runs 28–33 and run 35's project/process specimens to compare architecture copy, a project feature and a focused guide. A fresh paid capture is not needed for this first comparison; choose a page-level workflow only if it answers a remaining question.                        | One concrete content option connecting the need, useful explanation, available proof, real mission and next action. Include preparation/outputs where known; mark missing facts.                       |
-| How can a Galerie show actual work and make buying approachable?                  | Run 36 completes the Art Génération collection reading. Compare its named-work presentation and practical explanations with Jukkai's selected artworks, Crystelle's perspective and actual buying/visit arrangements.                                                                   | A provisional outline using real work, concise verified details and a truthful discovery/contact/visit step. Keep catalogue, pre-opening price, consent and promise boundaries explicit.               |
-| How can fees be explained alongside scope, value and next steps?                  | Compare runs 10/27's pricing specimens and run 33's consultation formats with actual mission terms. If visitor experience needs closer study, `/seo sxo https://gaeleboutaud.com/combien-coute-architecte-interieur-rennes/ "tarif architecte d'intérieur rennes"` remains a candidate. | A concrete explanation of mission choices, inclusions and how a fee is set. Different competitor delivery models do not establish Jukkai's price or required packages.                                 |
-| How should the homepage introduce the practice, Crystelle and the Galerie?        | Run 34 completes the Pigalle homepage reading. Compare the two provisional approaches above using the foundation, actual offer facts and available proof. A planning/brief workflow could propose another treatment if it answers a specific unresolved choice.                         | A visitor can explain what Jukkai offers, recognise the architecture service, understand the Galerie and find the appropriate next step. No new competitor capture is needed for the first comparison. |
-| What existing material and visibility should survive the transition?              | Reconcile saved run 8 page data, run 21 backlink destinations and the existing content inventory; inspect particular source links/pages where necessary. Verify current profile facts and CTERRA history with the owner under issue 120.                                                | A small preservation/verification list with evidence and unresolved destinations. A generic GSC rerun or another stale radius sample would not resolve ownership.                                      |
+| Question worth resolving                                                          | Evidence route                                                                                                                                                                                                                                                                                      | What would be enough for that question?                                                                                                                                                                |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| How do reference sites organise services, projects and explanations?              | Runs 42–43 join CKTFC and Le Coup de Crayon inventories to saved rankings and selective navigation/content readings. Use the contrast between broad audience entrances, a substantial homepage and project destinations; further competitor repair is outside this question.                        | A comparison of content organisation and captured search entry, with inventory coverage limits; no copied sitemap or inferred conversion performance.                                                  |
+| Which service needs could share a page, and which deserve distinct treatment?     | Run 44 supplies measured architecture/décoration/aménagement/conseil/renovation overlaps. Compare combined architecture content with a distinct conseil/décoration entrance using actual mission terms; fresh clustering is not needed for that comparison.                                         | A supported preference, credible alternative and explicit uncertainty, tested against distinct content and available proof rather than overlap thresholds alone.                                       |
+| What does Châteaugiron add to local discovery?                                    | Run 45 completes the architecture phrase capture from Rennes. Apply the actual place to core architecture/contact content and compare whether local proof merits another destination. Searcher-coordinate and Galerie discovery questions remain separate; neither requires an automatic next call. | Clear, truthful geography in the selected pages; a separate town page only when its visitor job and ready local content justify it.                                                                    |
+| Which format could make a residential need and the available help understandable? | Reuse runs 28–33 and run 35's project/process specimens to compare architecture copy, a project feature and a focused guide. A fresh paid capture is not needed for this first comparison; choose a page-level workflow only if it answers a remaining question.                                    | One concrete content option connecting the need, useful explanation, available proof, real mission and next action. Include preparation/outputs where known; mark missing facts.                       |
+| How can a Galerie show actual work and make buying approachable?                  | Run 36 completes the Art Génération collection reading. Compare its named-work presentation and practical explanations with Jukkai's selected artworks, Crystelle's perspective and actual buying/visit arrangements.                                                                               | A provisional outline using real work, concise verified details and a truthful discovery/contact/visit step. Keep catalogue, pre-opening price, consent and promise boundaries explicit.               |
+| How can fees be explained alongside scope, value and next steps?                  | Compare runs 10/27's pricing specimens and run 33's consultation formats with actual mission terms. If visitor experience needs closer study, `/seo sxo https://gaeleboutaud.com/combien-coute-architecte-interieur-rennes/ "tarif architecte d'intérieur rennes"` remains a candidate.             | A concrete explanation of mission choices, inclusions and how a fee is set. Different competitor delivery models do not establish Jukkai's price or required packages.                                 |
+| How should the homepage introduce the practice, Crystelle and the Galerie?        | Run 34 completes the Pigalle homepage reading. Compare the two provisional approaches above using the foundation, actual offer facts and available proof. A planning/brief workflow could propose another treatment if it answers a specific unresolved choice.                                     | A visitor can explain what Jukkai offers, recognise the architecture service, understand the Galerie and find the appropriate next step. No new competitor capture is needed for the first comparison. |
+| What existing material and visibility should survive the transition?              | Reconcile saved run 8 page data, run 21 backlink destinations and the existing content inventory; inspect particular source links/pages where necessary. Verify current profile facts and CTERRA history with the owner under issue 120.                                                            | A small preservation/verification list with evidence and unresolved destinations. A generic GSC rerun or another stale radius sample would not resolve ownership.                                      |
 
-The office provider mix, reference inventories and service-query overlaps are now
-reviewed in runs 41–44. Compare concrete content options while the proposed
-Châteaugiron capture fills the remaining physical-anchor search question. Run 44
+The office provider mix, reference inventories, service-query overlaps and scoped
+Châteaugiron phrase are now reviewed in runs 41–45. The next recommended work is
+comparing the memo's page outlines and selecting their factual/project inputs.
+Another volume batch or Maps scan is not a prerequisite to that comparison. Run 44
 gives a separate conseil/décoration entrance stronger evidential support than before;
 it should earn its purpose through the actual offer. One professional identity does
 not require one page. The professional entrance remains a separate audience/content
@@ -353,7 +365,7 @@ bridge remains separate from later migration.
 
 ## Reviewed runs
 
-The forty-four reviewed entries below record runs dated **2026-09-08–10**.
+The forty-five reviewed entries below record runs dated **2026-09-08–10**.
 Runs 19–25 were reviewed together after Martin supplied seven independently
 initiated commands. Entries 26–28, reviewed September 9, cover ten further SERP
 captures across three commands; kitchen provenance records writing after midnight,
@@ -2084,6 +2096,57 @@ cuisine ?`, alongside budget and provider-trust questions. Five of eight unique
   broad cluster, mandatory sector page, 90-day ranking guarantee or change to
   Crystelle's identity follows. Reviewer work used saved data and two targeted
   public page readings; no paid API calls or SEO-workspace commits were made.
+
+### 45. Châteaugiron architecture discovery — how should the current place enter the site?
+
+`/seo dataforseo serp architecte d'intérieur châteaugiron`
+
+- **Evidence:** `serp-architecte-interieur-chateaugiron-2026-09-10/report.md`,
+  raw response/provenance, added `reviewer-notes.md` and `reviewer-comparison.json`.
+  Rennes/fr/desktop, depth 20, two crawl pages: twenty organic URLs across sixteen
+  domains, ten results on each page; three local-pack entries and one PAA block.
+  The saved response is labelled a transcription after wrapper filtering. Nominal
+  $0.002 tier estimate, billed charge unavailable. No reviewer paid calls.
+- **Measured learning:** the report labels eleven organic placements as directories
+  or lead generation, including SAAC's individual Ordre profile; the nine remaining
+  placements represent eight domains. SAAC appears through a local service URL
+  (#3), homepage (#7) and Ordre profile (#8). Trait de Couleur's homepage (#4) and
+  JD Architecture's project URL (#18) supply other formats. Studio Terrasson and
+  Jukkai have no first-party URL in these twenty results; this is not indexation status.
+  First-ten comparisons share zero URLs with run 44's three Rennes architecture
+  variants or the Vern variant, and one with each of its five décoration-family
+  queries, always Trait de Couleur's root. Dates differ across September 8–10.
+- **Targeted content readings:** [SAAC's service page](https://www.saac.fr/architecte-am%C3%A9nagement-int%C3%A9rieur-ch%C3%A2teaugiron-maisons-appartements-agencement-d%C3%A9coration-maison-sur-mesure-contemporain-moderne-design.asp)
+  explains interior work, drawings and works estimates, with before/after labels
+  and project links. [Trait de Couleur](https://www.traitdecouleur.fr/) describes
+  architecture/décoration, regional work and project routes. Web-reader copies
+  are labelled seven months ago and last week respectively; current details,
+  project locations and visual quality are unverified. These readings do not
+  support the claim that no page answers the query, nor a ranking cause based on
+  a description's place-names. URL length and `.asp` are not difficulty measures.
+- **Geography and capture limits:** Rennes was the intended capture location.
+  The report records an empty Châteaugiron location lookup, but neither that response
+  nor the Rennes lookup is persisted here. This does not establish all provider
+  location/coordinate capabilities. Both organic and local-pack scope remain a
+  Rennes-located search for the Châteaugiron phrase; organic invariance is untested.
+  Pack entries contain no addresses, so the report's claim that none is based in
+  Châteaugiron is unsupported. Ratings/review counts do not establish a threshold.
+  Multipage retrieval already appears in several prior runs; no tooling A/B is
+  needed. No ads or top-level AIO item was captured; PAA answers/citations remain
+  unavailable. Pricing, role and contribution questions supply copy prompts, not
+  demand shares, monetisation proof or a schema requirement.
+- **Jukkai implication — proposal:** cover the actual Châteaugiron practice and
+  Rennes/regional service area in architecture and contact content, with public
+  Galerie visits distinguished from architecture appointments. A town page or local
+  project story remains conditional on a useful purpose and ready proof; the
+  zero-overlap cell does not require a duplicate Rennes/Châteaugiron service pair.
+  The selected structural checks are complete. Compare the provisional sitemap
+  outlines and choose content inputs next. A volume comparison could later inform
+  acquisition priority; a genuine coordinate-based Maps scan would answer profile
+  visibility. The documented command is `maps grid`, not `maps geo-grid`; prior
+  indexed business-listings runs do not establish live grid capability. Neither
+  follow-up is launched or required for the next content decision, and no 8–12-week
+  ranking outcome is promised.
 
 ## Evidence rules and tool roles
 

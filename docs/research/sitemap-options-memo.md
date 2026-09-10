@@ -1,6 +1,6 @@
 # Jukkai sitemap options for discussion
 
-Updated 2026-09-10 after research run 44. **Agent-authored proposal, not an approved
+Updated 2026-09-10 after research run 45. **Agent-authored proposal, not an approved
 sitemap, copy contract or release commitment.** This memo makes alternatives concrete
 for [issue 85](https://github.com/martinmoradi/jukkai/issues/85) and
 [issue 86](https://github.com/martinmoradi/jukkai/issues/86). Decisions stay in those
@@ -24,6 +24,9 @@ décoration/aménagement/conseil variants share 6–9; cross-group pairs share 3
 Competitors combine these needs in different ways. These observations support
 alternatives rather than prescribing URLs. The cluster report's claimed larger
 décoration market mixes France and Rennes estimates and is rejected in run 44.
+Run 45 adds the current-town phrase: local service pages, a regional homepage and
+a project page appear together. Their presence supports alternative ways to cover
+Châteaugiron; it does not prove that an additional town page will rank easily.
 
 **Unresolved inputs:** actual mission terms and fees; selected projects, current
 facts, imagery and publication rights; selected works and artist permissions;
@@ -54,6 +57,27 @@ strong professional cases are ready. Run 44 increases the value of evaluating a
 distinct conseil/décoration entrance; it does not prove that everyone using those
 words wants a small mission. Integrated remains a credible magazine release when
 its selected content is easier to publish and read as one authored page.
+
+### Applying Châteaugiron after run 45
+
+The agent's recommendation is to state the real place in the core introduction,
+architecture explanation and contact/visit information. Keep the wider Rennes
+audience clear. A separate Châteaugiron architecture page should provide useful
+local proof or practical content beyond repeating the regional service explanation.
+The lack of shared ranking URLs across town phrases makes that option worth
+considering; the presence of a ranking regional homepage keeps combined treatment
+credible. No extra commune page is added to the proposed models by default.
+
+Possible architecture support sentence, **draft for discussion**:
+
+> Installé à Châteaugiron, notre studio accompagne vos projets d’architecture
+> intérieure à Rennes et dans sa région.
+
+This sentence supplies geographic context, not a new offer promise. Contact content
+should then give the verified address and architecture appointment route; Galerie
+content should explain its actual public opening and visits separately. The first
+release does not depend on having a completed local project to claim the office's
+real location. A detailed local case would need its own facts, images and permissions.
 
 ## Content purposes and readiness
 
@@ -97,14 +121,15 @@ redirects. The old-site banner bridge and later Google migration remain separate
 
 ## How to move from options to a choice
 
-1. Complete the scoped Châteaugiron architecture capture proposed in the log.
-   It can clarify local wording and visible entities; Galerie discovery is separate.
-2. Compare an outline of the hybrid model with the separated alternative using
+The selected competitor-inventory, service-overlap and Châteaugiron-phrase checks
+are complete through run 45. No further search is a prerequisite to this comparison.
+
+1. Compare an outline of the hybrid model with the separated alternative using
    the same actual mission facts and selected project material. Begin drafting the
    introduction and contact content while those selections happen.
-3. Decide whether conseil and professional content have enough distinct purpose
+2. Decide whether conseil and professional content have enough distinct purpose
    and proof to earn their own destinations. Then select the magazine subset.
-4. Record the choice in issue 85 and create its implementation handoff. Validate
+3. Record the choice in issue 85 and create its implementation handoff. Validate
    actual draft pages once available; maintain the separate migration review.
 
 Further search is useful when it could change one of those choices. This branch
