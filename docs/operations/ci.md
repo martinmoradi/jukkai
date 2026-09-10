@@ -4,9 +4,12 @@ Jukkai uses one pull-request workflow for the merge gate on `main`.
 
 ## Trigger Policy
 
-- The workflow runs only for pull requests targeting `main`.
+- The workflow filters for `main`. For native GitHub stacks, GitHub matches this
+  against the stack base, so every member of a stack targeting `main` is eligible,
+  even when its direct base is another feature branch.
 - Draft pull requests do not run jobs. CI starts when a PR is opened as ready,
-  marked ready for review, reopened, or updated while ready for review.
+  marked ready for review, reopened, added to a native stack (`stacked`), or updated
+  while ready for review.
 - Heavy jobs run only when code-affecting files change. Docs-only PRs get the
   cheap `ci / changes` classifier plus the aggregate `ci / required` check.
 
@@ -14,6 +17,25 @@ The workflow intentionally avoids `paths-ignore` at the workflow trigger level.
 Required GitHub checks can remain pending when a workflow is skipped before it
 creates the required status. The small classifier job keeps docs-only PRs cheap
 while still giving branch protection a stable required check.
+
+The explicit `stacked` activity matters when existing PRs are grouped after
+creation: an upper PR may never have run CI against its feature-branch base.
+Joining a native stack makes the stack base's checks required, so that event must
+start a run too. With a required check but no run, GitHub can display “pending”
+indefinitely. For an existing stack formed before this trigger was added, a new
+commit or a draft → ready transition can trigger the normal workflow.
+
+See GitHub's [stack CI behavior](https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/optimizing-ci-for-stacked-pull-requests)
+and [stack lifecycle events](https://docs.github.com/en/pull-requests/tutorials/roll-out-stacked-prs#5-update-your-programmatic-tooling).
+The event and routing behavior were checked on 2026-09-10; native stacks remain
+in public preview. Ordinary dependent PRs not registered as a native stack still
+match their direct base branch.
+
+`actionlint` 1.7.12 (the latest release checked on 2026-09-10) predates `stacked`
+in its activity catalog. The lint command ignores only the exact unknown-activity
+diagnostic for `stacked` on `pull_request`; other event errors remain failures.
+Remove that exception once a pinned release recognizes the event. When checking
+locally with 1.7.12, use the same invocation as the workflow.
 
 ## Jobs
 

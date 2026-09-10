@@ -8,6 +8,7 @@ on:
       - opened
       - ready_for_review
       - reopened
+      - stacked
       - synchronize
 
 permissions:
@@ -130,7 +131,10 @@ jobs:
               "https://raw.githubusercontent.com/rhysd/actionlint/v${ACTIONLINT_VERSION}/scripts/download-actionlint.bash"
           ) "${ACTIONLINT_VERSION}"
 
-          ./actionlint -color
+          # actionlint 1.7.12 predates GitHub's native stacked PR event.
+          # Remove this exact-message exception when its event catalog catches up.
+          ./actionlint -color \
+            -ignore '^invalid activity type "stacked" for "pull_request" Webhook event\.'
         shell: bash
 
       - name: Setup
