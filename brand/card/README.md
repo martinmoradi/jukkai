@@ -1,8 +1,9 @@
 # Business card — 65 × 65 mm
 
 > **Status:** candidate application proof, non-canonical. Built to exercise the
-> requirements in [`docs/working-notes/visual-foundations.SPEC.md`](../../docs/working-notes/visual-foundations.SPEC.md)
-> §11.1. Presence here does not mean approved.
+> historical requirements in [the July visual-foundations session](../../docs/archive/2026-07-working-notes/visual-foundations.SPEC.md)
+> §11.1. That session is archived; it does not establish a current assignment.
+> Presence here does not mean approved.
 
 > **Stale below:** the card has been revised since the _Typography_,
 > _Composition_ and _Known deviations_ sections were written. In the current
@@ -132,7 +133,7 @@ A third change sits on the recto as a switch rather than a decision: the layer
 `Signature — BY CRYSTELLE TERRASSON`, hidden by default. Showing it is the only
 difference between the plain and `-signature` exports, which is why there is one
 Affinity file and not two. This follows what
-`docs/working-notes/visual-identity-wordmark.md` already asked for — the byline
+`docs/archive/2026-07-working-notes/visual-identity-wordmark.md` already asked for — the byline
 stays a removable layer and does not change the wordmark.
 
 The master keeps its 3 mm bleed. The 69 mm exports set 2 mm at export time and
@@ -327,7 +328,7 @@ identical, so nothing is lost — it just is not what the mark specifies, which 
 why it was not done here.
 
 The wordmark note already reaches the same conclusion from the other direction:
-`docs/working-notes/visual-identity-wordmark.md` says to use the wordmark alone
+`docs/archive/2026-07-working-notes/visual-identity-wordmark.md` says to use the wordmark alone
 below the byline's legibility floor, and lists testing it at business-card size
 as an open check. This is that check, and the answer is that 65 mm is well
 below the floor.
@@ -432,7 +433,7 @@ columns rather than icon-plus-value pairs.
 
 ## QR code
 
-`jukkai-crystelle-qr-ec-m.svg` from [`../qr-codes/`](../qr-codes/), rebuilt as
+`jukkai-crystelle-qr-ec-m.svg` from [`../qr-codes/`](../qr-codes), rebuilt as
 native vector rather than placed. Every module was parsed from the SVG path and
 merged into horizontal runs, so abutting squares become single rectangles.
 

@@ -1,3 +1,9 @@
+> **Repository notice — historical import.** Original text follows unchanged in
+> substance; its decisions, dates and instructions belong to the source period.
+> They do not override the [foundation](../strategy/foundation.md),
+> [current delivery](../operations/current-delivery.md) or [ADRs](../adr/).
+> See [source context](README.md). Labelled 2026-09-10; not revalidated.
+
 # Jukkai by Crystelle Terrasson
 
 ## Brand Strategy

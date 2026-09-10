@@ -1,3 +1,9 @@
+> **Repository status — historical session, archived 2026-09-10.** The July Figma
+> assignment and acceptance criteria below are not active delivery requirements.
+> Preserve useful preferences for deliberate reconciliation with current design
+> work; consult the [brand workspace](../../../brand/README.md) for asset locations.
+> No visual choice is approved or rejected by this archive move.
+
 # Jukkai Visual Foundations v0 — specification
 
 > **Status:** draft working specification, non-canonical
@@ -13,7 +19,7 @@
 > **Related working note:**
 > [`visual-identity-wordmark.md`](visual-identity-wordmark.md)
 >
-> **Related assets:** [`brand/`](../../brand/README.md)
+> **Related assets:** [`brand/`](../../../brand/README.md)
 
 This specification records the shared understanding reached in the July 16,
 2026 visual-foundations grilling session. Its requirements govern the next
@@ -560,7 +566,7 @@ The execution-prompt author should read:
 
 - this specification;
 - [`visual-identity-wordmark.md`](visual-identity-wordmark.md);
-- [`brand/README.md`](../../brand/README.md) and the current shareable marks;
+- [`brand/README.md`](../../../brand/README.md) and the current shareable marks;
 - `/home/martin/src/pro/dembrandt/SYNTHESIS.md`;
 - `/home/martin/src/pro/dembrandt/references/obsidianassembly/notes.md`;
 - the relevant Dembrandt reference screenshots and curated notes when a claim

@@ -3,8 +3,8 @@
 **Status: agent proposal for discussion, 2026-09-10.** This translates reviewed
 research into possible content. It is not approved copy, a sitemap, a new offer,
 or a release requirement. Martin owns page and creative choices; Crystelle's actual
-work and mission terms supply the claims. [Current delivery](../operations/current-delivery.md)
-owns timing and [the foundation](../strategy/foundation.md) owns business truth.
+work and mission terms supply the claims. [Current delivery](../../operations/current-delivery.md)
+owns timing and [the foundation](../../strategy/foundation.md) owns business truth.
 
 ## What the research adds
 
@@ -21,7 +21,7 @@ that necessary electricity, plumbing, insulation or other underlying work can
 leave much less for visible changes. This is the main expectation gap to explain;
 the required work and allocation depend on the actual property and mission.
 
-[Runs 37–40](seo-research-log.md#37-residential-renovation-vocabulary--which-larger-project-needs-deserve-closer-research)
+[Runs 37–40](../../research/seo-research-log.md#37-residential-renovation-vocabulary--which-larger-project-needs-deserve-closer-research)
 connect broader renovation needs to local help, project evidence and professional
 selection. The two renovation SERPs differ on page one; the selection SERP includes
 practice-authored guidance. Neither pattern measures Jukkai enquiries or establishes
@@ -127,7 +127,7 @@ business-content questions. Broader B2B, Galerie and regional research can conti
 
 ## Sources and authority
 
-- [Research log](seo-research-log.md): run 37 vocabulary, run 38 guidance and visual
+- [Research log](../../research/seo-research-log.md): run 37 vocabulary, run 38 guidance and visual
   project discovery, run 39 local renovation services, run 40 selection questions.
   Earlier service, pricing, B2B and project runs remain part of the context.
 - [Xavier Lemoine's selection article](https://www.xavierlemoine.com/post/7-questions-indispensables-a-se-poser-avant-de-choisir-un-architecte-dinterieur)
@@ -135,6 +135,6 @@ business-content questions. Broader B2B, Galerie and regional research can conti
   [Qualitel's guide](https://www.qualitel.org/particuliers/pros-batiment/choisir-architecte-dinterieur/)
   supplies a partial reading connecting phases to tangible outputs. These are
   editorial specimens, not proof of actual Jukkai client behaviour.
-- [Foundation](../strategy/foundation.md), especially offer architecture and proof,
-  and [open inputs](../strategy/questions-for-crystelle.md) govern truthful content.
+- [Foundation](../../strategy/foundation.md), especially offer architecture and proof,
+  and [open inputs](../../strategy/questions-for-crystelle.md) govern truthful content.
   No competitor's offer, legal-role summary, prices or guarantees are adopted.

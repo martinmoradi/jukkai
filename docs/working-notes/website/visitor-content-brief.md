@@ -8,9 +8,9 @@ leave page boundaries and reading order open.
 **How to read it:** “Propose” and “Show” are agent recommendations, including the
 draft French. “Business” identifies recorded facts; “Research” links reviewed
 observations and their source files, not measured Jukkai visitor behaviour or
-conversion. The [foundation](../strategy/foundation.md) owns claims, the
-[delivery brief](../operations/current-delivery.md) owns timing, and the
-[method](../operations/method.md) keeps this provisional.
+conversion. The [foundation](../../strategy/foundation.md) owns claims, the
+[delivery brief](../../operations/current-delivery.md) owns timing, and the
+[method](../../operations/method.md) keeps this provisional.
 
 **Proposed emphasis:** clear architecture help, a distinctive eye demonstrated
 through work, and understandable scope/budget. Substantial residential and professional
@@ -25,15 +25,15 @@ Terrasson and the shared perspective: « Le même œil choisit les œuvres et de
 les espaces. » This expresses a vision; it does not claim completed art placements.
 
 **Basis — Business:** the umbrella identity, architecture's commercial priority and
-Crystelle's authorship are established ([foundation §§1–5](../strategy/foundation.md#1-the-business-in-facts)).
+Crystelle's authorship are established ([foundation §§1–5](../../strategy/foundation.md#1-the-business-in-facts)).
 **Research:** old-site entry concentrates on the homepage in the sampled GSC period
-([run 8](seo-research-log.md#8-studio-terrasson-gsc--what-already-attracts-search-visits)).
-The shared-brand example in [run 34](seo-research-log.md#34-pigalle-matignon-homepage--how-are-selection-creators-and-advice-connected)
+([run 8](../../research/seo-research-log.md#8-studio-terrasson-gsc--what-already-attracts-search-visits)).
+The shared-brand example in [run 34](../../research/seo-research-log.md#34-pigalle-matignon-homepage--how-are-selection-creators-and-advice-connected)
 gives its activities unequal prominence. Recognition and activity balance are therefore
 useful questions for our introduction, without adopting that site's hierarchy.
 
 **Show / missing:** introduce Crystelle and Laura as people, with selected portraits
-and work. The [shoot review (local, gitignored)](../../website-asset-inbox/photo-shoot-review-2026-09-09/README.md)
+and work. The [shoot review (local, gitignored)](../../../website-asset-inbox/photo-shoot-review-2026-09-09/README.md)
 contains unapproved portrait/artwork candidates. Martin selects imagery and transition
 wording. Keep “30 ans de métier” personal to Crystelle;
 her studio began in 2012, Jukkai in 2026.
@@ -47,15 +47,15 @@ image with the starting problem and the reason for a design choice.
 smaller work while substantial transformations demonstrate the practice's range.
 
 **Basis — Business:** that déco frame and the wider offer are established
-([foundation §7](../strategy/foundation.md#7-offer-architecture)). **Research:**
+([foundation §7](../../strategy/foundation.md#7-offer-architecture)). **Research:**
 room searches expose circulation, openings, furniture and combined-use questions;
 CKTFC connects a real commission to such an explanation
-([runs 31–35](seo-research-log.md#31-small-living-rooms--which-concrete-constraints-appear-in-problem-searches)).
+([runs 31–35](../../research/seo-research-log.md#31-small-living-rooms--which-concrete-constraints-appear-in-problem-searches)).
 Use that language without inferring project budget from room size.
 
-**Show / missing:** the historical [Belle Époque text](../reference/studioterrasson/particulier--belle-epoque/content.md)
+**Show / missing:** the historical [Belle Époque text](../../reference/studioterrasson/particulier--belle-epoque/content.md)
 already explains material choices; Buisine is a broader furnishing/detail candidate
-in the foundation's [proof bank](../strategy/foundation.md#10-proof-bank).
+in the foundation's [proof bank](../../strategy/foundation.md#10-proof-bank).
 Martin selects cases and images; recover the brief, actual contribution, outcome,
 credits and permissions. Old copy is a starting source, not freshly cleared proof.
 
@@ -92,7 +92,7 @@ and depth of accompaniment are separate choices. Name the agreement before paid
 design work; address architect collaboration where relevant to a larger project.
 
 **Basis — Business:** the mission ladder and clear agreement are established
-([foundation §7](../strategy/foundation.md#7-offer-architecture)); Martin reports
+([foundation §7](../../strategy/foundation.md#7-offer-architecture)); Martin reports
 existing architect collaborations. **Research:** CKTFC and Anata make deliverables
 and client involvement concrete; the [architecture brief's comparison](architecture-content-proof-brief.md#applying-the-practice-comparisons)
 extracts the useful lessons without adopting their offers.
@@ -101,7 +101,7 @@ extracts the useful lessons without adopting their offers.
 UNAID qualification, career experience and existing reviews supply proof; check
 quoted reviews and current insured scope. Environmental/neuro-architecture explanations
 need documented project choices; the exact eco-responsible label is supporting proof,
-without health/performance promises ([proof rules](../strategy/foundation.md#10-proof-bank)).
+without health/performance promises ([proof rules](../../strategy/foundation.md#10-proof-bank)).
 
 **Crystelle — C3:** For design-only and full missions, what does each party handle?
 Supply a deliverable, current terms and an example of collaboration with an architect.
@@ -113,13 +113,13 @@ accueillis. » Explain the commissioning activity, daily uses, constraints, desi
 contribution and collaborators. Make professional relevance explicit beside the images.
 
 **Basis — Business:** professional work is an explicit growth priority
-([foundation §6](../strategy/foundation.md#6-audiences)). **Research:** restaurant,
+([foundation §6](../../strategy/foundation.md#6-audiences)). **Research:** restaurant,
 office, medical and childcare probes broaden the needs: circulation, storage,
 waiting, rest, atmosphere and staff use. They establish no sector priority
-([runs 11–18](seo-research-log.md#11-restaurant-architecture-rennes--does-a-b2b-need-change-the-results),
-[41–42](seo-research-log.md#41-office-planning-serp--how-do-workplace-needs-connect-to-design-services)).
+([runs 11–18](../../research/seo-research-log.md#11-restaurant-architecture-rennes--does-a-b2b-need-change-the-results),
+[41–42](../../research/seo-research-log.md#41-office-planning-serp--how-do-workplace-needs-connect-to-design-services)).
 
-**Show / missing:** Le Capri is a repeat-client candidate; [Orange Dynamique](../reference/studioterrasson/professionnel--orange-dynamique/content.md)
+**Show / missing:** Le Capri is a repeat-client candidate; [Orange Dynamique](../../reference/studioterrasson/professionnel--orange-dynamique/content.md)
 preserves an office-layout explanation. These are starting material, not a selected
 portfolio. Obtain the brief, scope, images and permission; substantiate outcomes
 and any regulatory responsibility.
@@ -137,11 +137,11 @@ gesture or the artist's approach. Explain buying as well as viewing,
 giving art visitors a reason to come independently of an architecture project.
 
 **Basis — Business:** the lively, welcoming scene and visitability role are established
-([foundation §9](../strategy/foundation.md#9-the-galerie-promise-pre-opening)).
+([foundation §9](../../strategy/foundation.md#9-the-galerie-promise-pre-opening)).
 **Research:** place/style searches mix cultural outings and commercial art; buying
 results mix artist-attributed work, editions and decorative prints
-([runs 24–26](seo-research-log.md#24-buying-a-painting--what-changes-when-discovery-starts-with-an-object)).
-The [run 36 specimen](seo-research-log.md#36-art-génération-sxo--how-does-a-commercial-art-page-make-its-selection-understandable)
+([runs 24–26](../../research/seo-research-log.md#24-buying-a-painting--what-changes-when-discovery-starts-with-an-object)).
+The [run 36 specimen](../../research/seo-research-log.md#36-art-génération-sxo--how-does-a-commercial-art-page-make-its-selection-understandable)
 identifies artist, title and dimensions beside the imagery: concrete content to
 consider beyond style labels.
 
@@ -164,9 +164,9 @@ the architecture appointment route and a separate, explicit Galerie opening stat
 As the place opens, replace that state with actual visiting information.
 
 **Basis — Business:** architecture clients are already received; leads normally
-call first; the official opening is October 2026 ([current delivery](../operations/current-delivery.md#confirmed-direction)).
+call first; the official opening is October 2026 ([current delivery](../../operations/current-delivery.md#confirmed-direction)).
 **Research:** town service pages and regional homepages coexist in the local and
-department captures ([runs 45–46](seo-research-log.md#45-châteaugiron-architecture-discovery--how-should-the-current-place-enter-the-site));
+department captures ([runs 45–46](../../research/seo-research-log.md#45-châteaugiron-architecture-discovery--how-should-the-current-place-enter-the-site));
 their appearance cannot set Jukkai's travel scope.
 
 **Show / missing:** verify contact details/address; explain useful project information.

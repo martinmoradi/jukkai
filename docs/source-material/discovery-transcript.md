@@ -1,3 +1,9 @@
+> **Repository notice — historical import.** Original text follows unchanged in
+> substance; its decisions, dates and instructions belong to the source period.
+> They do not override the [foundation](../strategy/foundation.md),
+> [current delivery](../operations/current-delivery.md) or [ADRs](../adr/).
+> See [source context](README.md). Labelled 2026-09-10; not revalidated.
+
 # Transcript — Session de découverte de marque Megalaya
 
 **Date :** 8 mars 2026 **Interviewée :** Crystelle Terrasson — Architecte d'intérieur, fondatrice de Megalaya **Animateur :** Claude (stratégiste de marque) **Prise de notes :** Martin Terrasson (directeur créatif, PM, développeur)

@@ -4,7 +4,7 @@ Updated 2026-09-10 after research run 47. **Agent-authored proposal, not an appr
 sitemap, copy contract or release commitment.** This memo makes alternatives concrete
 for [issue 85](https://github.com/martinmoradi/jukkai/issues/85) and
 [issue 86](https://github.com/martinmoradi/jukkai/issues/86). Decisions stay in those
-tickets. The [research log](seo-research-log.md) owns findings and next-run discussion.
+tickets. The [research log](../../research/seo-research-log.md) owns findings and next-run discussion.
 
 The [visitor content brief](visitor-content-brief.md) now supplies the shared
 messages, evidence and missing inputs. Discuss those explanations with Martin
@@ -20,8 +20,8 @@ substantial residential and professional projects alongside smaller missions; on
 architecte d'intérieur identity; the physical practice in Châteaugiron serving the
 wider Rennes audience. Architecture appointments already happen; public Galerie
 opening is separate. The site is static and must provide a useful magazine visit.
-See [current delivery](../operations/current-delivery.md) and
-[foundation](../strategy/foundation.md).
+See [current delivery](../../operations/current-delivery.md) and
+[foundation](../../strategy/foundation.md).
 
 **Working preference held by Martin:** homepage plus a general contact page for
 the magazine. Exact page count and content remain open.
@@ -119,7 +119,7 @@ supplies the existing budget discussion and remains provisional.
 
 ## Continuity to preserve while choosing pages
 
-The [June 13 text crawl](../reference/studioterrasson/index.md) captured 37 URLs;
+The [June 13 text crawl](../../reference/studioterrasson/index.md) captured 37 URLs;
 it establishes available reference content, not present accuracy or approved assets.
 Together with GSC and backlink evidence it supplies this initial review list:
 

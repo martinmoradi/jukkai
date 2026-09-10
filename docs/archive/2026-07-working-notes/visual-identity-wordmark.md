@@ -1,10 +1,15 @@
+> **Repository status — historical session, archived 2026-09-10.** “Active” and
+> “current” below refer to July. Resume a specific design question only after
+> reconciling these observations with current work and the
+> [brand workspace](../../../brand/README.md). These settings are not current asset verification.
+
 # Visual identity workroom — wordmark session capture
 
 > **Status:** active working note, non-canonical  
 > **Last edited:** 2026-07-15  
 > **Useful for:** resuming the Figma identity work without reconstructing the
 > session  
-> **Related assets:** [`brand/`](../../brand/README.md)
+> **Related assets:** [`brand/`](../../../brand/README.md)
 
 This note combines Martin's Figma observations, Crystelle's reactions, and agent
 recommendations. Labels describe confidence inside this working session only;

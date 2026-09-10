@@ -1,3 +1,9 @@
+> **Repository status — historical explanatory reference, archived 2026-09-10.**
+> The sequence below is not Jukkai's delivery workflow. Use the
+> [current method](../../operations/method.md) and
+> [delivery scope](../../operations/current-delivery.md). The earlier explanation
+> is preserved below for context, not as mandatory steps.
+
 > Status: general explanatory reference, not Jukkai's current workflow or a
 > mandatory sequence. Updated status 2026-09-07: read `current-delivery.md` and
 > `method.md` first. Keyword evidence informs page decisions; it does not decide

@@ -18,7 +18,7 @@ decisions belong in the existing
 ticket, under the [Wayfinder map](https://github.com/martinmoradi/jukkai/issues/84).
 The research scope and first-release sitemap remain open.
 
-For discussion before page organisation, the [visitor content brief](visitor-content-brief.md)
+For discussion before page organisation, the [visitor content brief](../working-notes/website/visitor-content-brief.md)
 connects proposed explanations to business facts, reviewed evidence, available proof
 and questions for Crystelle. It builds on the sitemap memo and architecture brief;
 it is a working proposal, not approved strategy or a new research run.
@@ -140,7 +140,7 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   conversation. This supports answering those questions through Jukkai's own offer,
   project and contact content, without requiring a standalone guide or claiming the
   query cannot produce local enquiries. The [provisional architecture content/proof
-  brief](architecture-content-proof-brief.md) combines runs 37–40. Martin's direct
+  brief](../working-notes/website/architecture-content-proof-brief.md) combines runs 37–40. Martin's direct
   account now gives budget the highest practical weight and architect collaboration
   a secondary role; other selection themes remain hypotheses. Use actual project
   examples and current mission terms to explain cost, contribution and responsibility.
@@ -214,7 +214,7 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   Connect each candidate to a visitor job, truthful message, ready proof and useful
   next action. Search estimates cannot supply Crystelle's current fees, permission
   to publish a project, stock, opening arrangements or the shared-brand expression.
-  The [provisional sitemap-options memo](sitemap-options-memo.md) now compares
+  The [provisional sitemap-options memo](../working-notes/website/sitemap-options-memo.md) now compares
   integrated, separated and hybrid models with content inputs, magazine/later scope
   and a continuity review list. Hybrid is the agent's starting recommendation for
   the developing site; a distinct conseil entrance remains a credible alternative.
@@ -1916,7 +1916,7 @@ cuisine ?`, alongside budget and provider-trust questions. Five of eight unique
   scope with the foundation's proof sources. Compare these candidate concerns with
   real enquiries. A role explanation can live within existing content purposes;
   no profession-comparison article, standalone guide or page structure is required
-  by the SERP. The [working content/proof brief](architecture-content-proof-brief.md)
+  by the SERP. The [working content/proof brief](../working-notes/website/architecture-content-proof-brief.md)
   translates the learning for discussion while wider research continues.
 - **Martin's follow-up:** budget is the main factor in enquiries. A rarer concern
   on larger projects is working directly with an architect, partly around permits;
@@ -2272,7 +2272,7 @@ cuisine ?`, alongside budget and provider-trust questions. Five of eight unique
   mission detail; describe deliverables and client/practice responsibilities using
   actual terms. Explain budget choices through real projects, select professional
   proof for the client's use, and describe geographic reach and the first conversation
-  truthfully. The [architecture brief](architecture-content-proof-brief.md) applies
+  truthfully. The [architecture brief](../working-notes/website/architecture-content-proof-brief.md) applies
   these lessons. Anata adds a second concrete content model alongside CKTFC; it does
   not supply Jukkai prices, packages, guarantees, a portal or appointment promises.
   Move to draft comparison and proof selection. Full audit, local audit and another
