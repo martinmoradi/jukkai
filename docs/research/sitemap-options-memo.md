@@ -1,6 +1,6 @@
 # Jukkai sitemap options for discussion
 
-Updated 2026-09-10 after research run 45. **Agent-authored proposal, not an approved
+Updated 2026-09-10 after research run 46. **Agent-authored proposal, not an approved
 sitemap, copy contract or release commitment.** This memo makes alternatives concrete
 for [issue 85](https://github.com/martinmoradi/jukkai/issues/85) and
 [issue 86](https://github.com/martinmoradi/jukkai/issues/86). Decisions stay in those
@@ -79,6 +79,16 @@ content should explain its actual public opening and visits separately. The firs
 release does not depend on having a completed local project to claim the office's
 real location. A detailed local case would need its own facts, images and permissions.
 
+Run 46 adds Ille-et-Vilaine/35 wording, captured from Rennes. The two phrases share
+seven top-ten URLs, and several regional homepages/city service pages rank for both.
+Department listings also appear; there is no demonstrated universal rewrite to
+Rennes or requirement for another geography page. Include the wider department in
+the architecture service-area explanation where truthful. The foundation already
+allows wider reach depending on project scope; the practical input is how that
+varies between a focused conseil mission and substantial work. Avoid implying the
+same travel commitment for every mission before it is confirmed. The local-pack
+and fee-question observations reinforce existing contact and budget/scope content.
+
 ## Content purposes and readiness
 
 These labels describe content, not approved navigation labels or URL slugs.
@@ -123,6 +133,13 @@ redirects. The old-site banner bridge and later Google migration remain separate
 
 The selected competitor-inventory, service-overlap and Châteaugiron-phrase checks
 are complete through run 45. No further search is a prerequisite to this comparison.
+
+Run 46 completes the added department-wording probe. A second comparable nonlocal
+practice, examined across introduction, missions, case proof and contact, could
+improve the drafts alongside this work. CKTFC is already a deep Nantes reference;
+Studio Anata is a candidate from the Lyon pricing sample, not a selected model or
+evidence that a larger city has better-performing sites. Seek a few specific lessons
+to adopt, adapt or reject rather than reproducing another city's whole keyword study.
 
 1. Compare an outline of the hybrid model with the separated alternative using
    the same actual mission facts and selected project material. Begin drafting the
