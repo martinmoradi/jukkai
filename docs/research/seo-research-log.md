@@ -79,6 +79,11 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   linked from the menu. Its shop model is not the Jukkai contract or a verified
   physical-gallery comparison. A designer-name query reaches a product in the captured
   footprint; artist/creator identity can be a discovery route as well as useful context.
+  Run 36 examines Art Génération's street-art collection: artist names, work titles,
+  dimensions and imagery give the selection concrete identity. Priced search slots
+  and the sampled gallery cards have different distributions, but do not measure
+  buyer budgets. Describe the actual works and any verified edition/provenance details;
+  style labels alone do not distinguish these offers.
 - **Supported continuity learning:** run 8 concentrates recorded old-site entry on
   the homepage, with incomplete query visibility. Run 21 adds linked destinations:
   the homepage, ecological-kitchen article and Zig Zag Wizz project merit a joint
@@ -94,25 +99,25 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   colourful, approachable street/pop/urban art, for buying as well as viewing.
   Actual offer scope, proof and the foundation's separate architecture/art pricing
   rules govern copy; tentative gift-price examples do not approve public art prices.
-- **What the latest run adds:** CKTFC's homepage, explanatory content and specific
-  project pages supply different search entrances. Its salary and moodboard articles
-  have more keyword rows, but the homepage leads the provider's page-level organic
-  traffic estimate. Keyword count is therefore a poor stand-in for business relevance;
-  actual visits and enquiries remain unknown. The mezzanine page is a concrete
-  problem-led project specimen for Martin's storytelling idea, while the planche
-  d'ambiance page shows how explaining a deliverable can make professional judgement
-  understandable. Compare these with Le Coup de Crayon's broad homepage, CMC²'s
-  broad/specialised pages and Pigalle's consultation entrance. They support options,
-  not one winning hierarchy. We can now compare integrated and more separated
-  architecture content alongside the two homepage introductions below, using real
-  Jukkai material. Galerie presentation remains a useful further research branch.
+- **What the latest run adds:** Art Génération supplies a commercial-art specimen
+  whose visible cards make artist, work, size and price explicit. Its broader text
+  addresses authenticity, formats and living with art. For Jukkai, translate this
+  into selected artwork presentation, Crystelle's selection, understandable work
+  details and truthful discovery/buying/visit arrangements. The captured ecommerce
+  result mix does not require a catalogue, published pre-opening prices or a generic
+  art guide. Certificates and edition claims need actual support before becoming
+  promises. The report's inferred budgets/personas and October deadline are not
+  measured Jukkai demand or approved priorities. This is enough to draft a provisional
+  Galerie content outline alongside the architecture options supported by run 35;
+  actual selection, permissions and public visit facts remain the needed inputs.
   Preservation targets and profile checks remain relevant to
   [the Studio Terrasson/Google transition](https://github.com/martinmoradi/jukkai/issues/120).
   Scores and report checklists do not turn into launch work.
 - **Still open:** precise Jukkai mission terms and available project material, rather
   than another broad room/conseil capture, are the missing inputs for detailed offer
-  copy. Qualified local acquisition remains unmeasured. Actual offers and visitor
-  experience of the commercial-art specimens remain to examine. Pigalle Matignon's
+  copy. Qualified local acquisition remains unmeasured. Art Génération's collection
+  has now been examined; its physical-gallery customer experience and Jukkai's actual
+  selection/buying arrangements are not established by that reading. Pigalle Matignon's
   homepage and consultation have now been examined as an adjacent shared-brand
   reference. A closer architecture-practice/physical-gallery specimen could answer
   a specific remaining question, but is not a prerequisite to comparing the options.
@@ -129,7 +134,7 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   to publish a project, stock, opening arrangements or the shared-brand expression.
   No sitemap, content brief or research sequence is approved by this synthesis.
 
-### Candidate content purposes after run 35
+### Candidate content purposes after run 36
 
 **Agent proposal for discussion, not five approved URLs or release commitments.**
 The foundation supplies business intent; research informs discovery and limits.
@@ -260,7 +265,7 @@ all of them before working on the magazine website.
 | Question worth resolving                                                          | Evidence route                                                                                                                                                                                                                                                                          | What would be enough for that question?                                                                                                                                                                |
 | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Which format could make a residential need and the available help understandable? | Reuse runs 28–33 and run 35's project/process specimens to compare architecture copy, a project feature and a focused guide. A fresh paid capture is not needed for this first comparison; choose a page-level workflow only if it answers a remaining question.                        | One concrete content option connecting the need, useful explanation, available proof, real mission and next action. Include preparation/outputs where known; mark missing facts.                       |
-| How can a Galerie show actual work and make buying approachable?                  | Run 26 supplies Art Génération's street-art selection and Vettese's artist article. `/seo sxo https://artgeneration.fr/collections/tableaux-street-art "acheter tableau street art"` can examine one specimen's page/search fit.                                                        | Useful ways to present work types, authorship and an enquiry/visit step, within Jukkai's no-catalogue, consent and pre-opening price rules. No shop imitation required.                                |
+| How can a Galerie show actual work and make buying approachable?                  | Run 36 completes the Art Génération collection reading. Compare its named-work presentation and practical explanations with Jukkai's selected artworks, Crystelle's perspective and actual buying/visit arrangements.                                                                   | A provisional outline using real work, concise verified details and a truthful discovery/contact/visit step. Keep catalogue, pre-opening price, consent and promise boundaries explicit.               |
 | How can fees be explained alongside scope, value and next steps?                  | Compare runs 10/27's pricing specimens and run 33's consultation formats with actual mission terms. If visitor experience needs closer study, `/seo sxo https://gaeleboutaud.com/combien-coute-architecte-interieur-rennes/ "tarif architecte d'intérieur rennes"` remains a candidate. | A concrete explanation of mission choices, inclusions and how a fee is set. Different competitor delivery models do not establish Jukkai's price or required packages.                                 |
 | How should the homepage introduce the practice, Crystelle and the Galerie?        | Run 34 completes the Pigalle homepage reading. Compare the two provisional approaches above using the foundation, actual offer facts and available proof. A planning/brief workflow could propose another treatment if it answers a specific unresolved choice.                         | A visitor can explain what Jukkai offers, recognise the architecture service, understand the Galerie and find the appropriate next step. No new competitor capture is needed for the first comparison. |
 | What existing material and visibility should survive the transition?              | Reconcile saved run 8 page data, run 21 backlink destinations and the existing content inventory; inspect particular source links/pages where necessary. Verify current profile facts and CTERRA history with the owner under issue 120.                                                | A small preservation/verification list with evidence and unresolved destinations. A generic GSC rerun or another stale radius sample would not resolve ownership.                                      |
@@ -275,7 +280,7 @@ bridge remains separate from later migration.
 
 ## Reviewed runs
 
-The thirty-five reviewed entries below record runs dated **2026-09-08–10**.
+The thirty-six reviewed entries below record runs dated **2026-09-08–10**.
 Runs 19–25 were reviewed together after Martin supplied seven independently
 initiated commands. Entries 26–28, reviewed September 9, cover ten further SERP
 captures across three commands; kitchen provenance records writing after midnight,
@@ -285,6 +290,8 @@ SERPs and three targeted page readings; entry 33 adds the conseil SERP and offer
 specimens; entry 34 examines Pigalle Matignon's homepage and captured search footprint.
 Entry 35 adds CKTFC's wider ranking footprint, recovered MCP response and two focused
 page readings for project/process content.
+Entry 36 reviews Art Génération's street-art collection, two purchase/style SERPs,
+keyword estimates and saved desktop/mobile screenshots.
 Numbering groups reviewed questions, not API calls
 or a prescribed research sequence. Commands use the documented
 `/seo` shorthand; namespace resolution is automatic. Reviewer corrections
@@ -1558,6 +1565,67 @@ cuisine ?`, alongside budget and provider-trust questions. Five of eight unique
   synonym filtering is a hypothesis, not a verified complete reconciliation. No brand
   absence, site-age, zero-enquiry or ranking-cause conclusion follows. Run estimate
   $0.11 includes the overview; billed charges unavailable. No reviewer paid calls.
+
+### 36. Art Génération SXO — how does a commercial-art page make its selection understandable?
+
+`/seo sxo https://artgeneration.fr/collections/tableaux-street-art "acheter tableau street art"`
+
+- **Evidence:** `sxo-artgeneration-street-art-2026-09-10/findings/sxo-analysis.md`,
+  `findings/reviewer-notes.md`, `data/request_manifest.json`, the two SERP JSON files,
+  France/Rennes volumes, difficulty/intent, `products-on-page.json`, saved HTML/parser
+  output and desktop/mobile screenshots. Both SERPs use Rennes/fr/desktop, depth 20;
+  ten/nine organic results saved. The buying response has **15** top-level items,
+  correcting the manifest's twelve; the head has thirteen. Image-source URLs were
+  deliberately omitted from saved responses; later ranks, PAA answers and full
+  provider envelopes are not preserved. No reviewer paid calls or new site audit.
+- **Discovery learning:** the target is organic #5 for `acheter tableau street art`
+  and #6 for `tableau street art`. The first capture mixes collection/shop URLs with
+  an artist article; the second adds an image pack of twelve destinations across
+  nine domains, none for Art Génération. These are web-search surfaces, not Google
+  Images-tab rankings. The report's Product taxonomy describes a commerce-heavy
+  sample; its 90% score does not require Jukkai to become an online shop or establish
+  that page type, ranking or presentation is the cause of commercial performance.
+- **Work and price evidence:** 24 priced search slots have median EUR 47.20, with
+  23 at or below EUR 170.90. The 98 unique parsed gallery cards, out of a stated 434
+  works, have median EUR 600 (range 70–2,600; 67 above 300). These are different
+  selections/formats, not comparable quotations, visitor budgets, a price ceiling
+  or the gallery's complete inventory. Cards identify artist, title, dimensions,
+  price and imagery. The actual medium, unique/edition status and provenance of
+  each item were not verified. The site also advertises art editions; do not reduce
+  its whole offer to unique originals or dismiss prints as necessarily inauthentic.
+- **Presentation learning:** the saved desktop screenshot visibly shows four
+  first-row artworks starting around image y=675 in a 1,080-pixel-high capture,
+  contrary to "zero products above the fold". Their lower portions are obscured by
+  the cookie dialog. Mobile shows repeated headings and introductory prose above a
+  large consent dialog, with artwork slivers at its edges; a clean mobile first
+  screen was not captured. This supports comparing the prominence of work and
+  explanation, not a proven loss of sales or a compulsory above-fold product grid.
+  The parser's 6,279 words count the page, not a verified 6,279-word editorial;
+  competitor content depth was not comparably measured.
+- **Copy learning:** format, authorship, techniques, originality/editions and the
+  possibility of advice are useful questions to connect to Jukkai's actual selection.
+  The certificate FAQ includes a general assurance that buying through a specialised
+  gallery supplies a certificate; it is not silent about provision. It still does
+  not verify a certificate for each item, or authorise such a Jukkai promise. Use
+  confirmed work information and explain the real buying/visit process. Do not
+  publish investment/return claims. Custom commissions, delivery/return terms and
+  artist names need an established Jukkai basis and any necessary consent.
+- **Demand and limits:** both ten-keyword volume lists match requests. France
+  estimates are 10 for the buying phrase and 2,400 for the head; Rennes returns the
+  former without volume and the latter at 10. Three Rennes volumes and three
+  difficulty values are unavailable. Numeric 10 is an estimate, not a demonstrated
+  measurement floor. One Aug 2025–Jul 2026 series peaks in Nov–Dec; it does not prove
+  recurring seasonality, qualified local demand or a before-October publishing rule.
+  Persona scores, price anchoring, content quality and the alleged binding conversion
+  constraint are agent interpretations. The review/schema checklist concerns the
+  specimen; no Jukkai ecommerce implementation follows. Recorded estimate $0.124
+  across six billable calls; API-reported charges unavailable.
+- **Jukkai implication — proposal:** draft a Galerie outline around a few actual
+  works, Crystelle's selection, concise verified captions, an approachable explanation
+  that works can be bought, and current contact/opening/visit facts. Retain no catalogue
+  and no pre-opening art prices. This run answers the selected specimen question;
+  additional research can follow a specific remaining choice rather than the
+  specimen's technical handoffs. No page structure, exact copy or promise approved.
 
 ## Evidence rules and tool roles
 
