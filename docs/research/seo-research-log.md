@@ -18,6 +18,11 @@ decisions belong in the existing
 ticket, under the [Wayfinder map](https://github.com/martinmoradi/jukkai/issues/84).
 The research scope and first-release sitemap remain open.
 
+For discussion before page organisation, the [visitor content brief](visitor-content-brief.md)
+connects proposed explanations to business facts, reviewed evidence, available proof
+and questions for Crystelle. It builds on the sitemap memo and architecture brief;
+it is a working proposal, not approved strategy or a new research run.
+
 **Working loop:** Martin runs native Claude SEO commands, usually in fresh contexts.
 As clarified September 8, invoke a bare command such as `/seo sxo <url> <keyword>`;
 shorthand is automatic. Claude works without Jukkai context and inherits run
