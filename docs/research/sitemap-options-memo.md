@@ -9,6 +9,9 @@ tickets. The [research log](seo-research-log.md) owns findings and next-run disc
 The [visitor content brief](visitor-content-brief.md) now supplies the shared
 messages, evidence and missing inputs. Discuss those explanations with Martin
 before returning to the page models below; the brief approves none of them.
+The [working content plan](website-content-plan.md#architecture-review--consequential-gaps-in-the-proposed-routes)
+applies that brief to navigation, contextual links and the magazine subset. It keeps
+the alternatives below open rather than establishing a second approved sitemap.
 
 ## What governs the comparison
 

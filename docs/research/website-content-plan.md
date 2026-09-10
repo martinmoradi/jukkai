@@ -1,8 +1,9 @@
 # Jukkai — working website content plan
 
-**First proposal for Martin, 10 September 2026.** The developing website, with one
-Architecture page as a sample. Pages, offers, copy, imagery and release scope remain
-unapproved. Review this pass before extending the other briefs.
+**Working proposal for Martin, 10 September 2026; updated with a site-architecture
+review.** The developing website, with one Architecture page as a sample. Pages,
+offers, copy, imagery and release scope remain unapproved. The review below makes
+navigation and contextual relationships explicit without selecting the final pages.
 
 The [foundation](../strategy/foundation.md) supplies business truth;
 [current delivery](../operations/current-delivery.md) separates magazine release
@@ -55,6 +56,144 @@ writing and proof to avoid repeating the same offer.
 Test whether the proposed conseil and professional content gives clear enough
 routes. For the magazine, a rich homepage plus useful contact remains a credible
 subset; the developing model does not require four pages before publication.
+
+## Architecture review — consequential gaps in the proposed routes
+
+These are **agent recommendations from the visitor brief**, not observed usability
+failures. The content purposes above remain useful; the main omissions are how
+people find the relevant explanation and continue from it.
+
+| Gap or confusing route                                                                         | Visitor consequence and basis                                                                                                                                                                                                                                                                                                                                         | Proposed improvement                                                                                                                                                                                                                                   |
+| ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Conseil and professional coverage is named, but its entrances are unspecified.                 | Someone seeking focused help or a workplace transformation may read “Architecture” as residential renovation only ([brief §§2, 5](visitor-content-brief.md#2-does-her-work-appeal-to-me-and-can-she-help-with-my-project)).                                                                                                                                           | Give both needs explicit links from relevant homepage content and a short contents navigation within Architecture. In hybrid these reach named sections; in separated they reach the corresponding pages. Test the same needs before choosing a split. |
+| Project stories link broadly to Architecture, without specifying which explanation helps next. | A visitor attracted by a design still needs to understand the mission and works/fee distinction ([brief §§3–4](visitor-content-brief.md#3-how-do-my-budget-the-works-and-your-fees-fit-together)).                                                                                                                                                                    | Link each selected case to relevant mission/budget explanations and directly to contact. Link back to that case beside the need or claim it demonstrates. A portfolio index is optional.                                                               |
+| “Contact / visit” groups two different intentions without defining their destinations.         | An art visitor could meet a project-only enquiry path or mistake architecture appointments for public Galerie access ([brief §§6–7](visitor-content-brief.md#6-what-will-i-discover-at-the-galerie-and-can-i-buy-it)).                                                                                                                                                | Keep general Contact understandable for both activities; distinguish architecture enquiries from Galerie visits and artwork enquiries within it. Show opening state on Galerie itself, beside its visit action.                                        |
+| The smaller magazine subset has no explicit replacement for unbuilt pages.                     | A magazine reader could find promised destinations unavailable, or lose the Galerie explanation when its page is deferred ([brief §§1, 6–7](visitor-content-brief.md#1-what-is-jukkai-and-is-this-the-crystelle-i-know)).                                                                                                                                             | Route to useful published homepage sections and contact information until separate pages are ready. Preserve recognition, both activities and their different availability states in that subset.                                                      |
+| The existing contact card is absent from the relationship model.                               | A printed-card visitor and a general enquiry visitor have different immediate jobs; treating the card as the whole Contact experience would lose mission/visit guidance ([brief §7](visitor-content-brief.md#7-where-are-you-can-i-come-and-how-do-we-start), [delivery brief](../operations/current-delivery.md#two-milestones-with-a-separate-migration-decision)). | Retain the quick save/call route, connect it to the useful website, and expose it contextually from general contact information. Preserve the printed pointer.                                                                                         |
+
+### Proposed navigation and destination relationships
+
+**Header:** logo → homepage; then **Architecture intérieure**, **Galerie**,
+**Contact** as draft labels/order for hybrid. “Galerie” is the established public
+category; the other labels and their visual treatment are proposals. Keep the global
+contact label usable for both activities; **« Parlons de votre projet »** belongs
+beside architecture content. Phone remains directly available without requiring an
+offer, project or audience selection. Its prominence and the channel hierarchy
+remain Martin's choice.
+
+Within Architecture, propose short, descriptive section links for **Habitat**,
+**Conseil / décoration**, **Espaces professionnels**, **Missions**, and
+**Budget et honoraires**, where the corresponding content is developed. A professional
+or conseil visitor should be able to enter at that section from the homepage or a
+shared link. This contents navigation does not prescribe the page's visual sequence
+or require a separate page for every item. Use the same destinations in mobile
+navigation; essential routes must work without hover.
+
+**Footer:** repeat the published activity/contact routes, verified contact/address
+information, Instagram and the applicable legal/privacy information. Provide a clear
+Galerie visiting link with its current opening state. Avoid a town/sector link list
+without useful destinations. Crystelle/Studio Terrasson continuity and the people
+introduction remain accessible within homepage/Architecture content; they do not
+depend on an About page. The quiet artist contact belongs in Galerie content, outside
+primary navigation.
+
+| Destination               | URL status                                                           | Hierarchy and access in the proposed hybrid                                                                                                      |
+| ------------------------- | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Homepage                  | `/`                                                                  | Root; logo link on editorial pages.                                                                                                              |
+| Architecture              | URL open                                                             | Primary destination from homepage/header; owns the shared mission/budget explanations and conseil/professional sections while combined.          |
+| Galerie                   | `/galerie/` is the existing proposed URL, not a release commitment   | Primary destination from homepage/header; independent visit and artwork-enquiry routes.                                                          |
+| General Contact           | URL open; distinct from the contact card                             | Primary destination from header/footer and contextual actions; architecture and Galerie information separately reachable.                        |
+| Individual project story  | URLs open                                                            | Contextually connected to Architecture and the relevant need; selected homepage features may also link in. An index and its URL remain optional. |
+| Crystelle contact card    | Existing `/contact/crystelle`; printed `/c/crystelle` pointer locked | Utility destination from printed cards and a secondary contact link; not an additional primary-nav item.                                         |
+| Legal/privacy information | Destinations to confirm for the chosen implementation                | Footer access; account for these alongside the editorial subset.                                                                                 |
+
+The diagram shows proposed links, **not URL nesting or approved release pages**.
+Section-level links are specified below. “Contact” includes separate architecture
+and Galerie information even if they share one page.
+
+```mermaid
+graph TD
+    subgraph NAV[Proposed hybrid primary navigation]
+        H[Homepage via logo]
+        A[Architecture]
+        G[Galerie]
+        C[Contact]
+    end
+    H --> A
+    H --> G
+    H --> C
+    A -->|Relevant proof| P[Project story when ready]
+    P -->|Mission and budget context| A
+    A -->|Discuss a project| C
+    P -->|Discuss a similar need| C
+    G -->|Visits or artwork enquiries| C
+    A -.->|Shared eye where meaningful| G
+    G -.->|Discover the practice| A
+```
+
+Use descriptive contextual returns from cases, such as **« Comprendre la mission »**,
+to the relevant Architecture section. A flat first site needs no sidebar or automatic
+breadcrumb on every page. If a project index or deeper section is later adopted,
+breadcrumbs can show its real published hierarchy; do not link a breadcrumb to an
+unbuilt `/projets/` parent or infer parent pages from URL segments. Final slugs and
+slash handling belong with the chosen page model and existing routing conventions.
+
+### Contextual links that carry the visitor's question forward
+
+- **Homepage → relevant need:** link the focused-mission welcome to the conseil
+  explanation and professional-use proof to professional content. Keep Crystelle's
+  identity and the Studio Terrasson connection understandable before those exits.
+- **Need → proof → explanation:** where a relevant case is ready, link it beside
+  the Architecture need it demonstrates. In the case, name Crystelle/Jukkai and the
+  contribution, link to the relevant mission and budget sections, and offer contact
+  directly. A case does not need a detour through the homepage or an index.
+- **Budget → conversation:** make **« Budget et honoraires »** findable from the
+  Architecture contents and a relevant case decision. Explain works and fees there;
+  offer contact for the visitor's own situation without requiring a finished budget
+  or a public tariff page. Detailed amounts remain subject to the existing proof rules.
+- **Galerie → visit or enquiry:** place visiting information and opening state beside
+  the invitation to come. An artwork enquiry should identify the work/artist where
+  verified and lead to a suitable direct channel or Galerie contact section, with
+  no architecture questionnaire. A quiet **« Vous êtes artiste ? »** route can use
+  that channel too; it needs no dedicated page.
+- **Architecture ↔ Galerie:** offer the other activity beside the shared-eye/selection
+  explanation where it adds meaning. These are optional discoveries. Buying/viewing
+  art is a complete journey of its own; this link does not establish an art-placement
+  service or require art buyers to become architecture prospects.
+- **Contact ↔ card:** a secondary **« Enregistrer les coordonnées de Crystelle »**
+  link can reach the existing card. Keep its save/call actions immediate and a clear
+  onward route to the homepage when useful content is published. Follow the
+  [contact-card contract](../operations/crystelle-contact-card.md); the printed
+  `https://jukkai.fr/c/crystelle` payload stays unchanged.
+
+### Keep the paths useful as pages change
+
+For an **integrated magazine subset**, Architecture/Galerie links target actual
+homepage sections; Contact reaches the chosen contact page or section. From any
+other page, section links must include the homepage path. Use a case excerpt in
+place when no full story is published; do not make an image promise a missing case
+page. If visiting details are unconfirmed, state the known opening position and
+offer an enquiry route without implying walk-in access.
+
+For a **later split**, change conseil/professional links to their chosen destinations
+and leave concise introductions in Architecture. Give each new page a distinct
+question and relevant proof; link to shared mission/budget content instead of copying
+it wholesale. Each published story needs an incoming editorial link and useful
+onward links, even without an index. Revisit shared section links when content moves.
+
+**Review with actual drafts:** start as a magazine/referral visitor, someone seeking
+focused conseil, a professional visitor, a person entering directly at a case, an
+art visitor and a printed-card visitor. Check whether each can recognise Jukkai,
+find the relevant explanation and act without backtracking through an unrelated
+activity. Inspect header/footer, contextual links and section targets on mobile
+and with a keyboard. This is a proposed acceptance check; no rendered pages or live
+links were tested in this document review. Failure to find conseil/professional help
+would be evidence for clearer entrances or a page split, not automatic approval of one.
+
+The [old-site preservation review](sitemap-options-memo.md#continuity-to-preserve-while-choosing-pages)
+still owns linked article/project candidates. Keep that review separate from this
+navigation model: deferring a Jukkai page does not approve redirecting its old-site
+counterpart to the homepage, or starting the migration.
 
 ## What supports this proposal
 
