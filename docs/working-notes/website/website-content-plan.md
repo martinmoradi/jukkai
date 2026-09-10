@@ -5,8 +5,8 @@ review.** The developing website, with one Architecture page as a sample. Pages,
 offers, copy, imagery and release scope remain unapproved. The review below makes
 navigation and contextual relationships explicit without selecting the final pages.
 
-The [foundation](../strategy/foundation.md) supplies business truth;
-[current delivery](../operations/current-delivery.md) separates magazine release
+The [foundation](../../strategy/foundation.md) supplies business truth;
+[current delivery](../../operations/current-delivery.md) separates magazine release
 from October opening. This connects the [visitor explanations](visitor-content-brief.md),
 [sitemap comparison](sitemap-options-memo.md) and [architecture brief](architecture-content-proof-brief.md).
 
@@ -63,13 +63,13 @@ These are **agent recommendations from the visitor brief**, not observed usabili
 failures. The content purposes above remain useful; the main omissions are how
 people find the relevant explanation and continue from it.
 
-| Gap or confusing route                                                                         | Visitor consequence and basis                                                                                                                                                                                                                                                                                                                                         | Proposed improvement                                                                                                                                                                                                                                   |
-| ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Conseil and professional coverage is named, but its entrances are unspecified.                 | Someone seeking focused help or a workplace transformation may read “Architecture” as residential renovation only ([brief §§2, 5](visitor-content-brief.md#2-does-her-work-appeal-to-me-and-can-she-help-with-my-project)).                                                                                                                                           | Give both needs explicit links from relevant homepage content and a short contents navigation within Architecture. In hybrid these reach named sections; in separated they reach the corresponding pages. Test the same needs before choosing a split. |
-| Project stories link broadly to Architecture, without specifying which explanation helps next. | A visitor attracted by a design still needs to understand the mission and works/fee distinction ([brief §§3–4](visitor-content-brief.md#3-how-do-my-budget-the-works-and-your-fees-fit-together)).                                                                                                                                                                    | Link each selected case to relevant mission/budget explanations and directly to contact. Link back to that case beside the need or claim it demonstrates. A portfolio index is optional.                                                               |
-| “Contact / visit” groups two different intentions without defining their destinations.         | An art visitor could meet a project-only enquiry path or mistake architecture appointments for public Galerie access ([brief §§6–7](visitor-content-brief.md#6-what-will-i-discover-at-the-galerie-and-can-i-buy-it)).                                                                                                                                                | Keep general Contact understandable for both activities; distinguish architecture enquiries from Galerie visits and artwork enquiries within it. Show opening state on Galerie itself, beside its visit action.                                        |
-| The smaller magazine subset has no explicit replacement for unbuilt pages.                     | A magazine reader could find promised destinations unavailable, or lose the Galerie explanation when its page is deferred ([brief §§1, 6–7](visitor-content-brief.md#1-what-is-jukkai-and-is-this-the-crystelle-i-know)).                                                                                                                                             | Route to useful published homepage sections and contact information until separate pages are ready. Preserve recognition, both activities and their different availability states in that subset.                                                      |
-| The existing contact card is absent from the relationship model.                               | A printed-card visitor and a general enquiry visitor have different immediate jobs; treating the card as the whole Contact experience would lose mission/visit guidance ([brief §7](visitor-content-brief.md#7-where-are-you-can-i-come-and-how-do-we-start), [delivery brief](../operations/current-delivery.md#two-milestones-with-a-separate-migration-decision)). | Retain the quick save/call route, connect it to the useful website, and expose it contextually from general contact information. Preserve the printed pointer.                                                                                         |
+| Gap or confusing route                                                                         | Visitor consequence and basis                                                                                                                                                                                                                                                                                                                                            | Proposed improvement                                                                                                                                                                                                                                   |
+| ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Conseil and professional coverage is named, but its entrances are unspecified.                 | Someone seeking focused help or a workplace transformation may read “Architecture” as residential renovation only ([brief §§2, 5](visitor-content-brief.md#2-does-her-work-appeal-to-me-and-can-she-help-with-my-project)).                                                                                                                                              | Give both needs explicit links from relevant homepage content and a short contents navigation within Architecture. In hybrid these reach named sections; in separated they reach the corresponding pages. Test the same needs before choosing a split. |
+| Project stories link broadly to Architecture, without specifying which explanation helps next. | A visitor attracted by a design still needs to understand the mission and works/fee distinction ([brief §§3–4](visitor-content-brief.md#3-how-do-my-budget-the-works-and-your-fees-fit-together)).                                                                                                                                                                       | Link each selected case to relevant mission/budget explanations and directly to contact. Link back to that case beside the need or claim it demonstrates. A portfolio index is optional.                                                               |
+| “Contact / visit” groups two different intentions without defining their destinations.         | An art visitor could meet a project-only enquiry path or mistake architecture appointments for public Galerie access ([brief §§6–7](visitor-content-brief.md#6-what-will-i-discover-at-the-galerie-and-can-i-buy-it)).                                                                                                                                                   | Keep general Contact understandable for both activities; distinguish architecture enquiries from Galerie visits and artwork enquiries within it. Show opening state on Galerie itself, beside its visit action.                                        |
+| The smaller magazine subset has no explicit replacement for unbuilt pages.                     | A magazine reader could find promised destinations unavailable, or lose the Galerie explanation when its page is deferred ([brief §§1, 6–7](visitor-content-brief.md#1-what-is-jukkai-and-is-this-the-crystelle-i-know)).                                                                                                                                                | Route to useful published homepage sections and contact information until separate pages are ready. Preserve recognition, both activities and their different availability states in that subset.                                                      |
+| The existing contact card is absent from the relationship model.                               | A printed-card visitor and a general enquiry visitor have different immediate jobs; treating the card as the whole Contact experience would lose mission/visit guidance ([brief §7](visitor-content-brief.md#7-where-are-you-can-i-come-and-how-do-we-start), [delivery brief](../../operations/current-delivery.md#two-milestones-with-a-separate-migration-decision)). | Retain the quick save/call route, connect it to the useful website, and expose it contextually from general contact information. Preserve the printed pointer.                                                                                         |
 
 ### Proposed navigation and destination relationships
 
@@ -163,7 +163,7 @@ slash handling belong with the chosen page model and existing routing convention
 - **Contact ↔ card:** a secondary **« Enregistrer les coordonnées de Crystelle »**
   link can reach the existing card. Keep its save/call actions immediate and a clear
   onward route to the homepage when useful content is published. Follow the
-  [contact-card contract](../operations/crystelle-contact-card.md); the printed
+  [contact-card contract](../../operations/crystelle-contact-card.md); the printed
   `https://jukkai.fr/c/crystelle` payload stays unchanged.
 
 ### Keep the paths useful as pages change
@@ -201,9 +201,9 @@ counterpart to the homepage, or starting the migration.
 established directions. Martin's account of budget concerns gives that explanation
 practical weight, without fixing visual hierarchy.
 
-**Research:** homepage concentration in the small old-site [GSC sample](seo-research-log.md#8-studio-terrasson-gsc--what-already-attracts-search-visits)
+**Research:** homepage concentration in the small old-site [GSC sample](../../research/seo-research-log.md#8-studio-terrasson-gsc--what-already-attracts-search-visits)
 supports recognition and continuity. The September 8–10 Rennes/desktop
-[service comparison](seo-research-log.md#44-service-query-overlap--which-needs-warrant-combined-or-distinct-treatment)
+[service comparison](../../research/seo-research-log.md#44-service-query-overlap--which-needs-warrant-combined-or-distinct-treatment)
 found closer overlap within architecture phrases and within décoration/aménagement/
 conseil phrases than between them. That supports considering a separate entrance;
 the words do not identify small budgets. Saved CKTFC/Anata readings demonstrate
@@ -285,14 +285,14 @@ Confirm the first-call sequence and mission-dependent travel before publishing.
 
 ## Material to develop
 
-- **Residential:** [Belle Époque's saved text](../reference/studioterrasson/particulier--belle-epoque/content.md)
+- **Residential:** [Belle Époque's saved text](../../reference/studioterrasson/particulier--belle-epoque/content.md)
   explains tiles protecting parquet around the kitchen island: a choice to verify,
   without the full brief, mission or budget. Buisine is a broader furnishing/detail
-  candidate in the [proof bank](../strategy/foundation.md#10-proof-bank).
-- **Professional:** [Orange Dynamique's saved text](../reference/studioterrasson/professionnel--orange-dynamique/content.md)
+  candidate in the [proof bank](../../strategy/foundation.md#10-proof-bank).
+- **Professional:** [Orange Dynamique's saved text](../../reference/studioterrasson/professionnel--orange-dynamique/content.md)
   describes offices around a central module; user need and scope remain to recover.
   Le Capri offers a possible returning-client story, with new facts/images needed.
-- **People and Galerie:** the [local shoot review](../../website-asset-inbox/photo-shoot-review-2026-09-09/README.md)
+- **People and Galerie:** the [local shoot review](../../../website-asset-inbox/photo-shoot-review-2026-09-09/README.md)
   contains provisional portraits/artworks, not a completed Galerie. This gitignored
   material needs Martin's image selection and verified artwork identity,
   sale-selection status and artist consent.

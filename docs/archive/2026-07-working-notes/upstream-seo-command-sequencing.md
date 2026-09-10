@@ -1,3 +1,8 @@
+> **Repository status — archived 2026-09-10:** superseded July command sequencing.
+> Use the [current capability map](../../research/claude-seo-capability-map.md)
+> and [SEO log](../../research/seo-research-log.md). Status, order and run gates
+> below describe the original session, not current instructions.
+
 # Upstream Claude SEO commands — parked sequencing note
 
 **Status:** parked working note; useful when the external SEO investigation
@@ -99,6 +104,6 @@ The key expansion multipliers to price independently are:
 - competitor domains × requested datasets.
 
 This sequencing complements the broader
-[capability map](../research/claude-seo-capability-map.md); it does not replace its
+[capability map](../../research/claude-seo-capability-map.md); it does not replace its
 provenance contract or promote upstream-generated prescriptions into Jukkai
 canon.

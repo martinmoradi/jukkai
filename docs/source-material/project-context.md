@@ -1,3 +1,9 @@
+> **Repository notice — historical import.** Original text follows unchanged in
+> substance; its decisions, dates and instructions belong to the source period.
+> They do not override the [foundation](../strategy/foundation.md),
+> [current delivery](../operations/current-delivery.md) or [ADRs](../adr/).
+> See [source context](README.md). Labelled 2026-09-10; not revalidated.
+
 # Jukkai Project Context
 
 _Archive status, issue #262: this document lives in the old prototype/tooling
@@ -121,7 +127,7 @@ the workflow.
 **Studio outlives Jukkai (decided 2026-06-11).** Whatever happens with future clients (a maybe),
 Studio is a case study and portfolio project and will eventually become its own repo. The design bar
 is therefore portfolio-grade, not internal-tool-grade. Current Studio product truth lives in
-[../../../CONTEXT.md](../../../CONTEXT.md), the Galerie pivot ADR, and the current PRD/issues. The
+`../../../CONTEXT.md` (original Studio source-repository path; not included here), the Galerie pivot ADR, and the current PRD/issues. The
 archived roadmaps are historical evidence, not active instructions.
 
 ### Mock Landing Page
@@ -165,7 +171,7 @@ VPS/nginx/Cloudflare stack are historical or stale unless this context has been 
 ## SEO And Migration
 
 The old public site is studioterrasson.fr. Its 2025 baseline is documented in
-[../research/seo-digital-performance-audit.md](../research/seo-digital-performance-audit.md):
+[../research/seo-digital-performance-audit.md](seo-digital-performance-audit.md):
 
 - 2,420 sessions/year
 - 93% of search clicks from branded queries
@@ -197,7 +203,7 @@ This project should become proof that Martin can:
 Capture evidence as the project evolves. Screenshots, decision moments, rejected directions, rough
 prototypes, before metrics, infrastructure milestones, and client reactions all matter.
 
-Case-study notes live in [../case-study](../case-study).
+Case-study notes live in `../case-study` (original source-repository path; not included here).
 
 ---
 

@@ -67,6 +67,10 @@ remove them when the convention changes.
 
 ## Marketing App
 
+- Use `docs/README.md` to choose a task-specific reading route. It owns document
+  roles and maintenance rules. Read relevant current guidance and targeted evidence;
+  do not bulk-load historical sources or treat a newer proposal as accepted truth.
+
 - Start delivery, research, design, and planning work with
   `docs/operations/current-delivery.md`. The magazine release and October opening
   are separate milestones. No teaser or full-stack work is on the current path.
@@ -100,6 +104,9 @@ remove them when the convention changes.
   `docs/strategy/questions-for-crystelle.md`. Working notes can inform active
   sessions, while files under `docs/archive/` are provenance to consult only
   when intentionally requested.
+- Website proposals and draft copy are indexed in
+  `docs/working-notes/website/README.md`. Keep their business context, research
+  observations and proposed copy distinct; organization does not approve their content.
 - For continuing SEO research, read `docs/research/seo-research-log.md` and update
   it after each reviewed run, following its update protocol. It holds provisional
   findings, source pointers and open questions; approved decisions stay in GitHub.

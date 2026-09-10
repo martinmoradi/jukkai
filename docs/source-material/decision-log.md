@@ -1,3 +1,9 @@
+> **Repository notice — historical import.** Original text follows unchanged in
+> substance; its decisions, dates and instructions belong to the source period.
+> They do not override the [foundation](../strategy/foundation.md),
+> [current delivery](../operations/current-delivery.md) or [ADRs](../adr/).
+> See [source context](README.md). Labelled 2026-09-10; not revalidated.
+
 # Jukkai — Decision Log
 
 _Decisions made, with rationale. Updated June 8, 2026 — reflects completed discovery, brand strategy, SEO audit, student workshop, naming exploration, name decision, and current repo/infrastructure context. Don't relitigate closed decisions without new evidence._

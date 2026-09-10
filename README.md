@@ -28,4 +28,6 @@ pipeline is retained under `scripts/` and documented in
 `docs/operations/fonts.md`.
 
 Shareable identity masters and their supporting source files live in `brand/`.
-Provisional session captures live in `docs/working-notes/`.
+Use the [documentation map](docs/README.md) for task-specific reading routes.
+Provisional website plans and copy live in
+[website working notes](docs/working-notes/website/README.md).
