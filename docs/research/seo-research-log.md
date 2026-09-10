@@ -63,6 +63,10 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   broader footprint: the homepage answers related local service phrases, while a
   documented mezzanine project appears for an unmodified room problem. An explanation
   of planches d'ambiance connects a design tool to actual project decisions and help.
+  Run 37 expands residential vocabulary to older houses, interior renovation,
+  project starting points, provider choice, budgets and before/after examples.
+  Subsidy and energy terms coexist in this broad seed; their volume and advertising
+  metrics do not establish fit with Jukkai's work or an organic ranking opportunity.
   Search visibility, persuasion and enquiry
   conversion remain different measures; neither city size nor snippet quality
   measures easy competition.
@@ -99,17 +103,17 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   colourful, approachable street/pop/urban art, for buying as well as viewing.
   Actual offer scope, proof and the foundation's separate architecture/art pricing
   rules govern copy; tentative gift-price examples do not approve public art prices.
-- **What the latest run adds:** Art Génération supplies a commercial-art specimen
-  whose visible cards make artist, work, size and price explicit. Its broader text
-  addresses authenticity, formats and living with art. For Jukkai, translate this
-  into selected artwork presentation, Crystelle's selection, understandable work
-  details and truthful discovery/buying/visit arrangements. The captured ecommerce
-  result mix does not require a catalogue, published pre-opening prices or a generic
-  art guide. Certificates and edition claims need actual support before becoming
-  promises. The report's inferred budgets/personas and October deadline are not
-  measured Jukkai demand or approved priorities. This is enough to draft a provisional
-  Galerie content outline alongside the architecture options supported by run 35;
-  actual selection, permissions and public visit facts remain the needed inputs.
+- **What the latest run adds:** the broader renovation seed helps address substantial
+  residential projects beyond the previously explored kitchens, small rooms and
+  conseil missions. Older-house transformation, where to start, provider choice,
+  work budgets and visual examples are useful questions for mission copy and real
+  project stories. `rénovation maison ancienne` is a candidate for a Rennes SERP
+  reading to distinguish design projects, contractors, guidance and subsidy answers;
+  its modelled KD does not establish a low-competition opening. The repeated national
+  keyword variants cannot be summed into distinct demand, and local missing values
+  remain unknown. Buying/family-change triggers and actual client selection criteria
+  are still broader research questions. The provisional Galerie outline from run 36
+  remains supported; actual works, permissions and visit facts supply its content.
   Preservation targets and profile checks remain relevant to
   [the Studio Terrasson/Google transition](https://github.com/martinmoradi/jukkai/issues/120).
   Scores and report checklists do not turn into launch work.
@@ -134,7 +138,7 @@ and gitignored in that workspace. This log is not their backup. Read that worksp
   to publish a project, stock, opening arrangements or the shared-brand expression.
   No sitemap, content brief or research sequence is approved by this synthesis.
 
-### Candidate content purposes after run 36
+### Candidate content purposes after run 37
 
 **Agent proposal for discussion, not five approved URLs or release commitments.**
 The foundation supplies business intent; research informs discovery and limits.
@@ -1626,6 +1630,49 @@ cuisine ?`, alongside budget and provider-trust questions. Five of eight unique
   and no pre-opening art prices. This run answers the selected specimen question;
   additional research can follow a specific remaining choice rather than the
   specimen's technical handoffs. No page structure, exact copy or promise approved.
+
+### 37. Residential renovation vocabulary — which larger-project needs deserve closer research?
+
+`/seo dataforseo keywords rénovation maison`
+
+- **Evidence:** `keywords-renovation-maison-2026-09-10/findings/seo-dataforseo.md`,
+  `findings/reviewer-notes.md`, France/Rennes CSVs, five saved endpoint JSON files
+  and three requested keyword lists. France/fr Labs returns 50 suggestions from a
+  reported 2,396 and 50 related rows from 60: 100 rows / 95 distinct strings.
+  Rennes Google Ads returns all 30 requested strings in three batches of ten;
+  the report records location-name verification and responses identify 1005876.
+  Keyword-info dates span August 14–28; monthly histories cover Aug 2025–Jul 2026,
+  with some local months absent. These are saved estimates, not September traffic.
+- **Learning:** national averages include `rénovation maison` 27,100,
+  `rénovation maison ancienne` 1,000, `rénovation intérieure maison` 880,
+  `architecte rénovation maison` 480 and `rénover une maison par où commencer` 140.
+  Before/after examples add house-age and transformation language. Budget questions
+  distinguish area, scope and individual trades. Subsidies, energy work, named
+  companies and television also appear; the sample is not a qualified-client market.
+- **Local evidence:** 26 numeric estimates and four unavailable. **18**, not the
+  report's 22, are 10; eight exceed it: `ma prime renov` 480, the renovation head 110,
+  energy renovation Rennes 40, three interior/house/apartment phrases 30 and two
+  provider phrases 20. Ten is not a verified floor. Missing service-query volumes
+  remain unknown; the existence of targeting pages would not establish their demand.
+- **Material limits:** nine m²-price variants share 880 and CPC 3.32, across two
+  provider synonym roots. Avoid additive totals without claiming a proven unique
+  880-search audience or a single required page. The old-house head has KD 11
+  (reversed wording 9), but `architecte rénovation maison ancienne` has no KD,
+  correcting the report's 7. Low KD does not establish attainability. Provider
+  documentation defines CPC in USD, not the report's euros, and LOW/HIGH competition
+  as paid-search measures. Neither high CPC nor low before/after CPC establishes
+  Jukkai commercial value. Definitions and detailed corrections are in reviewer notes.
+- **Jukkai implication — proposal:** explain how a substantial renovation starts,
+  what design changes, how mission depth affects responsibility and budget, and show
+  actual transformation evidence. Older-house language is worth exploring without
+  assuming a historic-property speciality or introducing subsidy/energy services.
+  Actual briefs, mission scope and project permissions remain necessary. This adds
+  content questions; it approves no renovation page, claims or keyword priority.
+- **Next question:** `/seo dataforseo serp rénovation maison ancienne` can show the
+  current Rennes answer mix and possible design-led specimens. Use it to assess fit
+  with Jukkai's work rather than certify a KD opportunity. Broader client-choice,
+  B2B, physical-Galerie, regional and visual research remains open. Reported estimate
+  USD 0.25 / five billable calls; actual charges unavailable. No reviewer paid calls.
 
 ## Evidence rules and tool roles
 
