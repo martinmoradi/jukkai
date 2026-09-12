@@ -40,7 +40,7 @@ decision record. A proposal, research result or imported source cannot override
 that authority merely because its wording sounds more definite. Surface unresolved
 conflicts instead of silently choosing a new business or design direction.
 
-Technical guides currently cover [CI](operations/ci.md),
+Technical guides currently cover the [magazine website](operations/magazine-website.md), [CI](operations/ci.md),
 [fonts](operations/fonts.md) and [Crystelle's contact card](operations/crystelle-contact-card.md).
 The foundation's generated `.agents/product-marketing.md` adapter is a derived
 view, not a second place to edit business truth.
