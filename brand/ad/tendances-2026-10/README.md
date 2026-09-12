@@ -1,9 +1,9 @@
 # Tendances — October 2026 half-page advertisement
 
-**Status:** active coordination brief; creative direction remains provisional.
+**Status:** two editable review studies delivered; creative direction remains provisional.
 **Owns:** this print commission's inputs, working notes, handoffs and current state.
 **Last reviewed:** 2026-09-12, from Martin's instructions, local assets, the supplied
-technical sheet and Affinity SDK/profile inspection.
+technical sheet, saved native studies and exported PDF inspection.
 **Revisit when:** Martin settles a choice, a worker hands back a revision, or the
 publisher supplies production details. Update this brief; do not add a parallel plan.
 
@@ -31,8 +31,8 @@ record for this later Tendances insertion.
   day to advertise. A larger inauguration campaign is a later possibility.
   Do not infer walk-in hours or publish “open now” from this working timeline.
 - **Business context:** Jukkai by Crystelle Terrasson brings together interior
-  architecture and Galerie. Architecture is the commercial center; the job of
-  this particular advertisement still needs an explicit choice.
+  architecture and Galerie. Architecture is the commercial center; Martin has
+  asked this advertisement to meaningfully introduce Galerie alongside it.
 - **Martin's selected lead photograph:** Crystelle seated among artworks, linked
   below. Use it in the ad. The Galerie was unfinished during the shoot.
 - **Martin's correction, September 12:** the ad must meaningfully represent Galerie,
@@ -60,19 +60,25 @@ spacing should support that character.
 Two directed studies for Martin's review, not approved advertisements:
 
 1. **A — “L’art, en bonne compagnie.”** Large Crystelle photograph beside a calm
-   ivory text column. Body: “Des œuvres à découvrir, des espaces à imaginer. Une
-   galerie vivante, portée par le regard d’une architecte d’intérieur.” Preserve her
+   ivory text column. Body: “Des œuvres à découvrir, des espaces à imaginer.” Preserve her
    expression, hands and held sculpture. No added artwork photograph in this study.
 2. **B — “Une galerie à vivre.”** Crystelle remains dominant, with the contrasting
-   bears scene as a smaller second photograph. Body: “Art et architecture
-   d’intérieur se rencontrent à Châteaugiron, dans l’univers libre et coloré de
-   Crystelle Terrasson.” Test whether the extra view earns its space at half-page
+   bears scene as a smaller second photograph. Body: “Des peintures, des sculptures,
+   des coups de cœur. Un même regard pour l’art et les lieux.” Test whether the extra
+   view earns its space at half-page
    size. Avoid a catalogue grid or a collection of small thumbnails.
 
 Shared identity: real Jukkai wordmark, subordinate “by Crystelle Terrasson”,
 “Galerie & architecture d’intérieur”, Châteaugiron, and jukkai.fr. Hatton and Frama
 are the directed working typefaces. All proposed wording remains review copy.
 The previous interiors-only headline is rejected and must not return in variants.
+
+**Director's recommendation, still for Martin's review:** B answers the Galerie
+brief more fully because the uncropped portrait shows more of the collection.
+A gives Crystelle and the identity greater immediate emphasis. The independent
+reviewer found no visual blocker in either; B's body was shortened after that
+review to remove repeated location, name and service information. Keep these as
+two alternatives until Martin responds, rather than combining all their elements.
 
 ## Sources and references
 
@@ -180,14 +186,69 @@ blank is supplied for this work; there is no need to recreate it.
 
 - Coordination workspace and reference snapshots prepared on 2026-09-12.
 - **Blank layout master:** native properties and source hash verified by the editor.
-- **Editing worker:** `tendances_affinity_editor`, sole live-app owner. Study A
-  assigned; Study B waits for the first review. Parent has not used Affinity MCP.
-- **Review worker:** `galerie_creative_review`, saved-file creative critique only.
+- **Current studies:** A-v3 and B-v2; preview/PDF links and native paths below.
+- **Editing worker:** `tendances_affinity_editor`, sole live-app owner during
+  production. The coordinator directed and reviewed saved files, delegating all
+  Affinity MCP and lifecycle actions.
+- **Review workers:** `galerie_creative_review` for saved-file creative critique;
+  `affinity_setup_audit` for independent PDF inspection and page-box correction.
+- **App handoff:** A-v3 and B-v2 were reopened individually and verified clean.
+  Affinity then exited gracefully; no pending editor calls or unsaved documents.
 - **Selected layout / approved copy / final print export:** none.
-- **Next:** review A's saved native/PDF/preview, refine as needed, then produce B.
-- **Fonts:** local Hatton/Frama OTFs exist under `brand/fonts/`; the editor found
-  they were absent from the active Affinity font list and is preparing their
-  installation in that runtime before composing.
+- **Next:** Martin reviews the two studies; the coordinator then gives one editor
+  a bounded revision brief. Before publisher delivery, settle copy/contact details,
+  obtain the output specification and review a paper proof at 100% size.
+- **Fonts:** the editor copied the 30 supplied Hatton/Frama cuts unchanged into
+  `~/.local/share/fonts/jukkai-working/`, registered them and verified their presence
+  in Affinity after restart. The original font packages remain untouched.
 - **Publisher input needed:** exact file deadline/edition, confirmation that the
   2024 sheet applies, preferred CMYK profile and any PDF preset/output requirements.
   No publisher contact or file submission has been authorized or performed here.
+
+## Saved studies and production handoff
+
+These are review artifacts, not approved advertisements. The PNG previews are
+tagged sRGB; use the PDFs for actual-size layout review. Neither is a calibrated
+colour proof.
+
+| Study                             | Screen preview                                                   | Exact-size review PDF                                                 |
+| --------------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------------------- |
+| A-v3 — L’art, en bonne compagnie. | [PNG](reviews/2026-09-12/jukkai-tendances-a-v3-preview-1600.png) | [PDF](reviews/2026-09-12/jukkai-tendances-a-v3-exact-size-review.pdf) |
+| B-v2 — Une galerie à vivre.       | [PNG](reviews/2026-09-12/jukkai-tendances-b-v2-preview-1600.png) | [PDF](reviews/2026-09-12/jukkai-tendances-b-v2-exact-size-review.pdf) |
+
+Editable native files remain outside Git because they contain the full-resolution
+embedded photographs (approximately 207 MB for A and 443 MB for B):
+
+- `/home/martin/Desktop/jukkai-affinity-workingdir/tendances-magazine/studies/a-en-bonne-compagnie/jukkai-tendances-a-v3.affinity`
+- `/home/martin/Desktop/jukkai-affinity-workingdir/tendances-magazine/studies/b-galerie-a-vivre/jukkai-tendances-b-v2.affinity`
+
+Both use ten named layers, editable Hatton/Frama text, original vector wordmark
+geometry and native backgrounds. A crops by covering part of the photograph with
+the ivory panel; B places both complete photographs proportionally. The original
+SVG uses nonzero filling; the editor explicitly matched that native winding rule
+to prevent a notch where the k shapes overlap. No photographic retouching was
+performed during layout production.
+
+The [delivery manifest](reviews/2026-09-12/manifest.json) records exact native and
+source paths, hashes, copied artifacts and verification. Execution scripts and
+the editor's operational notes remain in the Desktop `tendances-magazine/` tree;
+start with `studies/EDITING-HANDOFF.md` only when resuming direct editing.
+
+### PDF export finding
+
+The native pages are exactly 180 × 126 mm. This Affinity build rounds its exported
+PDF page boxes to 180.0013 × 126.0687 mm. The separate `exact-size-review.pdf`
+derivatives correct only MediaBox and TrimBox; the effective Crop/Bleed/Art boxes
+inherit the same exact 180 × 126 mm boundary. No artwork scaling, translation,
+colour conversion or image recompression occurs in that correction. All original
+PDF bytes, font/image/content streams and ICC output intent are preserved. The
+original Affinity PDF exports remain beside the native files.
+
+The actual current exports contain CMYK 8-bit photographs at 300 ppi and four
+embedded/subset Hatton/Frama fonts. Affinity's PDF/X-1a:2003 preset performs that
+conversion; its generic print preset retained RGB images and is not the handoff
+export. The delivery manifest records the page-box correction and saved-file
+inspections; `reviews/2026-09-12/prepress/` retains the exact script used. Full
+comparison renders and object/stream audit reports remain in each Desktop study's
+`prepress/` folder. This inspection does not independently certify PDF/X conformance
+or approve FOGRA39 for Tendances.

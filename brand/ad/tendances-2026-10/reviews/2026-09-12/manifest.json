@@ -1,0 +1,220 @@
+{
+  "date": "2026-09-12",
+  "status": "Two review studies; neither layout, copy nor publisher delivery approved.",
+  "director_recommendation": "B for the Galerie brief; A for a stronger personal introduction. Recommendation only.",
+  "page": {
+    "width_mm": 180,
+    "height_mm": 126,
+    "bleed_mm": 0,
+    "dpi": 300,
+    "native_colour": "CMYK/8",
+    "working_output_profile": "Coated FOGRA39 (ISO 12647-2:2004)",
+    "profile_authority": "Provisional; publisher has not specified an ICC profile."
+  },
+  "preserved_sources": [
+    {
+      "path": "/home/martin/Desktop/jukkai-affinity-workingdir/tendances-magazine/jukkai-tendances-master.affinity",
+      "bytes": 501868,
+      "sha256": "f30422e55cb2f3e1793aac95454f6c91f121fcd1bb9648eac4d513ca426a9d92"
+    },
+    {
+      "path": "/home/martin/Desktop/jukkai-affinity-workingdir/crystelle-galerie-tendence/crystelle-galerie-print-rgb16.tif",
+      "bytes": 198571086,
+      "sha256": "32e81579cc2a7694c8429cd777c88ae122e556dda033387ed33f792d2925e579"
+    },
+    {
+      "path": "/home/martin/Desktop/jukkai-affinity-workingdir/scenes/contrasting-bears/revisions/art-direction-2026-09-12/contrasting-bears-editorial-v2-print-full.tif",
+      "bytes": 233114546,
+      "sha256": "5a4eb96abb9d28a6ee30dce606a8f8d0e4f2a7122849361aeb169745446e3240"
+    }
+  ],
+  "studies": [
+    {
+      "study": "A",
+      "revision": "jukkai-tendances-a-v3",
+      "native": {
+        "path": "/home/martin/Desktop/jukkai-affinity-workingdir/tendances-magazine/studies/a-en-bonne-compagnie/jukkai-tendances-a-v3.affinity",
+        "bytes": 206829788,
+        "sha256": "ebe2f84e6e7f9ad110edf5e7e694b174616e9d60ceef295867e52f1f114b34b8"
+      },
+      "original_affinity_pdf": {
+        "path": "/home/martin/Desktop/jukkai-affinity-workingdir/tendances-magazine/studies/a-en-bonne-compagnie/jukkai-tendances-a-v3-review.pdf",
+        "bytes": 4497519,
+        "sha256": "d9e65998da01123f7411096053074934169d0a69229226d5dae6186ea34cea34"
+      },
+      "preview": {
+        "file": "jukkai-tendances-a-v3-preview-1600.png",
+        "source_path": "/home/martin/Desktop/jukkai-affinity-workingdir/tendances-magazine/studies/a-en-bonne-compagnie/jukkai-tendances-a-v3-preview-1600.png",
+        "bytes": 1596341,
+        "sha256": "c35a37e29f718aca54466565c7287d25af7412133eb544a3d6446f6f167cba76"
+      },
+      "review_pdf": {
+        "file": "jukkai-tendances-a-v3-exact-size-review.pdf",
+        "source_path": "/home/martin/Desktop/jukkai-affinity-workingdir/tendances-magazine/studies/a-en-bonne-compagnie/jukkai-tendances-a-v3-exact-size-review.pdf",
+        "bytes": 4498041,
+        "sha256": "5c5874c47b93208456b48d7aa93c0ffcb57789cb49332ff1f4563b89b57bb0fa"
+      },
+      "prepress_evidence": {
+        "path": "/home/martin/Desktop/jukkai-affinity-workingdir/tendances-magazine/studies/a-en-bonne-compagnie/prepress/jukkai-tendances-a-v3-review-box-normalization-evidence.json",
+        "bytes": 20533,
+        "sha256": "325da99e98dec7c05ec7287b07d632d116decea17cc7dc27af33958d2bc375c2"
+      },
+      "verification": {
+        "native": "Editor reopened and verified one exact 180 x 126 mm page, 300 dpi, CMYK/8, 10 named layers, live text, embedded full-resolution photos and NonZero vector wordmark.",
+        "visual": "Coordinator inspected the saved sRGB preview and the exact-size PDF render; independent reviewers inspected creative layout and export preservation.",
+        "pdf": {
+          "pages": 1,
+          "images": 1,
+          "image_format": "CMYK, 4 components, 8-bit, 300 x 300 ppi",
+          "embedded_subset_fonts": [
+            "PPFrama-Medium",
+            "PPFrama-Regular",
+            "PPFramaText-Regular",
+            "PPHatton-Light"
+          ],
+          "effective_boxes": {
+            "MediaBox": {
+              "points": [0.0, 0.0, 510.236220472441, 357.165354330709],
+              "width_mm": 180.0,
+              "height_mm": 126.00000000000013,
+              "explicit": true
+            },
+            "CropBox": {
+              "points": [0.0, 0.0, 510.236220472441, 357.165354330709],
+              "width_mm": 180.0,
+              "height_mm": 126.00000000000013,
+              "explicit": false
+            },
+            "BleedBox": {
+              "points": [0.0, 0.0, 510.236220472441, 357.165354330709],
+              "width_mm": 180.0,
+              "height_mm": 126.00000000000013,
+              "explicit": false
+            },
+            "TrimBox": {
+              "points": [0.0, 0.0, 510.236220472441, 357.165354330709],
+              "width_mm": 180.0,
+              "height_mm": 126.00000000000013,
+              "explicit": true
+            },
+            "ArtBox": {
+              "points": [0.0, 0.0, 510.236220472441, 357.165354330709],
+              "width_mm": 180.0,
+              "height_mm": 126.00000000000013,
+              "explicit": false
+            }
+          },
+          "original_byte_prefix_preserved": true,
+          "changed_objects": ["6 0"],
+          "modified_page_keys": ["/MediaBox", "/TrimBox"],
+          "objects_checked": 46,
+          "streams_checked": 12,
+          "all_other_objects_unchanged": true,
+          "icc_profile_sha256": "ba20e2c05d24894d0d2bc0b15ffdd3d91a6705ba3fe3aa6d15cc0e98792c6fc4"
+        }
+      }
+    },
+    {
+      "study": "B",
+      "revision": "jukkai-tendances-b-v2",
+      "native": {
+        "path": "/home/martin/Desktop/jukkai-affinity-workingdir/tendances-magazine/studies/b-galerie-a-vivre/jukkai-tendances-b-v2.affinity",
+        "bytes": 441891759,
+        "sha256": "dd5214cb8ecb3befa352aeec9e5ba0a476e52ba6db9ae4f4345c67d5d74b39d6"
+      },
+      "original_affinity_pdf": {
+        "path": "/home/martin/Desktop/jukkai-affinity-workingdir/tendances-magazine/studies/b-galerie-a-vivre/jukkai-tendances-b-v2-review.pdf",
+        "bytes": 2905178,
+        "sha256": "cce6880d3573485bcbf7a24f0a08a4563200404f81ccda10b3137c0113e6cc54"
+      },
+      "preview": {
+        "file": "jukkai-tendances-b-v2-preview-1600.png",
+        "source_path": "/home/martin/Desktop/jukkai-affinity-workingdir/tendances-magazine/studies/b-galerie-a-vivre/jukkai-tendances-b-v2-preview-1600.png",
+        "bytes": 1412510,
+        "sha256": "4bdfc0fc72c0a71a0063685d4d9176e1e919addb93ce9d6c803f953d0feadc46"
+      },
+      "review_pdf": {
+        "file": "jukkai-tendances-b-v2-exact-size-review.pdf",
+        "source_path": "/home/martin/Desktop/jukkai-affinity-workingdir/tendances-magazine/studies/b-galerie-a-vivre/jukkai-tendances-b-v2-exact-size-review.pdf",
+        "bytes": 2905694,
+        "sha256": "3a06687a0081bd839839772f41a23fbd6c223d17e986262fcead326a62dfb143"
+      },
+      "prepress_evidence": {
+        "path": "/home/martin/Desktop/jukkai-affinity-workingdir/tendances-magazine/studies/b-galerie-a-vivre/prepress/jukkai-tendances-b-v2-review-box-normalization-evidence.json",
+        "bytes": 21441,
+        "sha256": "037862cc019325132235540b9ae56760d9d687c616164dd37c18fbeb83db0213"
+      },
+      "verification": {
+        "native": "Editor reopened and verified one exact 180 x 126 mm page, 300 dpi, CMYK/8, 10 named layers, live text, embedded full-resolution photos and NonZero vector wordmark.",
+        "visual": "Coordinator inspected the saved sRGB preview and the exact-size PDF render; independent reviewers inspected creative layout and export preservation.",
+        "pdf": {
+          "pages": 1,
+          "images": 2,
+          "image_format": "CMYK, 4 components, 8-bit, 300 x 300 ppi",
+          "embedded_subset_fonts": [
+            "PPFrama-Medium",
+            "PPFrama-Regular",
+            "PPFramaText-Regular",
+            "PPHatton-Light"
+          ],
+          "effective_boxes": {
+            "MediaBox": {
+              "points": [0.0, 0.0, 510.236220472441, 357.165354330709],
+              "width_mm": 180.0,
+              "height_mm": 126.00000000000013,
+              "explicit": true
+            },
+            "CropBox": {
+              "points": [0.0, 0.0, 510.236220472441, 357.165354330709],
+              "width_mm": 180.0,
+              "height_mm": 126.00000000000013,
+              "explicit": false
+            },
+            "BleedBox": {
+              "points": [0.0, 0.0, 510.236220472441, 357.165354330709],
+              "width_mm": 180.0,
+              "height_mm": 126.00000000000013,
+              "explicit": false
+            },
+            "TrimBox": {
+              "points": [0.0, 0.0, 510.236220472441, 357.165354330709],
+              "width_mm": 180.0,
+              "height_mm": 126.00000000000013,
+              "explicit": true
+            },
+            "ArtBox": {
+              "points": [0.0, 0.0, 510.236220472441, 357.165354330709],
+              "width_mm": 180.0,
+              "height_mm": 126.00000000000013,
+              "explicit": false
+            }
+          },
+          "original_byte_prefix_preserved": true,
+          "changed_objects": ["6 0"],
+          "modified_page_keys": ["/MediaBox", "/TrimBox"],
+          "objects_checked": 48,
+          "streams_checked": 13,
+          "all_other_objects_unchanged": true,
+          "icc_profile_sha256": "ba20e2c05d24894d0d2bc0b15ffdd3d91a6705ba3fe3aa6d15cc0e98792c6fc4"
+        }
+      }
+    }
+  ],
+  "normalization_script": {
+    "file": "prepress/normalize_review_boxes.py",
+    "source_path": "/home/martin/Desktop/jukkai-affinity-workingdir/tendances-magazine/studies/a-en-bonne-compagnie/prepress/normalize_review_boxes.py",
+    "bytes": 10437,
+    "sha256": "2dcef02428b03ff43050618cae5f4b400e71952966a92c434845c9cfac935dd6"
+  },
+  "normalization_runtime": "Python 3 with pypdf 6.10.0, Pillow, and Poppler pdfinfo/pdffonts/pdfimages/pdftoppm; script is narrow to these Affinity review exports.",
+  "remaining_before_print": [
+    "Martin selects direction and approves copy/contact details.",
+    "Publisher confirms current sheet, booked edition, deadline and preferred output specification.",
+    "Review a physical paper proof at 100% size; no calibrated colour proof or independent PDF/X certification performed."
+  ],
+  "native_reopen_evidence": {
+    "path": "/home/martin/Desktop/jukkai-affinity-workingdir/tendances-magazine/studies/native-reopen-verification-2026-09-12.json",
+    "sha256": "2c5648a739c12de91e4a40caa36b547d2d58435797f51830f94f9e617501b955"
+  },
+  "app_handoff": "Editor verified final A-v3 and B-v2 clean after individual reopen, then fully exited Affinity gracefully; no pending MCP calls or unsaved documents."
+}

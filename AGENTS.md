@@ -132,6 +132,8 @@ remove them when the convention changes.
 - Martin uses the coordinating conversation for thinking and review, with bounded
   editing subagents. Only one worker may control the shared Affinity instance at
   a time; reviewers use saved files/previews. A working proposal is not approved copy.
+- The coordinating agent delegates Affinity MCP and app lifecycle actions to the
+  editing worker; it directs the work and reviews saved artifacts.
 
 ## Domain Docs
 
