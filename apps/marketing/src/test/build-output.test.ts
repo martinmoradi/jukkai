@@ -5,6 +5,7 @@ import { mkdir, mkdtemp, readFile, rm, stat } from 'node:fs/promises';
 import { join } from 'node:path';
 import { promisify } from 'node:util';
 
+import { JSDOM } from 'jsdom';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 import {
@@ -49,6 +50,84 @@ afterAll(async () => {
 });
 
 describe('published site', () => {
+  it('publishes only the two magazine pages in the public sitemap', async () => {
+    const xml = await published('sitemap-0.xml');
+    const sitemap = new JSDOM(xml, { contentType: 'text/xml' });
+    const urls = [...sitemap.window.document.querySelectorAll('loc')].map(
+      (node) => node.textContent,
+    );
+    expect(urls.sort()).toEqual([
+      'https://jukkai.fr/',
+      'https://jukkai.fr/contact/',
+    ]);
+    sitemap.window.close();
+  });
+
+  it.each([
+    ['index.html', 'https://jukkai.fr/'],
+    ['contact/index.html', 'https://jukkai.fr/contact/'],
+  ])(
+    'makes %s discoverable and usable without client rendering',
+    async (file, canonical) => {
+      const html = await published(file);
+      const page = new JSDOM(html);
+      const document = page.window.document;
+
+      expect(document.documentElement.lang).toBe('fr');
+      expect(document.querySelectorAll('h1')).toHaveLength(1);
+      expect(document.querySelector('h1')?.textContent?.trim()).toBeTruthy();
+      expect(
+        document.querySelector('link[rel="canonical"]')?.getAttribute('href'),
+      ).toBe(canonical);
+      expect(
+        document
+          .querySelector('meta[name="robots"]')
+          ?.getAttribute('content') ?? '',
+      ).not.toContain('noindex');
+      expect(document.title).toContain('Jukkai by Crystelle Terrasson');
+      expect(
+        document
+          .querySelector('meta[property="og:image"]')
+          ?.getAttribute('content'),
+      ).toMatch(/^https:\/\/jukkai\.fr\/_astro\//);
+      expect(
+        document.querySelector('link[href="/fonts/generated/fonts.css"]'),
+      ).not.toBeNull();
+      expect(
+        document.querySelector('a[href="tel:+33662728799"]'),
+      ).not.toBeNull();
+      expect(
+        document.querySelector('a[href="mailto:ct@jukkai.fr"]'),
+      ).not.toBeNull();
+      expect(document.querySelector('main')?.textContent).toContain('octobre');
+      expect(document.querySelector('main')?.textContent).toContain('2026');
+
+      for (const image of document.querySelectorAll('img')) {
+        expect(image.hasAttribute('alt')).toBe(true);
+      }
+      expect(html).not.toContain('fonts.martinmoradi.com');
+      page.window.close();
+    },
+  );
+
+  it('resolves every homepage section link and public contact destination', async () => {
+    const page = new JSDOM(await published('index.html'));
+    const document = page.window.document;
+    for (const anchor of document.querySelectorAll<HTMLAnchorElement>(
+      'a[href^="#"], a[href^="/#"]',
+    )) {
+      const href = anchor.getAttribute('href')!;
+      const id = href.slice(href.indexOf('#') + 1);
+      expect(
+        document.getElementById(id),
+        `Missing section ${id}`,
+      ).not.toBeNull();
+    }
+    expect(document.querySelector('a[href="/contact/"]')).not.toBeNull();
+    expect(await exists('contact/index.html')).toBe(true);
+    page.window.close();
+  });
+
   it('publishes the redirect and header rules Cloudflare Pages reads', async () => {
     expect(await published('_redirects')).toMatch(
       /^\/c\/crystelle\s+\/contact\/crystelle\/\s+302\s*$/m,

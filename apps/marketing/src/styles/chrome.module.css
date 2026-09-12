@@ -1,0 +1,233 @@
+.header {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  margin: 0 var(--gutter);
+  border-bottom: 1px solid var(--line);
+}
+.brand {
+  display: block;
+  width: 92px;
+}
+.brand img {
+  width: 100%;
+  height: auto;
+}
+.navigation {
+  display: flex;
+  gap: clamp(24px, 3vw, 54px);
+  align-items: center;
+  font-size: 13px;
+}
+.navigation a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.sectionLink::after {
+  position: absolute;
+  right: 0;
+  bottom: 8px;
+  left: 0;
+  height: 1px;
+  content: '';
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 350ms var(--ease);
+}
+.sectionLink:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.contactLink {
+  gap: 24px;
+}
+.contactLink svg {
+  width: 19px;
+  transition: transform 300ms var(--ease);
+}
+.contactLink:hover svg {
+  transform: translate(3px, -3px);
+}
+.contactLink[aria-current] {
+  border-bottom: 1px solid;
+}
+.footer {
+  padding: 0 var(--gutter);
+  background: var(--acid);
+}
+.invitation {
+  position: relative;
+  padding: 110px 0 85px;
+}
+.invitationLink {
+  position: relative;
+  display: block;
+  margin-top: 45px;
+  font-family: var(--serif);
+  font-size: clamp(54px, 7.5vw, 130px);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+.invitationLink > span:first-of-type {
+  margin-left: 12%;
+}
+.invitationArrow {
+  position: absolute;
+  top: 14%;
+  right: 3%;
+  display: grid;
+  place-items: center;
+  width: 110px;
+  height: 110px;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  transition:
+    color 300ms,
+    background 300ms,
+    transform 400ms var(--ease);
+}
+.invitationArrow svg {
+  width: 45px;
+}
+.invitationLink:hover .invitationArrow {
+  color: var(--acid);
+  background: var(--ink);
+  transform: rotate(45deg);
+}
+.invitationNote {
+  margin: 30px 0 0 12%;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.footerInfo {
+  display: grid;
+  grid-template-columns: 1.2fr 1.5fr 1fr auto;
+  gap: 30px;
+  align-items: start;
+  padding: 65px 0;
+  font-size: 13px;
+  line-height: 1.75;
+  border-top: 1px solid #a6af77;
+}
+.footerMark {
+  width: 180px;
+}
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.footerLinks a {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  min-height: 28px;
+}
+.footerLinks a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.footerLinks svg {
+  width: 13px;
+}
+.footerSphere {
+  width: 64px;
+  height: 64px;
+  mix-blend-mode: multiply;
+}
+.colophon {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 0;
+  font-size: 10px;
+  letter-spacing: 0.025em;
+  border-top: 1px solid #a6af77;
+}
+.colophon a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+}
+@media (min-width: 1800px) {
+  .header,
+  .footer {
+    padding-right: max(var(--gutter), calc((100vw - 1700px) / 2));
+    padding-left: max(var(--gutter), calc((100vw - 1700px) / 2));
+  }
+  .header {
+    margin: 0;
+  }
+}
+@media (max-width: 760px) {
+  .header {
+    height: 82px;
+  }
+  .brand {
+    width: 80px;
+  }
+  .navigation {
+    gap: 20px;
+    font-size: 12px;
+  }
+  .sectionLink {
+    display: none !important;
+  }
+  .contactLink {
+    gap: 16px;
+  }
+  .invitation {
+    padding: 75px 0 55px;
+  }
+  .invitationLink {
+    margin-top: 30px;
+    font-size: clamp(43px, 8.5vw, 64px);
+  }
+  .invitationLink > span:first-of-type {
+    margin-left: 0;
+  }
+  .invitationArrow {
+    position: static;
+    width: 60px;
+    height: 60px;
+    margin-top: 25px;
+  }
+  .invitationArrow svg {
+    width: 27px;
+  }
+  .invitationNote {
+    max-width: 250px;
+    margin: 25px 0 0;
+    font-size: 13px;
+  }
+  .footerInfo {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 20px;
+    padding: 40px 0;
+    font-size: 12px;
+  }
+  .footerMark {
+    width: 126px;
+  }
+  .footerSphere {
+    justify-self: end;
+    width: 48px;
+    height: 48px;
+  }
+  .colophon {
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    font-size: 9px;
+  }
+  .colophon span:nth-child(2) {
+    display: none;
+  }
+}
