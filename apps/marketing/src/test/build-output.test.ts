@@ -50,6 +50,18 @@ afterAll(async () => {
 });
 
 describe('published site', () => {
+  it('offers the full artwork images even when scripts are unavailable', async () => {
+    const page = new JSDOM(await published('index.html'));
+    const links = page.window.document.querySelectorAll('a[data-artwork]');
+    expect(links.length).toBeGreaterThan(0);
+    for (const link of links) {
+      const href = link.getAttribute('href')!;
+      expect(href).toMatch(/^\/_astro\/.+\.webp$/);
+      expect(await exists(href.slice(1))).toBe(true);
+    }
+    page.window.close();
+  });
+
   it('publishes only the two magazine pages in the public sitemap', async () => {
     const xml = await published('sitemap-0.xml');
     const sitemap = new JSDOM(xml, { contentType: 'text/xml' });

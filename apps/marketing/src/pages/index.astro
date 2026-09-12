@@ -201,9 +201,9 @@ import styles from '#/styles/landing.module.css';
       {
         GALERIE_IMAGES.map((art, index) => (
           <figure class={styles.artwork} data-reveal>
-            <button
+            <a
               class={styles.artworkButton}
-              type='button'
+              href={art.image.src}
               data-artwork={index}
               data-art-src={art.image.src}
               data-art-caption={art.caption}
@@ -220,7 +220,7 @@ import styles from '#/styles/landing.module.css';
               <span class={styles.viewArtwork} aria-hidden='true'>
                 Voir de plus près <span>+</span>
               </span>
-            </button>
+            </a>
             <figcaption>
               <>
                 <span>{art.caption}</span>
