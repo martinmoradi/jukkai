@@ -7,6 +7,9 @@ runtime asset directory.
 
 ## Structure
 
+- `ad/mlle-adele/` - previous chandelle ad, native file and source material.
+- `ad/tendances-2026-10/` - October half-page commission; start with its
+  [coordination brief](ad/tendances-2026-10/README.md).
 - `marks/wordmark/` - current wordmark exports and byline.
 - `marks/seal/` - current seal exports.
 - `qr-codes/` - reproducible QR masters and convenience exports.
@@ -22,7 +25,10 @@ runtime asset directory.
 - Files under `source/` explain or reproduce an export. They are not current
   marks and should not be placed in designs or handed to a client.
 - Session reasoning, open questions, and provisional specifications belong in
-  `docs/working-notes/`, not inside the export folders.
+  `docs/working-notes/`, not inside the export folders. Exception requested by
+  Martin on 2026-09-12: a bounded print commission keeps its working brief beside
+  its assets under `ad/`, linked from the documentation map. The brief remains
+  provisional and does not replace shared business facts or approved decisions.
 
 Use lowercase kebab-case filenames. Include `jukkai-` on exported wordmarks so
 they remain identifiable when downloaded outside this folder. Prefer SVG for

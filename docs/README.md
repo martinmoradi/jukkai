@@ -1,7 +1,7 @@
 # Documentation
 
 **Status:** current documentation map. **Owns:** reading routes, document roles
-and maintenance rules. **Last reviewed:** 2026-09-10 for organization and authority;
+and maintenance rules. **Last reviewed:** 2026-09-12 for the print reading route and authority;
 this is not a fresh verification of every business fact or technical guide.
 **Revisit when:** a document moves, a working proposal is accepted, or delivery changes.
 
@@ -18,6 +18,7 @@ whole folder or historical material for routine orientation.
 | Continuing SEO research                         | [SEO research log](research/seo-research-log.md)                                      | Relevant reviewed runs and saved evidence; [capability map](research/claude-seo-capability-map.md) for command selection |
 | Website explanations, page models or draft copy | [Website working notes](working-notes/website/README.md)                              | Visitor brief → working content plan → relevant draft; alternatives and proof notes as needed                            |
 | Contact details or portrait                     | [Contact-card guide](operations/crystelle-contact-card.md)                            | The relevant data/assets and release checks                                                                              |
+| Print advertising                               | [Tendances October commission](../brand/ad/tendances-2026-10/README.md)               | Campaign sources/setup; foundation only for new claims; previous ad for deliberate comparison                            |
 | Technical implementation                        | The relevant [operational guide](#folders-and-authority)                              | [Domain guidance](agents/domain.md) and relevant [ADRs](adr/)                                                            |
 
 ## Folders and authority
@@ -42,6 +43,9 @@ conflicts instead of silently choosing a new business or design direction.
 
 Technical guides currently cover [CI](operations/ci.md),
 [fonts](operations/fonts.md) and [Crystelle's contact card](operations/crystelle-contact-card.md).
+Print commission briefs are kept beside their assets under `brand/ad/`, at Martin's
+request on 2026-09-12. They own campaign working state, not shared strategy; do not
+duplicate them into `working-notes/`.
 The foundation's generated `.agents/product-marketing.md` adapter is a derived
 view, not a second place to edit business truth.
 

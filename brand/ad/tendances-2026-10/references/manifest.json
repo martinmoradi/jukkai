@@ -1,0 +1,27 @@
+{
+  "captured": "2026-09-12",
+  "status": "reference snapshots, not final ad deliverables",
+  "files": [
+    {
+      "file": "print-specifications-2024.pdf",
+      "source_path": "/home/martin/Downloads/Contraintes techniques - formats 2024 - .pdf",
+      "bytes": 552073,
+      "sha256": "d26b8d9da1632d788cb343af5a4be2003a1da7617caa59a673ec1726c6296eb5",
+      "purpose": "Publisher-supplied technical sheet; confirm applicability to current booking."
+    },
+    {
+      "file": "tendances-covers-2026.png",
+      "source_path": "/tmp/codex-clipboard-88228a88-d652-40dc-8c6d-1c520127f658.png",
+      "bytes": 354048,
+      "sha256": "7804116d634454b73ea41f78e9bc5c4b8da46ade018af282c8944d28216f51ec",
+      "purpose": "User-supplied cover reference; not a readership study."
+    },
+    {
+      "file": "crystelle-galerie-reference-1600.jpg",
+      "source_path": "/home/martin/Desktop/jukkai-pictures/crystelle-galerie-tendence/crystelle-galerie-web-1600.jpg",
+      "bytes": 322048,
+      "sha256": "d7a0ff98bd139bfb2f27957ac8d3ec71019ce0ff60c687c2ae9cedf4ca88fa79",
+      "purpose": "Dated discussion preview; not a locked selection or print image source."
+    }
+  ]
+}
