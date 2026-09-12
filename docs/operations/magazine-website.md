@@ -79,5 +79,5 @@ contact/image fallbacks. Automated axe audits found no violations on the landing
 contact and open-image dialog. These checks do not replace a real phone or the
 production release checks above.
 
-Local review captures live in `.cache/magazine-review/` (untracked): desktop and
+Local review captures live in `.browser-evidence/magazine-landing/` (gitignored): desktop and
 mobile overview screenshots, key editorial sections and machine-readable audits.
