@@ -12,7 +12,8 @@ publisher supplies production details. Update this brief; do not add a parallel 
 Martin uses the coordinating conversation for thinking, decisions and review.
 The coordinator dispatches bounded subagents for direct Affinity work and separate
 reviews. This workflow was requested on 2026-09-12; it does not approve a layout,
-headline, image selection or public promise.
+headline or public promise. Martin explicitly selected the Crystelle Galerie
+photograph for the ad in the subsequent September 12 instruction.
 
 Read this brief and the exact assigned asset/preview first. Load the Affinity skill
 and relevant SDK topics for editing. Consult the [foundation](../../../docs/strategy/foundation.md)
@@ -32,35 +33,46 @@ record for this later Tendances insertion.
 - **Business context:** Jukkai by Crystelle Terrasson brings together interior
   architecture and Galerie. Architecture is the commercial center; the job of
   this particular advertisement still needs an explicit choice.
-- **Martin's leading image candidate:** Crystelle seated among artworks, linked
-  below. The Galerie was unfinished during the shoot; postproduction is ongoing.
+- **Martin's selected lead photograph:** Crystelle seated among artworks, linked
+  below. Use it in the ad. The Galerie was unfinished during the shoot.
+- **Martin's correction, September 12:** the ad must meaningfully represent Galerie,
+  alongside architecture. He rejected “Des intérieurs qui ont du caractère.”
+  The other artworks and scenes are available ingredients, not a required montage.
+- **Execution:** Martin requests direct editing by subagents; the coordinator acts
+  as art director and does not load or operate Affinity MCP.
 - **Open:** intended reader action, final message/copy, composition/crop, contact
   details to print, chosen photo revision and publisher output profile.
 
 ## Creative working notes — coordinator proposals, not approvals
 
-Starting recommendation: introduce Crystelle and her eye for interiors through
-the art around her. Let readers remember Jukkai and want to discover more, while
-making “Architecture d'intérieur & Galerie” readily understandable.
+Current exploratory direction: introduce a living Galerie through Crystelle and
+her chosen artworks, with “Galerie & architecture d’intérieur” explicit. Architecture
+is present without making this an interiors-only advertisement. No opening date,
+walk-in arrangement or new offer is implied.
 
-The previous ad created anticipation. This one can reveal the person and her world,
-and must work for readers who never saw that ad. The photograph conveys warmth and
-colour; alone, it could be read as an artist/gallery-owner portrait. Copy must make
-interior architecture legible. Typography and spacing can carry refinement while
-the artworks retain their playfulness.
+The coordinator reviewed the current 21 artwork selections, all three scene
+selections, Crystelle's photograph and the four available Laura portrait views.
+Current selections were resolved from the asset indexes below; old intermediate
+exports were not treated as additional ingredients. Strong colour, tactile surfaces
+and playful figurative work are the actual visual material. Refined typography and
+spacing should support that character.
 
-Two proposed studies, not yet assigned or approved:
+Two directed studies for Martin's review, not approved advertisements:
 
-1. Photo with an adjoining warm, quiet text panel: preserve Crystelle's seated
-   gesture and the sculpture in her hands; test the loss of some peripheral art.
-2. Broad photo with a compact text band: test immersion against the shallower crop
-   and possible loss of hands, sculpture or posture.
+1. **A — “L’art, en bonne compagnie.”** Large Crystelle photograph beside a calm
+   ivory text column. Body: “Des œuvres à découvrir, des espaces à imaginer. Une
+   galerie vivante, portée par le regard d’une architecte d’intérieur.” Preserve her
+   expression, hands and held sculpture. No added artwork photograph in this study.
+2. **B — “Une galerie à vivre.”** Crystelle remains dominant, with the contrasting
+   bears scene as a smaller second photograph. Body: “Art et architecture
+   d’intérieur se rencontrent à Châteaugiron, dans l’univers libre et coloré de
+   Crystelle Terrasson.” Test whether the extra view earns its space at half-page
+   size. Avoid a catalogue grid or a collection of small thumbnails.
 
-“Des intérieurs qui ont du caractère.” is an exploratory headline only. Hatton and
-Frama are continuity candidates from the previous ad. Neither the headline nor the
-typographic hierarchy is settled. Review crop and copy together before further
-photo finishing. Artwork-only scenes are possible supporting website/later assets;
-their presence here does not authorize a batch of edits.
+Shared identity: real Jukkai wordmark, subordinate “by Crystelle Terrasson”,
+“Galerie & architecture d’intérieur”, Châteaugiron, and jukkai.fr. Hatton and Frama
+are the directed working typefaces. All proposed wording remains review copy.
+The previous interiors-only headline is rejected and must not return in variants.
 
 ## Sources and references
 
@@ -74,7 +86,7 @@ their presence here does not authorize a batch of edits.
   Current mark exports live in `brand/marks/`, not `brand/source/`.
 
 Photo source directory (outside Git):
-`/home/martin/Desktop/jukkai-pictures/crystelle-galerie-tendence/`.
+`/home/martin/Desktop/jukkai-affinity-workingdir/crystelle-galerie-tendence/`.
 Read its `README.md` and verify the files when resuming:
 
 | File in that directory              | Role                                                       |
@@ -112,19 +124,33 @@ installed profile; it is not evidence of the magazine's press or paper. Obtain t
 publisher's output specification before final colour approval/export. Retain the
 tagged RGB image source; a CMYK document alone does not prove a compliant PDF.
 
-Create a blank page, save, and leave it open. The prepared execution folder is:
-`/home/martin/Desktop/jukkai-tendances-2026-10/`.
-Use `jukkai-tendances-master.affinity` as the initial filename. No assets or text
-need to be placed yet. This is the **layout** master, separate from the photo master.
+The existing blank layout is now verified at:
+`/home/martin/Desktop/jukkai-affinity-workingdir/tendances-magazine/jukkai-tendances-master.affinity`.
+The editor inspected it on September 12: 180 × 126 mm, 300 dpi, CMYK/8, Coated
+FOGRA39, one page/spread, no layers, matching trim/bleed/media boxes and no unsaved
+changes. Preserve this blank master. Its SHA-256 is
+`f30422e55cb2f3e1793aac95454f6c91f121fcd1bb9648eac4d513ca426a9d92`.
+Studies belong under `tendances-magazine/studies/`, separate from the photo master.
+
+The former `Desktop/jukkai-pictures/` tree has moved to
+`/home/martin/Desktop/jukkai-affinity-workingdir/`. Current artwork and scene choices
+are indexed in `artworks/_art-direction-2026-09-12/INDEX.md` and
+`scenes/_art-direction-2026-09-12/INDEX.md` below that root. Their selections are
+previous art-director choices for Martin's review, not automatic ad selections.
+The local lifecycle instructions are in `affinity-tools/README.md`; its example
+paths still use the former root. Use the actual `affinity-tools/affinity-open` and
+`affinity-tools/affinity-close` siblings in the current root.
 
 The SDK documents `Document.createFromOptions()` and `NewDocumentOptions`; agent
-document creation is supported by the API but was not live-tested here. Manual
-creation is Martin's current preference, not an assumed API limitation.
+document creation is supported by the API but was not live-tested here. The existing
+blank is supplied for this work; there is no need to recreate it.
 
 ## Worker and review protocol
 
 - **Coordinator:** owns the live-app editing slot, task scope, handoffs and this
-  brief. Martin remains the creative/business decision-maker.
+  brief, and reviews saved images/PDFs. Per Martin, delegate all Affinity MCP use
+  and lifecycle actions to the editor. Martin remains the creative/business
+  decision-maker.
 - **Editing worker:** one at a time across this shared Affinity instance. Other
   agents must not switch documents, selections or app state while it is editing.
   Read-only reviewers use saved previews/files, not the editor's live app.
@@ -153,10 +179,15 @@ creation is Martin's current preference, not an assumed API limitation.
 ## Current handoff state
 
 - Coordination workspace and reference snapshots prepared on 2026-09-12.
-- **Blank layout master:** not yet created or inspected; awaiting Martin's setup.
-- **Editing worker:** none assigned. The SDK setup audit was read-only and finished.
-- **Selected layout / copy / final export:** none.
-- **Next:** inspect the saved blank master, then discuss a bounded first study.
+- **Blank layout master:** native properties and source hash verified by the editor.
+- **Editing worker:** `tendances_affinity_editor`, sole live-app owner. Study A
+  assigned; Study B waits for the first review. Parent has not used Affinity MCP.
+- **Review worker:** `galerie_creative_review`, saved-file creative critique only.
+- **Selected layout / approved copy / final print export:** none.
+- **Next:** review A's saved native/PDF/preview, refine as needed, then produce B.
+- **Fonts:** local Hatton/Frama OTFs exist under `brand/fonts/`; the editor found
+  they were absent from the active Affinity font list and is preparing their
+  installation in that runtime before composing.
 - **Publisher input needed:** exact file deadline/edition, confirmation that the
   2024 sheet applies, preferred CMYK profile and any PDF preset/output requirements.
   No publisher contact or file submission has been authorized or performed here.
