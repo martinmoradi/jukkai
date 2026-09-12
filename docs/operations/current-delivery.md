@@ -17,7 +17,7 @@ live on GitHub. It is not a finished sitemap or an approved visual design.
   availability from the practice receiving architecture clients.
 - The magazine is expected in about a week from September 7. The exact publication
   date is still to confirm; do not turn September 14 into a contractual deadline.
-  Its ad points to `jukkai.fr`: [print PDF](../../brand/ad/jukkai-adele-chandelle.pdf).
+  Its ad points to `jukkai.fr`: [print PDF](../../brand/ad/mlle-adele/jukkai-adele-chandelle.pdf).
 - The first website must explain Jukkai and feel like an upgrade over Studio
   Terrasson in design and content. Publish a useful, polished first version and
   expand it through subsequent sprints. There is no teaser or final completion date.

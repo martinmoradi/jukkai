@@ -12,6 +12,10 @@ user direction and canonical documents still take precedence.
 Start with [website proposals and copy](website/README.md) for the September
 visitor brief, page models, Architecture proof and French draft.
 
+The [Tendances print commission](../../brand/ad/tendances-2026-10/README.md)
+keeps its working notes alongside its assets, at Martin's request. Resume it there;
+this index does not create a second campaign brief.
+
 The July SEO sequencing and visual-workroom sessions are retained in
 [the historical working-notes collection](../archive/2026-07-working-notes/README.md).
 They are not active assignments. See the [documentation map](../README.md)

@@ -124,6 +124,17 @@ remove them when the convention changes.
   challenge conventional brochure-site patterns when it improves taste,
   memorability, and clarity.
 
+## Print Advertising
+
+- For the current print commission, start with
+  `brand/ad/tendances-2026-10/README.md`; it holds the working brief, source paths,
+  master setup and worker handoffs. The previous ad lives in `brand/ad/mlle-adele/`.
+- Martin uses the coordinating conversation for thinking and review, with bounded
+  editing subagents. Only one worker may control the shared Affinity instance at
+  a time; reviewers use saved files/previews. A working proposal is not approved copy.
+- The coordinating agent delegates Affinity MCP and app lifecycle actions to the
+  editing worker; it directs the work and reviews saved artifacts.
+
 ## Domain Docs
 
 - Shared language lives in `CONTEXT.md`. Keep it to glossary terms, not
