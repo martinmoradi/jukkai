@@ -1,0 +1,35 @@
+---
+import wordmark from '#/assets/magazine/jukkai-wordmark-primary.svg';
+import Arrow from '#/components/Arrow.astro';
+import styles from '#/styles/chrome.module.css';
+
+interface Props {
+  contact?: boolean;
+}
+const { contact = false } = Astro.props;
+---
+
+<header class={styles.header}>
+  <a
+    class={styles.brand}
+    href='/'
+    aria-label='Jukkai by Crystelle Terrasson — accueil'>
+    <img
+      src={wordmark.src}
+      width='100'
+      height='48'
+      alt='Jukkai by Crystelle Terrasson'
+    />
+  </a>
+  <nav class={styles.navigation} aria-label='Navigation principale'>
+    <a class={styles.sectionLink} href='/#architecture'>Architecture</a>
+    <a class={styles.sectionLink} href='/#galerie'>Galerie</a>
+    <a class={styles.sectionLink} href='/#esprit'>L’esprit Jukkai</a>
+    <a
+      class={styles.contactLink}
+      href='/contact/'
+      aria-current={contact ? 'page' : undefined}>
+      Rencontrons-nous <Arrow diagonal />
+    </a>
+  </nav>
+</header>
