@@ -1,0 +1,67 @@
+---
+import '#/styles/editorial.css';
+
+import { getImage } from 'astro:assets';
+
+import sphere from '#/assets/jukkai-sphere.svg';
+import socialImage from '#/assets/magazine/interior-light.webp';
+import CloudflareAnalytics from '#/components/CloudflareAnalytics.astro';
+import SiteFooter from '#/components/SiteFooter.astro';
+import SiteHeader from '#/components/SiteHeader.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  contact?: boolean;
+}
+
+const { title, description, contact = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const [social, touchIcon] = await Promise.all([
+  getImage({ src: socialImage, width: 1200, height: 630, format: 'jpeg' }),
+  getImage({ src: sphere, width: 180, height: 180, format: 'png' }),
+]);
+---
+
+<!doctype html>
+<html lang='fr'>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <title>{title}</title>
+    <meta name='description' content={description} />
+    <link rel='canonical' href={canonical.href} />
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content={description} />
+    <meta property='og:type' content='website' />
+    <meta property='og:locale' content='fr_FR' />
+    <meta property='og:site_name' content='Jukkai by Crystelle Terrasson' />
+    <meta property='og:url' content={canonical.href} />
+    <meta property='og:image' content={new URL(social.src, Astro.site).href} />
+    <meta property='og:image:width' content='1200' />
+    <meta property='og:image:height' content='630' />
+    <meta
+      property='og:image:alt'
+      content='Un intérieur lumineux imaginé par le studio de Crystelle Terrasson.'
+    />
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta name='theme-color' content='#EAE2D2' />
+    <link rel='icon' type='image/svg+xml' href={sphere.src} />
+    <link rel='apple-touch-icon' href={touchIcon.src} />
+    <link rel='stylesheet' href='/fonts/generated/fonts.css' />
+    <CloudflareAnalytics
+      token={import.meta.env.PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN}
+    />
+  </head>
+  <body>
+    <a class='skip-link' href='#contenu'>Aller au contenu</a>
+    <SiteHeader contact={contact} />
+    <main id='contenu' tabindex='-1'><slot /></main>
+    <SiteFooter contact={contact} />
+    <script>
+      import { initEditorialMotion } from '#/scripts/editorial-motion';
+
+      initEditorialMotion();
+    </script>
+  </body>
+</html>
