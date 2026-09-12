@@ -14,16 +14,24 @@ export function initEditorialMotion() {
     dialog?.querySelector<HTMLImageElement>('[data-art-image]');
   const caption = dialog?.querySelector<HTMLElement>('[data-art-caption]');
   if (dialog && dialogImage && caption) {
-    let opener: HTMLButtonElement | null = null;
+    let opener: HTMLAnchorElement | null = null;
     document
-      .querySelectorAll<HTMLButtonElement>('[data-artwork]')
-      .forEach((button) => {
-        button.addEventListener('click', () => {
-          if (!button.dataset.artSrc) return;
-          opener = button;
-          dialogImage.src = button.dataset.artSrc;
-          dialogImage.alt = button.querySelector('img')?.alt ?? '';
-          caption.textContent = button.dataset.artCaption ?? '';
+      .querySelectorAll<HTMLAnchorElement>('[data-artwork]')
+      .forEach((link) => {
+        link.addEventListener('click', (event) => {
+          if (
+            !link.dataset.artSrc ||
+            event.ctrlKey ||
+            event.metaKey ||
+            event.shiftKey ||
+            event.altKey
+          )
+            return;
+          event.preventDefault();
+          opener = link;
+          dialogImage.src = link.dataset.artSrc;
+          dialogImage.alt = link.querySelector('img')?.alt ?? '';
+          caption.textContent = link.dataset.artCaption ?? '';
           dialog.showModal();
         });
       });
