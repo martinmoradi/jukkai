@@ -9,6 +9,7 @@ import { JSDOM } from 'jsdom';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 import {
+  CRYSTELLE,
   CRYSTELLE_CONTACT_PATH,
   CRYSTELLE_VCARD,
   CRYSTELLE_VCARD_PATH,
@@ -50,6 +51,66 @@ afterAll(async () => {
 });
 
 describe('published site', () => {
+  it('introduces the Galerie while preserving Studio Terrasson continuity', async () => {
+    const page = new JSDOM(await published('index.html'));
+    const document = page.window.document;
+    const introduction = document.querySelector('[data-art-intro]')!;
+    expect(introduction.textContent).toContain('Crystelle Terrasson');
+    expect(introduction.textContent).toContain('architecture');
+    expect(introduction.textContent).toContain('Galerie');
+    expect(introduction.textContent).toContain('octobre 2026');
+    expect(
+      document.querySelector('h1')?.textContent?.replace(/\s+/g, ' ').trim(),
+    ).toBe('L’art prend place.');
+    expect(
+      document.querySelector('[data-art-hero-image]')?.getAttribute('alt'),
+    ).toContain('Yoann Bonneville');
+    expect(document.querySelector('#esprit')?.textContent).toContain(
+      'Studio Terrasson',
+    );
+    expect(document.querySelector('#architecture')?.textContent).toContain(
+      'sans attendre octobre',
+    );
+    expect(
+      document.querySelector('a[href="https://www.studioterrasson.fr/"]'),
+    ).not.toBeNull();
+    expect(document.querySelector('main')?.textContent).not.toMatch(
+      /anciennement|a remplacé/i,
+    );
+    page.window.close();
+  });
+
+  it.each(['index.html', 'contact/index.html'])(
+    'describes one factual public identity in %s',
+    async (file) => {
+      const page = new JSDOM(await published(file));
+      const scripts = page.window.document.querySelectorAll(
+        'script[type="application/ld+json"]',
+      );
+      expect(scripts).toHaveLength(1);
+      const data = JSON.parse(scripts[0].textContent);
+      const organizations = data['@graph'].filter(
+        (node: { '@type': string }) => node['@type'] === 'Organization',
+      );
+      expect(organizations).toHaveLength(1);
+      expect(organizations[0]).toMatchObject({
+        name: 'Jukkai by Crystelle Terrasson',
+        url: 'https://jukkai.fr/',
+        telephone: CRYSTELLE.phoneTel,
+        email: CRYSTELLE.email,
+        address: {
+          streetAddress: CRYSTELLE.address.street,
+          addressLocality: CRYSTELLE.address.locality,
+        },
+        founder: { name: 'Crystelle Terrasson' },
+      });
+      expect(organizations[0]).not.toHaveProperty('sameAs');
+      expect(organizations[0]).not.toHaveProperty('openingHours');
+      expect(organizations[0]).not.toHaveProperty('legalName');
+      page.window.close();
+    },
+  );
+
   it('offers the full artwork images even when scripts are unavailable', async () => {
     const page = new JSDOM(await published('index.html'));
     const links = page.window.document.querySelectorAll('a[data-artwork]');

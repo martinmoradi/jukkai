@@ -18,18 +18,16 @@ const appleMapsUrl = `https://maps.apple.com/?q=${encodeURIComponent(address)}`;
   contact>
   <section class={styles.contact} aria-labelledby='contact-title'>
     <div class={styles.heading}>
-      <p class='eyebrow' data-hero-copy>
-        Un projet commence par une rencontre.
-      </p>
+      <p class='eyebrow' data-hero-copy>Galerie & architecture d’intérieur</p>
       <h1 id='contact-title' data-hero-copy>
-        Parlons de<br /><em>vos envies.</em>
+        Un mot à<br /><em>Crystelle.</em>
       </h1>
     </div>
     <div class={styles.contactGrid}>
       <div class={styles.details}>
         <p class={styles.intro} data-reveal>
-          Une maison à repenser, un espace professionnel à imaginer, une œuvre
-          en tête. Crystelle sera heureuse d’en parler avec vous.
+          Une question sur la Galerie, une œuvre qui vous plaît, un projet
+          d’intérieur. Appelez Crystelle ou écrivez-lui.
         </p>
         <div class={styles.contactOptions} data-reveal>
           <a href={`tel:${CRYSTELLE.phoneTel}`} class={styles.contactOption}>
@@ -48,13 +46,14 @@ const appleMapsUrl = `https://maps.apple.com/?q=${encodeURIComponent(address)}`;
         <div class={styles.visit} data-reveal>
           <h2>Se retrouver à Châteaugiron</h2>
           <address>
-            {CRYSTELLE.address.street}<br />{CRYSTELLE.address.postalCode}
-            {CRYSTELLE.address.locality}
+            {CRYSTELLE.address.street}<br />{
+              `${CRYSTELLE.address.postalCode} ${CRYSTELLE.address.locality}`
+            }
           </address>
           <p>
-            Le studio vous reçoit déjà sur rendez-vous pour vos projets
-            d’intérieur. L’ouverture officielle de Jukkai est prévue en octobre
-            2026.
+            Le studio d’architecture d’intérieur vous reçoit déjà sur
+            rendez-vous. L’ouverture officielle de Jukkai et de sa Galerie est
+            prévue en octobre 2026.
           </p>
           <a
             class='text-link'
@@ -69,7 +68,7 @@ const appleMapsUrl = `https://maps.apple.com/?q=${encodeURIComponent(address)}`;
             >Enregistrer le contact <span aria-hidden='true'>↓</span></a
           >
           <a href={CRYSTELLE.instagram.url}
-            >Suivre l’histoire sur Instagram <Arrow diagonal /></a
+            >Retrouver Jukkai sur Instagram <Arrow diagonal /></a
           >
         </div>
       </div>

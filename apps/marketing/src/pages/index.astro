@@ -2,205 +2,108 @@
 import { Image } from 'astro:assets';
 
 import sphere from '#/assets/jukkai-sphere.svg';
-import belleEpoque from '#/assets/magazine/belle-epoque.webp';
+import material from '#/assets/magazine/capri-material.webp';
 import crystelle from '#/assets/magazine/crystelle-galerie.webp';
-import interior from '#/assets/magazine/interior-light.webp';
-import byline from '#/assets/magazine/jukkai-wordmark-byline.svg';
-import wordmark from '#/assets/magazine/jukkai-wordmark-primary-no-byline.svg';
-import capri from '#/assets/magazine/le-capri.webp';
 import Arrow from '#/components/Arrow.astro';
-import { GALERIE_IMAGES } from '#/data/galerie';
+import { CRYSTELLE } from '#/data/crystelle';
+import { GALERIE_IMAGES, HERO_ARTWORK } from '#/data/galerie';
 import EditorialLayout from '#/layouts/EditorialLayout.astro';
 import styles from '#/styles/landing.module.css';
+
+const [painting, objects, dogs] = GALERIE_IMAGES;
 ---
 
 <EditorialLayout
-  title='Jukkai by Crystelle Terrasson — Architecture d’intérieur & Galerie, Châteaugiron'
-  description='Jukkai by Crystelle Terrasson, architecture d’intérieur et galerie à Châteaugiron, près de Rennes. Anciennement Studio Crystelle Terrasson. Ouverture du lieu en octobre 2026.'>
-  <section class={styles.hero} aria-labelledby='hero-title'>
-    <div class={styles.masthead}>
-      <div class={styles.wordmark} data-hero-mark>
-        <img src={wordmark.src} alt='Jukkai' width='887' height='356' />
-        <img
-          class={styles.byline}
-          src={byline.src}
-          alt='by Crystelle Terrasson'
-          width='240'
-          height='22'
-        />
+  title='Jukkai by Crystelle Terrasson — Galerie & architecture d’intérieur, Châteaugiron'
+  description='Jukkai by Crystelle Terrasson réunit architecture d’intérieur et Galerie à Châteaugiron, près de Rennes, dans la continuité de Studio Terrasson. Ouverture en octobre 2026.'>
+  <section class={styles.hero} data-art-sequence aria-labelledby='hero-title'>
+    <div class={styles.heroStage} data-art-stage>
+      <div class={styles.heroBackdrop} data-art-backdrop aria-hidden='true'>
+        La Galerie
       </div>
-      <div class={styles.heroIdentity} data-hero-copy>
-        <p>Architecture<br />d’intérieur <span>&</span> Galerie</p>
-        <span class='eyebrow'>Châteaugiron · Près de Rennes</span>
-      </div>
-    </div>
-    <div class={styles.heroComposition}>
-      <figure class={styles.heroFigure} data-hero-image>
-        <div class={styles.heroFrame}>
-          <Image
-            src={interior}
-            alt='Un séjour baigné de soleil, rythmé par une charpente en bois et des matières naturelles, imaginé par le studio de Crystelle Terrasson.'
-            widths={[640, 960, 1440, 1920, 2400]}
-            sizes='(max-width: 760px) 100vw, 65vw'
-            width={1440}
-            loading='eager'
-            fetchpriority='high'
-            quality={86}
-            data-parallax-image
-          />
-        </div>
-        <figcaption>
-          <span>Des lieux à vivre.</span><span
-            >Le regard de Crystelle Terrasson</span
-          >
-        </figcaption>
-      </figure>
-      <div class={styles.heroText} data-hero-copy>
-        <h1 id='hero-title'>Habiter<br />avec<br /><em>émotion.</em></h1>
-        <p>Des intérieurs qui vous ressemblent. De l’art qui vous touche.</p>
-        <a class={styles.exploreLink} href='#esprit'>
-          <span>Entrer dans l’univers</span><span class={styles.roundArrow}
-            ><Arrow /></span
-          >
-        </a>
-      </div>
-    </div>
-    <div class={styles.heroFoot}>
-      <p><span class={styles.dot}></span> Un nouveau chapitre s’ouvre</p>
-      <a href='#ouverture'
-        >Châteaugiron · Octobre 2026 <span aria-hidden='true'>↗</span></a
-      >
-    </div>
-  </section>
-
-  <section
-    class={styles.introduction}
-    id='esprit'
-    aria-labelledby='intro-title'>
-    <p class='eyebrow' data-reveal>01 — L’esprit Jukkai</p>
-    <div class={styles.introBody}>
-      <h2 id='intro-title' data-reveal>
-        Un lieu se dessine.<br />Une émotion<br /><span>se rencontre.</span>
-      </h2>
-      <div class={styles.introBottom}>
-        <img
-          src={sphere.src}
-          alt=''
-          width='108'
-          height='108'
-          data-turning-mark
-        />
-        <div data-reveal>
-          <p>
-            Jukkai réunit l’architecture d’intérieur et la galerie. Deux univers
-            portés par une même envie : faire une place au beau, au singulier, à
-            ce qui nous fait vibrer.
-          </p>
-          <p>
-            À Châteaugiron, Crystelle Terrasson imagine des lieux à vivre et
-            partage les œuvres qui l’animent. Une nouvelle adresse. Un regard
-            qui se prolonge.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section
-    class={styles.architecture}
-    id='architecture'
-    aria-labelledby='architecture-title'>
-    <div class={styles.sectionHeading}>
-      <div data-reveal>
-        <p class='eyebrow'>02 — Architecture d’intérieur</p>
-        <h2 id='architecture-title'>
-          Du caractère.<br /><span>Et de la vie.</span>
-        </h2>
-      </div>
-      <div class={styles.architectureCopy} data-reveal>
-        <p>
-          Une lumière à retrouver, des volumes à repenser, une matière qui
-          change tout. Nous partons de votre manière de vivre pour donner à
-          votre intérieur sa juste place.
+      <div class={styles.heroCopy} data-art-intro>
+        <p class={styles.heroCategory}>Architecture d’intérieur & Galerie</p>
+        <h1 id='hero-title'>
+          L’art <span>prend{' '}<br class={styles.desktopBreak} />place.</span>
+        </h1>
+        <p class={styles.heroIntroduction}>
+          À Châteaugiron, Crystelle Terrasson réunit son studio d’architecture
+          d’intérieur et une Galerie. Bienvenue chez Jukkai.
         </p>
-        <p>
-          Conseil, transformation ou rénovation complète : Crystelle et Laura,
-          toutes deux architectes d’intérieur diplômées, accompagnent les
-          particuliers et les professionnels en région rennaise.
-        </p>
-        <a class='text-link' href='/contact/'
-          >Parlons de votre projet <Arrow diagonal /></a
+        <a class={styles.openingLink} href='#ouverture'
+          >Ouverture officielle · octobre 2026 <Arrow diagonal /></a
+        >
+        <a class={styles.exploreLink} href='#galerie'
+          >Découvrir la Galerie <span aria-hidden='true'>↓</span></a
         >
       </div>
-    </div>
-    <div class={styles.projectSpread}>
-      <figure class={styles.residential} data-reveal>
-        <div class={styles.projectFrame}>
+      <figure class={styles.heroFigure}>
+        <a
+          class={styles.heroArtLink}
+          href={HERO_ARTWORK.image.src}
+          data-art-frame
+          data-artwork='hero'
+          data-art-src={HERO_ARTWORK.image.src}
+          data-art-caption={HERO_ARTWORK.caption}
+          aria-label='Voir l’œuvre entière de Yoann Bonneville'
+          aria-haspopup='dialog'>
           <Image
-            src={belleEpoque}
-            alt='Cuisine de la maison Belle Époque : bois chaleureux, façades noires et verrière ouverte sur le jardin.'
-            widths={[640, 960, 1440, 1800]}
-            sizes='(max-width: 760px) 90vw, 53vw'
-            width={1200}
-            loading='lazy'
-            data-parallax-image
+            src={HERO_ARTWORK.image}
+            alt={HERO_ARTWORK.alt}
+            widths={[480, 800, 1200, 1600]}
+            sizes='(max-width: 800px) 140vw, 85vw'
+            width={1600}
+            loading='eager'
+            fetchpriority='high'
+            quality={88}
+            data-art-hero-image
           />
-        </div>
-        <figcaption>
-          <span>Belle Époque</span><span>Intérieur privé</span>
+        </a>
+        <figcaption class={styles.heroCaption} data-art-credit>
+          <span
+            >Yoann Bonneville <span class={styles.creditMedium}>· Peinture</span
+            ></span
+          >
+          <a
+            href={HERO_ARTWORK.image.src}
+            data-artwork='hero-caption'
+            data-art-src={HERO_ARTWORK.image.src}
+            data-art-caption={HERO_ARTWORK.caption}
+            data-art-alt={HERO_ARTWORK.alt}
+            aria-haspopup='dialog'
+            >Voir en entier <span aria-hidden='true'>↗</span></a
+          >
         </figcaption>
       </figure>
-      <div class={styles.professional}>
-        <p class={styles.projectAside} data-reveal>
-          La lumière pour fil conducteur.<br />La couleur pour liberté.
-        </p>
-        <figure data-reveal>
-          <div class={styles.capriFrame}>
-            <Image
-              src={capri}
-              alt='Le Capri : banquettes bleues, murs orange et rose, tables en bois et plafond végétal.'
-              widths={[480, 800, 1200]}
-              sizes='(max-width: 760px) 80vw, 33vw'
-              width={900}
-              loading='lazy'
-              data-parallax-image
-            />
-          </div>
-          <figcaption><span>Le Capri</span><span>Restaurant</span></figcaption>
-        </figure>
-      </div>
-    </div>
-    <div class={styles.architectureNote} data-reveal>
-      <span class='eyebrow'>De la première idée au lieu de vie</span>
-      <p>
-        Conception, choix des matières, préparation technique et suivi de
-        chantier : une mission définie ensemble, selon votre projet.
-      </p>
+      <span class={styles.sequenceLine} data-art-progress aria-hidden='true'
+      ></span>
     </div>
   </section>
 
   <section class={styles.galerie} id='galerie' aria-labelledby='galerie-title'>
     <div class={styles.galleryHeading}>
-      <p class='eyebrow' data-reveal>03 — La Galerie</p>
-      <h2 id='galerie-title' data-reveal>
-        L’art, à hauteur<br /><em>de coup de cœur.</em>
-      </h2>
-      <div class={styles.galleryIntroduction} data-reveal>
-        <p>
-          Une couleur qui accroche. Une forme qui intrigue. Une œuvre que l’on a
-          envie de regarder encore.
-        </p>
-        <p>
-          La Galerie se prépare à accueillir les curieux et les regards libres.
-          L’envie de Crystelle : rendre la rencontre avec l’art aussi naturelle
-          que celle d’un lieu où l’on se sent bien.
-        </p>
+      <div>
+        <p class='eyebrow'>La sélection de Crystelle</p>
+        <h2 id='galerie-title'>De l’art.<br /><em>De la personnalité.</em></h2>
       </div>
+      <p class={styles.galleryIntroduction}>
+        Des peintures qui accrochent l’œil, des sculptures qui ne se tiennent
+        pas tout à fait sages. Crystelle réunit les artistes et les pièces
+        qu’elle aime, avec une envie : vous donner envie de les découvrir à
+        votre tour.
+      </p>
     </div>
     <div class={styles.artworkSpread}>
       {
-        GALERIE_IMAGES.map((art, index) => (
-          <figure class={styles.artwork} data-reveal>
+        [painting, objects].map((art, index) => (
+          <figure
+            class:list={[styles.artwork, index === 1 && styles.sculptures]}>
+            <figcaption>
+              <>
+                <span>{art.caption}</span>
+                <span>{art.detail}</span>
+              </>
+            </figcaption>
             <a
               class={styles.artworkButton}
               href={art.image.src}
@@ -211,70 +114,123 @@ import styles from '#/styles/landing.module.css';
               aria-haspopup='dialog'>
               <Image
                 src={art.image}
+                data-art-reveal
                 alt={art.alt}
-                widths={[480, 800, 1200]}
-                sizes='(max-width: 760px) 80vw, 34vw'
-                width={1000}
+                widths={[480, 800, 1200, 1600]}
+                sizes='(max-width: 800px) 90vw, 42vw'
+                width={1200}
                 loading='lazy'
               />
               <span class={styles.viewArtwork} aria-hidden='true'>
-                Voir de plus près <span>+</span>
+                Voir de plus près <span>↗</span>
               </span>
             </a>
-            <figcaption>
-              <>
-                <span>{art.caption}</span>
-                <span>{art.detail}</span>
-              </>
-            </figcaption>
           </figure>
         ))
       }
     </div>
     <div class={styles.galleryFoot}>
-      <span class='eyebrow'>Peinture · Sculpture · Objets singuliers</span>
+      <p>Peintures, sculptures & objets singuliers.</p>
       <a class='text-link' href='/contact/'
-        >Un coup de cœur ? Échangeons <Arrow diagonal /></a
+        >Une œuvre vous intrigue ? <Arrow diagonal /></a
       >
+    </div>
+    <div class={styles.company}>
+      <div class={styles.companyCopy}>
+        <p class='eyebrow'>L’art, en bonne compagnie</p>
+        <h3>On peut aussi<br /><em>sourire.</em></h3>
+        <p>Deux sculptures.<br />Et un invité surprise.</p>
+      </div>
+      <figure class={styles.dogs}>
+        <figcaption>{dogs.caption}</figcaption>
+        <a
+          class={styles.artworkButton}
+          href={dogs.image.src}
+          data-artwork='dogs'
+          data-art-src={dogs.image.src}
+          data-art-caption={dogs.caption}
+          aria-label={`Agrandir : ${dogs.caption}`}
+          aria-haspopup='dialog'>
+          <Image
+            src={dogs.image}
+            data-art-reveal
+            alt={dogs.alt}
+            widths={[480, 800, 1200, 1800]}
+            sizes='(max-width: 800px) 100vw, 60vw'
+            width={1400}
+            loading='lazy'
+          />
+          <span class={styles.viewArtwork} aria-hidden='true'
+            >Voir la scène <span>↗</span></span
+          >
+        </a>
+      </figure>
     </div>
   </section>
 
-  <section class={styles.story} aria-labelledby='story-title'>
-    <figure class={styles.portrait} data-reveal>
-      <Image
-        src={crystelle}
-        alt='Crystelle Terrasson, assise au milieu des peintures et sculptures qu’elle réunit pour Jukkai.'
-        widths={[640, 960, 1440, 1920]}
-        sizes='(max-width: 760px) 100vw, 53vw'
-        width={1440}
-        loading='lazy'
-      />
-      <figcaption>Crystelle Terrasson · Fondatrice de Jukkai</figcaption>
-    </figure>
-    <div class={styles.storyCopy}>
-      <p class='eyebrow' data-reveal>04 — Un nouveau chapitre</p>
-      <h2 id='story-title' data-reveal>
-        Le même regard.<br /><span>Un nouvel horizon.</span>
-      </h2>
-      <div data-reveal>
-        <p>
-          Vous connaissiez le Studio Crystelle Terrasson. L’histoire continue
-          avec Jukkai.
+  <section class={styles.story} id='esprit' aria-labelledby='story-title'>
+    <div class={styles.storyHeading}>
+      <p class='eyebrow'>À l’origine de Jukkai</p>
+      <h2 id='story-title'>Crystelle<br /><span>ouvre le jeu.</span></h2>
+    </div>
+    <div class={styles.storyGrid}>
+      <figure class={styles.portrait} data-portrait-reveal>
+        <Image
+          src={crystelle}
+          alt='Crystelle Terrasson, assise parmi les peintures et sculptures qu’elle réunit pour Jukkai.'
+          widths={[640, 960, 1440, 1920]}
+          sizes='(max-width: 800px) 100vw, 56vw'
+          width={1440}
+          loading='lazy'
+        />
+        <figcaption>
+          Crystelle Terrasson · Architecte d’intérieur, fondatrice de Jukkai
+        </figcaption>
+      </figure>
+      <div class={styles.storyCopy}>
+        <p class={styles.storyLead}>
+          Une architecte d’intérieur.<br />Une passion pour l’art.<br
+          />Désormais, un même lieu.
         </p>
         <p>
-          Après 30 ans de métier et un studio fondé en 2012, Crystelle ouvre un
-          nouveau chapitre à Châteaugiron. L’architecture d’intérieur reste au
-          cœur de son travail. La Galerie donne une place à une autre passion :
-          les artistes, leurs œuvres et les rencontres qu’elles provoquent.
+          Vous connaissez peut-être Crystelle Terrasson à travers Studio
+          Terrasson, son agence d’architecture d’intérieur. Avec Jukkai, elle
+          prolonge cette histoire et lui donne une nouvelle dimension : une
+          Galerie, aux côtés du studio, à Châteaugiron.
         </p>
         <p>
-          Son envie : un lieu vivant, où l’on parle aussi bien d’une maison à
-          transformer que d’une œuvre qui nous arrête.
+          Après 30 ans de métier, l’envie reste la même : composer avec les
+          couleurs, les matières et les personnalités. Ici, elle partage aussi
+          les œuvres qu’elle aime.
         </p>
+        <a class='text-link' href='/contact/'
+          >Échanger avec Crystelle <Arrow diagonal /></a
+        >
       </div>
-      <a class='text-link' href='/contact/'
-        >Rencontrer Crystelle <Arrow diagonal /></a
-      >
+    </div>
+    <div class={styles.architecture} id='architecture'>
+      <figure class={styles.material}>
+        <Image
+          src={material}
+          alt='Au restaurant Le Capri, la lumière souligne une table en bois cerclée de métal et des assises bleues et mauves.'
+          widths={[480, 800, 1200, 1800]}
+          sizes='(max-width: 800px) 90vw, 38vw'
+          width={1000}
+          loading='lazy'
+        />
+        <figcaption>Le Capri · Un projet du Studio Terrasson</figcaption>
+      </figure>
+      <div class={styles.architectureCopy}>
+        <h3>L’architecture continue.</h3>
+        <p>
+          Crystelle et Laura, toutes deux architectes d’intérieur diplômées,
+          vous accompagnent déjà dans vos projets. Le studio reçoit sur
+          rendez-vous à la nouvelle adresse, sans attendre octobre.
+        </p>
+        <a class='text-link' href='https://www.studioterrasson.fr/'
+          >Retrouver les projets sur Studio Terrasson <Arrow diagonal /></a
+        >
+      </div>
     </div>
   </section>
 
@@ -282,21 +238,28 @@ import styles from '#/styles/landing.module.css';
     class={styles.opening}
     id='ouverture'
     aria-labelledby='opening-title'>
-    <div class={styles.openingTop} data-reveal>
-      <p class='eyebrow'>Châteaugiron, près de Rennes</p>
-      <p class='eyebrow'>L’ouverture officielle du lieu</p>
+    <div class={styles.openingTop}>
+      <p class='eyebrow'>Châteaugiron · À deux pas de Rennes</p>
+      <p>Architecture d’intérieur & Galerie</p>
     </div>
-    <h2 id='opening-title' data-reveal>
-      <span>Rendez-vous en</span>octobre <em>2026.</em>
-    </h2>
-    <div class={styles.openingBottom} data-reveal>
-      <p>26 bis rue au Prévôt<br />35410 Châteaugiron</p>
+    <div class={styles.openingHeading}>
+      <h2 id='opening-title'>
+        <span>Ouverture officielle</span>octobre<br /><em>2026</em>
+      </h2>
+      <img src={sphere.src} alt='' width='180' height='180' data-opening-mark />
+    </div>
+    <div class={styles.openingBottom}>
+      <address>
+        <strong>Jukkai by Crystelle Terrasson</strong><br />{
+          CRYSTELLE.address.street
+        }<br />{`${CRYSTELLE.address.postalCode} ${CRYSTELLE.address.locality}`}
+      </address>
       <p>
-        Le studio vous reçoit déjà pour vos projets d’intérieur.<br />Appelez
-        Crystelle pour convenir d’un rendez-vous.
+        Une question sur la Galerie ou un projet d’intérieur ? Crystelle est
+        déjà joignable.
       </p>
-      <a class='text-link' href='/contact/'
-        >Préparer notre rencontre <Arrow diagonal /></a
+      <a class={styles.contactButton} href='/contact/'
+        >Prenons contact <Arrow diagonal /></a
       >
     </div>
   </section>
@@ -306,14 +269,16 @@ import styles from '#/styles/landing.module.css';
     data-art-dialog
     aria-labelledby='art-dialog-caption'>
     <div class={styles.dialogBar}>
-      <span class='eyebrow'>Un regard de plus près</span>
+      <span>La Galerie · Jukkai</span>
       <button type='button' data-art-close aria-label='Fermer l’image'
         >Fermer <span aria-hidden='true'>×</span></button
       >
     </div>
     <figure>
-      <img data-art-image alt='' />
-      <figcaption id='art-dialog-caption' data-art-caption></figcaption>
+      <img data-art-image alt='' /><figcaption
+        id='art-dialog-caption'
+        data-art-caption>
+      </figcaption>
     </figure>
   </dialog>
 </EditorialLayout>
