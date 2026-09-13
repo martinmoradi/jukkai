@@ -1,6 +1,7 @@
 # Current delivery: magazine release and October transition
 
-Status: current delivery direction, confirmed with Martin on 2026-09-07.
+Status: current delivery direction, confirmed with Martin on 2026-09-07;
+first-release page scope and supplied photography updated from his 2026-09-13 request.
 This file owns delivery scope and timing. Business truth stays in
 [the foundation](../strategy/foundation.md); open decisions and execution work
 live on GitHub. It is not a finished sitemap or an approved visual design.
@@ -27,9 +28,10 @@ live on GitHub. It is not a finished sitemap or an approved visual design.
 ## Two milestones, with a separate migration decision
 
 **Magazine release:** a beautiful homepage explaining Jukkai, a useful contact
-route, and working production wiring. A separate general contact page is Martin's
-working preference, not a settled sitemap. The existing Contact Card Page must
-work with the homepage; it is not automatically the general contact page.
+route, and working production wiring. On September 13, Martin selected the landing
+page and a separate general contact page as the entire first-release page scope.
+The full sitemap is deferred. The existing Contact Card Page remains available
+alongside these two pages; see the [magazine implementation](magazine-website.md).
 
 **Toward October:** add content, organise SEO work, and prepare a careful Studio
 Terrasson / Google Business Profile transition. The old website initially remains
@@ -39,10 +41,36 @@ because the magazine website is ready. Migration timing and the URL map remain o
 
 ## Content and design
 
-Martin expects a selected set of interior-design images and plans to photograph
-newly received artworks this week. These are expected inputs, not an approved asset
-inventory. Good finished-Galerie photography is currently lacking. Do not make a
-photographic Galerie hero, complete portfolio, or complete future sitemap mandatory.
+### Magazine edition: art leads
+
+Martin's second-pass brief of September 13 clarifies this edition's job for
+magazine visitors and people arriving through the planned Studio Terrasson banner:
+introduce what Crystelle is creating, make the Galerie's artistic world obvious
+immediately, explain Jukkai, and give location, October opening and contact details.
+Jukkai encompasses the architecture practice, Galerie and place. Architecture
+establishes expertise and continuity in this edition; service sales, case studies,
+prices, process and acquisition sections belong to later website work.
+
+Studio Terrasson still exists and its website remains online. Use visible, natural
+French connecting Crystelle Terrasson, Studio Terrasson, interior architecture and
+the new Galerie. Describe a continuation and expansion, not a completed migration
+or a closed practice. The architecture practice already receives clients; the
+official opening of Jukkai is October 2026, with no exact day or public hours given.
+This edition-specific instruction takes precedence over older visual-priority and
+retirement wording; it does not change the long-term business strategy.
+
+The pass covers the landing page and necessary contact-page coherence. The printed
+card remains intact. The incoming banner, cross-domain migration, Google profile
+changes and production promotion are separate work. Image selection, copy,
+composition and motion are implementation choices for review, not permanent brand
+decisions. See the [magazine guide](magazine-website.md) for the implemented result.
+
+On September 13, Martin supplied edited artworks, scenes and the Galerie portrait
+under `/home/martin/Desktop/jukkai-affinity-workingdir`, plus interior photography
+under `website-asset-inbox/projets`. The [magazine implementation](magazine-website.md)
+records the web selection and its source manifest. Selection and composition are
+part of visual review; this does not establish a complete portfolio, a finished
+Galerie-space photographic record or a future sitemap.
 
 Extra pages may be worthwhile when their facts, images, copy and review are ready.
 Cheap code generation alone does not establish readiness. Page count, navigation,
@@ -81,8 +109,9 @@ Do not require an API health probe or new promotion framework for this static re
 
 - **Settled by Martin:** the direction and business facts above, staged delivery,
   the old-site banner bridge, and care for search/profile continuity.
-- **Working preference:** homepage plus a general contact page for the magazine.
-- **Open:** exact release pages/content/design, focused research scope and output,
+- **Settled by Martin on September 13:** only a landing page and a general contact
+  page for the magazine; retain the existing printed Contact Card Page.
+- **Open:** final copy/design acceptance, focused research scope and output,
   added-page priorities, banner wording, migration timing, and profile procedure.
 - **Externally governed:** Google rebranding eligibility, profile verification and
   review handling. Investigate them without treating the brand name as undecided

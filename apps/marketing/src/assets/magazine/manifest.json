@@ -1,0 +1,92 @@
+[
+  {
+    "file": "interior-light.webp",
+    "source": "website-asset-inbox/projets/unknown new/DSCF1385.jpg",
+    "sourceSha256": "51127741573bb2aa0288a54c36b199976db84ee8cb2dc59eeac4d1d14c10432f",
+    "sha256": "de3004f491098496bbd15f96d96c90c9f43118158df957be0846afd481bc0ccd",
+    "width": 2400,
+    "height": 1600,
+    "bytes": 289950
+  },
+  {
+    "file": "belle-epoque.webp",
+    "source": "website-asset-inbox/projets/belle epoque (artignan)/HD/C.ABLAIN_6789.jpg",
+    "sourceSha256": "4f95437f4dcf55b121202f1f9944f6e1b1a1e6d26018c1c7f6304ff9af81068a",
+    "sha256": "43a933e68785a0169536c993ca04f9bde4910c63ad944d9d345761e5739b4f69",
+    "width": 1800,
+    "height": 1200,
+    "bytes": 388566
+  },
+  {
+    "file": "le-capri.webp",
+    "source": "website-asset-inbox/projets/le-capri-restaurant/LE CAPRI 2025/PROJET - RESTAURANT LE CAPRI/RESTAURANT_LE_CAPRI_HD-5.jpg",
+    "sourceSha256": "ea999ccc4716e7480a2026f5adcf8aae26c1784085c5aa7d2699aaada38ae243",
+    "sha256": "d73e8ae8ae6578422785f3a8fc1ca22562640eee855bbc9872a4d3d3051c6507",
+    "width": 1800,
+    "height": 1012,
+    "bytes": 223264
+  },
+  {
+    "file": "yoann-bonneville.webp",
+    "source": "/home/martin/Desktop/jukkai-affinity-workingdir/artworks/yoann-bonneville-02/yoann-bonneville-02-website-1600.jpg",
+    "sourceSha256": "afab5d9a18eb961cfe439fe79834eabdeb208b2589ce8fb17c4b5d9688dd642b",
+    "sha256": "d3ef70e4a23cf60b10af14d9ee894e884c21bcddfd2be5626cd1bde009420d4d",
+    "width": 1600,
+    "height": 1600,
+    "bytes": 491010
+  },
+  {
+    "file": "artwork-still-life.webp",
+    "source": "/home/martin/Desktop/jukkai-affinity-workingdir/scenes/playmobil-and-artworks/editorial-refinement-v2/playmobil-and-artworks-editorial-v2-preview-1440.jpg",
+    "sourceSha256": "9a2b4287988a6a418a7ced844403ffcf5743dcf13ebbcb8331c9df097850a2d2",
+    "sha256": "8c60d4f7ccac33c0f235e3260599471310ba198b8057707246f9db995d3bc83a",
+    "width": 1440,
+    "height": 1862,
+    "bytes": 203508
+  },
+  {
+    "file": "contrasting-bears.webp",
+    "source": "/home/martin/Desktop/jukkai-affinity-workingdir/scenes/contrasting-bears/editorial-refinement-v2/contrasting-bears-editorial-v2-preview-1800.jpg",
+    "sourceSha256": "eac5e6b92476b8fef9501416d5d74ac8f6c11ad05a5d1e0a2a3219bcf471089c",
+    "sha256": "bfd317baf8510798ee59278a882e333b224c416677fc23fbc70f0ee21a15c3ae",
+    "width": 1800,
+    "height": 1352,
+    "bytes": 204886
+  },
+  {
+    "file": "crystelle-galerie.webp",
+    "source": "/home/martin/Desktop/jukkai-affinity-workingdir/crystelle-galerie-tendence/crystelle-galerie-web-2400.jpg",
+    "sourceSha256": "d0b84fb7c460950ca033a07a0d32b08d65f8b3fa7edbe0b0e06fecf7fd50b94b",
+    "sha256": "8daafb0b12eccb55ec779776bfd0cec28cdb34a0bb301f3711e8c2eac184d9be",
+    "width": 2400,
+    "height": 1800,
+    "bytes": 373776
+  },
+  {
+    "file": "nina-bruneau.webp",
+    "source": "/home/martin/Desktop/jukkai-affinity-workingdir/artworks/nina-bruneau-01/revisions/art-direction-2026-09-12/nina-bruneau-01-website-1600.jpg",
+    "sourceSha256": "78a3c804607d16de7cb50c5aa1da0a60e7a6e428d729e938eb3bba0f32c1f494",
+    "sha256": "3ae6394bd1e88b2b25bad00a10d59c82dc0c506a329b2a108e1ed019fe11de92",
+    "width": 1600,
+    "height": 1600,
+    "bytes": 897760
+  },
+  {
+    "file": "dogs-scene.webp",
+    "source": "/home/martin/Desktop/jukkai-affinity-workingdir/scenes/dogs-with-real-dog/editorial-refinement-v2/dogs-with-real-dog-editorial-v2-preview-1800.jpg",
+    "sourceSha256": "86f9a242beda8c53ec6e74f44ea3dae3ca4ee92ab3c5c8708ce1a60deeb4a9c0",
+    "sha256": "8874ee202f696ceea6f2e83390c722f9e461e6a627d33d882207e7eb87694ac9",
+    "width": 1800,
+    "height": 1352,
+    "bytes": 144498
+  },
+  {
+    "file": "capri-material.webp",
+    "source": "/home/martin/src/pro/jukkai/website-asset-inbox/projets/le-capri-restaurant/LE CAPRI 2025/PROJET - RESTAURANT LE CAPRI/RESTAURANT_LE_CAPRI_HD-59.jpg",
+    "sourceSha256": "a2d036a18a2dca043be4a1500b84b45d86d563e171aa988ac679f91a95ebb0f8",
+    "sha256": "e0e7584cf90a858497c1506d6f4172fe2cd54ccd36d5326ec8f359b7b7588c37",
+    "width": 1800,
+    "height": 1202,
+    "bytes": 161102
+  }
+]

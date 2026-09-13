@@ -1,0 +1,122 @@
+---
+import '#/styles/editorial.css';
+
+import { getImage } from 'astro:assets';
+
+import sphere from '#/assets/jukkai-sphere.svg';
+import socialImage from '#/assets/magazine/crystelle-galerie.webp';
+import wordmark from '#/assets/magazine/jukkai-wordmark-primary.svg';
+import CloudflareAnalytics from '#/components/CloudflareAnalytics.astro';
+import SiteFooter from '#/components/SiteFooter.astro';
+import SiteHeader from '#/components/SiteHeader.astro';
+import { CRYSTELLE, CRYSTELLE_FULL_NAME } from '#/data/crystelle';
+
+interface Props {
+  title: string;
+  description: string;
+  contact?: boolean;
+}
+
+const { title, description, contact = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const [social, touchIcon] = await Promise.all([
+  getImage({ src: socialImage, width: 1200, height: 630, format: 'jpeg' }),
+  getImage({ src: sphere, width: 180, height: 180, format: 'png' }),
+]);
+const siteUrl = new URL('/', Astro.site).href;
+// One public identity, with only facts also explained on the page. No legal
+// entity, brand-migration equivalence, opening hours or event date is inferred.
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${siteUrl}#jukkai`,
+      name: 'Jukkai by Crystelle Terrasson',
+      url: siteUrl,
+      logo: new URL(wordmark.src, Astro.site).href,
+      description:
+        'Architecture d’intérieur et Galerie à Châteaugiron, près de Rennes.',
+      telephone: CRYSTELLE.phoneTel,
+      email: CRYSTELLE.email,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: CRYSTELLE.address.street,
+        postalCode: CRYSTELLE.address.postalCode,
+        addressLocality: CRYSTELLE.address.locality,
+        addressCountry: 'FR',
+      },
+      founder: {
+        '@type': 'Person',
+        name: CRYSTELLE_FULL_NAME,
+        jobTitle: CRYSTELLE.profession,
+      },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}#website`,
+      name: 'Jukkai by Crystelle Terrasson',
+      url: siteUrl,
+      inLanguage: 'fr-FR',
+      publisher: { '@id': `${siteUrl}#jukkai` },
+    },
+    {
+      '@type': contact ? 'ContactPage' : 'WebPage',
+      '@id': `${canonical.href}#webpage`,
+      url: canonical.href,
+      name: title,
+      description,
+      inLanguage: 'fr-FR',
+      isPartOf: { '@id': `${siteUrl}#website` },
+      about: { '@id': `${siteUrl}#jukkai` },
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang='fr'>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <title>{title}</title>
+    <meta name='description' content={description} />
+    <link rel='canonical' href={canonical.href} />
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content={description} />
+    <meta property='og:type' content='website' />
+    <meta property='og:locale' content='fr_FR' />
+    <meta property='og:site_name' content='Jukkai by Crystelle Terrasson' />
+    <meta property='og:url' content={canonical.href} />
+    <meta property='og:image' content={new URL(social.src, Astro.site).href} />
+    <meta property='og:image:width' content='1200' />
+    <meta property='og:image:height' content='630' />
+    <meta
+      property='og:image:alt'
+      content='Crystelle Terrasson parmi les peintures et sculptures qu’elle réunit pour Jukkai.'
+    />
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta name='theme-color' content='#dfd2e8' />
+    <link rel='icon' type='image/svg+xml' href={sphere.src} />
+    <link rel='apple-touch-icon' href={touchIcon.src} />
+    <link rel='stylesheet' href='/fonts/generated/fonts.css' />
+    <script
+      type='application/ld+json'
+      set:html={JSON.stringify(structuredData).replaceAll('<', '\\u003c')}
+    />
+    <CloudflareAnalytics
+      token={import.meta.env.PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN}
+    />
+  </head>
+  <body>
+    <a class='skip-link' href='#contenu'>Aller au contenu</a>
+    <SiteHeader contact={contact} />
+    <main id='contenu' tabindex='-1'><slot /></main>
+    <SiteFooter />
+    <script>
+      import { initEditorialMotion } from '#/scripts/editorial-motion';
+
+      initEditorialMotion();
+    </script>
+  </body>
+</html>

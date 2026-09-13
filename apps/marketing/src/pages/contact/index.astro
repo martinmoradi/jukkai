@@ -1,0 +1,94 @@
+---
+import { Image } from 'astro:assets';
+
+import portrait from '#/assets/magazine/crystelle-galerie.webp';
+import Arrow from '#/components/Arrow.astro';
+import { CRYSTELLE, CRYSTELLE_VCARD_PATH } from '#/data/crystelle';
+import EditorialLayout from '#/layouts/EditorialLayout.astro';
+import styles from '#/styles/contact.module.css';
+
+const address = `${CRYSTELLE.address.street}, ${CRYSTELLE.address.postalCode} ${CRYSTELLE.address.locality}, France`;
+const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+const appleMapsUrl = `https://maps.apple.com/?q=${encodeURIComponent(address)}`;
+---
+
+<EditorialLayout
+  title='Contact — Jukkai by Crystelle Terrasson'
+  description='Un projet d’intérieur ou une envie de découvrir la galerie ? Contactez Jukkai by Crystelle Terrasson à Châteaugiron : 06 62 72 87 99, ct@jukkai.fr.'
+  contact>
+  <section class={styles.contact} aria-labelledby='contact-title'>
+    <div class={styles.heading}>
+      <p class='eyebrow' data-hero-copy>Galerie & architecture d’intérieur</p>
+      <h1 id='contact-title' data-hero-copy>
+        Un mot à<br /><em>Crystelle.</em>
+      </h1>
+    </div>
+    <div class={styles.contactGrid}>
+      <div class={styles.details}>
+        <p class={styles.intro} data-reveal>
+          Une question sur la Galerie, une œuvre qui vous plaît, un projet
+          d’intérieur. Appelez Crystelle ou écrivez-lui.
+        </p>
+        <div class={styles.contactOptions} data-reveal>
+          <a href={`tel:${CRYSTELLE.phoneTel}`} class={styles.contactOption}>
+            <span class='eyebrow'>Appeler Crystelle</span>
+            <span class={styles.contactValue}
+              >{CRYSTELLE.phoneDisplay} <Arrow diagonal /></span
+            >
+          </a>
+          <a href={`mailto:${CRYSTELLE.email}`} class={styles.contactOption}>
+            <span class='eyebrow'>Lui écrire</span>
+            <span class={styles.contactValue}
+              >{CRYSTELLE.email} <Arrow diagonal /></span
+            >
+          </a>
+        </div>
+        <div class={styles.visit} data-reveal>
+          <h2>Se retrouver à Châteaugiron</h2>
+          <address>
+            {CRYSTELLE.address.street}<br />{
+              `${CRYSTELLE.address.postalCode} ${CRYSTELLE.address.locality}`
+            }
+          </address>
+          <p>
+            Le studio d’architecture d’intérieur vous reçoit déjà sur
+            rendez-vous. L’ouverture officielle de Jukkai et de sa Galerie est
+            prévue en octobre 2026.
+          </p>
+          <a
+            class='text-link'
+            href={mapsUrl}
+            data-maps-link
+            data-apple-maps-url={appleMapsUrl}
+            >Voir l’itinéraire <Arrow diagonal /></a
+          >
+        </div>
+        <div class={styles.otherLinks} data-reveal>
+          <a href={CRYSTELLE_VCARD_PATH}
+            >Enregistrer le contact <span aria-hidden='true'>↓</span></a
+          >
+          <a href={CRYSTELLE.instagram.url}
+            >Retrouver Jukkai sur Instagram <Arrow diagonal /></a
+          >
+        </div>
+      </div>
+      <figure class={styles.portrait} data-hero-image>
+        <Image
+          src={portrait}
+          alt='Crystelle Terrasson au milieu des œuvres qu’elle réunit pour Jukkai.'
+          widths={[640, 960, 1440, 1920]}
+          sizes='(max-width: 760px) 90vw, 46vw'
+          width={1440}
+          loading='eager'
+          fetchpriority='high'
+        />
+        <figcaption>
+          <span>Crystelle Terrasson</span><span
+            >Architecte d’intérieur · Fondatrice</span
+          >
+        </figcaption>
+      </figure>
+    </div>
+    <a class={styles.back} href='/'>← Retour à l’univers Jukkai</a>
+  </section>
+</EditorialLayout>
