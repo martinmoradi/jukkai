@@ -15,8 +15,10 @@ export function initArtworkViewer(root: Document = document) {
   let zoom = 2;
   let maxZoom = 4;
   let loading = 0;
+  let ready = false;
 
   function render(next: number, point?: { x: number; y: number }) {
+    if (!ready) return;
     const oldWidth = image.clientWidth || fitWidth;
     const oldHeight = image.clientHeight || fitWidth;
     const center = point ?? {
@@ -70,6 +72,8 @@ export function initArtworkViewer(root: Document = document) {
       event.preventDefault();
       opener = link;
       const ticket = ++loading;
+      ready = false;
+      plus.disabled = minus.disabled = fit.disabled = true;
       const inline = link.querySelector<HTMLImageElement>('img');
       const rect = inline?.getBoundingClientRect();
       const point =
@@ -94,6 +98,7 @@ export function initArtworkViewer(root: Document = document) {
         .decode()
         .then(() => {
           if (!dialog.open || ticket !== loading) return;
+          ready = true;
           measure();
           const usefulZoom = rect ? (rect.width * 1.35) / fitWidth : 2;
           render(Math.max(2, usefulZoom), point);
@@ -101,6 +106,7 @@ export function initArtworkViewer(root: Document = document) {
           viewport.focus({ preventScroll: true });
         })
         .catch(() => {
+          if (!dialog.open || ticket !== loading) return;
           viewport.removeAttribute('aria-busy');
           caption.textContent =
             'L’image n’a pas pu être chargée. Fermez puis réessayez.';
@@ -115,6 +121,7 @@ export function initArtworkViewer(root: Document = document) {
     ?.addEventListener('click', () => dialog.close());
   dialog.addEventListener('close', () => {
     loading++;
+    ready = false;
     opener?.focus({ preventScroll: true });
   });
   dialog.addEventListener('keydown', (event) => {
@@ -173,7 +180,7 @@ export function initArtworkViewer(root: Document = document) {
   viewport.addEventListener('pointercancel', endDrag);
   viewport.addEventListener('lostpointercapture', endDrag);
   window.addEventListener('resize', () => {
-    if (!dialog.open || !image.naturalWidth) return;
+    if (!dialog.open || !ready) return;
     measure();
     render(zoom);
   });

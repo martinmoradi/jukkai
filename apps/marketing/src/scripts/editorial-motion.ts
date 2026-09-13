@@ -32,9 +32,11 @@ async function animateEditorial() {
   ]);
   gsap.registerPlugin(ScrollTrigger);
   const media = gsap.matchMedia();
+  let followInitialHash = true;
   media.add(
     {
-      motion: '(prefers-reduced-motion: no-preference) and (min-height: 600px)',
+      motion:
+        '(prefers-reduced-motion: no-preference) and (min-height: 720px), (prefers-reduced-motion: no-preference) and (max-width: 800px) and (min-height: 600px)',
       mobile: '(max-width: 800px)',
     },
     (context) => {
@@ -101,6 +103,13 @@ async function animateEditorial() {
           scale: (p.w * 0.286) / baseSize(),
         };
       };
+      const middleSize = () =>
+        mobile
+          ? Math.min(
+              stage.clientWidth * 0.84,
+              (stage.clientHeight - photoBox().h) * 0.82,
+            )
+          : Math.min(stage.clientWidth * 0.43, stage.clientHeight * 0.78);
       gsap.set(image, { width: baseSize, xPercent: -50, yPercent: -50 });
       const timeline = gsap.timeline({
         defaults: { ease: 'none' },
@@ -127,18 +136,11 @@ async function animateEditorial() {
             x: () => stage.clientWidth * (mobile ? 0.5 : 0.755),
             y: () =>
               mobile
-                ? photoBox().h + (stage.clientHeight - photoBox().h) * 0.53
+                ? photoBox().h +
+                  Math.min(32, stage.clientWidth * 0.08) +
+                  middleSize() / 2
                 : stage.clientHeight * 0.5,
-            scale: () =>
-              (mobile
-                ? Math.min(
-                    stage.clientWidth * 0.72,
-                    (stage.clientHeight - photoBox().h) * 0.82,
-                  )
-                : Math.min(
-                    stage.clientWidth * 0.43,
-                    stage.clientHeight * 0.78,
-                  )) / baseSize(),
+            scale: () => middleSize() / baseSize(),
             duration: 0.48,
             ease: 'power1.inOut',
           },
@@ -162,13 +164,11 @@ async function animateEditorial() {
           { autoAlpha: 0, duration: 0.15 },
           0.22,
         )
+        .fromTo(photo, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.08 }, 0.08)
         .fromTo(
           photo,
-          {
-            autoAlpha: 0,
-            clipPath: mobile ? 'inset(0 0 14% 0)' : 'inset(0 14% 0 0)',
-          },
-          { autoAlpha: 1, clipPath: 'inset(0%)', duration: 0.28 },
+          { clipPath: mobile ? 'inset(0 0 14% 0)' : 'inset(0 14% 0 0)' },
+          { clipPath: 'inset(0%)', duration: 0.28 },
           0.08,
         )
         .to(
@@ -210,7 +210,11 @@ async function animateEditorial() {
       });
       void document.fonts.ready.then(() => {
         ScrollTrigger.refresh();
-        if (location.hash === '#esprit' || location.hash === '#architecture') {
+        const followHash =
+          followInitialHash &&
+          (location.hash === '#esprit' || location.hash === '#architecture');
+        followInitialHash = false;
+        if (followHash) {
           window.scrollTo({
             top:
               sequence.offsetTop +
