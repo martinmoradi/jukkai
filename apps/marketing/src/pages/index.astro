@@ -98,7 +98,7 @@ const [painting, objects, dogs] = GALERIE_IMAGES;
             Le studio vous reçoit déjà sur rendez-vous, sans attendre octobre.
           </p>
           <a class='text-link' href='https://www.studioterrasson.fr/'
-            >Les projets de Studio Terrasson <Arrow diagonal /></a
+            >Les projets du studio <Arrow diagonal /></a
           >
         </div>
       </section>
@@ -109,7 +109,7 @@ const [painting, objects, dogs] = GALERIE_IMAGES;
       // Reserve the first pose before paint. Static markup remains the fallback.
       if (
         matchMedia(
-          '(prefers-reduced-motion: no-preference) and (min-height: 600px)',
+          '(prefers-reduced-motion: no-preference) and (min-height: 720px), (prefers-reduced-motion: no-preference) and (max-width: 800px) and (min-height: 600px)',
         ).matches
       ) {
         const sequence = document.currentScript.closest('[data-art-sequence]');
