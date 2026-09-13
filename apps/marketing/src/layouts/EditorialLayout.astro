@@ -96,11 +96,12 @@ const structuredData = {
       content='Crystelle Terrasson parmi les peintures et sculptures qu’elle réunit pour Jukkai.'
     />
     <meta name='twitter:card' content='summary_large_image' />
-    <meta name='theme-color' content='#dfd2e8' />
+    <meta name='theme-color' content='#f8f8f5' />
     <link rel='icon' type='image/svg+xml' href={sphere.src} />
     <link rel='apple-touch-icon' href={touchIcon.src} />
     <link rel='stylesheet' href='/fonts/generated/fonts.css' />
     <script
+      is:inline
       type='application/ld+json'
       set:html={JSON.stringify(structuredData).replaceAll('<', '\\u003c')}
     />
