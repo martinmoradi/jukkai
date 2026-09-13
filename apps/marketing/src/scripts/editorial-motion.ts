@@ -30,7 +30,8 @@ export function initEditorialMotion() {
           event.preventDefault();
           opener = link;
           dialogImage.src = link.dataset.artSrc;
-          dialogImage.alt = link.querySelector('img')?.alt ?? '';
+          dialogImage.alt =
+            link.dataset.artAlt ?? link.querySelector('img')?.alt ?? '';
           caption.textContent = link.dataset.artCaption ?? '';
           dialog.showModal();
         });
@@ -69,79 +70,167 @@ async function animateEditorial() {
   gsap.registerPlugin(ScrollTrigger);
   const media = gsap.matchMedia();
 
-  media.add('(prefers-reduced-motion: no-preference)', () => {
-    if (window.scrollY < 100) {
-      const entrance = gsap.timeline({ defaults: { ease: 'power3.out' } });
-      const mark = document.querySelector('[data-hero-mark]');
-      if (mark) {
-        entrance.from(mark, {
-          y: 25,
-          opacity: 0,
-          duration: 0.9,
-          clearProps: 'all',
-        });
-      }
-      entrance.from(
-        '[data-hero-copy]',
-        { y: 20, opacity: 0, duration: 0.7, stagger: 0.1, clearProps: 'all' },
-        0.15,
+  media.add(
+    {
+      motion: '(prefers-reduced-motion: no-preference)',
+      mobile: '(max-width: 800px)',
+      desktop: '(min-width: 801px)',
+    },
+    (context) => {
+      if (!context.conditions?.motion) return;
+      const mobile = Boolean(context.conditions.mobile);
+      const intro = document.querySelector<HTMLElement>('[data-art-intro]');
+      const sequence = document.querySelector<HTMLElement>(
+        '[data-art-sequence]',
       );
-      entrance.from(
-        '[data-hero-image]',
-        { y: 30, opacity: 0, duration: 0.9, clearProps: 'all' },
-        0.2,
+      const stage = document.querySelector<HTMLElement>('[data-art-stage]');
+      const heroImage = document.querySelector<HTMLImageElement>(
+        '[data-art-hero-image]',
       );
-    }
-
-    gsap.utils.toArray<HTMLElement>('[data-reveal]').forEach((element) => {
-      // Never obscure content at a restored scroll position or an anchor target.
-      if (element.getBoundingClientRect().top < window.innerHeight * 0.92)
-        return;
-      gsap.from(element, {
-        y: 26,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        clearProps: 'all',
-        scrollTrigger: { trigger: element, start: 'top 94%', once: true },
-      });
-    });
-
-    const desktopMotion = gsap.matchMedia();
-    desktopMotion.add('(min-width: 761px)', () => {
-      gsap.utils
-        .toArray<HTMLImageElement>('[data-parallax-image]')
-        .forEach((image) => {
-          gsap.fromTo(
-            image,
-            { scale: 1.08, yPercent: -2 },
-            {
-              yPercent: 2,
-              ease: 'none',
-              scrollTrigger: {
-                trigger: image.parentElement,
-                start: 'top bottom',
-                end: 'bottom top',
-                scrub: 1.1,
-              },
-            },
+      if (sequence && stage && heroImage && intro) {
+        sequence.dataset.motion = 'ready';
+        const size = () =>
+          Math.min(
+            stage.clientWidth * (mobile ? 0.84 : 0.48),
+            stage.clientHeight * (mobile ? 0.64 : 0.78),
           );
-        });
-      const turningMark = document.querySelector('[data-turning-mark]');
-      if (turningMark) {
-        gsap.to(turningMark, {
-          rotation: 55,
-          ease: 'none',
+        const closeScale = () =>
+          mobile
+            ? Math.max(
+                stage.clientWidth / size(),
+                (stage.clientHeight * 0.47) / size(),
+              ) * 1.5
+            : Math.max(
+                (stage.clientWidth * 0.54) / size(),
+                stage.clientHeight / size(),
+              ) * 1.28;
+        gsap.set(heroImage, { width: size, xPercent: -50, yPercent: -50 });
+        // Three poses: close-up / opening frame / whole painting. The CSS sticky
+        // stage uses only 80svh of additional native scroll, on both form factors.
+        const sequenceTimeline = gsap.timeline({
+          defaults: { ease: 'none' },
           scrollTrigger: {
-            trigger: turningMark,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: 1.4,
+            trigger: sequence,
+            start: () =>
+              `top ${getComputedStyle(document.documentElement).getPropertyValue('--header-height').trim()}`,
+            end: () => `+=${sequence.offsetHeight - stage.offsetHeight}`,
+            scrub: true,
+            invalidateOnRefresh: true,
+            onRefreshInit: () => gsap.set(heroImage, { width: size }),
           },
         });
+        sequenceTimeline
+          .fromTo(
+            '[data-art-frame]',
+            {
+              clipPath: () =>
+                mobile
+                  ? `inset(${intro.offsetHeight + 12}px 0% 0% 0%)`
+                  : 'inset(0% 0% 0% 46%)',
+            },
+            { clipPath: 'inset(0% 0% 0% 0%)', duration: 0.8 },
+            0,
+          )
+          .fromTo(
+            heroImage,
+            {
+              x: () => (mobile ? 0 : stage.clientWidth * 0.23),
+              y: () =>
+                mobile
+                  ? intro.offsetHeight +
+                    77 +
+                    size() * closeScale() * 0.22 -
+                    stage.clientHeight / 2
+                  : 0,
+              scale: closeScale,
+            },
+            { x: 0, y: 0, scale: 1, duration: 0.85, ease: 'power1.inOut' },
+            0,
+          )
+          .fromTo(
+            '[data-art-intro]',
+            { y: 0, opacity: 1, visibility: 'visible' },
+            { y: mobile ? -95 : -65, autoAlpha: 0, duration: 0.34 },
+            0,
+          )
+          .fromTo(
+            '[data-art-backdrop]',
+            { scale: 0.86, opacity: 0 },
+            { scale: 1, opacity: 1, duration: 0.65 },
+            0.2,
+          )
+          .fromTo(
+            '[data-art-credit]',
+            { y: 20, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.22 },
+            0.72,
+          )
+          .fromTo(
+            '[data-art-progress]',
+            { scaleX: 0 },
+            { scaleX: 1, duration: 1 },
+            0,
+          );
       }
-    });
-    void document.fonts.ready.then(() => ScrollTrigger.refresh());
-    return () => desktopMotion.revert();
-  });
+
+      // Supporting gestures share the opening's logic: frames open and a
+      // photograph settles into place. Body copy is never hidden for a reveal.
+      gsap.utils.toArray<HTMLElement>('[data-art-reveal]').forEach((frame) => {
+        if (frame.getBoundingClientRect().top < window.innerHeight) return;
+        gsap.fromTo(
+          frame,
+          { clipPath: 'inset(10% 0% 10% 0%)', y: 30 },
+          {
+            clipPath: 'inset(0% 0% 0% 0%)',
+            y: 0,
+            ease: 'power1.out',
+            scrollTrigger: {
+              trigger: frame,
+              start: 'top 95%',
+              end: 'top 40%',
+              scrub: true,
+            },
+          },
+        );
+      });
+      const portrait = document.querySelector('[data-portrait-reveal]');
+      if (portrait) {
+        gsap.fromTo(
+          portrait,
+          { xPercent: mobile ? -5 : -8 },
+          {
+            xPercent: 0,
+            ease: 'power1.out',
+            scrollTrigger: {
+              trigger: portrait,
+              start: 'top 95%',
+              end: 'top 40%',
+              scrub: true,
+            },
+          },
+        );
+      }
+      const mark = document.querySelector('[data-opening-mark]');
+      if (mark) {
+        gsap.fromTo(
+          mark,
+          { rotation: -30 },
+          {
+            rotation: 25,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: mark,
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: true,
+            },
+          },
+        );
+      }
+      void document.fonts.ready.then(() => ScrollTrigger.refresh());
+      return () => {
+        delete sequence?.dataset.motion;
+      };
+    },
+  );
 }
