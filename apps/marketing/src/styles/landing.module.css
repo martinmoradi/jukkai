@@ -402,6 +402,13 @@
   }
 }
 @media (max-width: 800px) {
+  .introduction[data-motion='ready'] .introStage {
+    min-height: 550px;
+  }
+  .introduction[data-motion='ready'] .storyAnchor {
+    top: calc(100% - max(550px, 100svh - var(--header-height)));
+  }
+
   .hero {
     grid-template-columns: 1fr;
     min-height: 0;
@@ -506,6 +513,8 @@
   }
   .introduction[data-motion='ready'] .portrait {
     flex: none;
+    align-self: center;
+    width: min(100%, calc(46svh * 4 / 3));
   }
   .galerie {
     padding: 45px var(--gutter);

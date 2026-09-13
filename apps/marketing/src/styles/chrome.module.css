@@ -137,6 +137,9 @@
   }
 }
 @media (max-width: 800px) {
+  .contactLink svg {
+    display: none;
+  }
   .brand {
     flex-direction: column;
     gap: 3px;
@@ -148,6 +151,7 @@
     max-width: none;
     font-size: 12px;
     line-height: 1.4;
+    white-space: nowrap;
   }
   .navigation {
     gap: 20px;
