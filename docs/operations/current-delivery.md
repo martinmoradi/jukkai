@@ -41,6 +41,30 @@ because the magazine website is ready. Migration timing and the URL map remain o
 
 ## Content and design
 
+### Magazine edition: art leads
+
+Martin's second-pass brief of September 13 clarifies this edition's job for
+magazine visitors and people arriving through the planned Studio Terrasson banner:
+introduce what Crystelle is creating, make the Galerie's artistic world obvious
+immediately, explain Jukkai, and give location, October opening and contact details.
+Jukkai encompasses the architecture practice, Galerie and place. Architecture
+establishes expertise and continuity in this edition; service sales, case studies,
+prices, process and acquisition sections belong to later website work.
+
+Studio Terrasson still exists and its website remains online. Use visible, natural
+French connecting Crystelle Terrasson, Studio Terrasson, interior architecture and
+the new Galerie. Describe a continuation and expansion, not a completed migration
+or a closed practice. The architecture practice already receives clients; the
+official opening of Jukkai is October 2026, with no exact day or public hours given.
+This edition-specific instruction takes precedence over older visual-priority and
+retirement wording; it does not change the long-term business strategy.
+
+The pass covers the landing page and necessary contact-page coherence. The printed
+card remains intact. The incoming banner, cross-domain migration, Google profile
+changes and production promotion are separate work. Image selection, copy,
+composition and motion are implementation choices for review, not permanent brand
+decisions. See the [magazine guide](magazine-website.md) for the implemented result.
+
 On September 13, Martin supplied edited artworks, scenes and the Galerie portrait
 under `/home/martin/Desktop/jukkai-affinity-workingdir`, plus interior photography
 under `website-asset-inbox/projets`. The [magazine implementation](magazine-website.md)

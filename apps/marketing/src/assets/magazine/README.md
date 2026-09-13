@@ -25,3 +25,23 @@ The photograph labels describe supplied projects, not new project case studies.
 The complete website can add project details and agreed photographer credits.
 This first release introduces the Galerie rather than publishing a catalogue,
 inventory, prices, public opening hours or an artist programme.
+
+## Art-first second pass, September 13
+
+The revised opening uses `yoann-bonneville` (the selected `yoann-bonneville-02`
+export): a close view resolves into the complete square painting. Its artist is
+known; no title is assigned. The image viewer always shows the entire photograph.
+
+Three additional web derivatives follow the same export/checksum convention:
+
+- `nina-bruneau`: selected September 12 revision of `nina-bruneau-01`; the complete
+  painting and purple painted edge are retained. The title remains unknown.
+- `dogs-scene`: selected scene v2, `dogs-with-real-dog`; descriptive caption only.
+  The scene supplies humour and context, without inventing an installation credit.
+- `capri-material`: `RESTAURANT_LE_CAPRI_HD-59`, light on wood, metal and upholstery.
+  Labelled as a Studio Terrasson project, never as the Jukkai premises.
+
+The sculptural still life and Crystelle portrait remain selected. Earlier web
+exports remain available as provenance but are not all displayed in this edition.
+These choices follow contact-sheet and larger-image review against the art-first
+brief; they do not establish a catalogue, artwork availability or permanent palette.
