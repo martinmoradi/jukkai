@@ -56,9 +56,17 @@ export function initEditorialMotion() {
   }
 
   // An explicit preference skips the animation bundle as well as the motion.
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document
+      .querySelector('[data-art-sequence]')
+      ?.removeAttribute('data-motion');
+    return;
+  }
   void animateEditorial().catch(() => {
     // Network failures leave the server-rendered page fully usable.
+    document
+      .querySelector('[data-art-sequence]')
+      ?.removeAttribute('data-motion');
   });
 }
 
@@ -72,7 +80,7 @@ async function animateEditorial() {
 
   media.add(
     {
-      motion: '(prefers-reduced-motion: no-preference)',
+      motion: '(prefers-reduced-motion: no-preference) and (min-height: 600px)',
       mobile: '(max-width: 800px)',
       desktop: '(min-width: 801px)',
     },
@@ -89,6 +97,7 @@ async function animateEditorial() {
       );
       if (sequence && stage && heroImage && intro) {
         sequence.dataset.motion = 'ready';
+        sequence.dataset.animated = 'true';
         const size = () =>
           Math.min(
             stage.clientWidth * (mobile ? 0.84 : 0.48),

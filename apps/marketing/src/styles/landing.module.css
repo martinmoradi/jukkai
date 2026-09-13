@@ -118,8 +118,8 @@
 .sequenceLine {
   display: none;
 }
-/* The complete painting and intro are the default. Only a successfully loaded
-   enhancement reserves the short scroll sequence. Native scrolling stays in charge. */
+/* The complete painting is the static default. A tiny inline enhancement
+   reserves the composition before paint; bundle failure restores that default. */
 .hero[data-motion='ready'] {
   height: calc(180svh - var(--header-height));
 }
@@ -138,12 +138,17 @@
   position: absolute;
   inset: 0;
   overflow: hidden;
+  clip-path: var(--art-close-crop);
 }
 .hero[data-motion='ready'] .heroArtLink img {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: min(48vw, calc(max(620px, 100svh - var(--header-height)) * 0.78));
   max-width: none;
+  transform: translate(-50%, -50%)
+    translate(var(--art-close-x), var(--art-close-y))
+    scale(var(--art-close-scale));
   transform-origin: center;
 }
 .hero[data-motion='ready'] .heroCaption {
@@ -152,6 +157,7 @@
   bottom: 18px;
   left: var(--gutter);
   z-index: 3;
+  visibility: hidden;
   margin: 0;
 }
 .hero[data-motion='ready'] .heroBackdrop {
@@ -166,6 +172,7 @@
   word-spacing: 0.07em;
   letter-spacing: -0.045em;
   white-space: nowrap;
+  opacity: 0;
 }
 .hero[data-motion='ready'] .sequenceLine {
   position: absolute;
@@ -624,6 +631,9 @@
   .hero[data-motion='ready'] .heroCopy {
     align-self: start;
   }
+  .hero[data-motion='ready'] .heroArtLink img {
+    width: min(84vw, calc(max(640px, 100svh - var(--header-height)) * 0.64));
+  }
   .hero[data-motion='ready'] .heroCaption {
     inset: calc(50% + min(42vw, 32svh) + 12px) 20px auto 20px;
     font-size: 14px;
@@ -666,7 +676,6 @@
   .artwork figcaption {
     flex-wrap: wrap;
     gap: 2px 16px;
-    padding-right: 175px;
     font-size: 16px;
   }
   .viewArtwork {
@@ -824,5 +833,12 @@
   }
   .openingHeading img {
     width: 46px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 800px) {
+  .hero[data-motion='ready'] .heroBackdrop {
+    padding-top: 30px;
+    font-size: min(15vw, 13svh);
   }
 }
