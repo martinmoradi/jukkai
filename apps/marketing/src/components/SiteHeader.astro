@@ -1,5 +1,5 @@
 ---
-import wordmark from '#/assets/magazine/jukkai-wordmark-primary.svg';
+import wordmark from '#/assets/magazine/jukkai-wordmark-primary-no-byline.svg';
 import Arrow from '#/components/Arrow.astro';
 import styles from '#/styles/chrome.module.css';
 
@@ -14,22 +14,17 @@ const { contact = false } = Astro.props;
     class={styles.brand}
     href='/'
     aria-label='Jukkai by Crystelle Terrasson — accueil'>
-    <img
-      src={wordmark.src}
-      width='100'
-      height='48'
-      alt='Jukkai by Crystelle Terrasson'
-    />
+    <img src={wordmark.src} width='120' height='48' alt='Jukkai' />
+    <span>by Crystelle Terrasson</span>
   </a>
   <nav class={styles.navigation} aria-label='Navigation principale'>
-    <a class={styles.sectionLink} href='/#architecture'>Architecture</a>
-    <a class={styles.sectionLink} href='/#galerie'>Galerie</a>
-    <a class={styles.sectionLink} href='/#esprit'>L’esprit Jukkai</a>
+    <a class={styles.sectionLink} href='/#galerie'>La Galerie</a>
+    <a class={styles.sectionLink} href='/#esprit'>Crystelle & Jukkai</a>
+    <a class={styles.sectionLink} href='/#ouverture'>Le lieu</a>
     <a
       class={styles.contactLink}
       href='/contact/'
-      aria-current={contact ? 'page' : undefined}>
-      Rencontrons-nous <Arrow diagonal />
-    </a>
+      aria-current={contact ? 'page' : undefined}>Contact <Arrow diagonal /></a
+    >
   </nav>
 </header>

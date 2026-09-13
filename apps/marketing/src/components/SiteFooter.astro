@@ -1,37 +1,11 @@
 ---
-import sphere from '#/assets/jukkai-sphere.svg';
 import wordmark from '#/assets/magazine/jukkai-wordmark-primary-no-byline.svg';
 import Arrow from '#/components/Arrow.astro';
 import { CRYSTELLE } from '#/data/crystelle';
 import styles from '#/styles/chrome.module.css';
-
-interface Props {
-  contact?: boolean;
-}
-const { contact = false } = Astro.props;
 ---
 
 <footer class={styles.footer}>
-  {
-    !contact && (
-      <div class={styles.invitation} data-reveal>
-        <p class='eyebrow'>Un lieu, une idée, un coup de cœur ?</p>
-        <a class={styles.invitationLink} href='/contact/'>
-          Et si l’on
-          <>
-            <br />
-            <span>se rencontrait ?</span>
-          </>
-          <span class={styles.invitationArrow}>
-            <Arrow diagonal />
-          </span>
-        </a>
-        <p class={styles.invitationNote}>
-          Votre projet commence par une conversation avec Crystelle.
-        </p>
-      </div>
-    )
-  }
   <div class={styles.footerInfo}>
     <a class={styles.footerMark} href='/' aria-label='Jukkai — accueil'>
       <img
@@ -45,26 +19,23 @@ const { contact = false } = Astro.props;
     <address>
       <span>Jukkai by Crystelle Terrasson</span><br />
       {CRYSTELLE.address.street}<br />
-      {CRYSTELLE.address.postalCode}
-      {CRYSTELLE.address.locality}
+      {`${CRYSTELLE.address.postalCode} ${CRYSTELLE.address.locality}`}
     </address>
     <div class={styles.footerLinks}>
       <a href={`tel:${CRYSTELLE.phoneTel}`}>{CRYSTELLE.phoneDisplay}</a>
       <a href={`mailto:${CRYSTELLE.email}`}>{CRYSTELLE.email}</a>
       <a href={CRYSTELLE.instagram.url}>Instagram <Arrow diagonal /></a>
     </div>
-    <img
-      class={styles.footerSphere}
-      src={sphere.src}
-      width='76'
-      height='76'
-      alt=''
-      loading='lazy'
-    />
+    <nav class={styles.footerLinks} aria-label='Navigation de bas de page'>
+      <a href='/#galerie'>La Galerie</a>
+      <a href='/#esprit'>Crystelle & Jukkai</a>
+      <a href='/#architecture'>Architecture d’intérieur</a>
+      <a href='/contact/'>Contact <Arrow diagonal /></a>
+    </nav>
   </div>
   <div class={styles.colophon}>
     <span>Architecture d’intérieur & Galerie</span>
-    <span>Châteaugiron · Région rennaise</span>
+    <span>Châteaugiron · Près de Rennes</span>
     <a href='#contenu'>Revenir en haut ↑</a>
   </div>
 </footer>
