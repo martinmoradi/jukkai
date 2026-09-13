@@ -30,7 +30,9 @@ inventory, prices, public opening hours or an artist programme.
 
 The revised opening uses `yoann-bonneville` (the selected `yoann-bonneville-02`
 export): a close view resolves into the complete square painting. Its artist is
-known; no title is assigned. The image viewer always shows the entire photograph.
+known; no title is assigned. The refined sequence connects the complete painting
+to its real presence in Crystelle’s portrait. The viewer opens at a useful detail
+scale and offers “Vue entière” to inspect the complete photograph at any time.
 
 Three additional web derivatives follow the same export/checksum convention:
 
@@ -39,7 +41,8 @@ Three additional web derivatives follow the same export/checksum convention:
 - `dogs-scene`: selected scene v2, `dogs-with-real-dog`; descriptive caption only.
   The scene supplies humour and context, without inventing an installation credit.
 - `capri-material`: `RESTAURANT_LE_CAPRI_HD-59`, light on wood, metal and upholstery.
-  Labelled as a Studio Terrasson project, never as the Jukkai premises.
+  A Studio Terrasson project, never the Jukkai premises. Preserved as an unused
+  export after the refinement removed the separate architecture photograph.
 
 The sculptural still life and Crystelle portrait remain selected. Earlier web
 exports remain available as provenance but are not all displayed in this edition.
