@@ -61,5 +61,32 @@
     "width": 2400,
     "height": 1800,
     "bytes": 373776
+  },
+  {
+    "file": "nina-bruneau.webp",
+    "source": "/home/martin/Desktop/jukkai-affinity-workingdir/artworks/nina-bruneau-01/revisions/art-direction-2026-09-12/nina-bruneau-01-website-1600.jpg",
+    "sourceSha256": "78a3c804607d16de7cb50c5aa1da0a60e7a6e428d729e938eb3bba0f32c1f494",
+    "sha256": "3ae6394bd1e88b2b25bad00a10d59c82dc0c506a329b2a108e1ed019fe11de92",
+    "width": 1600,
+    "height": 1600,
+    "bytes": 897760
+  },
+  {
+    "file": "dogs-scene.webp",
+    "source": "/home/martin/Desktop/jukkai-affinity-workingdir/scenes/dogs-with-real-dog/editorial-refinement-v2/dogs-with-real-dog-editorial-v2-preview-1800.jpg",
+    "sourceSha256": "86f9a242beda8c53ec6e74f44ea3dae3ca4ee92ab3c5c8708ce1a60deeb4a9c0",
+    "sha256": "8874ee202f696ceea6f2e83390c722f9e461e6a627d33d882207e7eb87694ac9",
+    "width": 1800,
+    "height": 1352,
+    "bytes": 144498
+  },
+  {
+    "file": "capri-material.webp",
+    "source": "/home/martin/src/pro/jukkai/website-asset-inbox/projets/le-capri-restaurant/LE CAPRI 2025/PROJET - RESTAURANT LE CAPRI/RESTAURANT_LE_CAPRI_HD-59.jpg",
+    "sourceSha256": "a2d036a18a2dca043be4a1500b84b45d86d563e171aa988ac679f91a95ebb0f8",
+    "sha256": "e0e7584cf90a858497c1506d6f4172fe2cd54ccd36d5326ec8f359b7b7588c37",
+    "width": 1800,
+    "height": 1202,
+    "bytes": 161102
   }
 ]
