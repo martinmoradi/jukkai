@@ -78,6 +78,49 @@ const [painting, objects, dogs] = GALERIE_IMAGES;
       <span class={styles.sequenceLine} data-art-progress aria-hidden='true'
       ></span>
     </div>
+    <script is:inline>
+      // Reserve the enhanced composition before the first paint. If JavaScript
+      // is unavailable, the complete artwork remains in the ordinary document.
+      if (
+        matchMedia(
+          '(prefers-reduced-motion: no-preference) and (min-height: 600px)',
+        ).matches
+      ) {
+        const sequence = document.currentScript.closest('[data-art-sequence]');
+        sequence.dataset.motion = 'ready';
+        const stage = sequence.querySelector('[data-art-stage]');
+        const intro = sequence.querySelector('[data-art-intro]');
+        const mobile = matchMedia('(max-width: 800px)').matches;
+        // These are the same first-pose measurements used by ScrollTrigger.
+        const size = Math.min(
+          stage.clientWidth * (mobile ? 0.84 : 0.48),
+          stage.clientHeight * (mobile ? 0.64 : 0.78),
+        );
+        const close = mobile
+          ? Math.max(stage.clientWidth, stage.clientHeight * 0.47) * 1.5
+          : Math.max(stage.clientWidth * 0.54, stage.clientHeight) * 1.28;
+        sequence.style.setProperty('--art-close-scale', close / size);
+        sequence.style.setProperty(
+          '--art-close-x',
+          `${mobile ? 0 : stage.clientWidth * 0.23}px`,
+        );
+        sequence.style.setProperty(
+          '--art-close-y',
+          `${mobile ? intro.offsetHeight + 77 + close * 0.22 - stage.clientHeight / 2 : 0}px`,
+        );
+        sequence.style.setProperty(
+          '--art-close-crop',
+          mobile
+            ? `inset(${intro.offsetHeight + 12}px 0 0 0)`
+            : 'inset(0 0 0 46%)',
+        );
+        // Also recover if the page's enhancement module itself never arrives.
+        setTimeout(() => {
+          if (!sequence.dataset.animated)
+            sequence.removeAttribute('data-motion');
+        }, 5000);
+      }
+    </script>
   </section>
 
   <section class={styles.galerie} id='galerie' aria-labelledby='galerie-title'>
@@ -88,9 +131,8 @@ const [painting, objects, dogs] = GALERIE_IMAGES;
       </div>
       <p class={styles.galleryIntroduction}>
         Des peintures qui accrochent l’œil, des sculptures qui ne se tiennent
-        pas tout à fait sages. Crystelle réunit les artistes et les pièces
-        qu’elle aime, avec une envie : vous donner envie de les découvrir à
-        votre tour.
+        pas tout à fait sages. Une sélection personnelle de Crystelle, à
+        découvrir de près.
       </p>
     </div>
     <div class={styles.artworkSpread}>
