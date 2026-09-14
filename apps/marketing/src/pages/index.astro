@@ -2,12 +2,13 @@
 import { Image } from 'astro:assets';
 
 import sphere from '#/assets/jukkai-sphere.svg';
-import crystelle from '#/assets/magazine/crystelle-galerie.webp';
 import Arrow from '#/components/Arrow.astro';
+import ArtworkSequence from '#/components/ArtworkSequence.astro';
 import ArtworkViewer from '#/components/ArtworkViewer.astro';
+import StudioTransition from '#/components/StudioTransition.astro';
 import VideoHero from '#/components/VideoHero.astro';
 import { CRYSTELLE } from '#/data/crystelle';
-import { GALERIE_IMAGES, HERO_ARTWORK } from '#/data/galerie';
+import { GALERIE_IMAGES } from '#/data/galerie';
 import EditorialLayout from '#/layouts/EditorialLayout.astro';
 import styles from '#/styles/landing.module.css';
 
@@ -18,137 +19,15 @@ const [painting, objects, dogs] = GALERIE_IMAGES;
   title='Jukkai by Crystelle Terrasson — Galerie & architecture d’intérieur, Châteaugiron'
   description='Jukkai by Crystelle Terrasson réunit architecture d’intérieur et Galerie à Châteaugiron, près de Rennes, dans la continuité de Studio Terrasson. Ouverture en octobre 2026.'>
   <VideoHero />
-  <div class={styles.introduction} data-art-sequence>
-    <div class={styles.introStage} data-art-stage>
-      <section class={styles.hero} aria-labelledby='art-title' data-hero-scene>
-        <div class={styles.heroCopy} data-art-intro>
-          <p class={styles.heroCategory}>Architecture d’intérieur & Galerie</p>
-          <h2 id='art-title'><em>L’art</em>{' '}<span>prend place.</span></h2>
-          <p class={styles.heroIntroduction} data-hero-description>
-            À Châteaugiron, Crystelle Terrasson réunit architecture d’intérieur
-            et Galerie. Bienvenue chez Jukkai.
-          </p>
-          <a class={styles.openingLink} href='#ouverture'>
-            <span>Ouverture officielle</span><strong
-              >octobre 2026 <Arrow diagonal /></strong
-            >
-          </a>
-          <a class={styles.exploreLink} href='#esprit'
-            >Entrer dans l’univers Jukkai <span aria-hidden='true'>↓</span></a
-          >
-        </div>
-        <figure class={styles.heroFigure}>
-          <a
-            class={styles.heroArtLink}
-            href={HERO_ARTWORK.image.src}
-            data-art-frame
-            data-artwork='hero'
-            data-art-src={HERO_ARTWORK.image.src}
-            data-art-caption={HERO_ARTWORK.caption}
-            aria-label='Explorer les détails de la peinture de Yoann Bonneville'
-            aria-haspopup='dialog'>
-            <Image
-              src={HERO_ARTWORK.image}
-              alt={HERO_ARTWORK.alt}
-              widths={[480, 800, 1200, 1600]}
-              sizes='(max-width: 800px) 150vw, 80vw'
-              width={1600}
-              loading='eager'
-              fetchpriority='high'
-              quality={88}
-              data-art-hero-image
-            />
-          </a>
-          <figcaption class={styles.heroCaption} data-art-credit>
-            <a
-              href={HERO_ARTWORK.image.src}
-              data-artwork='hero-caption'
-              data-art-src={HERO_ARTWORK.image.src}
-              data-art-caption={HERO_ARTWORK.caption}
-              data-art-alt={HERO_ARTWORK.alt}
-              aria-haspopup='dialog'
-              >Yoann Bonneville <span aria-hidden='true'>↗</span></a
-            >
-          </figcaption>
-        </figure>
-      </section>
+  <StudioTransition />
+  <ArtworkSequence />
 
-      <section
-        class={styles.story}
-        id='esprit'
-        aria-labelledby='story-title'
-        data-story-scene>
-        <figure class={styles.portrait} data-story-photo>
-          <Image
-            src={crystelle}
-            alt='Crystelle Terrasson, assise parmi les peintures et sculptures qu’elle réunit pour Jukkai.'
-            widths={[640, 960, 1440, 1920]}
-            sizes='(max-width: 800px) 100vw, 56vw'
-            width={1440}
-            loading='eager'
-            data-portrait-image
-          />
-        </figure>
-        <div class={styles.storyCopy} data-story-copy>
-          <p class='eyebrow'>À l’origine de Jukkai</p>
-          <h2 id='story-title'>Crystelle Terrasson</h2>
-          <p>
-            Avec Jukkai, Crystelle prolonge l’histoire de Studio Terrasson :
-            l’architecture d’intérieur et une Galerie réunies à Châteaugiron.
-          </p>
-          <p id='architecture'>
-            Le studio vous reçoit déjà sur rendez-vous, sans attendre octobre.
-          </p>
-          <a class='text-link' href='https://www.studioterrasson.fr/'
-            >Les projets du studio <Arrow diagonal /></a
-          >
-        </div>
-      </section>
-    </div>
-    <span class={styles.storyAnchor} data-story-anchor aria-hidden='true'
-    ></span>
-    <script is:inline>
-      // Reserve the first pose before paint. Static markup remains the fallback.
-      if (
-        matchMedia(
-          '(prefers-reduced-motion: no-preference) and (min-height: 720px), (prefers-reduced-motion: no-preference) and (max-width: 800px) and (min-height: 600px)',
-        ).matches
-      ) {
-        const sequence = document.currentScript.closest('[data-art-sequence]');
-        sequence.dataset.motion = 'ready';
-        const stage = sequence.querySelector('[data-art-stage]');
-        const mobile = matchMedia('(max-width: 800px)').matches;
-        const heading = sequence.querySelector('h2');
-        const description = sequence.querySelector('[data-hero-description]');
-        const top = mobile ? heading.offsetTop + heading.offsetHeight + 18 : 0;
-        const bottom = mobile ? description.offsetHeight + 40 : 0;
-        const size = mobile
-          ? stage.clientWidth * 1.55
-          : stage.clientHeight * 1.22;
-        sequence.style.setProperty('--art-size', `${size}px`);
-        sequence.style.setProperty(
-          '--art-x',
-          `${stage.clientWidth * (mobile ? 0.5 : 0.745)}px`,
-        );
-        sequence.style.setProperty(
-          '--art-y',
-          `${mobile ? top + 42 + size * 0.25 : stage.clientHeight * 0.5}px`,
-        );
-        sequence.style.setProperty(
-          '--art-crop',
-          mobile ? `inset(${top}px 0 ${bottom}px)` : 'inset(0 0 0 49%)',
-        );
-        setTimeout(() => {
-          if (!sequence.dataset.animated)
-            sequence.removeAttribute('data-motion');
-        }, 5000);
-      }
-    </script>
-  </div>
-
-  <section class={styles.galerie} id='galerie' aria-labelledby='galerie-title'>
+  <section
+    class={styles.galerie}
+    id='selection'
+    aria-labelledby='galerie-title'>
     <div class={styles.galleryHeading}>
-      <h2 id='galerie-title'>La Galerie</h2>
+      <h2 id='galerie-title'>D’un regard à l’autre.</h2>
       <p>Des œuvres choisies par Crystelle.</p>
     </div>
     <div class={styles.artworkSpread}>
