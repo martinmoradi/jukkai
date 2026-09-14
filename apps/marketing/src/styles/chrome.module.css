@@ -186,3 +186,43 @@
     display: none;
   }
 }
+
+.heroCategory {
+  display: none;
+}
+.header[data-immersive] {
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+.header[data-header-ready] {
+  position: fixed;
+}
+.header[data-on-film='true'] {
+  color: white;
+  background: transparent;
+}
+.header[data-on-film='true'] .brand > img,
+.header[data-on-film='true'] .brand > span:not(.heroCategory) {
+  display: none;
+}
+.header[data-on-film='true'] .brand .heroCategory {
+  display: block;
+  max-width: none;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.header[data-on-film='true'] .contactLink {
+  color: white;
+  background: transparent;
+  border: 1px solid #fff7;
+}
+.header[data-on-film='true'] .contactLink:hover {
+  color: var(--ink);
+  background: white;
+}
+@media (max-width: 800px) {
+  .header[data-on-film='true'] .brand .heroCategory {
+    font-size: 12px;
+  }
+}

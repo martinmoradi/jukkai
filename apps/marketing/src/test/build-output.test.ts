@@ -61,7 +61,9 @@ describe('published site', () => {
     expect(introduction.textContent).toContain('octobre 2026');
     expect(
       document.querySelector('h1')?.textContent?.replace(/\s+/g, ' ').trim(),
-    ).toBe('L’art prend place.');
+    ).toBe(
+      'Jukkai by Crystelle Terrasson — Architecture d’intérieur & Galerie',
+    );
     expect(
       document.querySelector('[data-art-hero-image]')?.getAttribute('alt'),
     ).toContain('Yoann Bonneville');
