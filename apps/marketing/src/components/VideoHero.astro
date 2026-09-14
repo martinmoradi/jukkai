@@ -1,0 +1,84 @@
+---
+import { Image } from 'astro:assets';
+
+import wordmark from '#/assets/magazine/jukkai-wordmark-primary.svg';
+import landscapePoster from '#/assets/magazine/motion/duo.jpg';
+import landscapeFilm from '#/assets/magazine/motion/duo.mp4';
+import portraitPoster from '#/assets/magazine/motion/sculpture.jpg';
+import portraitFilm from '#/assets/magazine/motion/sculpture.mp4';
+import Arrow from '#/components/Arrow.astro';
+import styles from '#/styles/video-hero.module.css';
+---
+
+<section class={styles.hero} aria-labelledby='hero-title' data-video-hero>
+  <div class={styles.stage} data-film-stage>
+    <div class={styles.filmWindow} aria-hidden='true'>
+      <div class={styles.filmDrift} data-film-drift>
+        <picture>
+          <source
+            media='(max-width: 700px) and (orientation: portrait)'
+            srcset={portraitPoster.src}
+          />
+          <Image
+            src={landscapePoster}
+            alt=''
+            width={1280}
+            loading='eager'
+            fetchpriority='high'
+            class={styles.poster}
+          />
+        </picture>
+        <video
+          class={styles.film}
+          data-hero-film
+          data-landscape={landscapeFilm}
+          data-portrait={portraitFilm}
+          muted
+          loop
+          playsinline
+          preload='none'
+          disablepictureinpicture></video>
+      </div>
+      <div class={styles.shade}></div>
+    </div>
+    <h1
+      id='hero-title'
+      class={styles.wordmark}
+      data-film-mark
+      style={{ '--wordmark': `url("${wordmark.src}")` }}>
+      <span class={styles.accessibleTitle}
+        >Jukkai by Crystelle Terrasson — Architecture d’intérieur & Galerie</span
+      >
+    </h1>
+    <div class={styles.bottom}>
+      <a class={styles.opening} href='#ouverture'
+        ><span>Châteaugiron, près de Rennes</span><span
+          >Ouverture officielle · octobre 2026 <Arrow diagonal /></span
+        ></a
+      >
+      <a class={styles.explore} href='#esprit' data-film-cue
+        >Découvrir Jukkai <span aria-hidden='true'>↓</span></a
+      >
+      <button
+        class={styles.playback}
+        type='button'
+        data-film-toggle
+        hidden
+        aria-label='Lire la vidéo'
+        ><span data-film-icon aria-hidden='true'>Ⅱ</span><span data-film-label
+          >Pause</span
+        ></button
+      >
+    </div>
+    <p class={styles.accessibleTitle} role='status' data-film-status></p>
+  </div>
+  <script is:inline>
+    if (matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+      const hero = document.currentScript.closest('[data-video-hero]');
+      hero.dataset.motion = 'ready';
+      setTimeout(() => {
+        if (!hero.dataset.animated) hero.removeAttribute('data-motion');
+      }, 5000);
+    }
+  </script>
+</section>

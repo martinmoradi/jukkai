@@ -5,6 +5,7 @@ import sphere from '#/assets/jukkai-sphere.svg';
 import crystelle from '#/assets/magazine/crystelle-galerie.webp';
 import Arrow from '#/components/Arrow.astro';
 import ArtworkViewer from '#/components/ArtworkViewer.astro';
+import VideoHero from '#/components/VideoHero.astro';
 import { CRYSTELLE } from '#/data/crystelle';
 import { GALERIE_IMAGES, HERO_ARTWORK } from '#/data/galerie';
 import EditorialLayout from '#/layouts/EditorialLayout.astro';
@@ -16,12 +17,13 @@ const [painting, objects, dogs] = GALERIE_IMAGES;
 <EditorialLayout
   title='Jukkai by Crystelle Terrasson — Galerie & architecture d’intérieur, Châteaugiron'
   description='Jukkai by Crystelle Terrasson réunit architecture d’intérieur et Galerie à Châteaugiron, près de Rennes, dans la continuité de Studio Terrasson. Ouverture en octobre 2026.'>
+  <VideoHero />
   <div class={styles.introduction} data-art-sequence>
     <div class={styles.introStage} data-art-stage>
-      <section class={styles.hero} aria-labelledby='hero-title' data-hero-scene>
+      <section class={styles.hero} aria-labelledby='art-title' data-hero-scene>
         <div class={styles.heroCopy} data-art-intro>
           <p class={styles.heroCategory}>Architecture d’intérieur & Galerie</p>
-          <h1 id='hero-title'><em>L’art</em>{' '}<span>prend place.</span></h1>
+          <h2 id='art-title'><em>L’art</em>{' '}<span>prend place.</span></h2>
           <p class={styles.heroIntroduction} data-hero-description>
             À Châteaugiron, Crystelle Terrasson réunit architecture d’intérieur
             et Galerie. Bienvenue chez Jukkai.
@@ -116,7 +118,7 @@ const [painting, objects, dogs] = GALERIE_IMAGES;
         sequence.dataset.motion = 'ready';
         const stage = sequence.querySelector('[data-art-stage]');
         const mobile = matchMedia('(max-width: 800px)').matches;
-        const heading = sequence.querySelector('h1');
+        const heading = sequence.querySelector('h2');
         const description = sequence.querySelector('[data-hero-description]');
         const top = mobile ? heading.offsetTop + heading.offsetHeight + 18 : 0;
         const bottom = mobile ? description.offsetHeight + 40 : 0;

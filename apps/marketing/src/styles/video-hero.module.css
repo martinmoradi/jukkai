@@ -1,0 +1,188 @@
+.hero {
+  position: relative;
+}
+.stage {
+  position: relative;
+  height: 100svh;
+  min-height: 400px;
+  overflow: clip;
+  color: white;
+  background: #34372f;
+  isolation: isolate;
+}
+.filmWindow {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.filmDrift {
+  width: 100%;
+  height: 100%;
+}
+.poster,
+.film {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 48%;
+}
+.film {
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+.film[data-ready] {
+  opacity: 1;
+}
+.shade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, #0009, #0000 25%, #0000 65%, #000b);
+}
+.wordmark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(91vw, 172svh);
+  aspect-ratio: 887 / 356;
+  pointer-events: none;
+  background: white;
+  mix-blend-mode: difference;
+  mask: var(--wordmark) center / contain no-repeat;
+  transform: translate(-50%, -50%) scale(0.76);
+}
+.accessibleTitle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+.bottom {
+  position: absolute;
+  right: var(--gutter);
+  bottom: 28px;
+  left: var(--gutter);
+  display: flex;
+  gap: 30px;
+  align-items: end;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.opening {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 44px;
+}
+.opening span:last-child {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.opening svg {
+  width: 15px;
+}
+.opening:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.explore {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  padding: 12px;
+  font-size: 13px;
+  transform: translateX(-50%);
+}
+.explore span {
+  font-size: 28px;
+}
+.playback {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  min-width: 82px;
+  min-height: 44px;
+  padding: 8px;
+  color: inherit;
+  background: #0004;
+  border: 1px solid #fff6;
+}
+.playback[hidden] {
+  display: none;
+}
+.playback:hover {
+  background: #0008;
+}
+.playback:active {
+  background: #000b;
+}
+.hero[data-motion='ready'] {
+  height: 225svh;
+}
+.hero[data-motion='ready'] .stage {
+  position: sticky;
+  top: 0;
+}
+.hero[data-motion='ready'] .wordmark {
+  transform: translate(-50%, -50%) translateY(7.5svh) scale(0.37);
+  will-change: transform;
+}
+@media (max-width: 800px) {
+  .bottom {
+    bottom: 22px;
+    gap: 15px;
+    font-size: 12px;
+  }
+  .opening {
+    gap: 8px;
+    max-width: 240px;
+  }
+  .opening span:last-child {
+    gap: 10px;
+  }
+  .explore {
+    bottom: 108px;
+    gap: 12px;
+    width: max-content;
+  }
+  .playback {
+    min-width: 44px;
+    padding-inline: 12px;
+  }
+  .playback span:last-child {
+    display: none;
+  }
+  .hero[data-motion='ready'] {
+    height: 195svh;
+  }
+  .hero[data-motion='ready'] .wordmark {
+    transform: translate(-50%, -50%) translateY(7.5svh) scale(0.71);
+  }
+}
+@media (max-height: 520px) and (orientation: landscape) {
+  .stage {
+    min-height: 320px;
+  }
+  .wordmark {
+    width: min(85vw, 130svh);
+  }
+  .explore {
+    bottom: 0;
+    gap: 6px;
+  }
+  .bottom {
+    bottom: 16px;
+    font-size: 11px;
+  }
+}

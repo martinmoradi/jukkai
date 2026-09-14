@@ -1,4 +1,6 @@
 import { initArtworkViewer } from './artwork-viewer';
+import { initHeroFilm } from './hero-film';
+import { animateHero } from './hero-motion';
 
 /** Links, complete artworks and the introduction are useful without enhancement. */
 export function initEditorialMotion() {
@@ -11,6 +13,7 @@ export function initEditorialMotion() {
     mapsLink.href = mapsLink.dataset.appleMapsUrl;
   }
   initArtworkViewer();
+  initHeroFilm();
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document
       .querySelector('[data-art-sequence]')
@@ -31,6 +34,7 @@ async function animateEditorial() {
     import('gsap/ScrollTrigger'),
   ]);
   gsap.registerPlugin(ScrollTrigger);
+  animateHero(gsap);
   const media = gsap.matchMedia();
   let followInitialHash = true;
   media.add(
@@ -51,7 +55,7 @@ async function animateEditorial() {
         '[data-art-hero-image]',
       )!;
       const intro = sequence.querySelector<HTMLElement>('[data-art-intro]')!;
-      const heading = intro.querySelector('h1')!;
+      const heading = intro.querySelector('h2')!;
       const description = intro.querySelector<HTMLElement>(
         '[data-hero-description]',
       )!;
