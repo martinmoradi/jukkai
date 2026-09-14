@@ -33,6 +33,7 @@ export function animateHero(gsap: typeof Gsap) {
           {
             xPercent: -50,
             yPercent: -50,
+            x: 0,
             y: () => stage.clientHeight * 0.075,
             scale: context.conditions.mobile ? 0.71 : 0.37,
           },

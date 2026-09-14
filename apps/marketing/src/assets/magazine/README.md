@@ -48,3 +48,16 @@ The sculptural still life and Crystelle portrait remain selected. Earlier web
 exports remain available as provenance but are not all displayed in this edition.
 These choices follow contact-sheet and larger-image review against the art-first
 brief; they do not establish a catalogue, artwork availability or permanent palette.
+
+## Prototype integration, September 15
+
+The hero uses the supplied prototype films and matching posters from `motion/`.
+See [the film selection](motion/README.md) for provenance and replacement guidance.
+The three added square works (`m-hope-02`, `m-hope-04`, `mister-zion-01`) are exact
+copies from the supplied spiral prototype. The existing Nina Bruneau and Bonneville
+exports complete the five-work sequence. Bonneville appears last, on top, and
+connects to its real position in the same Crystelle photograph as the second pass.
+
+The two Studio Crystelle Terrasson SVGs are exact copies of Martin's supplied files;
+the originals are retained in `brand/source/studio-terrasson/`. Their geometry and
+colours are preserved. `manifest.json` records checksums for all new inputs.

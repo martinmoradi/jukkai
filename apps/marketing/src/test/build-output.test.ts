@@ -113,6 +113,33 @@ describe('published site', () => {
     },
   );
 
+  it('ships the chosen films and posters without requiring autoplay', async () => {
+    const page = new JSDOM(await published('index.html'));
+    const document = page.window.document;
+    const film = document.querySelector('video')!;
+    expect(film.hasAttribute('autoplay')).toBe(false);
+    expect(film.hasAttribute('src')).toBe(false);
+    expect(film.hasAttribute('muted')).toBe(true);
+    expect(film.hasAttribute('playsinline')).toBe(true);
+    for (const name of ['data-landscape', 'data-portrait']) {
+      const path = film.getAttribute(name)!;
+      expect(path).toMatch(/^\/_astro\/.+\.mp4$/);
+      expect(await exists(path.slice(1))).toBe(true);
+    }
+    const hero = document.querySelector('[data-video-hero]')!;
+    expect(hero.querySelector('picture img')?.getAttribute('loading')).toBe(
+      'eager',
+    );
+    expect(hero.querySelector('button')?.textContent).toContain('Pause');
+    expect(document.querySelectorAll('[data-spiral-art]')).toHaveLength(5);
+    expect(
+      document
+        .querySelector('[data-spiral-orbit]:last-child img')
+        ?.getAttribute('alt'),
+    ).toContain('Yoann Bonneville');
+    page.window.close();
+  });
+
   it('offers the full artwork images even when scripts are unavailable', async () => {
     const page = new JSDOM(await published('index.html'));
     const links = page.window.document.querySelectorAll('a[data-artwork]');

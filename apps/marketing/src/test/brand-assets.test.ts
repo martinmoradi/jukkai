@@ -10,6 +10,17 @@ import { describe, expect, it } from 'vitest';
  * That is only safe while the copy is provably the master.
  */
 describe('committed brand exports', () => {
+  it.each(['wordmark', 'seal'])(
+    'preserves the supplied Studio Terrasson %s in the transition',
+    async (name) => {
+      const [source, appCopy] = await Promise.all([
+        readFile(`../../brand/source/studio-terrasson/${name}.svg`, 'utf8'),
+        readFile(`src/assets/magazine/studio-terrasson-${name}.svg`, 'utf8'),
+      ]);
+      expect(appCopy).toBe(source);
+    },
+  );
+
   it('keeps the sphere identical to its brand master', async () => {
     const [master, appCopy] = await Promise.all([
       readFile('../../brand/logo/circle_logo_master.svg', 'utf8'),
