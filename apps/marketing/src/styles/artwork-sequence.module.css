@@ -272,7 +272,14 @@
   }
 }
 @media (max-width: 360px) {
+  .sequence[data-motion='ready'] .portrait {
+    width: min(100%, calc(35svh * 4 / 3));
+  }
+  .sequence[data-motion='ready'] .storyCopy {
+    padding-top: 18px;
+  }
   .storyCopy h2 {
+    margin-bottom: 14px;
     font-size: 27px;
   }
   .storyCopy > p:not(:first-child) {

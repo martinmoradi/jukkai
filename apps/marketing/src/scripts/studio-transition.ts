@@ -64,7 +64,7 @@ export function animateStudioTransition(gsap: typeof Gsap) {
       chapters.forEach((chapter) => {
         gsap.fromTo(
           chapter,
-          { opacity: 0.35, y: 28 },
+          { opacity: 0.68, y: 28 },
           {
             opacity: 1,
             y: 0,

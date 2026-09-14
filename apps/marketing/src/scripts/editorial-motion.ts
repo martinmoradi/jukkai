@@ -15,18 +15,35 @@ export function initEditorialMotion() {
   initHeroFilm();
   if (!document.querySelector('[data-art-sequence]')) return;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const initialHash = location.hash;
+  const followInitialHash = () => {
+    if (!initialHash || location.hash !== initialHash) return;
+    document.getElementById(initialHash.slice(1))?.scrollIntoView({
+      block: 'start',
+      behavior: 'instant',
+    });
+  };
   let started = false;
+  let initialPass = true;
   const start = () => {
     if (started || reduced.matches) return;
+    const followHash = initialPass;
     started = true;
-    void animateEditorial().catch(() => {
-      document
-        .querySelectorAll('[data-motion]')
-        .forEach((element) => element.removeAttribute('data-motion'));
-    });
+    void animateEditorial()
+      .then(() => {
+        if (followHash) followInitialHash();
+      })
+      .catch(() => {
+        document
+          .querySelectorAll('[data-motion]')
+          .forEach((element) => element.removeAttribute('data-motion'));
+        if (followHash) void document.fonts.ready.then(followInitialHash);
+      });
   };
   reduced.addEventListener('change', start);
   start();
+  if (reduced.matches) void document.fonts.ready.then(followInitialHash);
+  initialPass = false;
 }
 
 async function animateEditorial() {
@@ -47,7 +64,7 @@ async function animateEditorial() {
   ScrollTrigger.config({ ignoreMobileResize: true });
   animateHero(gsap);
   animateStudioTransition(gsap);
-  animateArtworkSequence(gsap, ScrollTrigger);
+  animateArtworkSequence(gsap);
   const media = gsap.matchMedia();
   media.add('(prefers-reduced-motion: no-preference)', () => {
     gsap.utils.toArray<HTMLElement>('[data-art-reveal]').forEach((art) => {
@@ -67,5 +84,9 @@ async function animateEditorial() {
       );
     });
   });
-  void document.fonts.ready.then(() => ScrollTrigger.refresh());
+  await document.fonts.ready;
+  ScrollTrigger.refresh();
+  // Native fragments may have landed before enhancement changed section heights.
+  // Reconcile once after every stage is measured, never on a later resize.
+  await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
 }
