@@ -9,13 +9,25 @@ interface Props {
 const { contact = false } = Astro.props;
 ---
 
-<header class={styles.header}>
+<header
+  class={styles.header}
+  data-site-header
+  data-immersive={!contact || undefined}
+  data-on-film={!contact || undefined}>
   <a
     class={styles.brand}
     href='/'
     aria-label='Jukkai by Crystelle Terrasson — accueil'>
     <img src={wordmark.src} width='120' height='48' alt='Jukkai' />
     <span>by Crystelle Terrasson</span>
+    {
+      !contact && (
+        <span class={styles.heroCategory}>
+          Architecture d’intérieur
+          <br />& Galerie
+        </span>
+      )
+    }
   </a>
   <nav class={styles.navigation} aria-label='Navigation principale'>
     <a class={styles.sectionLink} href='/#galerie'>La Galerie</a>

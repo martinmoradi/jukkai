@@ -22,7 +22,7 @@
   margin-bottom: 30px;
   font-size: var(--text-small);
 }
-.heroCopy h1 {
+.heroCopy h2 {
   max-width: 550px;
   font-family: var(--display);
   font-size: clamp(72px, 2rem + 5vw, 124px);
@@ -30,7 +30,7 @@
   line-height: 1.02;
   letter-spacing: -0.025em;
 }
-.heroCopy h1 em {
+.heroCopy h2 em {
   display: block;
   font-family: var(--serif);
   font-size: 1.3em;
@@ -39,7 +39,7 @@
   line-height: 0.94;
   letter-spacing: -0.015em;
 }
-.heroCopy h1 span {
+.heroCopy h2 span {
   display: block;
   max-width: 450px;
 }
@@ -383,7 +383,7 @@
   .heroCopy {
     padding-top: 25px;
   }
-  .heroCopy h1 {
+  .heroCopy h2 {
     font-size: 80px;
   }
   .heroIntroduction {
@@ -421,15 +421,15 @@
     margin-bottom: 16px;
     font-size: 14px;
   }
-  .heroCopy h1 {
+  .heroCopy h2 {
     font-size: clamp(49px, 1.5rem + 7.8vw, 80px);
     line-height: 1.05;
     letter-spacing: -0.015em;
   }
-  .heroCopy h1 em {
+  .heroCopy h2 em {
     font-size: 1.32em;
   }
-  .heroCopy h1 span {
+  .heroCopy h2 span {
     max-width: none;
     white-space: nowrap;
   }
@@ -584,7 +584,7 @@
   }
 }
 @media (max-width: 360px) {
-  .heroCopy h1 {
+  .heroCopy h2 {
     font-size: 45px;
   }
   .heroCategory {
