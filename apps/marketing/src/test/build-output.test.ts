@@ -54,7 +54,7 @@ describe('published site', () => {
   it('introduces the Galerie while preserving Studio Terrasson continuity', async () => {
     const page = new JSDOM(await published('index.html'));
     const document = page.window.document;
-    const introduction = document.querySelector('[data-art-intro]')!;
+    const introduction = document.querySelector('[data-origin]')!;
     expect(introduction.textContent).toContain('Crystelle Terrasson');
     expect(introduction.textContent).toContain('architecture');
     expect(introduction.textContent).toContain('Galerie');
