@@ -88,5 +88,74 @@
     "width": 1800,
     "height": 1202,
     "bytes": 161102
+  },
+  {
+    "file": "m-hope-02.webp",
+    "source": "/home/martin/Desktop/jukkai-spiral-prototype/public/artworks/m-hope-02.webp",
+    "sourceSha256": "9d73afd7b1b35dda8127728ef2a754682726bb20fae4c9f25ea92381c234f7ec",
+    "sha256": "9d73afd7b1b35dda8127728ef2a754682726bb20fae4c9f25ea92381c234f7ec",
+    "width": 1600,
+    "height": 1600,
+    "bytes": 337332
+  },
+  {
+    "file": "m-hope-04.webp",
+    "source": "/home/martin/Desktop/jukkai-spiral-prototype/public/artworks/m-hope-04.webp",
+    "sourceSha256": "3d1a7b929172ffcb33c70570b8d351945609f587fe1bf8ee7fd442af221aeb65",
+    "sha256": "3d1a7b929172ffcb33c70570b8d351945609f587fe1bf8ee7fd442af221aeb65",
+    "width": 1600,
+    "height": 1600,
+    "bytes": 321868
+  },
+  {
+    "file": "mister-zion-01.webp",
+    "source": "/home/martin/Desktop/jukkai-spiral-prototype/public/artworks/mister-zion-01.webp",
+    "sourceSha256": "da166982127f12cb1cd6003e66ca7decb612da93a70fed92c7f8b60b78136414",
+    "sha256": "da166982127f12cb1cd6003e66ca7decb612da93a70fed92c7f8b60b78136414",
+    "width": 1600,
+    "height": 1600,
+    "bytes": 359418
+  },
+  {
+    "file": "studio-terrasson-wordmark.svg",
+    "source": "/home/martin/Downloads/logo_studiocrystelleterrasson.svg",
+    "sourceSha256": "1c25862927576c2e731511d469534d17886335cab83d011108b47339a0f11630",
+    "sha256": "1c25862927576c2e731511d469534d17886335cab83d011108b47339a0f11630",
+    "bytes": 15279
+  },
+  {
+    "file": "studio-terrasson-seal.svg",
+    "source": "/home/martin/Downloads/logo_studiocrystelleterrasson2.svg",
+    "sourceSha256": "614e441b21b9a15ddda97730e7f47e64d68430170e8addf3e11468498df73a10",
+    "sha256": "614e441b21b9a15ddda97730e7f47e64d68430170e8addf3e11468498df73a10",
+    "bytes": 1420
+  },
+  {
+    "file": "motion/duo.jpg",
+    "source": "/home/martin/Desktop/jukkai-hero-prototype/public/media/duo.jpg",
+    "sourceSha256": "4e7ba4d1bb4aff3e55f903b980575a465f1e9c09f5cd21d6f7bb63ac8228bf58",
+    "sha256": "4e7ba4d1bb4aff3e55f903b980575a465f1e9c09f5cd21d6f7bb63ac8228bf58",
+    "bytes": 116625
+  },
+  {
+    "file": "motion/duo.mp4",
+    "source": "/home/martin/Desktop/jukkai-hero-prototype/public/media/duo.mp4",
+    "sourceSha256": "392c05fade98ba95f32c105a07804359801ab523f34d61a3cd6c3cfeb9f47a12",
+    "sha256": "392c05fade98ba95f32c105a07804359801ab523f34d61a3cd6c3cfeb9f47a12",
+    "bytes": 3677700
+  },
+  {
+    "file": "motion/sculpture.jpg",
+    "source": "/home/martin/Desktop/jukkai-hero-prototype/public/media/sculpture.jpg",
+    "sourceSha256": "1b941e477eed42bc6744e2f8173ec2188f9332a8d3fed82e52be783d90a0567f",
+    "sha256": "1b941e477eed42bc6744e2f8173ec2188f9332a8d3fed82e52be783d90a0567f",
+    "bytes": 128041
+  },
+  {
+    "file": "motion/sculpture.mp4",
+    "source": "/home/martin/Desktop/jukkai-hero-prototype/public/media/sculpture.mp4",
+    "sourceSha256": "c419ca98aba65e0a7882e682480360035b9e8fac4de6f78a256b3cab2b6612f8",
+    "sha256": "c419ca98aba65e0a7882e682480360035b9e8fac4de6f78a256b3cab2b6612f8",
+    "bytes": 4112471
   }
 ]

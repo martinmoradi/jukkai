@@ -1,0 +1,95 @@
+---
+import { Image } from 'astro:assets';
+
+import crystelle from '#/assets/magazine/crystelle-galerie.webp';
+import Arrow from '#/components/Arrow.astro';
+import { HERO_ARTWORK, SPIRAL_ARTWORKS } from '#/data/galerie';
+import styles from '#/styles/artwork-sequence.module.css';
+---
+
+<section
+  class={styles.sequence}
+  id='galerie'
+  aria-labelledby='sequence-title'
+  data-art-sequence>
+  <div class={styles.stage} data-art-stage>
+    <div class={styles.galleryIntro} data-spiral-intro>
+      <p class='eyebrow'>La Galerie · Une sélection de Crystelle</p>
+      <h2 id='sequence-title'><em>L’art</em> prend place.</h2>
+      <p class={styles.invitation}>Des rencontres.<br />Des coups de cœur.</p>
+    </div>
+    <div class={styles.spiral} data-spiral>
+      {
+        SPIRAL_ARTWORKS.map((art, index) => (
+          <figure class={styles.orbit} data-spiral-orbit>
+            <a
+              class={styles.artwork}
+              href={art.image.src}
+              data-spiral-art
+              data-artwork={`spiral-${index}`}
+              data-art-src={art.image.src}
+              data-art-caption={art.caption}
+              aria-label={`Explorer les détails : ${art.caption}`}
+              aria-haspopup='dialog'>
+              <Image
+                src={art.image}
+                alt={art.alt}
+                widths={[480, 800, 1200, 1600]}
+                sizes='(max-width: 800px) 76vw, 40vw'
+                width={1200}
+                loading='lazy'
+                quality={88}
+                data-art-hero-image={index === 4 || undefined}
+              />
+            </a>
+            <figcaption>{art.caption}</figcaption>
+          </figure>
+        ))
+      }
+    </div>
+    <div class={styles.stackCredit} data-stack-credit>
+      <a
+        href={HERO_ARTWORK.image.src}
+        data-artwork='stack-caption'
+        data-art-src={HERO_ARTWORK.image.src}
+        data-art-caption={HERO_ARTWORK.caption}
+        data-art-alt={HERO_ARTWORK.alt}
+        aria-haspopup='dialog'
+        >Yoann Bonneville <span aria-hidden='true'>↗</span></a
+      >
+    </div>
+    <section
+      class={styles.story}
+      id='crystelle'
+      aria-labelledby='story-title'
+      data-story-scene>
+      <figure class={styles.portrait} data-story-photo>
+        <Image
+          src={crystelle}
+          alt='Crystelle Terrasson, assise parmi les peintures et sculptures qu’elle réunit pour Jukkai.'
+          widths={[640, 960, 1440, 1920]}
+          sizes='(max-width: 800px) 100vw, 56vw'
+          width={1440}
+          loading='lazy'
+          data-portrait-image
+        />
+      </figure>
+      <div class={styles.storyCopy} data-story-copy>
+        <p class='eyebrow'>À l’origine de Jukkai</p>
+        <h2 id='story-title'>Crystelle Terrasson</h2>
+        <p>
+          Architecte d’intérieur, Crystelle cultive aussi le goût des œuvres et
+          des rencontres. Jukkai rassemble ces deux élans, dans la continuité de
+          Studio Terrasson.
+        </p>
+        <p id='architecture'>
+          Le studio vous reçoit déjà sur rendez-vous, sans attendre octobre.
+        </p>
+        <a class='text-link' href='https://www.studioterrasson.fr/'
+          >Les projets du studio <Arrow diagonal /></a
+        >
+      </div>
+    </section>
+  </div>
+  <span class={styles.storyAnchor} data-story-anchor aria-hidden='true'></span>
+</section>
