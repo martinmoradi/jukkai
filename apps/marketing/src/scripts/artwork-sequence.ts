@@ -1,15 +1,10 @@
 import type { gsap as Gsap } from 'gsap';
-import type { ScrollTrigger as Trigger } from 'gsap/ScrollTrigger';
 
 /** One sticky stage owns the spiral, stack, and the existing portrait handover. */
-export function animateArtworkSequence(
-  gsap: typeof Gsap,
-  ScrollTrigger: typeof Trigger,
-) {
+export function animateArtworkSequence(gsap: typeof Gsap) {
   const sequence = document.querySelector<HTMLElement>('[data-art-sequence]');
   if (!sequence) return;
   const media = gsap.matchMedia();
-  let followInitialHash = true;
   media.add(
     {
       motion:
@@ -139,7 +134,16 @@ export function animateArtworkSequence(
           { opacity: 1, duration: 0.025, stagger: 0.035 },
           0,
         )
-        .to(intro, { autoAlpha: 0, duration: 0.14 }, 0.23)
+        .to(
+          intro,
+          {
+            clipPath: 'inset(0 0 100% 0)',
+            duration: 0.16,
+            ease: 'power1.inOut',
+          },
+          0.23,
+        )
+        .set(intro, { autoAlpha: 0 }, 0.39)
         .to(credit, { autoAlpha: 1, duration: 0.04 }, 0.57)
         .to(orbits.slice(0, -1), { autoAlpha: 0, duration: 0.05 }, 0.66)
         .to(credit, { autoAlpha: 0, duration: 0.05 }, 0.7)
@@ -185,19 +189,6 @@ export function animateArtworkSequence(
         )
         .to({}, { duration: 0.035 });
 
-      void document.fonts.ready.then(() => {
-        ScrollTrigger.refresh();
-        if (
-          followInitialHash &&
-          ['#crystelle', '#architecture'].includes(location.hash)
-        ) {
-          window.scrollTo({
-            top: sequence.offsetTop + sequence.offsetHeight - innerHeight,
-            behavior: 'instant',
-          });
-        }
-        followInitialHash = false;
-      });
       return () => {
         sequence.removeAttribute('data-motion');
         orbits.forEach((orbit) => {
