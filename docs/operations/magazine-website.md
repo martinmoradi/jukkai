@@ -2,7 +2,7 @@
 
 **Status:** editorial proof 0.1 for Martin's review; local, not promoted to production.
 **Owns:** this edition's two-page implementation and review procedure.
-**Last reviewed:** 2026-09-15, for the spaced Voyage introduction, offset Hatton story, Ouverture photograph and Galerie image swap. The one-time letter entrance, compact identity entrance and Home/Contact transitions remain in place.
+**Last reviewed:** 2026-09-15, for the introduction's line breaks and alignment, shared Hatton invitation typography, Voyage bridge and gentle picture parallax. The one-time letter entrance, compact identity entrance and Home/Contact transitions remain in place.
 **Revisit when:** Martin reviews the composition, the artwork edit changes, the opening happens, or the full website replaces this edition.
 
 ## Purpose and authority
@@ -53,6 +53,13 @@ photograph sits under the first passage. The dogs and bears swap positions betwe
 the Galerie introduction and the later “chez soi.” scene. These refinements remain
 subject to Martin's visual review.
 
+The next refinement responds to Martin's spacing and motion review: keep the names
+together, align the explanatory paragraph with the Ouverture image's lower edge,
+remove its visible caption, and reuse the story's Hatton settings for “Pour…”
+phrases. “L’art de s’attacher.” is the proposed Voyage bridge within the existing
+invitation stage; the dog caption becomes “Un seul des trois réclame des caresses.”
+Both are local editorial proposals, not new brand or business facts.
+
 ## Page and factual boundaries
 
 - `/` explains that Studio Terrasson becomes Jukkai and its architecture practice
@@ -86,8 +93,8 @@ the closing on muted green. These are edition-specific composition choices.
 | Identity entrance | A compact group centres the complete Jukkai wordmark in the viewport, with the supplied Studio wordmark → rotating C seal → sphere above and “Un nouveau chapitre s’ouvre” in Voyage below. Four horizontal bands accelerate to the right, bottom first, before artwork playback begins. About 2.4 seconds plus initial script loading; deep links and reduced motion skip the identity. |
 | Hero exit         | The artwork expansion completes and the hero scrolls out naturally. There is no circle wipe, transferred wordmark or additional exit pin.                                                                                                                                                                                                                                                |
 | Introduction      | “Délivrer ce que le cœur gardait.” spans two large Voyage lines. Displaced, enlarged and skewed letters settle once, with scattered arrivals and blur clearing. The name reference is explicitly an editorial interpretation. The career, founding year and name-change explanation follow in ordinary flow.                                                                             |
-| Galerie           | One large photograph of the two dog sculptures and real dog sits beside “Des œuvres avec lesquelles vivre.” and the café/selection copy. It stays still and retains the artwork viewer. On phones, image and text stack in reading order.                                                                                                                                                |
-| Invitation        | Inside the spiral stage, “Pour” holds while the last word rolls: “chez soi.” beside the bears, “quelqu’un.” beside the sculptural still life, then “le plaisir.” alone at the centre. Scenes pass through horizontally; the line re-centres on each word.                                                                                                                                |
+| Galerie           | One large photograph of the two dog sculptures and real dog sits beside “Des œuvres avec lesquelles vivre.” and the café/selection copy. It drifts gently with scroll and retains the artwork viewer. On phones, image and text stack in reading order.                                                                                                                                  |
+| Invitation        | “L’art de s’attacher.” introduces the stage in Voyage. Below it, the Hatton “Pour” holds while the last word rolls: “chez soi.” beside the bears, “quelqu’un.” beside the sculptural still life, then “le plaisir.” briefly alone at the centre. Scenes pass through horizontally; the line re-centres on each word.                                                                     |
 | Spiral            | The paintings orbit in around “Pour le plaisir.”, which recedes under the arriving stack and leaves only once covered. The original opposing parent/child rotations keep each work upright. Bonneville closes the stack and remains available in the artwork viewer at its resting point.                                                                                                |
 | Crystelle         | The painting moves into its real position in the supplied portrait. Biography covers the work with Laura and the personal artistic story; the career/founding timeline and name interpretation now live in the introduction. The mobile story remains fully readable.                                                                                                                    |
 | Closing           | A concise opening statement, shared address, current architecture appointments and contact action, followed by the existing useful footer.                                                                                                                                                                                                                                               |
@@ -109,16 +116,28 @@ failed enhancement retain the unsplit, visible heading.
 
 The passage after the heading leaves 14vw of breathing room, bounded between
 132px and 232px (96px on phones). Its twelve-column layout offsets the second
-Hatton statement and body copy to the right of Ouverture. The photograph retains
-its source crop and opens in the detail viewer. On phones, a smaller indentation
-keeps the text comfortable to read and the photograph follows at full width.
+Hatton statement and body copy to the right of Ouverture. The body paragraph's
+lower edge aligns with the image frame before parallax. Intentional line breaks
+keep Crystelle Terrasson and Studio Terrasson together. The photograph retains
+its source crop and opens in the detail viewer, with no visible caption below it.
+On phones, the order is career statement, full-width photograph, new-name statement,
+then body copy. The story and rolling invitation share the same Hatton size,
+weight, leading and tracking tokens; the rolling slot adds a small overshoot allowance.
 
-The artwork stage's timeline now starts with about 185svh of rolling
-invitation (165svh on phones) before the existing orbit, stack and portrait travel;
+The artwork stage's timeline starts when it reaches the sticky header offset,
+preserving the first composition during its approach. It begins with about 172svh
+of rolling invitation (152svh on phones) before the existing orbit, stack and portrait travel;
 the track length and story anchor derive from the timeline's duration. The stage
 clips passing scenes and incoming works so they cannot cover preceding copy.
 These are scroll distances, not timed playback. The source paintings and portrait
 have different lighting/perspective; the original dissolve is retained at the join.
+
+Ouverture and the dog figure move as complete images by at most 16px either side
+of their resting positions (8px on phones). The invitation pictures have the same
+small vertical drift inside their existing timeline. Painting drift settles to zero
+before the stack joins the portrait. The hero and Crystelle portrait receive no
+additional parallax. Reduced motion removes it; short windows retain gentle
+parallax on the static picture layout when motion is allowed.
 
 `#esprit` targets the editorial introduction; its own top padding clears the header without exposing a strip of the preceding hero. `#galerie` targets the Galerie page
 and `#selection` its café/works line. `#crystelle` and `#architecture` target the
@@ -182,7 +201,9 @@ Studio-to-sphere handover using the Web Animations API, independently of GSAP. `
 SplitText and CustomEase plugins included in the installed GSAP package, after fonts are ready,
 and restores natural text after completion or a motion-preference change.
 `artwork-sequence.ts` prepends the rolling invitation
-to its master timeline and re-centres the line on the visible word.
+to its master timeline and re-centres the line on the visible word. It owns picture
+drift within the stage; `picture-parallax.ts` handles complete pictures in ordinary
+document flow through a motion-preference-aware GSAP context.
 `hero-sequence.ts` controls image playback independently of GSAP;
 `data/hero-sequence.ts` owns shot timing and crops; `editorial-motion.ts`
 coordinates enhancement. The artwork story's natural height owns its track size;
@@ -283,3 +304,16 @@ reduced-motion reading, and the Ouverture/dog detail viewers. Ouverture's comple
 2000px web input is available through “Vue entière”; its source checksum matches
 the catalog. The dogs appear in the Galerie introduction and the bears in the
 rolling invitation. The letter-animation implementation is unchanged in this pass.
+
+The subsequent detail review is recorded in
+`.browser-evidence/editorial-polish-0915/`. An independent reviewer checked desktop
+and phone composition, settled rolling-word baselines, forward/reverse entry, and
+the painting-to-portrait handoff. Review caught missing spaces at the introduction's
+Astro span boundaries; the markup is corrected and the existing published-copy test
+now checks both complete sentences. Checks at 320px, 390px, 820px and 1440px cover
+line breaks and overflow. Flow parallax was measured at two scroll positions;
+short-window parallax and live reduced-motion cleanup were checked separately.
+Ouverture's viewer still opens, fits the whole image and closes. The full repository
+gate (10 root tests and 55 marketing tests) and production build pass. No new
+browser errors were observed. The brief “Pour le plaisir.” pause remains a taste
+choice for Martin's next review.

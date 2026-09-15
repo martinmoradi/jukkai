@@ -109,9 +109,11 @@ with no additional crop or colour treatment. Its source hash is verified against
 the media catalog; the manifest records the durable Storage source and output.
 The alternate full-frame composition remains available in the library.
 
-Ouverture accompanies the Hatton story beneath the Voyage heading. Its caption
-describes the paintings and sculptures assembled for Jukkai, with no artist,
-artwork-title or opening-date claim. The detail viewer retains the complete crop.
+Ouverture accompanies the Hatton story beneath the Voyage heading, without a
+visible caption. Its detail viewer describes the paintings and sculptures assembled
+for Jukkai, with no artist, artwork-title or opening-date claim, and retains the
+complete crop. The dog scene's playful display caption is “Un seul des trois réclame
+des caresses.”; its alternative text remains a literal description of the photograph.
 `dogs-scene` now introduces the Galerie; `contrasting-bears` takes its place beside
 “chez soi.” in the rolling invitation. The former interior/artwork diptych is no
 longer displayed, and its exports remain preserved.

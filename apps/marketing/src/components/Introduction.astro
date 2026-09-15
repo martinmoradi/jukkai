@@ -27,13 +27,14 @@ const caption = 'Peintures et sculptures réunies pour Jukkai';
   <div class={styles.story}>
     <p class={styles.chapter}>Un nouveau chapitre</p>
     <p class={styles.lead}>
-      <span class={styles.leadOpening}>Depuis trente ans,</span>
-      <span class={styles.keepTogether}>Crystelle Terrasson</span> imagine
-      <span class={styles.keepTogether}>des intérieurs.</span>
+      <span class={styles.leadOpening}>Depuis trente ans,</span>{' '}
+      <span class={styles.keepTogether}>Crystelle Terrasson</span>{' '}
+      imagine{' '}<span class={styles.keepTogether}>des intérieurs.</span>
     </p>
     <figure class={styles.photograph}>
       <a
         href={ouverture.src}
+        data-picture-parallax
         data-artwork='introduction-ouverture'
         data-art-src={ouverture.src}
         data-art-caption={caption}
@@ -51,9 +52,9 @@ const caption = 'Peintures et sculptures réunies pour Jukkai';
     </figure>
     <div class={styles.continuation}>
       <p class={styles.turn}>
-        <span>Aujourd’hui,</span>
+        <span>Aujourd’hui,</span>{' '}
         <span>le <span class={styles.keepTogether}>Studio Terrasson</span></span
-        >
+        >{' '}
         <span>devient Jukkai.</span>
       </p>
       <p class={styles.detail}>

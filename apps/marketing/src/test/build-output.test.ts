@@ -55,7 +55,13 @@ describe('published site', () => {
     const page = new JSDOM(await published('index.html'));
     const document = page.window.document;
     const introduction = document.querySelector('#esprit')!;
-    expect(introduction.textContent).toContain('Crystelle Terrasson');
+    const introductionText = introduction.textContent?.replace(/\s+/g, ' ');
+    expect(introductionText).toContain(
+      'Depuis trente ans, Crystelle Terrasson imagine des intérieurs.',
+    );
+    expect(introductionText).toContain(
+      'Aujourd’hui, le Studio Terrasson devient Jukkai.',
+    );
     expect(introduction.textContent).toContain('architecture');
     expect(introduction.textContent).toContain('galerie d’art');
     expect(introduction.textContent).toContain('poursuit ses projets');
