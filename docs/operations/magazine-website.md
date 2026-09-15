@@ -2,7 +2,7 @@
 
 **Status:** editorial proof 0.1 for Martin's review; local, not promoted to production.
 **Owns:** this edition's two-page implementation and review procedure.
-**Last reviewed:** 2026-09-15, for the supplied editorial copy, full-page composition and retained animation anchors.
+**Last reviewed:** 2026-09-15, for the revised hero exit, introduction and spiral entrance.
 **Revisit when:** Martin reviews the composition, the films are replaced, the opening happens, or the full website replaces this edition.
 
 ## Purpose and authority
@@ -21,11 +21,18 @@ editions and gift possibilities are supplied by Martin's brief. The Japanese
 reference is explicitly an editorial interpretation. The tattoo reference is not
 public copy and does not appear on the page.
 
+Martin's subsequent screen review authorizes rewriting and restructuring the
+introduction and artwork invitation. The current local revision gives the name
+change, continuity of the studio and arrival of the Galerie a larger typographic
+composition, with supplied photographs and scroll motion. This revision remains
+a working direction, with the hero and spiral retained as anchors.
+
 ## Page and factual boundaries
 
 - `/` explains that Studio Terrasson becomes Jukkai and its architecture practice
-  continues alongside the new Galerie. The introduction keeps both paragraphs
-  together, without scroll-triggered text reveals.
+  continues alongside the new Galerie. The introduction states “Le studio
+  continue. Une Galerie le rejoint.” All explanatory copy stays fully opaque
+  while the name and photographs move into place.
 - The Galerie opens in October 2026. Architecture already receives clients by
   appointment. No precise opening day, public hours, stock, prices or programme
   is invented. The address and footer contact details use the shared contact data.
@@ -42,30 +49,36 @@ public copy and does not appear on the page.
 
 All motion follows native vertical scrolling. No scroll interception or
 smooth-scroll library is used. The existing generated Frama/Frama Text/Hatton
-families remain in use. The proof uses gallery white and ivory, with a muted green
-closing field; this is an edition-specific composition choice.
+families remain in use. The proof uses gallery white and ivory, a dark plum
+introduction drawn from the supplied interior photograph, and a muted green
+closing field. These are edition-specific composition choices.
 
-| Chapter           | Composition and motion                                                                                                                                                                                                                           |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Hero              | Original inset film expanding to full bleed and complete wordmark animation. The supplied small sentence occupies the quiet area. Activity, place and Galerie opening have secondary scale.                                                      |
-| Identity entrance | The supplied Studio wordmark, C seal and Jukkai sphere form a short, approximately 2.15-second entrance into the complete hero wordmark. Scrolling settles it immediately; deep links skip it. This first timing is provisional.                 |
-| Introduction      | One large direct heading and two readable paragraphs, side by side on desktop and stacked on phones. All content is available together.                                                                                                          |
-| Artworks          | Stable three-line heading and paragraph, then two still scenes: the sculpted dogs with a real dog, and the sculptural still life. These add humour and differences of scale before the five-painting spiral.                                     |
-| Spiral            | The original opposing parent/child rotations keep each work upright. Bonneville closes the stack and remains available in the artwork viewer at its resting point.                                                                               |
-| Crystelle         | The painting moves into its real position in the supplied portrait. The portrait and complete biography settle together on desktop. On phones, the stage accommodates the full story and releases into ordinary scrolling so no text is clipped. |
-| Name reference    | One Hatton typographic moment follows the personal story: the supplied Japanese reference, French phrase and explicit interpretation note.                                                                                                       |
-| Closing           | A concise opening statement, shared address, current architecture appointments and contact action, followed by the existing useful footer.                                                                                                       |
+| Chapter           | Composition and motion                                                                                                                                                                                                                                                                      |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Hero              | Original inset film expanding to full bleed and complete wordmark animation. The supplied small sentence occupies the quiet area. Activity, place and Galerie opening have secondary scale.                                                                                                 |
+| Identity entrance | The supplied Studio wordmark, C seal and Jukkai sphere form a short, approximately 2.15-second entrance into the complete hero wordmark. Scrolling settles it immediately; deep links skip it. This first timing is provisional.                                                            |
+| Introduction      | A plum field overlaps the contracting hero film. Large Frama “Studio Terrasson” and Hatton “Jukkai.” settle from opposing directions. A Le Capri interior and sculptural still life meet beside the name; the continuation statement sits below. Phones use a vertical composition.         |
+| Artworks          | The café invitation leads to oversized “Pour chez soi.” and “Pour quelqu’un.” The real dog/sculpture photograph occupies the space inside the first line on desktop and between the two lines on phones. Text and photograph settle together during approach; buying and gift copy follows. |
+| Spiral            | “Pour le plaisir.” holds the centre on arrival, then recedes as the paintings enter. The original opposing parent/child rotations keep each work upright. Bonneville closes the stack and remains available in the artwork viewer at its resting point.                                     |
+| Crystelle         | The painting moves into its real position in the supplied portrait. The portrait and complete biography settle together on desktop. On phones, the stage accommodates the full story and releases into ordinary scrolling so no text is clipped.                                            |
+| Name reference    | One Hatton typographic moment follows the personal story: the supplied Japanese reference, French phrase and explicit interpretation note.                                                                                                                                                  |
+| Closing           | A concise opening statement, shared address, current architecture appointments and contact action, followed by the existing useful footer.                                                                                                                                                  |
 
-The hero retains 225svh (195svh on phones). The artwork choreography has 280svh
+The hero retains 225svh (195svh on phones). On viewports at least 700px high,
+the introduction has a measured natural-height sticky stage and 80svh of reading
+travel (45svh on phones). Shorter viewports keep normal document flow. Its copy
+is never faded or split into separate reveal steps. The artwork choreography has 280svh
 of travel after the stage reaches its sticky position (240svh on phones), plus
-its measured natural story height. The orbit begins during approach to the stage.
+its measured natural story height. Its timeline starts during approach, holding
+the invitation before the orbit begins. The artwork stage clips incoming works
+so they cannot cover the preceding reading paragraph.
 These are scroll distances, not timed playback. The source paintings and portrait
 have different lighting/perspective; the original dissolve is retained at the join.
 
 `#esprit` targets the unified introduction; `#galerie` targets the stable artwork
 copy. `#crystelle` and `#architecture` target the final portrait reading state;
 enhancement temporarily moves their IDs onto a marker at the end of the motion
-track. `#selection` stays with the two still scenes. Resizing does not follow an
+track. `#selection` stays with the photographic artwork invitation. Resizing does not follow an
 old fragment again.
 
 ## Fallbacks and interaction
@@ -86,7 +99,7 @@ old fragment again.
   stay fixed, accessible names are read once and reduced motion uses static states.
 - Hidden orbit layers remain inert during choreography. The top painting/caption
   becomes inspectable while the stack rests. Every work is an ordinary link in the
-  static grid. Both additional still scenes use the existing viewer.
+  static grid. The sculptural still life and dog scene use the existing viewer.
 - The viewer retains zoom, whole-artwork view, keyboard/touch/mouse panning,
   Escape/close, focus restoration and image-failure recovery.
 
@@ -107,6 +120,8 @@ if that possibility needs direct visual support.
 `index.astro` composes `VideoHero.astro`, the unified `StudioTransition.astro`,
 `ArtworkSequence.astro`, closing and viewer. Each sequence retains its CSS Module
 and animation module. `studio-transition.ts` now handles the short hero entrance.
+`editorial-story.ts` connects the hero exit, name change and photographic
+invitation; it cleans up its sticky layout when reduced motion is selected.
 `hero-film.ts` controls playback independently of GSAP; `editorial-motion.ts`
 coordinates enhancement. The artwork story's natural height owns its track size;
 `--scene-height` separately positions the moving painting within the visible stage.
@@ -134,9 +149,10 @@ publishing or changing permanent strategy documents.
 Run `bun run check` and `bun run --cwd apps/marketing build`. The existing published
 output tests cover continuity, films/posters, all five works, section/contact
 links, metadata, generated fonts, vCard and redirect; their content expectations
-now follow the supplied proof copy.
+now follow the supplied proof and authorized revision copy.
 
 Browser review uses `agent-browser`. Local evidence and the delivery note are in
+`.browser-evidence/editorial-sequence/`; the earlier proof remains in
 `.browser-evidence/editorial-proof/`. Full-page captures use reduced motion to
 show the entire composition. Separate desktop/phone recordings and intermediate
 captures demonstrate the spiral and portrait join. Check normal and reverse
