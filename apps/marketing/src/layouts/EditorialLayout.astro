@@ -115,11 +115,16 @@ const structuredData = {
         } catch {
           /* Storage is optional; native navigation still works. */
         }
-        const historyVisit =
-          performance.getEntriesByType('navigation')[0]?.type ===
-          'back_forward';
+        const navigation = performance.getEntriesByType('navigation')[0];
+        const previous = document.referrer ? new URL(document.referrer) : null;
+        const internalVisit =
+          navigation?.type !== 'reload' &&
+          previous?.origin === location.origin &&
+          ['/', '/contact', '/contact/'].includes(previous.pathname) &&
+          previous.pathname !== location.pathname;
+        const historyVisit = navigation?.type === 'back_forward';
         const mode =
-          incoming || historyVisit
+          incoming || internalVisit || historyVisit
             ? 'reveal'
             : location.pathname === '/' && !location.hash
               ? 'intro'

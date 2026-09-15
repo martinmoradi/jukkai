@@ -2,7 +2,7 @@
 
 **Status:** editorial proof 0.1 for Martin's review; local, not promoted to production.
 **Owns:** this edition's two-page implementation and review procedure.
-**Last reviewed:** 2026-09-15, for the editorial rework of the hero exit, introduction and spiral entrance.
+**Last reviewed:** 2026-09-15, for the separate identity entrance and Home/Contact curtain transitions, following the editorial rework.
 **Revisit when:** Martin reviews the composition, the artwork edit changes, the opening happens, or the full website replaces this edition.
 
 ## Purpose and authority
@@ -68,19 +68,19 @@ emotional words (“devient”, then “chez soi / quelqu’un / le plaisir”),
 for reading copy. The introduction sits on paper white, the Galerie on ivory,
 the closing on muted green. These are edition-specific composition choices.
 
-| Chapter           | Composition and motion                                                                                                                                                                                                                                                                                                                               |
-| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Hero              | Inset artwork edit expanding to full bleed and complete wordmark animation. The supplied small sentence occupies the quiet area. Activity, place and Galerie opening have secondary scale.                                                                                                                                                           |
-| Identity entrance | The supplied Studio wordmark, C seal and Jukkai sphere form a short, approximately 2.15-second entrance into the complete hero wordmark. Scrolling settles it immediately; deep links skip it. This first timing is provisional.                                                                                                                     |
-| Hero exit         | The artwork stays pinned one more viewport while a paper circle grows from the dot of the j. Inside the circle the same wordmark is ink on paper, so the wipe reads as the name turning from light to print.                                                                                                                                         |
-| Introduction      | The ink wordmark shrinks into the bottom-right of the sentence and loses its byline. “devient” is revealed from the centre outwards as its letters tighten from wide tracking into place; the real Studio Crystelle Terrasson wordmark slides in top-left. The settled page reads “Studio Terrasson devient Jukkai.” with both names as their marks. |
-| Join              | Free-flowing, not pinned. “Le studio continue.” rides in with the Belle Époque interior from the left, “Une Galerie le rejoint.” with the two bears from the right; the two photographs meet edge to edge as they pass the middle of the viewport. The explanatory sentence follows at the seam.                                                     |
-| Galerie           | A quiet page: “La Galerie” eyebrow, the café/works line in Hatton, and the selection copy set small to the right. No motion, by design, between two choreographed beats.                                                                                                                                                                             |
-| Invitation        | Inside the spiral stage, “Pour” holds while the last word rolls: “chez soi.” beside the dog scene, “quelqu’un.” beside the sculptural still life, then “le plaisir.” alone at the centre. Scenes pass through horizontally; the line re-centres on each word.                                                                                        |
-| Spiral            | The paintings orbit in around “Pour le plaisir.”, which recedes under the arriving stack and leaves only once covered. The original opposing parent/child rotations keep each work upright. Bonneville closes the stack and remains available in the artwork viewer at its resting point.                                                            |
-| Crystelle         | The painting moves into its real position in the supplied portrait. The portrait and complete biography settle together on desktop. On phones, the stage accommodates the full story and releases into ordinary scrolling so no text is clipped.                                                                                                     |
-| Name reference    | One Hatton typographic moment follows the personal story: the supplied Japanese reference, French phrase and explicit interpretation note.                                                                                                                                                                                                           |
-| Closing           | A concise opening statement, shared address, current architecture appointments and contact action, followed by the existing useful footer.                                                                                                                                                                                                           |
+| Chapter           | Composition and motion                                                                                                                                                                                                                                                                                                                                    |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Hero              | Inset artwork edit expanding to full bleed and complete wordmark animation. The supplied small sentence occupies the quiet area. Activity, place and Galerie opening have secondary scale.                                                                                                                                                                |
+| Identity entrance | A separate paper screen holds the complete Jukkai wordmark, the supplied Studio wordmark → rotating C seal → sphere, and “Un nouveau chapitre s’ouvre” in Voyage. Four horizontal bands clear to the right, bottom first, before artwork playback begins. About 3.4 seconds plus initial script loading; deep links and reduced motion skip the identity. |
+| Hero exit         | The artwork stays pinned one more viewport while a paper circle grows from the dot of the j. Inside the circle the same wordmark is ink on paper, so the wipe reads as the name turning from light to print.                                                                                                                                              |
+| Introduction      | The ink wordmark shrinks into the bottom-right of the sentence and loses its byline. “devient” is revealed from the centre outwards as its letters tighten from wide tracking into place; the real Studio Crystelle Terrasson wordmark slides in top-left. The settled page reads “Studio Terrasson devient Jukkai.” with both names as their marks.      |
+| Join              | Free-flowing, not pinned. “Le studio continue.” rides in with the Belle Époque interior from the left, “Une Galerie le rejoint.” with the two bears from the right; the two photographs meet edge to edge as they pass the middle of the viewport. The explanatory sentence follows at the seam.                                                          |
+| Galerie           | A quiet page: “La Galerie” eyebrow, the café/works line in Hatton, and the selection copy set small to the right. No motion, by design, between two choreographed beats.                                                                                                                                                                                  |
+| Invitation        | Inside the spiral stage, “Pour” holds while the last word rolls: “chez soi.” beside the dog scene, “quelqu’un.” beside the sculptural still life, then “le plaisir.” alone at the centre. Scenes pass through horizontally; the line re-centres on each word.                                                                                             |
+| Spiral            | The paintings orbit in around “Pour le plaisir.”, which recedes under the arriving stack and leaves only once covered. The original opposing parent/child rotations keep each work upright. Bonneville closes the stack and remains available in the artwork viewer at its resting point.                                                                 |
+| Crystelle         | The painting moves into its real position in the supplied portrait. The portrait and complete biography settle together on desktop. On phones, the stage accommodates the full story and releases into ordinary scrolling so no text is clipped.                                                                                                          |
+| Name reference    | One Hatton typographic moment follows the personal story: the supplied Japanese reference, French phrase and explicit interpretation note.                                                                                                                                                                                                                |
+| Closing           | A concise opening statement, shared address, current architecture appointments and contact action, followed by the existing useful footer.                                                                                                                                                                                                                |
 
 The hero's own animation keeps its 125svh of travel (95svh on phones). When the
 introduction can pin, it marks the hero with `data-exit` and the hero grows to
@@ -113,13 +113,15 @@ marker at the end of the motion track. Resizing does not follow an old fragment 
   static artwork layout (under 600px high on phones, under 720px on desktop).
 - A small hero inline script reserves the sticky layout before paint; a five-second
   fallback removes the extra track if enhancement fails. A failed animation import
-  restores static sections. The identity entrance never gates navigation or reading.
+  restores static sections. The entrance curtain has its own failure watchdog and releases all controls on completion or failure.
+- Home ↔ Contact navigation uses only the four bands: cover from the left, native document navigation, then reveal to the right. Same-page anchors, modified clicks, external links and downloads retain browser behavior. History returns reveal without replaying the identity; direct Contact visits remain immediate.
+- The entrance waits for the first hero image and fonts within a bounded budget. It freezes hero playback and temporarily makes page controls inert while covered. Reduced motion removes the curtain immediately; without JavaScript it stays hidden. A six-second watchdog releases the page if the module fails.
 - The hero edits ten artwork photographs into 20 shots (about 23 seconds): 15 hard
   cuts, two horizontal wipes, two upward reveals and one dissolve. Shots last
   700–2300ms; animated transitions last 360–420ms. Gentle camera movement and
   repeated closer crops connect faces, bear silhouettes, bees and dense colour.
 - The visible Pause/Lecture control freezes cuts and camera movement. Playback also
-  pauses offscreen and in hidden tabs, preserving its place. Enhancement decodes
+  pauses behind the curtain, offscreen and in hidden tabs, preserving its place. Enhancement decodes
   the next responsive image ahead of each cut; slow loads hold the current frame,
   and failed images are skipped. No video is imported, built or requested by the hero.
 - Header wordmark and navigation retain the selected difference blending and rolling
@@ -147,8 +149,11 @@ if that possibility needs direct visual support.
 
 `index.astro` composes `ArtworkHero.astro`, `Introduction.astro`,
 `ArtworkSequence.astro`, closing and viewer. Each sequence retains its CSS Module
-and animation module. `studio-transition.ts` handles the short hero identity
-entrance. `introduction.ts` owns the hero exit wipe (geometry computed from the
+and animation module. `PageTransition.astro` and its CSS Module own the fixed four-band curtain and
+entrance layout. `page-transition.ts` coordinates native navigation, bounded asset
+readiness, scroll/focus locking and history recovery; the inline layout bootstrap
+prevents a hero flash before the curtain. `studio-transition.ts` animates only the
+Studio-to-sphere handover using the Web Animations API, independently of GSAP. `introduction.ts` owns the hero exit wipe (geometry computed from the
 hero wordmark's known box and the dot position inside the SVG), the sentence
 assembly and the diptych join; it sets `data-exit` on the hero and cleans up when
 reduced motion is selected. `artwork-sequence.ts` prepends the rolling invitation
@@ -204,7 +209,14 @@ sequence.
 Physical-device Safari, real contact import and production analytics remain release
 checks in the [contact-card guide](crystelle-contact-card.md). Artwork-edit pacing,
 entrance timing, final scroll distance and copy/design acceptance remain review
-items before a separate production promotion. Two points from the rework need
-Martin's eye: the Studio wordmark now appears twice (in the provisional identity
-entrance and in the sentence), and it is shown in its own navy and gold rather
-than re-inked, so the “before” reads as the real letterhead.
+items before a separate production promotion. The Studio wordmark still appears in the identity entrance and in the sentence,
+in its supplied navy and gold. The entrance phrase, composition and pacing are
+Martin’s requested local iteration, awaiting his visual review.
+
+The separate entrance pass is recorded in `.browser-evidence/entrance-curtain/`:
+desktop entrance/navigation recordings, an intermediate stepped reveal, timing
+samples and command logs. The local browser checks cover desktop and 390px phone
+layouts, both navigation directions, history return, reduced motion, JavaScript
+disabled and blocked enhancement scripts. The repository gate passes all 55
+marketing tests, and the production build passes. Browser automation is Chromium;
+physical-device Safari remains a release check.
