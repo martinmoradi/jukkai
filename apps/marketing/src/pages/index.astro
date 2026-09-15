@@ -3,10 +3,10 @@ import { Image } from 'astro:assets';
 
 import sphere from '#/assets/jukkai-sphere.svg';
 import Arrow from '#/components/Arrow.astro';
+import ArtworkHero from '#/components/ArtworkHero.astro';
 import ArtworkSequence from '#/components/ArtworkSequence.astro';
 import ArtworkViewer from '#/components/ArtworkViewer.astro';
 import StudioTransition from '#/components/StudioTransition.astro';
-import VideoHero from '#/components/VideoHero.astro';
 import { CRYSTELLE } from '#/data/crystelle';
 import { GALERIE_IMAGES } from '#/data/galerie';
 import EditorialLayout from '#/layouts/EditorialLayout.astro';
@@ -18,7 +18,7 @@ const [painting, objects, dogs] = GALERIE_IMAGES;
 <EditorialLayout
   title='Jukkai by Crystelle Terrasson — Galerie & architecture d’intérieur, Châteaugiron'
   description='Jukkai by Crystelle Terrasson réunit architecture d’intérieur et Galerie à Châteaugiron, près de Rennes, dans la continuité de Studio Terrasson. Ouverture en octobre 2026.'>
-  <VideoHero />
+  <ArtworkHero />
   <StudioTransition />
   <ArtworkSequence />
 

@@ -2,8 +2,8 @@
 
 **Status:** prototype integration for Martin's review; not promoted to production.
 **Owns:** this edition's two-page implementation and review procedure.
-**Last reviewed:** 2026-09-15, for the hero, navigation interactions, transition copy and artwork choreography.
-**Revisit when:** the design/copy is accepted, the films are replaced, the opening
+**Last reviewed:** 2026-09-15, for the artwork hero edit, its playback controls and responsive framing.
+**Revisit when:** the design/copy is accepted, the hero edit changes, the opening
 has happened, or the full website replaces this edition.
 
 ## Purpose and authority
@@ -14,9 +14,9 @@ practice's continuity and expertise. [Current delivery](current-delivery.md) own
 release scope; the [foundation](../strategy/foundation.md) owns business facts.
 
 Martin's September 15 request selects the Desktop hero and spiral prototypes as the
-main motion direction: video hero, spacious Studio Terrasson-to-Jukkai explanation,
+main motion direction: expanding hero, spacious Studio Terrasson-to-Jukkai explanation,
 logo transition, five artworks converging into a stack, then Bonneville's painting
-moving into Crystelle's photograph. The hero now follows the Galerie variant for Martin’s review: an inset film on ivory expands to full bleed behind an offset wordmark. This supersedes the earlier painting-first hero.
+moving into Crystelle's photograph. The hero follows the Galerie variant: an inset artwork on ivory expands to full bleed behind an offset wordmark. Martin’s subsequent September 15 request replaces the provisional films with a lively edit of supplied artwork photographs.
 The exact French, spacing, timing and transitions are implementation choices for
 review, not permanent brand decisions. Copy remains subject to Martin/Crystelle's
 review before production. No production promotion is part of this implementation.
@@ -46,7 +46,7 @@ rotations so every artwork remains upright as it circles toward the centre.
 
 | Chapter           | Desktop                                                                                                                              | Phone                                                                                    |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
-| Video hero        | Inset landscape film expands to full bleed; the complete masked wordmark grows from 60% to full size and centres.                    | Inset portrait film expands to full bleed; wordmark grows from 72% to full size.         |
+| Artwork hero      | Inset artwork edit expands to full bleed; the complete masked wordmark grows from 60% to full size and centres.                      | Responsive artwork crops expand to full bleed; wordmark grows from 72% to full size.     |
 | Continuity        | Spacious heading, three passages on the right and sticky identity on the left.                                                       | Sticky compact identity above the passages; copy keeps a readable single column.         |
 | Identity handover | Supplied Studio wordmark contracts into the C seal; the Jukkai sphere appears, then the complete Jukkai wordmark reveals.            | Same marks, in a shorter panel.                                                          |
 | Spiral            | Five works converge into one upright stack; Bonneville is last and remains on top.                                                   | Smaller orbit radius and stack size, with the same reversible progression.               |
@@ -65,11 +65,11 @@ at the end of the sticky track. Resizing never follows an old fragment again.
 
 ## Fallbacks and interaction
 
-- Server-rendered content is useful without scripts: poster, both identity marks,
+- Server-rendered content is useful without scripts: opening artwork, both identity marks,
   complete five-artwork grid, portrait/copy, and ordinary artwork/contact links.
-- Reduced motion skips the animation import and leaves video playback paused on
-  its poster. Changing the preference reverts active
-  choreography; enabling motion later can initialise it without reloading.
+- Reduced motion skips the scroll-animation import and shows one static artwork.
+  Only that opening image loads. Changing the preference completes an active image
+  transition and freezes playback; enabling motion later can resume without reloading.
 - Short viewports use static identity/artwork layouts (under 600px high on phones,
   under 720px for the desktop artwork sequence). The hero remains readable in
   short landscape with a compact wordmark.
@@ -77,14 +77,20 @@ at the end of the sticky track. Resizing never follows an old fragment again.
   enhancement fails, a five-second fallback removes the extra track. A failed
   animation import restores static sections. Below-fold sections enhance only
   after all their animation modules are available.
-- Videos are muted, looped and inline. Only the selected orientation loads. A
-  matching static poster remains behind the film. Playback pauses when offscreen,
-  when the tab is hidden and on reduced-motion preference. The hero has no
-  play/pause control; a failed film leaves the poster and links usable. The
-  opening date and location are plain text, with no hero opening link.
+- The hero edits ten source-faithful artwork photographs into 20 shots (about 23
+  seconds): 15 hard cuts, two horizontal wipes, two upward reveals and one dissolve.
+  Shots last 700–2300ms; animated transitions last 360–420ms. Gentle camera moves
+  and repeated closer crops connect faces, bear silhouettes, bees and dense colour.
+  This is an authored sequence, not a shuffle; its crops and timing remain reviewable.
+- The visible Pause/Lecture button freezes both cuts and camera movement. Playback
+  also pauses offscreen and while the tab is hidden, preserving its place. Only the
+  opening artwork loads eagerly; enhancement decodes the next responsive image
+  ahead of its cut. Slow images extend the current hold; failed images are skipped.
+  No video is imported, built or requested by the hero. The opening date and location
+  remain plain text.
 - The header keeps the supplied wordmark without its byline as the home link,
   including over the hero. Difference blending keeps the wordmark, navigation and
-  hero details legible as the film expands. Without enhancement the header scrolls
+  hero details legible as the artwork expands. Without enhancement the header scrolls
   away with the hero, avoiding white navigation stranded over a white page.
 - The Contact button and header section links adapt the interactions Martin selected
   from [The Obsidian Assembly](https://obsidianassembly.com/): a rounded button with
@@ -102,8 +108,8 @@ at the end of the sticky track. Resizing never follows an old fragment again.
 
 The [asset manifest](../../apps/marketing/src/assets/magazine/manifest.json) records
 sources and checksums. [Selection notes](../../apps/marketing/src/assets/magazine/README.md)
-explain the photographs; [film notes](../../apps/marketing/src/assets/magazine/motion/README.md)
-identify the provisional prototype clips and how to replace them with their posters.
+explain the photographs; [hero notes](../../apps/marketing/src/assets/magazine/hero/README.md)
+identify the current artwork edit. The old clips remain unused source provenance.
 The [media catalog and workflow](../../media/README.md) identify the selected
 full-quality working sources and Storage masters. The manifest retains each exact
 historical input, including smaller previews used for existing app exports; the
@@ -112,10 +118,11 @@ September consolidation preserves current app bytes. Do not import from ignored
 Original SVGs are preserved in `brand/source/studio-terrasson/`; matching runtime
 copies keep their paths/colours intact. No source artwork or photograph is edited.
 
-The landing page composes `VideoHero.astro`, `StudioTransition.astro` and
+The landing page composes `ArtworkHero.astro`, `StudioTransition.astro` and
 `ArtworkSequence.astro`, followed by the existing selection and practical details.
-Each sequence has its own CSS Module and animation module. `hero-film.ts` controls
-playback independently of GSAP; `editorial-motion.ts` coordinates enhancement.
+Each sequence has its own CSS Module and animation module. `hero-sequence.ts` controls
+image playback independently of GSAP; `data/hero-sequence.ts` owns shot timing
+and crops; `editorial-motion.ts` coordinates enhancement.
 `main` clips horizontal overflow without creating a competing scroll container.
 
 Generated Frama/Frama Text/Hatton fonts, Astro responsive image derivatives,
@@ -132,23 +139,21 @@ Use Bun 1.3.14 through `mise`. Check the server before working:
 mise x bun@1.3.14 -- bun run --cwd apps/marketing dev -- status
 ```
 
-This pass reused Martin's running dev server at `http://localhost:4321`. Use an
-owned non-default port for a separate production preview and stop only owned
-processes. Browser automation uses `agent-browser`.
+This pass uses an owned worktree server on port 4347. Check the live server status
+before reuse; stop only owned processes. Browser automation uses `agent-browser`.
 
 Run `bun run check` and `bun run --cwd apps/marketing build`. Build-output tests
 cover page/section destinations, visible continuity, all five supplied artworks,
-film assets/posters, metadata, generated fonts, contact, vCard and redirect. Asset
+responsive hero images, the static first frame and optional playback control, metadata, generated fonts, contact, vCard and redirect. Asset
 tests also verify that Studio SVG copies match the preserved originals.
 
 Current local review captures and audit results live in
-`.browser-evidence/magazine-prototypes/` (gitignored). Inspect intermediate viewport
+`.browser-evidence/artwork-hero/` (gitignored). Inspect intermediate viewport
 states and recordings for the sticky sequences; full-page screenshots alone do
 not show their motion. Check desktop, phone, small phone, tablet and short landscape,
-reverse scrolling, orientation changes, native anchors, header hover/focus, detail viewer, offscreen video pause,
+reverse scrolling, orientation changes, native anchors, header hover/focus, detail viewer, pause/resume and offscreen image pause,
 reduced motion, failed assets and script fallback.
 
 Physical-device Safari, real contact import and production analytics remain release
-checks in the [contact-card guide](crystelle-contact-card.md). Replace/refine the
-provisional film loop and obtain copy/design acceptance before a separate production
+checks in the [contact-card guide](crystelle-contact-card.md). Obtain copy/design acceptance for the artwork edit before a separate production
 promotion. Update the date-specific opening text after October's opening.

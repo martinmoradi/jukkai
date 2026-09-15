@@ -1,7 +1,7 @@
 import { initArtworkViewer } from './artwork-viewer';
-import { initHeroFilm } from './hero-film';
+import { initHeroSequence } from './hero-sequence';
 
-/** Static content, contact links and film controls work without GSAP. */
+/** Static content, contact links and image playback work without GSAP. */
 export function initEditorialMotion() {
   const mapsLink =
     document.querySelector<HTMLAnchorElement>('[data-maps-link]');
@@ -12,7 +12,7 @@ export function initEditorialMotion() {
     mapsLink.href = mapsLink.dataset.appleMapsUrl;
   }
   initArtworkViewer();
-  initHeroFilm();
+  initHeroSequence();
   if (!document.querySelector('[data-art-sequence]')) return;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const initialHash = location.hash;

@@ -333,7 +333,15 @@
         "photoshoot-09-09-26/Artworks/PXL_20260909_155853781.RAW-01.COVER.jpg",
         "photoshoot-09-09-26/Artworks/PXL_20260909_155853781.RAW-02.ORIGINAL.dng"
       ],
-      "printExport": "media/artworks/la-pointe-01/exports/la-pointe-01-print.tif"
+      "printExport": "media/artworks/la-pointe-01/exports/la-pointe-01-print.tif",
+      "websiteInputs": [
+        {
+          "appPath": "apps/marketing/src/assets/magazine/hero/la-pointe-01.webp",
+          "input": "media/artworks/la-pointe-01/exports/la-pointe-01.jpg",
+          "inputSha256": "ae2425eef35138a4d5bcaa0f977a7377b596d04237d6901b2d15a0df58f75c88",
+          "sha256": "c2ea0af2d16ce6079fda65c711ee77d3b8b9eea99def09d7a1ffd52fcfbc1812"
+        }
+      ]
     },
     {
       "id": "m-hope-01",
@@ -469,6 +477,14 @@
       "captureOriginals": [
         "photoshoot-09-09-26/Artworks/PXL_20260909_154926262.RAW-01.COVER.jpg",
         "photoshoot-09-09-26/Artworks/PXL_20260909_154926262.RAW-02.ORIGINAL.dng"
+      ],
+      "websiteInputs": [
+        {
+          "appPath": "apps/marketing/src/assets/magazine/hero/m-hope-05.webp",
+          "input": "media/artworks/m-hope-05/exports/m-hope-05.jpg",
+          "inputSha256": "b29d7643ee3f9afdb76b45dfb2782d6606b91fbc81d7da53438957b22b9151fe",
+          "sha256": "ee1f7f6abc9972d1fba859090da87e46d2e4f188ffd54907b98cbd96359a8dcd"
+        }
       ]
     },
     {
@@ -494,7 +510,15 @@
         "photoshoot-09-09-26/Artworks/PXL_20260909_141505473.RAW-01.COVER.jpg",
         "photoshoot-09-09-26/Artworks/PXL_20260909_141505473.RAW-02.ORIGINAL.dng"
       ],
-      "printExport": "media/artworks/m-hope-06/exports/m-hope-06-print.tif"
+      "printExport": "media/artworks/m-hope-06/exports/m-hope-06-print.tif",
+      "websiteInputs": [
+        {
+          "appPath": "apps/marketing/src/assets/magazine/hero/m-hope-06.webp",
+          "input": "media/artworks/m-hope-06/exports/m-hope-06.jpg",
+          "inputSha256": "fa879b66ff9401f5330a924b98187b6fef0c028953da724879909de261d3bed6",
+          "sha256": "2fa4c537731eace7357eaaec60357b7eadee736d3a4c5a0d2ed1ab9d33145321"
+        }
+      ]
     },
     {
       "id": "m-hope-07",
@@ -544,7 +568,15 @@
         "photoshoot-09-09-26/Artworks/PXL_20260909_155536626.RAW-01.COVER.jpg",
         "photoshoot-09-09-26/Artworks/PXL_20260909_155536626.RAW-02.ORIGINAL.dng"
       ],
-      "printExport": "media/artworks/m-hope-08/exports/m-hope-08-print.tif"
+      "printExport": "media/artworks/m-hope-08/exports/m-hope-08-print.tif",
+      "websiteInputs": [
+        {
+          "appPath": "apps/marketing/src/assets/magazine/hero/m-hope-08.webp",
+          "input": "media/artworks/m-hope-08/exports/m-hope-08.jpg",
+          "inputSha256": "e88818381eb8205c8ed44b174ba52b603b9ce9ab35adbc268b4664bbf5850a98",
+          "sha256": "3504c278732c4944af1a66d179c04369d43ef29721240b0ababb7c945ebe900c"
+        }
+      ]
     },
     {
       "id": "m-hope-09",
@@ -650,6 +682,12 @@
           "input": "records/2026-09-production/website-inputs/mister-zion-01.webp/mister-zion-01.webp",
           "inputSha256": "da166982127f12cb1cd6003e66ca7decb612da93a70fed92c7f8b60b78136414",
           "sha256": "da166982127f12cb1cd6003e66ca7decb612da93a70fed92c7f8b60b78136414"
+        },
+        {
+          "appPath": "apps/marketing/src/assets/magazine/hero/mister-zion-01.webp",
+          "input": "media/artworks/mister-zion-01/exports/mister-zion-01.jpg",
+          "inputSha256": "8c0706e0ae589a735b70a1b45557491b49d824df99c35825cf9abf6a2d12d602",
+          "sha256": "764e6796fbf26fc8ddf97f5672f63f230f69ec12a17e0e90f4629e5ee2842ba6"
         }
       ]
     },
@@ -675,6 +713,14 @@
       "captureOriginals": [
         "photoshoot-09-09-26/Artworks/PXL_20260909_154712442.RAW-01.COVER.jpg",
         "photoshoot-09-09-26/Artworks/PXL_20260909_154712442.RAW-02.ORIGINAL.dng"
+      ],
+      "websiteInputs": [
+        {
+          "appPath": "apps/marketing/src/assets/magazine/hero/mister-zion-02.webp",
+          "input": "media/artworks/mister-zion-02/exports/mister-zion-02.jpg",
+          "inputSha256": "7ef0e039e7a640d534a7a54979c42bd44ce21859d5324406f632c322422e6202",
+          "sha256": "145aec685f908599c8db7b9e6fde32143f11badcb4aaad951f749c19d6ae7f99"
+        }
       ]
     },
     {
@@ -706,6 +752,12 @@
           "input": "records/2026-09-production/website-inputs/nina-bruneau.webp/nina-bruneau-01-website-1600.jpg",
           "inputSha256": "78a3c804607d16de7cb50c5aa1da0a60e7a6e428d729e938eb3bba0f32c1f494",
           "sha256": "3ae6394bd1e88b2b25bad00a10d59c82dc0c506a329b2a108e1ed019fe11de92"
+        },
+        {
+          "appPath": "apps/marketing/src/assets/magazine/hero/nina-bruneau-01.webp",
+          "input": "media/artworks/nina-bruneau-01/exports/nina-bruneau-01.jpg",
+          "inputSha256": "aa1f11b3d320668d7f714f236f5a7d464b78592902a808c71738c555e9adc411",
+          "sha256": "7c9e313acc5c58cc2d82afa523cd962b64778ae120ab2c7345b5eb827a3de55a"
         }
       ]
     },
@@ -883,6 +935,14 @@
       "captureOriginals": [
         "photoshoot-09-09-26/Artworks/PXL_20260909_154635090.RAW-01.COVER.jpg",
         "photoshoot-09-09-26/Artworks/PXL_20260909_154635090.RAW-02.ORIGINAL.dng"
+      ],
+      "websiteInputs": [
+        {
+          "appPath": "apps/marketing/src/assets/magazine/hero/yoann-bonneville-01.webp",
+          "input": "media/artworks/yoann-bonneville-01/exports/yoann-bonneville-01.jpg",
+          "inputSha256": "a20203e0c073de0a3170add0bb944b876eaa314a633fa9e243b6589f6eb3f9e4",
+          "sha256": "72b837efd23db18a2e8accc7b456bf858acc67633f4786739e866dc4582d8a9c"
+        }
       ]
     },
     {
@@ -914,6 +974,12 @@
           "input": "records/2026-09-production/website-inputs/yoann-bonneville.webp/yoann-bonneville-02-website-1600.jpg",
           "inputSha256": "afab5d9a18eb961cfe439fe79834eabdeb208b2589ce8fb17c4b5d9688dd642b",
           "sha256": "d3ef70e4a23cf60b10af14d9ee894e884c21bcddfd2be5626cd1bde009420d4d"
+        },
+        {
+          "appPath": "apps/marketing/src/assets/magazine/hero/yoann-bonneville-02.webp",
+          "input": "media/artworks/yoann-bonneville-02/exports/yoann-bonneville-02.jpg",
+          "inputSha256": "6e883432d076cf088a3e4b602e804173f048ff135e6cdf8fabd620a731f49ecd",
+          "sha256": "392be105cd8da4c848f583145a11894bd2a87f479e39cb4caf6128ec5eae1f0a"
         }
       ]
     },
@@ -940,7 +1006,15 @@
         "photoshoot-09-09-26/Artworks/PXL_20260909_155816608.RAW-01.COVER.jpg",
         "photoshoot-09-09-26/Artworks/PXL_20260909_155816608.RAW-02.ORIGINAL.dng"
       ],
-      "printExport": "media/artworks/yoris-01/exports/yoris-01-print.tif"
+      "printExport": "media/artworks/yoris-01/exports/yoris-01-print.tif",
+      "websiteInputs": [
+        {
+          "appPath": "apps/marketing/src/assets/magazine/hero/yoris-01.webp",
+          "input": "media/artworks/yoris-01/exports/yoris-01.jpg",
+          "inputSha256": "f61281b0bf263fc8a116ee2623b9979b8d68dc9d16487aee91f003403bad6a6e",
+          "sha256": "e13829ac058c02105c7b2b1d0b23a659685a40afe5810291447257de3aefedbe"
+        }
+      ]
     },
     {
       "id": "cadre-en-balade",

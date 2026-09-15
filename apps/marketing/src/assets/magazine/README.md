@@ -51,8 +51,10 @@ brief; they do not establish a catalogue, artwork availability or permanent pale
 
 ## Prototype integration, September 15
 
-The hero uses the supplied prototype films and matching posters from `motion/`.
-See [the film selection](motion/README.md) for provenance and replacement guidance.
+The earlier hero used prototype films and matching posters from `motion/`.
+Martin’s subsequent request replaces them with the [artwork edit](hero/README.md):
+ten finished library photographs, with dedicated source hashes and quality-84
+web inputs. The old film files remain unused provenance.
 The three added square works (`m-hope-02`, `m-hope-04`, `mister-zion-01`) are exact
 copies from the supplied spiral prototype. The existing Nina Bruneau and Bonneville
 exports complete the five-work sequence. Bonneville appears last, on top, and

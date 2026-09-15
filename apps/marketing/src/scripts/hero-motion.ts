@@ -1,7 +1,7 @@
 import type { gsap as Gsap } from 'gsap';
 
 export function animateHero(gsap: typeof Gsap) {
-  const hero = document.querySelector<HTMLElement>('[data-video-hero]');
+  const hero = document.querySelector<HTMLElement>('[data-artwork-hero]');
   if (!hero) return;
   const media = gsap.matchMedia();
   media.add(
@@ -49,8 +49,14 @@ export function animateHero(gsap: typeof Gsap) {
         )
         .fromTo(
           hero.querySelector('[data-film-drift]'),
-          { scale: 1 },
-          { scale: 1.04, duration: 1, ease: 'none' },
+          {
+            scale: 1,
+            x: 0,
+            y: 0,
+            xPercent: context.conditions?.mobile ? 7 : 12,
+            yPercent: 4,
+          },
+          { scale: 1.04, xPercent: 0, yPercent: 0, duration: 1, ease: 'none' },
           0,
         )
         .to(

@@ -1,0 +1,125 @@
+---
+import { getImage } from 'astro:assets';
+
+import laPointe from '#/assets/magazine/hero/la-pointe-01.webp';
+import hopePainting from '#/assets/magazine/hero/m-hope-05.webp';
+import hopeBear from '#/assets/magazine/hero/m-hope-06.webp';
+import hopeKing from '#/assets/magazine/hero/m-hope-08.webp';
+import bee from '#/assets/magazine/hero/mister-zion-01.webp';
+import bees from '#/assets/magazine/hero/mister-zion-02.webp';
+import bruneau from '#/assets/magazine/hero/nina-bruneau-01.webp';
+import bonnevilleOne from '#/assets/magazine/hero/yoann-bonneville-01.webp';
+import bonnevilleTwo from '#/assets/magazine/hero/yoann-bonneville-02.webp';
+import yoris from '#/assets/magazine/hero/yoris-01.webp';
+import wordmark from '#/assets/magazine/jukkai-wordmark-primary.svg';
+import styles from '#/styles/artwork-hero.module.css';
+
+const artworks = [
+  { image: bonnevilleOne, position: '50% 24%' },
+  { image: bonnevilleTwo, position: '50% 24%' },
+  { image: hopeBear, position: '50% 0%' },
+  { image: yoris, position: '50% 0%' },
+  { image: laPointe, position: '50% 0%' },
+  { image: bee, position: '50% 42%' },
+  { image: bees, position: '50% 40%' },
+  { image: bruneau, position: '50% 45%' },
+  { image: hopePainting, position: '50% 40%' },
+  { image: hopeKing, position: '50% 0%' },
+];
+const frames = await Promise.all(
+  artworks.map(async ({ image, position }) => {
+    const variants = await Promise.all(
+      [640, 960, 1440, 1920].map((width) =>
+        getImage({ src: image, width, format: 'webp', quality: 80 }),
+      ),
+    );
+    return {
+      position,
+      image,
+      src: variants[2].src,
+      srcset: variants
+        .map((variant, i) => `${variant.src} ${[640, 960, 1440, 1920][i]}w`)
+        .join(', '),
+    };
+  }),
+);
+---
+
+<section class={styles.hero} aria-labelledby='hero-title' data-artwork-hero>
+  <div class={styles.stage} data-film-stage>
+    <div class={styles.filmWindow} data-film-window aria-hidden='true'>
+      <div class={styles.filmDrift} data-film-drift>
+        {
+          frames.map((frame, index) => (
+            <div
+              class={styles.frame}
+              data-hero-frame
+              data-active={index === 0 ? '' : undefined}>
+              <img
+                src={index === 0 ? frame.src : undefined}
+                srcset={index === 0 ? frame.srcset : undefined}
+                data-src={frame.src}
+                data-srcset={frame.srcset}
+                sizes='(orientation: portrait) 110vh, 110vw'
+                width={frame.image.width}
+                height={frame.image.height}
+                alt=''
+                loading='eager'
+                fetchpriority={index === 0 ? 'high' : 'low'}
+                decoding='async'
+                style={{ 'object-position': frame.position }}
+              />
+            </div>
+          ))
+        }
+      </div>
+      <div class={styles.shade}></div>
+    </div>
+    <p class={styles.editionNote} data-film-note>
+      <span>Une rencontre.</span><span>Un autre regard.</span>
+    </p>
+    <h1
+      id='hero-title'
+      class={styles.wordmark}
+      data-film-mark
+      style={{ '--wordmark': `url("${wordmark.src}")` }}>
+      <span class={styles.accessibleTitle}
+        >Jukkai by Crystelle Terrasson — Architecture d’intérieur & Galerie</span
+      >
+    </h1>
+    <div class={styles.bottom}>
+      <p class={styles.opening}>
+        <span>Châteaugiron, près de Rennes</span>
+        <span>Ouverture · octobre 2026</span>
+      </p>
+    </div>
+    <button
+      class={styles.playback}
+      type='button'
+      data-hero-pause
+      hidden
+      aria-label='Mettre les images en pause'>
+      <svg
+        viewBox='0 0 16 16'
+        width='14'
+        height='14'
+        fill='currentColor'
+        aria-hidden='true'>
+        <path data-pause-icon d='M4 3h3v10H4zm5 0h3v10H9z'></path>
+      </svg>
+      <span data-pause-label>Pause</span>
+    </button>
+    <a class={styles.explore} href='#esprit' data-film-cue
+      >Découvrir Jukkai <span aria-hidden='true'>↓</span></a
+    >
+  </div>
+  <script is:inline>
+    if (matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+      const hero = document.currentScript.closest('[data-artwork-hero]');
+      hero.dataset.motion = 'ready';
+      setTimeout(() => {
+        if (!hero.dataset.animated) hero.removeAttribute('data-motion');
+      }, 5000);
+    }
+  </script>
+</section>
