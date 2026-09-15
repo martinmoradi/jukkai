@@ -140,10 +140,13 @@ Use Bun 1.3.14 through `mise`. Check the relevant worktree before starting a ser
 mise x bun@1.3.14 -- bun run --cwd apps/marketing dev -- status
 ```
 
-This proof is isolated on `feat/editorial-proof-0-1`, starting at `43fe824`, in
-`/home/martin/src/pro/jukkai-editorial-proof`. The original working tree and its
-server on port 4321 are preserved. The proof's owned review server uses port 4339.
-Do not stop another worktree's server. Local proof review does not authorize
+This proof was prepared on `feat/editorial-proof-0-1`, starting at `43fe824`, in
+`/home/martin/src/pro/jukkai-editorial-proof`. At Martin's request, its six commits
+through `247e2f1` were fast-forwarded onto `feat/magazine-landing` in the main working
+directory, `/home/martin/src/pro/jukkai`. The current preview there uses port 4321;
+the isolated proof and its port 4339 preview remain available. Review captures
+were copied into the main working directory's ignored `.browser-evidence/` folder.
+Do not stop another worktree's server. This local integration does not authorize
 publishing or changing permanent strategy documents.
 
 Run `bun run check` and `bun run --cwd apps/marketing build`. The existing published
