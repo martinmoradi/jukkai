@@ -16,7 +16,7 @@ release scope; the [foundation](../strategy/foundation.md) owns business facts.
 Martin's September 15 request selects the Desktop hero and spiral prototypes as the
 main motion direction: video hero, spacious Studio Terrasson-to-Jukkai explanation,
 logo transition, five artworks converging into a stack, then Bonneville's painting
-moving into Crystelle's photograph. This supersedes the earlier painting-first hero.
+moving into Crystelle's photograph. The hero now follows the Galerie variant for Martin’s review: an inset film on ivory expands to full bleed behind an offset wordmark. This supersedes the earlier painting-first hero.
 The exact French, spacing, timing and transitions are implementation choices for
 review, not permanent brand decisions. Copy remains subject to Martin/Crystelle's
 review before production. No production promotion is part of this implementation.
@@ -46,7 +46,7 @@ rotations so every artwork remains upright as it circles toward the centre.
 
 | Chapter           | Desktop                                                                                                                              | Phone                                                                                    |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
-| Video hero        | Full-bleed landscape film and complete masked wordmark; the wordmark grows from 37% to full size.                                    | Portrait film; wordmark grows from 71% to full size.                                     |
+| Video hero        | Inset landscape film expands to full bleed; the complete masked wordmark grows from 60% to full size and centres.                    | Inset portrait film expands to full bleed; wordmark grows from 72% to full size.         |
 | Continuity        | Spacious heading, three passages on the right and sticky identity on the left.                                                       | Sticky compact identity above the passages; copy keeps a readable single column.         |
 | Identity handover | Supplied Studio wordmark contracts into the C seal; the Jukkai sphere appears, then the complete Jukkai wordmark reveals.            | Same marks, in a shorter panel.                                                          |
 | Spiral            | Five works converge into one upright stack; Bonneville is last and remains on top.                                                   | Smaller orbit radius and stack size, with the same reversible progression.               |
@@ -81,7 +81,9 @@ at the end of the sticky track. Resizing never follows an old fragment again.
   matching static poster remains behind the film. Playback pauses when offscreen,
   when the tab is hidden, on visitor pause and on reduced-motion preference.
   A failed film has a retry/play control and leaves the poster and links usable.
-- The header uses the prototype's category over the film, then returns to the
+- Header and hero controls use difference blending to remain legible as the inset
+  film expands across the ivory frame. The header uses the prototype's category,
+  then returns to the
   existing navigation/wordmark after the film. Without enhancement it scrolls away
   with the hero, avoiding white navigation stranded over a white page.
 - Hidden orbit layers are inert during motion. The top Bonneville painting and

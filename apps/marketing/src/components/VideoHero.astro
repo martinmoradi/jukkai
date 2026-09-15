@@ -12,7 +12,7 @@ import styles from '#/styles/video-hero.module.css';
 
 <section class={styles.hero} aria-labelledby='hero-title' data-video-hero>
   <div class={styles.stage} data-film-stage>
-    <div class={styles.filmWindow} aria-hidden='true'>
+    <div class={styles.filmWindow} data-film-window aria-hidden='true'>
       <div class={styles.filmDrift} data-film-drift>
         <picture>
           <source
@@ -41,6 +41,9 @@ import styles from '#/styles/video-hero.module.css';
       </div>
       <div class={styles.shade}></div>
     </div>
+    <p class={styles.editionNote} data-film-note>
+      <span>Une rencontre.</span><span>Un autre regard.</span>
+    </p>
     <h1
       id='hero-title'
       class={styles.wordmark}
@@ -56,9 +59,6 @@ import styles from '#/styles/video-hero.module.css';
           >Ouverture · octobre 2026 <Arrow diagonal /></span
         ></a
       >
-      <a class={styles.explore} href='#esprit' data-film-cue
-        >Découvrir Jukkai <span aria-hidden='true'>↓</span></a
-      >
       <button
         class={styles.playback}
         type='button'
@@ -70,6 +70,9 @@ import styles from '#/styles/video-hero.module.css';
         ></button
       >
     </div>
+    <a class={styles.explore} href='#esprit' data-film-cue
+      >Découvrir Jukkai <span aria-hidden='true'>↓</span></a
+    >
     <p class={styles.accessibleTitle} role='status' data-film-status></p>
   </div>
   <script is:inline>

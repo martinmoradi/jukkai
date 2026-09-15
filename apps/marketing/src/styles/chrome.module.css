@@ -201,6 +201,7 @@
 .header[data-on-film='true'] {
   color: white;
   background: transparent;
+  mix-blend-mode: difference;
 }
 .header[data-on-film='true'] .brand > img,
 .header[data-on-film='true'] .brand > span:not(.heroCategory) {
@@ -213,9 +214,9 @@
   line-height: 1.4;
 }
 .header[data-on-film='true'] .contactLink {
-  color: white;
+  color: inherit;
   background: transparent;
-  border: 1px solid #fff7;
+  border: 1px solid currentColor;
 }
 .header[data-on-film='true'] .contactLink:hover {
   color: var(--ink);
