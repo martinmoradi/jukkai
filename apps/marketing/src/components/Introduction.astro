@@ -1,14 +1,5 @@
 ---
-import { Image } from 'astro:assets';
-
-import interior from '#/assets/magazine/belle-epoque.webp';
-import lockup from '#/assets/magazine/jukkai-wordmark-primary.svg';
-import wordmark from '#/assets/magazine/jukkai-wordmark-primary-no-byline.svg';
-import studioWordmark from '#/assets/magazine/studio-terrasson-wordmark.svg';
-import { GALERIE_IMAGES } from '#/data/galerie';
 import styles from '#/styles/introduction.module.css';
-
-const [, , , bears] = GALERIE_IMAGES;
 ---
 
 <section
@@ -16,82 +7,31 @@ const [, , , bears] = GALERIE_IMAGES;
   id='esprit'
   aria-labelledby='origin-title'
   data-introduction>
-  <div class={styles.track} data-origin-track>
-    <div class={styles.stage} data-origin-stage>
-      <h2 id='origin-title' class={styles.sentence}>
-        <span class={styles.accessible}>Studio Terrasson devient Jukkai.</span>
-        <img
-          class={styles.former}
-          src={studioWordmark.src}
-          width='283'
-          height='113'
-          alt=''
-          aria-hidden='true'
-          data-origin-former
-        />
-        <em class={styles.verb} aria-hidden='true' data-origin-verb>devient</em>
-        <span class={styles.slot} aria-hidden='true' data-origin-slot></span>
-        <span
-          class={styles.mark}
-          aria-hidden='true'
-          data-origin-mark
-          style={{
-            '--wordmark': `url("${wordmark.src}")`,
-            '--lockup': `url("${lockup.src}")`,
-          }}>
-          <span class={styles.markFace}></span>
-          <span class={styles.markByline} data-origin-byline></span>
-        </span>
-      </h2>
-    </div>
+  <div class={styles.name}>
+    <span>Jukkai</span>
+    <span lang='ja'>述懐</span>
+    <span class={styles.interpretation}>Interprétation éditoriale du nom</span>
   </div>
-  <div class={styles.join}>
-    <div class={styles.panels} data-join-panels>
-      <div class={styles.panel} data-join-left>
-        <p class={styles.lead}>Le studio <span>continue.</span></p>
-        <figure class={styles.figure}>
-          <Image
-            src={interior}
-            alt='Cuisine du projet Belle Époque : îlot noir, boiseries en noyer et verrière ouverte sur le jardin.'
-            widths={[640, 960, 1440]}
-            sizes='(max-width: 800px) 92vw, 40vw'
-            width={1440}
-            loading='lazy'
-            data-join-image
-          />
-          <figcaption>Belle Époque · Un projet du studio</figcaption>
-        </figure>
-      </div>
-      <div class={styles.panel} data-join-right>
-        <figure class={styles.figure}>
-          <a
-            href={bears.image.src}
-            data-artwork='scene-1'
-            data-art-src={bears.image.src}
-            data-art-caption={bears.caption}
-            aria-label={`Explorer les détails : ${bears.caption}`}
-            aria-haspopup='dialog'>
-            <Image
-              src={bears.image}
-              alt={bears.alt}
-              widths={[640, 960, 1440]}
-              sizes='(max-width: 800px) 92vw, 40vw'
-              width={1440}
-              loading='lazy'
-              data-join-image
-            />
-          </a>
-          <figcaption>
-            {bears.caption}
-            <span aria-hidden='true'>↗</span>
-          </figcaption>
-        </figure>
-        <p class={styles.lead}>Une Galerie <span>le rejoint.</span></p>
-      </div>
+  <h2 id='origin-title' class={styles.phrase} data-intro-phrase>
+    <span class={styles.accessible}>Délivrer ce que le cœur gardait.</span>
+    <span class={styles.phraseVisual} aria-hidden='true'>
+      <span class={styles.phraseLine} data-intro-line>Délivrer ce que</span>
+      <span class={styles.phraseLine} data-intro-line>le cœur gardait.</span>
+    </span>
+  </h2>
+  <div class={styles.story}>
+    <p class={styles.chapter}>Un nouveau chapitre</p>
+    <div class={styles.copy}>
+      <p class={styles.lead}>
+        Depuis trente ans, Crystelle Terrasson imagine des intérieurs.
+        Aujourd’hui, le Studio Terrasson devient Jukkai.
+      </p>
+      <p class={styles.detail}>
+        À Châteaugiron, le studio qu’elle a fondé en 2012 poursuit ses projets
+        d’architecture intérieure. Une galerie d’art le rejoint, née d’une envie
+        de longue date : travailler au contact des artistes et partager les
+        œuvres qui la touchent.
+      </p>
     </div>
-    <p class={styles.detail}>
-      À Châteaugiron, Jukkai réunit le studio d’architecture intérieure de
-      Crystelle Terrasson et une galerie d’art vivante.
-    </p>
   </div>
 </section>

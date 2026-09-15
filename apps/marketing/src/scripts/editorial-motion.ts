@@ -63,9 +63,9 @@ async function animateEditorial() {
   gsap.registerPlugin(ScrollTrigger);
   ScrollTrigger.config({ ignoreMobileResize: true });
   animateHero(gsap);
+  await document.fonts.ready;
   animateIntroduction(gsap);
   animateArtworkSequence(gsap);
-  await document.fonts.ready;
   ScrollTrigger.refresh();
   // Native fragments may have landed before enhancement changed section heights.
   // Reconcile once after every stage is measured, never on a later resize.

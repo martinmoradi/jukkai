@@ -6,7 +6,7 @@ import Arrow from '#/components/Arrow.astro';
 import { GALERIE_IMAGES, HERO_ARTWORK, SPIRAL_ARTWORKS } from '#/data/galerie';
 import styles from '#/styles/artwork-sequence.module.css';
 
-const [, objects, dogs] = GALERIE_IMAGES;
+const [, objects, dogs, bears] = GALERIE_IMAGES;
 const scenes = [
   { ...dogs, key: 'home', sizes: '(max-width: 800px) 72vw, 36vw', width: 1200 },
   {
@@ -24,16 +24,36 @@ const scenes = [
   aria-labelledby='sequence-title'
   data-art-sequence>
   <div class={styles.galleryIntro} id='selection'>
-    <h2 id='sequence-title' class='eyebrow'>La Galerie</h2>
-    <p class={styles.line}>
-      Un lieu où flâner, le temps d’un café.<br />Des œuvres avec lesquelles
-      vivre.
-    </p>
-    <p class={styles.offer}>
-      Une peinture pour chez soi, une édition numérotée à offrir, une petite
-      sculpture qui fait sourire. Crystelle choisit les pièces qui la touchent,
-      avec une place pour l’humour, la couleur et l’inattendu.
-    </p>
+    <figure class={styles.galleryFigure}>
+      <a
+        class={styles.artwork}
+        href={bears.image.src}
+        data-artwork='scene-1'
+        data-art-src={bears.image.src}
+        data-art-caption={bears.caption}
+        aria-label={`Explorer les détails : ${bears.caption}`}
+        aria-haspopup='dialog'>
+        <Image
+          src={bears.image}
+          alt={bears.alt}
+          widths={[640, 960, 1440]}
+          sizes='(max-width: 800px) 100vw, 54vw'
+          width={1440}
+          loading='lazy'
+        />
+      </a>
+      <figcaption>{bears.caption}<Arrow diagonal /></figcaption>
+    </figure>
+    <div class={styles.galleryCopy}>
+      <h2 id='sequence-title' class='eyebrow'>La Galerie</h2>
+      <p class={styles.line}>Des œuvres<br />avec lesquelles<br />vivre.</p>
+      <p class={styles.offer}>
+        Un lieu où flâner, le temps d’un café. Une peinture pour chez soi, une
+        édition numérotée à offrir, une petite sculpture qui fait sourire.
+        Crystelle choisit les pièces qui la touchent, avec une place pour
+        l’humour, la couleur et l’inattendu.
+      </p>
+    </div>
   </div>
   <div class={styles.motionTrack} data-art-track>
     <div class={styles.stage} data-art-stage>
@@ -145,10 +165,9 @@ const scenes = [
           <p class={styles.profession}>Architecte d’intérieur</p>
           <div class={styles.biography}>
             <p id='architecture'>
-              Depuis trente ans, Crystelle imagine des intérieurs. Elle a fondé
-              son studio en 2012 et travaille aujourd’hui avec Laura Corbel. Les
-              envies, les usages et les contraintes du lieu sont le point de
-              départ de chaque projet.
+              Au studio, Crystelle travaille avec Laura Corbel. Toutes deux
+              architectes d’intérieur diplômées, elles partent des envies, des
+              usages et des contraintes du lieu pour imaginer chaque projet.
             </p>
             <p>
               La Galerie vient d’un rêve de petite fille : travailler au contact
@@ -165,12 +184,5 @@ const scenes = [
     </div>
     <span class={styles.storyAnchor} data-story-anchor aria-hidden='true'
     ></span>
-  </div>
-  <div class={styles.nameReference}>
-    <p class={styles.japanese} lang='ja'>述懐<sup>*</sup></p>
-    <div>
-      <p class={styles.phrase}>Délivrer<br />ce que le cœur gardait.</p>
-      <p class={styles.interpretation}>*Interprétation éditoriale.</p>
-    </div>
   </div>
 </section>
