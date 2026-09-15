@@ -837,6 +837,14 @@
           "master": "media/scenes/ouverture/Ouverture-editorial-v2-full-frame.affinity",
           "masterSha256": "b78f51e9b874d6bf2cba5f03f07a0935819ed2e2a242571d820e0480a3348061"
         }
+      ],
+      "websiteInputs": [
+        {
+          "appPath": "apps/marketing/src/assets/magazine/ouverture.webp",
+          "input": "media/scenes/ouverture/exports/ouverture.jpg",
+          "inputSha256": "4b8ab0e39454eadf1386b17a6eca1ca36c29e127f707cf6ad9fc51c696c26e8c",
+          "sha256": "ad5ea894b1b22eda7049b8197dbf50825cbf5964bd04b7bc7bea7eb9078bee7a"
+        }
       ]
     },
     {

@@ -276,5 +276,14 @@
     "width": 1920,
     "height": 2400,
     "bytes": 199890
+  },
+  {
+    "file": "ouverture.webp",
+    "source": "/mnt/storage/jukkai/media/scenes/ouverture/exports/ouverture.jpg",
+    "sourceSha256": "4b8ab0e39454eadf1386b17a6eca1ca36c29e127f707cf6ad9fc51c696c26e8c",
+    "sha256": "ad5ea894b1b22eda7049b8197dbf50825cbf5964bd04b7bc7bea7eb9078bee7a",
+    "width": 2000,
+    "height": 1429,
+    "bytes": 439490
   }
 ]

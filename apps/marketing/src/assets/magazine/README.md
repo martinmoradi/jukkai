@@ -99,3 +99,19 @@ rejoint.”; the bears caption describes the photograph and attributes nothing.
 invitation beside “chez soi.” and “quelqu’un.”. `capri-material` is again an
 unused export. No image was edited; the diptych crops both scenes to 3:2 at
 display time only.
+
+## Ouverture selection and editorial passage, September 15
+
+Martin's next review replaces that diptych with an editorial passage and asks for
+one of the two supplied Ouverture photographs. `ouverture.webp` uses the tighter
+finished crop from `media/library/scenes/ouverture.jpg`: a 2000px, quality-88 WebP
+with no additional crop or colour treatment. Its source hash is verified against
+the media catalog; the manifest records the durable Storage source and output.
+The alternate full-frame composition remains available in the library.
+
+Ouverture accompanies the Hatton story beneath the Voyage heading. Its caption
+describes the paintings and sculptures assembled for Jukkai, with no artist,
+artwork-title or opening-date claim. The detail viewer retains the complete crop.
+`dogs-scene` now introduces the Galerie; `contrasting-bears` takes its place beside
+“chez soi.” in the rolling invitation. The former interior/artwork diptych is no
+longer displayed, and its exports remain preserved.
