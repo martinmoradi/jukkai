@@ -176,5 +176,105 @@
     "sha256": "c419ca98aba65e0a7882e682480360035b9e8fac4de6f78a256b3cab2b6612f8",
     "bytes": 4112471,
     "historicalSource": "/home/martin/Desktop/jukkai-hero-prototype/public/media/sculpture.mp4"
+  },
+  {
+    "file": "hero/yoann-bonneville-01.webp",
+    "source": "/mnt/storage/jukkai/media/artworks/yoann-bonneville-01/exports/yoann-bonneville-01.jpg",
+    "librarySource": "/home/martin/src/pro/jukkai/media/library/artworks/yoann-bonneville-01.jpg",
+    "sourceSha256": "a20203e0c073de0a3170add0bb944b876eaa314a633fa9e243b6589f6eb3f9e4",
+    "sha256": "72b837efd23db18a2e8accc7b456bf858acc67633f4786739e866dc4582d8a9c",
+    "width": 1920,
+    "height": 1920,
+    "bytes": 322454
+  },
+  {
+    "file": "hero/yoann-bonneville-02.webp",
+    "source": "/mnt/storage/jukkai/media/artworks/yoann-bonneville-02/exports/yoann-bonneville-02.jpg",
+    "librarySource": "/home/martin/src/pro/jukkai/media/library/artworks/yoann-bonneville-02.jpg",
+    "sourceSha256": "6e883432d076cf088a3e4b602e804173f048ff135e6cdf8fabd620a731f49ecd",
+    "sha256": "392be105cd8da4c848f583145a11894bd2a87f479e39cb4caf6128ec5eae1f0a",
+    "width": 1920,
+    "height": 1920,
+    "bytes": 533676
+  },
+  {
+    "file": "hero/m-hope-06.webp",
+    "source": "/mnt/storage/jukkai/media/artworks/m-hope-06/exports/m-hope-06.jpg",
+    "librarySource": "/home/martin/src/pro/jukkai/media/library/artworks/m-hope-06.jpg",
+    "sourceSha256": "fa879b66ff9401f5330a924b98187b6fef0c028953da724879909de261d3bed6",
+    "sha256": "2fa4c537731eace7357eaaec60357b7eadee736d3a4c5a0d2ed1ab9d33145321",
+    "width": 1801,
+    "height": 2400,
+    "bytes": 246808
+  },
+  {
+    "file": "hero/yoris-01.webp",
+    "source": "/mnt/storage/jukkai/media/artworks/yoris-01/exports/yoris-01.jpg",
+    "librarySource": "/home/martin/src/pro/jukkai/media/library/artworks/yoris-01.jpg",
+    "sourceSha256": "f61281b0bf263fc8a116ee2623b9979b8d68dc9d16487aee91f003403bad6a6e",
+    "sha256": "e13829ac058c02105c7b2b1d0b23a659685a40afe5810291447257de3aefedbe",
+    "width": 1920,
+    "height": 2400,
+    "bytes": 291476
+  },
+  {
+    "file": "hero/la-pointe-01.webp",
+    "source": "/mnt/storage/jukkai/media/artworks/la-pointe-01/exports/la-pointe-01.jpg",
+    "librarySource": "/home/martin/src/pro/jukkai/media/library/artworks/la-pointe-01.jpg",
+    "sourceSha256": "ae2425eef35138a4d5bcaa0f977a7377b596d04237d6901b2d15a0df58f75c88",
+    "sha256": "c2ea0af2d16ce6079fda65c711ee77d3b8b9eea99def09d7a1ffd52fcfbc1812",
+    "width": 1920,
+    "height": 2400,
+    "bytes": 197890
+  },
+  {
+    "file": "hero/mister-zion-01.webp",
+    "source": "/mnt/storage/jukkai/media/artworks/mister-zion-01/exports/mister-zion-01.jpg",
+    "librarySource": "/home/martin/src/pro/jukkai/media/library/artworks/mister-zion-01.jpg",
+    "sourceSha256": "8c0706e0ae589a735b70a1b45557491b49d824df99c35825cf9abf6a2d12d602",
+    "sha256": "764e6796fbf26fc8ddf97f5672f63f230f69ec12a17e0e90f4629e5ee2842ba6",
+    "width": 1920,
+    "height": 1920,
+    "bytes": 442848
+  },
+  {
+    "file": "hero/mister-zion-02.webp",
+    "source": "/mnt/storage/jukkai/media/artworks/mister-zion-02/exports/mister-zion-02.jpg",
+    "librarySource": "/home/martin/src/pro/jukkai/media/library/artworks/mister-zion-02.jpg",
+    "sourceSha256": "7ef0e039e7a640d534a7a54979c42bd44ce21859d5324406f632c322422e6202",
+    "sha256": "145aec685f908599c8db7b9e6fde32143f11badcb4aaad951f749c19d6ae7f99",
+    "width": 1920,
+    "height": 1920,
+    "bytes": 486390
+  },
+  {
+    "file": "hero/nina-bruneau-01.webp",
+    "source": "/mnt/storage/jukkai/media/artworks/nina-bruneau-01/exports/nina-bruneau-01.jpg",
+    "librarySource": "/home/martin/src/pro/jukkai/media/library/artworks/nina-bruneau-01.jpg",
+    "sourceSha256": "aa1f11b3d320668d7f714f236f5a7d464b78592902a808c71738c555e9adc411",
+    "sha256": "7c9e313acc5c58cc2d82afa523cd962b64778ae120ab2c7345b5eb827a3de55a",
+    "width": 1920,
+    "height": 1920,
+    "bytes": 972166
+  },
+  {
+    "file": "hero/m-hope-05.webp",
+    "source": "/mnt/storage/jukkai/media/artworks/m-hope-05/exports/m-hope-05.jpg",
+    "librarySource": "/home/martin/src/pro/jukkai/media/library/artworks/m-hope-05.jpg",
+    "sourceSha256": "b29d7643ee3f9afdb76b45dfb2782d6606b91fbc81d7da53438957b22b9151fe",
+    "sha256": "ee1f7f6abc9972d1fba859090da87e46d2e4f188ffd54907b98cbd96359a8dcd",
+    "width": 1791,
+    "height": 2400,
+    "bytes": 653288
+  },
+  {
+    "file": "hero/m-hope-08.webp",
+    "source": "/mnt/storage/jukkai/media/artworks/m-hope-08/exports/m-hope-08.jpg",
+    "librarySource": "/home/martin/src/pro/jukkai/media/library/artworks/m-hope-08.jpg",
+    "sourceSha256": "e88818381eb8205c8ed44b174ba52b603b9ce9ab35adbc268b4664bbf5850a98",
+    "sha256": "3504c278732c4944af1a66d179c04369d43ef29721240b0ababb7c945ebe900c",
+    "width": 1920,
+    "height": 2400,
+    "bytes": 199890
   }
 ]
