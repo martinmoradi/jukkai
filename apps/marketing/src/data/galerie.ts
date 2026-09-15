@@ -1,4 +1,5 @@
 import stillLife from '#/assets/magazine/artwork-still-life.webp';
+import bears from '#/assets/magazine/contrasting-bears.webp';
 import dogs from '#/assets/magazine/dogs-scene.webp';
 import mHope02 from '#/assets/magazine/m-hope-02.webp';
 import mHope04 from '#/assets/magazine/m-hope-04.webp';
@@ -32,6 +33,12 @@ export const GALERIE_IMAGES = [
     caption: 'Deux sculptures et un vrai chien',
     detail: 'Scène photographiée',
     alt: 'Deux sculptures de chiens, l’une blanche et l’autre rouge, sur une table ; un vrai chien blanc les observe depuis un fauteuil.',
+  },
+  {
+    image: bears,
+    caption: 'Deux ours, deux univers',
+    detail: 'Scène photographiée',
+    alt: 'Deux figurines d’ours côte à côte sur un socle blanc : l’une éclaboussée de jaune, de rose et de bleu, l’autre noire striée de bleu et de blanc.',
   },
 ] as const;
 
