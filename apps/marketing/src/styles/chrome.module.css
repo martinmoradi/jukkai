@@ -1,9 +1,9 @@
 .header {
   --nav-ease: cubic-bezier(0.35, 0.35, 0, 1);
-  --button-surface: color-mix(in srgb, var(--ink) 6%, var(--paper));
-  --button-ink: var(--ink);
-  --button-fill: var(--ink);
-  --button-hover-ink: var(--paper);
+  --button-surface: var(--ink);
+  --button-ink: var(--paper);
+  --button-fill: var(--paper);
+  --button-hover-ink: var(--ink);
   position: sticky;
   top: 0;
   z-index: 20;
@@ -69,13 +69,13 @@
     scale calc(900ms + var(--letter-index) * 150ms) var(--nav-ease);
 }
 .contactLink {
-  justify-content: flex-start;
+  justify-content: center;
   min-width: 144px;
-  padding: 10px 20px 18px;
+  padding: 14px 24px;
   overflow: hidden;
   color: var(--button-ink);
   background: var(--button-surface);
-  border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+  border: 1px solid var(--button-surface);
   border-radius: 6px;
 }
 .contactLink::before {
@@ -121,6 +121,9 @@
 .contactLink[aria-current] .rollingLabel {
   text-decoration: underline;
   text-underline-offset: 4px;
+}
+.contactLink:focus-visible {
+  outline-color: var(--button-surface);
 }
 /* Keyboard focus uses the same treatment as pointer hover. */
 .sectionLink:focus-visible .letter {
@@ -268,7 +271,7 @@
   }
   .contactLink {
     min-width: 128px;
-    padding: 9px 16px 15px;
+    padding: 12px 16px;
   }
   .footerInfo {
     grid-template-columns: 1fr;
@@ -302,10 +305,10 @@
   position: fixed;
 }
 .header[data-on-film='true'] {
-  --button-surface: rgb(255 255 255 / 8%);
-  --button-ink: white;
-  --button-fill: white;
-  --button-hover-ink: black;
+  --button-surface: white;
+  --button-ink: black;
+  --button-fill: black;
+  --button-hover-ink: white;
   color: white;
   background: transparent;
   mix-blend-mode: difference;
