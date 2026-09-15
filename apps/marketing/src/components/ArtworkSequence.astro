@@ -6,7 +6,16 @@ import Arrow from '#/components/Arrow.astro';
 import { GALERIE_IMAGES, HERO_ARTWORK, SPIRAL_ARTWORKS } from '#/data/galerie';
 import styles from '#/styles/artwork-sequence.module.css';
 
-const [, , dogs] = GALERIE_IMAGES;
+const [, objects, dogs] = GALERIE_IMAGES;
+const scenes = [
+  { ...dogs, key: 'home', sizes: '(max-width: 800px) 72vw, 36vw', width: 1200 },
+  {
+    ...objects,
+    key: 'gift',
+    sizes: '(max-width: 800px) 44vw, 22vw',
+    width: 900,
+  },
+] as const;
 ---
 
 <section
@@ -14,45 +23,13 @@ const [, , dogs] = GALERIE_IMAGES;
   id='galerie'
   aria-labelledby='sequence-title'
   data-art-sequence>
-  <div class={styles.galleryIntro} data-gallery-prelude>
-    <p class={styles.welcome}>
+  <div class={styles.galleryIntro} id='selection'>
+    <h2 id='sequence-title' class='eyebrow'>La Galerie</h2>
+    <p class={styles.line}>
       Un lieu où flâner, le temps d’un café.<br />Des œuvres avec lesquelles
       vivre.
     </p>
-    <div class={styles.livingHeading} id='selection'>
-      <h2 id='sequence-title' aria-label='Pour chez soi. Pour quelqu’un.'>
-        <span class={styles.forHome} data-for-home
-          ><span>Pour</span>
-          <span class={styles.imageSpace}></span>
-          <span>chez soi.</span></span
-        >
-        <span class={styles.forSomeone} data-for-someone>Pour quelqu’un.</span>
-      </h2>
-      <figure class={styles.livingArt} data-living-art>
-        <a
-          class={styles.artwork}
-          href={dogs.image.src}
-          data-artwork='scene-0'
-          data-art-src={dogs.image.src}
-          data-art-caption={dogs.caption}
-          aria-label={`Explorer les détails : ${dogs.caption}`}
-          aria-haspopup='dialog'>
-          <Image
-            src={dogs.image}
-            alt={dogs.alt}
-            widths={[480, 800, 1200]}
-            sizes='(max-width: 800px) 76vw, 32vw'
-            width={1000}
-            loading='lazy'
-          />
-        </a>
-        <figcaption>
-          {dogs.caption}
-          <span aria-hidden='true'>↗</span>
-        </figcaption>
-      </figure>
-    </div>
-    <p class={styles.galleryCopy}>
+    <p class={styles.offer}>
       Une peinture pour chez soi, une édition numérotée à offrir, une petite
       sculpture qui fait sourire. Crystelle choisit les pièces qui la touchent,
       avec une place pour l’humour, la couleur et l’inattendu.
@@ -60,9 +37,53 @@ const [, , dogs] = GALERIE_IMAGES;
   </div>
   <div class={styles.motionTrack} data-art-track>
     <div class={styles.stage} data-art-stage>
-      <p class={styles.spiralInvitation} data-spiral-invitation>
-        Pour le <em>plaisir.</em>
+      <p class={styles.invitation} data-spiral-invitation>
+        <span class={styles.pour} aria-hidden='true'>Pour</span>
+        <span class={styles.roll} data-roll>
+          <span class={styles.word} data-roll-word
+            ><span class={styles.pourRepeat}>Pour </span>chez soi.</span
+          >
+          <span class={styles.word} data-roll-word
+            ><span class={styles.pourRepeat}>Pour </span>quelqu’un.</span
+          >
+          <span class={styles.word} data-roll-word
+            ><span class={styles.pourRepeat}>Pour </span>le plaisir.</span
+          >
+        </span>
       </p>
+      <div class={styles.scenes}>
+        {
+          scenes.map((scene) => (
+            <figure
+              class={styles.scene}
+              data-scene={scene.key}
+              data-scene-home={scene.key === 'home' || undefined}
+              data-scene-gift={scene.key === 'gift' || undefined}>
+              <a
+                class={styles.artwork}
+                href={scene.image.src}
+                data-artwork={`scene-${scene.key}`}
+                data-art-src={scene.image.src}
+                data-art-caption={scene.caption}
+                aria-label={`Explorer les détails : ${scene.caption}`}
+                aria-haspopup='dialog'>
+                <Image
+                  src={scene.image}
+                  alt={scene.alt}
+                  widths={[480, 800, 1200]}
+                  sizes={scene.sizes}
+                  width={scene.width}
+                  loading='lazy'
+                />
+              </a>
+              <figcaption>
+                {scene.caption}
+                <span aria-hidden='true'>↗</span>
+              </figcaption>
+            </figure>
+          ))
+        }
+      </div>
       <div class={styles.spiral} data-spiral>
         {
           SPIRAL_ARTWORKS.map((art, index) => (

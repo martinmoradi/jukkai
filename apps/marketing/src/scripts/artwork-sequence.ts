@@ -26,6 +26,12 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
       const invitation = sequence.querySelector<HTMLElement>(
         '[data-spiral-invitation]',
       )!;
+      const words = [
+        ...sequence.querySelectorAll<HTMLElement>('[data-roll-word]'),
+      ];
+      const roll = sequence.querySelector<HTMLElement>('[data-roll]')!;
+      const home = sequence.querySelector<HTMLElement>('[data-scene-home]')!;
+      const gift = sequence.querySelector<HTMLElement>('[data-scene-gift]')!;
       const credit = sequence.querySelector<HTMLElement>(
         '[data-stack-credit]',
       )!;
@@ -57,15 +63,17 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
             '--header-height',
           ),
         );
+      // Scroll travel per timeline unit; the story anchor sits 0.7 viewports before the end.
+      const perUnit = mobile ? 2.47 : 2.79;
+      let travel = 0;
       const measure = () => {
         sequence.style.setProperty('--scene-height', `${sceneHeight()}px`);
         sequence.style.setProperty('--story-height', `${stage.offsetHeight}px`);
         sequence.style.setProperty(
           '--motion-distance',
-          `${window.innerHeight * (mobile ? 2.4 : 2.8)}px`,
+          `${window.innerHeight * (travel - 0.7)}px`,
         );
       };
-      measure();
       const angle = 360 / artworks.length;
       const radius = () =>
         mobile
@@ -107,25 +115,67 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
         opacity: 0,
       });
       gsap.set([photo, copy, credit], { autoAlpha: 0 });
-      const timeline = gsap.timeline({
-        defaults: { ease: 'none' },
-        scrollTrigger: {
-          id: 'artwork-spiral',
-          trigger: track,
-          start: 'top 70%',
-          end: () =>
-            `+=${window.innerHeight * (mobile ? 3.1 : 3.5) - (window.innerHeight - sceneHeight())}`,
-          onRefreshInit: measure,
-          scrub: true,
-          invalidateOnRefresh: true,
-          onUpdate: () => {
-            const inspectable =
-              Number(gsap.getProperty(credit, 'opacity')) > 0.5;
-            orbits[4].inert = !inspectable;
-            credit.inert = !inspectable;
+      gsap.set(words, { yPercent: (index) => index * 100 });
+      gsap.set([home, gift], { xPercent: -50, yPercent: -50 });
+      // "Pour" holds while the last word rolls: chez soi, quelqu'un, then le plaisir
+      // alone at the centre where the paintings will land. Scenes pass through.
+      const across = (share: number) => () => stage.clientWidth * share;
+      const down = (share: number) => () => sceneHeight() * share;
+      const still = () => 0;
+      // The slot is as wide as the widest word; centre the line on the visible one.
+      const lineAt = (share: number, index: number) => () =>
+        stage.clientWidth * share +
+        (roll.offsetWidth - words[index].offsetWidth) / 2;
+      const preroll = gsap.timeline({ defaults: { ease: 'power2.inOut' } });
+      preroll
+        .fromTo(
+          invitation,
+          mobile
+            ? { x: lineAt(0, 0), y: down(0.17) }
+            : { x: lineAt(-0.2, 0), y: still },
+          mobile
+            ? { x: lineAt(0, 1), y: down(-0.17), duration: 0.2 }
+            : { x: lineAt(0.16, 1), duration: 0.2 },
+          0.12,
+        )
+        .fromTo(
+          words,
+          { yPercent: (index) => index * 100 },
+          { yPercent: (index) => index * 100 - 100, duration: 0.2 },
+          0.12,
+        )
+        .fromTo(
+          home,
+          mobile ? { x: still, y: down(-0.17) } : { x: across(0.29), y: still },
+          { x: across(0.95), duration: 0.2, ease: 'power2.in' },
+          0.12,
+        )
+        .fromTo(
+          gift,
+          mobile
+            ? { x: across(-0.95), y: down(0.17) }
+            : { x: across(-0.95), y: still },
+          {
+            x: mobile ? still : across(-0.27),
+            duration: 0.2,
+            ease: 'power2.out',
           },
-        },
-      });
+          0.12,
+        )
+        .to(
+          invitation,
+          mobile
+            ? { x: lineAt(0, 2), y: 0, duration: 0.2 }
+            : { x: lineAt(0, 2), duration: 0.2 },
+          0.38,
+        )
+        .to(
+          words,
+          { yPercent: (index) => index * 100 - 200, duration: 0.2 },
+          0.38,
+        )
+        .to(gift, { x: across(-0.95), duration: 0.2, ease: 'power2.in' }, 0.38)
+        .to({}, { duration: 0.08 });
       const choreography = gsap.timeline({ defaults: { ease: 'none' } });
       choreography
         .fromTo(
@@ -202,14 +252,39 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
         )
         .to({}, { duration: 0.035 });
 
+      const orbitStart = preroll.duration();
+      travel = orbitStart + choreography.duration();
+      travel *= perUnit;
+      measure();
+      const timeline = gsap.timeline({
+        defaults: { ease: 'none' },
+        scrollTrigger: {
+          id: 'artwork-spiral',
+          trigger: track,
+          start: 'top 70%',
+          end: () =>
+            `+=${window.innerHeight * travel - (window.innerHeight - sceneHeight())}`,
+          onRefreshInit: measure,
+          scrub: true,
+          invalidateOnRefresh: true,
+          onUpdate: () => {
+            const inspectable =
+              Number(gsap.getProperty(credit, 'opacity')) > 0.5;
+            orbits[4].inert = !inspectable;
+            credit.inert = !inspectable;
+          },
+        },
+      });
       timeline
-        .fromTo(
+        .add(preroll, 0)
+        .add(choreography, orbitStart)
+        // The words recede under the arriving paintings, then leave while covered.
+        .to(
           invitation,
-          { autoAlpha: 1, scale: 1 },
-          { autoAlpha: 0, scale: 0.86, duration: 0.14, ease: 'power1.in' },
-          0.2,
+          { scale: 0.32, duration: 0.3, ease: 'power2.in' },
+          orbitStart + 0.1,
         )
-        .add(choreography, 0.22);
+        .to(invitation, { autoAlpha: 0, duration: 0.03 }, orbitStart + 0.42);
 
       return () => {
         sequence.removeAttribute('data-motion');
