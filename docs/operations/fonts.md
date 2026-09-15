@@ -239,3 +239,23 @@ Authorization or token rotation is required.
 `jukkai-starter@4` is intentionally broad within Voyage, Hatton, and Frama. Do
 not remove cuts merely because the pipeline works; publish another Set version
 when the actual marketing weights and styles are locked.
+
+## First release verification — 2026-09-15
+
+The font pipeline is verified on the first production release at
+`5ec5748cf6e5530879ec45d361e946d81f6e2760`. A fresh worktree fetched all 32
+`jukkai-starter@4` fonts, local dev loaded them, and Cloudflare Pages production
+prefetched the same pin/digest before building. Production serves real font bytes
+from `jukkai.fr`; the browser does not contact the registry. A scoped negative
+probe returned explicit HTTP 403 for an ungranted Set slug.
+
+The magazine layouts consume generated `fonts.css` and use Voyage, Hatton, Frama
+and Frama Text. Earlier future-consumer wording above describes the pre-magazine
+implementation gap; it is resolved by the current layouts and build-output tests.
+
+Pages now runs `bun install --frozen-lockfile && bun run fonts:prefetch && bun run --cwd apps/marketing build`
+from the repository root. Explicit dependency installation is required: the first
+Pages attempt skipped it and failed with `astro: command not found`. Both preview
+and production have the required font credentials; only production has the
+analytics token. See [production delivery](production.md) for deployment IDs,
+settings, operator evidence and remaining native-phone checks.
