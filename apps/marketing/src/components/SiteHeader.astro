@@ -1,12 +1,17 @@
 ---
 import wordmark from '#/assets/magazine/jukkai-wordmark-primary-no-byline.svg';
-import Arrow from '#/components/Arrow.astro';
+import RollingLabel from '#/components/RollingLabel.astro';
 import styles from '#/styles/chrome.module.css';
 
 interface Props {
   contact?: boolean;
 }
 const { contact = false } = Astro.props;
+const sections = [
+  { href: '/#galerie', label: 'La Galerie' },
+  { href: '/#esprit', label: 'Crystelle & Jukkai' },
+  { href: '/#ouverture', label: 'Le lieu' },
+];
 ---
 
 <header
@@ -14,29 +19,23 @@ const { contact = false } = Astro.props;
   data-site-header
   data-immersive={!contact || undefined}
   data-on-film={!contact || undefined}>
-  <a
-    class={styles.brand}
-    href='/'
-    aria-label='Jukkai by Crystelle Terrasson — accueil'>
+  <a class={styles.brand} href='/' aria-label='Jukkai — accueil'>
     <img src={wordmark.src} width='120' height='48' alt='Jukkai' />
-    <span>by Crystelle Terrasson</span>
-    {
-      !contact && (
-        <span class={styles.heroCategory}>
-          Architecture d’intérieur
-          <br />& Galerie
-        </span>
-      )
-    }
   </a>
   <nav class={styles.navigation} aria-label='Navigation principale'>
-    <a class={styles.sectionLink} href='/#galerie'>La Galerie</a>
-    <a class={styles.sectionLink} href='/#esprit'>Crystelle & Jukkai</a>
-    <a class={styles.sectionLink} href='/#ouverture'>Le lieu</a>
+    {
+      sections.map(({ href, label }) => (
+        <a class={styles.sectionLink} href={href} aria-label={label}>
+          <RollingLabel text={label} />
+        </a>
+      ))
+    }
     <a
       class={styles.contactLink}
       href='/contact/'
-      aria-current={contact ? 'page' : undefined}>Contact <Arrow diagonal /></a
-    >
+      aria-label='Contact'
+      aria-current={contact ? 'page' : undefined}>
+      <RollingLabel text='Contact' />
+    </a>
   </nav>
 </header>
