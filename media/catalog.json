@@ -1,0 +1,1198 @@
+{
+  "archiveRoot": "/mnt/storage/jukkai",
+  "status": "Usable sources and selected edits; no publication approval or unknown credit inferred by consolidation.",
+  "assets": [
+    {
+      "id": "01-ochre-light",
+      "category": "portraits",
+      "selectionStatus": "available",
+      "master": "media/portraits/crystelle/01-ochre-light/01-ochre-light-v2.affinity",
+      "masterSha256": "e22c14255c3e7e31c234f01640a7fba777c7cca0958b5283067c1fe00b875def",
+      "library": "library/portraits/crystelle/01-ochre-light.jpg",
+      "export": "media/portraits/crystelle/01-ochre-light/exports/01-ochre-light.jpg",
+      "sha256": "63a7218a0343e506062de301d8ba35a534d7767110d78c070b62fff01690a74e",
+      "width": 4640,
+      "height": 5800,
+      "person": "crystelle",
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Crystelle/Orange/PXL_20260909_130518467.RAW-02.ORIGINAL.dng",
+        "photoshoot-09-09-26/Crystelle/Orange/PXL_20260909_130518467.RAW-01.COVER.jpg"
+      ]
+    },
+    {
+      "id": "02-relaxed-portrait",
+      "category": "portraits",
+      "selectionStatus": "available",
+      "master": "media/portraits/crystelle/02-relaxed-portrait/02-relaxed-portrait-v2.affinity",
+      "masterSha256": "b98660e451c461072b971c2b0e77885e21594834f1aa2787a154580eb2e16ee0",
+      "library": "library/portraits/crystelle/02-relaxed-portrait.jpg",
+      "export": "media/portraits/crystelle/02-relaxed-portrait/exports/02-relaxed-portrait.jpg",
+      "sha256": "5a2cae95b69a7c8699c64f1c17f3b28e291d0e57bdecdd7cf257af3300467bd6",
+      "width": 5550,
+      "height": 7400,
+      "person": "crystelle",
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Crystelle/Orange/PXL_20260909_130757766.RAW-02.ORIGINAL.dng",
+        "photoshoot-09-09-26/Crystelle/Orange/PXL_20260909_130757766.RAW-01.COVER.jpg"
+      ]
+    },
+    {
+      "id": "03-window-portrait",
+      "category": "portraits",
+      "selectionStatus": "available",
+      "master": "media/portraits/crystelle/03-window-portrait/03-window-portrait-v2.affinity",
+      "masterSha256": "44bc130dc7c5ec198757304d9ede235c400f43144c1401a2c88ecc014836af53",
+      "library": "library/portraits/crystelle/03-window-portrait.jpg",
+      "export": "media/portraits/crystelle/03-window-portrait/exports/03-window-portrait.jpg",
+      "sha256": "94ce6a5ad0c8d8c65498ac03db5c5f8eef4c7b8ed7273a03b109e8ef6a2d8ab7",
+      "width": 5360,
+      "height": 6700,
+      "person": "crystelle",
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Crystelle/Orange/PXL_20260909_130943065.RAW-02.ORIGINAL.dng",
+        "photoshoot-09-09-26/Crystelle/Orange/PXL_20260909_130943065.RAW-01.COVER.jpg"
+      ]
+    },
+    {
+      "id": "04-colour-and-character",
+      "category": "portraits",
+      "selectionStatus": "available",
+      "master": "media/portraits/crystelle/04-colour-and-character/04-colour-and-character-v2.affinity",
+      "masterSha256": "c65af23e33842a742ee205d9c563ab2cf81f93b02850a27eb012cad6cb71e6ec",
+      "library": "library/portraits/crystelle/04-colour-and-character.jpg",
+      "export": "media/portraits/crystelle/04-colour-and-character/exports/04-colour-and-character.jpg",
+      "sha256": "55b67a10954fe47a0024b96f54fa823f1f4fdcb6ca2f607d593bd28656d9d48d",
+      "width": 5680,
+      "height": 7100,
+      "person": "crystelle",
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Crystelle/Orange/PXL_20260909_132510891.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Crystelle/Orange/PXL_20260909_132510891.RAW-02.ORIGINAL.dng"
+      ]
+    },
+    {
+      "id": "05-golden-window",
+      "category": "portraits",
+      "selectionStatus": "available",
+      "master": "media/portraits/crystelle/05-golden-window/05-golden-window.affinity",
+      "masterSha256": "29b930127076a6c0e0f148f331a7ed97130819195398b9c46bd97f3b4807493e",
+      "library": "library/portraits/crystelle/05-golden-window.jpg",
+      "export": "media/portraits/crystelle/05-golden-window/exports/05-golden-window.jpg",
+      "sha256": "324557d6e0cd1ec707f3fb6963462fba77c4750639532795e8d663278a88f3ea",
+      "width": 5080,
+      "height": 6350,
+      "person": "crystelle",
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Crystelle/Sunshine/PXL_20260909_151149379.RAW-02.ORIGINAL.dng",
+        "photoshoot-09-09-26/Crystelle/Sunshine/PXL_20260909_151149379.RAW-01.COVER.jpg"
+      ],
+      "alternates": [
+        {
+          "library": "library/portraits/crystelle/05-golden-window-full-frame.jpg",
+          "export": "media/portraits/crystelle/05-golden-window/exports/05-golden-window-full-frame.jpg",
+          "sha256": "02aa3a946d9d04925727bd2aea18ec3035f0493b84d8741ab9b71ba54233a4fe",
+          "width": 6040,
+          "height": 8044,
+          "note": "Intentional full-frame composition."
+        }
+      ]
+    },
+    {
+      "id": "06-warm-silver",
+      "category": "portraits",
+      "selectionStatus": "available",
+      "master": "media/portraits/crystelle/06-warm-silver/06-warm-silver.affinity",
+      "masterSha256": "2c1751f234717b3e8b0ec5c6edf4c8bd65c3b435acca50c6dcca0292d9f86727",
+      "library": "library/portraits/crystelle/06-warm-silver.jpg",
+      "export": "media/portraits/crystelle/06-warm-silver/exports/06-warm-silver.jpg",
+      "sha256": "2e0d33d3fdf99912277343b236565fe45fe12ca55bd7e67291b1b773d43be60a",
+      "width": 5080,
+      "height": 6350,
+      "person": "crystelle",
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Crystelle/Sunshine/PXL_20260909_151249474.RAW-02.ORIGINAL.dng",
+        "photoshoot-09-09-26/Crystelle/Sunshine/PXL_20260909_151249474.RAW-01.COVER.jpg"
+      ],
+      "alternates": [
+        {
+          "library": "library/portraits/crystelle/06-warm-silver-full-frame.jpg",
+          "export": "media/portraits/crystelle/06-warm-silver/exports/06-warm-silver-full-frame.jpg",
+          "sha256": "ee4975abebf9c19e78de5e07fb2abdb648a2b068f37004b7ba6264565767440a",
+          "width": 6040,
+          "height": 8044,
+          "note": "Intentional full-frame composition."
+        }
+      ]
+    },
+    {
+      "id": "07-quiet-radiance",
+      "category": "portraits",
+      "selectionStatus": "available",
+      "master": "media/portraits/crystelle/07-quiet-radiance/07-quiet-radiance.affinity",
+      "masterSha256": "4ad89c2c9011be49b6306525646cffd952b7b3200fedae920b237c586a234f5c",
+      "library": "library/portraits/crystelle/07-quiet-radiance.jpg",
+      "export": "media/portraits/crystelle/07-quiet-radiance/exports/07-quiet-radiance.jpg",
+      "sha256": "e214e364bca4eb08919cb2fd4a5d5bbcf5561005a5272fd255bc0173ae08dfa3",
+      "width": 5080,
+      "height": 6350,
+      "person": "crystelle",
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Crystelle/Sunshine/PXL_20260909_151309141.RAW-02.ORIGINAL.dng",
+        "photoshoot-09-09-26/Crystelle/Sunshine/PXL_20260909_151309141.RAW-01.COVER.jpg"
+      ],
+      "alternates": [
+        {
+          "library": "library/portraits/crystelle/07-quiet-radiance-full-frame.jpg",
+          "export": "media/portraits/crystelle/07-quiet-radiance/exports/07-quiet-radiance-full-frame.jpg",
+          "sha256": "ac8457328862d55f552ae37703924fc59b4a2cda6689a08535bc678a75c5adf9",
+          "width": 6040,
+          "height": 8044,
+          "note": "Intentional full-frame composition."
+        }
+      ]
+    },
+    {
+      "id": "contrasting-bears",
+      "category": "scenes",
+      "selectionStatus": "available",
+      "master": "media/scenes/contrasting-bears/contrasting-bears-editorial-v2-master.affinity",
+      "masterSha256": "493f33407f3bf1acf9f13521459676ff15c06afb78cf12ef6a8c5b37056a34ea",
+      "library": "library/scenes/contrasting-bears.jpg",
+      "export": "media/scenes/contrasting-bears/exports/contrasting-bears.jpg",
+      "sha256": "a879d26576e34adc7676cbb0a860afbf6855bafc01db2b23de9608fc93d81988",
+      "width": 8044,
+      "height": 6040,
+      "recordId": "artwork-21",
+      "artist": null,
+      "title": null,
+      "attributionSource": {
+        "providedBy": "Martin",
+        "date": "2026-09-11"
+      },
+      "depictedWorks": [
+        {
+          "artworkId": "artwork-19",
+          "artist": "yoris"
+        },
+        {
+          "artworkId": "artwork-20",
+          "artist": "la pointe"
+        }
+      ],
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Scenes/PXL_20260909_155916388.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Scenes/PXL_20260909_155916388.RAW-02.ORIGINAL.dng"
+      ],
+      "printExport": "media/scenes/contrasting-bears/exports/contrasting-bears-print.tif",
+      "websiteInputs": [
+        {
+          "appPath": "apps/marketing/src/assets/magazine/contrasting-bears.webp",
+          "input": "records/2026-09-production/website-inputs/contrasting-bears.webp/contrasting-bears-editorial-v2-preview-1800.jpg",
+          "inputSha256": "eac5e6b92476b8fef9501416d5d74ac8f6c11ad05a5d1e0a2a3219bcf471089c",
+          "sha256": "bfd317baf8510798ee59278a882e333b224c416677fc23fbc70f0ee21a15c3ae"
+        }
+      ]
+    },
+    {
+      "id": "crystelle-galerie",
+      "category": "portraits",
+      "selectionStatus": "available",
+      "master": "media/portraits/crystelle/crystelle-galerie/crystelle-galerie-master.affinity",
+      "masterSha256": "215bf67d0a056fb5102b13f28256c4b04b24bd2e6880982b86e5025e868f28f1",
+      "library": "library/portraits/crystelle/crystelle-galerie.jpg",
+      "export": "media/portraits/crystelle/crystelle-galerie/exports/crystelle-galerie.jpg",
+      "sha256": "9233e40db04399a4d567f8bbb643a7b804d9549688c8f60eb4a7f667c611c97b",
+      "width": 7600,
+      "height": 5700,
+      "person": "crystelle",
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Crystelle/Composition/PXL_20260909_145933444.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Crystelle/Composition/PXL_20260909_145933444.RAW-02.ORIGINAL.dng"
+      ],
+      "printExport": "media/portraits/crystelle/crystelle-galerie/exports/crystelle-galerie-print.tif",
+      "websiteInputs": [
+        {
+          "appPath": "apps/marketing/src/assets/magazine/crystelle-galerie.webp",
+          "input": "records/2026-09-production/website-inputs/crystelle-galerie.webp/crystelle-galerie-web-2400.jpg",
+          "inputSha256": "d0b84fb7c460950ca033a07a0d32b08d65f8b3fa7edbe0b0e06fecf7fd50b94b",
+          "sha256": "8daafb0b12eccb55ec779776bfd0cec28cdb34a0bb301f3711e8c2eac184d9be"
+        }
+      ],
+      "exportOrigin": "Full-resolution best-quality JPEG exported from the selected native during consolidation; no creative edit."
+    },
+    {
+      "id": "crystelle-window-light",
+      "category": "portraits",
+      "selectionStatus": "available",
+      "master": "media/portraits/crystelle/crystelle-window-light/crystelle-window-light.affinity",
+      "masterSha256": "bea8d50631d2e5260275a52b41b331a217c2d8166200a4e83572bd4ec58a9bb5",
+      "library": "library/portraits/crystelle/crystelle-window-light.jpg",
+      "export": "media/portraits/crystelle/crystelle-window-light/exports/crystelle-window-light.jpg",
+      "sha256": "ebef1aa47ddacf420eafd6e5e213206179f460e193bfc8d0267eb299e84f35da",
+      "width": 4880,
+      "height": 6100,
+      "person": "crystelle",
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Crystelle/Sunshine/PXL_20260909_151249474.RAW-02.ORIGINAL.dng",
+        "photoshoot-09-09-26/Crystelle/Sunshine/PXL_20260909_151249474.RAW-01.COVER.jpg"
+      ]
+    },
+    {
+      "id": "david-harianna-01",
+      "category": "artworks",
+      "selectionStatus": "available",
+      "master": "media/artworks/david-harianna-01/david-harianna-01-website-master.af",
+      "masterSha256": "1987032d218549e387aad71e1954657d89dfeeaa5f3400e7f6579967f80920c0",
+      "library": "library/artworks/david-harianna-01.jpg",
+      "export": "media/artworks/david-harianna-01/exports/david-harianna-01.jpg",
+      "sha256": "407e5ad454313f0f945de456e7ebac2da3a10ef1d0c84978b71d53f1974eac1e",
+      "width": 3524,
+      "height": 5160,
+      "recordId": "artwork-01",
+      "artist": "david harianna",
+      "title": null,
+      "attributionSource": {
+        "providedBy": "Martin",
+        "date": "2026-09-11"
+      },
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Artworks/PXL_20260909_154741850.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Artworks/PXL_20260909_154741850.RAW-02.ORIGINAL.dng"
+      ]
+    },
+    {
+      "id": "dogs-with-real-dog",
+      "category": "scenes",
+      "selectionStatus": "available",
+      "master": "media/scenes/dogs-with-real-dog/dogs-with-real-dog-editorial-v2-master.affinity",
+      "masterSha256": "d18bd93654c7f688878ac12bd0329477138a287b7853dd244b85a190764d630c",
+      "library": "library/scenes/dogs-with-real-dog.jpg",
+      "export": "media/scenes/dogs-with-real-dog/exports/dogs-with-real-dog.jpg",
+      "sha256": "3bdf5ce22e5e2279da18c6b58df52534ce683c89501239cdb8c5eb90458d525d",
+      "width": 8044,
+      "height": 6040,
+      "recordId": "artwork-24",
+      "artist": null,
+      "title": null,
+      "attributionSource": {
+        "providedBy": "Martin",
+        "date": "2026-09-11"
+      },
+      "depictedWorks": [
+        {
+          "artworkId": null,
+          "artist": "m. hope"
+        }
+      ],
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Scenes/PXL_20260909_160558825.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Scenes/PXL_20260909_160558825.RAW-02.ORIGINAL.dng"
+      ],
+      "printExport": "media/scenes/dogs-with-real-dog/exports/dogs-with-real-dog-print.tif",
+      "websiteInputs": [
+        {
+          "appPath": "apps/marketing/src/assets/magazine/dogs-scene.webp",
+          "input": "records/2026-09-production/website-inputs/dogs-scene.webp/dogs-with-real-dog-editorial-v2-preview-1800.jpg",
+          "inputSha256": "86f9a242beda8c53ec6e74f44ea3dae3ca4ee92ab3c5c8708ce1a60deeb4a9c0",
+          "sha256": "8874ee202f696ceea6f2e83390c722f9e461e6a627d33d882207e7eb87694ac9"
+        }
+      ]
+    },
+    {
+      "id": "la-pointe-01",
+      "category": "artworks",
+      "selectionStatus": "available",
+      "master": "media/artworks/la-pointe-01/la-pointe-01-website-master.affinity",
+      "masterSha256": "cd0f5f18a1ef8f20d9e349c56ca9b8f3e7cb1bdde5e489eecfcf15c29f162b61",
+      "library": "library/artworks/la-pointe-01.jpg",
+      "export": "media/artworks/la-pointe-01/exports/la-pointe-01.jpg",
+      "sha256": "ae2425eef35138a4d5bcaa0f977a7377b596d04237d6901b2d15a0df58f75c88",
+      "width": 5900,
+      "height": 7375,
+      "recordId": "artwork-20",
+      "artist": "la pointe",
+      "title": null,
+      "attributionSource": {
+        "providedBy": "Martin",
+        "date": "2026-09-11"
+      },
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Artworks/PXL_20260909_155853781.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Artworks/PXL_20260909_155853781.RAW-02.ORIGINAL.dng"
+      ],
+      "printExport": "media/artworks/la-pointe-01/exports/la-pointe-01-print.tif"
+    },
+    {
+      "id": "m-hope-01",
+      "category": "artworks",
+      "selectionStatus": "available",
+      "master": "media/artworks/m-hope-01/m-hope-01-website-master.af",
+      "masterSha256": "dd16e329a4b10fca81086ec23c8c93c65a4c04edde31f1c319a845dd0b42bfe3",
+      "library": "library/artworks/m-hope-01.jpg",
+      "export": "media/artworks/m-hope-01/exports/m-hope-01.jpg",
+      "sha256": "8a261055d578252ededabdfbe4cbc4a83dfa19cc3fb94a078476f5440bdb988e",
+      "width": 4200,
+      "height": 5600,
+      "recordId": "artwork-05",
+      "artist": "m. hope",
+      "title": null,
+      "attributionSource": {
+        "providedBy": "Martin",
+        "date": "2026-09-11"
+      },
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Artworks/PXL_20260909_154910687.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Artworks/PXL_20260909_154910687.RAW-02.ORIGINAL.dng"
+      ]
+    },
+    {
+      "id": "m-hope-02",
+      "category": "artworks",
+      "selectionStatus": "available",
+      "master": "media/artworks/m-hope-02/m-hope-02-website-master.af",
+      "masterSha256": "7a77e7c400d95a8ec47548951cb4b5c9e621eb55f2ce9487fe0f55930a207c0f",
+      "library": "library/artworks/m-hope-02.jpg",
+      "export": "media/artworks/m-hope-02/exports/m-hope-02.jpg",
+      "sha256": "23fce88c4d5f72c6decced35b89771aff259b83d68d2f91c26b1dfcd9e9932b8",
+      "width": 5500,
+      "height": 5500,
+      "recordId": "artwork-06",
+      "artist": "m. hope",
+      "title": null,
+      "attributionSource": {
+        "providedBy": "Martin",
+        "date": "2026-09-11"
+      },
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Artworks/PXL_20260909_154822187.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Artworks/PXL_20260909_154822187.RAW-02.ORIGINAL.dng"
+      ],
+      "websiteInputs": [
+        {
+          "appPath": "apps/marketing/src/assets/magazine/m-hope-02.webp",
+          "input": "records/2026-09-production/website-inputs/m-hope-02.webp/m-hope-02.webp",
+          "inputSha256": "9d73afd7b1b35dda8127728ef2a754682726bb20fae4c9f25ea92381c234f7ec",
+          "sha256": "9d73afd7b1b35dda8127728ef2a754682726bb20fae4c9f25ea92381c234f7ec"
+        }
+      ]
+    },
+    {
+      "id": "m-hope-03",
+      "category": "artworks",
+      "selectionStatus": "available",
+      "master": "media/artworks/m-hope-03/m-hope-03-website-master.af",
+      "masterSha256": "f30b29562f7683022ed47277d7afc594f7fb875f0222aa9887873df60d767c25",
+      "library": "library/artworks/m-hope-03.jpg",
+      "export": "media/artworks/m-hope-03/exports/m-hope-03.jpg",
+      "sha256": "63bcadf5aea358773db0266a76376b2e57c1804aa6651f3b7483c7dde2bc0ec4",
+      "width": 5600,
+      "height": 7000,
+      "recordId": "artwork-07",
+      "artist": "m. hope",
+      "title": null,
+      "attributionSource": {
+        "providedBy": "Martin",
+        "date": "2026-09-11"
+      },
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Artworks/PXL_20260909_154252023.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Artworks/PXL_20260909_154252023.RAW-02.ORIGINAL.dng"
+      ]
+    },
+    {
+      "id": "m-hope-04",
+      "category": "artworks",
+      "selectionStatus": "available",
+      "master": "media/artworks/m-hope-04/m-hope-04-website-master.af",
+      "masterSha256": "fec0bbc77d0666dc3c3e46de63a528547590ee4be5180464839082d8c1feff6a",
+      "library": "library/artworks/m-hope-04.jpg",
+      "export": "media/artworks/m-hope-04/exports/m-hope-04.jpg",
+      "sha256": "3a23df36c152b1ea88bdf5a75be738ce6f1d4e42861b8a2935119754fb0edd28",
+      "width": 5500,
+      "height": 5500,
+      "recordId": "artwork-11",
+      "artist": "m. hope",
+      "title": null,
+      "attributionSource": {
+        "providedBy": "Martin",
+        "date": "2026-09-11"
+      },
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Artworks/PXL_20260909_154531592.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Artworks/PXL_20260909_154531592.RAW-02.ORIGINAL.dng"
+      ],
+      "websiteInputs": [
+        {
+          "appPath": "apps/marketing/src/assets/magazine/m-hope-04.webp",
+          "input": "records/2026-09-production/website-inputs/m-hope-04.webp/m-hope-04.webp",
+          "inputSha256": "3d1a7b929172ffcb33c70570b8d351945609f587fe1bf8ee7fd442af221aeb65",
+          "sha256": "3d1a7b929172ffcb33c70570b8d351945609f587fe1bf8ee7fd442af221aeb65"
+        }
+      ]
+    },
+    {
+      "id": "m-hope-05",
+      "category": "artworks",
+      "selectionStatus": "available",
+      "master": "media/artworks/m-hope-05/m-hope-05-website-master.af",
+      "masterSha256": "cee886c556fb63bbe49cdbc40d7db3ef324e387a288a5f0ea1bbace017d34c9a",
+      "library": "library/artworks/m-hope-05.jpg",
+      "export": "media/artworks/m-hope-05/exports/m-hope-05.jpg",
+      "sha256": "b29d7643ee3f9afdb76b45dfb2782d6606b91fbc81d7da53438957b22b9151fe",
+      "width": 5000,
+      "height": 6700,
+      "recordId": "artwork-12",
+      "artist": "m. hope",
+      "title": null,
+      "attributionSource": {
+        "providedBy": "Martin",
+        "date": "2026-09-11"
+      },
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Artworks/PXL_20260909_154926262.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Artworks/PXL_20260909_154926262.RAW-02.ORIGINAL.dng"
+      ]
+    },
+    {
+      "id": "m-hope-06",
+      "category": "artworks",
+      "selectionStatus": "available",
+      "master": "media/artworks/m-hope-06/m-hope-06-website-master.affinity",
+      "masterSha256": "edfb3403c90231a092e3c6bef4f8f7057f4607f123c3d6b91e51c744a820d77b",
+      "library": "library/artworks/m-hope-06.jpg",
+      "export": "media/artworks/m-hope-06/exports/m-hope-06.jpg",
+      "sha256": "fa879b66ff9401f5330a924b98187b6fef0c028953da724879909de261d3bed6",
+      "width": 6039,
+      "height": 8044,
+      "recordId": "artwork-14",
+      "artist": "m. hope",
+      "title": null,
+      "attributionSource": {
+        "providedBy": "Martin",
+        "date": "2026-09-11"
+      },
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Artworks/PXL_20260909_141505473.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Artworks/PXL_20260909_141505473.RAW-02.ORIGINAL.dng"
+      ],
+      "printExport": "media/artworks/m-hope-06/exports/m-hope-06-print.tif"
+    },
+    {
+      "id": "m-hope-07",
+      "category": "artworks",
+      "selectionStatus": "available",
+      "master": "media/artworks/m-hope-07/m-hope-07-website-master.affinity",
+      "masterSha256": "1796363fceb8373486d2245d650ba7062b1f27a2f10cc5d92b9ad355fcbbbcc5",
+      "library": "library/artworks/m-hope-07.jpg",
+      "export": "media/artworks/m-hope-07/exports/m-hope-07.jpg",
+      "sha256": "c07e35086b92ab999b0fad3f37a117526bfe4b63ab47436fe5cdbf388873c563",
+      "width": 5280,
+      "height": 7820,
+      "recordId": "artwork-15",
+      "artist": "m. hope",
+      "title": null,
+      "attributionSource": {
+        "providedBy": "Martin",
+        "date": "2026-09-11"
+      },
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Artworks/PXL_20260909_153802569.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Artworks/PXL_20260909_153802569.RAW-02.ORIGINAL.dng"
+      ],
+      "printExport": "media/artworks/m-hope-07/exports/m-hope-07-print.tif"
+    },
+    {
+      "id": "m-hope-08",
+      "category": "artworks",
+      "selectionStatus": "available",
+      "master": "media/artworks/m-hope-08/m-hope-08-website-master.affinity",
+      "masterSha256": "e0e8e48d98835842e95dd221765578d2cafdccef36a731e3cf66c8d640ee0025",
+      "library": "library/artworks/m-hope-08.jpg",
+      "export": "media/artworks/m-hope-08/exports/m-hope-08.jpg",
+      "sha256": "e88818381eb8205c8ed44b174ba52b603b9ce9ab35adbc268b4664bbf5850a98",
+      "width": 5900,
+      "height": 7375,
+      "recordId": "artwork-17",
+      "artist": "m. hope",
+      "title": null,
+      "attributionSource": {
+        "providedBy": "Martin",
+        "date": "2026-09-11"
+      },
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Artworks/PXL_20260909_155536626.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Artworks/PXL_20260909_155536626.RAW-02.ORIGINAL.dng"
+      ],
+      "printExport": "media/artworks/m-hope-08/exports/m-hope-08-print.tif"
+    },
+    {
+      "id": "m-hope-09",
+      "category": "artworks",
+      "selectionStatus": "available",
+      "master": "media/artworks/m-hope-09/m-hope-09-website-master.affinity",
+      "masterSha256": "43aa5dbd7e0b6c8c777743da09f0a4fb9cbff3be1d4f35cc9f4ec9d357d3f8e9",
+      "library": "library/artworks/m-hope-09.jpg",
+      "export": "media/artworks/m-hope-09/exports/m-hope-09.jpg",
+      "sha256": "47bce45620e5fc222478b18ca519da7c32f4167040e825bd4a6c5dc186e23a1c",
+      "width": 6040,
+      "height": 8044,
+      "recordId": "artwork-18",
+      "artist": "m. hope",
+      "title": null,
+      "attributionSource": {
+        "providedBy": "Martin",
+        "date": "2026-09-11"
+      },
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Artworks/PXL_20260909_155601610.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Artworks/PXL_20260909_155601610.RAW-02.ORIGINAL.dng"
+      ],
+      "printExport": "media/artworks/m-hope-09/exports/m-hope-09-print.tif"
+    },
+    {
+      "id": "m-hope-10",
+      "category": "artworks",
+      "selectionStatus": "available",
+      "master": "media/artworks/m-hope-10/m-hope-10-website-master.affinity",
+      "masterSha256": "c400959e08e4e091293a7a1584b049b8144a3fd544bf6b4e9f80f9d7ec904ff9",
+      "library": "library/artworks/m-hope-10.jpg",
+      "export": "media/artworks/m-hope-10/exports/m-hope-10.jpg",
+      "sha256": "5564477c4e7a9f2618658ef94ecc6aef28ea7659caee10bae235e132a7109115",
+      "width": 4900,
+      "height": 7840,
+      "recordId": "artwork-22",
+      "artist": "m. hope",
+      "title": null,
+      "attributionSource": {
+        "providedBy": "Martin",
+        "date": "2026-09-11"
+      },
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Artworks/PXL_20260909_155949541.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Artworks/PXL_20260909_155949541.RAW-02.ORIGINAL.dng"
+      ],
+      "printExport": "media/artworks/m-hope-10/exports/m-hope-10-print.tif"
+    },
+    {
+      "id": "m-hope-11",
+      "category": "artworks",
+      "selectionStatus": "available",
+      "master": "media/artworks/m-hope-11/m-hope-11-website-master.affinity",
+      "masterSha256": "ee693b0dedb6599695093a2d9723e0c421a4e128fd11f115eeb914ed3384686b",
+      "library": "library/artworks/m-hope-11.jpg",
+      "export": "media/artworks/m-hope-11/exports/m-hope-11.jpg",
+      "sha256": "0bae93709a3fe428efdd8b703be027e92380303668f030202ce14f6e30273446",
+      "width": 5680,
+      "height": 7100,
+      "recordId": "artwork-23",
+      "artist": "m. hope",
+      "title": null,
+      "attributionSource": {
+        "providedBy": "Martin",
+        "date": "2026-09-11"
+      },
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Scenes/PXL_20260909_160346157.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Scenes/PXL_20260909_160346157.RAW-02.ORIGINAL.dng"
+      ],
+      "printExport": "media/artworks/m-hope-11/exports/m-hope-11-print.tif"
+    },
+    {
+      "id": "mister-zion-01",
+      "category": "artworks",
+      "selectionStatus": "available",
+      "master": "media/artworks/mister-zion-01/mister-zion-01-website-master.af",
+      "masterSha256": "5a0bf9b4aea5ded103875e998bc2c1f6d78ad96cdcefd269a17b88503ca87d28",
+      "library": "library/artworks/mister-zion-01.jpg",
+      "export": "media/artworks/mister-zion-01/exports/mister-zion-01.jpg",
+      "sha256": "8c0706e0ae589a735b70a1b45557491b49d824df99c35825cf9abf6a2d12d602",
+      "width": 5160,
+      "height": 5160,
+      "recordId": "artwork-02",
+      "artist": "mister zion",
+      "title": null,
+      "attributionSource": {
+        "providedBy": "Martin",
+        "date": "2026-09-11"
+      },
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Artworks/PXL_20260909_154605375.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Artworks/PXL_20260909_154605375.RAW-02.ORIGINAL.dng"
+      ],
+      "websiteInputs": [
+        {
+          "appPath": "apps/marketing/src/assets/magazine/mister-zion-01.webp",
+          "input": "records/2026-09-production/website-inputs/mister-zion-01.webp/mister-zion-01.webp",
+          "inputSha256": "da166982127f12cb1cd6003e66ca7decb612da93a70fed92c7f8b60b78136414",
+          "sha256": "da166982127f12cb1cd6003e66ca7decb612da93a70fed92c7f8b60b78136414"
+        }
+      ]
+    },
+    {
+      "id": "mister-zion-02",
+      "category": "artworks",
+      "selectionStatus": "available",
+      "master": "media/artworks/mister-zion-02/mister-zion-02-website-master.af",
+      "masterSha256": "dd43239bea8d64e0ce99dbe20b2034f0ef45c1df629ed84b0236d8b2e79b5370",
+      "library": "library/artworks/mister-zion-02.jpg",
+      "export": "media/artworks/mister-zion-02/exports/mister-zion-02.jpg",
+      "sha256": "7ef0e039e7a640d534a7a54979c42bd44ce21859d5324406f632c322422e6202",
+      "width": 5200,
+      "height": 5200,
+      "recordId": "artwork-04",
+      "artist": "mister zion",
+      "title": null,
+      "attributionSource": {
+        "providedBy": "Martin",
+        "date": "2026-09-11"
+      },
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Artworks/PXL_20260909_154712442.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Artworks/PXL_20260909_154712442.RAW-02.ORIGINAL.dng"
+      ]
+    },
+    {
+      "id": "nina-bruneau-01",
+      "category": "artworks",
+      "selectionStatus": "available",
+      "master": "media/artworks/nina-bruneau-01/nina-bruneau-01-website-master.af",
+      "masterSha256": "2965074b0b67e3a33ae4b3a372ffe057f730e869289940f5a5d6aa9f82218b22",
+      "library": "library/artworks/nina-bruneau-01.jpg",
+      "export": "media/artworks/nina-bruneau-01/exports/nina-bruneau-01.jpg",
+      "sha256": "aa1f11b3d320668d7f714f236f5a7d464b78592902a808c71738c555e9adc411",
+      "width": 5300,
+      "height": 5300,
+      "recordId": "artwork-08",
+      "artist": "nina bruneau",
+      "title": null,
+      "attributionSource": {
+        "providedBy": "Martin",
+        "date": "2026-09-11"
+      },
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Artworks/PXL_20260909_154339754.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Artworks/PXL_20260909_154339754.RAW-02.ORIGINAL.dng"
+      ],
+      "websiteInputs": [
+        {
+          "appPath": "apps/marketing/src/assets/magazine/nina-bruneau.webp",
+          "input": "records/2026-09-production/website-inputs/nina-bruneau.webp/nina-bruneau-01-website-1600.jpg",
+          "inputSha256": "78a3c804607d16de7cb50c5aa1da0a60e7a6e428d729e938eb3bba0f32c1f494",
+          "sha256": "3ae6394bd1e88b2b25bad00a10d59c82dc0c506a329b2a108e1ed019fe11de92"
+        }
+      ]
+    },
+    {
+      "id": "nina-bruneau-02",
+      "category": "artworks",
+      "selectionStatus": "available",
+      "master": "media/artworks/nina-bruneau-02/nina-bruneau-02-website-master.af",
+      "masterSha256": "83144fbf2c2e8c01ddc10477c4c0054bb74937c04097ed2e780435f0d5b415dc",
+      "library": "library/artworks/nina-bruneau-02.jpg",
+      "export": "media/artworks/nina-bruneau-02/exports/nina-bruneau-02.jpg",
+      "sha256": "59a02af42665beea0b6e13bf49e71cf8471caa48b8852b50d63767087eb85e51",
+      "width": 5000,
+      "height": 6800,
+      "recordId": "artwork-09",
+      "artist": "nina bruneau",
+      "title": null,
+      "attributionSource": {
+        "providedBy": "Martin",
+        "date": "2026-09-11"
+      },
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Artworks/PXL_20260909_154432772.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Artworks/PXL_20260909_154432772.RAW-02.ORIGINAL.dng"
+      ]
+    },
+    {
+      "id": "nina-bruneau-03",
+      "category": "artworks",
+      "selectionStatus": "available",
+      "master": "media/artworks/nina-bruneau-03/nina-bruneau-03-website-master.af",
+      "masterSha256": "be0e0267f21886870628f9ebda8cbd1214e228ce413a0bcc618934735993de6f",
+      "library": "library/artworks/nina-bruneau-03.jpg",
+      "export": "media/artworks/nina-bruneau-03/exports/nina-bruneau-03.jpg",
+      "sha256": "a93026898c5f99b37dc17addb5dcf7d55c741f20eaafb286c26da0a67cf657e7",
+      "width": 5000,
+      "height": 7000,
+      "recordId": "artwork-10",
+      "artist": "nina bruneau",
+      "title": null,
+      "attributionSource": {
+        "providedBy": "Martin",
+        "date": "2026-09-11"
+      },
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Artworks/PXL_20260909_154447513.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Artworks/PXL_20260909_154447513.RAW-02.ORIGINAL.dng"
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "scenes",
+      "selectionStatus": "available",
+      "master": "media/scenes/ouverture/Ouverture-editorial-final.affinity",
+      "masterSha256": "bf544caeeadf41bf364e19261d9aff69a7a1082e778c1f26ee8e5f1c1291f87c",
+      "library": "library/scenes/ouverture.jpg",
+      "export": "media/scenes/ouverture/exports/ouverture.jpg",
+      "sha256": "4b8ab0e39454eadf1386b17a6eca1ca36c29e127f707cf6ad9fc51c696c26e8c",
+      "width": 8044,
+      "height": 5746,
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Scenes/PXL_20260909_140859249.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Scenes/PXL_20260909_140859249.RAW-02.ORIGINAL.dng"
+      ],
+      "printExport": "media/scenes/ouverture/exports/ouverture-print.tif",
+      "alternates": [
+        {
+          "library": "library/scenes/ouverture-full-frame.jpg",
+          "export": "media/scenes/ouverture/exports/ouverture-full-frame.jpg",
+          "sha256": "9bc86f30bfaf6cf9873fa050aeaf347cd9895417e5cb94b0d376798875129ff9",
+          "width": 8044,
+          "height": 6040,
+          "note": "Intentional full-frame composition.",
+          "master": "media/scenes/ouverture/Ouverture-editorial-v2-full-frame.affinity",
+          "masterSha256": "b78f51e9b874d6bf2cba5f03f07a0935819ed2e2a242571d820e0480a3348061"
+        }
+      ]
+    },
+    {
+      "id": "playmobil-and-artworks",
+      "category": "scenes",
+      "selectionStatus": "available",
+      "master": "media/scenes/playmobil-and-artworks/playmobil-and-artworks-editorial-v2-master.affinity",
+      "masterSha256": "488ec02a7e79070f037eee8b5e7e6275922c02297f8dfb7dfbb6775b3bc0afb2",
+      "library": "library/scenes/playmobil-and-artworks.jpg",
+      "export": "media/scenes/playmobil-and-artworks/exports/playmobil-and-artworks.jpg",
+      "sha256": "5f03e2841c059c6609fb485d254af72dce754b9979ec2929503b2a77ce92eec3",
+      "width": 6040,
+      "height": 7810,
+      "recordId": "artwork-16",
+      "artist": null,
+      "title": null,
+      "attributionSource": {
+        "providedBy": "Martin",
+        "date": "2026-09-11"
+      },
+      "depictedWorks": [
+        {
+          "artworkId": null,
+          "artist": "m. hope"
+        },
+        {
+          "artworkId": null,
+          "artist": null
+        }
+      ],
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Artworks/PXL_20260909_155456674.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Artworks/PXL_20260909_155456674.RAW-02.ORIGINAL.dng"
+      ],
+      "printExport": "media/scenes/playmobil-and-artworks/exports/playmobil-and-artworks-print.tif",
+      "websiteInputs": [
+        {
+          "appPath": "apps/marketing/src/assets/magazine/artwork-still-life.webp",
+          "input": "records/2026-09-production/website-inputs/artwork-still-life.webp/playmobil-and-artworks-editorial-v2-preview-1440.jpg",
+          "inputSha256": "9a2b4287988a6a418a7ced844403ffcf5743dcf13ebbcb8331c9df097850a2d2",
+          "sha256": "8c60d4f7ccac33c0f235e3260599471310ba198b8057707246f9db995d3bc83a"
+        }
+      ]
+    },
+    {
+      "id": "portrait-laura-soleil-01",
+      "category": "portraits",
+      "selectionStatus": "available",
+      "master": "media/portraits/laura/portrait-laura-soleil-01/portrait-laura-soleil-01-editorial-v2.affinity",
+      "masterSha256": "11dce622741e116ecb1fa9d6245a01d79ff076d5e3b5422ebf10b48474229740",
+      "library": "library/portraits/laura/portrait-laura-soleil-01.jpg",
+      "export": "media/portraits/laura/portrait-laura-soleil-01/exports/portrait-laura-soleil-01.jpg",
+      "sha256": "1e4edf771c7b7852bcfb8082cb4c1fae57b0791e0ea799509124b631481c5cfa",
+      "width": 5280,
+      "height": 6600,
+      "person": "laura",
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Laura/PXL_20260909_151458176.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Laura/PXL_20260909_151458176.RAW-02.ORIGINAL.dng"
+      ],
+      "alternates": [
+        {
+          "export": "media/portraits/laura/portrait-laura-soleil-01/exports/portrait-laura-soleil-01-prior-treatment-full.jpg",
+          "sha256": "4956504a0e8a32ee933cdd23177945cd305fd57cb3d1e581eaaf8b06982e166a",
+          "note": "Previous finished Laura treatment, preserved separately from selected v2; not the default local source."
+        },
+        {
+          "export": "media/portraits/laura/portrait-laura-soleil-01/exports/portrait-laura-soleil-01-prior-treatment-print.tif",
+          "sha256": "661017b1462c55e5ec32296d38ec4ccc874a124d6013672db8ea3cc1d438fb94",
+          "note": "Previous finished Laura treatment, preserved separately from selected v2; not the default local source."
+        }
+      ],
+      "exportOrigin": "Full-resolution best-quality JPEG exported from the selected native during consolidation; no creative edit."
+    },
+    {
+      "id": "yoann-bonneville-01",
+      "category": "artworks",
+      "selectionStatus": "available",
+      "master": "media/artworks/yoann-bonneville-01/yoann-bonneville-01-website-master.af",
+      "masterSha256": "d45fd916b92b9bb09c841f4f3a65b366ccc4ebf4b8c3eeed13c645d7cc1c36c1",
+      "library": "library/artworks/yoann-bonneville-01.jpg",
+      "export": "media/artworks/yoann-bonneville-01/exports/yoann-bonneville-01.jpg",
+      "sha256": "a20203e0c073de0a3170add0bb944b876eaa314a633fa9e243b6589f6eb3f9e4",
+      "width": 5600,
+      "height": 5600,
+      "recordId": "artwork-03",
+      "artist": "yoann bonneville",
+      "title": null,
+      "attributionSource": {
+        "providedBy": "Martin",
+        "date": "2026-09-11"
+      },
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Artworks/PXL_20260909_154635090.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Artworks/PXL_20260909_154635090.RAW-02.ORIGINAL.dng"
+      ]
+    },
+    {
+      "id": "yoann-bonneville-02",
+      "category": "artworks",
+      "selectionStatus": "available",
+      "master": "media/artworks/yoann-bonneville-02/yoann-bonneville-02-website-master.af",
+      "masterSha256": "990275035e18120e1bf4ca36311466f5c7dfbbe9d2ee0f4fcdafef63aed0cabe",
+      "library": "library/artworks/yoann-bonneville-02.jpg",
+      "export": "media/artworks/yoann-bonneville-02/exports/yoann-bonneville-02.jpg",
+      "sha256": "6e883432d076cf088a3e4b602e804173f048ff135e6cdf8fabd620a731f49ecd",
+      "width": 5300,
+      "height": 5300,
+      "recordId": "artwork-13",
+      "artist": "yoann bonneville",
+      "title": null,
+      "attributionSource": {
+        "providedBy": "Martin",
+        "date": "2026-09-11"
+      },
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Artworks/PXL_20260909_155020419.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Artworks/PXL_20260909_155020419.RAW-02.ORIGINAL.dng"
+      ],
+      "websiteInputs": [
+        {
+          "appPath": "apps/marketing/src/assets/magazine/yoann-bonneville.webp",
+          "input": "records/2026-09-production/website-inputs/yoann-bonneville.webp/yoann-bonneville-02-website-1600.jpg",
+          "inputSha256": "afab5d9a18eb961cfe439fe79834eabdeb208b2589ce8fb17c4b5d9688dd642b",
+          "sha256": "d3ef70e4a23cf60b10af14d9ee894e884c21bcddfd2be5626cd1bde009420d4d"
+        }
+      ]
+    },
+    {
+      "id": "yoris-01",
+      "category": "artworks",
+      "selectionStatus": "available",
+      "master": "media/artworks/yoris-01/yoris-01-website-master.affinity",
+      "masterSha256": "d6b5f25e56bc27d596b04ef5f3009ee8f0d3ea7982086905880d1a2932e288e9",
+      "library": "library/artworks/yoris-01.jpg",
+      "export": "media/artworks/yoris-01/exports/yoris-01.jpg",
+      "sha256": "f61281b0bf263fc8a116ee2623b9979b8d68dc9d16487aee91f003403bad6a6e",
+      "width": 5560,
+      "height": 6950,
+      "recordId": "artwork-19",
+      "artist": "yoris",
+      "title": null,
+      "attributionSource": {
+        "providedBy": "Martin",
+        "date": "2026-09-11"
+      },
+      "photographer": null,
+      "captureOriginals": [
+        "photoshoot-09-09-26/Artworks/PXL_20260909_155816608.RAW-01.COVER.jpg",
+        "photoshoot-09-09-26/Artworks/PXL_20260909_155816608.RAW-02.ORIGINAL.dng"
+      ],
+      "printExport": "media/artworks/yoris-01/exports/yoris-01-print.tif"
+    },
+    {
+      "id": "cadre-en-balade",
+      "category": "decorations",
+      "selectionStatus": "available",
+      "library": "library/decorations/cadre-en-balade.png",
+      "export": "media/decorations/cadre-en-balade/exports/cadre-en-balade.png",
+      "sha256": "260233562dd3ee746c155ce9374035b6384a617f4305fc2a3acfac074d109eac",
+      "width": 1254,
+      "height": 1254,
+      "note": "Selected generated decoration; transparent source preserved. Proposed placement and motion are not publication approval."
+    },
+    {
+      "id": "rio-curieux",
+      "category": "decorations",
+      "selectionStatus": "available",
+      "library": "library/decorations/rio-curieux.png",
+      "export": "media/decorations/rio-curieux/exports/rio-curieux.png",
+      "sha256": "dbc4ab766ba7a4d760047a85569a623aca07de1cb6e5ea8a431c36219c7faf25",
+      "width": 1254,
+      "height": 1254,
+      "note": "Selected generated decoration; transparent source preserved. Proposed placement and motion are not publication approval."
+    },
+    {
+      "id": "fleur-de-travers",
+      "category": "decorations",
+      "selectionStatus": "available",
+      "library": "library/decorations/fleur-de-travers.png",
+      "export": "media/decorations/fleur-de-travers/exports/fleur-de-travers.png",
+      "sha256": "cbb0c1144c9fa0fd9c60307cb00404b86a5329bb67d2f5807092ba2a391d1344",
+      "width": 1024,
+      "height": 1536,
+      "note": "Selected generated decoration; transparent source preserved. Proposed placement and motion are not publication approval."
+    },
+    {
+      "id": "soleil-timide",
+      "category": "decorations",
+      "selectionStatus": "available",
+      "library": "library/decorations/soleil-timide.png",
+      "export": "media/decorations/soleil-timide/exports/soleil-timide.png",
+      "sha256": "7528ae58ca92e1abfc82ba00838a370d76ba3cb83ed7dd7dc6f40759758230c9",
+      "width": 1254,
+      "height": 1254,
+      "note": "Selected generated decoration; transparent source preserved. Proposed placement and motion are not publication approval."
+    },
+    {
+      "id": "coeur-en-passant",
+      "category": "decorations",
+      "selectionStatus": "available",
+      "library": "library/decorations/coeur-en-passant.png",
+      "export": "media/decorations/coeur-en-passant/exports/coeur-en-passant.png",
+      "sha256": "8fd7da17c0c6f54dc60d27b6f8ea5ed34637e40c6a6fcab8cf88006f4619cceb",
+      "width": 1254,
+      "height": 1254,
+      "note": "Selected generated decoration; transparent source preserved. Proposed placement and motion are not publication approval."
+    },
+    {
+      "id": "par-ici",
+      "category": "decorations",
+      "selectionStatus": "available",
+      "library": "library/decorations/par-ici.png",
+      "export": "media/decorations/par-ici/exports/par-ici.png",
+      "sha256": "b45a00d53c7093c3693c18362154031d5d4a2d18a20ec43b49551f48146b4a52",
+      "width": 1536,
+      "height": 1024,
+      "note": "Selected generated decoration; transparent source preserved. Proposed placement and motion are not publication approval."
+    },
+    {
+      "id": "duo",
+      "category": "motion",
+      "selectionStatus": "available",
+      "library": "library/motion/duo.mp4",
+      "export": "media/motion/duo/exports/duo.mp4",
+      "sha256": "392c05fade98ba95f32c105a07804359801ab523f34d61a3cd6c3cfeb9f47a12",
+      "poster": {
+        "library": "library/motion/duo.jpg",
+        "export": "media/motion/duo/exports/duo.jpg",
+        "sha256": "4e7ba4d1bb4aff3e55f903b980575a465f1e9c09f5cd21d6f7bb63ac8228bf58",
+        "width": 1280,
+        "height": 720
+      },
+      "sources": [
+        "media/motion/duo/sources/Camera_sliding_past_stationary_s…_20260913191209.mp4"
+      ],
+      "note": "Supplied provisional prototype film. Loop construction and provenance in production records; not evidence of a completed Galerie interior.",
+      "websiteInputs": [
+        {
+          "appPath": "apps/marketing/src/assets/magazine/motion/duo.jpg",
+          "input": "records/2026-09-production/website-inputs/motion--duo.jpg/duo.jpg",
+          "inputSha256": "4e7ba4d1bb4aff3e55f903b980575a465f1e9c09f5cd21d6f7bb63ac8228bf58",
+          "sha256": "4e7ba4d1bb4aff3e55f903b980575a465f1e9c09f5cd21d6f7bb63ac8228bf58"
+        },
+        {
+          "appPath": "apps/marketing/src/assets/magazine/motion/duo.mp4",
+          "input": "records/2026-09-production/website-inputs/motion--duo.mp4/duo.mp4",
+          "inputSha256": "392c05fade98ba95f32c105a07804359801ab523f34d61a3cd6c3cfeb9f47a12",
+          "sha256": "392c05fade98ba95f32c105a07804359801ab523f34d61a3cd6c3cfeb9f47a12"
+        }
+      ]
+    },
+    {
+      "id": "approche",
+      "category": "motion",
+      "selectionStatus": "available",
+      "library": "library/motion/approche.mp4",
+      "export": "media/motion/approche/exports/approche.mp4",
+      "sha256": "8cd1a22e7f086c2df70fa9ddab61c6ebc99a30b20fdc81fac73ad5ef8463ca0d",
+      "poster": {
+        "library": "library/motion/approche.jpg",
+        "export": "media/motion/approche/exports/approche.jpg",
+        "sha256": "adc160a0df560e818bf7d95e0b5c961a638886534dff9083b2757f2381f50496",
+        "width": 1280,
+        "height": 720
+      },
+      "sources": [
+        "media/motion/approche/sources/Camera_dollying_toward_bear_figu…_20260913180830.mp4"
+      ],
+      "note": "Supplied provisional prototype film. Loop construction and provenance in production records; not evidence of a completed Galerie interior."
+    },
+    {
+      "id": "sculpture",
+      "category": "motion",
+      "selectionStatus": "available",
+      "library": "library/motion/sculpture.mp4",
+      "export": "media/motion/sculpture/exports/sculpture.mp4",
+      "sha256": "c419ca98aba65e0a7882e682480360035b9e8fac4de6f78a256b3cab2b6612f8",
+      "poster": {
+        "library": "library/motion/sculpture.jpg",
+        "export": "media/motion/sculpture/exports/sculpture.jpg",
+        "sha256": "1b941e477eed42bc6744e2f8173ec2188f9332a8d3fed82e52be783d90a0567f",
+        "width": 720,
+        "height": 1280
+      },
+      "sources": [
+        "media/motion/sculpture/sources/Sculpture_dolly_shot_20260913191213.mp4"
+      ],
+      "note": "Supplied provisional prototype film. Loop construction and provenance in production records; not evidence of a completed Galerie interior.",
+      "websiteInputs": [
+        {
+          "appPath": "apps/marketing/src/assets/magazine/motion/sculpture.jpg",
+          "input": "records/2026-09-production/website-inputs/motion--sculpture.jpg/sculpture.jpg",
+          "inputSha256": "1b941e477eed42bc6744e2f8173ec2188f9332a8d3fed82e52be783d90a0567f",
+          "sha256": "1b941e477eed42bc6744e2f8173ec2188f9332a8d3fed82e52be783d90a0567f"
+        },
+        {
+          "appPath": "apps/marketing/src/assets/magazine/motion/sculpture.mp4",
+          "input": "records/2026-09-production/website-inputs/motion--sculpture.mp4/sculpture.mp4",
+          "inputSha256": "c419ca98aba65e0a7882e682480360035b9e8fac4de6f78a256b3cab2b6612f8",
+          "sha256": "c419ca98aba65e0a7882e682480360035b9e8fac4de6f78a256b3cab2b6612f8"
+        }
+      ]
+    },
+    {
+      "id": "crystelle-contact-legacy",
+      "category": "portraits",
+      "person": "crystelle",
+      "selectionStatus": "current website input",
+      "photographer": null,
+      "library": "library/portraits/crystelle/crystelle-contact-legacy.webp",
+      "export": "media/portraits/crystelle/crystelle-contact-legacy/exports/crystelle-contact-legacy.webp",
+      "sha256": "c812611039379e4ded3a40d5ff4e73b965ca09413b2f447efe44b410fd189179",
+      "width": 800,
+      "height": 800,
+      "websiteInputs": [
+        {
+          "appPath": "apps/marketing/src/assets/crystelle-contact-portrait.webp",
+          "input": "media/portraits/crystelle/crystelle-contact-legacy/exports/crystelle-contact-legacy.webp",
+          "inputSha256": "c812611039379e4ded3a40d5ff4e73b965ca09413b2f447efe44b410fd189179",
+          "sha256": "c812611039379e4ded3a40d5ff4e73b965ca09413b2f447efe44b410fd189179"
+        }
+      ],
+      "note": "800px committed input, introduced before the September shoot. Upstream pre-WebP source not established in this scoped consolidation; separate photograph from crystelle-window-light."
+    }
+  ],
+  "projectBatches": [
+    {
+      "id": "received/belle-epoque",
+      "originalLabel": "belle epoque (artignan)",
+      "origin": "Received by Martin via WeTransfer from Crystelle, ultimately from photographers",
+      "projectName": "Belle Époque",
+      "identificationNeeded": false,
+      "photographer": null,
+      "selectionStatus": "preserved batch; editorial selection pending Crystelle",
+      "library": "library/projects/received/belle-epoque",
+      "archive": "originals/projects/received/belle-epoque",
+      "imageCount": 28,
+      "websitePaths": ["apps/marketing/src/assets/magazine/belle-epoque.webp"]
+    },
+    {
+      "id": "received/le-capri",
+      "originalLabel": "le-capri-restaurant",
+      "origin": "Received by Martin via WeTransfer from Crystelle, ultimately from photographers",
+      "projectName": "Le Capri",
+      "identificationNeeded": false,
+      "photographer": null,
+      "selectionStatus": "preserved batch; editorial selection pending Crystelle",
+      "library": "library/projects/received/le-capri",
+      "archive": "originals/projects/received/le-capri",
+      "imageCount": 86,
+      "websitePaths": [
+        "apps/marketing/src/assets/magazine/le-capri.webp",
+        "apps/marketing/src/assets/magazine/capri-material.webp"
+      ]
+    },
+    {
+      "id": "received/to-identify/photos1",
+      "originalLabel": "photos1",
+      "origin": "Received by Martin via WeTransfer from Crystelle, ultimately from photographers",
+      "projectName": null,
+      "identificationNeeded": true,
+      "photographer": null,
+      "selectionStatus": "preserved batch; editorial selection pending Crystelle",
+      "library": "library/projects/received/to-identify/photos1",
+      "archive": "originals/projects/received/to-identify/photos1",
+      "imageCount": 6,
+      "websitePaths": []
+    },
+    {
+      "id": "received/to-identify/unknown-new",
+      "originalLabel": "unknown new",
+      "origin": "Received by Martin via WeTransfer from Crystelle, ultimately from photographers",
+      "projectName": null,
+      "identificationNeeded": true,
+      "photographer": null,
+      "selectionStatus": "preserved batch; editorial selection pending Crystelle",
+      "library": "library/projects/received/to-identify/unknown-new",
+      "archive": "originals/projects/received/to-identify/unknown-new",
+      "imageCount": 15,
+      "websitePaths": ["apps/marketing/src/assets/magazine/interior-light.webp"]
+    },
+    {
+      "id": "old-website",
+      "originalLabel": "studioterrasson-old",
+      "origin": "Recovered by Martin from the old WordPress website",
+      "projectName": null,
+      "identificationNeeded": true,
+      "photographer": null,
+      "selectionStatus": "preserved batch; editorial selection pending Crystelle",
+      "library": "library/projects/old-website",
+      "archive": "originals/projects/old-website",
+      "imageCount": 51,
+      "websitePaths": []
+    }
+  ],
+  "projectFileInventory": "records/migration-2026-09/project-images.json",
+  "campaigns": [
+    {
+      "id": "tendances-2026-10",
+      "master": "campaigns/tendances-2026-10/jukkai-tendances-v10-refinement.affinity",
+      "sha256": "a6c2896ce0d0af275b230c99e4cb78f4c688834ed991661f0d1c6d7e1e4c7508",
+      "selectionStatus": "Final native retained by Martin; resources embedded."
+    }
+  ],
+  "exceptions": "records/migration-2026-09/selection-exceptions.json"
+}

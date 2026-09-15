@@ -96,6 +96,11 @@ The [asset manifest](../../apps/marketing/src/assets/magazine/manifest.json) rec
 sources and checksums. [Selection notes](../../apps/marketing/src/assets/magazine/README.md)
 explain the photographs; [film notes](../../apps/marketing/src/assets/magazine/motion/README.md)
 identify the provisional prototype clips and how to replace them with their posters.
+The [media catalog and workflow](../../media/README.md) identify the selected
+full-quality working sources and Storage masters. The manifest retains each exact
+historical input, including smaller previews used for existing app exports; the
+September consolidation preserves current app bytes. Do not import from ignored
+`media/library/` or the mounted archive into runtime code.
 Original SVGs are preserved in `brand/source/studio-terrasson/`; matching runtime
 copies keep their paths/colours intact. No source artwork or photograph is edited.
 

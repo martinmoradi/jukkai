@@ -1,8 +1,12 @@
 # Landing film selection
 
 Review selection requested by Martin on 2026-09-15. These are the existing silent
-H.264 clips and posters from `/home/martin/Desktop/jukkai-hero-prototype/public/media/`,
-copied without modification. This is provisional footage; Martin will refine the
+H.264 clips and posters supplied through the Desktop hero prototype, copied
+without modification. Their durable copies and original motion sources are now
+under `/mnt/storage/jukkai/media/motion/`; finished local copies live in
+`media/library/motion/`. The [media catalog](../../../../../../media/catalog.json)
+owns those paths, while the manifest preserves exact historical input hashes.
+This is provisional footage; Martin will refine the
 image/video loop later. It is not documentation of a completed Galerie interior.
 
 - `duo.mp4` / `duo.jpg`: landscape travelling shot, default on wide viewports.
