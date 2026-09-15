@@ -64,18 +64,29 @@
 .lead,
 .turn {
   font-family: var(--serif);
-  font-size: clamp(36px, 3.5vw, 56px);
+  font-size: var(--statement-size);
   font-weight: 300;
-  line-height: 1.14;
-  letter-spacing: -0.025em;
+  line-height: var(--statement-leading);
+  letter-spacing: var(--statement-tracking);
 }
 .lead {
   grid-column: 2 / 10;
+  text-wrap: balance;
+}
+.leadOpening {
+  display: block;
   text-indent: 2.4em;
+}
+.keepTogether {
+  white-space: nowrap;
+}
+.turn > span {
+  display: block;
 }
 .photograph {
   grid-row: 3;
   grid-column: 2 / 7;
+  align-self: end;
   margin-top: 72px;
 }
 .photograph a {
@@ -85,28 +96,18 @@
 .photograph img {
   width: 100%;
 }
-.photograph figcaption {
-  display: flex;
-  gap: 20px;
-  align-items: baseline;
-  justify-content: space-between;
-  margin-top: 14px;
-  font-size: 12px;
-  line-height: 1.5;
-}
-.photograph figcaption svg {
-  flex-shrink: 0;
-  width: 18px;
-  height: 18px;
-}
 .continuation {
+  display: flex;
+  flex-direction: column;
   grid-row: 3;
   grid-column: 8 / -1;
+  align-self: stretch;
   margin-top: 32px;
 }
 .detail {
   max-width: 30em;
-  margin-top: 36px;
+  padding-top: 40px;
+  margin-top: auto;
   font-size: clamp(18px, 1.4vw, 22px);
   line-height: 1.6;
   text-wrap: pretty;
@@ -143,26 +144,24 @@
     margin-bottom: 28px;
     font-size: 12px;
   }
-  .lead,
-  .turn {
-    font-size: clamp(29px, 5.2vw, 42px);
-    line-height: 1.17;
-  }
   .lead {
     grid-column: 1 / -1;
+  }
+  .leadOpening {
     text-indent: 1.6em;
   }
   .photograph {
-    grid-row: 4;
+    grid-row: 3;
     grid-column: 1 / -1;
     margin-top: 40px;
   }
   .continuation {
+    grid-row: 4;
     grid-column: 1 / -1;
-    margin-top: 32px;
-    margin-left: clamp(24px, 6vw, 48px);
+    margin-top: 40px;
   }
   .detail {
+    padding-top: 0;
     margin-top: 24px;
     font-size: 18px;
   }

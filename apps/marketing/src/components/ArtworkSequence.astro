@@ -7,6 +7,7 @@ import { GALERIE_IMAGES, HERO_ARTWORK, SPIRAL_ARTWORKS } from '#/data/galerie';
 import styles from '#/styles/artwork-sequence.module.css';
 
 const [, objects, dogs, bears] = GALERIE_IMAGES;
+const dogCaption = 'Un seul des trois réclame des caresses.';
 const scenes = [
   {
     ...bears,
@@ -35,7 +36,7 @@ const scenes = [
         href={dogs.image.src}
         data-artwork='scene-1'
         data-art-src={dogs.image.src}
-        data-art-caption={dogs.caption}
+        data-art-caption={dogCaption}
         aria-label={`Explorer les détails : ${dogs.caption}`}
         aria-haspopup='dialog'>
         <Image
@@ -47,7 +48,7 @@ const scenes = [
           loading='lazy'
         />
       </a>
-      <figcaption>{dogs.caption}<Arrow diagonal /></figcaption>
+      <figcaption>{dogCaption}<Arrow diagonal /></figcaption>
     </figure>
     <div class={styles.galleryCopy}>
       <h2 id='sequence-title' class='eyebrow'>La Galerie</h2>
