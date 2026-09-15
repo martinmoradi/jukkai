@@ -23,6 +23,9 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
       const artworks = [
         ...sequence.querySelectorAll<HTMLElement>('[data-spiral-art]'),
       ];
+      const invitation = sequence.querySelector<HTMLElement>(
+        '[data-spiral-invitation]',
+      )!;
       const credit = sequence.querySelector<HTMLElement>(
         '[data-stack-credit]',
       )!;
@@ -123,6 +126,12 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
         },
       });
       timeline
+        .fromTo(
+          invitation,
+          { autoAlpha: 1, scale: 1 },
+          { autoAlpha: 0, scale: 0.86, duration: 0.13, ease: 'power1.in' },
+          0.07,
+        )
         .fromTo(
           orbits,
           { rotation: (index) => -angle * index },

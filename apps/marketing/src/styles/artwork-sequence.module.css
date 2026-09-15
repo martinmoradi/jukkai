@@ -3,43 +3,75 @@
   background: #eeece5;
 }
 .galleryIntro {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: clamp(50px, 8vw, 150px);
-  align-items: end;
-  max-width: 1680px;
-  padding: clamp(80px, 8vw, 130px) var(--gutter) 70px;
+  max-width: 1700px;
+  padding: 110px var(--gutter) 10px;
   margin-inline: auto;
 }
-.galleryIntro h2 {
-  font-family: var(--display);
-  font-size: clamp(48px, 5.3vw, 86px);
-  font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -0.045em;
+.welcome {
+  margin: 0 0 85px 8%;
+  font-size: clamp(22px, 2.4vw, 36px);
+  line-height: 1.4;
+  letter-spacing: -0.025em;
 }
-.galleryIntro h2 em {
+.livingHeading {
+  position: relative;
+}
+.livingHeading h2 {
+  font-family: var(--display);
+  font-size: clamp(58px, 9.6vw, 164px);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.055em;
+}
+.forHome {
+  display: flex;
+  gap: 2%;
+  align-items: center;
+  white-space: nowrap;
+}
+.imageSpace {
+  display: inline-block;
+  flex: 1;
+  height: 30vw;
+  max-height: 510px;
+}
+.forSomeone {
+  display: block;
+  margin-top: 30px;
+  margin-left: 9%;
+}
+.livingArt {
+  position: absolute;
+  top: 0;
+  left: 23.5%;
+  width: 33%;
+  transform: rotate(-4deg);
+}
+.livingArt figcaption {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.galleryCopy {
+  max-width: 580px;
+  margin: 55px 4% 0 auto;
+  font-size: clamp(19px, 1.7vw, 25px);
+  line-height: 1.6;
+}
+.spiralInvitation {
+  padding: 100px var(--gutter) 70px;
+  font-family: var(--display);
+  font-size: clamp(54px, 10vw, 170px);
+  line-height: 1.1;
+  text-align: center;
+  letter-spacing: -0.055em;
+}
+.spiralInvitation em {
   font-family: var(--serif);
   font-style: normal;
   font-weight: 500;
-}
-.galleryCopy {
-  max-width: 510px;
-  padding-bottom: 7px;
-  font-size: clamp(18px, 1.4vw, 22px);
-  line-height: 1.65;
-}
-.stillSelection {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: clamp(50px, 10vw, 170px);
-  align-items: start;
-  max-width: 1680px;
-  padding: 0 var(--gutter) 100px;
-  margin-inline: auto;
-}
-.still:nth-child(2) {
-  margin-top: 150px;
 }
 .artwork {
   display: block;
@@ -49,18 +81,10 @@
   width: 100%;
   height: auto;
 }
-.still figcaption,
 .orbit figcaption {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 16px;
+  padding-top: 14px;
   font-size: 13px;
   line-height: 1.5;
-}
-.still figcaption span {
-  font-size: 22px;
 }
 .motionTrack,
 .stage {
@@ -159,6 +183,7 @@
   position: sticky;
   top: var(--header-height);
   min-height: var(--scene-height);
+  overflow: clip;
   isolation: isolate;
 }
 .sequence[data-motion='ready'] .spiral {
@@ -230,22 +255,41 @@
 }
 @media (max-width: 800px) {
   .galleryIntro {
-    grid-template-columns: 1fr;
-    gap: 35px;
-    padding-block: 75px 45px;
+    padding-block: 75px 0;
   }
-  .galleryIntro h2 {
-    font-size: clamp(40px, 8.7vw, 64px);
+  .welcome {
+    margin: 0 0 42px;
+    font-size: 24px;
   }
-  .stillSelection {
-    grid-template-columns: 1fr;
-    gap: 45px;
-    padding-bottom: 70px;
+  .livingHeading h2 {
+    font-size: 11vw;
   }
-  .still:nth-child(2) {
-    justify-self: end;
-    width: 78%;
-    margin: 0;
+  .forHome {
+    gap: 0.25em;
+    justify-content: flex-start;
+  }
+  .imageSpace {
+    display: none;
+  }
+  .forSomeone {
+    margin-top: calc(64vw + 40px);
+    margin-left: 0;
+    font-size: 10.1vw;
+    text-align: right;
+  }
+  .livingArt {
+    top: 18vw;
+    left: 8%;
+    width: 82%;
+  }
+  .galleryCopy {
+    max-width: 34em;
+    margin: 35px 0 0;
+    font-size: 19px;
+  }
+  .spiralInvitation {
+    padding-block: 85px 50px;
+    font-size: 14vw;
   }
   .spiral {
     grid-template-columns: 1fr 1fr;
@@ -312,4 +356,13 @@
     justify-self: center;
     width: min(100%, calc(42svh * 4 / 3));
   }
+}
+
+.sequence[data-motion='ready'] .spiralInvitation {
+  position: absolute;
+  top: calc(var(--scene-height) / 2);
+  left: 0;
+  width: 100%;
+  padding: 0 var(--gutter);
+  transform: translateY(-50%);
 }

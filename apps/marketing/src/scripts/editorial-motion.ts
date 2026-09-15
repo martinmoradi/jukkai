@@ -53,17 +53,20 @@ async function animateEditorial() {
     { animateHero },
     { animateStudioTransition },
     { animateArtworkSequence },
+    { animateEditorialStory },
   ] = await Promise.all([
     import('gsap'),
     import('gsap/ScrollTrigger'),
     import('./hero-motion'),
     import('./studio-transition'),
     import('./artwork-sequence'),
+    import('./editorial-story'),
   ]);
   gsap.registerPlugin(ScrollTrigger);
   ScrollTrigger.config({ ignoreMobileResize: true });
   animateHero(gsap);
   animateStudioTransition(gsap);
+  animateEditorialStory(gsap);
   animateArtworkSequence(gsap);
   const media = gsap.matchMedia();
   media.add('(prefers-reduced-motion: no-preference)', () => {

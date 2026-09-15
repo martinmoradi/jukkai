@@ -1,18 +1,67 @@
 ---
+import { Image } from 'astro:assets';
+
+import interior from '#/assets/magazine/capri-material.webp';
+import { GALERIE_IMAGES } from '#/data/galerie';
 import styles from '#/styles/studio-transition.module.css';
+
+const [, objects] = GALERIE_IMAGES;
 ---
 
-<section class={styles.origin} id='esprit' aria-labelledby='origin-title'>
-  <h2 id='origin-title'>Studio Terrasson<br />devient <em>Jukkai.</em></h2>
-  <div class={styles.copy}>
-    <p class={styles.lead}>
-      À Châteaugiron, Jukkai réunit le studio d’architecture intérieure de
-      Crystelle Terrasson et une nouvelle galerie d’art.
-    </p>
-    <p>
-      Le studio poursuit son activité. À ses côtés, Crystelle imagine une
-      galerie vivante : des œuvres à découvrir, un lieu où flâner, le temps
-      d’une discussion autour d’un café.
-    </p>
+<section
+  class={styles.origin}
+  id='esprit'
+  aria-labelledby='origin-title'
+  data-editorial-origin>
+  <div class={styles.stage} data-origin-stage>
+    <h2 id='origin-title' class={styles.title}>
+      <span class={styles.former} data-origin-former>Studio Terrasson</span>
+      <span class={styles.becomes}>devient</span>
+      <em class={styles.newName} data-origin-name>Jukkai.</em>
+    </h2>
+    <div class={styles.images} data-origin-images>
+      <figure class={styles.interior} data-origin-interior>
+        <Image
+          src={interior}
+          alt='Lumière sur le bois, le métal et les assises du restaurant Le Capri, un projet du studio.'
+          widths={[480, 800, 1200]}
+          sizes='(max-width: 800px) 50vw, 27vw'
+          width={800}
+          loading='lazy'
+        />
+        <figcaption>Le Capri · Un projet du studio</figcaption>
+      </figure>
+      <figure class={styles.art} data-origin-art>
+        <a
+          href={objects.image.src}
+          data-artwork='scene-1'
+          data-art-src={objects.image.src}
+          data-art-caption={objects.caption}
+          aria-label={`Explorer les détails : ${objects.caption}`}
+          aria-haspopup='dialog'>
+          <Image
+            src={objects.image}
+            alt={objects.alt}
+            widths={[480, 800, 1200]}
+            sizes='(max-width: 800px) 43vw, 22vw'
+            width={800}
+            loading='lazy'
+          />
+        </a>
+        <figcaption>
+          {objects.caption}
+          <span aria-hidden='true'>↗</span>
+        </figcaption>
+      </figure>
+    </div>
+    <div class={styles.statement} data-origin-copy>
+      <p class={styles.lead}>
+        Le studio continue.<br />Une Galerie le rejoint.
+      </p>
+      <p class={styles.detail}>
+        À Châteaugiron, Jukkai réunit le studio d’architecture intérieure de
+        Crystelle Terrasson et une galerie d’art vivante.
+      </p>
+    </div>
   </div>
 </section>
