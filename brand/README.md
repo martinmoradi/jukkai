@@ -7,13 +7,22 @@ runtime asset directory.
 
 ## Structure
 
+- `logo/` - compact logo masters, including the sphere used by the contact card.
 - `marks/wordmark/` - current wordmark exports and byline.
 - `marks/seal/` - current seal exports.
+- `card/` - editable business-card and print assets.
+- `ad/` - retained compact brand advertisement masters and handoffs; the final
+  Tendances production native lives on Storage under `campaigns/tendances-2026-10/`.
 - `qr-codes/` - reproducible QR masters and convenience exports.
 - `source/` - non-current construction files, generators, captured references,
   and superseded studies. Never use this as the export folder.
 - `fonts/` - local working copies for design tools. Font binaries are ignored;
   only the usage note is committed.
+
+Large photographic masters belong in `/mnt/storage/jukkai/media/`, with finished
+working copies in the ignored `media/library/`. See [the media workflow](../media/README.md)
+and catalog, including `crystelle-window-light` for the September portrait formerly
+kept in `brand/pictures/`. Keep compact identity and print files in this tree.
 
 ## Asset states
 

@@ -1,0 +1,44 @@
+---
+import styles from '#/styles/artwork-viewer.module.css';
+---
+
+<dialog
+  class={styles.viewer}
+  data-art-dialog
+  aria-labelledby='art-dialog-caption'>
+  <div class={styles.toolbar}>
+    <p id='art-dialog-caption' data-art-caption></p>
+    <div
+      class={styles.controls}
+      role='group'
+      aria-label='Agrandissement de l’image'>
+      <button type='button' data-zoom-out aria-label='Réduire l’image'>−</button
+      >
+      <output data-zoom-level aria-label='Niveau de zoom'>200 %</output>
+      <button type='button' data-zoom-in aria-label='Agrandir l’image'>+</button
+      >
+      <button class={styles.fit} type='button' data-zoom-fit>Vue entière</button
+      >
+    </div>
+    <button
+      class={styles.close}
+      type='button'
+      data-art-close
+      aria-label='Fermer l’image'
+      >Fermer <span aria-hidden='true'>×</span></button
+    >
+  </div>
+  <div
+    class={styles.viewport}
+    data-art-viewport
+    tabindex='0'
+    role='region'
+    aria-label='Détail de l’œuvre, déplacez-vous avec les flèches ou faites glisser'>
+    <div class={styles.canvas} data-art-canvas>
+      <img data-art-image alt='' draggable='false' />
+    </div>
+  </div>
+  <p class={styles.help} data-art-help>
+    Faites glisser pour explorer · + et − pour zoomer · 0 pour la vue entière
+  </p>
+</dialog>

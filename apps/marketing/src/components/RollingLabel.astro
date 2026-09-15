@@ -1,0 +1,34 @@
+---
+import styles from '#/styles/chrome.module.css';
+
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+const characters = Array.from(text);
+const centre =
+  (characters.filter((character) => character !== ' ').length - 1) / 2;
+let letterIndex = 0;
+---
+
+<!-- The parent link provides the accessible name once, without duplicate letters. -->
+<span class={styles.rollingLabel} aria-hidden='true'>
+  {
+    characters.map((character) => {
+      if (character === ' ') return '\u00a0';
+      const index = letterIndex++;
+      return (
+        <span
+          class={styles.letter}
+          data-letter={character}
+          style={{
+            '--letter-index': index,
+            '--letter-centre': Math.abs(index - centre),
+          }}>
+          {character}
+        </span>
+      );
+    })
+  }
+</span>

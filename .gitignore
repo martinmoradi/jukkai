@@ -17,8 +17,9 @@ apps/marketing/public/fonts/generated/
 !/brand/fonts/README.md
 /docs/research/references-screenshots/
 
-# local website asset intake
-/website-asset-inbox/
+# replaceable local media shelf and temporary intake
+/media/library/
+/media/incoming/
 
 # env / secrets
 .env

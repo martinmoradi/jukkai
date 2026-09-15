@@ -1,0 +1,318 @@
+.header {
+  --nav-ease: cubic-bezier(0.35, 0.35, 0, 1);
+  --button-surface: var(--ink);
+  --button-ink: var(--paper);
+  --button-fill: var(--paper);
+  --button-hover-ink: var(--ink);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  padding: 0 var(--gutter);
+  background: var(--paper);
+}
+.brand {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  min-height: 44px;
+}
+.brand img {
+  width: 108px;
+  height: auto;
+}
+.navigation {
+  display: flex;
+  gap: clamp(24px, 3vw, 54px);
+  align-items: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.navigation a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.rollingLabel {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+.letter {
+  position: relative;
+  display: inline-block;
+}
+.letter::after {
+  position: absolute;
+  inset: 0;
+  content: attr(data-letter);
+}
+/* The menu's next letters turn upward in a wave; the link itself stays still. */
+.sectionLink .letter {
+  transition: translate calc(900ms + var(--letter-index) * 150ms)
+    var(--nav-ease);
+}
+.sectionLink .letter::after {
+  transform-origin: 0 100%;
+  rotate: 60deg;
+  scale: 1.5;
+  translate: 0 105%;
+  transition:
+    rotate calc(900ms + var(--letter-index) * 150ms) var(--nav-ease),
+    scale calc(900ms + var(--letter-index) * 150ms) var(--nav-ease);
+}
+.contactLink {
+  justify-content: center;
+  min-width: 144px;
+  padding: 14px 24px;
+  overflow: hidden;
+  color: var(--button-ink);
+  background: var(--button-surface);
+  border: 1px solid var(--button-surface);
+  border-radius: 6px;
+}
+.contactLink::before {
+  position: absolute;
+  inset: 0;
+  content: '';
+  background: var(--button-fill);
+  border-radius: 50% 50% 0 0;
+  translate: 0 101%;
+  transition:
+    border-radius 900ms var(--nav-ease),
+    translate 900ms var(--nav-ease);
+}
+.contactLink::after {
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  width: 5px;
+  height: 5px;
+  content: '';
+  background: currentColor;
+  border-radius: 50%;
+  transition:
+    background-color 900ms var(--nav-ease),
+    scale 900ms var(--nav-ease);
+}
+.contactLink .rollingLabel {
+  overflow: visible;
+  transition: color 300ms var(--nav-ease);
+}
+.contactLink .letter {
+  transition: translate 900ms var(--nav-ease);
+}
+.contactLink .letter::after {
+  color: transparent;
+  scale: calc(1.2 + var(--letter-centre) * 0.1);
+  translate: 0 100%;
+  transition:
+    translate 900ms var(--nav-ease),
+    color 900ms var(--nav-ease),
+    scale 900ms var(--nav-ease);
+}
+.contactLink[aria-current] .rollingLabel {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.contactLink:focus-visible {
+  outline-color: var(--button-surface);
+}
+/* Keyboard focus uses the same treatment as pointer hover. */
+.sectionLink:focus-visible .letter {
+  translate: 0 -105%;
+}
+.sectionLink:focus-visible .letter::after {
+  rotate: 0deg;
+  scale: 1;
+}
+.contactLink:focus-visible::before {
+  border-radius: 6px;
+  translate: 0 0;
+}
+.contactLink:focus-visible::after {
+  background: var(--button-hover-ink);
+  scale: 0.5;
+}
+.contactLink:focus-visible .rollingLabel {
+  color: transparent;
+}
+.contactLink:focus-visible .letter {
+  translate: 0 -50%;
+  transition-delay: calc(var(--letter-centre) * 30ms);
+}
+.contactLink:focus-visible .letter::after {
+  color: var(--button-hover-ink);
+  scale: 1;
+  translate: 0 50%;
+  transition-delay: calc(var(--letter-centre) * 30ms);
+}
+@media (hover: hover) and (pointer: fine) {
+  .sectionLink:hover .letter {
+    translate: 0 -105%;
+  }
+  .sectionLink:hover .letter::after {
+    rotate: 0deg;
+    scale: 1;
+  }
+  .contactLink:hover::before {
+    border-radius: 6px;
+    translate: 0 0;
+  }
+  .contactLink:hover::after {
+    background: var(--button-hover-ink);
+    scale: 0.5;
+  }
+  .contactLink:hover .rollingLabel {
+    color: transparent;
+  }
+  .contactLink:hover .letter {
+    translate: 0 -50%;
+    transition-delay: calc(var(--letter-centre) * 30ms);
+  }
+  .contactLink:hover .letter::after {
+    color: var(--button-hover-ink);
+    scale: 1;
+    translate: 0 50%;
+    transition-delay: calc(var(--letter-centre) * 30ms);
+  }
+}
+.contactLink:active {
+  box-shadow: inset 0 0 0 2px currentColor;
+}
+@media (prefers-reduced-motion: reduce) {
+  .navigation .letter,
+  .navigation .letter::after {
+    rotate: none !important;
+    scale: none !important;
+    translate: none !important;
+  }
+  .navigation .letter::after {
+    display: none;
+  }
+  .contactLink:is(:hover, :focus-visible)::before {
+    border-radius: 6px;
+    translate: 0 0;
+  }
+  .contactLink:is(:hover, :focus-visible) .rollingLabel {
+    color: var(--button-hover-ink);
+  }
+}
+.footer {
+  padding: 0 var(--gutter);
+  background: var(--paper);
+}
+.footerInfo {
+  display: grid;
+  grid-template-columns: 1.2fr 1.5fr 1fr 1.2fr;
+  gap: 30px;
+  align-items: start;
+  padding: 60px 0 45px;
+  font-size: 16px;
+  line-height: 1.75;
+}
+.footerMark {
+  width: 180px;
+}
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.footerLinks a {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  min-height: 38px;
+}
+.footerLinks a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.footerLinks svg {
+  width: 16px;
+}
+.colophon {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  font-size: 14px;
+  border-top: 1px solid var(--line);
+}
+.colophon a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+@media (max-width: 1100px) {
+  .footerInfo {
+    grid-template-columns: 1fr 1.4fr;
+  }
+}
+@media (max-width: 800px) {
+  .brand img {
+    width: 88px;
+  }
+  .navigation {
+    gap: 20px;
+    font-size: 16px;
+  }
+  .sectionLink {
+    display: none !important;
+  }
+  .contactLink {
+    min-width: 128px;
+    padding: 12px 16px;
+  }
+  .footerInfo {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 38px 0 25px;
+    font-size: 16px;
+  }
+  .footerMark {
+    width: 140px;
+    margin-bottom: 8px;
+  }
+  .footerLinks a {
+    min-height: 44px;
+  }
+  .colophon {
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    font-size: 14px;
+  }
+  .colophon span:nth-child(2) {
+    display: none;
+  }
+}
+
+.header[data-immersive] {
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+.header[data-header-ready] {
+  position: fixed;
+}
+.header[data-on-film='true'] {
+  --button-surface: white;
+  --button-ink: black;
+  --button-fill: black;
+  --button-hover-ink: white;
+  color: white;
+  background: transparent;
+  mix-blend-mode: difference;
+}
+.header[data-on-film='true'] .brand img {
+  filter: brightness(0) invert(1);
+}

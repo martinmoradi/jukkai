@@ -77,9 +77,10 @@ remove them when the convention changes.
   Keep focused SEO work active; do not require exhaustive research before building.
   The brand name is settled; the exact first-release sitemap remains open.
 
-- `apps/marketing` is an Astro workspace whose only route so far is Crystelle's
-  Contact Card Page at `/contact/crystelle`. Keep its Astro, Turbo, Stylelint,
-  Vitest, and generated-font tooling intact as design and implementation resume.
+- `apps/marketing` is an Astro workspace. The magazine edition has `/` and
+  `/contact/`, alongside Crystelle's Contact Card Page at `/contact/crystelle`.
+  See `docs/operations/magazine-website.md` for the two-page boundary and review
+  procedure. Keep Astro, Turbo, Stylelint, Vitest and generated-font tooling intact.
 - Contact details and portrait edits follow
   `docs/operations/crystelle-contact-card.md`; keep the page portrait and social
   preview on the shared image source in `src/data/crystelle-portrait.ts`.
@@ -92,8 +93,13 @@ remove them when the convention changes.
 - `brand/` holds durable masters and is not the app's runtime asset directory.
   Commit the curated web export into `apps/marketing/src/assets/` and import it
   from there; a test holds the copy to its master.
+- Photographic originals and selected editable files live on Storage; follow
+  `media/README.md` and its catalog. `media/library/` is an ignored working shelf,
+  never a runtime/build dependency. Keep heavy masters out of Git, verify Storage
+  is mounted before writing, and preserve exact historical inputs of app exports.
 - Page-level styles belong in `src/styles/*.css` rather than an Astro `<style>`
-  block, because Stylelint globs `src/**/*.css`.
+  block, because Stylelint globs `src/**/*.css`. The magazine pages use CSS Modules;
+  shared editorial resets and tokens live in `src/styles/editorial.css`.
 - Astro components render in tests through the Container API, which needs
   Vitest's SSR transform. Those files declare `@vitest-environment node`.
 - Before marketing research, strategy, IA, content, or design work, read

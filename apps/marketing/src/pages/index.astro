@@ -1,0 +1,118 @@
+---
+import { Image } from 'astro:assets';
+
+import sphere from '#/assets/jukkai-sphere.svg';
+import Arrow from '#/components/Arrow.astro';
+import ArtworkHero from '#/components/ArtworkHero.astro';
+import ArtworkSequence from '#/components/ArtworkSequence.astro';
+import ArtworkViewer from '#/components/ArtworkViewer.astro';
+import StudioTransition from '#/components/StudioTransition.astro';
+import { CRYSTELLE } from '#/data/crystelle';
+import { GALERIE_IMAGES } from '#/data/galerie';
+import EditorialLayout from '#/layouts/EditorialLayout.astro';
+import styles from '#/styles/landing.module.css';
+
+const [painting, objects, dogs] = GALERIE_IMAGES;
+---
+
+<EditorialLayout
+  title='Jukkai by Crystelle Terrasson — Galerie & architecture d’intérieur, Châteaugiron'
+  description='Jukkai by Crystelle Terrasson réunit architecture d’intérieur et Galerie à Châteaugiron, près de Rennes, dans la continuité de Studio Terrasson. Ouverture en octobre 2026.'>
+  <ArtworkHero />
+  <StudioTransition />
+  <ArtworkSequence />
+
+  <section
+    class={styles.galerie}
+    id='selection'
+    aria-labelledby='galerie-title'>
+    <div class={styles.galleryHeading}>
+      <h2 id='galerie-title'>D’un regard à l’autre.</h2>
+      <p>Des œuvres choisies par Crystelle.</p>
+    </div>
+    <div class={styles.artworkSpread}>
+      {
+        [painting, objects].map((art, index) => (
+          <figure
+            class:list={[styles.artwork, index === 1 && styles.sculptures]}>
+            <a
+              class={styles.artworkButton}
+              href={art.image.src}
+              data-artwork={index}
+              data-art-src={art.image.src}
+              data-art-caption={art.caption}
+              aria-label={`Explorer les détails : ${art.caption}`}
+              aria-haspopup='dialog'>
+              <Image
+                src={art.image}
+                alt={art.alt}
+                widths={[480, 800, 1200, 1600]}
+                sizes='(max-width: 800px) 90vw, 43vw'
+                width={1200}
+                loading='lazy'
+                data-art-reveal
+              />
+              <span class={styles.inspectArtwork} aria-hidden='true'>
+                +
+              </span>
+            </a>
+            <figcaption>{art.caption}</figcaption>
+          </figure>
+        ))
+      }
+    </div>
+    <figure class={styles.dogs}>
+      <a
+        class={styles.artworkButton}
+        href={dogs.image.src}
+        data-artwork='dogs'
+        data-art-src={dogs.image.src}
+        data-art-caption={dogs.caption}
+        aria-label={`Explorer les détails : ${dogs.caption}`}
+        aria-haspopup='dialog'>
+        <Image
+          src={dogs.image}
+          alt={dogs.alt}
+          widths={[480, 800, 1200, 1800]}
+          sizes='(max-width: 800px) 100vw, 76vw'
+          width={1400}
+          loading='lazy'
+          data-art-reveal
+        />
+        <span class={styles.inspectArtwork} aria-hidden='true'>+</span>
+      </a>
+      <figcaption>{dogs.caption}</figcaption>
+    </figure>
+    <div class={styles.galleryFoot}>
+      <p>Une œuvre vous intrigue ?</p>
+      <a class='text-link' href='/contact/'>Parlons-en <Arrow diagonal /></a>
+    </div>
+  </section>
+
+  <section
+    class={styles.opening}
+    id='ouverture'
+    aria-labelledby='opening-title'>
+    <div class={styles.openingTop}>
+      <p class='eyebrow'>Châteaugiron, près de Rennes</p>
+      <img src={sphere.src} alt='' width='64' height='64' />
+    </div>
+    <p class={styles.openingLabel}>Ouverture officielle</p>
+    <h2 id='opening-title'>Octobre <span>2026</span></h2>
+    <div class={styles.openingBottom}>
+      <address>
+        <strong>Jukkai by Crystelle Terrasson</strong><br />{
+          CRYSTELLE.address.street
+        }<br />{`${CRYSTELLE.address.postalCode} ${CRYSTELLE.address.locality}`}
+      </address>
+      <p>
+        Une question sur la Galerie ou un projet d’intérieur ? Crystelle est
+        déjà joignable.
+      </p>
+      <a class={styles.contactButton} href='/contact/'
+        >Prenons contact <Arrow diagonal /></a
+      >
+    </div>
+  </section>
+  <ArtworkViewer />
+</EditorialLayout>

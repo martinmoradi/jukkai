@@ -1,0 +1,229 @@
+.galerie {
+  padding: 75px var(--gutter) 55px;
+  color: var(--paper);
+  background: var(--ink);
+}
+.galleryHeading {
+  display: flex;
+  gap: 30px;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 45px;
+}
+.galleryHeading h2 {
+  font-family: var(--display);
+  font-size: clamp(40px, 1.5rem + 2.8vw, 72px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+.galleryHeading p {
+  font-size: 18px;
+}
+.artworkSpread {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 12%;
+  align-items: start;
+}
+.artworkButton {
+  position: relative;
+  display: block;
+  cursor: zoom-in;
+}
+.artworkButton img {
+  width: 100%;
+  height: auto;
+}
+.artworkButton:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 6px;
+}
+.inspectArtwork {
+  position: absolute;
+  right: 14px;
+  bottom: -54px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  font: 28px/1 var(--sans);
+  color: var(--ink);
+  background: var(--paper);
+  transition:
+    background 150ms,
+    color 150ms;
+}
+.artworkButton:hover .inspectArtwork {
+  color: white;
+  background: var(--accent);
+}
+.artworkButton:active .inspectArtwork {
+  background: var(--accent-active);
+}
+.artwork figcaption,
+.dogs figcaption {
+  min-height: 44px;
+  padding-right: 60px;
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.sculptures {
+  margin-top: 145px;
+}
+.dogs {
+  width: 78%;
+  margin: 110px auto 0;
+}
+.galleryFoot {
+  display: flex;
+  gap: 30px;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: 60px;
+  font-size: 21px;
+}
+.opening {
+  padding: 50px var(--gutter) 65px;
+  background: var(--paper);
+}
+.openingTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.openingTop img {
+  width: 55px;
+}
+.openingLabel {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+.opening h2 {
+  padding-bottom: 40px;
+  font-family: var(--display);
+  font-size: clamp(65px, 2rem + 7vw, 168px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+.opening h2 span {
+  color: var(--accent);
+}
+.openingBottom {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr auto;
+  gap: 60px;
+  align-items: end;
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
+}
+.openingBottom address {
+  font-size: 18px;
+  line-height: 1.6;
+}
+.openingBottom address strong {
+  font-weight: 400;
+}
+.openingBottom p {
+  max-width: 330px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.contactButton {
+  display: inline-flex;
+  gap: 35px;
+  align-items: center;
+  min-height: 64px;
+  padding: 15px 24px;
+  font-size: 18px;
+  color: var(--paper);
+  background: var(--ink);
+  transition: background 150ms;
+}
+.contactButton svg {
+  width: 23px;
+}
+.contactButton:hover {
+  background: var(--accent);
+}
+.contactButton:active {
+  background: var(--accent-active);
+}
+
+@media (max-width: 1100px) {
+  .openingBottom {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+@media (max-width: 800px) {
+  .galerie {
+    padding: 55px var(--gutter);
+  }
+  .galleryHeading {
+    display: block;
+    margin-bottom: 35px;
+  }
+  .galleryHeading h2 {
+    margin-bottom: 14px;
+    font-size: 40px;
+  }
+  .galleryHeading p {
+    font-size: 17px;
+  }
+  .artworkSpread {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+  .sculptures {
+    justify-self: end;
+    width: 82%;
+    margin-top: 0;
+  }
+  .dogs {
+    width: calc(100% + var(--gutter) * 2);
+    margin-top: 55px;
+    margin-left: calc(-1 * var(--gutter));
+  }
+  .dogs figcaption {
+    padding: 0 calc(var(--gutter) + 60px) 0 var(--gutter);
+  }
+  .galleryFoot {
+    flex-wrap: wrap;
+    gap: 12px 30px;
+    margin-top: 40px;
+    font-size: 18px;
+  }
+  .opening {
+    padding: 35px var(--gutter) 45px;
+  }
+  .openingTop {
+    gap: 25px;
+    margin-bottom: 22px;
+  }
+  .openingTop img {
+    width: 40px;
+  }
+  .openingTop p {
+    max-width: 240px;
+  }
+  .openingLabel {
+    font-size: 17px;
+  }
+  .opening h2 {
+    max-width: 660px;
+    padding-bottom: 26px;
+    font-size: clamp(60px, 1.5rem + 10vw, 104px);
+  }
+  .openingBottom {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding-top: 26px;
+  }
+  .contactButton {
+    justify-self: start;
+  }
+}
