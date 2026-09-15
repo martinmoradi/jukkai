@@ -68,7 +68,7 @@ at the end of the sticky track. Resizing never follows an old fragment again.
 - Server-rendered content is useful without scripts: poster, both identity marks,
   complete five-artwork grid, portrait/copy, and ordinary artwork/contact links.
 - Reduced motion skips the animation import and leaves video playback paused on
-  its poster. The play control still works. Changing the preference reverts active
+  its poster. Changing the preference reverts active
   choreography; enabling motion later can initialise it without reloading.
 - Short viewports use static identity/artwork layouts (under 600px high on phones,
   under 720px for the desktop artwork sequence). The hero remains readable in
@@ -79,8 +79,9 @@ at the end of the sticky track. Resizing never follows an old fragment again.
   after all their animation modules are available.
 - Videos are muted, looped and inline. Only the selected orientation loads. A
   matching static poster remains behind the film. Playback pauses when offscreen,
-  when the tab is hidden, on visitor pause and on reduced-motion preference.
-  A failed film has a retry/play control and leaves the poster and links usable.
+  when the tab is hidden and on reduced-motion preference. The hero has no
+  play/pause control; a failed film leaves the poster and links usable. The
+  opening date and location are plain text, with no hero opening link.
 - Header and hero controls use difference blending to remain legible as the inset
   film expands across the ivory frame. The header uses the prototype's category,
   then returns to the
