@@ -6,14 +6,28 @@
   height: 100svh;
   min-height: 400px;
   overflow: clip;
-  color: white;
-  background: #34372f;
+  color: #242920;
+  background: #eeece5;
   isolation: isolate;
 }
 .filmWindow {
   position: absolute;
   inset: 0;
   overflow: hidden;
+  clip-path: inset(14% 7% 17% 35%);
+}
+.editionNote {
+  position: absolute;
+  top: 23%;
+  left: var(--gutter);
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: white;
+  mix-blend-mode: difference;
+}
+.editionNote span {
+  display: block;
 }
 .filmDrift {
   width: 100%;
@@ -72,6 +86,8 @@
   align-items: end;
   justify-content: space-between;
   font-size: 14px;
+  color: white;
+  mix-blend-mode: difference;
 }
 .opening {
   display: flex;
@@ -93,7 +109,7 @@
 }
 .explore {
   position: absolute;
-  bottom: 0;
+  bottom: 28px;
   left: 50%;
   display: flex;
   flex-direction: column;
@@ -101,6 +117,8 @@
   align-items: center;
   padding: 12px;
   font-size: 13px;
+  color: white;
+  mix-blend-mode: difference;
   transform: translateX(-50%);
 }
 .explore span {
@@ -115,17 +133,17 @@
   min-height: 44px;
   padding: 8px;
   color: inherit;
-  background: #0004;
-  border: 1px solid #fff6;
+  background: transparent;
+  border: 1px solid currentColor;
 }
 .playback[hidden] {
   display: none;
 }
 .playback:hover {
-  background: #0008;
+  background: #8882;
 }
 .playback:active {
-  background: #000b;
+  background: #8884;
 }
 .hero[data-motion='ready'] {
   height: 225svh;
@@ -135,10 +153,17 @@
   top: 0;
 }
 .hero[data-motion='ready'] .wordmark {
-  transform: translate(-50%, -50%) translateY(7.5svh) scale(0.37);
+  transform: translate(-50%, -50%) translate(-12vw, 4.5svh) scale(0.6);
   will-change: transform;
 }
 @media (max-width: 800px) {
+  .filmWindow {
+    clip-path: inset(15% 6% 23% 23%);
+  }
+  .editionNote {
+    top: calc(15% - 34px);
+    font-size: 10px;
+  }
   .bottom {
     bottom: 22px;
     gap: 15px;
@@ -152,9 +177,11 @@
     gap: 10px;
   }
   .explore {
-    bottom: 108px;
-    gap: 12px;
+    top: calc(77% + 4px);
+    bottom: auto;
+    gap: 6px;
     width: max-content;
+    padding: 4px 12px;
   }
   .playback {
     min-width: 44px;
@@ -167,10 +194,20 @@
     height: 195svh;
   }
   .hero[data-motion='ready'] .wordmark {
-    transform: translate(-50%, -50%) translateY(7.5svh) scale(0.71);
+    transform: translate(-50%, -50%) translateY(4.5svh) scale(0.72);
+  }
+}
+@media (max-width: 800px) and (max-height: 600px) {
+  .explore {
+    flex-direction: row;
+    gap: 12px;
+    min-height: 44px;
   }
 }
 @media (max-height: 520px) and (orientation: landscape) {
+  .editionNote {
+    visibility: hidden;
+  }
   .stage {
     min-height: 320px;
   }
@@ -178,7 +215,8 @@
     width: min(85vw, 130svh);
   }
   .explore {
-    bottom: 0;
+    top: auto;
+    bottom: 16px;
     gap: 6px;
   }
   .bottom {

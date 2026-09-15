@@ -33,11 +33,12 @@ export function animateHero(gsap: typeof Gsap) {
           {
             xPercent: -50,
             yPercent: -50,
-            x: 0,
-            y: () => stage.clientHeight * 0.075,
-            scale: context.conditions.mobile ? 0.71 : 0.37,
+            x: () =>
+              context.conditions?.mobile ? 0 : -stage.clientWidth * 0.12,
+            y: () => stage.clientHeight * 0.045,
+            scale: context.conditions.mobile ? 0.72 : 0.6,
           },
-          { y: 0, scale: 1, duration: 0.82, ease: 'power1.inOut' },
+          { x: 0, y: 0, scale: 1, duration: 0.82, ease: 'power1.inOut' },
           0,
         )
         .fromTo(
@@ -48,8 +49,22 @@ export function animateHero(gsap: typeof Gsap) {
         )
         .fromTo(
           hero.querySelector('[data-film-drift]'),
-          { scale: 1.065 },
-          { scale: 1, duration: 1, ease: 'none' },
+          { scale: 1 },
+          { scale: 1.04, duration: 1, ease: 'none' },
+          0,
+        )
+        .to(
+          hero.querySelector('[data-film-window]'),
+          {
+            clipPath: 'inset(0% 0% 0% 0%)',
+            duration: 0.82,
+            ease: 'power1.inOut',
+          },
+          0,
+        )
+        .to(
+          hero.querySelector('[data-film-note]'),
+          { autoAlpha: 0, duration: 0.2 },
           0,
         );
       return () => {
