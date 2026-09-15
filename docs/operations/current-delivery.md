@@ -95,6 +95,11 @@ expected output and cost; avoid repeating setup or a whole audit by default.
 
 ## Release verification
 
+The magazine website went live on `jukkai.fr` on 2026-09-15 from main commit
+`5ec5748`; [production delivery](production.md) owns the verified deployment
+settings and evidence. Android contact-file opening was confirmed by Martin;
+iPhone and physical printed-scan evidence remain tracked in #102/#103.
+
 Retain the current Astro, Bun, CI, fonts and static-image tooling. Work through
 branches and PRs. Production remains a deliberate promotion from integration
 `main` to the protected `production` release pointer on Cloudflare Pages.
