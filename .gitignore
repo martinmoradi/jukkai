@@ -20,6 +20,10 @@ apps/marketing/public/fonts/generated/
 # local website asset intake
 /website-asset-inbox/
 
+# replaceable local media shelf and temporary intake
+/media/library/
+/media/incoming/
+
 # env / secrets
 .env
 .env.*

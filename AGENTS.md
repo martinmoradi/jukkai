@@ -93,6 +93,10 @@ remove them when the convention changes.
 - `brand/` holds durable masters and is not the app's runtime asset directory.
   Commit the curated web export into `apps/marketing/src/assets/` and import it
   from there; a test holds the copy to its master.
+- Photographic originals and selected editable files live on Storage; follow
+  `media/README.md` and its catalog. `media/library/` is an ignored working shelf,
+  never a runtime/build dependency. Keep heavy masters out of Git, verify Storage
+  is mounted before writing, and preserve exact historical inputs of app exports.
 - Page-level styles belong in `src/styles/*.css` rather than an Astro `<style>`
   block, because Stylelint globs `src/**/*.css`. The magazine pages use CSS Modules;
   shared editorial resets and tokens live in `src/styles/editorial.css`.
