@@ -67,7 +67,8 @@ export function initPageTransition() {
             ],
             {
               duration: cover ? 560 : 760,
-              delay: index * 90,
+              // The lower band clears first, forming the reference's stepped edge.
+              delay: (cover ? index : bands.length - 1 - index) * 90,
               easing: EASING,
               fill: 'both',
             },
@@ -164,13 +165,22 @@ export function initPageTransition() {
     destination = url.href;
     root.dataset.pageTransition = 'cover';
     lock();
-    void wipe(true).then(navigate).catch(navigate);
+    try {
+      void wipe(true).then(navigate).catch(navigate);
+    } catch {
+      navigate();
+    }
   });
 
   window.addEventListener('pageshow', (event) => {
     if (event.persisted) {
       destination = undefined;
-      finish();
+      release();
+      if (reduced.matches) finish();
+      else {
+        root.dataset.pageTransition = 'reveal';
+        void reveal().catch(finish);
+      }
     }
   });
   reduced.addEventListener('change', () => {
@@ -178,5 +188,6 @@ export function initPageTransition() {
     finish();
     // Cancelling a cover resolves its animation promises and preserves the click.
   });
-  if (root.dataset.pageTransition) void reveal().catch(finish);
+  if (reduced.matches) finish();
+  else if (root.dataset.pageTransition) void reveal().catch(finish);
 }
