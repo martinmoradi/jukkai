@@ -1,7 +1,8 @@
 import { animateStudioTransition } from './studio-transition';
 
 const STORAGE_KEY = 'jukkai:curtain';
-const EASING = 'cubic-bezier(0.76, 0, 0.24, 1)';
+// A deliberate slow start, accelerating all the way offscreen.
+const EASING = 'cubic-bezier(0.55, 0, 1, 0.45)';
 
 /** Four horizontal bands bridge ordinary document loads; no client router. */
 export function initPageTransition() {
@@ -13,6 +14,9 @@ export function initPageTransition() {
   ];
   const identity = curtain.querySelector<HTMLElement>(
     '[data-identity-entrance]',
+  )!;
+  const content = curtain.querySelector<HTMLElement>(
+    '[data-transition-content]',
   )!;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const animations = new Set<Animation>();
@@ -66,9 +70,9 @@ export function initPageTransition() {
               { transform: `translateX(${cover ? '0%' : '101%'})` },
             ],
             {
-              duration: cover ? 560 : 760,
+              duration: cover ? 460 : 650,
               // The lower band clears first, forming the reference's stepped edge.
-              delay: (cover ? index : bands.length - 1 - index) * 90,
+              delay: (cover ? index : bands.length - 1 - index) * 50,
               easing: EASING,
               fill: 'both',
             },
@@ -83,14 +87,14 @@ export function initPageTransition() {
     lock();
     const assets = [
       ...document.querySelectorAll<HTMLImageElement>(
-        '[data-hero-frame][data-active] img, [data-identity-entrance] img',
+        '[data-hero-frame][data-active] img, [data-identity-entrance] img, [data-curtain-wordmark]',
       ),
     ].map((image) => image.decode().catch(() => undefined));
     const ready = Promise.allSettled([document.fonts.ready, ...assets]);
     // Let the identity tell its story while the first hero image/font decodes.
     const handover = intro
       ? Promise.all(animateStudioTransition(identity).map(track))
-      : Promise.resolve();
+      : new Promise((resolve) => setTimeout(resolve, 180));
     await Promise.all([
       handover,
       Promise.race([
@@ -99,17 +103,16 @@ export function initPageTransition() {
       ]),
     ]);
     if (!root.dataset.pageTransition) return;
-    if (intro) {
-      await track(
-        identity.animate([{ opacity: 1 }, { opacity: 0 }], {
-          duration: 180,
+    await Promise.all([
+      track(
+        content.animate([{ opacity: 1 }, { opacity: 0 }], {
+          duration: 220,
           fill: 'both',
-          easing: 'ease-in',
+          easing: EASING,
         }),
-      );
-    }
-    if (!root.dataset.pageTransition) return;
-    await wipe(false);
+      ),
+      wipe(false),
+    ]);
     finish();
   }
 
@@ -166,7 +169,19 @@ export function initPageTransition() {
     root.dataset.pageTransition = 'cover';
     lock();
     try {
-      void wipe(true).then(navigate).catch(navigate);
+      void Promise.all([
+        wipe(true),
+        track(
+          content.animate([{ opacity: 0 }, { opacity: 1 }], {
+            duration: 160,
+            delay: 490,
+            fill: 'both',
+            easing: 'ease-out',
+          }),
+        ),
+      ])
+        .then(navigate)
+        .catch(navigate);
     } catch {
       navigate();
     }

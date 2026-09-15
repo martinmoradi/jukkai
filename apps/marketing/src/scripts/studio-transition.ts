@@ -4,7 +4,7 @@ export function animateStudioTransition(entrance: HTMLElement) {
   const seal = entrance.querySelector('[data-old-seal]')!;
   const sphere = entrance.querySelector('[data-identity-sphere]')!;
   const options: KeyframeAnimationOptions = {
-    duration: 2200,
+    duration: 1600,
     fill: 'both',
     easing: 'ease-in-out',
   };

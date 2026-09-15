@@ -10,15 +10,16 @@ import styles from '#/styles/page-transition.module.css';
   <div class={styles.bands}>
     {[0, 1, 2, 3].map(() => <div class={styles.band} data-curtain-band />)}
   </div>
-  <div class={styles.identity} data-identity-entrance>
+  <div class={styles.identity} data-transition-content>
     <img
       class={styles.wordmark}
       src={wordmark.src}
       width='887'
       height='356'
       alt=''
+      data-curtain-wordmark
     />
-    <div class={styles.handover}>
+    <div class={styles.handover} data-identity-entrance>
       <img
         class={styles.studio}
         src={studioWordmark.src}
