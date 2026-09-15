@@ -153,17 +153,23 @@ const structuredData = {
     <script
       is:inline
       type='application/ld+json'
-      set:html={JSON.stringify(structuredData).replaceAll('<', '\\u003c')}
-    />
+      set:html={JSON.stringify(structuredData).replaceAll(
+        '<',
+        '\\u003c',
+      )}></script>
     <CloudflareAnalytics
       token={import.meta.env.PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN}
     />
   </head>
   <body>
     <PageTransition />
-    <a class='skip-link' href='#contenu'>Aller au contenu</a>
+    <a class='skip-link' href='#contenu'>
+      Aller au contenu
+    </a>
     <SiteHeader contact={contact} />
-    <main id='contenu' tabindex='-1'><slot /></main>
+    <main id='contenu' tabindex='-1'>
+      <slot />
+    </main>
     <SiteFooter />
     <script>
       import { initEditorialMotion } from '#/scripts/editorial-motion';

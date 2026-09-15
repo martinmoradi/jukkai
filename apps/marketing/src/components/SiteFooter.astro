@@ -17,20 +17,26 @@ import styles from '#/styles/chrome.module.css';
       />
     </a>
     <address>
-      <span>Jukkai by Crystelle Terrasson</span><br />
-      {CRYSTELLE.address.street}<br />
+      <span>Jukkai by Crystelle Terrasson</span>
+      <br />
+      {CRYSTELLE.address.street}
+      <br />
       {`${CRYSTELLE.address.postalCode} ${CRYSTELLE.address.locality}`}
     </address>
     <div class={styles.footerLinks}>
       <a href={`tel:${CRYSTELLE.phoneTel}`}>{CRYSTELLE.phoneDisplay}</a>
       <a href={`mailto:${CRYSTELLE.email}`}>{CRYSTELLE.email}</a>
-      <a href={CRYSTELLE.instagram.url}>Instagram <Arrow diagonal /></a>
+      <a href={CRYSTELLE.instagram.url}>
+        Instagram <Arrow diagonal />
+      </a>
     </div>
     <nav class={styles.footerLinks} aria-label='Navigation de bas de page'>
       <a href='/#galerie'>La Galerie</a>
       <a href='/#esprit'>Crystelle & Jukkai</a>
       <a href='/#architecture'>Architecture d’intérieur</a>
-      <a href='/contact/'>Contact <Arrow diagonal /></a>
+      <a href='/contact/'>
+        Contact <Arrow diagonal />
+      </a>
     </nav>
   </div>
   <div class={styles.colophon}>

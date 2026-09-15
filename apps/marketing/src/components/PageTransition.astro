@@ -8,7 +8,9 @@ import styles from '#/styles/page-transition.module.css';
 
 <div class={styles.transition} data-page-curtain aria-hidden='true'>
   <div class={styles.bands}>
-    {[0, 1, 2, 3].map(() => <div class={styles.band} data-curtain-band />)}
+    {[0, 1, 2, 3].map(() => (
+      <div class={styles.band} data-curtain-band />
+    ))}
   </div>
   <div class={styles.identity} data-transition-content>
     <img

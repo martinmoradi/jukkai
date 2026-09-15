@@ -24,13 +24,11 @@ const sections = [
     <img src={wordmark.src} width='120' height='48' alt='Jukkai' />
   </a>
   <nav class={styles.navigation} aria-label='Navigation principale'>
-    {
-      sections.map(({ href, label }) => (
-        <a class={styles.sectionLink} href={href} aria-label={label}>
-          <RollingLabel text={label} />
-        </a>
-      ))
-    }
+    {sections.map(({ href, label }) => (
+      <a class={styles.sectionLink} href={href} aria-label={label}>
+        <RollingLabel text={label} />
+      </a>
+    ))}
     <EditorialButton
       href='/contact/'
       label='Contact'

@@ -30,23 +30,23 @@ const appleMapsUrl = `https://maps.apple.com/?q=${encodeURIComponent(address)}`;
         <div class={styles.contactOptions}>
           <a href={`tel:${CRYSTELLE.phoneTel}`} class={styles.contactOption}>
             <span class='eyebrow'>Appeler Crystelle</span>
-            <span class={styles.contactValue}
-              >{CRYSTELLE.phoneDisplay} <Arrow diagonal /></span
-            >
+            <span class={styles.contactValue}>
+              {CRYSTELLE.phoneDisplay} <Arrow diagonal />
+            </span>
           </a>
           <a href={`mailto:${CRYSTELLE.email}`} class={styles.contactOption}>
             <span class='eyebrow'>Lui écrire</span>
-            <span class={styles.contactValue}
-              >{CRYSTELLE.email} <Arrow diagonal /></span
-            >
+            <span class={styles.contactValue}>
+              {CRYSTELLE.email} <Arrow diagonal />
+            </span>
           </a>
         </div>
         <div class={styles.visit}>
           <h2>Se retrouver à Châteaugiron</h2>
           <address>
-            {CRYSTELLE.address.street}<br />{
-              `${CRYSTELLE.address.postalCode} ${CRYSTELLE.address.locality}`
-            }
+            {CRYSTELLE.address.street}
+            <br />
+            {`${CRYSTELLE.address.postalCode} ${CRYSTELLE.address.locality}`}
           </address>
           <p>
             Le studio d’architecture d’intérieur vous reçoit déjà sur
@@ -57,14 +57,14 @@ const appleMapsUrl = `https://maps.apple.com/?q=${encodeURIComponent(address)}`;
             class='text-link'
             href={mapsUrl}
             data-maps-link
-            data-apple-maps-url={appleMapsUrl}
-            >Voir l’itinéraire <Arrow diagonal /></a
-          >
+            data-apple-maps-url={appleMapsUrl}>
+            Voir l’itinéraire <Arrow diagonal />
+          </a>
         </div>
         <div class={styles.otherLinks}>
-          <a href={CRYSTELLE.instagram.url}
-            >Retrouver Jukkai sur Instagram <Arrow diagonal /></a
-          >
+          <a href={CRYSTELLE.instagram.url}>
+            Retrouver Jukkai sur Instagram <Arrow diagonal />
+          </a>
         </div>
       </div>
       <figure class={styles.portrait}>
@@ -78,12 +78,13 @@ const appleMapsUrl = `https://maps.apple.com/?q=${encodeURIComponent(address)}`;
           fetchpriority='high'
         />
         <figcaption>
-          <span>Crystelle Terrasson</span><span
-            >Architecte d’intérieur · Fondatrice</span
-          >
+          <span>Crystelle Terrasson</span>
+          <span>Architecte d’intérieur · Fondatrice</span>
         </figcaption>
       </figure>
     </div>
-    <a class={styles.back} href='/'>← Retour à l’univers Jukkai</a>
+    <a class={styles.back} href='/'>
+      ← Retour à l’univers Jukkai
+    </a>
   </section>
 </EditorialLayout>

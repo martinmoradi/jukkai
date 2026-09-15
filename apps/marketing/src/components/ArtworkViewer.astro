@@ -12,21 +12,26 @@ import styles from '#/styles/artwork-viewer.module.css';
       class={styles.controls}
       role='group'
       aria-label='Agrandissement de l’image'>
-      <button type='button' data-zoom-out aria-label='Réduire l’image'>−</button
-      >
-      <output data-zoom-level aria-label='Niveau de zoom'>200 %</output>
-      <button type='button' data-zoom-in aria-label='Agrandir l’image'>+</button
-      >
-      <button class={styles.fit} type='button' data-zoom-fit>Vue entière</button
-      >
+      <button type='button' data-zoom-out aria-label='Réduire l’image'>
+        −
+      </button>
+      <output data-zoom-level aria-label='Niveau de zoom'>
+        200 %
+      </output>
+      <button type='button' data-zoom-in aria-label='Agrandir l’image'>
+        +
+      </button>
+      <button class={styles.fit} type='button' data-zoom-fit>
+        Vue entière
+      </button>
     </div>
     <button
       class={styles.close}
       type='button'
       data-art-close
-      aria-label='Fermer l’image'
-      >Fermer <span aria-hidden='true'>×</span></button
-    >
+      aria-label='Fermer l’image'>
+      Fermer <span aria-hidden='true'>×</span>
+    </button>
   </div>
   <div
     class={styles.viewport}
