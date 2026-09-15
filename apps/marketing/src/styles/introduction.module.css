@@ -2,6 +2,8 @@
 .introduction {
   position: relative;
   padding: clamp(88px, 10vw, 180px) var(--gutter) clamp(96px, 11vw, 180px);
+  /* Its own top padding clears the header without leaving a strip of hero above it. */
+  scroll-margin-top: calc(-1 * var(--anchor-offset));
   background: var(--paper);
 }
 .name {
