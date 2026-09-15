@@ -1,0 +1,28 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+import styles from '#/styles/voyage-heading.module.css';
+
+interface Props extends HTMLAttributes<'h2'> {
+  lines: string[];
+  align?: 'left' | 'center' | 'staggered';
+}
+const { lines, align = 'left', class: className, ...attributes } = Astro.props;
+---
+
+<h2
+  {...attributes}
+  class:list={[styles.heading, className]}
+  data-voyage-heading
+  data-align={align}>
+  <span class={styles.accessible}>{lines.join(' ')}</span>
+  <span aria-hidden='true'>
+    {
+      lines.map((line) => (
+        <span class={styles.line} data-voyage-line>
+          {line}
+        </span>
+      ))
+    }
+  </span>
+</h2>

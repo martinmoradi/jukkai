@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets';
+
+import rio from '#/assets/magazine/rio-chair.webp';
+import EditorialButton from '#/components/EditorialButton.astro';
+import VoyageHeading from '#/components/VoyageHeading.astro';
+import { CRYSTELLE } from '#/data/crystelle';
+import styles from '#/styles/landing.module.css';
+---
+
+<section class={styles.opening} id='ouverture' aria-labelledby='opening-title'>
+  <div class={styles.openingInner}>
+    <p class:list={['eyebrow', styles.openingLabel]}>
+      Bientôt, les portes s’ouvrent
+    </p>
+    <VoyageHeading
+      id='opening-title'
+      class={styles.openingTitle}
+      align='staggered'
+      lines={['La Galerie ouvre', 'en octobre 2026.']}
+    />
+    <div class={styles.openingBottom}>
+      <figure class={styles.rio}>
+        <div data-picture-parallax>
+          <Image
+            src={rio}
+            alt='Rio, le petit chien blanc, installé dans un fauteuil de velours noir près de la fenêtre.'
+            widths={[480, 800, 1200, 1400]}
+            sizes='(max-width: 800px) 75vw, 32vw'
+            width={1200}
+            loading='lazy'
+          />
+        </div>
+      </figure>
+      <div class={styles.invitation}>
+        <h3>On se retrouve<br />à Châteaugiron.</h3>
+        <address>
+          {CRYSTELLE.address.street}<br />
+          {`${CRYSTELLE.address.postalCode} ${CRYSTELLE.address.locality}`}
+        </address>
+        <p>
+          Le studio d’architecture intérieure vous reçoit déjà sur rendez-vous.
+        </p>
+        <EditorialButton
+          href='/contact/'
+          label='Contacter Crystelle'
+          tone='ivory'
+        />
+      </div>
+    </div>
+  </div>
+</section>

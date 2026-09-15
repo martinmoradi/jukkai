@@ -1,8 +1,11 @@
+@import './font-features.css';
+
 /* Edition-specific palette and hierarchy, not permanent brand rules. */
 :root {
   --paper: #f8f8f5;
   --paper-light: var(--paper);
-  --ink: #1b1c1a;
+  --ink: #1d1d1b;
+  --ivory: #eae2d2;
   --ink-soft: #555750;
   --line: #c8cac1;
   --accent: #c3422d;

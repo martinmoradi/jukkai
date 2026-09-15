@@ -1,12 +1,10 @@
 ---
-import Arrow from '#/components/Arrow.astro';
 import ArtworkHero from '#/components/ArtworkHero.astro';
 import ArtworkSequence from '#/components/ArtworkSequence.astro';
 import ArtworkViewer from '#/components/ArtworkViewer.astro';
 import Introduction from '#/components/Introduction.astro';
-import { CRYSTELLE } from '#/data/crystelle';
+import Opening from '#/components/Opening.astro';
 import EditorialLayout from '#/layouts/EditorialLayout.astro';
-import styles from '#/styles/landing.module.css';
 ---
 
 <EditorialLayout
@@ -16,28 +14,6 @@ import styles from '#/styles/landing.module.css';
   <Introduction />
   <ArtworkSequence />
 
-  <section
-    class={styles.opening}
-    id='ouverture'
-    aria-labelledby='opening-title'>
-    <div class={styles.openingInner}>
-      <h2 id='opening-title'>La Galerie ouvre<br />en octobre 2026.</h2>
-      <div class={styles.openingBottom}>
-        <address>
-          {CRYSTELLE.address.street}<br />
-          {`${CRYSTELLE.address.postalCode} ${CRYSTELLE.address.locality}`}
-        </address>
-        <div class={styles.invitation}>
-          <p>
-            Le studio d’architecture intérieure vous reçoit déjà sur
-            rendez-vous.
-          </p>
-          <a class={styles.contactButton} href='/contact/'
-            >Contacter Crystelle <Arrow diagonal /></a
-          >
-        </div>
-      </div>
-    </div>
-  </section>
+  <Opening />
   <ArtworkViewer />
 </EditorialLayout>

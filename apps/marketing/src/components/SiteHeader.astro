@@ -1,5 +1,6 @@
 ---
 import wordmark from '#/assets/magazine/jukkai-wordmark-primary-no-byline.svg';
+import EditorialButton from '#/components/EditorialButton.astro';
 import RollingLabel from '#/components/RollingLabel.astro';
 import styles from '#/styles/chrome.module.css';
 
@@ -30,12 +31,10 @@ const sections = [
         </a>
       ))
     }
-    <a
-      class={styles.contactLink}
+    <EditorialButton
       href='/contact/'
-      aria-label='Contact'
-      aria-current={contact ? 'page' : undefined}>
-      <RollingLabel text='Contact' />
-    </a>
+      label='Contact'
+      aria-current={contact ? 'page' : undefined}
+    />
   </nav>
 </header>

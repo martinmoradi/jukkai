@@ -13,7 +13,12 @@ export function initEditorialMotion() {
   }
   initArtworkViewer();
   initHeroSequence();
-  if (!document.querySelector('[data-art-sequence]')) return;
+  if (
+    !document.querySelector(
+      '[data-artwork-hero], [data-art-sequence], [data-voyage-heading], [data-picture-parallax]',
+    )
+  )
+    return;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const initialHash = location.hash;
   const followInitialHash = () => {
@@ -52,22 +57,22 @@ async function animateEditorial() {
     { ScrollTrigger },
     { animateHero },
     { animateArtworkSequence },
-    { animateIntroduction },
+    { animateVoyageHeadings },
     { animatePictureParallax },
   ] = await Promise.all([
     import('gsap'),
     import('gsap/ScrollTrigger'),
     import('./hero-motion'),
     import('./artwork-sequence'),
-    import('./introduction'),
+    import('./voyage-heading'),
     import('./picture-parallax'),
   ]);
   gsap.registerPlugin(ScrollTrigger);
   ScrollTrigger.config({ ignoreMobileResize: true });
   animateHero(gsap);
   await document.fonts.ready;
-  animateIntroduction(gsap);
   animateArtworkSequence(gsap);
+  animateVoyageHeadings(gsap);
   animatePictureParallax(gsap);
   ScrollTrigger.refresh();
   // Native fragments may have landed before enhancement changed section heights.

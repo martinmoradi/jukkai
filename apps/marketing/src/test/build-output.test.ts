@@ -88,7 +88,7 @@ describe('published site', () => {
     );
     expect(
       document.querySelector('a[href="https://www.studioterrasson.fr/"]'),
-    ).not.toBeNull();
+    ).toBeNull();
     expect(document.querySelector('main')?.textContent).not.toMatch(
       /anciennement|a remplacé/i,
     );
@@ -154,10 +154,7 @@ describe('published site', () => {
       expect(image.hasAttribute('src')).toBe(index === 0);
       expect(image.hasAttribute('srcset')).toBe(index === 0);
     }
-    expect(hero.querySelector('button')?.getAttribute('aria-label')).toBe(
-      'Mettre les images en pause',
-    );
-    expect(hero.querySelector('button')?.hasAttribute('hidden')).toBe(true);
+    expect(hero.querySelector('[data-hero-pause]')).toBeNull();
     expect(document.querySelectorAll('[data-spiral-art]')).toHaveLength(5);
     expect(
       document

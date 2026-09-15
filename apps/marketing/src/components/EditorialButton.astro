@@ -1,0 +1,23 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+import RollingLabel from '#/components/RollingLabel.astro';
+import styles from '#/styles/chrome.module.css';
+
+interface Props extends HTMLAttributes<'a'> {
+  label: string;
+  tone?: 'ink' | 'ivory';
+}
+const { label, tone = 'ink', class: className, ...attributes } = Astro.props;
+---
+
+<a
+  {...attributes}
+  class:list={[
+    styles.button,
+    tone === 'ivory' && styles.buttonIvory,
+    className,
+  ]}
+  aria-label={label}>
+  <RollingLabel text={label} />
+</a>

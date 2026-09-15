@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 
 import crystelle from '#/assets/magazine/crystelle-galerie.webp';
 import Arrow from '#/components/Arrow.astro';
+import VoyageHeading from '#/components/VoyageHeading.astro';
 import { GALERIE_IMAGES, HERO_ARTWORK, SPIRAL_ARTWORKS } from '#/data/galerie';
 import styles from '#/styles/artwork-sequence.module.css';
 
@@ -63,9 +64,12 @@ const scenes = [
   </div>
   <div class={styles.motionTrack} data-art-track>
     <div class={styles.stage} data-art-stage>
-      <h2 class={styles.invitationHeading} data-invitation-heading>
-        L’art de s’attacher.
-      </h2>
+      <VoyageHeading
+        class={styles.invitationHeading}
+        data-invitation-heading
+        align='center'
+        lines={['L’art de s’attacher.']}
+      />
       <p class={styles.invitation} data-spiral-invitation>
         <span class={styles.pour} aria-hidden='true'>Pour</span>
         <span class={styles.roll} data-roll>
@@ -185,9 +189,6 @@ const scenes = [
               partager ce plaisir avec ceux qui pousseront la porte.
             </p>
           </div>
-          <a class='text-link' href='https://www.studioterrasson.fr/'
-            >Voir les projets du studio <Arrow diagonal /></a
-          >
         </div>
       </section>
     </div>

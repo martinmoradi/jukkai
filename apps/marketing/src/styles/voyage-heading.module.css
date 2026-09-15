@@ -1,0 +1,33 @@
+.heading {
+  font-family: voyage, Georgia, serif;
+  font-size: var(--voyage-size, clamp(76px, 13.2vw, 224px));
+  font-weight: 400;
+  line-height: var(--voyage-leading, 0.96);
+  letter-spacing: -0.025em;
+}
+.line {
+  display: block;
+}
+.line + .line {
+  margin-top: 0.06em;
+}
+.heading[data-align='staggered'] .line + .line {
+  text-align: right;
+}
+.heading[data-align='center'] {
+  text-align: center;
+}
+.accessible {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+@media (max-width: 800px) {
+  .heading {
+    font-size: var(--voyage-size-mobile, 13vw);
+    line-height: 1;
+  }
+}

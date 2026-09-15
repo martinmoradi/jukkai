@@ -1,0 +1,9 @@
+/* Frama's named round-dot alternate applies only to these two font families. */
+@font-feature-values 'pangram-pangram-frama', 'pangram-pangram-frama-text' {
+  @styleset {
+    round-dots: 3;
+  }
+}
+:root {
+  font-variant-alternates: styleset(round-dots);
+}
