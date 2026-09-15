@@ -58,9 +58,7 @@ describe('published site', () => {
     expect(introduction.textContent).toContain('Crystelle Terrasson');
     expect(introduction.textContent).toContain('architecture');
     expect(introduction.textContent).toContain('galerie d’art');
-    expect(introduction.textContent).toContain(
-      'Le studio poursuit son activité.',
-    );
+    expect(introduction.textContent).toContain('Le studio continue.');
     expect(document.querySelector('#opening-title')?.textContent).toContain(
       'octobre 2026',
     );
