@@ -130,7 +130,7 @@ describe('published site', () => {
     expect(hero.querySelector('picture img')?.getAttribute('loading')).toBe(
       'eager',
     );
-    expect(hero.querySelector('button')?.textContent).toContain('Pause');
+    expect(hero.querySelector('button')).toBeNull();
     expect(document.querySelectorAll('[data-spiral-art]')).toHaveLength(5);
     expect(
       document
