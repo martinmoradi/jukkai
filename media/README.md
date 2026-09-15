@@ -23,6 +23,10 @@ paths are relative to this directory. Checksums identify file bytes, not visual
 similarity or approval. Project batches preserve received filenames and retouches;
 old-site recoveries remain separate from photographer-supplied images.
 
+The [September consolidation receipt](/mnt/storage/jukkai/records/migration-2026-09/REPORT.md)
+records the verified moves, deletions, remaining exceptions and measured space
+recovery. Its adjacent inventories preserve the original-to-current path mappings.
+
 ## Archive layout
 
 | Location under `/mnt/storage/jukkai/` | Contents                                                                                                                                                           |
