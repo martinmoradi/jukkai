@@ -54,11 +54,16 @@ describe('published site', () => {
   it('introduces the Galerie while preserving Studio Terrasson continuity', async () => {
     const page = new JSDOM(await published('index.html'));
     const document = page.window.document;
-    const introduction = document.querySelector('[data-origin]')!;
+    const introduction = document.querySelector('#esprit')!;
     expect(introduction.textContent).toContain('Crystelle Terrasson');
     expect(introduction.textContent).toContain('architecture');
-    expect(introduction.textContent).toContain('Galerie');
-    expect(introduction.textContent).toContain('octobre 2026');
+    expect(introduction.textContent).toContain('galerie d’art');
+    expect(introduction.textContent).toContain(
+      'Le studio poursuit son activité.',
+    );
+    expect(document.querySelector('#opening-title')?.textContent).toContain(
+      'octobre 2026',
+    );
     expect(
       document.querySelector('h1')?.textContent?.replace(/\s+/g, ' ').trim(),
     ).toBe(
@@ -70,8 +75,11 @@ describe('published site', () => {
     expect(document.querySelector('#esprit')?.textContent).toContain(
       'Studio Terrasson',
     );
+    expect(document.querySelector('#ouverture')?.textContent).toContain(
+      'vous reçoit déjà sur rendez-vous',
+    );
     expect(document.querySelector('#architecture')?.textContent).toContain(
-      'sans attendre octobre',
+      'Laura',
     );
     expect(
       document.querySelector('a[href="https://www.studioterrasson.fr/"]'),
