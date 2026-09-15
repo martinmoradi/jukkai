@@ -6,6 +6,8 @@ export default {
     '**/.turbo/**',
     '**/coverage/**',
     '**/node_modules/**',
+    'media/library/**',
+    'media/incoming/**',
   ],
   rules: {
     'alpha-value-notation': null,

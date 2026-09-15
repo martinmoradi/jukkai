@@ -22,6 +22,8 @@ export default tseslint.config(
       '.claude/**',
       '.agents/**',
       '.codex/**',
+      'media/library/**',
+      'media/incoming/**',
     ],
   },
 
