@@ -1,7 +1,6 @@
 ---
 import { getImage } from 'astro:assets';
 
-import sphere from '#/assets/jukkai-sphere.svg';
 import laPointe from '#/assets/magazine/hero/la-pointe-01.webp';
 import hopePainting from '#/assets/magazine/hero/m-hope-05.webp';
 import hopeBear from '#/assets/magazine/hero/m-hope-06.webp';
@@ -13,8 +12,6 @@ import bonnevilleOne from '#/assets/magazine/hero/yoann-bonneville-01.webp';
 import bonnevilleTwo from '#/assets/magazine/hero/yoann-bonneville-02.webp';
 import yoris from '#/assets/magazine/hero/yoris-01.webp';
 import wordmark from '#/assets/magazine/jukkai-wordmark-primary.svg';
-import studioSeal from '#/assets/magazine/studio-terrasson-seal.svg';
-import studioWordmark from '#/assets/magazine/studio-terrasson-wordmark.svg';
 import styles from '#/styles/artwork-hero.module.css';
 
 const artworks = [
@@ -92,23 +89,6 @@ const frames = await Promise.all(
         >Jukkai by Crystelle Terrasson — Architecture d’intérieur & Galerie</span
       >
     </h1>
-    <div class={styles.entrance} data-identity-entrance aria-hidden='true'>
-      <img
-        src={studioWordmark.src}
-        width='567'
-        height='227'
-        alt=''
-        data-old-wordmark
-      />
-      <img src={studioSeal.src} width='300' height='300' alt='' data-old-seal />
-      <img
-        src={sphere.src}
-        width='300'
-        height='300'
-        alt=''
-        data-identity-sphere
-      />
-    </div>
     <div class={styles.bottom}>
       <p class={styles.opening}>
         <span class={styles.activity}

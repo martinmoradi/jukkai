@@ -7,6 +7,7 @@ import sphere from '#/assets/jukkai-sphere.svg';
 import socialImage from '#/assets/magazine/crystelle-galerie.webp';
 import wordmark from '#/assets/magazine/jukkai-wordmark-primary.svg';
 import CloudflareAnalytics from '#/components/CloudflareAnalytics.astro';
+import PageTransition from '#/components/PageTransition.astro';
 import SiteFooter from '#/components/SiteFooter.astro';
 import SiteHeader from '#/components/SiteHeader.astro';
 import { CRYSTELLE, CRYSTELLE_FULL_NAME } from '#/data/crystelle';
@@ -100,6 +101,50 @@ const structuredData = {
     <link rel='icon' type='image/svg+xml' href={sphere.src} />
     <link rel='apple-touch-icon' href={touchIcon.src} />
     <link rel='stylesheet' href='/fonts/generated/fonts.css' />
+    <script is:inline>
+      // Set the curtain before first paint. Ordinary HTML stays visible without JS.
+      (() => {
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        let incoming = false;
+        try {
+          const pending = JSON.parse(sessionStorage.getItem('jukkai:curtain'));
+          sessionStorage.removeItem('jukkai:curtain');
+          incoming =
+            pending?.href === location.href &&
+            Date.now() - pending.time < 15000;
+        } catch {
+          /* Storage is optional; native navigation still works. */
+        }
+        const historyVisit =
+          performance.getEntriesByType('navigation')[0]?.type ===
+          'back_forward';
+        const mode =
+          incoming || historyVisit
+            ? 'reveal'
+            : location.pathname === '/' && !location.hash
+              ? 'intro'
+              : '';
+        if (!mode) return;
+        document.documentElement.dataset.pageTransition = mode;
+        // A failed module/image/font must never strand the visitor behind the curtain.
+        const watchdog = window.setTimeout(() => {
+          if (!document.documentElement.dataset.pageTransition) return;
+          delete document.documentElement.dataset.pageTransition;
+          document
+            .querySelectorAll('[data-transition-inert]')
+            .forEach((element) => {
+              element.removeAttribute('inert');
+              element.removeAttribute('data-transition-inert');
+            });
+          document.dispatchEvent(new Event('jukkai:transition-end'));
+        }, 6000);
+        document.addEventListener(
+          'jukkai:transition-end',
+          () => clearTimeout(watchdog),
+          { once: true },
+        );
+      })();
+    </script>
     <script
       is:inline
       type='application/ld+json'
@@ -110,13 +155,16 @@ const structuredData = {
     />
   </head>
   <body>
+    <PageTransition />
     <a class='skip-link' href='#contenu'>Aller au contenu</a>
     <SiteHeader contact={contact} />
     <main id='contenu' tabindex='-1'><slot /></main>
     <SiteFooter />
     <script>
       import { initEditorialMotion } from '#/scripts/editorial-motion';
+      import { initPageTransition } from '#/scripts/page-transition';
 
+      initPageTransition();
       initEditorialMotion();
     </script>
   </body>
