@@ -17,12 +17,10 @@ const { lines, align = 'left', class: className, ...attributes } = Astro.props;
   data-align={align}>
   <span class={styles.accessible}>{lines.join(' ')}</span>
   <span aria-hidden='true'>
-    {
-      lines.map((line) => (
-        <span class={styles.line} data-voyage-line>
-          {line}
-        </span>
-      ))
-    }
+    {lines.map((line) => (
+      <span class={styles.line} data-voyage-line>
+        {line}
+      </span>
+    ))}
   </span>
 </h2>

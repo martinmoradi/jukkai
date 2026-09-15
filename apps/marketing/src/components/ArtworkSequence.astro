@@ -49,11 +49,22 @@ const scenes = [
           loading='lazy'
         />
       </a>
-      <figcaption>{dogCaption}<Arrow diagonal /></figcaption>
+      <figcaption>
+        {dogCaption}
+        <Arrow diagonal />
+      </figcaption>
     </figure>
     <div class={styles.galleryCopy}>
-      <h2 id='sequence-title' class='eyebrow'>La Galerie</h2>
-      <p class={styles.line}>Des œuvres<br />avec lesquelles<br />vivre.</p>
+      <h2 id='sequence-title' class='eyebrow'>
+        La Galerie
+      </h2>
+      <p class={styles.line}>
+        Des œuvres
+        <br />
+        avec lesquelles
+        <br />
+        vivre.
+      </p>
       <p class={styles.offer}>
         Un lieu où flâner, le temps d’un café. Une peinture pour chez soi, une
         édition numérotée à offrir, une petite sculpture qui fait sourire.
@@ -71,80 +82,78 @@ const scenes = [
         lines={['L’art de s’attacher.']}
       />
       <p class={styles.invitation} data-spiral-invitation>
-        <span class={styles.pour} aria-hidden='true'>Pour</span>
+        <span class={styles.pour} aria-hidden='true'>
+          Pour
+        </span>
         <span class={styles.roll} data-roll>
-          <span class={styles.word} data-roll-word
-            ><span class={styles.pourRepeat}>Pour </span>chez soi.</span
-          >
-          <span class={styles.word} data-roll-word
-            ><span class={styles.pourRepeat}>Pour </span>quelqu’un.</span
-          >
-          <span class={styles.word} data-roll-word
-            ><span class={styles.pourRepeat}>Pour </span>le plaisir.</span
-          >
+          <span class={styles.word} data-roll-word>
+            <span class={styles.pourRepeat}>Pour </span>chez soi.
+          </span>
+          <span class={styles.word} data-roll-word>
+            <span class={styles.pourRepeat}>Pour </span>quelqu’un.
+          </span>
+          <span class={styles.word} data-roll-word>
+            <span class={styles.pourRepeat}>Pour </span>le plaisir.
+          </span>
         </span>
       </p>
       <div class={styles.scenes}>
-        {
-          scenes.map((scene) => (
-            <figure
-              class={styles.scene}
-              data-scene={scene.key}
-              data-scene-home={scene.key === 'home' || undefined}
-              data-scene-gift={scene.key === 'gift' || undefined}>
-              <a
-                class={styles.artwork}
-                href={scene.image.src}
-                data-artwork={`scene-${scene.key}`}
-                data-art-src={scene.image.src}
-                data-art-caption={scene.caption}
-                aria-label={`Explorer les détails : ${scene.caption}`}
-                aria-haspopup='dialog'>
-                <Image
-                  src={scene.image}
-                  alt={scene.alt}
-                  widths={[480, 800, 1200]}
-                  sizes={scene.sizes}
-                  width={scene.width}
-                  loading='lazy'
-                />
-              </a>
-              <figcaption>
-                {scene.caption}
-                <span aria-hidden='true'>↗</span>
-              </figcaption>
-            </figure>
-          ))
-        }
+        {scenes.map((scene) => (
+          <figure
+            class={styles.scene}
+            data-scene={scene.key}
+            data-scene-home={scene.key === 'home' || undefined}
+            data-scene-gift={scene.key === 'gift' || undefined}>
+            <a
+              class={styles.artwork}
+              href={scene.image.src}
+              data-artwork={`scene-${scene.key}`}
+              data-art-src={scene.image.src}
+              data-art-caption={scene.caption}
+              aria-label={`Explorer les détails : ${scene.caption}`}
+              aria-haspopup='dialog'>
+              <Image
+                src={scene.image}
+                alt={scene.alt}
+                widths={[480, 800, 1200]}
+                sizes={scene.sizes}
+                width={scene.width}
+                loading='lazy'
+              />
+            </a>
+            <figcaption>
+              {scene.caption}
+              <span aria-hidden='true'>↗</span>
+            </figcaption>
+          </figure>
+        ))}
       </div>
       <div class={styles.spiral} data-spiral>
-        {
-          SPIRAL_ARTWORKS.map((art, index) => (
-            <figure class={styles.orbit} data-spiral-orbit>
-              <a
-                class={styles.artwork}
-                href={art.image.src}
-                data-spiral-art
-                data-artwork={`spiral-${index}`}
-                data-art-src={art.image.src}
-                data-art-caption={art.caption}
-                aria-label={`Explorer les détails : ${art.caption}`}
-                aria-haspopup='dialog'>
-                <Image
-                  src={art.image}
-                  alt={art.alt}
-                  widths={[480, 800, 1200, 1600]}
-                  sizes='(max-width: 800px) 76vw, 40vw'
-                  width={1200}
-                  loading='lazy'
-                  quality={88}
-                  data-art-hero-image={index === 4 || undefined}
-                />
-              </a>
-              <figcaption>{art.caption}</figcaption>
-            </figure>
-          ))
-        }
+        {SPIRAL_ARTWORKS.map((art, index) => (
+          <figure class={styles.orbit} data-spiral-orbit>
+            <a
+              class={styles.artwork}
+              href={art.image.src}
+              data-spiral-art
+              data-artwork={`spiral-${index}`}
+              data-art-src={art.image.src}
+              data-art-caption={art.caption}
+              aria-label={`Explorer les détails : ${art.caption}`}
+              aria-haspopup='dialog'>
+              <Image
+                src={art.image}
+                alt={art.alt}
+                widths={[480, 800, 1200, 1600]}
+                sizes='(max-width: 800px) 76vw, 40vw'
+                width={1200}
+                loading='lazy'
+                quality={88}
+                data-art-hero-image={index === 4 || undefined}
+              />
+            </a>
+            <figcaption>{art.caption}</figcaption>
+          </figure>
+        ))}
       </div>
       <div class={styles.stackCredit} data-stack-credit>
         <a
@@ -153,9 +162,9 @@ const scenes = [
           data-art-src={HERO_ARTWORK.image.src}
           data-art-caption={HERO_ARTWORK.caption}
           data-art-alt={HERO_ARTWORK.alt}
-          aria-haspopup='dialog'
-          >Yoann Bonneville <span aria-hidden='true'>↗</span></a
-        >
+          aria-haspopup='dialog'>
+          Yoann Bonneville <span aria-hidden='true'>↗</span>
+        </a>
       </div>
       <section
         class={styles.story}
@@ -174,7 +183,10 @@ const scenes = [
           />
         </figure>
         <div class={styles.storyCopy} data-story-copy>
-          <h2 id='story-title'>Crystelle <br />Terrasson</h2>
+          <h2 id='story-title'>
+            Crystelle <br />
+            Terrasson
+          </h2>
           <p class={styles.profession}>Architecte d’intérieur</p>
           <div class={styles.biography}>
             <p id='architecture'>
@@ -192,7 +204,9 @@ const scenes = [
         </div>
       </section>
     </div>
-    <span class={styles.storyAnchor} data-story-anchor aria-hidden='true'
-    ></span>
+    <span
+      class={styles.storyAnchor}
+      data-story-anchor
+      aria-hidden='true'></span>
   </div>
 </section>

@@ -18,7 +18,6 @@ const { token } = Astro.props;
       is:inline
       defer
       src='https://static.cloudflareinsights.com/beacon.min.js'
-      data-cf-beacon={`{"token": "${token}"}`}
-    />
+      data-cf-beacon={`{"token": "${token}"}`}></script>
   )
 }

@@ -49,58 +49,59 @@ const frames = await Promise.all(
   <div class={styles.stage} data-film-stage>
     <div class={styles.filmWindow} data-film-window aria-hidden='true'>
       <div class={styles.filmDrift} data-film-drift>
-        {
-          frames.map((frame, index) => (
-            <div
-              class={styles.frame}
-              data-hero-frame
-              data-active={index === 0 ? '' : undefined}>
-              <img
-                src={index === 0 ? frame.src : undefined}
-                srcset={index === 0 ? frame.srcset : undefined}
-                data-src={frame.src}
-                data-srcset={frame.srcset}
-                sizes='(orientation: portrait) 110vh, 110vw'
-                width={frame.image.width}
-                height={frame.image.height}
-                alt=''
-                loading='eager'
-                fetchpriority={index === 0 ? 'high' : 'low'}
-                decoding='async'
-                style={{ 'object-position': frame.position }}
-              />
-            </div>
-          ))
-        }
+        {frames.map((frame, index) => (
+          <div
+            class={styles.frame}
+            data-hero-frame
+            data-active={index === 0 ? '' : undefined}>
+            <img
+              src={index === 0 ? frame.src : undefined}
+              srcset={index === 0 ? frame.srcset : undefined}
+              data-src={frame.src}
+              data-srcset={frame.srcset}
+              sizes='(orientation: portrait) 110vh, 110vw'
+              width={frame.image.width}
+              height={frame.image.height}
+              alt=''
+              loading='eager'
+              fetchpriority={index === 0 ? 'high' : 'low'}
+              decoding='async'
+              style={{ 'object-position': frame.position }}
+            />
+          </div>
+        ))}
       </div>
       <div class={styles.shade}></div>
     </div>
     <p class={styles.editionNote} data-film-note>
-      <span>Une galerie prend vie</span><span>au cœur du studio.</span>
+      <span>Une galerie prend vie</span>
+      <span>au cœur du studio.</span>
     </p>
     <h1
       id='hero-title'
       class={styles.wordmark}
       data-film-mark
       style={{ '--wordmark': `url("${wordmark.src}")` }}>
-      <span class={styles.wordmarkFace} data-film-face aria-hidden='true'
-      ></span>
-      <span class={styles.accessibleTitle}
-        >Jukkai by Crystelle Terrasson — Architecture d’intérieur & Galerie</span
-      >
+      <span
+        class={styles.wordmarkFace}
+        data-film-face
+        aria-hidden='true'></span>
+      <span class={styles.accessibleTitle}>
+        Jukkai by Crystelle Terrasson — Architecture d’intérieur & Galerie
+      </span>
     </h1>
     <div class={styles.bottom}>
       <p class={styles.opening}>
-        <span class={styles.activity}
-          >Galerie &amp; architecture d’intérieur</span
-        >
+        <span class={styles.activity}>
+          Galerie &amp; architecture d’intérieur
+        </span>
         <span>Châteaugiron, près de Rennes</span>
         <span>Ouverture de la Galerie · octobre 2026</span>
       </p>
     </div>
-    <a class={styles.explore} href='#esprit' data-film-cue
-      >Découvrir Jukkai <span aria-hidden='true'>↓</span></a
-    >
+    <a class={styles.explore} href='#esprit' data-film-cue>
+      Découvrir Jukkai <span aria-hidden='true'>↓</span>
+    </a>
   </div>
   <script is:inline>
     if (matchMedia('(prefers-reduced-motion: no-preference)').matches) {
