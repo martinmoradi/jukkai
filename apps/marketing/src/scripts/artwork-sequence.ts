@@ -109,8 +109,9 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
         scrollTrigger: {
           id: 'artwork-spiral',
           trigger: track,
-          start: () => `top ${window.innerHeight - sceneHeight()}`,
-          end: () => `+=${window.innerHeight * (mobile ? 2.4 : 2.8)}`,
+          start: 'top 70%',
+          end: () =>
+            `+=${window.innerHeight * (mobile ? 3.1 : 3.5) - (window.innerHeight - sceneHeight())}`,
           onRefreshInit: measure,
           scrub: true,
           invalidateOnRefresh: true,
