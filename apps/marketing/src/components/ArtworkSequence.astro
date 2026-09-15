@@ -8,7 +8,12 @@ import styles from '#/styles/artwork-sequence.module.css';
 
 const [, objects, dogs, bears] = GALERIE_IMAGES;
 const scenes = [
-  { ...dogs, key: 'home', sizes: '(max-width: 800px) 72vw, 36vw', width: 1200 },
+  {
+    ...bears,
+    key: 'home',
+    sizes: '(max-width: 800px) 72vw, 36vw',
+    width: 1200,
+  },
   {
     ...objects,
     key: 'gift',
@@ -27,22 +32,22 @@ const scenes = [
     <figure class={styles.galleryFigure}>
       <a
         class={styles.artwork}
-        href={bears.image.src}
+        href={dogs.image.src}
         data-artwork='scene-1'
-        data-art-src={bears.image.src}
-        data-art-caption={bears.caption}
-        aria-label={`Explorer les détails : ${bears.caption}`}
+        data-art-src={dogs.image.src}
+        data-art-caption={dogs.caption}
+        aria-label={`Explorer les détails : ${dogs.caption}`}
         aria-haspopup='dialog'>
         <Image
-          src={bears.image}
-          alt={bears.alt}
+          src={dogs.image}
+          alt={dogs.alt}
           widths={[640, 960, 1440]}
           sizes='(max-width: 800px) 100vw, 54vw'
           width={1440}
           loading='lazy'
         />
       </a>
-      <figcaption>{bears.caption}<Arrow diagonal /></figcaption>
+      <figcaption>{dogs.caption}<Arrow diagonal /></figcaption>
     </figure>
     <div class={styles.galleryCopy}>
       <h2 id='sequence-title' class='eyebrow'>La Galerie</h2>

@@ -2,7 +2,7 @@
 
 **Status:** editorial proof 0.1 for Martin's review; local, not promoted to production.
 **Owns:** this edition's two-page implementation and review procedure.
-**Last reviewed:** 2026-09-15, for the Voyage editorial introduction, one-time letter entrance and revised Galerie composition. The compact identity entrance and Home/Contact transitions remain in place.
+**Last reviewed:** 2026-09-15, for the spaced Voyage introduction, offset Hatton story, Ouverture photograph and Galerie image swap. The one-time letter entrance, compact identity entrance and Home/Contact transitions remain in place.
 **Revisit when:** Martin reviews the composition, the artwork edit changes, the opening happens, or the full website replaces this edition.
 
 ## Purpose and authority
@@ -39,10 +39,19 @@ the arrival of the Galerie. The letters enter once on scroll, inspired by the
 “Origin Objects” entrance on [The Obsidian Assembly](https://obsidianassembly.com/),
 with Martin's subsequent “Explore Places” captures clarifying the scattered
 letter arrivals, enlarged blurred starting forms and downward settling motion.
-The following Galerie introduction pairs the supplied bears photograph with its
+The following Galerie introduction pairs the supplied dog photograph with its
 invitation copy. This replaces the earlier requirement to assemble both wordmarks
 in the introduction. The Studio wordmark remains in the separate identity entrance.
 Copy, composition and motion are a local proposal awaiting Martin's visual review.
+
+Martin accepted the revised letter entrance and requested more space beneath the
+Voyage heading, a photograph from the two Ouverture edits, and a Hatton story with
+offset paragraphs like the reference's “Places and Items” passage. This local
+iteration selects the tighter Ouverture crop, separates the career and new-name
+sentences into two Hatton blocks, and steps the second block to the right. The
+photograph sits under the first passage. The dogs and bears swap positions between
+the Galerie introduction and the later “chez soi.” scene. These refinements remain
+subject to Martin's visual review.
 
 ## Page and factual boundaries
 
@@ -66,8 +75,9 @@ Copy, composition and motion are a local proposal awaiting Martin's visual revie
 
 All motion follows native vertical scrolling. No scroll interception or
 smooth-scroll library is used. The existing generated fonts remain in use:
-Voyage 400 for the large name interpretation, Frama for statements, Hatton for the
-Galerie heading and the rolling invitation, and Frama Text for reading copy. The introduction sits on paper white, the Galerie on ivory,
+Voyage 400 for the large name interpretation, Hatton 300 for the offset career/name
+statements, Galerie heading and rolling invitation, and Frama Text for reading copy.
+The introduction sits on paper white, the Galerie on ivory,
 the closing on muted green. These are edition-specific composition choices.
 
 | Chapter           | Composition and motion                                                                                                                                                                                                                                                                                                                                                                   |
@@ -76,8 +86,8 @@ the closing on muted green. These are edition-specific composition choices.
 | Identity entrance | A compact group centres the complete Jukkai wordmark in the viewport, with the supplied Studio wordmark → rotating C seal → sphere above and “Un nouveau chapitre s’ouvre” in Voyage below. Four horizontal bands accelerate to the right, bottom first, before artwork playback begins. About 2.4 seconds plus initial script loading; deep links and reduced motion skip the identity. |
 | Hero exit         | The artwork expansion completes and the hero scrolls out naturally. There is no circle wipe, transferred wordmark or additional exit pin.                                                                                                                                                                                                                                                |
 | Introduction      | “Délivrer ce que le cœur gardait.” spans two large Voyage lines. Displaced, enlarged and skewed letters settle once, with scattered arrivals and blur clearing. The name reference is explicitly an editorial interpretation. The career, founding year and name-change explanation follow in ordinary flow.                                                                             |
-| Galerie           | One large photograph of the two bears sits beside “Des œuvres avec lesquelles vivre.” and the café/selection copy. It stays still and retains the artwork viewer. On phones, image and text stack in reading order.                                                                                                                                                                      |
-| Invitation        | Inside the spiral stage, “Pour” holds while the last word rolls: “chez soi.” beside the dog scene, “quelqu’un.” beside the sculptural still life, then “le plaisir.” alone at the centre. Scenes pass through horizontally; the line re-centres on each word.                                                                                                                            |
+| Galerie           | One large photograph of the two dog sculptures and real dog sits beside “Des œuvres avec lesquelles vivre.” and the café/selection copy. It stays still and retains the artwork viewer. On phones, image and text stack in reading order.                                                                                                                                                |
+| Invitation        | Inside the spiral stage, “Pour” holds while the last word rolls: “chez soi.” beside the bears, “quelqu’un.” beside the sculptural still life, then “le plaisir.” alone at the centre. Scenes pass through horizontally; the line re-centres on each word.                                                                                                                                |
 | Spiral            | The paintings orbit in around “Pour le plaisir.”, which recedes under the arriving stack and leaves only once covered. The original opposing parent/child rotations keep each work upright. Bonneville closes the stack and remains available in the artwork viewer at its resting point.                                                                                                |
 | Crystelle         | The painting moves into its real position in the supplied portrait. Biography covers the work with Laura and the personal artistic story; the career/founding timeline and name interpretation now live in the introduction. The mobile story remains fully readable.                                                                                                                    |
 | Closing           | A concise opening statement, shared address, current architecture appointments and contact action, followed by the existing useful footer.                                                                                                                                                                                                                                               |
@@ -96,6 +106,12 @@ letter boxes are removed. A revealed flag survives
 motion-preference changes, so returning to the phrase never replays it. Direct
 fragment/history arrivals already in view read immediately. Reduced motion and
 failed enhancement retain the unsplit, visible heading.
+
+The passage after the heading leaves 14vw of breathing room, bounded between
+132px and 232px (96px on phones). Its twelve-column layout offsets the second
+Hatton statement and body copy to the right of Ouverture. The photograph retains
+its source crop and opens in the detail viewer. On phones, a smaller indentation
+keeps the text comfortable to read and the photograph follows at full width.
 
 The artwork stage's timeline now starts with about 185svh of rolling
 invitation (165svh on phones) before the existing orbit, stack and portrait travel;
@@ -255,7 +271,15 @@ hidden until their turn. A desktop measurement across the return to ordinary
 text found less than 0.1px of horizontal shift per character in the first line.
 Desktop and phone checks cover settled typography, no replay on returning,
 independent line arrivals and switching to reduced motion during the entrance.
-The relocated bears image opens its detail viewer. Earlier reduced-motion and
+The scene images open their detail viewers. Earlier reduced-motion and
 blocked-enhancement checks retain readable copy and working contact links.
 `bun run check` (55 marketing tests plus the root checks) and the marketing
 production build pass under the repository's Bun 1.3.14 toolchain.
+
+The Hatton/Ouverture refinement is recorded in
+`.browser-evidence/editorial-composition-0915/`. Review covers 1440px desktop,
+390px and 320px phone layouts, the 202px desktop pause beneath the heading,
+reduced-motion reading, and the Ouverture/dog detail viewers. Ouverture's complete
+2000px web input is available through “Vue entière”; its source checksum matches
+the catalog. The dogs appear in the Galerie introduction and the bears in the
+rolling invitation. The letter-animation implementation is unchanged in this pass.

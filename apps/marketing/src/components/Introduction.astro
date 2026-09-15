@@ -1,5 +1,11 @@
 ---
+import { Image } from 'astro:assets';
+
+import ouverture from '#/assets/magazine/ouverture.webp';
+import Arrow from '#/components/Arrow.astro';
 import styles from '#/styles/introduction.module.css';
+
+const caption = 'Peintures et sculptures réunies pour Jukkai';
 ---
 
 <section
@@ -21,9 +27,11 @@ import styles from '#/styles/introduction.module.css';
   </h2>
   <div class={styles.story}>
     <p class={styles.chapter}>Un nouveau chapitre</p>
-    <div class={styles.copy}>
-      <p class={styles.lead}>
-        Depuis trente ans, Crystelle Terrasson imagine des intérieurs.
+    <p class={styles.lead}>
+      Depuis trente ans, Crystelle Terrasson imagine des intérieurs.
+    </p>
+    <div class={styles.continuation}>
+      <p class={styles.turn}>
         Aujourd’hui, le Studio Terrasson devient Jukkai.
       </p>
       <p class={styles.detail}>
@@ -33,5 +41,24 @@ import styles from '#/styles/introduction.module.css';
         œuvres qui la touchent.
       </p>
     </div>
+    <figure class={styles.photograph}>
+      <a
+        href={ouverture.src}
+        data-artwork='introduction-ouverture'
+        data-art-src={ouverture.src}
+        data-art-caption={caption}
+        aria-label={`Explorer les détails : ${caption}`}
+        aria-haspopup='dialog'>
+        <Image
+          src={ouverture}
+          alt='Peintures colorées, grande toile bleue et figurines réunies autour d’un chevalet, près d’une fenêtre.'
+          widths={[480, 800, 1200, 1600]}
+          sizes='(max-width: 800px) calc(100vw - 40px), 40vw'
+          width={1600}
+          loading='lazy'
+        />
+      </a>
+      <figcaption>{caption}<Arrow diagonal /></figcaption>
+    </figure>
   </div>
 </section>
