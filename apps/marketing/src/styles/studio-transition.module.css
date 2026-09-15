@@ -1,200 +1,52 @@
 .origin {
-  padding: 110px var(--gutter) 70px;
-  background: var(--paper);
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(50px, 8vw, 150px);
+  align-items: start;
+  max-width: 1680px;
+  padding: clamp(100px, 12vw, 190px) var(--gutter);
+  margin-inline: auto;
 }
-.heading {
-  padding-bottom: 90px;
-}
-.heading > p {
-  margin-bottom: 45px;
-}
-.heading h2 {
+.origin h2 {
   font-family: var(--display);
-  font-size: clamp(56px, 6.7vw, 112px);
+  font-size: clamp(48px, 5.3vw, 86px);
   font-weight: 400;
   line-height: 1.08;
   letter-spacing: -0.045em;
 }
-.heading h2 em {
+.origin h2 em {
   font-family: var(--serif);
   font-style: normal;
   font-weight: 500;
-  letter-spacing: -0.03em;
 }
-.journey {
-  display: grid;
-  grid-template-columns: 43% 1fr;
-  gap: 10%;
-  align-items: start;
+.copy {
+  max-width: 560px;
+  padding-top: 8px;
 }
-.identity {
-  padding-top: 25px;
+.copy p {
+  font-size: clamp(18px, 1.4vw, 22px);
+  line-height: 1.65;
 }
-.identityFrame {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 35px;
-  align-items: center;
-  justify-content: center;
-  min-height: 340px;
-}
-.oldWordmark {
-  width: 90%;
-}
-.newWordmark {
-  width: 86%;
-}
-.oldSeal,
-.sphere {
-  display: none;
-}
-.identityArrow {
-  font-size: 32px;
-  color: var(--accent);
-}
-.identityCaption {
-  margin-top: 25px;
-  font-size: 14px;
-  color: var(--ink-soft);
-  text-align: center;
-}
-.chapters {
-  min-width: 0;
-}
-.chapter {
-  padding: 20px 0 100px;
-}
-.chapter h3 {
-  margin-bottom: 28px;
-  font-family: var(--display);
-  font-size: clamp(32px, 3vw, 50px);
-  font-weight: 400;
-  line-height: 1.16;
-  letter-spacing: -0.03em;
-}
-.chapter h3 em {
-  font-family: var(--serif);
-  font-size: 1.3em;
-  font-style: normal;
-  font-weight: 500;
-}
-.chapter > p {
-  max-width: 480px;
-  font-size: 21px;
-  line-height: 1.7;
-}
-.next {
-  display: inline-flex;
-  gap: 35px;
-  align-items: center;
-  min-height: 44px;
-  margin-top: 26px;
-  font-size: 16px;
-  border-bottom: 1px solid var(--ink);
-}
-.next:hover {
-  color: var(--accent);
-}
-.origin[data-motion='ready'] .identity {
-  position: sticky;
-  top: calc(var(--header-height) + 9svh);
-}
-.origin[data-motion='ready'] .identityFrame {
-  height: 45svh;
-}
-.origin[data-motion='ready'] .identityFrame img {
-  position: absolute;
-}
-.origin[data-motion='ready'] .oldSeal,
-.origin[data-motion='ready'] .sphere {
-  display: block;
-  width: 100px;
-  opacity: 0;
-}
-.origin[data-motion='ready'] .newWordmark {
-  opacity: 0;
-}
-.origin[data-motion='ready'] .identityArrow {
-  display: none;
-}
-.origin[data-motion='ready'] .chapter {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-  min-height: 64svh;
-  padding-block: 65px;
-}
-@media (max-width: 1100px) {
-  .journey {
-    grid-template-columns: 40% 1fr;
-    gap: 8%;
-  }
-  .chapter > p {
-    font-size: 19px;
-  }
+.copy .lead {
+  margin-bottom: 32px;
+  font-size: clamp(23px, 1.9vw, 30px);
+  line-height: 1.45;
+  letter-spacing: -0.015em;
 }
 @media (max-width: 800px) {
   .origin {
-    padding-top: 65px;
-    padding-bottom: 30px;
+    grid-template-columns: 1fr;
+    gap: 38px;
+    padding-block: 86px 100px;
   }
-  .heading {
-    padding-bottom: 38px;
+  .origin h2 {
+    font-size: clamp(40px, 7.8vw, 64px);
   }
-  .heading > p {
-    margin-bottom: 30px;
-    font-size: 12px;
+  .copy {
+    padding: 0;
   }
-  .heading h2 {
-    font-size: clamp(38px, 7.5vw, 64px);
-    line-height: 1.15;
-  }
-  .journey {
-    display: block;
-  }
-  .identity {
-    padding: 0 15px 28px;
-  }
-  .identityFrame {
-    min-height: 0;
-  }
-  .oldWordmark,
-  .newWordmark {
-    width: min(75%, 320px);
-  }
-  .identityCaption {
-    font-size: 12px;
-  }
-  .chapter {
-    padding: 35px 0;
-  }
-  .chapter h3 {
-    margin-bottom: 20px;
-    font-size: clamp(30px, 5.5vw, 42px);
-  }
-  .chapter > p {
-    font-size: 18px;
-    line-height: 1.65;
-  }
-  .origin[data-motion='ready'] .identity {
-    top: var(--header-height);
-    z-index: 2;
-    padding: 12px 15px 18px;
-    background: var(--paper);
-  }
-  .origin[data-motion='ready'] .identityFrame {
-    height: 20svh;
-  }
-  .origin[data-motion='ready'] .identityCaption {
-    margin-top: 0;
-  }
-  .origin[data-motion='ready'] .chapter {
-    min-height: 64svh;
-    padding-block: 36px;
-  }
-  .origin[data-motion='ready'] .chapter:last-child {
-    padding-bottom: 90px;
+  .copy .lead {
+    margin-bottom: 24px;
+    font-size: 23px;
   }
 }

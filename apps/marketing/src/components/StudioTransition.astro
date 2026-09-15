@@ -1,87 +1,18 @@
 ---
-import sphere from '#/assets/jukkai-sphere.svg';
-import wordmark from '#/assets/magazine/jukkai-wordmark-primary.svg';
-import studioSeal from '#/assets/magazine/studio-terrasson-seal.svg';
-import studioWordmark from '#/assets/magazine/studio-terrasson-wordmark.svg';
 import styles from '#/styles/studio-transition.module.css';
 ---
 
-<section
-  class={styles.origin}
-  id='esprit'
-  aria-labelledby='origin-title'
-  data-origin>
-  <div class={styles.heading}>
-    <p class='eyebrow'>De Studio Terrasson à Jukkai</p>
-    <h2 id='origin-title'>Le même regard.<br /><em>Un nouvel horizon.</em></h2>
-  </div>
-  <div class={styles.journey} data-origin-journey>
-    <div class={styles.identity} data-identity>
-      <div class={styles.identityFrame} aria-hidden='true'>
-        <img
-          class={styles.oldWordmark}
-          data-old-wordmark
-          src={studioWordmark.src}
-          alt=''
-          width='567'
-          height='227'
-        />
-        <span class={styles.identityArrow}>↓</span>
-        <img
-          class={styles.oldSeal}
-          data-old-seal
-          src={studioSeal.src}
-          alt=''
-          width='300'
-          height='300'
-        />
-        <img
-          class={styles.sphere}
-          data-identity-sphere
-          src={sphere.src}
-          alt=''
-          width='300'
-          height='300'
-        />
-        <img
-          class={styles.newWordmark}
-          data-new-wordmark
-          src={wordmark.src}
-          alt=''
-          width='887'
-          height='356'
-        />
-      </div>
-      <p class={styles.identityCaption}>Une histoire qui se poursuit.</p>
-    </div>
-    <div class={styles.chapters}>
-      <div class={styles.chapter} data-origin-chapter>
-        <h3>L’architecture d’intérieur,<br />toujours.</h3>
-        <p>
-          Depuis 2012, Studio Crystelle Terrasson imagine des lieux à vivre.
-          Avec Jukkai, cette histoire se poursuit : la même attention aux
-          espaces, aux matières et à la lumière.
-        </p>
-      </div>
-      <div class={styles.chapter} data-origin-chapter>
-        <h3>Et maintenant,<br /><em>l’art.</em></h3>
-        <p>
-          Une nouvelle Galerie vient enrichir le studio. Des peintures, des
-          sculptures, des œuvres choisies par Crystelle pour leur présence et
-          l’émotion qu’elles font naître.
-        </p>
-      </div>
-      <div class={styles.chapter} data-origin-chapter>
-        <h3>Un studio. Une Galerie.<br />Un même lieu.</h3>
-        <p>
-          À Châteaugiron, près de Rennes, Jukkai réunit ces deux univers.
-          L’architecture d’intérieur se poursuit, l’art prend sa place.
-          L’ouverture officielle de Jukkai est prévue en octobre 2026.
-        </p>
-        <a class={styles.next} href='#galerie'
-          >Entrer dans la Galerie <span aria-hidden='true'>↓</span></a
-        >
-      </div>
-    </div>
+<section class={styles.origin} id='esprit' aria-labelledby='origin-title'>
+  <h2 id='origin-title'>Studio Terrasson<br />devient <em>Jukkai.</em></h2>
+  <div class={styles.copy}>
+    <p class={styles.lead}>
+      À Châteaugiron, Jukkai réunit le studio d’architecture intérieure de
+      Crystelle Terrasson et une nouvelle galerie d’art.
+    </p>
+    <p>
+      Le studio poursuit son activité. À ses côtés, Crystelle imagine une
+      galerie vivante : des œuvres à découvrir, un lieu où flâner, le temps
+      d’une discussion autour d’un café.
+    </p>
   </div>
 </section>

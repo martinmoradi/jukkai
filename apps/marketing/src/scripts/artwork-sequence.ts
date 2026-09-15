@@ -14,6 +14,7 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
     (context) => {
       if (!context.conditions?.motion) return;
       const mobile = Boolean(context.conditions.mobile);
+      const track = sequence.querySelector<HTMLElement>('[data-art-track]')!;
       const stage = sequence.querySelector<HTMLElement>('[data-art-stage]')!;
       const spiral = sequence.querySelector<HTMLElement>('[data-spiral]')!;
       const orbits = [
@@ -22,7 +23,6 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
       const artworks = [
         ...sequence.querySelectorAll<HTMLElement>('[data-spiral-art]'),
       ];
-      const intro = sequence.querySelector<HTMLElement>('[data-spiral-intro]')!;
       const credit = sequence.querySelector<HTMLElement>(
         '[data-stack-credit]',
       )!;
@@ -47,10 +47,26 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
       marker.id = 'crystelle';
       architectureMarker.id = 'architecture';
       marker.append(architectureMarker);
+      const sceneHeight = () =>
+        window.innerHeight -
+        parseFloat(
+          getComputedStyle(document.documentElement).getPropertyValue(
+            '--header-height',
+          ),
+        );
+      const measure = () => {
+        sequence.style.setProperty('--scene-height', `${sceneHeight()}px`);
+        sequence.style.setProperty('--story-height', `${stage.offsetHeight}px`);
+        sequence.style.setProperty(
+          '--motion-distance',
+          `${window.innerHeight * (mobile ? 2.4 : 2.8)}px`,
+        );
+      };
+      measure();
       const angle = 360 / artworks.length;
       const radius = () =>
         mobile
-          ? Math.max(stage.clientWidth * 0.8, stage.clientHeight * 0.52)
+          ? Math.max(stage.clientWidth * 0.8, sceneHeight() * 0.52)
           : stage.clientWidth * 0.6;
       const photoBox = () => {
         const p = photo.getBoundingClientRect();
@@ -64,12 +80,12 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
       };
       const middleSize = () =>
         mobile
-          ? Math.min(stage.clientWidth * 0.62, stage.clientHeight * 0.34)
-          : Math.min(stage.clientWidth * 0.35, stage.clientHeight * 0.62);
+          ? Math.min(stage.clientWidth * 0.62, sceneHeight() * 0.34)
+          : Math.min(stage.clientWidth * 0.35, sceneHeight() * 0.62);
       const middleY = () =>
         mobile
           ? photoBox().y + photoBox().h + 24 + middleSize() / 2
-          : stage.clientHeight * 0.5;
+          : sceneHeight() * 0.5;
       // The painting really occupies this region of the supplied 4:3 photograph.
       // Retain the existing dissolve across different source lighting/perspective.
       const destination = () => {
@@ -92,9 +108,10 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
         defaults: { ease: 'none' },
         scrollTrigger: {
           id: 'artwork-spiral',
-          trigger: sequence,
-          start: 'top 70%',
-          end: 'bottom bottom',
+          trigger: track,
+          start: () => `top ${window.innerHeight - sceneHeight()}`,
+          end: () => `+=${window.innerHeight * (mobile ? 2.4 : 2.8)}`,
+          onRefreshInit: measure,
           scrub: true,
           invalidateOnRefresh: true,
           onUpdate: (self) => {
@@ -134,16 +151,6 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
           { opacity: 1, duration: 0.025, stagger: 0.035 },
           0,
         )
-        .to(
-          intro,
-          {
-            clipPath: 'inset(0 0 100% 0)',
-            duration: 0.16,
-            ease: 'power1.inOut',
-          },
-          0.23,
-        )
-        .set(intro, { autoAlpha: 0 }, 0.39)
         .to(credit, { autoAlpha: 1, duration: 0.04 }, 0.57)
         .to(orbits.slice(0, -1), { autoAlpha: 0, duration: 0.05 }, 0.66)
         .to(credit, { autoAlpha: 0, duration: 0.05 }, 0.7)
@@ -162,7 +169,7 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
             x: () =>
               stage.clientWidth * (mobile ? 0.5 : 0.77) -
               stage.clientWidth * 0.5,
-            y: () => middleY() - stage.clientHeight * 0.5,
+            y: () => middleY() - sceneHeight() * 0.5,
             scale: () => middleSize() / spiral.offsetWidth,
             duration: 0.13,
             ease: 'power1.inOut',
@@ -173,7 +180,7 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
           spiral,
           {
             x: () => destination().x - stage.clientWidth * 0.5,
-            y: () => destination().y - stage.clientHeight * 0.5,
+            y: () => destination().y - sceneHeight() * 0.5,
             scale: () => destination().scale,
             duration: 0.15,
             ease: 'power1.inOut',
@@ -191,6 +198,9 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
 
       return () => {
         sequence.removeAttribute('data-motion');
+        ['--scene-height', '--story-height', '--motion-distance'].forEach(
+          (property) => sequence.style.removeProperty(property),
+        );
         orbits.forEach((orbit) => {
           orbit.inert = false;
         });

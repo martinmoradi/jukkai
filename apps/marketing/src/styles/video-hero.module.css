@@ -21,7 +21,7 @@
   top: 23%;
   left: var(--gutter);
   margin: 0;
-  font-size: 13px;
+  font-size: clamp(15px, 1.25vw, 20px);
   line-height: 1.5;
   color: white;
   mix-blend-mode: difference;
@@ -63,10 +63,40 @@
   width: min(91vw, 172svh);
   aspect-ratio: 887 / 356;
   pointer-events: none;
-  background: white;
   mix-blend-mode: difference;
-  mask: var(--wordmark) center / contain no-repeat;
   transform: translate(-50%, -50%) scale(0.76);
+}
+.wordmarkFace {
+  position: absolute;
+  inset: 0;
+  display: block;
+  background: white;
+  mask: var(--wordmark) center / contain no-repeat;
+}
+.entrance {
+  position: absolute;
+  top: 54.5%;
+  left: 38%;
+  visibility: hidden;
+  width: min(44vw, 650px);
+  aspect-ratio: 887 / 356;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+.entrance img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+}
+.entrance img:not(:first-child) {
+  width: 40%;
+  margin: auto;
+}
+.activity {
+  margin-bottom: 4px;
 }
 .accessibleTitle {
   position: absolute;
@@ -129,7 +159,11 @@
   }
   .editionNote {
     top: calc(15% - 34px);
-    font-size: 10px;
+    font-size: 13px;
+  }
+  .entrance {
+    left: 50%;
+    width: 68vw;
   }
   .bottom {
     bottom: 22px;
@@ -138,7 +172,7 @@
   }
   .opening {
     gap: 8px;
-    max-width: 240px;
+    max-width: 320px;
   }
   .explore {
     top: calc(77% + 4px);
@@ -163,7 +197,8 @@
 }
 @media (max-height: 520px) and (orientation: landscape) {
   .editionNote {
-    visibility: hidden;
+    top: 25%;
+    font-size: 12px;
   }
   .stage {
     min-height: 320px;

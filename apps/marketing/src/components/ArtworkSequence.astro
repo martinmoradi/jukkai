@@ -3,8 +3,10 @@ import { Image } from 'astro:assets';
 
 import crystelle from '#/assets/magazine/crystelle-galerie.webp';
 import Arrow from '#/components/Arrow.astro';
-import { HERO_ARTWORK, SPIRAL_ARTWORKS } from '#/data/galerie';
+import { GALERIE_IMAGES, HERO_ARTWORK, SPIRAL_ARTWORKS } from '#/data/galerie';
 import styles from '#/styles/artwork-sequence.module.css';
+
+const [, objects, dogs] = GALERIE_IMAGES;
 ---
 
 <section
@@ -12,84 +14,137 @@ import styles from '#/styles/artwork-sequence.module.css';
   id='galerie'
   aria-labelledby='sequence-title'
   data-art-sequence>
-  <div class={styles.stage} data-art-stage>
-    <div class={styles.galleryIntro} data-spiral-intro>
-      <p class='eyebrow'>La Galerie · Une sélection de Crystelle</p>
-      <h2 id='sequence-title'><em>L’art</em> prend place.</h2>
-      <p class={styles.invitation}>Des rencontres.<br />Des coups de cœur.</p>
+  <div class={styles.galleryIntro}>
+    <h2 id='sequence-title'>
+      Pour chez soi.<br />Pour quelqu’un.<br /><em>Pour le plaisir.</em>
+    </h2>
+    <div class={styles.galleryCopy}>
+      <p>
+        Une peinture qui retient le regard, une édition numérotée à offrir, une
+        petite sculpture qu’on imagine déjà chez soi. Des œuvres choisies au fil
+        de ses découvertes, avec une place pour l’humour, la couleur et
+        l’inattendu.
+      </p>
     </div>
-    <div class={styles.spiral} data-spiral>
-      {
-        SPIRAL_ARTWORKS.map((art, index) => (
-          <figure class={styles.orbit} data-spiral-orbit>
-            <a
-              class={styles.artwork}
-              href={art.image.src}
-              data-spiral-art
-              data-artwork={`spiral-${index}`}
-              data-art-src={art.image.src}
-              data-art-caption={art.caption}
-              aria-label={`Explorer les détails : ${art.caption}`}
-              aria-haspopup='dialog'>
-              <Image
-                src={art.image}
-                alt={art.alt}
-                widths={[480, 800, 1200, 1600]}
-                sizes='(max-width: 800px) 76vw, 40vw'
-                width={1200}
-                loading='lazy'
-                quality={88}
-                data-art-hero-image={index === 4 || undefined}
-              />
-            </a>
-            <figcaption>{art.caption}</figcaption>
-          </figure>
-        ))
-      }
-    </div>
-    <div class={styles.stackCredit} data-stack-credit>
-      <a
-        href={HERO_ARTWORK.image.src}
-        data-artwork='stack-caption'
-        data-art-src={HERO_ARTWORK.image.src}
-        data-art-caption={HERO_ARTWORK.caption}
-        data-art-alt={HERO_ARTWORK.alt}
-        aria-haspopup='dialog'
-        >Yoann Bonneville <span aria-hidden='true'>↗</span></a
-      >
-    </div>
-    <section
-      class={styles.story}
-      id='crystelle'
-      aria-labelledby='story-title'
-      data-story-scene>
-      <figure class={styles.portrait} data-story-photo>
-        <Image
-          src={crystelle}
-          alt='Crystelle Terrasson, assise parmi les peintures et sculptures qu’elle réunit pour Jukkai.'
-          widths={[640, 960, 1440, 1920]}
-          sizes='(max-width: 800px) 100vw, 56vw'
-          width={1440}
-          loading='lazy'
-          data-portrait-image
-        />
-      </figure>
-      <div class={styles.storyCopy} data-story-copy>
-        <p class='eyebrow'>À l’origine de Jukkai</p>
-        <h2 id='story-title'>Crystelle Terrasson</h2>
-        <p>
-          Architecte d’intérieur, Crystelle cultive aussi le goût des œuvres et
-          des rencontres. Jukkai rassemble ces deux élans, dans la continuité de
-          Studio Terrasson.
-        </p>
-        <p id='architecture'>
-          Le studio vous reçoit déjà sur rendez-vous, sans attendre octobre.
-        </p>
-        <a class='text-link' href='https://www.studioterrasson.fr/'
-          >Les projets du studio <Arrow diagonal /></a
+  </div>
+  <div class={styles.stillSelection} id='selection'>
+    {
+      [dogs, objects].map((art, index) => (
+        <figure class={styles.still}>
+          <a
+            class={styles.artwork}
+            href={art.image.src}
+            data-artwork={`scene-${index}`}
+            data-art-src={art.image.src}
+            data-art-caption={art.caption}
+            aria-label={`Explorer les détails : ${art.caption}`}
+            aria-haspopup='dialog'>
+            <Image
+              src={art.image}
+              alt={art.alt}
+              widths={[480, 800, 1200, 1600]}
+              sizes='(max-width: 800px) 90vw, 50vw'
+              width={1200}
+              loading='lazy'
+            />
+          </a>
+          <figcaption>
+            {art.caption}
+            <span aria-hidden='true'>↗</span>
+          </figcaption>
+        </figure>
+      ))
+    }
+  </div>
+  <div class={styles.motionTrack} data-art-track>
+    <div class={styles.stage} data-art-stage>
+      <div class={styles.spiral} data-spiral>
+        {
+          SPIRAL_ARTWORKS.map((art, index) => (
+            <figure class={styles.orbit} data-spiral-orbit>
+              <a
+                class={styles.artwork}
+                href={art.image.src}
+                data-spiral-art
+                data-artwork={`spiral-${index}`}
+                data-art-src={art.image.src}
+                data-art-caption={art.caption}
+                aria-label={`Explorer les détails : ${art.caption}`}
+                aria-haspopup='dialog'>
+                <Image
+                  src={art.image}
+                  alt={art.alt}
+                  widths={[480, 800, 1200, 1600]}
+                  sizes='(max-width: 800px) 76vw, 40vw'
+                  width={1200}
+                  loading='lazy'
+                  quality={88}
+                  data-art-hero-image={index === 4 || undefined}
+                />
+              </a>
+              <figcaption>{art.caption}</figcaption>
+            </figure>
+          ))
+        }
+      </div>
+      <div class={styles.stackCredit} data-stack-credit>
+        <a
+          href={HERO_ARTWORK.image.src}
+          data-artwork='stack-caption'
+          data-art-src={HERO_ARTWORK.image.src}
+          data-art-caption={HERO_ARTWORK.caption}
+          data-art-alt={HERO_ARTWORK.alt}
+          aria-haspopup='dialog'
+          >Yoann Bonneville <span aria-hidden='true'>↗</span></a
         >
       </div>
-    </section>
+      <section
+        class={styles.story}
+        id='crystelle'
+        aria-labelledby='story-title'
+        data-story-scene>
+        <figure class={styles.portrait} data-story-photo>
+          <Image
+            src={crystelle}
+            alt='Crystelle Terrasson, assise parmi les peintures et sculptures qu’elle réunit pour Jukkai.'
+            widths={[640, 960, 1440, 1920]}
+            sizes='(max-width: 800px) 100vw, 56vw'
+            width={1440}
+            loading='lazy'
+            data-portrait-image
+          />
+        </figure>
+        <div class={styles.storyCopy} data-story-copy>
+          <h2 id='story-title'>Crystelle <br />Terrasson</h2>
+          <p class={styles.profession}>Architecte d’intérieur</p>
+          <div class={styles.biography}>
+            <p id='architecture'>
+              Depuis trente ans, Crystelle imagine des intérieurs. Elle a fondé
+              son studio en 2012 et travaille aujourd’hui avec Laura Corbel. Les
+              envies, les usages et les contraintes du lieu sont le point de
+              départ de chaque projet.
+            </p>
+            <p>
+              La Galerie vient d’un rêve de petite fille : travailler au contact
+              des artistes. Crystelle découvre leurs univers, suit leur travail
+              et choisit les pièces qui la touchent. Elle veut maintenant
+              partager ce plaisir avec ceux qui pousseront la porte.
+            </p>
+          </div>
+          <a class='text-link' href='https://www.studioterrasson.fr/'
+            >Voir les projets du studio <Arrow diagonal /></a
+          >
+        </div>
+      </section>
+    </div>
+    <span class={styles.storyAnchor} data-story-anchor aria-hidden='true'
+    ></span>
   </div>
-  <span class={styles.storyAnchor} data-story-anchor aria-hidden='true'></span>
+  <div class={styles.nameReference}>
+    <p class={styles.japanese} lang='ja'>述懐<sup>*</sup></p>
+    <div>
+      <p class={styles.phrase}>Délivrer<br />ce que le cœur gardait.</p>
+      <p class={styles.interpretation}>*Interprétation éditoriale.</p>
+    </div>
+  </div>
 </section>
