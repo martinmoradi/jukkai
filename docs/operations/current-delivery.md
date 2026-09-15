@@ -31,7 +31,7 @@ live on GitHub. It is not a finished sitemap or an approved visual design.
 route, and working production wiring. On September 13, Martin selected the landing
 page and a separate general contact page as the entire first-release page scope.
 The full sitemap is deferred. The existing Contact Card Page remains available
-alongside these two pages; see the [magazine implementation](magazine-website.md).
+alongside these two pages.
 
 **Toward October:** add content, organise SEO work, and prepare a careful Studio
 Terrasson / Google Business Profile transition. The old website initially remains
@@ -63,14 +63,13 @@ The pass covers the landing page and necessary contact-page coherence. The print
 card remains intact. The incoming banner, cross-domain migration, Google profile
 changes and production promotion are separate work. Image selection, copy,
 composition and motion are implementation choices for review, not permanent brand
-decisions. See the [magazine guide](magazine-website.md) for the implemented result.
+decisions.
 
 On September 13, Martin supplied edited artworks, scenes and the Galerie portrait,
 plus interior photography. His September 15 consolidation places their durable
 sources on `/mnt/storage/jukkai/` and finished working copies in the ignored
 `media/library/`; the [media workflow](../../media/README.md) and catalog own current
-locations. The [magazine implementation](magazine-website.md)
-records the web selection and its source manifest. Selection and composition are
+locations. Selection and composition are
 part of visual review; this does not establish a complete portfolio, a finished
 Galerie-space photographic record or a future sitemap.
 

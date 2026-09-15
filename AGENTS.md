@@ -79,8 +79,7 @@ remove them when the convention changes.
 
 - `apps/marketing` is an Astro workspace. The magazine edition has `/` and
   `/contact/`, alongside Crystelle's Contact Card Page at `/contact/crystelle`.
-  See `docs/operations/magazine-website.md` for the two-page boundary and review
-  procedure. Keep Astro, Turbo, Stylelint, Vitest and generated-font tooling intact.
+  Keep Astro, Turbo, Stylelint, Vitest and generated-font tooling intact.
 - Contact details and portrait edits follow
   `docs/operations/crystelle-contact-card.md`; keep the page portrait and social
   preview on the shared image source in `src/data/crystelle-portrait.ts`.

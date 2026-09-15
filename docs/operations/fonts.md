@@ -239,12 +239,3 @@ Authorization or token rotation is required.
 `jukkai-starter@4` is intentionally broad within Voyage, Hatton, and Frama. Do
 not remove cuts merely because the pipeline works; publish another Set version
 when the actual marketing weights and styles are locked.
-
-## Frama round dots
-
-Martin requested rounded dots and tittles throughout the website on 15 September 2026. The installed Frama and Frama Text files both label stylistic set `ss03`
-“Round dots”. `apps/marketing/src/styles/font-features.css` maps the named
-`round-dots` styleset to feature 3 for those two families only, and enables it at
-`:root`. Both the editorial and contact-card styles import this file. Voyage and
-Hatton have no matching named mapping and retain their own glyphs. Generated
-font CSS, binaries and the approved Set are unchanged.
