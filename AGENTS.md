@@ -83,6 +83,8 @@ remove them when the convention changes.
 - Contact details and portrait edits follow
   `docs/operations/crystelle-contact-card.md`; keep the page portrait and social
   preview on the shared image source in `src/data/crystelle-portrait.ts`.
+- Production setup, promotion and verification follow
+  `docs/operations/production.md`.
 - Cloudflare Pages reads `public/_redirects` and `public/_headers`. Printed
   pointer paths live in `_redirects`. Crystelle's cards have been sent to print:
   `https://jukkai.fr/c/crystelle` is locked; only the redirect target may change.
