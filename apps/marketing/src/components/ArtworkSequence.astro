@@ -30,7 +30,7 @@ const scenes = [
   aria-labelledby='sequence-title'
   data-art-sequence>
   <div class={styles.galleryIntro} id='selection'>
-    <figure class={styles.galleryFigure}>
+    <figure class={styles.galleryFigure} data-picture-parallax>
       <a
         class={styles.artwork}
         href={dogs.image.src}
@@ -63,6 +63,9 @@ const scenes = [
   </div>
   <div class={styles.motionTrack} data-art-track>
     <div class={styles.stage} data-art-stage>
+      <h2 class={styles.invitationHeading} data-invitation-heading>
+        L’art de s’attacher.
+      </h2>
       <p class={styles.invitation} data-spiral-invitation>
         <span class={styles.pour} aria-hidden='true'>Pour</span>
         <span class={styles.roll} data-roll>

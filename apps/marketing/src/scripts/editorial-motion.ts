@@ -53,12 +53,14 @@ async function animateEditorial() {
     { animateHero },
     { animateArtworkSequence },
     { animateIntroduction },
+    { animatePictureParallax },
   ] = await Promise.all([
     import('gsap'),
     import('gsap/ScrollTrigger'),
     import('./hero-motion'),
     import('./artwork-sequence'),
     import('./introduction'),
+    import('./picture-parallax'),
   ]);
   gsap.registerPlugin(ScrollTrigger);
   ScrollTrigger.config({ ignoreMobileResize: true });
@@ -66,6 +68,7 @@ async function animateEditorial() {
   await document.fonts.ready;
   animateIntroduction(gsap);
   animateArtworkSequence(gsap);
+  animatePictureParallax(gsap);
   ScrollTrigger.refresh();
   // Native fragments may have landed before enhancement changed section heights.
   // Reconcile once after every stage is measured, never on a later resize.

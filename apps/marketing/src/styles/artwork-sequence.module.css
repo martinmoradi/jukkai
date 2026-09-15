@@ -41,13 +41,24 @@
   line-height: 1.6;
 }
 /* Static reading: three lines. Enhanced: "Pour" stays while the last word rolls. */
+.invitationHeading {
+  padding: clamp(48px, 6vw, 96px) var(--gutter) 0;
+  font-family: voyage, Georgia, serif;
+  font-size: clamp(72px, 8.8vw, 140px);
+  font-weight: 400;
+  line-height: 1.05;
+  text-align: center;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
 .invitation {
   padding: 90px var(--gutter) 60px;
-  font-family: var(--display);
-  font-size: clamp(54px, 9.4vw, 160px);
-  line-height: 1.08;
+  font-family: var(--serif);
+  font-size: var(--statement-size);
+  font-weight: 300;
+  line-height: var(--statement-leading);
   text-align: center;
-  letter-spacing: -0.05em;
+  letter-spacing: var(--statement-tracking);
 }
 .pour {
   display: none;
@@ -57,16 +68,9 @@
 }
 .word {
   display: block;
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 300;
-  letter-spacing: -0.02em;
 }
 .pourRepeat {
-  font-family: var(--display);
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: -0.05em;
+  font: inherit;
 }
 .scenes {
   display: grid;
@@ -208,12 +212,20 @@
   transform: translateY(-50%);
   will-change: transform;
 }
+.sequence[data-motion='ready'] .invitationHeading {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+}
 .sequence[data-motion='ready'] .pour {
   display: inline;
 }
 .sequence[data-motion='ready'] .roll {
   display: inline-grid;
-  height: 1.28em;
+  height: calc(var(--statement-leading) * 1em + 0.16em);
+  margin-top: -0.08em;
   margin-left: 0.22em;
   overflow: hidden;
   vertical-align: top;
@@ -221,7 +233,7 @@
 .sequence[data-motion='ready'] .word {
   grid-area: 1 / 1;
   justify-self: start;
-  line-height: 1.28;
+  padding-block: 0.08em;
   text-align: left;
   will-change: transform;
 }
@@ -307,7 +319,10 @@
   }
   .invitation {
     padding-block: 70px 44px;
-    font-size: 13.5vw;
+  }
+  .invitationHeading {
+    padding-top: 36px;
+    font-size: clamp(48px, 12vw, 80px);
   }
   .scenes {
     grid-template-columns: 1fr;

@@ -1,5 +1,7 @@
 import type { gsap as Gsap } from 'gsap';
 
+import { addPictureParallax } from './picture-parallax';
+
 /** One sticky stage owns the spiral, stack, and the existing portrait handover. */
 export function animateArtworkSequence(gsap: typeof Gsap) {
   const sequence = document.querySelector<HTMLElement>('[data-art-sequence]');
@@ -10,9 +12,18 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
       motion:
         '(prefers-reduced-motion: no-preference) and (min-height: 720px), (prefers-reduced-motion: no-preference) and (max-width: 800px) and (min-height: 600px)',
       mobile: '(max-width: 800px)',
+      allowMotion: '(prefers-reduced-motion: no-preference)',
     },
     (context) => {
-      if (!context.conditions?.motion) return;
+      if (!context.conditions?.motion) {
+        if (context.conditions?.allowMotion) {
+          addPictureParallax(
+            gsap,
+            sequence.querySelectorAll('[data-art-stage] [data-artwork]'),
+          );
+        }
+        return;
+      }
       const mobile = Boolean(context.conditions.mobile);
       const track = sequence.querySelector<HTMLElement>('[data-art-track]')!;
       const stage = sequence.querySelector<HTMLElement>('[data-art-stage]')!;
@@ -26,12 +37,20 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
       const invitation = sequence.querySelector<HTMLElement>(
         '[data-spiral-invitation]',
       )!;
+      const heading = sequence.querySelector<HTMLElement>(
+        '[data-invitation-heading]',
+      )!;
       const words = [
         ...sequence.querySelectorAll<HTMLElement>('[data-roll-word]'),
       ];
       const roll = sequence.querySelector<HTMLElement>('[data-roll]')!;
       const home = sequence.querySelector<HTMLElement>('[data-scene-home]')!;
       const gift = sequence.querySelector<HTMLElement>('[data-scene-gift]')!;
+      const homeImage = home.querySelector('img')!;
+      const giftImage = gift.querySelector('img')!;
+      const artworkImages = artworks.map((artwork) =>
+        artwork.querySelector('img')!,
+      );
       const credit = sequence.querySelector<HTMLElement>(
         '[data-stack-credit]',
       )!;
@@ -63,7 +82,7 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
             '--header-height',
           ),
         );
-      // Scroll travel per timeline unit; the story anchor sits 0.7 viewports before the end.
+      // Scrolling starts when the stage reaches its sticky header offset.
       const perUnit = mobile ? 2.47 : 2.79;
       let travel = 0;
       const measure = () => {
@@ -71,7 +90,7 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
         sequence.style.setProperty('--story-height', `${stage.offsetHeight}px`);
         sequence.style.setProperty(
           '--motion-distance',
-          `${window.innerHeight * (travel - 0.7)}px`,
+          `${window.innerHeight * travel}px`,
         );
       };
       const angle = 360 / artworks.length;
@@ -131,11 +150,11 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
         .fromTo(
           invitation,
           mobile
-            ? { x: lineAt(0, 0), y: down(0.17) }
-            : { x: lineAt(-0.2, 0), y: still },
+            ? { x: lineAt(0, 0), y: down(0.24) }
+            : { x: lineAt(-0.16, 0), y: down(0.06) },
           mobile
-            ? { x: lineAt(0, 1), y: down(-0.17), duration: 0.2 }
-            : { x: lineAt(0.16, 1), duration: 0.2 },
+            ? { x: lineAt(0, 1), y: down(0.24), duration: 0.2 }
+            : { x: lineAt(0.2, 1), y: down(0.06), duration: 0.2 },
           0.12,
         )
         .fromTo(
@@ -146,36 +165,47 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
         )
         .fromTo(
           home,
-          mobile ? { x: still, y: down(-0.17) } : { x: across(0.29), y: still },
+          mobile
+            ? { x: still, y: down(-0.04) }
+            : { x: across(0.24), y: down(0.06) },
           { x: across(0.95), duration: 0.2, ease: 'power2.in' },
           0.12,
         )
         .fromTo(
           gift,
           mobile
-            ? { x: across(-0.95), y: down(0.17) }
-            : { x: across(-0.95), y: still },
+            ? { x: across(-0.95), y: down(-0.04) }
+            : { x: across(-0.95), y: down(0.06) },
           {
-            x: mobile ? still : across(-0.27),
+            x: mobile ? still : across(-0.22),
             duration: 0.2,
             ease: 'power2.out',
           },
           0.12,
         )
-        .to(
-          invitation,
-          mobile
-            ? { x: lineAt(0, 2), y: 0, duration: 0.2 }
-            : { x: lineAt(0, 2), duration: 0.2 },
-          0.38,
-        )
+        .to(invitation, { x: lineAt(0, 2), y: 0, duration: 0.2 }, 0.38)
         .to(
           words,
           { yPercent: (index) => index * 100 - 200, duration: 0.2 },
           0.38,
         )
         .to(gift, { x: across(-0.95), duration: 0.2, ease: 'power2.in' }, 0.38)
-        .to({}, { duration: 0.08 });
+        .to(heading, { autoAlpha: 0, y: -24, duration: 0.2 }, 0.38)
+        .to({}, { duration: 0.035 });
+      const drift = mobile ? 8 : 16;
+      preroll
+        .fromTo(
+          homeImage,
+          { y: drift },
+          { y: -drift, duration: 0.32, ease: 'none' },
+          0,
+        )
+        .fromTo(
+          giftImage,
+          { y: drift },
+          { y: -drift, duration: 0.46, ease: 'none' },
+          0.12,
+        );
       const choreography = gsap.timeline({ defaults: { ease: 'none' } });
       choreography
         .fromTo(
@@ -199,6 +229,13 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
             stagger: 0.035,
             ease: 'power1.out',
           },
+          0,
+        )
+        // This depth settles before the stack joins the unaltered portrait.
+        .fromTo(
+          artworkImages,
+          { y: drift },
+          { y: 0, duration: 0.43, stagger: 0.035, ease: 'none' },
           0,
         )
         .fromTo(
@@ -261,9 +298,8 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
         scrollTrigger: {
           id: 'artwork-spiral',
           trigger: track,
-          start: 'top 70%',
-          end: () =>
-            `+=${window.innerHeight * travel - (window.innerHeight - sceneHeight())}`,
+          start: () => `top ${window.innerHeight - sceneHeight()}px`,
+          end: () => `+=${window.innerHeight * travel}`,
           onRefreshInit: measure,
           scrub: true,
           invalidateOnRefresh: true,
@@ -281,7 +317,7 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
         // The words recede under the arriving paintings, then leave while covered.
         .to(
           invitation,
-          { scale: 0.32, duration: 0.3, ease: 'power2.in' },
+          { scale: 0.92, duration: 0.3, ease: 'power2.in' },
           orbitStart + 0.1,
         )
         .to(invitation, { autoAlpha: 0, duration: 0.03 }, orbitStart + 0.42);

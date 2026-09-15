@@ -16,6 +16,7 @@
 .name [lang='ja'] {
   font-family: serif;
   font-size: 20px;
+  white-space: nowrap;
 }
 .interpretation {
   margin-left: auto;
@@ -126,6 +127,8 @@
   }
   .interpretation {
     font-size: 11px;
+    text-align: right;
+    text-wrap: balance;
   }
   .phrase {
     font-size: 13vw;
