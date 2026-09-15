@@ -86,3 +86,16 @@ captions and artwork viewer.
 No supplied image is explicitly documented as a numbered edition. The invitation
 mentions editions as a possibility provided by Martin; it does not label any
 pictured piece as one.
+
+## Editorial rework, September 15
+
+The plum introduction is replaced. The sentence “Studio Terrasson devient Jukkai.”
+now uses the supplied Studio Crystelle Terrasson wordmark as-is, in its own navy
+and gold, beside the Jukkai wordmark masks already used by the hero. `belle-epoque`
+(“Belle Époque · Un projet du studio”) and `contrasting-bears` (“Deux ours, deux
+univers”) form the joined diptych under “Le studio continue. Une Galerie le
+rejoint.”; the bears caption describes the photograph and attributes nothing.
+`dogs-scene` and `artwork-still-life` move into the spiral stage's rolling
+invitation beside “chez soi.” and “quelqu’un.”. `capri-material` is again an
+unused export. No image was edited; the diptych crops both scenes to 3:2 at
+display time only.
