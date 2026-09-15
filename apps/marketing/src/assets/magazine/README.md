@@ -61,3 +61,12 @@ connects to its real position in the same Crystelle photograph as the second pas
 The two Studio Crystelle Terrasson SVGs are exact copies of Martin's supplied files;
 the originals are retained in `brand/source/studio-terrasson/`. Their geometry and
 colours are preserved. `manifest.json` records checksums for all new inputs.
+
+## Storage consolidation, September 15
+
+The [media catalog](../../../../../media/catalog.json) identifies the finished
+library sources and selected editable masters on Storage. The manifest's `source`
+now points to the retained exact input; `historicalSource` records its former
+location. Source and app-output hashes are unchanged. Several web exports were
+made from smaller previews, so their historical input differs from the full JPEG
+available in the library. All runtime inputs remain committed here.
