@@ -65,9 +65,11 @@ changes and production promotion are separate work. Image selection, copy,
 composition and motion are implementation choices for review, not permanent brand
 decisions. See the [magazine guide](magazine-website.md) for the implemented result.
 
-On September 13, Martin supplied edited artworks, scenes and the Galerie portrait
-under `/home/martin/Desktop/jukkai-affinity-workingdir`, plus interior photography
-under `website-asset-inbox/projets`. The [magazine implementation](magazine-website.md)
+On September 13, Martin supplied edited artworks, scenes and the Galerie portrait,
+plus interior photography. His September 15 consolidation places their durable
+sources on `/mnt/storage/jukkai/` and finished working copies in the ignored
+`media/library/`; the [media workflow](../../media/README.md) and catalog own current
+locations. The [magazine implementation](magazine-website.md)
 records the web selection and its source manifest. Selection and composition are
 part of visual review; this does not establish a complete portfolio, a finished
 Galerie-space photographic record or a future sitemap.

@@ -30,7 +30,13 @@ Keep the surrounding quotes and commas. Edit the source, not the generated
 Replace [`crystelle-contact-portrait.webp`](../../apps/marketing/src/assets/crystelle-contact-portrait.webp)
 with a new WebP using the same filename. A square crop around 1200 × 1200px,
 with the face centred and room for the circular crop, is a useful starting point.
-Keep the original photo separately.
+Keep the original photo separately. The `crystelle-contact-legacy` entry in the
+[media catalog](../../media/catalog.json) preserves the current 800px app input,
+which predates the September shoot. Its upstream pre-WebP source is unconfirmed.
+The newer `crystelle-window-light` entry identifies a separate available edit and
+its Storage master; it is not the current app portrait.
+Browse `media/library/portraits/crystelle/` when choosing a replacement; keep the
+actual app input committed so builds remain independent of local media.
 
 For a JPEG, PNG or different filename, place it in `apps/marketing/src/assets/`
 and change the **single import** in
