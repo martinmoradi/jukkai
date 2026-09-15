@@ -2,7 +2,6 @@
 import { Image } from 'astro:assets';
 
 import ouverture from '#/assets/magazine/ouverture.webp';
-import Arrow from '#/components/Arrow.astro';
 import styles from '#/styles/introduction.module.css';
 
 const caption = 'Peintures et sculptures réunies pour Jukkai';
@@ -28,19 +27,10 @@ const caption = 'Peintures et sculptures réunies pour Jukkai';
   <div class={styles.story}>
     <p class={styles.chapter}>Un nouveau chapitre</p>
     <p class={styles.lead}>
-      Depuis trente ans, Crystelle Terrasson imagine des intérieurs.
+      <span class={styles.leadOpening}>Depuis trente ans,</span>
+      <span class={styles.keepTogether}>Crystelle Terrasson</span> imagine
+      <span class={styles.keepTogether}>des intérieurs.</span>
     </p>
-    <div class={styles.continuation}>
-      <p class={styles.turn}>
-        Aujourd’hui, le Studio Terrasson devient Jukkai.
-      </p>
-      <p class={styles.detail}>
-        À Châteaugiron, le studio qu’elle a fondé en 2012 poursuit ses projets
-        d’architecture intérieure. Une galerie d’art le rejoint, née d’une envie
-        de longue date : travailler au contact des artistes et partager les
-        œuvres qui la touchent.
-      </p>
-    </div>
     <figure class={styles.photograph}>
       <a
         href={ouverture.src}
@@ -58,7 +48,20 @@ const caption = 'Peintures et sculptures réunies pour Jukkai';
           loading='lazy'
         />
       </a>
-      <figcaption>{caption}<Arrow diagonal /></figcaption>
     </figure>
+    <div class={styles.continuation}>
+      <p class={styles.turn}>
+        <span>Aujourd’hui,</span>
+        <span>le <span class={styles.keepTogether}>Studio Terrasson</span></span
+        >
+        <span>devient Jukkai.</span>
+      </p>
+      <p class={styles.detail}>
+        À Châteaugiron, le studio qu’elle a fondé en 2012 poursuit ses projets
+        d’architecture intérieure. Une galerie d’art le rejoint, née d’une envie
+        de longue date : travailler au contact des artistes et partager les
+        œuvres qui la touchent.
+      </p>
+    </div>
   </div>
 </section>
