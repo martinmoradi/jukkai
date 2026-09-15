@@ -70,3 +70,17 @@ now points to the retained exact input; `historicalSource` records its former
 location. Source and app-output hashes are unchanged. Several web exports were
 made from smaller previews, so their historical input differs from the full JPEG
 available in the library. All runtime inputs remain committed here.
+
+## Editorial sequence revision, September 15
+
+The revised introduction uses the existing `capri-material` export beside the
+sculptural still life. “Le Capri · Un projet du studio” identifies the interior
+as an existing Studio project. It does not depict the new Galerie. The photograph
+and supplied artworks are unchanged. The existing `dogs-scene` sits within the
+large invitation typography before the spiral. These choices connect the ongoing
+architecture practice with the arrival of art and retain the scenes' descriptive
+captions and artwork viewer.
+
+No supplied image is explicitly documented as a numbered edition. The invitation
+mentions editions as a possibility provided by Martin; it does not label any
+pictured piece as one.
