@@ -6,7 +6,7 @@ import Arrow from '#/components/Arrow.astro';
 import { GALERIE_IMAGES, HERO_ARTWORK, SPIRAL_ARTWORKS } from '#/data/galerie';
 import styles from '#/styles/artwork-sequence.module.css';
 
-const [, objects, dogs] = GALERIE_IMAGES;
+const [, , dogs] = GALERIE_IMAGES;
 ---
 
 <section
@@ -14,50 +14,53 @@ const [, objects, dogs] = GALERIE_IMAGES;
   id='galerie'
   aria-labelledby='sequence-title'
   data-art-sequence>
-  <div class={styles.galleryIntro}>
-    <h2 id='sequence-title'>
-      Pour chez soi.<br />Pour quelqu’un.<br /><em>Pour le plaisir.</em>
-    </h2>
-    <div class={styles.galleryCopy}>
-      <p>
-        Une peinture qui retient le regard, une édition numérotée à offrir, une
-        petite sculpture qu’on imagine déjà chez soi. Des œuvres choisies au fil
-        de ses découvertes, avec une place pour l’humour, la couleur et
-        l’inattendu.
-      </p>
+  <div class={styles.galleryIntro} data-gallery-prelude>
+    <p class={styles.welcome}>
+      Un lieu où flâner, le temps d’un café.<br />Des œuvres avec lesquelles
+      vivre.
+    </p>
+    <div class={styles.livingHeading} id='selection'>
+      <h2 id='sequence-title' aria-label='Pour chez soi. Pour quelqu’un.'>
+        <span class={styles.forHome} data-for-home
+          >Pour <span class={styles.imageSpace}></span> chez soi.</span
+        >
+        <span class={styles.forSomeone} data-for-someone>Pour quelqu’un.</span>
+      </h2>
+      <figure class={styles.livingArt} data-living-art>
+        <a
+          class={styles.artwork}
+          href={dogs.image.src}
+          data-artwork='scene-0'
+          data-art-src={dogs.image.src}
+          data-art-caption={dogs.caption}
+          aria-label={`Explorer les détails : ${dogs.caption}`}
+          aria-haspopup='dialog'>
+          <Image
+            src={dogs.image}
+            alt={dogs.alt}
+            widths={[480, 800, 1200]}
+            sizes='(max-width: 800px) 76vw, 32vw'
+            width={1000}
+            loading='lazy'
+          />
+        </a>
+        <figcaption>
+          {dogs.caption}
+          <span aria-hidden='true'>↗</span>
+        </figcaption>
+      </figure>
     </div>
-  </div>
-  <div class={styles.stillSelection} id='selection'>
-    {
-      [dogs, objects].map((art, index) => (
-        <figure class={styles.still}>
-          <a
-            class={styles.artwork}
-            href={art.image.src}
-            data-artwork={`scene-${index}`}
-            data-art-src={art.image.src}
-            data-art-caption={art.caption}
-            aria-label={`Explorer les détails : ${art.caption}`}
-            aria-haspopup='dialog'>
-            <Image
-              src={art.image}
-              alt={art.alt}
-              widths={[480, 800, 1200, 1600]}
-              sizes='(max-width: 800px) 90vw, 50vw'
-              width={1200}
-              loading='lazy'
-            />
-          </a>
-          <figcaption>
-            {art.caption}
-            <span aria-hidden='true'>↗</span>
-          </figcaption>
-        </figure>
-      ))
-    }
+    <p class={styles.galleryCopy}>
+      Une peinture pour chez soi, une édition numérotée à offrir, une petite
+      sculpture qui fait sourire. Crystelle choisit les pièces qui la touchent,
+      avec une place pour l’humour, la couleur et l’inattendu.
+    </p>
   </div>
   <div class={styles.motionTrack} data-art-track>
     <div class={styles.stage} data-art-stage>
+      <p class={styles.spiralInvitation} data-spiral-invitation>
+        Pour le <em>plaisir.</em>
+      </p>
       <div class={styles.spiral} data-spiral>
         {
           SPIRAL_ARTWORKS.map((art, index) => (
