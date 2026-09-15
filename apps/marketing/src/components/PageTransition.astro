@@ -1,0 +1,41 @@
+---
+import sphere from '#/assets/jukkai-sphere.svg';
+import wordmark from '#/assets/magazine/jukkai-wordmark-primary.svg';
+import studioSeal from '#/assets/magazine/studio-terrasson-seal.svg';
+import studioWordmark from '#/assets/magazine/studio-terrasson-wordmark.svg';
+import styles from '#/styles/page-transition.module.css';
+---
+
+<div class={styles.transition} data-page-curtain aria-hidden='true'>
+  <div class={styles.bands}>
+    {[0, 1, 2, 3].map(() => <div class={styles.band} data-curtain-band />)}
+  </div>
+  <div class={styles.identity} data-identity-entrance>
+    <img
+      class={styles.wordmark}
+      src={wordmark.src}
+      width='887'
+      height='356'
+      alt=''
+    />
+    <div class={styles.handover}>
+      <img
+        class={styles.studio}
+        src={studioWordmark.src}
+        width='567'
+        height='227'
+        alt=''
+        data-old-wordmark
+      />
+      <img src={studioSeal.src} width='300' height='300' alt='' data-old-seal />
+      <img
+        src={sphere.src}
+        width='300'
+        height='300'
+        alt=''
+        data-identity-sphere
+      />
+    </div>
+    <p class={styles.line}>Un nouveau chapitre s’ouvre</p>
+  </div>
+</div>

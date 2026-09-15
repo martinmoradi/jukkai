@@ -28,7 +28,11 @@ export function initHeroSequence() {
   let animations: Animation[] = [];
 
   const shouldPlay = () =>
-    inView && !document.hidden && !reduced.matches && !userPaused;
+    inView &&
+    !document.hidden &&
+    !reduced.matches &&
+    !userPaused &&
+    !document.documentElement.dataset.pageTransition;
   const transform = ([scale, x, y]: HeroShot['from']) =>
     `translate(${x}%, ${y}%) scale(${scale})`;
 
@@ -173,6 +177,8 @@ export function initHeroSequence() {
     syncPlayback();
   });
   document.addEventListener('visibilitychange', syncPlayback);
+  document.addEventListener('jukkai:transition-start', syncPlayback);
+  document.addEventListener('jukkai:transition-end', syncPlayback);
   window.addEventListener('pagehide', () => {
     cancelAnimationFrame(raf);
     animations.forEach((animation) => animation.pause());

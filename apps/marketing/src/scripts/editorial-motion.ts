@@ -51,21 +51,18 @@ async function animateEditorial() {
     { gsap },
     { ScrollTrigger },
     { animateHero },
-    { animateStudioTransition },
     { animateArtworkSequence },
     { animateIntroduction },
   ] = await Promise.all([
     import('gsap'),
     import('gsap/ScrollTrigger'),
     import('./hero-motion'),
-    import('./studio-transition'),
     import('./artwork-sequence'),
     import('./introduction'),
   ]);
   gsap.registerPlugin(ScrollTrigger);
   ScrollTrigger.config({ ignoreMobileResize: true });
   animateHero(gsap);
-  animateStudioTransition(gsap);
   animateIntroduction(gsap);
   animateArtworkSequence(gsap);
   await document.fonts.ready;
