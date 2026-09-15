@@ -1,8 +1,8 @@
 import type { gsap as Gsap } from 'gsap';
 
-/** A brief entrance reuses the supplied identity handover inside the film hero. */
+/** A brief entrance reuses the supplied identity handover inside the artwork hero. */
 export function animateStudioTransition(gsap: typeof Gsap) {
-  const hero = document.querySelector<HTMLElement>('[data-video-hero]');
+  const hero = document.querySelector<HTMLElement>('[data-artwork-hero]');
   if (!hero) return;
   const media = gsap.matchMedia();
   media.add('(prefers-reduced-motion: no-preference)', () => {

@@ -32,23 +32,60 @@
 .filmDrift {
   width: 100%;
   height: 100%;
+  transform: translate(12%, 4%);
 }
-.poster,
-.film {
+/* Only the current image and an incoming transition are composited. */
+.frame {
   position: absolute;
   inset: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
+.frame[data-active] {
+  visibility: visible;
+}
+.frame img {
   width: 100%;
   max-width: none;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 48%;
 }
-.film {
-  opacity: 0;
-  transition: opacity 400ms ease;
+.playback {
+  position: absolute;
+  right: var(--gutter);
+  bottom: 28px;
+  display: inline-flex;
+  gap: 9px;
+  align-items: center;
+  justify-content: center;
+  min-width: 94px;
+  min-height: 44px;
+  padding: 10px 14px;
+  font: inherit;
+  font-size: 12px;
+  color: #eeece5;
+  cursor: pointer;
+  background: #242920;
+  border: 1px solid #eeece552;
+  border-radius: 24px;
+  transition:
+    background 180ms ease,
+    color 180ms ease;
 }
-.film[data-ready] {
-  opacity: 1;
+.playback[hidden] {
+  display: none;
+}
+.playback:hover {
+  color: #242920;
+  background: #eeece5;
+}
+.playback:active {
+  background: #d5d2c7;
+}
+.playback:focus-visible {
+  outline: 2px solid #eeece5;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px #242920;
 }
 .shade {
   position: absolute;
@@ -154,6 +191,9 @@
   will-change: transform;
 }
 @media (max-width: 800px) {
+  .filmDrift {
+    transform: translate(7%, 4%);
+  }
   .filmWindow {
     clip-path: inset(max(155px, 19%) 6% 23% 23%);
   }
@@ -169,6 +209,11 @@
     bottom: 22px;
     gap: 15px;
     font-size: 12px;
+  }
+  .playback {
+    bottom: 22px;
+    min-width: 80px;
+    padding: 10px;
   }
   .opening {
     gap: 8px;
@@ -218,5 +263,17 @@
   .bottom {
     bottom: 16px;
     font-size: 11px;
+  }
+}
+
+@media (max-width: 380px) {
+  .opening {
+    max-width: min(190px, calc(100% - 112px));
+    font-size: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .playback {
+    display: none;
   }
 }

@@ -119,24 +119,38 @@ describe('published site', () => {
     },
   );
 
-  it('ships the chosen films and posters without requiring autoplay', async () => {
+  it('ships responsive artwork frames with a static opening and optional playback', async () => {
     const page = new JSDOM(await published('index.html'));
     const document = page.window.document;
-    const film = document.querySelector('video')!;
-    expect(film.hasAttribute('autoplay')).toBe(false);
-    expect(film.hasAttribute('src')).toBe(false);
-    expect(film.hasAttribute('muted')).toBe(true);
-    expect(film.hasAttribute('playsinline')).toBe(true);
-    for (const name of ['data-landscape', 'data-portrait']) {
-      const path = film.getAttribute(name)!;
-      expect(path).toMatch(/^\/_astro\/.+\.mp4$/);
-      expect(await exists(path.slice(1))).toBe(true);
+    const hero = document.querySelector('[data-artwork-hero]')!;
+    expect(hero.querySelector('video')).toBeNull();
+    const frames = hero.querySelectorAll('[data-hero-frame]');
+    expect(frames).toHaveLength(10);
+    expect(
+      hero.querySelectorAll('[data-hero-frame][data-active]'),
+    ).toHaveLength(1);
+    const first = frames[0].querySelector('img')!;
+    expect(first.getAttribute('loading')).toBe('eager');
+    expect(first.getAttribute('fetchpriority')).toBe('high');
+    expect(first.getAttribute('src')).toBeTruthy();
+    for (const [index, frame] of [...frames].entries()) {
+      const image = frame.querySelector('img')!;
+      const paths = image
+        .getAttribute('data-srcset')!
+        .split(', ')
+        .map((candidate) => candidate.split(' ')[0]);
+      expect(paths).toHaveLength(4);
+      for (const path of paths) {
+        expect(path).toMatch(/^\/_astro\/.+\.webp$/);
+        expect(await exists(path.slice(1))).toBe(true);
+      }
+      expect(image.hasAttribute('src')).toBe(index === 0);
+      expect(image.hasAttribute('srcset')).toBe(index === 0);
     }
-    const hero = document.querySelector('[data-video-hero]')!;
-    expect(hero.querySelector('picture img')?.getAttribute('loading')).toBe(
-      'eager',
+    expect(hero.querySelector('button')?.getAttribute('aria-label')).toBe(
+      'Mettre les images en pause',
     );
-    expect(hero.querySelector('button')).toBeNull();
+    expect(hero.querySelector('button')?.hasAttribute('hidden')).toBe(true);
     expect(document.querySelectorAll('[data-spiral-art]')).toHaveLength(5);
     expect(
       document
