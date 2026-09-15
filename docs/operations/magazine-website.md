@@ -2,7 +2,7 @@
 
 **Status:** editorial proof 0.1 for Martin's review; local, not promoted to production.
 **Owns:** this edition's two-page implementation and review procedure.
-**Last reviewed:** 2026-09-15, for the introduction's line breaks and alignment, shared Hatton invitation typography, Voyage bridge and gentle picture parallax. The one-time letter entrance, compact identity entrance and Home/Contact transitions remain in place.
+**Last reviewed:** 2026-09-15, for reusable Voyage headings and navigation-style buttons, a continuous Hatton introduction, dark opening/footer, the selected Rio photograph and Frama round dots. The compact identity entrance and Home/Contact transitions remain in place.
 **Revisit when:** Martin reviews the composition, the artwork edit changes, the opening happens, or the full website replaces this edition.
 
 ## Purpose and authority
@@ -69,11 +69,13 @@ Both are local editorial proposals, not new brand or business facts.
 - The Galerie opens in October 2026. Architecture already receives clients by
   appointment. No precise opening day, public hours, stock, prices or programme
   is invented. The address and footer contact details use the shared contact data.
-- `/contact/` retains phone/email, address, map, vCard and Instagram.
+- `/contact/` retains phone/email, address, map and Instagram. The vCard action is
+  reserved for `/contact/crystelle/`, whose selected ochre portrait also appears
+  inside the downloaded contact. See [the contact-card guide](crystelle-contact-card.md).
 - `/contact/crystelle/`, `/contact/crystelle.vcf` and the locked printed `/c/crystelle`
   pointer remain intact. No new sitemap page, backend or migration is added.
-- The project link points to `https://www.studioterrasson.fr/`. The old site's banner,
-  redirects, domain migration and Google profile remain separate work.
+- Martin removed the external studio-projects link from the Crystelle section.
+  The old site's banner, redirects, domain migration and Google profile remain separate work.
 - Artist names come from supplied selection evidence. Unknown titles stay unknown;
   scene captions are descriptions. Photographs/films do not establish that the new
   Galerie is finished or already open to the public.
@@ -82,10 +84,11 @@ Both are local editorial proposals, not new brand or business facts.
 
 All motion follows native vertical scrolling. No scroll interception or
 smooth-scroll library is used. The existing generated fonts remain in use:
-Voyage 400 for the large name interpretation, Hatton 300 for the offset career/name
-statements, Galerie heading and rolling invitation, and Frama Text for reading copy.
+Voyage 400 for the large name interpretation, Hatton 300 for the continuous career/name
+statement, Galerie heading and rolling invitation, and Frama Text for reading copy.
 The introduction sits on paper white, the Galerie on ivory,
-the closing on muted green. These are edition-specific composition choices.
+the closing and footer on dark ink `#1D1D1B` with ivory `#EAE2D2` type.
+The Galerie and hero surround also use this ivory. These are edition-specific composition choices.
 
 | Chapter           | Composition and motion                                                                                                                                                                                                                                                                                                                                                                   |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -102,8 +105,8 @@ the closing on muted green. These are edition-specific composition choices.
 The hero keeps its 125svh of expansion travel (95svh on phones), for total tracks
 of 225svh and 195svh respectively. The introduction has content-defined height,
 no pin and no scrub. Each Voyage line starts its entrance when it reaches 82% of the viewport and
-finishes within 2.25 seconds regardless of further scrolling. Each letter takes
-1.5 seconds with a scattered delay between 0 and 750ms, using the inspected
+finishes within 1.95 seconds regardless of further scrolling. Each letter takes
+1.3 seconds with a scattered delay between 0 and 650ms, using the inspected
 reference's easing curve. Letters start at twice their final size, one em above
 the baseline with a quarter-em horizontal offset and proportional blur. The second line
 waits for its own arrival, so it does not finish below the fold. Afterwards,
@@ -115,14 +118,26 @@ fragment/history arrivals already in view read immediately. Reduced motion and
 failed enhancement retain the unsplit, visible heading.
 
 The passage after the heading leaves 14vw of breathing room, bounded between
-132px and 232px (96px on phones). Its twelve-column layout offsets the second
-Hatton statement and body copy to the right of Ouverture. The body paragraph's
-lower edge aligns with the image frame before parallax. Intentional line breaks
-keep Crystelle Terrasson and Studio Terrasson together. The photograph retains
-its source crop and opens in the detail viewer, with no visible caption below it.
-On phones, the order is career statement, full-width photograph, new-name statement,
-then body copy. The story and rolling invitation share the same Hatton size,
-weight, leading and tracking tokens; the rolling slot adds a small overshoot allowance.
+132px and 232px (96px on phones). The two Hatton statements now form one continuous
+paragraph with an indented opening. Names and the closing “devient Jukkai.” stay
+together. Ouverture and the explanatory body follow underneath in a twelve-column
+layout, their lower edges aligned before parallax. On phones, the full-width
+photograph follows the complete statement, then the body. The photograph retains
+its source crop and detail viewer without a visible caption.
+
+`VoyageHeading.astro` owns the visual lines, one accessible text and shared Voyage
+styles. The introduction, “L’art de s’attacher.” and opening announcement all use
+its once-only letter entrance, about 13% quicker than the previous 2.25-second
+version. Page styles control scale and placement through CSS custom properties.
+The story, closing invitation and rolling “Pour…” share Hatton size/leading/tracking
+tokens; the rolling slot allows for glyph overshoot.
+
+The opening announcement is followed by a tighter crop of the supplied Rio chair
+photograph, address and current studio appointment copy. `Opening.astro` owns that
+composition. The ink surface continues through the footer; only its very bottom
+line is uppercase. Hero activity, place, opening details and discovery cue are also
+uppercase. `EditorialButton.astro` reuses the navigation's rolling letters, curved
+fill, corner dot and interaction states, with an ivory variant for the dark closing.
 
 The artwork stage's timeline starts when it reaches the sticky header offset,
 preserving the first composition during its approach. It begins with about 172svh
@@ -164,8 +179,9 @@ marker at the end of the motion track. Resizing does not follow an old fragment 
   cuts, two horizontal wipes, two upward reveals and one dissolve. Shots last
   700–2300ms; animated transitions last 360–420ms. Gentle camera movement and
   repeated closer crops connect faces, bear silhouettes, bees and dense colour.
-- The visible Pause/Lecture control freezes cuts and camera movement. Playback also
-  pauses behind the curtain, offscreen and in hidden tabs, preserving its place. Enhancement decodes
+- At Martin’s request, the visible Pause/Lecture control is removed. Playback
+  still pauses behind the curtain, offscreen and in hidden tabs, preserving its place;
+  reduced motion freezes it. Enhancement decodes
   the next responsive image ahead of each cut; slow loads hold the current frame,
   and failed images are skipped. No video is imported, built or requested by the hero.
 - Header wordmark and navigation retain the selected difference blending and rolling
@@ -192,12 +208,12 @@ as proof of that claim. Reviewers should identify a suitable numbered-edition im
 if that possibility needs direct visual support.
 
 `index.astro` composes `ArtworkHero.astro`, `Introduction.astro`,
-`ArtworkSequence.astro`, closing and viewer. Each sequence retains its CSS Module
+`ArtworkSequence.astro`, `Opening.astro` and viewer. Each sequence retains its CSS Module
 and animation module. `PageTransition.astro` and its CSS Module own the fixed four-band curtain and
 entrance layout. `page-transition.ts` coordinates native navigation, bounded asset
 readiness, scroll/focus locking and history recovery; the inline layout bootstrap
 prevents a hero flash before the curtain. `studio-transition.ts` animates only the
-Studio-to-sphere handover using the Web Animations API, independently of GSAP. `introduction.ts` owns only the one-time Voyage letter entrance. It uses the
+Studio-to-sphere handover using the Web Animations API, independently of GSAP. `voyage-heading.ts` enhances each shared Voyage heading independently. It uses the
 SplitText and CustomEase plugins included in the installed GSAP package, after fonts are ready,
 and restores natural text after completion or a motion-preference change.
 `artwork-sequence.ts` prepends the rolling invitation
@@ -317,3 +333,20 @@ Ouverture's viewer still opens, fits the whole image and closes. The full reposi
 gate (10 root tests and 55 marketing tests) and production build pass. No new
 browser errors were observed. The brief “Pour le plaisir.” pause remains a taste
 choice for Martin's next review.
+
+The subsequent shared-component and dark-closing pass is recorded in
+`.browser-evidence/editorial-final-pass-0915/`. The contact slice checks the selected
+portrait on the QR page, a decoded 480px embedded JPEG in its vCard, and no vCard
+link on the general Contact page. Public contact photography remains unchanged.
+The visual pass covers the continuous Hatton paragraph, three Voyage entrances,
+hero playback after removing its control, the shared CTA and dark footer, and
+live reduced-motion cleanup. Frama’s installed GSUB tables identify `ss03` as
+“Round dots”; the shared stylesheet maps that named alternate only to Frama and
+Frama Text, including Crystelle’s separate contact-card stylesheet.
+
+The independent review checked 1440px desktop and 390px/320px phone layouts,
+including a captured intermediate stagger, no replay on returning, and the portrait
+handoff. Two minor findings were resolved: “devient Jukkai.” now stays together,
+and the narrowest closing CTA respects the right gutter. The final full gate passes
+10 root and 56 marketing tests; the production build passes. Real phone contact
+import remains unverified, as recorded in the contact-card guide.

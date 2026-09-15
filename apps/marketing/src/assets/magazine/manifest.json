@@ -285,5 +285,20 @@
     "width": 2000,
     "height": 1429,
     "bytes": 439490
+  },
+  {
+    "file": "rio-chair.webp",
+    "source": "/mnt/storage/jukkai/photoshoot-09-09-26/Rio/PXL_20260909_161230513.RAW-01.COVER.jpg",
+    "sourceSha256": "61b7f1bf96e5aed2fd19d2de933b030c2225557948d0d2fc8309da4885379a8c",
+    "sha256": "d07f66e910ea5bf9a7cc3afff4704c7fc2eab52cf6d88a37045e7848ad998d3f",
+    "width": 1400,
+    "height": 1624,
+    "bytes": 195234,
+    "crop": {
+      "left": 650,
+      "top": 1900,
+      "width": 5000,
+      "height": 5800
+    }
   }
 ]

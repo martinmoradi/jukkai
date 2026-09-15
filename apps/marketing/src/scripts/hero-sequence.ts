@@ -8,16 +8,12 @@ export function initHeroSequence() {
   const stage = hero.querySelector<HTMLElement>('[data-film-stage]')!;
   const frames = [...hero.querySelectorAll<HTMLElement>('[data-hero-frame]')];
   const images = frames.map((frame) => frame.querySelector('img')!);
-  const button = hero.querySelector<HTMLButtonElement>('[data-hero-pause]')!;
-  const label = button.querySelector<HTMLElement>('[data-pause-label]')!;
-  const icon = button.querySelector<SVGElement>('[data-pause-icon]')!;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const header = document.querySelector<HTMLElement>('[data-site-header]');
   const ready = new Set<number>();
   const failed = new Set<number>();
   const loading = new Map<number, Promise<void>>();
   let inView = false;
-  let userPaused = false;
   let started = false;
   let shotIndex = 0;
   let current = 0;
@@ -31,7 +27,6 @@ export function initHeroSequence() {
     inView &&
     !document.hidden &&
     !reduced.matches &&
-    !userPaused &&
     !document.documentElement.dataset.pageTransition;
   const transform = ([scale, x, y]: HeroShot['from']) =>
     `translate(${x}%, ${y}%) scale(${scale})`;
@@ -137,7 +132,6 @@ export function initHeroSequence() {
 
   function syncPlayback() {
     const playing = shouldPlay();
-    button.hidden = reduced.matches;
     hero.dataset.playing = String(playing);
     cancelAnimationFrame(raf);
     raf = 0;
@@ -163,19 +157,6 @@ export function initHeroSequence() {
     raf = requestAnimationFrame(tick);
   }
 
-  button.addEventListener('click', () => {
-    userPaused = !userPaused;
-    label.textContent = userPaused ? 'Lecture' : 'Pause';
-    button.setAttribute(
-      'aria-label',
-      userPaused ? 'Relancer les images' : 'Mettre les images en pause',
-    );
-    icon.setAttribute(
-      'd',
-      userPaused ? 'M4 2l10 6-10 6z' : 'M4 3h3v10H4zm5 0h3v10H9z',
-    );
-    syncPlayback();
-  });
   document.addEventListener('visibilitychange', syncPlayback);
   document.addEventListener('jukkai:transition-start', syncPlayback);
   document.addEventListener('jukkai:transition-end', syncPlayback);

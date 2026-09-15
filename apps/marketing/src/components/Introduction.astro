@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 
 import ouverture from '#/assets/magazine/ouverture.webp';
+import VoyageHeading from '#/components/VoyageHeading.astro';
 import styles from '#/styles/introduction.module.css';
 
 const caption = 'Peintures et sculptures réunies pour Jukkai';
@@ -17,19 +18,20 @@ const caption = 'Peintures et sculptures réunies pour Jukkai';
     <span lang='ja'>述懐</span>
     <span class={styles.interpretation}>Interprétation éditoriale du nom</span>
   </div>
-  <h2 id='origin-title' class={styles.phrase} data-intro-phrase>
-    <span class={styles.accessible}>Délivrer ce que le cœur gardait.</span>
-    <span class={styles.phraseVisual} aria-hidden='true'>
-      <span class={styles.phraseLine} data-intro-line>Délivrer ce que</span>
-      <span class={styles.phraseLine} data-intro-line>le cœur gardait.</span>
-    </span>
-  </h2>
+  <VoyageHeading
+    id='origin-title'
+    align='staggered'
+    lines={['Délivrer ce que', 'le cœur gardait.']}
+  />
   <div class={styles.story}>
     <p class={styles.chapter}>Un nouveau chapitre</p>
     <p class={styles.lead}>
-      <span class={styles.leadOpening}>Depuis trente ans,</span>{' '}
-      <span class={styles.keepTogether}>Crystelle Terrasson</span>{' '}
-      imagine{' '}<span class={styles.keepTogether}>des intérieurs.</span>
+      Depuis trente ans, <span class={styles.keepTogether}
+        >Crystelle Terrasson</span
+      >{' '}
+      imagine des intérieurs. Aujourd’hui,{' '}
+      <span class={styles.keepTogether}>le Studio Terrasson</span>{' '}
+      <span class={styles.keepTogether}>devient Jukkai.</span>
     </p>
     <figure class={styles.photograph}>
       <a
@@ -51,12 +53,6 @@ const caption = 'Peintures et sculptures réunies pour Jukkai';
       </a>
     </figure>
     <div class={styles.continuation}>
-      <p class={styles.turn}>
-        <span>Aujourd’hui,</span>{' '}
-        <span>le <span class={styles.keepTogether}>Studio Terrasson</span></span
-        >{' '}
-        <span>devient Jukkai.</span>
-      </p>
       <p class={styles.detail}>
         À Châteaugiron, le studio qu’elle a fondé en 2012 poursuit ses projets
         d’architecture intérieure. Une galerie d’art le rejoint, née d’une envie

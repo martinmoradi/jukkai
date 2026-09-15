@@ -68,28 +68,42 @@
     rotate calc(900ms + var(--letter-index) * 150ms) var(--nav-ease),
     scale calc(900ms + var(--letter-index) * 150ms) var(--nav-ease);
 }
-.contactLink {
+.button {
+  --nav-ease: cubic-bezier(0.35, 0.35, 0, 1);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
   min-width: 144px;
+  min-height: 50px;
   padding: 14px 24px;
   overflow: hidden;
-  color: var(--button-ink);
-  background: var(--button-surface);
-  border: 1px solid var(--button-surface);
+  font-size: 16px;
+  color: var(--button-ink, var(--paper));
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--button-surface, var(--ink));
+  border: 1px solid var(--button-surface, var(--ink));
   border-radius: 6px;
 }
-.contactLink::before {
+.buttonIvory {
+  --button-surface: var(--ivory);
+  --button-ink: var(--ink);
+  --button-fill: var(--ink);
+  --button-hover-ink: var(--ivory);
+}
+.button::before {
   position: absolute;
   inset: 0;
   content: '';
-  background: var(--button-fill);
+  background: var(--button-fill, var(--paper));
   border-radius: 50% 50% 0 0;
   translate: 0 101%;
   transition:
     border-radius 900ms var(--nav-ease),
     translate 900ms var(--nav-ease);
 }
-.contactLink::after {
+.button::after {
   position: absolute;
   right: 7px;
   bottom: 7px;
@@ -102,14 +116,14 @@
     background-color 900ms var(--nav-ease),
     scale 900ms var(--nav-ease);
 }
-.contactLink .rollingLabel {
+.button .rollingLabel {
   overflow: visible;
   transition: color 300ms var(--nav-ease);
 }
-.contactLink .letter {
+.button .letter {
   transition: translate 900ms var(--nav-ease);
 }
-.contactLink .letter::after {
+.button .letter::after {
   color: transparent;
   scale: calc(1.2 + var(--letter-centre) * 0.1);
   translate: 0 100%;
@@ -118,12 +132,12 @@
     color 900ms var(--nav-ease),
     scale 900ms var(--nav-ease);
 }
-.contactLink[aria-current] .rollingLabel {
+.button[aria-current] .rollingLabel {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
-.contactLink:focus-visible {
-  outline-color: var(--button-surface);
+.button:focus-visible {
+  outline-color: var(--button-surface, var(--ink));
 }
 /* Keyboard focus uses the same treatment as pointer hover. */
 .sectionLink:focus-visible .letter {
@@ -133,23 +147,23 @@
   rotate: 0deg;
   scale: 1;
 }
-.contactLink:focus-visible::before {
+.button:focus-visible::before {
   border-radius: 6px;
   translate: 0 0;
 }
-.contactLink:focus-visible::after {
-  background: var(--button-hover-ink);
+.button:focus-visible::after {
+  background: var(--button-hover-ink, var(--ink));
   scale: 0.5;
 }
-.contactLink:focus-visible .rollingLabel {
+.button:focus-visible .rollingLabel {
   color: transparent;
 }
-.contactLink:focus-visible .letter {
+.button:focus-visible .letter {
   translate: 0 -50%;
   transition-delay: calc(var(--letter-centre) * 30ms);
 }
-.contactLink:focus-visible .letter::after {
-  color: var(--button-hover-ink);
+.button:focus-visible .letter::after {
+  color: var(--button-hover-ink, var(--ink));
   scale: 1;
   translate: 0 50%;
   transition-delay: calc(var(--letter-centre) * 30ms);
@@ -162,64 +176,73 @@
     rotate: 0deg;
     scale: 1;
   }
-  .contactLink:hover::before {
+  .button:hover::before {
     border-radius: 6px;
     translate: 0 0;
   }
-  .contactLink:hover::after {
-    background: var(--button-hover-ink);
+  .button:hover::after {
+    background: var(--button-hover-ink, var(--ink));
     scale: 0.5;
   }
-  .contactLink:hover .rollingLabel {
+  .button:hover .rollingLabel {
     color: transparent;
   }
-  .contactLink:hover .letter {
+  .button:hover .letter {
     translate: 0 -50%;
     transition-delay: calc(var(--letter-centre) * 30ms);
   }
-  .contactLink:hover .letter::after {
-    color: var(--button-hover-ink);
+  .button:hover .letter::after {
+    color: var(--button-hover-ink, var(--ink));
     scale: 1;
     translate: 0 50%;
     transition-delay: calc(var(--letter-centre) * 30ms);
   }
 }
-.contactLink:active {
+.button:active {
   box-shadow: inset 0 0 0 2px currentColor;
 }
 @media (prefers-reduced-motion: reduce) {
   .navigation .letter,
-  .navigation .letter::after {
+  .navigation .letter::after,
+  .button .letter,
+  .button .letter::after {
     rotate: none !important;
     scale: none !important;
     translate: none !important;
   }
-  .navigation .letter::after {
+  .navigation .letter::after,
+  .button .letter::after {
     display: none;
   }
-  .contactLink:is(:hover, :focus-visible)::before {
+  .button:is(:hover, :focus-visible)::before {
     border-radius: 6px;
     translate: 0 0;
   }
-  .contactLink:is(:hover, :focus-visible) .rollingLabel {
-    color: var(--button-hover-ink);
+  .button:is(:hover, :focus-visible) .rollingLabel {
+    color: var(--button-hover-ink, var(--ink));
   }
 }
 .footer {
   padding: 0 var(--gutter);
-  background: var(--paper);
+  color: var(--ivory);
+  background: var(--ink);
 }
 .footerInfo {
   display: grid;
   grid-template-columns: 1.2fr 1.5fr 1fr 1.2fr;
   gap: 30px;
   align-items: start;
-  padding: 60px 0 45px;
+  padding: 64px 0 56px;
   font-size: 16px;
   line-height: 1.75;
+  border-top: 1px solid #eae2d238;
 }
 .footerMark {
   width: 180px;
+}
+.footerMark img {
+  filter: brightness(0) saturate(100%) invert(91%) sepia(15%) saturate(239%)
+    hue-rotate(356deg) brightness(99%) contrast(88%);
 }
 .footerLinks {
   display: flex;
@@ -245,8 +268,10 @@
   align-items: center;
   justify-content: space-between;
   padding: 18px 0;
-  font-size: 14px;
-  border-top: 1px solid var(--line);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-top: 1px solid #eae2d238;
 }
 .colophon a {
   display: inline-flex;
@@ -269,7 +294,7 @@
   .sectionLink {
     display: none !important;
   }
-  .contactLink {
+  .button {
     min-width: 128px;
     padding: 12px 16px;
   }

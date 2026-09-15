@@ -117,3 +117,13 @@ des caresses.”; its alternative text remains a literal description of the phot
 `dogs-scene` now introduces the Galerie; `contrasting-bears` takes its place beside
 “chez soi.” in the rolling invitation. The former interior/artwork diptych is no
 longer displayed, and its exports remain preserved.
+
+## Rio closing photograph, September 15
+
+For the dark opening section, Martin supplied
+`/mnt/storage/jukkai/photoshoot-09-09-26/Rio/PXL_20260909_161230513.RAW-01.COVER.jpg`.
+`rio-chair.webp` is a 1400 × 1624px web export cropped to the chair, dog and room
+from source coordinates `{left:650, top:1900, width:5000, height:5800}`. It removes
+excess wall/floor and peripheral objects, with no retouching or colour treatment.
+The manifest records the exact original and web checksums. This is a supplied
+photograph of Rio in the space, not evidence of a public opening date.

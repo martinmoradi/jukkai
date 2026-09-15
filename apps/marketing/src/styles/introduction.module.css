@@ -23,29 +23,6 @@
   font-size: 12px;
   color: var(--ink-soft);
 }
-.phrase {
-  font-family: voyage, Georgia, serif;
-  font-size: clamp(76px, 13.2vw, 224px);
-  font-weight: 400;
-  line-height: 0.91;
-  letter-spacing: -0.025em;
-}
-.phraseVisual,
-.phraseLine {
-  display: block;
-}
-.phraseLine + .phraseLine {
-  margin-top: 0.06em;
-  text-align: right;
-}
-.accessible {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  white-space: nowrap;
-  clip-path: inset(50%);
-}
 .story {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -62,33 +39,24 @@
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
-.lead,
-.turn {
+.lead {
+  grid-column: 2 / 12;
   font-family: var(--serif);
   font-size: var(--statement-size);
   font-weight: 300;
   line-height: var(--statement-leading);
-  letter-spacing: var(--statement-tracking);
-}
-.lead {
-  grid-column: 2 / 10;
-  text-wrap: balance;
-}
-.leadOpening {
-  display: block;
   text-indent: 2.4em;
+  letter-spacing: var(--statement-tracking);
+  text-wrap: pretty;
 }
 .keepTogether {
   white-space: nowrap;
-}
-.turn > span {
-  display: block;
 }
 .photograph {
   grid-row: 3;
   grid-column: 2 / 7;
   align-self: end;
-  margin-top: 72px;
+  margin-top: 64px;
 }
 .photograph a {
   display: block;
@@ -102,12 +70,12 @@
   flex-direction: column;
   grid-row: 3;
   grid-column: 8 / -1;
-  align-self: stretch;
-  margin-top: 32px;
+  align-self: end;
+  margin-top: 64px;
 }
 .detail {
   max-width: 30em;
-  padding-top: 40px;
+  padding-top: 0;
   margin-top: auto;
   font-size: clamp(18px, 1.4vw, 22px);
   line-height: 1.6;
@@ -130,13 +98,6 @@
     text-align: right;
     text-wrap: balance;
   }
-  .phrase {
-    font-size: 13vw;
-    line-height: 1;
-  }
-  .phraseLine + .phraseLine {
-    margin-top: 0.08em;
-  }
   .story {
     grid-template-columns: repeat(6, minmax(0, 1fr));
     column-gap: 12px;
@@ -149,10 +110,9 @@
   }
   .lead {
     grid-column: 1 / -1;
-  }
-  .leadOpening {
     text-indent: 1.6em;
   }
+
   .photograph {
     grid-row: 3;
     grid-column: 1 / -1;
@@ -165,7 +125,7 @@
   }
   .detail {
     padding-top: 0;
-    margin-top: 24px;
+    margin-top: 0;
     font-size: 18px;
   }
 }
