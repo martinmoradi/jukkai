@@ -1,20 +1,39 @@
-/* Paper page: the sentence assembles around the wordmark, then the two activities join. */
+/* A name, an intention, then the person behind it. The whole passage stays in flow. */
 .introduction {
   position: relative;
-  z-index: 2;
-}
-.track {
-  position: relative;
-}
-.stage {
-  position: relative;
-  height: 100svh;
-  min-height: 520px;
-  overflow: clip;
+  padding: clamp(88px, 10vw, 180px) var(--gutter) clamp(96px, 11vw, 180px);
   background: var(--paper);
 }
-.sentence {
+.name {
+  display: flex;
+  gap: 18px;
+  align-items: baseline;
+  margin-bottom: clamp(40px, 4.5vw, 72px);
+  font-size: 14px;
+}
+.name [lang='ja'] {
+  font-family: serif;
+  font-size: 20px;
+}
+.interpretation {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+.phrase {
+  font-family: voyage, Georgia, serif;
+  font-size: clamp(76px, 13.2vw, 224px);
   font-weight: 400;
+  line-height: 0.91;
+  letter-spacing: -0.025em;
+}
+.phraseVisual,
+.phraseLine {
+  display: block;
+}
+.phraseLine + .phraseLine {
+  margin-top: 0.06em;
+  text-align: right;
 }
 .accessible {
   position: absolute;
@@ -24,185 +43,72 @@
   white-space: nowrap;
   clip-path: inset(50%);
 }
-.former {
-  position: absolute;
-  top: calc(var(--header-height) + 5svh);
-  left: var(--gutter);
-  width: clamp(200px, 23vw, 340px);
-  height: auto;
-}
-.verb {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  font-family: var(--serif);
-  font-size: clamp(120px, 21vw, 340px);
-  font-style: italic;
-  font-weight: 300;
-  line-height: 0.9;
-  text-align: center;
-  letter-spacing: -0.03em;
-  white-space: nowrap;
-  transform: translateY(-54%);
-}
-.mark,
-.slot {
-  position: absolute;
-  right: var(--gutter);
-  bottom: 9svh;
-  width: clamp(200px, 26vw, 380px);
-  aspect-ratio: 887 / 356;
-}
-.slot {
-  visibility: hidden;
-  pointer-events: none;
-}
-.markFace,
-.markByline {
-  position: absolute;
-  inset: 0;
-  background: var(--ink);
-  mask: var(--wordmark) center / contain no-repeat;
-}
-.markByline {
-  display: none;
-  mask-image: var(--lockup);
-}
-.join {
-  padding: 24svh var(--gutter) 16svh;
-  background: var(--paper);
-}
-.panels {
+.story {
   display: grid;
-  grid-template-columns: repeat(2, min(40vw, 760px));
-  justify-content: center;
+  grid-template-columns: 5fr 7fr;
+  gap: 32px;
+  align-items: baseline;
+  margin-top: clamp(56px, 7vw, 112px);
 }
-.panel {
-  will-change: transform;
+.chapter {
+  font-size: 13px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
-.lead span {
-  display: block;
+.copy {
+  max-width: 760px;
 }
 .lead {
   font-family: var(--display);
-  font-size: clamp(34px, 4.6vw, 76px);
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: -0.045em;
-}
-.panel:first-child .lead {
-  margin-bottom: 28px;
-}
-.panel:last-child .lead {
-  margin-top: 28px;
-  text-align: right;
-}
-.figure {
-  position: relative;
-}
-.figure a {
-  display: block;
-  cursor: zoom-in;
-}
-.figure img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
-  transform-origin: center;
-  will-change: transform;
-}
-.figure figcaption {
-  display: flex;
-  gap: 12px;
-  justify-content: space-between;
-  padding-top: 10px;
-  font-size: 12px;
-  line-height: 1.5;
-}
-.panel:last-child figcaption {
-  justify-content: flex-end;
+  font-size: clamp(26px, 2.65vw, 42px);
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+  text-wrap: pretty;
 }
 .detail {
-  max-width: 24em;
-  margin: 14svh 0 0 50%;
-  font-size: clamp(19px, 1.5vw, 24px);
-  line-height: 1.55;
-}
-.introduction[data-motion='ready'] {
-  margin-top: -200svh;
-  pointer-events: none;
-}
-.introduction[data-motion='ready'] .track {
-  height: 390svh;
-}
-.introduction[data-motion='ready'] .stage {
-  position: sticky;
-  top: 0;
-  pointer-events: auto;
-  clip-path: circle(0 at 50% 50%);
-}
-.introduction[data-motion='ready'] .join {
-  pointer-events: auto;
-}
-.introduction[data-motion='ready'] .mark {
-  inset: 50% auto auto 50%;
-  width: min(91vw, 172svh);
-  transform: none;
-  will-change: transform;
-}
-.introduction[data-motion='ready'] .markByline {
-  display: block;
-}
-.introduction[data-motion='ready'] .former {
-  will-change: transform;
-}
-/* The verb is revealed from the centre outwards as its letters tighten into place. */
-.introduction[data-motion='ready'] .verb {
-  clip-path: inset(0 50% 0 50%);
-  will-change: letter-spacing, clip-path;
+  max-width: 30em;
+  margin-top: 28px;
+  font-size: clamp(18px, 1.4vw, 22px);
+  line-height: 1.6;
+  text-wrap: pretty;
 }
 @media (max-width: 800px) {
-  .former {
-    top: calc(var(--header-height) + 4svh);
-    width: 46vw;
+  .introduction {
+    padding-block: 76px 88px;
   }
-  .verb {
-    font-size: 24vw;
+  .name {
+    gap: 12px;
+    margin-bottom: 44px;
+    font-size: 12px;
   }
-  .mark,
-  .slot {
-    bottom: 8svh;
-    width: 52vw;
-  }
-  .join {
-    padding-block: 18svh 22svh;
-  }
-  .panels {
-    grid-template-columns: 1fr;
-    gap: 56px;
-  }
-  .lead {
-    font-size: clamp(34px, 9.6vw, 48px);
-  }
-  .panel:first-child .lead {
-    margin-bottom: 20px;
-  }
-  .panel:last-child .lead {
-    margin-top: 20px;
-  }
-  .detail {
-    max-width: 30em;
-    margin: 12svh 0 0;
+  .name [lang='ja'] {
     font-size: 18px;
   }
-}
-@media (max-height: 600px) and (min-width: 801px) {
-  .former {
-    top: calc(var(--header-height) + 16px);
+  .interpretation {
+    font-size: 11px;
   }
-  .verb {
-    font-size: clamp(100px, 16vw, 220px);
+  .phrase {
+    font-size: 13vw;
+    line-height: 1;
+  }
+  .phraseLine + .phraseLine {
+    margin-top: 0.08em;
+  }
+  .story {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 52px;
+  }
+  .chapter {
+    font-size: 12px;
+  }
+  .lead {
+    max-width: 23em;
+    font-size: clamp(26px, 4.5vw, 34px);
+  }
+  .detail {
+    margin-top: 24px;
+    font-size: 18px;
   }
 }
