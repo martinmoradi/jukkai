@@ -1,4 +1,9 @@
 .header {
+  --nav-ease: cubic-bezier(0.35, 0.35, 0, 1);
+  --button-surface: color-mix(in srgb, var(--ink) 6%, var(--paper));
+  --button-ink: var(--ink);
+  --button-fill: var(--ink);
+  --button-hover-ink: var(--paper);
   position: sticky;
   top: 0;
   z-index: 20;
@@ -11,15 +16,13 @@
 }
 .brand {
   display: flex;
-  gap: 18px;
+  flex-shrink: 0;
   align-items: center;
+  min-height: 44px;
 }
 .brand img {
   width: 108px;
   height: auto;
-}
-.brand span {
-  font-size: 14px;
 }
 .navigation {
   display: flex;
@@ -35,45 +38,169 @@
   align-items: center;
   min-height: 44px;
 }
-.sectionLink::after {
-  position: absolute;
-  right: 0;
-  bottom: 8px;
-  left: 0;
-  height: 1px;
-  content: '';
-  background: currentColor;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 250ms var(--ease);
+.rollingLabel {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  line-height: 1.3;
+  white-space: nowrap;
 }
-.sectionLink:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
+.letter {
+  position: relative;
+  display: inline-block;
+}
+.letter::after {
+  position: absolute;
+  inset: 0;
+  content: attr(data-letter);
+}
+/* The menu's next letters turn upward in a wave; the link itself stays still. */
+.sectionLink .letter {
+  transition: translate calc(900ms + var(--letter-index) * 150ms)
+    var(--nav-ease);
+}
+.sectionLink .letter::after {
+  transform-origin: 0 100%;
+  rotate: 60deg;
+  scale: 1.5;
+  translate: 0 105%;
+  transition:
+    rotate calc(900ms + var(--letter-index) * 150ms) var(--nav-ease),
+    scale calc(900ms + var(--letter-index) * 150ms) var(--nav-ease);
 }
 .contactLink {
-  gap: 18px;
-  padding: 0 16px;
-  color: var(--paper-light);
-  background: var(--ink);
-  transition: background 200ms;
+  justify-content: flex-start;
+  min-width: 144px;
+  padding: 10px 20px 18px;
+  overflow: hidden;
+  color: var(--button-ink);
+  background: var(--button-surface);
+  border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+  border-radius: 6px;
 }
-.contactLink svg {
-  width: 18px;
-  transition: transform 250ms var(--ease);
+.contactLink::before {
+  position: absolute;
+  inset: 0;
+  content: '';
+  background: var(--button-fill);
+  border-radius: 50% 50% 0 0;
+  translate: 0 101%;
+  transition:
+    border-radius 900ms var(--nav-ease),
+    translate 900ms var(--nav-ease);
 }
-.contactLink:hover svg {
-  transform: translate(3px, -3px);
+.contactLink::after {
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  width: 5px;
+  height: 5px;
+  content: '';
+  background: currentColor;
+  border-radius: 50%;
+  transition:
+    background-color 900ms var(--nav-ease),
+    scale 900ms var(--nav-ease);
 }
-.contactLink:hover {
-  background: var(--accent);
+.contactLink .rollingLabel {
+  overflow: visible;
+  transition: color 300ms var(--nav-ease);
+}
+.contactLink .letter {
+  transition: translate 900ms var(--nav-ease);
+}
+.contactLink .letter::after {
+  color: transparent;
+  scale: calc(1.2 + var(--letter-centre) * 0.1);
+  translate: 0 100%;
+  transition:
+    translate 900ms var(--nav-ease),
+    color 900ms var(--nav-ease),
+    scale 900ms var(--nav-ease);
+}
+.contactLink[aria-current] .rollingLabel {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+/* Keyboard focus uses the same treatment as pointer hover. */
+.sectionLink:focus-visible .letter {
+  translate: 0 -105%;
+}
+.sectionLink:focus-visible .letter::after {
+  rotate: 0deg;
+  scale: 1;
+}
+.contactLink:focus-visible::before {
+  border-radius: 6px;
+  translate: 0 0;
+}
+.contactLink:focus-visible::after {
+  background: var(--button-hover-ink);
+  scale: 0.5;
+}
+.contactLink:focus-visible .rollingLabel {
+  color: transparent;
+}
+.contactLink:focus-visible .letter {
+  translate: 0 -50%;
+  transition-delay: calc(var(--letter-centre) * 30ms);
+}
+.contactLink:focus-visible .letter::after {
+  color: var(--button-hover-ink);
+  scale: 1;
+  translate: 0 50%;
+  transition-delay: calc(var(--letter-centre) * 30ms);
+}
+@media (hover: hover) and (pointer: fine) {
+  .sectionLink:hover .letter {
+    translate: 0 -105%;
+  }
+  .sectionLink:hover .letter::after {
+    rotate: 0deg;
+    scale: 1;
+  }
+  .contactLink:hover::before {
+    border-radius: 6px;
+    translate: 0 0;
+  }
+  .contactLink:hover::after {
+    background: var(--button-hover-ink);
+    scale: 0.5;
+  }
+  .contactLink:hover .rollingLabel {
+    color: transparent;
+  }
+  .contactLink:hover .letter {
+    translate: 0 -50%;
+    transition-delay: calc(var(--letter-centre) * 30ms);
+  }
+  .contactLink:hover .letter::after {
+    color: var(--button-hover-ink);
+    scale: 1;
+    translate: 0 50%;
+    transition-delay: calc(var(--letter-centre) * 30ms);
+  }
 }
 .contactLink:active {
-  background: var(--accent-active);
+  box-shadow: inset 0 0 0 2px currentColor;
 }
-.contactLink[aria-current] {
-  text-decoration: underline;
-  text-underline-offset: 5px;
+@media (prefers-reduced-motion: reduce) {
+  .navigation .letter,
+  .navigation .letter::after {
+    rotate: none !important;
+    scale: none !important;
+    translate: none !important;
+  }
+  .navigation .letter::after {
+    display: none;
+  }
+  .contactLink:is(:hover, :focus-visible)::before {
+    border-radius: 6px;
+    translate: 0 0;
+  }
+  .contactLink:is(:hover, :focus-visible) .rollingLabel {
+    color: var(--button-hover-ink);
+  }
 }
 .footer {
   padding: 0 var(--gutter);
@@ -124,34 +251,13 @@
   min-height: 44px;
 }
 @media (max-width: 1100px) {
-  .brand {
-    gap: 10px;
-    align-items: flex-start;
-  }
-  .brand span {
-    max-width: 105px;
-    line-height: 1.4;
-  }
   .footerInfo {
     grid-template-columns: 1fr 1.4fr;
   }
 }
 @media (max-width: 800px) {
-  .contactLink svg {
-    display: none;
-  }
-  .brand {
-    flex-direction: column;
-    gap: 3px;
-  }
   .brand img {
     width: 88px;
-  }
-  .brand span {
-    max-width: none;
-    font-size: 12px;
-    line-height: 1.4;
-    white-space: nowrap;
   }
   .navigation {
     gap: 20px;
@@ -161,8 +267,8 @@
     display: none !important;
   }
   .contactLink {
-    gap: 14px;
-    padding: 0 12px;
+    min-width: 128px;
+    padding: 9px 16px 15px;
   }
   .footerInfo {
     grid-template-columns: 1fr;
@@ -187,9 +293,6 @@
   }
 }
 
-.heroCategory {
-  display: none;
-}
 .header[data-immersive] {
   position: absolute;
   right: 0;
@@ -199,31 +302,14 @@
   position: fixed;
 }
 .header[data-on-film='true'] {
+  --button-surface: rgb(255 255 255 / 8%);
+  --button-ink: white;
+  --button-fill: white;
+  --button-hover-ink: black;
   color: white;
   background: transparent;
   mix-blend-mode: difference;
 }
-.header[data-on-film='true'] .brand > img,
-.header[data-on-film='true'] .brand > span:not(.heroCategory) {
-  display: none;
-}
-.header[data-on-film='true'] .brand .heroCategory {
-  display: block;
-  max-width: none;
-  font-size: 14px;
-  line-height: 1.4;
-}
-.header[data-on-film='true'] .contactLink {
-  color: inherit;
-  background: transparent;
-  border: 1px solid currentColor;
-}
-.header[data-on-film='true'] .contactLink:hover {
-  color: var(--ink);
-  background: white;
-}
-@media (max-width: 800px) {
-  .header[data-on-film='true'] .brand .heroCategory {
-    font-size: 12px;
-  }
+.header[data-on-film='true'] .brand img {
+  filter: brightness(0) invert(1);
 }

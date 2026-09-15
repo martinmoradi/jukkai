@@ -2,7 +2,7 @@
 
 **Status:** prototype integration for Martin's review; not promoted to production.
 **Owns:** this edition's two-page implementation and review procedure.
-**Last reviewed:** 2026-09-15, for the hero, transition copy and artwork choreography.
+**Last reviewed:** 2026-09-15, for the hero, navigation interactions, transition copy and artwork choreography.
 **Revisit when:** the design/copy is accepted, the films are replaced, the opening
 has happened, or the full website replaces this edition.
 
@@ -82,11 +82,16 @@ at the end of the sticky track. Resizing never follows an old fragment again.
   when the tab is hidden and on reduced-motion preference. The hero has no
   play/pause control; a failed film leaves the poster and links usable. The
   opening date and location are plain text, with no hero opening link.
-- Header and hero controls use difference blending to remain legible as the inset
-  film expands across the ivory frame. The header uses the prototype's category,
-  then returns to the
-  existing navigation/wordmark after the film. Without enhancement it scrolls away
-  with the hero, avoiding white navigation stranded over a white page.
+- The header keeps the supplied wordmark without its byline as the home link,
+  including over the hero. Difference blending keeps the wordmark, navigation and
+  hero details legible as the film expands. Without enhancement the header scrolls
+  away with the hero, avoiding white navigation stranded over a white page.
+- The Contact button and header section links adapt the interactions Martin selected
+  from [The Obsidian Assembly](https://obsidianassembly.com/): a rounded button with
+  a rising curved fill and centre-out letter roll, plus rotating letters that roll
+  upward across each section link. The letters render on the server; CSS handles
+  hover and keyboard focus without an additional animation script. Link hit areas
+  stay fixed, accessible names are read once, and reduced motion uses static states.
 - Hidden orbit layers are inert during motion. The top Bonneville painting and
   its caption become inspectable while the stack rests; the subsequent selection
   uses the existing full artwork viewer. Static grid links work without scripts.
@@ -140,7 +145,7 @@ Current local review captures and audit results live in
 `.browser-evidence/magazine-prototypes/` (gitignored). Inspect intermediate viewport
 states and recordings for the sticky sequences; full-page screenshots alone do
 not show their motion. Check desktop, phone, small phone, tablet and short landscape,
-reverse scrolling, orientation changes, native anchors, detail viewer, video pause,
+reverse scrolling, orientation changes, native anchors, header hover/focus, detail viewer, offscreen video pause,
 reduced motion, failed assets and script fallback.
 
 Physical-device Safari, real contact import and production analytics remain release
