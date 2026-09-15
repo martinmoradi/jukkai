@@ -118,20 +118,16 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
           onRefreshInit: measure,
           scrub: true,
           invalidateOnRefresh: true,
-          onUpdate: (self) => {
-            const inspectable = self.progress >= 0.57 && self.progress < 0.73;
+          onUpdate: () => {
+            const inspectable =
+              Number(gsap.getProperty(credit, 'opacity')) > 0.5;
             orbits[4].inert = !inspectable;
             credit.inert = !inspectable;
           },
         },
       });
-      timeline
-        .fromTo(
-          invitation,
-          { autoAlpha: 1, scale: 1 },
-          { autoAlpha: 0, scale: 0.86, duration: 0.13, ease: 'power1.in' },
-          0.07,
-        )
+      const choreography = gsap.timeline({ defaults: { ease: 'none' } });
+      choreography
         .fromTo(
           orbits,
           { rotation: (index) => -angle * index },
@@ -205,6 +201,15 @@ export function animateArtworkSequence(gsap: typeof Gsap) {
           0.925,
         )
         .to({}, { duration: 0.035 });
+
+      timeline
+        .fromTo(
+          invitation,
+          { autoAlpha: 1, scale: 1 },
+          { autoAlpha: 0, scale: 0.86, duration: 0.14, ease: 'power1.in' },
+          0.2,
+        )
+        .add(choreography, 0.22);
 
       return () => {
         sequence.removeAttribute('data-motion');
