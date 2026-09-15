@@ -1,10 +1,9 @@
 # Magazine website
 
-**Status:** prototype integration for Martin's review; not promoted to production.
+**Status:** editorial proof 0.1 for Martin's review; local, not promoted to production.
 **Owns:** this edition's two-page implementation and review procedure.
-**Last reviewed:** 2026-09-15, for the hero, navigation interactions, transition copy and artwork choreography.
-**Revisit when:** the design/copy is accepted, the films are replaced, the opening
-has happened, or the full website replaces this edition.
+**Last reviewed:** 2026-09-15, for the supplied editorial copy, full-page composition and retained animation anchors.
+**Revisit when:** Martin reviews the composition, the films are replaced, the opening happens, or the full website replaces this edition.
 
 ## Purpose and authority
 
@@ -13,142 +12,139 @@ Studio Terrasson website. Art carries the opening; architecture establishes the
 practice's continuity and expertise. [Current delivery](current-delivery.md) owns
 release scope; the [foundation](../strategy/foundation.md) owns business facts.
 
-Martin's September 15 request selects the Desktop hero and spiral prototypes as the
-main motion direction: video hero, spacious Studio Terrasson-to-Jukkai explanation,
-logo transition, five artworks converging into a stack, then Bonneville's painting
-moving into Crystelle's photograph. The hero now follows the Galerie variant for Martin’s review: an inset film on ivory expands to full bleed behind an offset wordmark. This supersedes the earlier painting-first hero.
-The exact French, spacing, timing and transitions are implementation choices for
-review, not permanent brand decisions. Copy remains subject to Martin/Crystelle's
-review before production. No production promotion is part of this implementation.
+Martin's September 15 **editorial proof 0.1** brief supplies the French copy and
+asks for one local composition: hero → unified introduction → artworks → Crystelle
+and the name reference → practical invitation. This proof replaces the earlier
+three-chapter explanation. Its wording and composition are proposals for review,
+not permanent strategy or approved public copy. The childhood story, numbered
+editions and gift possibilities are supplied by Martin's brief. The Japanese
+reference is explicitly an editorial interpretation. The tattoo reference is not
+public copy and does not appear on the page.
 
 ## Page and factual boundaries
 
-- `/` explains the continuation of Studio Terrasson with the addition of art and a
-  Galerie, introduces Crystelle, shows a small artistic selection, and gives the
-  October 2026 opening, Châteaugiron address and contact route.
-- `/contact/` provides phone/email, address, map, vCard and Instagram. Architecture
-  already receives clients by appointment. No precise opening day, public hours,
-  programme, artwork availability or prices are invented.
+- `/` explains that Studio Terrasson becomes Jukkai and its architecture practice
+  continues alongside the new Galerie. The introduction keeps both paragraphs
+  together, without scroll-triggered text reveals.
+- The Galerie opens in October 2026. Architecture already receives clients by
+  appointment. No precise opening day, public hours, stock, prices or programme
+  is invented. The address and footer contact details use the shared contact data.
+- `/contact/` retains phone/email, address, map, vCard and Instagram.
 - `/contact/crystelle/`, `/contact/crystelle.vcf` and the locked printed `/c/crystelle`
-  pointer remain intact. No further sitemap pages, backend or migration are added.
-- Visible copy describes continuity and expansion. The ordinary Studio Terrasson
-  link leads to existing projects. Its banner, redirects, domain migration and
-  Google Business Profile transition remain separate work.
+  pointer remain intact. No new sitemap page, backend or migration is added.
+- The project link points to `https://www.studioterrasson.fr/`. The old site's banner,
+  redirects, domain migration and Google profile remain separate work.
 - Artist names come from supplied selection evidence. Unknown titles stay unknown;
-  multi-object scenes use descriptive captions. Photographs/films are artistic
-  selections, not evidence that the new Galerie is finished or publicly open.
+  scene captions are descriptions. Photographs/films do not establish that the new
+  Galerie is finished or already open to the public.
 
-## Scroll sequence
+## Composition and scroll sequence
 
-All motion follows native vertical scrolling. There is no scroll interception or
-smooth-scroll library. The spiral reuses the prototype's opposing parent/child
-rotations so every artwork remains upright as it circles toward the centre.
+All motion follows native vertical scrolling. No scroll interception or
+smooth-scroll library is used. The existing generated Frama/Frama Text/Hatton
+families remain in use. The proof uses gallery white and ivory, with a muted green
+closing field; this is an edition-specific composition choice.
 
-| Chapter           | Desktop                                                                                                                              | Phone                                                                                    |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
-| Video hero        | Inset landscape film expands to full bleed; the complete masked wordmark grows from 60% to full size and centres.                    | Inset portrait film expands to full bleed; wordmark grows from 72% to full size.         |
-| Continuity        | Spacious heading, three passages on the right and sticky identity on the left.                                                       | Sticky compact identity above the passages; copy keeps a readable single column.         |
-| Identity handover | Supplied Studio wordmark contracts into the C seal; the Jukkai sphere appears, then the complete Jukkai wordmark reveals.            | Same marks, in a shorter panel.                                                          |
-| Spiral            | Five works converge into one upright stack; Bonneville is last and remains on top.                                                   | Smaller orbit radius and stack size, with the same reversible progression.               |
-| Human connection  | Crystelle's photograph enters on the left; the painting moves to the right, then recedes toward its real position in her photograph. | Photograph and painting connect vertically, then the introduction replaces the painting. |
-| Further viewing   | Existing editorial selection, opening/address, contact and footer.                                                                   | Single-column selection and practical details.                                           |
+| Chapter           | Composition and motion                                                                                                                                                                                                                           |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Hero              | Original inset film expanding to full bleed and complete wordmark animation. The supplied small sentence occupies the quiet area. Activity, place and Galerie opening have secondary scale.                                                      |
+| Identity entrance | The supplied Studio wordmark, C seal and Jukkai sphere form a short, approximately 2.15-second entrance into the complete hero wordmark. Scrolling settles it immediately; deep links skip it. This first timing is provisional.                 |
+| Introduction      | One large direct heading and two readable paragraphs, side by side on desktop and stacked on phones. All content is available together.                                                                                                          |
+| Artworks          | Stable three-line heading and paragraph, then two still scenes: the sculpted dogs with a real dog, and the sculptural still life. These add humour and differences of scale before the five-painting spiral.                                     |
+| Spiral            | The original opposing parent/child rotations keep each work upright. Bonneville closes the stack and remains available in the artwork viewer at its resting point.                                                                               |
+| Crystelle         | The painting moves into its real position in the supplied portrait. The portrait and complete biography settle together on desktop. On phones, the stage accommodates the full story and releases into ordinary scrolling so no text is clipped. |
+| Name reference    | One Hatton typographic moment follows the personal story: the supplied Japanese reference, French phrase and explicit interpretation note.                                                                                                       |
+| Closing           | A concise opening statement, shared address, current architecture appointments and contact action, followed by the existing useful footer.                                                                                                       |
 
-The hero uses 225svh (195svh on phones); the combined spiral/portrait uses 380svh
-(340svh on phones). These are scroll distances, not timed playback. The two artwork
-photographs have different lighting/perspective: the painting dissolves during the
-join, preserving the earlier branch's source-faithful transition.
+The hero retains 225svh (195svh on phones). The artwork choreography has 280svh
+of travel after the stage reaches its sticky position (240svh on phones), plus
+its measured natural story height. The orbit begins during approach to the stage.
+These are scroll distances, not timed playback. The source paintings and portrait
+have different lighting/perspective; the original dissolve is retained at the join.
 
-The introduction anchor `#esprit` now targets the Studio/Jukkai explanation.
-`#galerie` targets the spiral. `#crystelle` and `#architecture` target the final
-readable portrait state; the enhancement temporarily moves those IDs onto a marker
-at the end of the sticky track. Resizing never follows an old fragment again.
+`#esprit` targets the unified introduction; `#galerie` targets the stable artwork
+copy. `#crystelle` and `#architecture` target the final portrait reading state;
+enhancement temporarily moves their IDs onto a marker at the end of the motion
+track. `#selection` stays with the two still scenes. Resizing does not follow an
+old fragment again.
 
 ## Fallbacks and interaction
 
-- Server-rendered content is useful without scripts: poster, both identity marks,
-  complete five-artwork grid, portrait/copy, and ordinary artwork/contact links.
-- Reduced motion skips the animation import and leaves video playback paused on
-  its poster. Changing the preference reverts active
-  choreography; enabling motion later can initialise it without reloading.
-- Short viewports use static identity/artwork layouts (under 600px high on phones,
-  under 720px for the desktop artwork sequence). The hero remains readable in
-  short landscape with a compact wordmark.
-- A small hero inline script reserves the initial sticky layout before paint; if
-  enhancement fails, a five-second fallback removes the extra track. A failed
-  animation import restores static sections. Below-fold sections enhance only
-  after all their animation modules are available.
-- Videos are muted, looped and inline. Only the selected orientation loads. A
-  matching static poster remains behind the film. Playback pauses when offscreen,
-  when the tab is hidden and on reduced-motion preference. The hero has no
-  play/pause control; a failed film leaves the poster and links usable. The
-  opening date and location are plain text, with no hero opening link.
-- The header keeps the supplied wordmark without its byline as the home link,
-  including over the hero. Difference blending keeps the wordmark, navigation and
-  hero details legible as the film expands. Without enhancement the header scrolls
-  away with the hero, avoiding white navigation stranded over a white page.
-- The Contact button and header section links adapt the interactions Martin selected
-  from [The Obsidian Assembly](https://obsidianassembly.com/): a rounded button with
-  a rising curved fill and centre-out letter roll, plus rotating letters that roll
-  upward across each section link. The letters render on the server; CSS handles
-  hover and keyboard focus without an additional animation script. Link hit areas
-  stay fixed, accessible names are read once, and reduced motion uses static states.
-- Hidden orbit layers are inert during motion. The top Bonneville painting and
-  its caption become inspectable while the stack rests; the subsequent selection
-  uses the existing full artwork viewer. Static grid links work without scripts.
+- Server-rendered content is useful without scripts: film poster, complete hero
+  wordmark, all copy, five-artwork grid, portrait and ordinary artwork/contact links.
+- Reduced motion skips the animation import and pauses the film on its poster.
+  Changing the preference reverts active choreography. Short viewports use the
+  static artwork layout (under 600px high on phones, under 720px on desktop).
+- A small hero inline script reserves the sticky layout before paint; a five-second
+  fallback removes the extra track if enhancement fails. A failed animation import
+  restores static sections. The identity entrance never gates navigation or reading.
+- Videos are muted, looped and inline; only the selected orientation loads. Playback
+  pauses offscreen, when the tab is hidden and for reduced motion. A failed film
+  leaves its matching poster and links usable.
+- Header wordmark and navigation retain the selected difference blending and rolling
+  letter interactions. Contact uses the rounded button with curved fill. Hit areas
+  stay fixed, accessible names are read once and reduced motion uses static states.
+- Hidden orbit layers remain inert during choreography. The top painting/caption
+  becomes inspectable while the stack rests. Every work is an ordinary link in the
+  static grid. Both additional still scenes use the existing viewer.
 - The viewer retains zoom, whole-artwork view, keyboard/touch/mouse panning,
   Escape/close, focus restoration and image-failure recovery.
 
 ## Assets and implementation
 
 The [asset manifest](../../apps/marketing/src/assets/magazine/manifest.json) records
-sources and checksums. [Selection notes](../../apps/marketing/src/assets/magazine/README.md)
-explain the photographs; [film notes](../../apps/marketing/src/assets/magazine/motion/README.md)
-identify the provisional prototype clips and how to replace them with their posters.
-The [media catalog and workflow](../../media/README.md) identify the selected
-full-quality working sources and Storage masters. The manifest retains each exact
-historical input, including smaller previews used for existing app exports; the
-September consolidation preserves current app bytes. Do not import from ignored
-`media/library/` or the mounted archive into runtime code.
-Original SVGs are preserved in `brand/source/studio-terrasson/`; matching runtime
-copies keep their paths/colours intact. No source artwork or photograph is edited.
+sources/checksums. [Selection notes](../../apps/marketing/src/assets/magazine/README.md)
+and [film notes](../../apps/marketing/src/assets/magazine/motion/README.md) explain
+provenance. The [media workflow](../../media/README.md) and catalog own current
+library/Storage locations. No original, photograph or artwork was edited for this
+proof; runtime imports remain committed assets, independent of mounted Storage.
 
-The landing page composes `VideoHero.astro`, `StudioTransition.astro` and
-`ArtworkSequence.astro`, followed by the existing selection and practical details.
-Each sequence has its own CSS Module and animation module. `hero-film.ts` controls
-playback independently of GSAP; `editorial-motion.ts` coordinates enhancement.
-`main` clips horizontal overflow without creating a competing scroll container.
+**Asset gap:** the current catalog and app manifest do not explicitly identify a
+numbered edition. The supplied copy is retained, but no pictured work is presented
+as proof of that claim. Reviewers should identify a suitable numbered-edition image
+if that possibility needs direct visual support.
 
-Generated Frama/Frama Text/Hatton fonts, Astro responsive image derivatives,
-Cloudflare wiring and the existing metadata/JSON-LD remain in use. One public
-Organization is described, without inferred legal entity, `sameAs`, opening hours
-or a dated event. Contact data remains in `src/data/crystelle.ts`; analytics follows
+`index.astro` composes `VideoHero.astro`, the unified `StudioTransition.astro`,
+`ArtworkSequence.astro`, closing and viewer. Each sequence retains its CSS Module
+and animation module. `studio-transition.ts` now handles the short hero entrance.
+`hero-film.ts` controls playback independently of GSAP; `editorial-motion.ts`
+coordinates enhancement. The artwork story's natural height owns its track size;
+`--scene-height` separately positions the moving painting within the visible stage.
+
+Generated fonts, Astro responsive derivatives, Cloudflare wiring, metadata and
+JSON-LD remain intact. One public Organization is described, without inferred
+legal entity, `sameAs`, hours or a dated event. Contact data remains in
+`src/data/crystelle.ts`; analytics follows
 [ADR-0006](../adr/0006-cookieless-first-party-analytics.md).
 
-## Verification and release
+## Local verification and review
 
-Use Bun 1.3.14 through `mise`. Check the server before working:
+Use Bun 1.3.14 through `mise`. Check the relevant worktree before starting a server:
 
 ```sh
 mise x bun@1.3.14 -- bun run --cwd apps/marketing dev -- status
 ```
 
-This pass reused Martin's running dev server at `http://localhost:4321`. Use an
-owned non-default port for a separate production preview and stop only owned
-processes. Browser automation uses `agent-browser`.
+This proof is isolated on `feat/editorial-proof-0-1`, starting at `43fe824`, in
+`/home/martin/src/pro/jukkai-editorial-proof`. The original working tree and its
+server on port 4321 are preserved. The proof's owned review server uses port 4339.
+Do not stop another worktree's server. Local proof review does not authorize
+publishing or changing permanent strategy documents.
 
-Run `bun run check` and `bun run --cwd apps/marketing build`. Build-output tests
-cover page/section destinations, visible continuity, all five supplied artworks,
-film assets/posters, metadata, generated fonts, contact, vCard and redirect. Asset
-tests also verify that Studio SVG copies match the preserved originals.
+Run `bun run check` and `bun run --cwd apps/marketing build`. The existing published
+output tests cover continuity, films/posters, all five works, section/contact
+links, metadata, generated fonts, vCard and redirect; their content expectations
+now follow the supplied proof copy.
 
-Current local review captures and audit results live in
-`.browser-evidence/magazine-prototypes/` (gitignored). Inspect intermediate viewport
-states and recordings for the sticky sequences; full-page screenshots alone do
-not show their motion. Check desktop, phone, small phone, tablet and short landscape,
-reverse scrolling, orientation changes, native anchors, header hover/focus, detail viewer, offscreen video pause,
-reduced motion, failed assets and script fallback.
+Browser review uses `agent-browser`. Local evidence and the delivery note are in
+`.browser-evidence/editorial-proof/`. Full-page captures use reduced motion to
+show the entire composition. Separate desktop/phone recordings and intermediate
+captures demonstrate the spiral and portrait join. Check normal and reverse
+scrolling, small phone, tablet, short landscape, native anchors, viewer, reduced
+motion and fallback content. A full-page screenshot alone cannot validate a sticky
+sequence.
 
 Physical-device Safari, real contact import and production analytics remain release
-checks in the [contact-card guide](crystelle-contact-card.md). Replace/refine the
-provisional film loop and obtain copy/design acceptance before a separate production
-promotion. Update the date-specific opening text after October's opening.
+checks in the [contact-card guide](crystelle-contact-card.md). Film-loop quality,
+entrance timing, final scroll distance and copy/design acceptance remain review
+items before a separate production promotion.
