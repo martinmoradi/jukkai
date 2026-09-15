@@ -1,11 +1,14 @@
 ---
 import { Image } from 'astro:assets';
 
+import sphere from '#/assets/jukkai-sphere.svg';
 import wordmark from '#/assets/magazine/jukkai-wordmark-primary.svg';
 import landscapePoster from '#/assets/magazine/motion/duo.jpg';
 import landscapeFilm from '#/assets/magazine/motion/duo.mp4';
 import portraitPoster from '#/assets/magazine/motion/sculpture.jpg';
 import portraitFilm from '#/assets/magazine/motion/sculpture.mp4';
+import studioSeal from '#/assets/magazine/studio-terrasson-seal.svg';
+import studioWordmark from '#/assets/magazine/studio-terrasson-wordmark.svg';
 import styles from '#/styles/video-hero.module.css';
 ---
 
@@ -41,21 +44,43 @@ import styles from '#/styles/video-hero.module.css';
       <div class={styles.shade}></div>
     </div>
     <p class={styles.editionNote} data-film-note>
-      <span>Une rencontre.</span><span>Un autre regard.</span>
+      <span>Une galerie prend vie</span><span>au cœur du studio.</span>
     </p>
     <h1
       id='hero-title'
       class={styles.wordmark}
       data-film-mark
       style={{ '--wordmark': `url("${wordmark.src}")` }}>
+      <span class={styles.wordmarkFace} data-film-face aria-hidden='true'
+      ></span>
       <span class={styles.accessibleTitle}
         >Jukkai by Crystelle Terrasson — Architecture d’intérieur & Galerie</span
       >
     </h1>
+    <div class={styles.entrance} data-identity-entrance aria-hidden='true'>
+      <img
+        src={studioWordmark.src}
+        width='567'
+        height='227'
+        alt=''
+        data-old-wordmark
+      />
+      <img src={studioSeal.src} width='300' height='300' alt='' data-old-seal />
+      <img
+        src={sphere.src}
+        width='300'
+        height='300'
+        alt=''
+        data-identity-sphere
+      />
+    </div>
     <div class={styles.bottom}>
       <p class={styles.opening}>
+        <span class={styles.activity}
+          >Galerie &amp; architecture d’intérieur</span
+        >
         <span>Châteaugiron, près de Rennes</span>
-        <span>Ouverture · octobre 2026</span>
+        <span>Ouverture de la Galerie · octobre 2026</span>
       </p>
     </div>
     <a class={styles.explore} href='#esprit' data-film-cue
