@@ -21,7 +21,7 @@ runtime asset directory.
 
 Large photographic masters belong in `/mnt/storage/jukkai/media/`, with finished
 working copies in the ignored `media/library/`. See [the media workflow](../media/README.md)
-and catalog, including `crystelle-window-light` for the contact portrait formerly
+and catalog, including `crystelle-window-light` for the September portrait formerly
 kept in `brand/pictures/`. Keep compact identity and print files in this tree.
 
 ## Asset states
