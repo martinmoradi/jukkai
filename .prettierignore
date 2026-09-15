@@ -19,6 +19,10 @@ dist/
 # coverage
 coverage/
 
+# local photographic sources and temporary intake
+/media/library/
+/media/incoming/
+
 # local agent state
 /.agents/*
 !/.agents/product-marketing.md
