@@ -6,7 +6,6 @@ import landscapePoster from '#/assets/magazine/motion/duo.jpg';
 import landscapeFilm from '#/assets/magazine/motion/duo.mp4';
 import portraitPoster from '#/assets/magazine/motion/sculpture.jpg';
 import portraitFilm from '#/assets/magazine/motion/sculpture.mp4';
-import Arrow from '#/components/Arrow.astro';
 import styles from '#/styles/video-hero.module.css';
 ---
 
@@ -54,21 +53,10 @@ import styles from '#/styles/video-hero.module.css';
       >
     </h1>
     <div class={styles.bottom}>
-      <a class={styles.opening} href='#ouverture'
-        ><span>Châteaugiron, près de Rennes</span><span
-          >Ouverture · octobre 2026 <Arrow diagonal /></span
-        ></a
-      >
-      <button
-        class={styles.playback}
-        type='button'
-        data-film-toggle
-        hidden
-        aria-label='Lire la vidéo'
-        ><span data-film-icon aria-hidden='true'>Ⅱ</span><span data-film-label
-          >Pause</span
-        ></button
-      >
+      <p class={styles.opening}>
+        <span>Châteaugiron, près de Rennes</span>
+        <span>Ouverture · octobre 2026</span>
+      </p>
     </div>
     <a class={styles.explore} href='#esprit' data-film-cue
       >Découvrir Jukkai <span aria-hidden='true'>↓</span></a
