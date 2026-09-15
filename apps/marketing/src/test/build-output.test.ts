@@ -58,7 +58,8 @@ describe('published site', () => {
     expect(introduction.textContent).toContain('Crystelle Terrasson');
     expect(introduction.textContent).toContain('architecture');
     expect(introduction.textContent).toContain('galerie d’art');
-    expect(introduction.textContent).toContain('Le studio continue.');
+    expect(introduction.textContent).toContain('poursuit ses projets');
+    expect(introduction.textContent).toContain('fondé en 2012');
     expect(document.querySelector('#opening-title')?.textContent).toContain(
       'octobre 2026',
     );

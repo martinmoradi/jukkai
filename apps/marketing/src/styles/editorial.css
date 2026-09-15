@@ -8,6 +8,7 @@
   --accent: #c3422d;
   --accent-active: #9e3322;
   --header-height: 76px;
+  --anchor-offset: 100px;
   --serif: 'pangram-pangram-hatton', Georgia, serif;
   --display: 'pangram-pangram-frama', Arial, sans-serif;
   --sans: 'pangram-pangram-frama-text', Arial, sans-serif;
@@ -31,7 +32,7 @@
 }
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-padding-top: var(--anchor-offset);
 }
 body {
   min-width: 320px;
