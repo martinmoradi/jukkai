@@ -1,8 +1,11 @@
 // @vitest-environment node
 
+import { readFile } from 'node:fs/promises';
+
+import sharp from 'sharp';
 import { describe, expect, it } from 'vitest';
 
-import { CRYSTELLE_VCARD } from '#/data/crystelle';
+import { CRYSTELLE_VCARD } from '#/data/crystelle-vcard';
 
 function properties() {
   return CRYSTELLE_VCARD.split('\r\n');
@@ -41,8 +44,18 @@ describe('Crystelle vCard', () => {
     expect(properties()).toContain('URL:https://jukkai.fr');
   });
 
-  it('ships no portrait yet', () => {
-    expect(CRYSTELLE_VCARD).not.toContain('PHOTO');
+  it('embeds the selected portrait as a complete JPEG after unfolding', async () => {
+    const unfolded = CRYSTELLE_VCARD.replace(/\r\n /g, '');
+    const photo = unfolded.match(/^PHOTO;ENCODING=b;TYPE=JPEG:(.+)$/m)![1];
+    const jpeg = Buffer.from(photo, 'base64');
+    expect(jpeg).toEqual(
+      await readFile('src/assets/crystelle-vcard-portrait.jpg'),
+    );
+    expect(await sharp(jpeg).metadata()).toMatchObject({
+      format: 'jpeg',
+      width: 480,
+      height: 480,
+    });
   });
 
   it('never mentions the retired studioterrasson domain', () => {

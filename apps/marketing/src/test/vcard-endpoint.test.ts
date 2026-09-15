@@ -5,7 +5,7 @@ import { readFile } from 'node:fs/promises';
 import type { APIContext } from 'astro';
 import { describe, expect, it } from 'vitest';
 
-import { CRYSTELLE_VCARD } from '#/data/crystelle';
+import { CRYSTELLE_VCARD } from '#/data/crystelle-vcard';
 import { GET, VCARD_CONTENT_TYPE } from '#/pages/contact/crystelle.vcf';
 
 describe('GET /contact/crystelle.vcf', () => {

@@ -5,7 +5,7 @@
     {
       "id": "01-ochre-light",
       "category": "portraits",
-      "selectionStatus": "available",
+      "selectionStatus": "selected for Crystelle contact card by Martin, 15 September 2026",
       "master": "media/portraits/crystelle/01-ochre-light/01-ochre-light-v2.affinity",
       "masterSha256": "e22c14255c3e7e31c234f01640a7fba777c7cca0958b5283067c1fe00b875def",
       "library": "library/portraits/crystelle/01-ochre-light.jpg",
@@ -18,6 +18,36 @@
       "captureOriginals": [
         "photoshoot-09-09-26/Crystelle/Orange/PXL_20260909_130518467.RAW-02.ORIGINAL.dng",
         "photoshoot-09-09-26/Crystelle/Orange/PXL_20260909_130518467.RAW-01.COVER.jpg"
+      ],
+      "websiteInputs": [
+        {
+          "appPath": "apps/marketing/src/assets/crystelle-contact-portrait.jpg",
+          "input": "media/portraits/crystelle/01-ochre-light/exports/01-ochre-light.jpg",
+          "inputSha256": "63a7218a0343e506062de301d8ba35a534d7767110d78c070b62fff01690a74e",
+          "sha256": "30806730b021c6ccff26e1864a65a0531170a8d87686ee39d7d8748f5d167cfb",
+          "crop": {
+            "left": 0,
+            "top": 0,
+            "width": 4640,
+            "height": 4640
+          },
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "appPath": "apps/marketing/src/assets/crystelle-vcard-portrait.jpg",
+          "input": "media/portraits/crystelle/01-ochre-light/exports/01-ochre-light.jpg",
+          "inputSha256": "63a7218a0343e506062de301d8ba35a534d7767110d78c070b62fff01690a74e",
+          "sha256": "a4ec80dabe9d6c35b57d1052c47fcca98dfee04ce08d9ff54225138c7775e6b1",
+          "crop": {
+            "left": 0,
+            "top": 0,
+            "width": 4640,
+            "height": 4640
+          },
+          "width": 480,
+          "height": 480
+        }
       ]
     },
     {
@@ -1179,7 +1209,7 @@
       "id": "crystelle-contact-legacy",
       "category": "portraits",
       "person": "crystelle",
-      "selectionStatus": "current website input",
+      "selectionStatus": "historical website input, replaced 15 September 2026",
       "photographer": null,
       "library": "library/portraits/crystelle/crystelle-contact-legacy.webp",
       "export": "media/portraits/crystelle/crystelle-contact-legacy/exports/crystelle-contact-legacy.webp",

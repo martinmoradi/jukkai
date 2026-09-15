@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 
-import { CRYSTELLE_VCARD } from '#/data/crystelle';
+import { CRYSTELLE_VCARD } from '#/data/crystelle-vcard';
 
 /**
  * Serving this rather than `text/plain` is what makes a phone offer the

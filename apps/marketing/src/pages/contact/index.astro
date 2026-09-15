@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 
 import portrait from '#/assets/magazine/crystelle-galerie.webp';
 import Arrow from '#/components/Arrow.astro';
-import { CRYSTELLE, CRYSTELLE_VCARD_PATH } from '#/data/crystelle';
+import { CRYSTELLE } from '#/data/crystelle';
 import EditorialLayout from '#/layouts/EditorialLayout.astro';
 import styles from '#/styles/contact.module.css';
 
@@ -62,9 +62,6 @@ const appleMapsUrl = `https://maps.apple.com/?q=${encodeURIComponent(address)}`;
           >
         </div>
         <div class={styles.otherLinks}>
-          <a href={CRYSTELLE_VCARD_PATH}
-            >Enregistrer le contact <span aria-hidden='true'>↓</span></a
-          >
           <a href={CRYSTELLE.instagram.url}
             >Retrouver Jukkai sur Instagram <Arrow diagonal /></a
           >
