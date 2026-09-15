@@ -54,9 +54,6 @@ export const CRYSTELLE_DESCRIPTION = `${CRYSTELLE_FULL_NAME}, ${CRYSTELLE.profes
 /**
  * vCard 3.0 — the dialect iOS Contacts and Android both import cleanly.
  *
- * Properties are listed in emission order, so adding her portrait later is a
- * single entry here: `PHOTO;ENCODING=b;TYPE=JPEG:<base64>`.
- *
  * The postal address is shared with the Contact Card Page so the screen and
  * saved contact cannot drift apart.
  */
@@ -74,5 +71,17 @@ const CRYSTELLE_VCARD_PROPERTIES = [
   'END:VCARD',
 ] as const;
 
-/** RFC 6350 requires CRLF; some Android importers reject bare LF outright. */
-export const CRYSTELLE_VCARD = `${CRYSTELLE_VCARD_PROPERTIES.join('\r\n')}\r\n`;
+/** Embed a portable JPEG using vCard 3.0's binary encoding and folded CRLF lines. */
+export function createCrystelleVCard(portraitBase64: string) {
+  const photo = `PHOTO;ENCODING=b;TYPE=JPEG:${portraitBase64}`;
+  // Base64 is ASCII. Continuation lines include one leading space within 75 bytes.
+  const foldedPhoto = [photo.slice(0, 75)];
+  for (let offset = 75; offset < photo.length; offset += 74) {
+    foldedPhoto.push(` ${photo.slice(offset, offset + 74)}`);
+  }
+  return `${[
+    ...CRYSTELLE_VCARD_PROPERTIES.slice(0, -1),
+    ...foldedPhoto,
+    'END:VCARD',
+  ].join('\r\n')}\r\n`;
+}

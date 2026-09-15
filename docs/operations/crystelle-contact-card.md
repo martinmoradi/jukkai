@@ -27,22 +27,33 @@ Keep the surrounding quotes and commas. Edit the source, not the generated
 
 ## Replace the portrait
 
-Replace [`crystelle-contact-portrait.webp`](../../apps/marketing/src/assets/crystelle-contact-portrait.webp)
-with a new WebP using the same filename. A square crop around 1200 × 1200px,
-with the face centred and room for the circular crop, is a useful starting point.
-Keep the original photo separately. The `crystelle-contact-legacy` entry in the
-[media catalog](../../media/catalog.json) preserves the current 800px app input,
-which predates the September shoot. Its upstream pre-WebP source is unconfirmed.
-The newer `crystelle-window-light` entry identifies a separate available edit and
-its Storage master; it is not the current app portrait.
-Browse `media/library/portraits/crystelle/` when choosing a replacement; keep the
-actual app input committed so builds remain independent of local media.
+Martin selected `media/library/portraits/crystelle/01-ochre-light.jpg` on
+15 September 2026. The page and its social preview now share
+[`crystelle-contact-portrait.jpg`](../../apps/marketing/src/assets/crystelle-contact-portrait.jpg):
+a 1200px square export, cropped from the top of the selected 4640 × 5800 source
+so the full head remains inside the circular frame. The general `/contact/` page
+keeps its Galerie photograph.
 
-For a JPEG, PNG or different filename, place it in `apps/marketing/src/assets/`
-and change the **single import** in
-[`crystelle-portrait.ts`](../../apps/marketing/src/data/crystelle-portrait.ts).
-The visible portrait and shared-link preview both follow it. The vCard currently
-contains **no photo**; replacing the page portrait does not add one there.
+The vCard embeds a 480px JPEG from that exact square crop, committed as
+[`crystelle-vcard-portrait.jpg`](../../apps/marketing/src/assets/crystelle-vcard-portrait.jpg).
+[`crystelle-vcard.ts`](../../apps/marketing/src/data/crystelle-vcard.ts) uses Vite's
+inline asset import to include it at build time. The contact generator adds a
+`PHOTO;ENCODING=b;TYPE=JPEG` property with CRLF folding, following
+[vCard 3.0](https://www.rfc-editor.org/rfc/rfc2426#section-3.1.4).
+The downloaded contact needs no remote image fetch. Tests decode the actual JPEG
+and verify its bytes and dimensions. Import into real iOS/Android Contacts remains
+a manual release check.
+
+The [media catalog](../../media/catalog.json) records the source hash, crop and
+both web exports. The previous portrait remains preserved as the
+`crystelle-contact-legacy` historical input. Do not change the original photograph
+or depend on the ignored media library during builds.
+
+When replacing this portrait, update the shared import in
+[`crystelle-portrait.ts`](../../apps/marketing/src/data/crystelle-portrait.ts),
+regenerate the smaller vCard JPEG from the same crop, and update the catalog.
+The vCard action appears only on `/contact/crystelle/`, reached through the locked
+printed `/c/crystelle` redirect; it is absent from the public `/contact/` page.
 
 ## Publish the change
 

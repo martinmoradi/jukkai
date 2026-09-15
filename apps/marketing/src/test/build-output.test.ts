@@ -11,9 +11,9 @@ import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import {
   CRYSTELLE,
   CRYSTELLE_CONTACT_PATH,
-  CRYSTELLE_VCARD,
   CRYSTELLE_VCARD_PATH,
 } from '#/data/crystelle';
+import { CRYSTELLE_VCARD } from '#/data/crystelle-vcard';
 
 /**
  * The published artefacts, not the source that produces them. Redirect rules,
@@ -268,6 +268,16 @@ describe('published site', () => {
     expect(await published(CRYSTELLE_VCARD_PATH.slice(1))).toBe(
       CRYSTELLE_VCARD,
     );
+  });
+
+  it('reserves contact saving for Crystelle’s QR contact page', async () => {
+    const publicPage = new JSDOM(await published('contact/index.html'));
+    const cardPage = new JSDOM(await published('contact/crystelle/index.html'));
+    const selector = `a[href="${CRYSTELLE_VCARD_PATH}"]`;
+    expect(publicPage.window.document.querySelector(selector)).toBeNull();
+    expect(cardPage.window.document.querySelector(selector)).not.toBeNull();
+    publicPage.window.close();
+    cardPage.window.close();
   });
 
   it('publishes the contact-card styles and links them from the page', async () => {
