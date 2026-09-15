@@ -182,6 +182,10 @@
 .hero[data-motion='ready'] {
   height: 225svh;
 }
+/* One extra viewport keeps the artwork pinned while the introduction wipes over it. */
+.hero[data-motion='ready'][data-exit] {
+  height: 325svh;
+}
 .hero[data-motion='ready'] .stage {
   position: sticky;
   top: 0;
@@ -228,6 +232,9 @@
   }
   .hero[data-motion='ready'] {
     height: 195svh;
+  }
+  .hero[data-motion='ready'][data-exit] {
+    height: 295svh;
   }
   .hero[data-motion='ready'] .wordmark {
     transform: translate(-50%, -50%) translateY(4.5svh) scale(0.72);

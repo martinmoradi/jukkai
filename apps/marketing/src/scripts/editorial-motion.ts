@@ -53,40 +53,21 @@ async function animateEditorial() {
     { animateHero },
     { animateStudioTransition },
     { animateArtworkSequence },
-    { animateEditorialStory },
+    { animateIntroduction },
   ] = await Promise.all([
     import('gsap'),
     import('gsap/ScrollTrigger'),
     import('./hero-motion'),
     import('./studio-transition'),
     import('./artwork-sequence'),
-    import('./editorial-story'),
+    import('./introduction'),
   ]);
   gsap.registerPlugin(ScrollTrigger);
   ScrollTrigger.config({ ignoreMobileResize: true });
   animateHero(gsap);
   animateStudioTransition(gsap);
-  animateEditorialStory(gsap);
+  animateIntroduction(gsap);
   animateArtworkSequence(gsap);
-  const media = gsap.matchMedia();
-  media.add('(prefers-reduced-motion: no-preference)', () => {
-    gsap.utils.toArray<HTMLElement>('[data-art-reveal]').forEach((art) => {
-      gsap.fromTo(
-        art,
-        { clipPath: 'inset(3% 0 3% 0)' },
-        {
-          clipPath: 'inset(0%)',
-          ease: 'power1.out',
-          scrollTrigger: {
-            trigger: art,
-            start: 'top 95%',
-            end: 'top 60%',
-            scrub: true,
-          },
-        },
-      );
-    });
-  });
   await document.fonts.ready;
   ScrollTrigger.refresh();
   // Native fragments may have landed before enhancement changed section heights.

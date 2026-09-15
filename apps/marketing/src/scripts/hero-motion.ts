@@ -23,7 +23,9 @@ export function animateHero(gsap: typeof Gsap) {
           scrollTrigger: {
             trigger: hero,
             start: 'top top',
-            end: 'bottom bottom',
+            // The introduction may extend the hero to stay pinned under its wipe.
+            end: () =>
+              `+=${innerHeight * (context.conditions?.mobile ? 0.95 : 1.25)}`,
             scrub: 0.5,
             invalidateOnRefresh: true,
           },
