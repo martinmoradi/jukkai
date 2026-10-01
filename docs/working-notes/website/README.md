@@ -2,7 +2,7 @@
 
 **Status:** proposals and drafts for discussion. **Owns:** navigation through the
 working content, not an approved sitemap or release contract.
-**Last reviewed:** 2026-09-10 for document roles; copy and page choices remain provisional.
+**Last reviewed:** 2026-10-01 for document roles; copy and page choices remain provisional.
 **Revisit when:** Martin chooses a page model, Crystelle corrects the business inputs,
 or selected copy is approved.
 
@@ -13,13 +13,15 @@ This folder groups the September work without approving or rewriting its proposa
 
 ## Choose the document for the question
 
-| Document                                                                    | Distinct job                                                                                    | Read it when…                                                             |
-| --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| [Visitor content brief](visitor-content-brief.md)                           | What visitors should understand, with business facts, evidence and missing inputs distinguished | Discussing the explanations before choosing page boundaries               |
-| [Working website content plan](website-content-plan.md)                     | Proposed routes, navigation, contextual links and a developed Architecture outline              | Turning those explanations into a concrete site proposal                  |
-| [Architecture draft in French](architecture-page-draft-fr.md)               | Actual visitor-facing draft text, followed by editorial notes and unverified examples           | Reviewing wording with Martin and Crystelle                               |
-| [Sitemap options](sitemap-options-memo.md)                                  | Integrated, separated and hybrid alternatives, readiness and old-site continuity                | Comparing a different page split or checking what an option preserves     |
-| [Architecture content and proof brief](architecture-content-proof-brief.md) | Martin's budget/enquiry context, supporting research, proof requirements and drafting rationale | Checking why an Architecture explanation is proposed and what supports it |
+| Document                                                                        | Distinct job                                                                                    | Read it when…                                                             |
+| ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| [Visitor content brief](visitor-content-brief.md)                               | What visitors should understand, with business facts, evidence and missing inputs distinguished | Discussing the explanations before choosing page boundaries               |
+| [Working website content plan](website-content-plan.md)                         | Proposed routes, navigation, contextual links and a developed Architecture outline              | Turning those explanations into a concrete site proposal                  |
+| [Architecture draft in French](architecture-page-draft-fr.md)                   | Actual visitor-facing draft text, followed by editorial notes and unverified examples           | Reviewing wording with Martin and Crystelle                               |
+| [Sitemap options](sitemap-options-memo.md)                                      | Integrated, separated and hybrid alternatives, readiness and old-site continuity                | Comparing a different page split or checking what an option preserves     |
+| [Architecture content and proof brief](architecture-content-proof-brief.md)     | Martin's budget/enquiry context, supporting research, proof requirements and drafting rationale | Checking why an Architecture explanation is proposed and what supports it |
+| [Research presentation spec](research-presentation-spec.md)                     | Agreed production contract for the research presentation, notes and standalone report           | Checking the package's scope and acceptance criteria                      |
+| [Research presentation production handoff](research-presentation-production.md) | Verified native artifact links, source recovery and validation                                  | Opening the completed package or continuing its editing                   |
 
 For general orientation: visitor brief → working plan → relevant draft. Open the
 options memo or proof brief for the specific question; reading all five is not a
