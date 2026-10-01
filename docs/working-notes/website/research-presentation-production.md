@@ -1,9 +1,15 @@
-# Research presentation and report — production handoff
+# Research presentation and report — first-package production handoff
 
-**Status:** deliverables completed and verified on 1 October 2026.
-**Owns:** artifact locations, production provenance and validation for the
-[agreed spec](research-presentation-spec.md).
-**Revisit when:** Martin edits the package or a source correction changes its argument.
+**Status:** historical record of the first package, produced and technically verified
+on 1 October 2026; subsequently found insufficient for Martin's intended explanation.
+**Owns:** first-package artifact locations, production provenance and validation.
+**Revisit when:** reconstruction under the [revised spec](research-presentation-spec.md)
+produces new artifacts or a correction affects this historical record.
+
+The findings below describe the first delivery and its checks. They do not establish
+fulfilment of the revised contract, which restores the business questions, actual
+research findings and a portable AI-assisted interview kit. Preserve these artifacts
+and sources as recoverable inputs; the revised package has not yet been produced.
 
 Delivery does not approve the proposed sitemap, public wording, offers, prices,
 project/artwork permissions, Galerie access or a Studio Terrasson migration.
