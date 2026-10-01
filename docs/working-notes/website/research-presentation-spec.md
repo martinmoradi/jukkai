@@ -56,7 +56,9 @@ Produce three connected outputs from the same substantive argument:
   without rereading the preparation chats or becoming an SEO lecturer.
 - **French Google Doc and PDF:** the same research argument with enough explanation,
   figures, examples and references to stand alone. No page target or padding. It is
-  a research explanation, not the collaboration plan or an inventory of modules.
+  a research explanation, with a short closing bridge explaining what Martin and
+  Crystelle will work on together and why. Detailed interview instructions stay in
+  the separate kit.
 - **Portable interview kit:** one reusable master interviewer prompt and prefilled
   topic context packs for focused conversations with Crystelle. Private local Markdown
   is suitable; make the contents easy to copy into a fresh AI conversation. Include
@@ -173,6 +175,20 @@ audience when moving between them: what question we are answering, what we have
 learned and how the next question follows. Navigation should help Crystelle understand
 where she is without learning an internal taxonomy.
 
+Following Martin's review of the reconstructed package, retain four consistent
+business questions across the agenda, chapter markers and report grouping:
+
+1. Comment te faire découvrir par des personnes qui ne connaissent pas encore ton nom ?
+2. Comment attirer davantage les projets que tu aimerais recevoir ?
+3. Comment aider les clients à comprendre ton accompagnement et son coût ?
+4. Comment faire découvrir la Galerie et donner envie de venir ou d'acheter ?
+
+Use readable short labels where needed, preserving the question's meaning. Existing
+research areas remain subtopics. Close each chapter with a concrete implication for
+the site. Strengthen thin professional-sector, renovation and conseil explanations
+with selected saved evidence; preserve the already substantive project and pricing
+examples rather than adding numbers indiscriminately.
+
 Briefly explain how Martin worked: searches people might make, paid data sources for
 estimates and result captures, existing-site data, then examination of real pages.
 Explain the difference between demand estimates, observed results and actual enquiries
@@ -267,7 +283,18 @@ Collect current mission letters, insurance wording, rights, credits, asset facts
 administrative confirmations separately when a document or short answer suffices.
 Martin owns synthesis, page choices, editing, design, technical delivery and publishing.
 Crystelle contributes experience, business choices and material; she does not need to
-approve an interview system. The report excludes this working-session machinery.
+approve an interview system. The report includes the short practical bridge above;
+the detailed working-session machinery remains in the kit.
+
+The closing must expose the prepared work, rather than only explaining the AI loop:
+project selection and stories; professional commissions; missions and conseil;
+budget, fees and actual enquiry obstacles; first contact; and the Galerie. Explain
+the reason and usable output of each block, without prescribing six separate calls.
+Before a project interview, connect the desired future work, a meaningful researched
+visitor question, an actual decision worth explaining and the available material.
+Give concrete story-selection guidance, with known projects as candidates rather
+than fixed selections. Exact keyword matching is one possible connection, not a
+requirement for every story. Show one complete research-to-session-to-content example.
 
 ## 7. Production sequence and review
 
