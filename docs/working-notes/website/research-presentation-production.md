@@ -1,4 +1,103 @@
-# Research presentation and report — first-package production handoff
+# Research presentation, report and interview kit — production handoff
+
+**Status:** reconstructed package delivered and verified on 1 October 2026 against
+[the revised production spec](research-presentation-spec.md).
+**Owns:** current artifact links, recoverable sources and actual validation, followed
+by the preserved first-package record. **Revisit when:** Martin requests edits or
+corrected evidence changes the argument.
+
+## Reconstructed delivery
+
+The package now follows the business questions through actual searches, findings and
+examples into possible Jukkai responses. It covers discovery and continuity,
+geography, professional and residential work, spatial problems, renovation, budget,
+mission scope and the Galerie. Only the presentation's closing section introduces
+working conversations; the standalone report keeps the research explanation central.
+
+| Artifact                                                                                                                      | Contents                                                                                                                            |
+| ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| [Native Google Slides](https://docs.google.com/presentation/d/11d3pfxh9rZyJfPCup4M_hsj9HV4pKZ3j2FkMVkrm8eM/edit?usp=drivesdk) | 34 editable French slides and French notes; 39.55 planned speaking minutes, flexible for discussion                                 |
+| [Native Google Doc](https://docs.google.com/document/d/1EgN1G8NWbhXNSLioEtv5Ok4cb7fsPKDiVOXPt5mPxHw/edit?usp=drivesdk)        | Standalone explanation with concrete examples, two tables, six figures and linked references                                        |
+| [Report PDF](https://drive.google.com/file/d/1uOrsqhiaB5qHGBZ_NstBhD1hixFrnZcc/view?usp=drivesdk)                             | 16 pages exported from the final native document                                                                                    |
+| [Presentation PDF](https://drive.google.com/file/d/1BmPRPAaiL9B9RbyMtS6XhTK28Lo1YiiG/view?usp=drivesdk)                       | Final visual snapshot of all 34 slides; use Google Slides for notes                                                                 |
+| [Portable interview kit](https://drive.google.com/file/d/1uwnBuipu6To2eDm-tUKtFWqXJ8vqsaQp/view?usp=drivesdk)                 | 12 Markdown files: usage, master prompt, eight prefilled topic packs, reusable project interview and document collection            |
+| [Reconstruction sources](https://drive.google.com/file/d/1-QD-f31D2lVVuSY98CmJbMwq8oBTKs7i/view?usp=drivesdk)                 | 114-file archive with manuscripts, builders, all-47 coverage, selected evidence, captures, kit, final native exports and validation |
+
+All files remain in the existing private
+[research folder](https://drive.google.com/drive/folders/1uA5pdCNleIGjzIKENHmAwoiqYsnSphvJ).
+Each new artifact's metadata confirms the account owner only and the intended folder.
+No sharing, website changes, broad fresh audit or paid research was performed.
+The first package below remains intact.
+
+## Recovery and use
+
+The ignored local directory is `.codex/production/research-presentation-v2/`.
+Start with `REBUILD.txt`, `report.md`, `deck.json`, `speaker-notes-final.md`,
+`evidence-coverage.json` and `final-validation.json`. The archive includes the inputs
+needed to rebuild editable drafts without this checkout. Exact final Google rendering
+and subsequent native repairs are preserved in the native PPTX/DOCX and PDF exports.
+Evidence scripts retain original workspace paths for provenance; selected evidence
+copies and their checksums are included for independent inspection.
+
+For a conversation, copy `interview-kit/01-prompt-maitre.md` and one relevant topic
+pack into a fresh AI chat. The usage file explains how Martin can type answers,
+redirect or skip, and request a copyable session capture. Packs embed the research
+and existing business answers, including the approved mission-déco framing; precise
+offer inclusions and terms remain questions. No repository access is needed.
+
+The revised argument restores concrete evidence: restaurant service and project
+entrances, collaborator roles, CKTFC's actual 9 m² room and constraints, renovation
+query contrasts, price versus responsibility, and separate Galerie visit/buying paths.
+All 47 reviewed questions have a source and contribution record. Thirteen selected
+quantitative checks passed against saved underlying data, including the Rennes
+six-of-nine price-snippet correction, undisclosed GSC query clicks, overlapping
+keyword variants and historical ranking dates. Art Génération's 10 September rank
+is supported by its separate recapture. Estimates and ranks remain distinct from leads.
+
+## Verification and practical limits
+
+Every final slide and speaker note was inspected. Native readback confirmed 34 complete
+notes, 402 editable text shapes, seven images, expected links and geometry within the
+slide bounds. Notes match the authored argument. After the last image repair, 33
+slide renders were pixel-identical to the reviewed set; slide 18 was re-inspected.
+The native PPTX reopens with 34 slide and 34 note parts.
+
+The native Doc and all 16 PDF pages were inspected. It retains 22 native date chips,
+six figures and 37 external URLs. Nine contents links resolve; chapter 3 uses an
+explicit page-5 pointer after its imported bookmark was lost during heading repair.
+The PDF outline also reaches that chapter. No broken internal links remain. Final
+pages 2–16 were pixel-identical to their inspected versions; page 1 was re-inspected.
+Google's date chips retain its supported French month-name display order.
+
+Independent evidence and comprehension reviews passed. A fresh-context synthetic
+reader recovered the business purpose, complete research arc and reasoning using
+only the report. A separate synthetic kit test exercised known facts, French
+follow-ups, hesitation, a correction, skipping and copyable export. Synthetic answers
+and raw transcripts are excluded from deliverable archives. These checks are neither
+Crystelle feedback nor a timed rehearsal or real interview.
+
+Across the report, deck and kit, 37 of 38 unique public references returned HTTP 200;
+Maisons du Monde returned 403 and remains unverified, rather than demonstrated broken.
+Source drafts rebuilt successfully from a separate temporary directory. All 112
+checksummed archive members matched and the ZIP integrity check passed. The native
+exports reopened. `bun run check` passed: marketing lint/typecheck/tests were cache
+hits; all 10 script tests ran and passed. The slide helper could not consume the
+connector's export reference, so native exports were downloaded through the supported
+export action and rendered locally with `pdftoppm` for inspection.
+
+Report PDF SHA-256:
+`52e1235115d1237b9a117a70644755d3109a5768e72ad9c7a048206e92cc935a`.
+Source archive SHA-256:
+`55e38d73f825eb95f965929691f1fbf56ce1872de7bb3efd99c28d4c6d4fdc65`.
+
+Martin retains synthesis, page choices and publication. Current mission terms,
+project stories/roles and permissions, artwork details, buying arrangements and
+Galerie access still need the targeted material identified in the kit. The package
+makes that work concrete; it does not establish new business facts or a sitemap.
+
+---
+
+## First package — historical record
 
 **Status:** historical record of the first package, produced and technically verified
 on 1 October 2026; subsequently found insufficient for Martin's intended explanation.
@@ -9,12 +108,12 @@ produces new artifacts or a correction affects this historical record.
 The findings below describe the first delivery and its checks. They do not establish
 fulfilment of the revised contract, which restores the business questions, actual
 research findings and a portable AI-assisted interview kit. Preserve these artifacts
-and sources as recoverable inputs; the revised package has not yet been produced.
+and sources as recoverable inputs. The reconstructed delivery is recorded above.
 
 Delivery does not approve the proposed sitemap, public wording, offers, prices,
 project/artwork permissions, Galerie access or a Studio Terrasson migration.
 
-## Deliverables
+### Original deliverables
 
 All four files are together in the private
 [Jukkai research folder](https://drive.google.com/drive/folders/1uA5pdCNleIGjzIKENHmAwoiqYsnSphvJ).
@@ -41,7 +140,7 @@ inputs, exact gap, activity/contributor and destinations. Martin retains editori
 organization; Crystelle supplies facts, choices and material. This is a content map,
 not a calendar or launch commitment.
 
-## Source recovery
+### Original source recovery
 
 The ignored local production directory is
 `.codex/production/research-presentation/`. The portable ZIP contains the selected
@@ -73,7 +172,7 @@ No credentials, secret-bearing configuration, full private API exports, Jukkai
 heavy originals or newly authorized project/artwork claims were transferred.
 Reference captures are teaching specimens; they do not become Jukkai project proof.
 
-## Verification and remaining facts
+### Original verification and remaining facts
 
 Native readback confirmed slide order, all 51 note sections, Arial/Georgia fonts,
 715 editable text shapes, the intended linked destinations and no objects outside
