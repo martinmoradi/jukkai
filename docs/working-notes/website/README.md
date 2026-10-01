@@ -20,8 +20,8 @@ This folder groups the September work without approving or rewriting its proposa
 | [Architecture draft in French](architecture-page-draft-fr.md)                   | Actual visitor-facing draft text, followed by editorial notes and unverified examples           | Reviewing wording with Martin and Crystelle                               |
 | [Sitemap options](sitemap-options-memo.md)                                      | Integrated, separated and hybrid alternatives, readiness and old-site continuity                | Comparing a different page split or checking what an option preserves     |
 | [Architecture content and proof brief](architecture-content-proof-brief.md)     | Martin's budget/enquiry context, supporting research, proof requirements and drafting rationale | Checking why an Architecture explanation is proposed and what supports it |
-| [Research presentation spec](research-presentation-spec.md)                     | Revised recovery contract: business-led research explanation, report and portable interview kit | Preparing reconstruction of the package after Martin's feedback           |
-| [Research presentation production handoff](research-presentation-production.md) | First-package artifact links, reusable sources and historical validation                        | Recovering existing material; it does not fulfil the revised spec         |
+| [Research presentation spec](research-presentation-spec.md)                     | Revised recovery contract: business-led research explanation, report and portable interview kit | Checking the revised package contract and coverage                        |
+| [Research presentation production handoff](research-presentation-production.md) | Reconstructed Slides, report, kit, sources and validation; first package preserved              | Opening the delivered package or recovering its sources                   |
 
 For general orientation: visitor brief → working plan → relevant draft. Open the
 options memo or proof brief for the specific question; reading all five is not a
