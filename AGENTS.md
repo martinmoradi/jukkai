@@ -1,140 +1,81 @@
 # Repository Instructions
 
-Jukkai is a client/product repo. Keep this file short, current, and practical:
-add rules when they prevent repeated agent mistakes or encode real workflow, and
-remove them when the convention changes.
+Jukkai is a client/product repo: the static Astro website for Jukkai by Crystelle
+Terrasson. Start with `docs/operations/current-delivery.md` for what is being
+worked on now, and `docs/README.md` for task-specific reading routes. Keep this
+file short; change it in the same PR as any workflow or structure change.
 
-## Operating Posture
+## Working
 
-- Prefer narrow, contract-faithful changes. Read the relevant docs and current
-  code before inventing structure.
-- Update `AGENTS.md` or linked agent docs in the same PR when agent workflow,
-  app structure, or verification gates change.
-- For technical or workflow-heavy slices, close with a brief operator note:
-  what changed, why that shape was chosen, what was verified, and what Martin
-  should understand next.
+- Prefer narrow changes. Read the relevant docs and current code before
+  inventing structure.
+- For issue-led work, read the issue, its comments and any linked spec, post a
+  short preflight, then proceed. Pause only for an unsettled product or design
+  contract, conflicting criteria, unexpected infra/auth/dependency work or scope
+  growth: state the ambiguity, recommend a default and ask one question.
+- `skill:tdd` on an issue means public-behavior red-green-refactor with the
+  `tdd` skill; its acceptance criteria are the behavior plan.
+- Close technical slices with a short operator note: what changed, why, what was
+  verified and what Martin should know next.
 
 ## Git And PRs
 
-- Branch and PR by default. Never push `main` directly in this repo.
-- Build work as coherent semantic commits. Do not save everything for one final
-  commit and reconstruct history afterward unless cleanup is genuinely needed.
-- For `ready-for-agent` issues and other non-trivial specified slices, push
-  after the first meaningful commit and open a draft PR early. Keep pushing
-  incremental commits. When the slice is complete and checks pass, mark the PR
-  ready for review.
-- Freeform exploration, tiny fixes, and conversational iteration can use lighter
-  judgment.
+- Branch and PR; never push `main`. Production is a separate, deliberate
+  promotion described in `docs/operations/production.md`.
+- Build coherent semantic commits as the work progresses. For non-trivial
+  slices, push after the first meaningful commit, open a draft PR, and mark it
+  ready once checks pass. PRs merge by rebase.
 
-## Issue-Led Work
+## Commands
 
-- Issues and PRDs live in GitHub. Use `gh` and follow
-  `docs/agents/issue-tracker.md`.
-- Triage labels are mapped in `docs/agents/triage-labels.md`.
-- For issue-led work, fetch the issue, labels, comments, and linked PRD before
-  coding. Treat `ready-for-agent` issues as already scoped for execution.
-- Post a short execution preflight, then proceed without waiting unless a real
-  decision is uncovered.
-- If an issue has `skill:tdd`, load the `tdd` skill and use public-behavior
-  red-green-refactor. For `ready-for-agent` + `skill:tdd`, the issue acceptance
-  criteria are the approved behavior plan unless the issue or code contradicts
-  them.
-- Pause implementation only when the issue reveals an unsettled
-  product/design/API contract, conflicting acceptance criteria, a public
-  interface that cannot be named, unexpected infra/auth/storage/dependency work,
-  or scope expansion. When pausing, state the ambiguity, recommend a default,
-  and ask one decisive question.
-
-## Commands And Running Things
-
-- Bun is the package manager. Read `package.json` for the full script list.
-- Use a Node version supported by `package.json` engines; jsdom 30 sets the
-  minimum supported Node patch versions for the test toolchain.
-- Full repo gate: `bun run check`.
-- Marketing app narrow gates: `bun run --cwd apps/marketing typecheck`,
-  `bun run --cwd apps/marketing lint`, `bun run --cwd apps/marketing test`, and
-  `bun run --cwd apps/marketing build`, as relevant.
-- For long-running local processes, use an owned non-default port. Check what is
-  already bound first, tell Martin the URL, and clean up your process.
-- Astro dev server coordination for the marketing app:
-  `bun run --cwd apps/marketing dev -- status` before starting, and
-  `bun run --cwd apps/marketing dev -- stop` only for a server you own.
-
-## Browser Automation
-
-- Use `agent-browser` for browser automation. Do not use Chrome MCP or the Codex
-  in-app browser for this repo.
+- Bun is the package manager; see `package.json` for scripts and Node engines.
+- Full gate: `bun run check`. Narrow gates: `bun run --cwd apps/marketing`
+  `typecheck`, `lint`, `test` or `build`.
+- Long-running processes use an owned non-default port. Check what is bound
+  first, tell Martin the URL, and stop your process afterwards.
+- Browser automation uses `agent-browser`, not Chrome MCP or in-app browsers.
 
 ## Marketing App
 
-- Use `docs/README.md` to choose a task-specific reading route. It owns document
-  roles and maintenance rules. Read relevant current guidance and targeted evidence;
-  do not bulk-load historical sources or treat a newer proposal as accepted truth.
-
-- Start delivery, research, design, and planning work with
-  `docs/operations/current-delivery.md`. The magazine release and October opening
-  are separate milestones. No teaser or full-stack work is on the current path.
-  Keep focused SEO work active; do not require exhaustive research before building.
-  The brand name is settled; the exact first-release sitemap remains open.
-
-- `apps/marketing` is an Astro workspace. The magazine edition has `/` and
-  `/contact/`, alongside Crystelle's Contact Card Page at `/contact/crystelle`.
+- `apps/marketing` serves `/`, `/contact/` and Crystelle's Contact Card Page.
   Keep Astro, Turbo, Stylelint, Vitest and generated-font tooling intact.
-- Contact details and portrait edits follow
-  `docs/operations/crystelle-contact-card.md`; keep the page portrait and social
-  preview on the shared image source in `src/data/crystelle-portrait.ts`.
-- Production setup, promotion and verification follow
-  `docs/operations/production.md`.
-- Cloudflare Pages reads `public/_redirects` and `public/_headers`. Printed
-  pointer paths live in `_redirects`. Crystelle's cards have been sent to print:
-  `https://jukkai.fr/c/crystelle` is locked; only the redirect target may change.
-- Analytics follows ADR-0006: retain one explicit beacon, keep production data
-  separate from previews, and describe contact-page views without claiming QR
-  scan attribution or successful contact imports.
-- `brand/` holds durable masters and is not the app's runtime asset directory.
-  Commit the curated web export into `apps/marketing/src/assets/` and import it
-  from there; a test holds the copy to its master.
-- Photographic originals and selected editable files live on Storage; follow
-  `media/README.md` and its catalog. `media/library/` is an ignored working shelf,
-  never a runtime/build dependency. Keep heavy masters out of Git, verify Storage
-  is mounted before writing, and preserve exact historical inputs of app exports.
-- Page-level styles belong in `src/styles/*.css` rather than an Astro `<style>`
-  block, because Stylelint globs `src/**/*.css`. The magazine pages use CSS Modules;
-  shared editorial resets and tokens live in `src/styles/editorial.css`.
-- Astro components render in tests through the Container API, which needs
-  Vitest's SSR transform. Those files declare `@vitest-environment node`.
-- Before marketing research, strategy, IA, content, or design work, read
-  `docs/operations/method.md`. Keep observations, interpretations, hypotheses,
-  decisions, and experiments distinct; tools and competitor patterns do not own
-  Jukkai's business or creative trade-offs.
-- Current strategy is limited to `docs/strategy/foundation.md` and
-  `docs/strategy/questions-for-crystelle.md`. Working notes can inform active
-  sessions, while files under `docs/archive/` are provenance to consult only
-  when intentionally requested.
-- Website proposals and draft copy are indexed in
-  `docs/working-notes/website/README.md`. Keep their business context, research
-  observations and proposed copy distinct; organization does not approve their content.
-- For continuing SEO research, read `docs/research/seo-research-log.md` and update
-  it after each reviewed run, following its update protocol. It holds provisional
-  synthesis, a linked run index and open questions; read only the relevant entries
-  in `docs/research/seo-runs/` for detailed findings, corrections and source paths.
-  Keep new records in groups of at most ten runs and update the index and changed
-  synthesis in the same session. Approved decisions stay in GitHub.
-  Use `docs/research/claude-seo-capability-map.md` alongside it for native command
-  selection across the full capability space. Recommend bare `/seo` commands; the
-  SEO workspace owns run instructions. Keep findings and next-run discussion in the log.
-- Brand masters and supporting source material live under `brand/`; see its
-  README before adding assets or committing font binaries.
-- For substantial visual or interaction work, prefer the local `impeccable`
-  skill when invoked or clearly useful.
-- Protect conversion and SEO intent, but allow visual implementation to
-  challenge conventional brochure-site patterns when it improves taste,
-  memorability, and clarity.
+- Page styles live in `src/styles/*.css` (CSS Modules; shared tokens in
+  `editorial.css`), not Astro `<style>` blocks, because Stylelint globs them.
+- Astro component tests use the Container API and declare
+  `@vitest-environment node`.
+- `https://jukkai.fr/c/crystelle` is printed on cards and locked in
+  `public/_redirects`; only its target may change. Contact details and portrait
+  follow `docs/operations/crystelle-contact-card.md`.
+- Analytics follows ADR-0006: one explicit beacon, production data separate from
+  previews, no claims of QR-scan attribution or contact imports.
+- `brand/` holds masters, not runtime assets: commit curated exports to
+  `apps/marketing/src/assets/`. Photo originals live on Storage per
+  `media/README.md`; `media/library/` is never a build dependency.
+- Protect conversion and SEO intent, but visual work may challenge brochure-site
+  conventions when it improves taste, memorability and clarity.
 
-## Domain Docs
+## Content, Strategy And Research
 
-- Shared language lives in `CONTEXT.md`. Keep it to glossary terms, not
-  implementation details.
-- ADRs live in `docs/adr/`. Read relevant ADRs before changing production,
-  deployment, backend shape, generated assets, or other durable architecture.
-- See `docs/agents/domain.md` for how agents should consume domain docs.
+- `docs/strategy/foundation.md` owns business facts and public claims.
+  Before research, content or design work, read `docs/operations/method.md`:
+  keep observations, proposals and decisions distinct. A draft or research
+  finding is not approved content.
+- SEO research follows `docs/research/seo-research-log.md` and its update
+  protocol. `docs/archive/` is provenance; open it only when asked.
+
+## Agent skills
+
+### Issue tracker
+
+GitHub Issues via `gh`, with native sub-issues and blocking. See
+`docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+The five default roles plus Jukkai's `spec`, `ready-for-supervised-agent`,
+`deferred`, gate, area and skill labels. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context: root `CONTEXT.md` (glossary only) plus `docs/adr/`. See
+`docs/agents/domain.md`.

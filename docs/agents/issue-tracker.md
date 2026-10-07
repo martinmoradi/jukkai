@@ -1,6 +1,6 @@
 # Issue tracker: GitHub
 
-Issues and PRDs for this repo live as GitHub issues. Use the `gh` CLI for all operations.
+Issues and specs for this repo live as GitHub issues. Use the `gh` CLI for all operations.
 
 ## Conventions
 
@@ -13,6 +13,18 @@ Issues and PRDs for this repo live as GitHub issues. Use the `gh` CLI for all op
 
 Infer the repo from `git remote -v` - `gh` does this automatically when run inside a clone.
 
+## Pull requests as a triage surface
+
+**PRs as a request surface: no.** _(Set to `yes` if this repo treats external PRs as feature requests; `/triage` reads this flag.)_
+
+When set to `yes`, PRs run through the same labels and states as issues, using the `gh pr` equivalents:
+
+- **Read a PR**: `gh pr view <number> --comments` and `gh pr diff <number>` for the diff.
+- **List external PRs for triage**: `gh pr list --state open --json number,title,body,labels,author,authorAssociation,comments` then keep only `authorAssociation` of `CONTRIBUTOR`, `FIRST_TIME_CONTRIBUTOR`, or `NONE` (drop `OWNER`/`MEMBER`/`COLLABORATOR`).
+- **Comment / label / close**: `gh pr comment`, `gh pr edit --add-label`/`--remove-label`, `gh pr close`.
+
+GitHub shares one number space across issues and PRs, so a bare `#42` may be either: resolve with `gh pr view 42` and fall back to `gh issue view 42`.
+
 ## When a skill says "publish to the issue tracker"
 
 Create a GitHub issue.
@@ -24,8 +36,8 @@ Run `gh issue view <number> --comments`.
 ## Wayfinding operations
 
 Use GitHub's native sub-issues and blocking relationships, not `Part of` or
-`Blocked by` prose as the source of truth. The current map is
-[Wayfinder map: plan the magazine release and October transition](https://github.com/martinmoradi/jukkai/issues/84).
+`Blocked by` prose as the source of truth. This section is used by `/wayfinder`.
+No map is active; find one with `gh issue list --label wayfinder:map --state open`.
 Refer to issues by linked title in human-facing text.
 
 - Map: `wayfinder:map` and `spec`, without an execution-readiness label.
@@ -50,9 +62,8 @@ repos/{owner}/{repo}/issues/CHILD_NUMBER --jq .id`, then POST to
 - Verify every relationship with a fresh GET. Create all issues before wiring
   dependencies. Do not use reassignment flags to steal an existing child silently.
 
-Only add a blocker when work cannot proceed without its answer. The current map's
-research scoping, page planning and transition planning can start independently;
-there is no blanket research-before-design gate. Implementation work does not become
+Only add a blocker when work cannot proceed without its answer; there is no
+blanket research-before-design gate. Implementation work does not become
 a Wayfinder decision merely because it relates to the map.
 
 On resolution, record the answer in a comment, close the ticket, and append a named

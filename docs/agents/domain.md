@@ -8,7 +8,7 @@ How the engineering skills should consume this repo's domain documentation when 
 - **`CONTEXT-MAP.md`** at the repo root if it exists. It points at one `CONTEXT.md` per context. Read each one relevant to the topic.
 - **`docs/adr/`**. Read ADRs that touch the area you're about to work in. In multi-context repos, also check `src/<context>/docs/adr/` for context-scoped decisions.
 
-If any of these files don't exist, **proceed silently**. Don't flag their absence; don't suggest creating them upfront. The producer skill (`/grill-with-docs`) creates them lazily when terms or decisions actually get resolved.
+If any of these files don't exist, **proceed silently**. Don't flag their absence; don't suggest creating them upfront. The `/domain-modeling` skill (reached via `/grill-with-docs` and `/improve-codebase-architecture`) creates them lazily when terms or decisions actually get resolved.
 
 ## Current layout
 
@@ -46,7 +46,7 @@ If the repo later grows into multiple distinct product or business contexts, add
 
 When your output names a domain concept in an issue title, refactor proposal, hypothesis, or test name, use the term as defined in `CONTEXT.md`. Don't drift to synonyms the glossary explicitly avoids.
 
-If the concept you need isn't in the glossary yet, either you're inventing language the project doesn't use or there's a real gap. Reconsider the term, or note it for `/grill-with-docs`.
+If the concept you need isn't in the glossary yet, either you're inventing language the project doesn't use or there's a real gap. Reconsider the term, or note it for `/domain-modeling`.
 
 ## Flag ADR conflicts
 
