@@ -14,7 +14,9 @@ visitor brief, page models, Architecture proof and French draft.
 
 [Mail and calendar meeting — 5 October 2026](mail-calendar-meeting-2026-10-05.md)
 records the current mailboxes, shared access, Karlia usage and needs for the
-Studio Terrasson → Jukkai transition. The technical setup remains to be proposed.
+Studio Terrasson → Jukkai transition. The [mail setup design
+record](mail-setup-design.md) holds the 2026-10-07 session; the resulting proposal
+lives in [mail setup](../operations/mail.md).
 
 The July SEO sequencing and visual-workroom sessions are retained in
 [the historical working-notes collection](../archive/2026-07-working-notes/README.md).
