@@ -2,7 +2,7 @@
 > substance; its decisions, dates and instructions belong to the source period.
 > They do not override the [foundation](../strategy/foundation.md),
 > [current delivery](../operations/current-delivery.md) or [ADRs](../adr/).
-> See [source context](README.md). Labelled 2026-09-10; not revalidated.
+> Imported from the March–June 2026 project; not revalidated.
 
 # Transcript — Session de découverte de marque Megalaya
 
