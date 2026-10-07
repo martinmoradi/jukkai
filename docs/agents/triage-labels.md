@@ -24,12 +24,13 @@ table.
 
 | Label                        | Meaning                                                                                     |
 | ---------------------------- | ------------------------------------------------------------------------------------------- |
-| `spec`                       | Parent/spec/roadmap issue. PRDs do not get readiness labels by default                      |
+| `spec`                       | Parent/spec/roadmap issue. Specs do not get readiness labels by default                     |
 | `ready-for-supervised-agent` | Safe for Martin to paste into an agent thread, but the agent must stop at named human gates |
 | `deferred`                   | Valid and understood, but intentionally not a current paste-into-agent item                 |
 
-The canonical `prd` role maps to the existing GitHub label `spec`. Do not create a
-second parent label. A deferred issue should not also carry an active readiness label.
+In this repo a spec is a parent that `/to-tickets` breaks into ready tickets.
+When `/to-spec` publishes, apply `spec` instead of `ready-for-agent`. Do not
+create a second parent label. A deferred issue should not also carry an active readiness label.
 
 ## Gate Labels
 
@@ -46,12 +47,11 @@ Gate labels explain why Martin must stay involved. They can appear on either
 
 Area labels are lightweight filters for implementation slices. Prefer one area,
 but use multiple when the implementation genuinely crosses ownership boundaries.
-Do not add area labels to broad PRD issues by default.
+Do not add area labels to broad spec issues by default.
 
 | Label            | Meaning                                                                                                            |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------ |
 | `area:marketing` | Astro marketing site, homepage, contact card pages, SEO, or visual implementation                                  |
-| `area:api`       | Jukkai Proper backend code, API contracts, data model, or service behavior                                         |
 | `area:ops`       | Cloudflare, Coolify, production branches, databases, secrets, observability, release checks, or operator workflows |
 
 ## Skill Labels
@@ -66,7 +66,7 @@ validation, route handling, generated artifacts, promotion probes, and other
 workflow code with observable outputs. Do not add it to pure design review,
 manual approval, or one-off production operation issues.
 
-## Publishing Issues From `to-issues`
+## Publishing From `/to-spec` And `/to-tickets`
 
 - While drafting slices, decide whether each implementation slice is
   red-green-friendly. Add `skill:tdd` when public behavior tests can lead the
@@ -79,5 +79,5 @@ manual approval, or one-off production operation issues.
 - Parent/spec/roadmap issue: add `spec`; do not add readiness labels by default.
 - Valid but intentionally later issue: add `deferred`.
 
-Do not close or relabel parent PRD issues when publishing child slices unless
+Do not close or relabel parent spec issues when publishing child slices unless
 Martin explicitly asks.
