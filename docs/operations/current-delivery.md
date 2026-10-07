@@ -1,130 +1,78 @@
-# Current delivery: magazine release and October transition
+# Current delivery: October transition
 
-Status: current delivery direction, confirmed with Martin on 2026-09-07;
-first-release page scope and supplied photography updated from his 2026-09-13 request.
-This file owns delivery scope and timing. Business truth stays in
-[the foundation](../strategy/foundation.md); open decisions and execution work
-live on GitHub. It is not a finished sitemap or an approved visual design.
+**Status:** current. **Owns:** what is being worked on now and why.
+**Last reviewed:** 2026-10-07 with Martin, after closing the September issues.
+**Revisit when:** a track below ships, changes priority or gains a decision.
 
-## Confirmed direction
+Business facts stay in [the foundation](../strategy/foundation.md); open work and
+decisions live in GitHub issues.
 
-- Jukkai by Crystelle Terrasson is the settled public brand. Do not reopen the
-  name while investigating Google's profile-update procedure.
-- Crystelle and the practice have just moved and already receive clients at the
-  new Châteaugiron office. Leads normally call first. Updating older address
-  references is planned transition work, not an emergency in Martin's assessment.
-- The official Jukkai opening is October 2026. This differs from the practice's
-  move, which has already happened. Do not infer public Galerie hours or walk-in
-  availability from the practice receiving architecture clients.
-- The magazine is expected in about a week from September 7. The exact publication
-  date is still to confirm; do not turn September 14 into a contractual deadline.
-  Its ad points to `jukkai.fr`: [print PDF](../../brand/ad/jukkai-adele-chandelle.pdf).
-- The first website must explain Jukkai and feel like an upgrade over Studio
-  Terrasson in design and content. Publish a useful, polished first version and
-  expand it through subsequent sprints. There is no teaser or final completion date.
-- Full-stack work is outside the foreseeable scope: no API, database, Portal,
-  custom publishing platform, or Jukkai Updates backend is a release prerequisite.
+## Where things stand
 
-## Two milestones, with a separate migration decision
+- **jukkai.fr is live** since 2026-09-15: `/`, `/contact/` and Crystelle's Contact
+  Card Page. It was a quick sprint so magazine readers in mid-September found
+  something; "magazine edition" in code and docs means this live version. It is
+  centred on the Galerie and barely presents interior architecture.
+- **studioterrasson.fr is still live** (WordPress with Elementor) and nothing on it
+  points to Jukkai.
+- Crystelle now promotes Jukkai and is uncomfortable that it does not show the
+  interior-architecture side. She accepts older material being shown for now.
+- Jukkai's official opening is October 2026; no exact day or public hours are given.
+- The SEO research is done and was presented to Crystelle on 2026-10-01
+  ([package](../working-notes/website/research-presentation-production.md)).
 
-**Magazine release:** a beautiful homepage explaining Jukkai, a useful contact
-route, and working production wiring. On September 13, Martin selected the landing
-page and a separate general contact page as the entire first-release page scope.
-The full sitemap is deferred. The existing Contact Card Page remains available
-alongside these two pages.
+## Tracks
 
-**Toward October:** add content, organise SEO work, and prepare a careful Studio
-Terrasson / Google Business Profile transition. The old website initially remains
-available with a banner inviting visitors to Jukkai. Banner wording is not approved
-copy yet. Do not deploy a blanket redirect or Search Console domain move merely
-because the magazine website is ready. Migration timing and the URL map remain open.
+### 1. Studio Terrasson bridge (hot)
 
-## Content and design
+Jukkai visitors should understand the interior-architecture practice, and Studio
+Terrasson visitors should find Jukkai.
 
-### Magazine edition: art leads
+- **Jukkai:** an interior-architecture section on the landing page, built from
+  existing material ([Architecture draft](../working-notes/website/architecture-page-draft-fr.md),
+  [old-site crawl](../reference/studioterrasson/index.md)), linking to
+  studioterrasson.fr for the portfolio in the meantime.
+- **Studio Terrasson:** at least a banner, current contact details and a section
+  pointing to Jukkai. Exact scope and whether to edit by hand or through an
+  Elementor MCP are open. Back the site up before editing.
+- **Later:** redirects, Search Console move and Google Business Profile changes.
+  These need their own decision once Jukkai can stand in for the old site.
 
-Martin's second-pass brief of September 13 clarifies this edition's job for
-magazine visitors and people arriving through the planned Studio Terrasson banner:
-introduce what Crystelle is creating, make the Galerie's artistic world obvious
-immediately, explain Jukkai, and give location, October opening and contact details.
-Jukkai encompasses the architecture practice, Galerie and place. Architecture
-establishes expertise and continuity in this edition; service sales, case studies,
-prices, process and acquisition sections belong to later website work.
+Describe a continuation and expansion of Studio Terrasson, not a closed practice.
 
-Studio Terrasson still exists and its website remains online. Use visible, natural
-French connecting Crystelle Terrasson, Studio Terrasson, interior architecture and
-the new Galerie. Describe a continuation and expansion, not a completed migration
-or a closed practice. The architecture practice already receives clients; the
-official opening of Jukkai is October 2026, with no exact day or public hours given.
-This edition-specific instruction takes precedence over older visual-priority and
-retirement wording; it does not change the long-term business strategy.
+### 2. Mail and calendar transition (hot)
 
-The pass covers the landing page and necessary contact-page coherence. The printed
-card remains intact. The incoming banner, cross-domain migration, Google profile
-changes and production promotion are separate work. Image selection, copy,
-composition and motion are implementation choices for review, not permanent brand
-decisions.
+Move Crystelle and Laura from Studio Terrasson to Jukkai addresses without losing
+correspondence. The [5 October meeting notes](../working-notes/mail-calendar-meeting-2026-10-05.md)
+are the brief. Next: a design session that produces a setup and migration proposal.
+Replacing Karlia is a separate question with no decision.
 
-On September 13, Martin supplied edited artworks, scenes and the Galerie portrait,
-plus interior photography. His September 15 consolidation places their durable
-sources on `/mnt/storage/jukkai/` and finished working copies in the ignored
-`media/library/`; the [media workflow](../../media/README.md) and catalog own current
-locations. Selection and composition are
-part of visual review; this does not establish a complete portfolio, a finished
-Galerie-space photographic record or a future sitemap.
+### 3. Content that converts (paced by Crystelle)
 
-Extra pages may be worthwhile when their facts, images, copy and review are ready.
-Cheap code generation alone does not establish readiness. Page count, navigation,
-contact mechanics, image selection, exact copy and visual direction remain decisions
-for Martin. Do not promote old visual studies or agent proposals to approved design.
+Make the website attract and convert leads across B2B, low-commitment B2C,
+higher-commitment B2C and specialised work such as restaurants and professional
+spaces. Martin runs bounded working sessions with Crystelle, using the research to
+ask sharp business questions (pricing, reaching people who do not yet know they
+need an interior architect). First step: structure the research into session
+briefs. Until then, the [SEO log](../research/seo-research-log.md) and
+[website working notes](../working-notes/website/README.md) hold the material as is.
 
-## Research remains useful
+### Also this week
 
-Martin wants organised SEO research to help plan the sitemap and copy. Keep it
-active and bounded by the decisions it informs; exhaustive research is not a global
-prerequisite to design or implementation. The website model can extend beyond the
-pages chosen for the first release.
+A new print campaign; its scope has not been discussed yet.
 
-The local Claude SEO workspace is `/home/martin/src/pro/seo`. It has a July 12
-Studio Terrasson audit with saved evidence and recorded successful API runs.
-Configuration checks passed on September 7; current live API access was not tested
-in this reset. Its Claude-specific tooling is not automatically available to Codex.
-Read that workspace's instructions before running it. Existing audits are evidence
-and agent analysis, not accepted Jukkai strategy. Scope fresh calls by question,
-expected output and cost; avoid repeating setup or a whole audit by default.
+## Decision status
 
-## Release verification
+- **Settled by Martin:** the three tracks and their priority; the magazine edition
+  is the live baseline; tracks 1 and 2 are urgent.
+- **Agent recommendation, not confirmed:** ship the bridge (track 1) before any
+  standalone interior-architecture site, because content decisions, not code, are
+  the bottleneck and they belong to track 3.
+- **Open:** Studio Terrasson edit scope and method, migration timing, mail address
+  format, and how research becomes session briefs.
 
-The magazine website went live on `jukkai.fr` on 2026-09-15 from main commit
-`5ec5748`; [production delivery](production.md) owns the verified deployment
-settings and evidence. Android contact-file opening was confirmed by Martin;
-iPhone and physical printed-scan evidence remain tracked in #102/#103.
+## Constraints that still hold
 
-Retain the current Astro, Bun, CI, fonts and static-image tooling. Work through
-branches and PRs. Production remains a deliberate promotion from integration
-`main` to the protected `production` release pointer on Cloudflare Pages.
-
-The go-live ticket owns current verification: inspect existing configuration first;
-verify the approved homepage/contact experience, domains and redirects, real fonts,
-mobile behavior, metadata/indexing choices, and one production analytics beacon.
-The locked `/c/crystelle` pointer, real iPhone/Android contact import, and actual
-analytics collection remain release checks. Local passing tests do not prove them.
-Do not require an API health probe or new promotion framework for this static release.
-
-## Decision ownership and next work
-
-- **Settled by Martin:** the direction and business facts above, staged delivery,
-  the old-site banner bridge, and care for search/profile continuity.
-- **Settled by Martin on September 13:** only a landing page and a general contact
-  page for the magazine; retain the existing printed Contact Card Page.
-- **Open:** final copy/design acceptance, focused research scope and output,
-  added-page priorities, banner wording, migration timing, and profile procedure.
-- **Externally governed:** Google rebranding eligibility, profile verification and
-  review handling. Investigate them without treating the brand name as undecided
-  or guaranteeing rankings/review transfer.
-- **Agent recommendation:** use a small release/later sitemap and section briefs
-  to connect research to copy and design. This format is not a settled requirement.
-
-The active [Wayfinder map](https://github.com/martinmoradi/jukkai/issues/84)
-indexes decision tickets. Implementation tickets remain separate handoffs with
-explicit acceptance criteria. A completed decision does not claim a deployed result.
+- `https://jukkai.fr/c/crystelle` is printed and locked; only its target may change.
+- Production is a deliberate promotion from `main`; see [production](production.md).
+- No API, database or portal is in scope. A lightweight CRM or portal is a later idea.

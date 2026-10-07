@@ -4,10 +4,10 @@ Jukkai by Crystelle Terrasson brings together the interior-architecture practice
 Galerie, and place in Châteaugiron. This Bun + Turborepo repo currently delivers
 the static Astro website.
 
-Start with [current delivery](docs/operations/current-delivery.md): a polished
-first website for the September magazine release, then content and transition
-work toward the October opening. The practice has already moved. No teaser or
-full-stack project is on the active delivery path.
+Start with [current delivery](docs/operations/current-delivery.md). The site has
+been live since the September magazine release; October work is the Studio
+Terrasson transition, the mail transition and content sessions with Crystelle.
+No full-stack project is in scope.
 
 `apps/marketing` contains the Astro frontend and Crystelle’s Contact Card Page
 at `/contact/crystelle/`. See the short
