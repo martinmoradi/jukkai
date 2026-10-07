@@ -72,9 +72,12 @@ Everything here runs while OVH keeps delivering mail as today.
       created anywhere else or as an alias). Invoices sent in the gap may bounce;
       keep it to minutes.
 - [ ] Create `info@jukkai.fr` and `etudes@jukkai.fr` groups.
-- [ ] For each group, in the Admin console (Directory → Groups → the group): - Access settings: tick External on the "Who can post" row. - Group name: "Jukkai" for `info@`, "Jukkai · Admin", "Jukkai · Études"
-      (Rename group). Recipients only see it in "X via Jukkai" rewrites; the From
-      name on replies is the one set under Send mail as (A5). - Members added here get every email by default. - `etudes@`: Laura as Manager, and "Who can manage members" includes managers
+- [ ] For each group, in the Admin console (Directory → Groups → the group):
+      tick External on the "Who can post" row (Access settings); rename it
+      "Jukkai" for `info@`, "Jukkai · Admin", "Jukkai · Études" (recipients only
+      see this in "X via Jukkai" rewrites; the From name on replies is the one set
+      under Send mail as, A5). Members added here get every email by default. For
+      `etudes@`, make Laura a Manager and let managers manage members
       ([group details](https://knowledge.workspace.google.com/admin/groups/update-group-details),
       [add members](https://knowledge.workspace.google.com/admin/groups/add-or-invite-users-to-a-group)).
 - [ ] For each group, at groups.google.com → Group settings → Posting policies (not
