@@ -22,17 +22,16 @@ whole folder or historical material for routine orientation.
 
 ## Folders and authority
 
-| Location           | Owns                                                                                  | Boundary                                                                                          |
-| ------------------ | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `strategy/`        | Business facts, brand, public claims and unresolved business inputs                   | Foundation is authoritative within that scope; delivery timing belongs elsewhere.                 |
-| `operations/`      | Active delivery scope and maintained procedures                                       | Start with the guide for the actual task; inspect live state before claiming it matches a guide.  |
-| `adr/`             | Durable technical decisions and their status                                          | Keep numbered records discoverable, including inactive decisions; inactive does not mean planned. |
-| `agents/`          | Agent workflow, domain-doc usage and tracker conventions                              | Root `AGENTS.md` is the agent entry point and points here for detail.                             |
-| `research/`        | Reviewed observations, evidence, synthesis and tool capabilities                      | Findings and recommendations do not approve pages, offers or designs.                             |
-| `working-notes/`   | Proposals, alternatives and drafts for discussion                                     | A newer or more detailed draft does not become canonical by itself.                               |
-| `source-material/` | [Frozen imports from the previous project](source-material/README.md)                 | Historical “decisions” and instructions may be superseded.                                        |
-| `reference/`       | Dated captures, such as the [old-site text crawl](reference/studioterrasson/index.md) | Evidence about the captured source, not current Jukkai facts or approved copy.                    |
-| `archive/`         | [Superseded work and historical sessions](archive/README.md)                          | Consult intentionally for provenance; do not resume old requirements automatically.               |
+| Location         | Owns                                                                                  | Boundary                                                                                          |
+| ---------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `strategy/`      | Business facts, brand, public claims and unresolved business inputs                   | Foundation is authoritative within that scope; delivery timing belongs elsewhere.                 |
+| `operations/`    | Active delivery scope and maintained procedures                                       | Start with the guide for the actual task; inspect live state before claiming it matches a guide.  |
+| `adr/`           | Durable technical decisions and their status                                          | Keep numbered records discoverable, including inactive decisions; inactive does not mean planned. |
+| `agents/`        | Agent workflow, domain-doc usage and tracker conventions                              | Root `AGENTS.md` is the agent entry point and points here for detail.                             |
+| `research/`      | Reviewed observations, evidence, synthesis and tool capabilities                      | Findings and recommendations do not approve pages, offers or designs.                             |
+| `working-notes/` | Proposals, alternatives and drafts for discussion                                     | A newer or more detailed draft does not become canonical by itself.                               |
+| `reference/`     | Dated captures, such as the [old-site text crawl](reference/studioterrasson/index.md) | Evidence about the captured source, not current Jukkai facts or approved copy.                    |
+| `archive/`       | [Superseded work and historical sessions](archive/README.md)                          | Consult intentionally for provenance; do not resume old requirements automatically.               |
 
 Open decisions and implementation acceptance criteria live in GitHub. Once a
 decision is accepted, update the document that owns the subject and link the
