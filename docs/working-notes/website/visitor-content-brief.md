@@ -164,7 +164,7 @@ the architecture appointment route and a separate, explicit Galerie opening stat
 As the place opens, replace that state with actual visiting information.
 
 **Basis — Business:** architecture clients are already received; leads normally
-call first; the official opening is October 2026 ([current delivery](../../operations/current-delivery.md#confirmed-direction)).
+call first; the official opening is October 2026 ([current delivery](../../operations/current-delivery.md)).
 **Research:** town service pages and regional homepages coexist in the local and
 department captures ([runs 45–46](../../research/seo-runs/041-050.md#45-châteaugiron-architecture-discovery--how-should-the-current-place-enter-the-site));
 their appearance cannot set Jukkai's travel scope.

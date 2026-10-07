@@ -1,6 +1,6 @@
 # Production delivery
 
-**Status:** first production release live; remaining native iPhone verification is tracked in [#102](https://github.com/martinmoradi/jukkai/issues/102).
+**Status:** first production release live; Martin verified the contact card on real phones ([#102](https://github.com/martinmoradi/jukkai/issues/102), closed 2026-10-07).
 **Owns:** Cloudflare Pages settings, promotion procedure and release evidence.
 **Last reviewed:** 2026-09-15, live Pages deployment, domains, fonts, analytics and Android report.
 **Revisit when:** deployment settings, branch protections, domains or analytics change.
