@@ -6,17 +6,17 @@
 Read the route for your task, then follow specific links. Do not bulk-load folders
 or historical material.
 
-| I am working on…                           | Start here                                                         | Read next when needed                                                      |
-| ------------------------------------------ | ------------------------------------------------------------------ | -------------------------------------------------------------------------- |
-| What to work on now                        | [Current delivery](operations/current-delivery.md)                 | The relevant GitHub issue                                                  |
-| Business facts, offers or public claims    | [Foundation](strategy/foundation.md)                               | [Questions for Crystelle](strategy/questions-for-crystelle.md)             |
-| Website content, page models or draft copy | [Website working notes](working-notes/website/README.md)           | [Old-site crawl](reference/studioterrasson/index.md) for existing material |
-| SEO research and evidence                  | [SEO research log](research/seo-research-log.md)                   | The specific run it links to                                               |
-| Mail and calendar transition               | [Meeting notes](working-notes/mail-calendar-meeting-2026-10-05.md) |                                                                            |
-| Release and production                     | [Production](operations/production.md)                             | [CI](operations/ci.md)                                                     |
-| Contact details or portrait                | [Contact-card guide](operations/crystelle-contact-card.md)         |                                                                            |
-| Fonts                                      | [Fonts](operations/fonts.md)                                       | [ADR-0003](adr/0003-build-time-generated-font-assets.md)                   |
-| Architecture or durable technical choices  | [ADRs](adr/)                                                       | [Domain guidance](agents/domain.md)                                        |
+| I am working on…                           | Start here                                                 | Read next when needed                                                      |
+| ------------------------------------------ | ---------------------------------------------------------- | -------------------------------------------------------------------------- |
+| What to work on now                        | [Current delivery](operations/current-delivery.md)         | The relevant GitHub issue                                                  |
+| Business facts, offers or public claims    | [Foundation](strategy/foundation.md)                       | [Questions for Crystelle](strategy/questions-for-crystelle.md)             |
+| Website content, page models or draft copy | [Website working notes](working-notes/website/README.md)   | [Old-site crawl](reference/studioterrasson/index.md) for existing material |
+| SEO research and evidence                  | [SEO research log](research/seo-research-log.md)           | The specific run it links to                                               |
+| Mail and calendar transition               | [Mail setup](operations/mail.md)                           | [Migration runbook](operations/mail-migration-runbook.md)                  |
+| Release and production                     | [Production](operations/production.md)                     | [CI](operations/ci.md)                                                     |
+| Contact details or portrait                | [Contact-card guide](operations/crystelle-contact-card.md) |                                                                            |
+| Fonts                                      | [Fonts](operations/fonts.md)                               | [ADR-0003](adr/0003-build-time-generated-font-assets.md)                   |
+| Architecture or durable technical choices  | [ADRs](adr/)                                               | [Domain guidance](agents/domain.md)                                        |
 
 ## Folders and authority
 

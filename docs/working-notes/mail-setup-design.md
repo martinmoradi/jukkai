@@ -1,6 +1,8 @@
 # Mail setup design — working record
 
-**Status:** in progress (design session for issue #136, started 2026-10-07).
+**Status:** session record (issue #136, 2026-10-07). The proposal it produced is
+[mail setup](../operations/mail.md) with its [runbook](../operations/mail-migration-runbook.md);
+those win where they differ.
 **Useful for:** resuming the session and drafting the setup and migration proposal.
 **Not:** an approved plan. Decisions below are Martin's working decisions; Crystelle
 and Laura have not reviewed the proposal yet.
