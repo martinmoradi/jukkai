@@ -12,6 +12,11 @@
     covers prestations headings 4 to 6 and the UNAID paragraph, logo filenames,
     srcset and original image dimensions, the mentions légales photo credits, and a
     caption cross-check. Facts from the live site carry the tag **(live)**.
+  - Archive (2026-10-08): the full site backup and Imagify's pre-compression
+    originals, browsable on Storage under
+    `originals/projects/old-website/site-2026-10-08/`, plus the received project
+    batches under `originals/projects/received/`. Findings in
+    [§4](#4-archive-review-credits-originals-and-image-quality).
 - **Crawl gap found:** the crawl's text extraction drops Elementor elements that
   animate into view. On prestations it lost the headings for steps 4 to 6 and the
   whole UNAID paragraph. On `/professionnel/` it lost 3 of the 13 project cards. On
@@ -20,17 +25,17 @@
 
 ## Headline counts
 
-| Item                                            | Count                                                                                       |
-| ----------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| Project pages                                   | 25 (12 particulier, 13 professionnel)                                                       |
-| Distinct project images                         | 176 (81 particulier, 95 professionnel). No image appears on two pages                       |
-| Images whose filename credits C. Ablain         | 30, on 5 professionnel pages. None on particulier pages                                     |
-| Caption length                                  | particulier 72–131 words; professionnel 64–109 words                                        |
-| Largest file per page                           | 1329 to 2560 px on the long edge                                                            |
-| Client logos on « Ils nous ont fait confiance » | 19                                                                                          |
-| Wall clients that also have a project page      | 8 (SECIB, My Digital School, Monnier, La Marébaudière, L'Atelier, Crechendo, Bakelite, ABE) |
-| Project client with no logo on the wall         | 1 (Restaurant Le Capri, _Waouh_)                                                            |
-| Project pages sharing identical text            | 2 (_Caractère_ and _Pop Color_: same SECIB caption, different photo sets)                   |
+| Item                                            | Count                                                                                                                         |
+| ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Project pages                                   | 25 (12 particulier, 13 professionnel)                                                                                         |
+| Distinct project images                         | 176 (81 particulier, 95 professionnel). No image appears on two pages                                                         |
+| Images whose filename credits C. Ablain         | 30, on 5 professionnel pages. Watermarks and EXIF show far more ([§4](#4-archive-review-credits-originals-and-image-quality)) |
+| Caption length                                  | particulier 72–131 words; professionnel 64–109 words                                                                          |
+| Largest file per page                           | 1329 to 2560 px on the long edge                                                                                              |
+| Client logos on « Ils nous ont fait confiance » | 19                                                                                                                            |
+| Wall clients that also have a project page      | 8 (SECIB, My Digital School, Monnier, La Marébaudière, L'Atelier, Crechendo, Bakelite, ABE)                                   |
+| Project client with no logo on the wall         | 1 (Restaurant Le Capri, _Waouh_)                                                                                              |
+| Project pages sharing identical text            | 2 (_Caractère_ and _Pop Color_: same SECIB caption, different photo sets)                                                     |
 
 ## 1. Project pages
 
@@ -113,7 +118,9 @@ Observations:
 - **Filenames:** 30 gallery files credit the photographer in their names: 25 as
   `c.ablain_NNNN` (_Caractère_, _De Vert et de Bois_, _Pause Bretonne_, _Pop Color_)
   and 5 as `conception-de-bureaux-bakelite-architecture-photo-c.ablain-N`
-  (_Orange Dynamique_). No caption or alt text credits a photographer.
+  (_Orange Dynamique_). No caption or alt text credits a photographer. Filenames
+  undercount: watermarks burned into the images credit her on particulier pages
+  too ([§4](#4-archive-review-credits-originals-and-image-quality)).
 - **Credit list (live):** the mentions légales page lists « Crédits photos » as
   Studio Crystelle Terrasson, Caroline Ablain (`https://www.carolineablain.com`) and
   Julie Colombel.
@@ -239,3 +246,73 @@ The page opens with « Concevoir des espaces où la vie est douce » and « éta
 
 Steps 2 and 4 also carry « Combien ça coûte ? » fee wording. That wording is out of
 scope here; map #139 settles current fees.
+
+## 4. Archive review: credits, originals and image quality
+
+Added 2026-10-08 from the archive source above. Images were reviewed as contact
+sheets; received files were matched to old-site images by EXIF capture time, then
+checked visually. Which received batch belongs to which private client stays out of
+this public repo. Quality tiers are an agent assessment, not a selection: choosing
+belongs to [#142](https://github.com/martinmoradi/jukkai/issues/142).
+
+### Credits
+
+- **Watermarks credit C. Ablain where filenames do not:** _Wood Loft_, _Voir Rouge_
+  and _Waouh_ read « CTERRA / © C.ABLAIN » (CTERRA is the studio's former name);
+  _En Silence_ and _Cabane en Bois_ read « studioterrasson / © C.Ablain »;
+  _Orange Dynamique_ reads « BAKELITE / © C.ABLAIN ».
+- **_Belle Époque_ co-credits an architect:** « T.ROCHER / C.TERRASSON / © C.ABLAIN ».
+  The old homepage also credits « Typhaine Rocher Architecte / Studio Crystelle
+  Terrasson » on a 2017 photo taken at Plélan-le-Grand.
+- **Ablain shoot dates (EXIF):** _Pause Bretonne_ 2017-05, _Wood Loft_ 2017,
+  _Pop Color_ 2017-12, _Caractère_ 2018-10, _Belle Époque_ 2019-11.
+- **Other photographers in received material:** Julie Brichet (Le Capri 2025, « all
+  rights reserved » in EXIF); Julie Dan, whose 2023 files carry the EXIF artist
+  « Julie Lumen » (team shoot, and a 2024 house shoot with a burned-in watermark);
+  Sowphoto (2021 team photo). One unpublished 2024 house set has no credit metadata.
+
+### Originals and upgrades
+
+| Page                                                                                                            | Best source found                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| _Belle Époque_                                                                                                  | Received HD: 29 files up to 6720 px, no watermark; all 9 old images plus about 19 new ones                            |
+| _Pause Bretonne_                                                                                                | Received HD: 20 files, 5760–6720 px, no watermark; all 11 old images plus 9 new ones                                  |
+| _Pop Color_                                                                                                     | Received set is the same 1329 px files, plus 7 unpublished frames: no upgrade                                         |
+| _Arrondir les Angles_                                                                                           | Received phone originals (4032 px, 2023), retouched crops and before/worksite photos                                  |
+| _Caractère_, _Wood Loft_, _Voir Rouge_, _Orange Dynamique_, _De Vert et de Bois_, _Waouh_, the two school pages | 1329 px watermarked web exports only; masters not located (one _Wood Loft_ HD frame sits in the _Belle Époque_ batch) |
+
+New material with no old page: the 2025 Le Capri restaurant (professional shoot,
+a different project from _Waouh_), a 2024 house renovation with a timber-clad
+extension (usable photos, rights unknown) and a 2021 rug-showroom fit-out
+(snapshots only).
+
+### Image quality by page (agent assessment)
+
+- **Professional shoot:** _Belle Époque_, _Wood Loft_, _Voir Rouge_, _Caractère_,
+  _Pop Color_, _Orange Dynamique_, _De Vert et de Bois_, _Pause Bretonne_, _Waouh_,
+  _En Silence_, _Cabane en Bois_.
+- **Decent camera:** _Tout en Lumière_ (5020 px, unwatermarked), _Sa Majesté
+  l'Escalier_ (5992 px).
+- **Phone or dated:** the other ten pages. Several still hold strong designs worth
+  showing at small size (_Géométrie Invariable_, _Jardin Intérieur_, _Maison Secrète_,
+  _Arrondir les Angles_).
+
+### Facts that conflict or date the material
+
+- _Belle Époque_: the caption says « maison 1930 »; the legacy portfolio entry says
+  an Art Déco « maison 1900 » in Rennes.
+- The legacy portfolio places IHECF and My Digital School in Bruz; the captions say
+  Rennes. Its Restaurant L'Atelier entry carries Le Capri's text.
+- Legacy dates: the La Mézière crèche opened in September 2018, its shell « dessinée
+  par Bakelite architectures »; the Cesson crèche in January 2020.
+- Every project page was uploaded in March 2023, and no old project is newer than
+  about 2022.
+
+### Other material
+
+- `unused-media/` holds team photos (2021, 2023), a kitchen plan with elevations,
+  an electrical plan, 3D review and VR photos: possible people and process proof.
+- The prestations page's `studioct_a_cozy_living_room…png` looks AI-generated; do
+  not reuse it.
+- The blog has six generic 2023 articles and three unpublished drafts. Only the
+  eco-kitchen article has links ([run 21](seo-runs/021-030.md#21-backlinks--which-relationships-and-old-destinations-merit-preservation)).
