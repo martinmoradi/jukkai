@@ -19,7 +19,8 @@ decisions live in GitHub issues.
   interior-architecture side. She accepts older material being shown for now.
 - The Galerie is open but still settling in (Martin, 2026-10-08): artworks are
   installed, Crystelle is starting Saturdays, and full swing is a few weeks away.
-  Hours are not confirmed. The live site still says it opens in October 2026.
+  Hours are not confirmed. Martin: the Galerie opens on 2026-10-09. The live site
+  still says it opens in October 2026; the fix ships with the MVP release.
 - The SEO research is done and was presented to Crystelle on 2026-10-01
   ([package](../working-notes/website/research-presentation-production.md)).
 
@@ -30,12 +31,16 @@ decisions live in GitHub issues.
 Jukkai visitors should understand the interior-architecture practice, and Studio
 Terrasson visitors should find Jukkai.
 
-- **Jukkai:** the prestations nucleus and a curated set of past projects, shown on
-  Jukkai itself rather than linked back to studioterrasson.fr. Shaped in
-  [#142](https://github.com/martinmoradi/jukkai/issues/142).
+- **Jukkai:** a dedicated interior-design page and a curated set of past projects
+  (réalisations), shown on Jukkai itself rather than linked back to
+  studioterrasson.fr. Crystelle asked for interior design on Jukkai; prestations is
+  the old page her clients praise. Shaped in [#142](https://github.com/martinmoradi/jukkai/issues/142),
+  built in [#155](https://github.com/martinmoradi/jukkai/issues/155), aiming at an
+  MVP release that also fixes the stale Galerie opening copy.
 - **Studio Terrasson:** at least a banner, current contact details and a section
-  pointing to Jukkai. Scope, method and backup are decided in
-  [#143](https://github.com/martinmoradi/jukkai/issues/143).
+  pointing to Jukkai. Scope and method are decided in
+  [#143](https://github.com/martinmoradi/jukkai/issues/143); the 2026-10-08 full
+  backup satisfies its backup requirement (Martin).
 - **Later:** redirects, Search Console move and Google Business Profile changes.
   These need their own decision once Jukkai can stand in for the old site.
 
