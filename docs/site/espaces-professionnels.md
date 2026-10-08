@@ -43,11 +43,15 @@ travaillent et ceux qui y sont accueillis ? »
 - Search establishes no sector priority; Crystelle's choice in #147 does.
 - Neuro-architecture only where a project substantiates it, never as a health claim
   ([§10](../strategy/foundation.md#10-proof-bank)).
-- 30 of the old images are credited to C. Ablain: keep the credit and check terms before reuse.
+- Most professional photographs are C. Ablain's, often with a burned-in credit
+  ([inventory §4](../research/carry-over-proof.md#4-archive-review-credits-originals-and-image-quality)):
+  credit her in captions; watermarked files are allowed until masters arrive.
 
 ## Open gaps
 
 - **#147:** one or two target segments, the proof each needs, and whether this is a page.
-- **#148:** the projects (candidates: [Le Capri](projets/le-capri.md), Orange Dynamique,
-  Pop Color, or better ones), their briefs and permissions.
+- **#148:** the projects, their briefs and permissions. Réalisations from
+  [#155](https://github.com/martinmoradi/jukkai/issues/155) to draw on: [Le Capri](projets/le-capri.md)
+  2025, SECIB (two sites, a repeat client), the Bakelite offices, Hôtel La
+  Marébaudière (clean HD files) and the La Mézière crèche.
 - Whether the logo wall is still accurate and fine to reuse (Martin).

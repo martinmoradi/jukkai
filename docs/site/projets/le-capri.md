@@ -1,6 +1,7 @@
 # Projet — Le Capri
 
-**Status:** waiting on [#149](https://github.com/martinmoradi/jukkai/issues/149).
+**Status:** waiting on [#149](https://github.com/martinmoradi/jukkai/issues/149) for the
+story; a réalisation can ship first in [#155](https://github.com/martinmoradi/jukkai/issues/155).
 **URL:** open; creative title plus descriptive subtitle
 ([§8](../../strategy/foundation.md#8-seo-posture-and-ia-confidence-gate)).
 **Last reviewed:** 2026-10-08.
@@ -45,5 +46,7 @@ becomes a short continuity chapter, not a second page
 ## Open gaps (#149)
 
 - The brief, constraints, key choices, responsibility and result of the new work.
-- Usable photographs of the new work, and permissions.
+- Permissions for the 2025 professional shoot (Julie Brichet, « all rights reserved »
+  in the files): licence terms to confirm. The photographs themselves are strong
+  ([inventory §4](../../research/carry-over-proof.md#4-archive-review-credits-originals-and-image-quality)).
 - What the story teaches the template: which fields every later story needs.

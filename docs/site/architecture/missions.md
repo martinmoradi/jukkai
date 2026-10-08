@@ -1,14 +1,13 @@
 # Architecture — Missions
 
-**Status:** buildable now, in [#142](https://github.com/martinmoradi/jukkai/issues/142)'s
-slice. **URL:** a section of [Architecture](index.md). **Last reviewed:** 2026-10-08.
+**Status:** build in [#155](https://github.com/martinmoradi/jukkai/issues/155). **URL:** a section of [Architecture](index.md). **Last reviewed:** 2026-10-08.
 
 ## Goal and segment
 
 Make the responsibility Crystelle carries visible and concrete. This is the main
 reassurance for the ceiling segment, and the reason a full mission costs what it
-does. It is the core of the old prestations page, which Crystelle considers mostly
-still right apart from its pricing.
+does. It draws on the old prestations page, which Crystelle's clients praise and
+which she considers mostly still right apart from its pricing.
 
 ## Visitor question
 
@@ -49,6 +48,10 @@ still right apart from its pricing.
 ## Open gaps
 
 - Check the décennale wording against the current attestation (Martin).
-- A real deliverable to show, such as a plan or a material study (Martin, at #142).
+- A real deliverable to show, such as a plan or a material study. Candidates: the
+  old site's unused plans and 3D reviews
+  ([inventory §4](../../research/carry-over-proof.md#4-archive-review-credits-originals-and-image-quality)),
+  then the 3D renders Crystelle agreed to supply for the « se projeter » step.
+  Never reuse the old page's AI-generated living-room image.
 - What the client organises alone after a design-only mission (Crystelle; can be
   absorbed into [#146](https://github.com/martinmoradi/jukkai/issues/146)).
