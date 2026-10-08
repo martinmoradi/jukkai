@@ -12,7 +12,11 @@ then each visitor is routed to the page that answers their question. All segment
 pass through here; it is mainly the referral visitor who heard a name and searched for it.
 
 **Tentative (Martin, 2026-10-08):** storytelling and a beautiful presentation, not a
-catalogue of what Jukkai does.
+catalogue of what Jukkai does. The hard part is presenting two activities neatly.
+Working shape: a hero, then what Jukkai is, then an interior-design section and a
+Galerie section, each with its call to action, then a sample of existing Google
+review excerpts. The reviews are for trust, not search: Google shows no review
+stars for a business's own reviews on its own site.
 
 ## Visitor question
 
@@ -49,11 +53,14 @@ ce qui me concerne ? »
 
 ## Open gaps
 
-- **The target story and its tone (untracked):** it has to work for both the ceiling
-  segment and this year's need for any viable mission (the map's "not yet specified").
-  Proposed owner: a homepage grilling session with Martin. No ticket yet.
-- **Architecture is under-presented live:** the magazine edition is centred on the
-  Galerie. #142 decides whether architecture arrives here as a section or as its own page.
+- **The story's copy and tone (untracked):** it has to work for both the ceiling
+  segment and this year's need for any viable mission. Not a deep grilling (Martin);
+  it can be drafted against the working shape above. No ticket yet.
+- **Architecture is under-presented live:** the interior-design section points to the
+  [Architecture page](architecture/index.md), built in [#155](https://github.com/martinmoradi/jukkai/issues/155).
 - **Stale live copy:** « La Galerie ouvre en octobre 2026 » and « Bientôt, les portes
-  s'ouvrent ». The Galerie is open (Martin, 2026-10-08). Small fix, Martin.
+  s'ouvrent ». The Galerie is open. Martin chose to fix it with the MVP release
+  rather than as a separate patch (2026-10-08).
+- **Review excerpts:** exact, source-checked excerpts from the Google profile
+  ([§10](../strategy/foundation.md#10-proof-bank)); Martin.
 - People: portraits of Crystelle and Laura, and the image selection (Martin).

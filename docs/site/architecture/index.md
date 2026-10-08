@@ -1,7 +1,8 @@
 # Architecture intérieure
 
-**Status:** waiting on [#142](https://github.com/martinmoradi/jukkai/issues/142),
-which decides whether this is its own page or a homepage section. **URL:** open.
+**Status:** its own page, decided in [#142](https://github.com/martinmoradi/jukkai/issues/142);
+build in [#155](https://github.com/martinmoradi/jukkai/issues/155). The homepage
+carries a short interior-design section that points here. **URL:** open.
 **Last reviewed:** 2026-10-08.
 
 ## Goal and segment
@@ -20,19 +21,25 @@ the first meeting, and advice comes after the proof.
 
 ## What it must prove
 
-The prestations nucleus Crystelle asked for: process, how fees work and proof of
-responsibility. Then curated past projects, with Jukkai showing them itself.
-Sections, with their own files:
+Crystelle asked for interior design to be on Jukkai, and named prestations as the
+old page her clients praise. That page is evidence of what reassures them (a clear
+process, how fees work, proof of responsibility), not a template to port. Then
+curated past projects, with Jukkai showing them itself. Sections, with their own files:
 
 | Section                                                                      | Answers                                        | Status                                      |
 | ---------------------------------------------------------------------------- | ---------------------------------------------- | ------------------------------------------- |
 | [Missions](missions.md)                                                      | What you do, what stays with me, why trust you | buildable now                               |
 | [Budget et honoraires](budget-et-honoraires.md)                              | How budget, works and fees fit together        | fee basis now; budget story waiting on #146 |
 | [Conseil / mission déco](conseil.md)                                         | Focused help without a full renovation         | waiting on #145                             |
-| Projects ([projets](../projets/index.md))                                    | Does her work appeal to me                     | selection waiting on #142                   |
+| Projects ([projets](../projets/index.md))                                    | Does her work appeal to me                     | build in #155                               |
 | Professional spaces ([espaces professionnels](../espaces-professionnels.md)) | A place like mine                              | section or page: #147                       |
 
 **Order:** responsibility proof comes before the advice offer (map, segment rule).
+
+**Collaboration (Martin, 2026-10-08):** one general line for now: when a permit is
+needed, Crystelle works with architects, and architects bring her in for interiors.
+It belongs where a visitor wonders whether they need an architect. Named partners
+wait for case studies.
 
 ## Evidence
 
@@ -58,7 +65,6 @@ Sections, with their own files:
 
 ## Open gaps
 
-- Page or homepage section, and whether conseil and B2B start inside it: #142.
-- The people: portraits and a short introduction to the team (Martin).
+- The people: portraits and a short introduction to the team (Martin; team photos
+  exist in the old site's unused media, see [inventory §4](../../research/carry-over-proof.md#4-archive-review-credits-originals-and-image-quality)).
 - Excerpts from existing Google reviews, source-checked (optional, [§10](../../strategy/foundation.md#10-proof-bank)).
-- An example of collaborating with an architect on a larger project (untracked).
