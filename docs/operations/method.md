@@ -79,6 +79,6 @@ Additional pages need ready content and review capacity as well as cheap code.
 Keep this system small. Update the relevant document when a decision crystallises;
 create another artifact only for a real coordination need. Do not reopen settled
 choices because an older issue, tool recommendation or agent template says otherwise.
-Follow the [documentation map](../README.md#keep-docs-fresh) when updating authority,
+Follow the [documentation map](../README.md#keeping-docs-useful) when updating authority,
 retiring a draft or moving files. Organization and review labels do not approve a
 business promise, page model or design.
