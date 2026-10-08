@@ -1,6 +1,6 @@
 # Jukkai marketing foundation
 
-**Version 1.11, October 8, 2026.** The full version history lives in the
+**Version 1.12, October 8, 2026.** The full version history lives in the
 Amendments section at the bottom.
 
 This is the canonical source for business facts, brand direction and public claims.
@@ -319,8 +319,10 @@ page count or broad comparison programme is a first-release prerequisite.
   cost/process explanations over generic blogging. Historical evidence reported
   4,700 impressions and zero clicks for the cuisine écologique cluster; that result
   does not establish a universal rule or an obligation to create FAQ/guide pages.
-- **Portfolio pages carry dual naming**: creative title for the brand ("Belle Époque")
-  plus descriptive subtitle and URL for search ("Rénovation maison années 30, Rennes").
+- **Portfolio pages lead with a descriptive title (v1.12)**: the H1 and URL say what
+  the project is ("Rénovation d'une maison ancienne, Rennes"). A creative name such
+  as "Belle Époque" survives only as an eyebrow, and only when it names something
+  real. Titles never identify a private client.
 - **Current role-split hypothesis.** The homepage serves the branded searcher and a
   Rennes service page serves the stranger. This is plausible, not frozen, until the
   confidence review tests whether a hybrid/integrated model communicates better.
@@ -377,11 +379,11 @@ What it may not say:
 
 ## 10. Proof bank
 
-**Working portfolio slate (v1.7).** Annexe D in Crystelle's July working document is a
-living shortlist, not a launch promise. Current old-site keep candidates include
-Belle Époque, Wood Loft, Sa Majesté l'Escalier, Arrondir les Angles, Pop Color, and
-Orange Dynamique. `OUI` means worth carrying for now; rows may still move before
-content freeze.
+**Working portfolio slate (v1.12).** The provisional first list lives in
+`docs/site/projets/index.md`, chosen by image quality with a deliberate share of
+residential work; Martin judges it on preview pages. The July Annexe D shortlist
+was its starting point. Old-site photographs are mostly C. Ablain's: credit her in
+captions; watermarked files are allowed until masters are found.
 
 **New proof coming online:**
 
@@ -585,5 +587,11 @@ and the conditional pricing simulator.
   fee range as 12–16% of estimated works HT, matching the old prestations page,
   replacing the July 12–14% working figure. The 700 € HT avant-projet figure on the
   old site is outdated and is not to be published.
+
+- **2026-10-08, v1.12 (portfolio naming and slate).** From the Architecture-slice
+  grilling ([#142](https://github.com/martinmoradi/jukkai/issues/142)): Martin
+  replaced dual naming with a descriptive title plus an optional creative eyebrow;
+  the old names mainly labelled projects without naming clients. The working
+  portfolio slate now points to the provisional list in the site page files.
 
 _Later substance changes append here with date and reason._
