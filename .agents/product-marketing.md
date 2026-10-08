@@ -1,6 +1,6 @@
 # Product Marketing Context
 
-_Last regenerated: 2026-09-07 from `docs/strategy/foundation.md` v1.10._
+_Last regenerated: 2026-10-08 from `docs/strategy/foundation.md` v1.11._
 
 ## Adapter contract
 
@@ -53,8 +53,8 @@ full mission with chantier follow-up within the actual contract/insurance scope.
 
 Crystelle approved « une mission déco avec l'exigence d'une architecte d'intérieur ».
 Exact offer names, fees, minimums and inclusions remain operational inputs when the
-selected content needs them. The July 12–14% full-mission figure is an unconfirmed
-working range, not ready public copy. Do not promise an unqualified free instant
+selected content needs them. Full-mission fees are 12–16% of estimated works HT
+(confirmed October 8, 2026); the old 700 € avant-projet figure is outdated, never publish it. Do not promise an unqualified free instant
 booking; confirm the lead sequence before describing it.
 
 ## Brand and voice

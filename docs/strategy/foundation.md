@@ -1,6 +1,6 @@
 # Jukkai marketing foundation
 
-**Version 1.10, September 7, 2026.** The full version history lives in the
+**Version 1.11, October 8, 2026.** The full version history lives in the
 Amendments section at the bottom.
 
 This is the canonical source for business facts, brand direction and public claims.
@@ -245,10 +245,11 @@ legible: project size and mission depth.
    the exact scope of Crystelle's contract and insurance.
 
 The website must never blur design-only and full-mission responsibility. Crystelle's
-current working norm for a standard full mission is roughly 12–14% of the works
-budget; treat that as a content placeholder until current lettres de mission confirm
-the exact range, minimums, and exceptions. Smaller projects may move to a fixed fee;
-the threshold and amount remain operational inputs.
+fees for studies and maîtrise d'œuvre are 12–16% of the estimated works budget (HT),
+as the old prestations page states and Martin confirmed on October 8, 2026. The old
+« avant-projet à partir de 700 € HT » figure is outdated and must not be published.
+Smaller projects may move to a fixed fee; the threshold, minimums and exceptions
+remain operational inputs.
 
 **The décoratrice tension, adjudicated and wording-approved (v1.7).** Crystelle wants light
 décor missions but fears the word "décoration" dilutes the architecte d'intérieur
@@ -579,5 +580,10 @@ and the conditional pricing simulator.
   open. Separated Google's procedure from the brand decision and superseded the
   stale GA4 requirement with ADR-0006. Historical amendment text above is provenance,
   not a competing current schedule. Current scope lives in current-delivery.md.
+
+- **2026-10-08, v1.11 (fee range correction).** Martin confirmed the full-mission
+  fee range as 12–16% of estimated works HT, matching the old prestations page,
+  replacing the July 12–14% working figure. The 700 € HT avant-projet figure on the
+  old site is outdated and is not to be published.
 
 _Later substance changes append here with date and reason._
