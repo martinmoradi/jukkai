@@ -1,7 +1,7 @@
 # Current delivery: October transition
 
 **Status:** current. **Owns:** what is being worked on now and why.
-**Last reviewed:** 2026-10-07 with Martin, after closing the September issues.
+**Last reviewed:** 2026-10-08 with Martin, after charting the sessions-driven site map.
 **Revisit when:** a track below ships, changes priority or gains a decision.
 
 Business facts stay in [the foundation](../strategy/foundation.md); open work and
@@ -17,7 +17,9 @@ decisions live in GitHub issues.
   points to Jukkai.
 - Crystelle now promotes Jukkai and is uncomfortable that it does not show the
   interior-architecture side. She accepts older material being shown for now.
-- Jukkai's official opening is October 2026; no exact day or public hours are given.
+- The Galerie is open but still settling in (Martin, 2026-10-08): artworks are
+  installed, Crystelle is starting Saturdays, and full swing is a few weeks away.
+  Hours are not confirmed. The live site still says it opens in October 2026.
 - The SEO research is done and was presented to Crystelle on 2026-10-01
   ([package](../working-notes/website/research-presentation-production.md)).
 
@@ -28,13 +30,12 @@ decisions live in GitHub issues.
 Jukkai visitors should understand the interior-architecture practice, and Studio
 Terrasson visitors should find Jukkai.
 
-- **Jukkai:** an interior-architecture section on the landing page, built from
-  existing material ([Architecture draft](../working-notes/website/architecture-page-draft-fr.md),
-  [old-site crawl](../reference/studioterrasson/index.md)), linking to
-  studioterrasson.fr for the portfolio in the meantime.
+- **Jukkai:** the prestations nucleus and a curated set of past projects, shown on
+  Jukkai itself rather than linked back to studioterrasson.fr. Shaped in
+  [#142](https://github.com/martinmoradi/jukkai/issues/142).
 - **Studio Terrasson:** at least a banner, current contact details and a section
-  pointing to Jukkai. Exact scope and whether to edit by hand or through an
-  Elementor MCP are open. Back the site up before editing.
+  pointing to Jukkai. Scope, method and backup are decided in
+  [#143](https://github.com/martinmoradi/jukkai/issues/143).
 - **Later:** redirects, Search Console move and Google Business Profile changes.
   These need their own decision once Jukkai can stand in for the old site.
 
@@ -55,9 +56,9 @@ Make the website attract and convert leads across B2B, low-commitment B2C,
 higher-commitment B2C and specialised work such as restaurants and professional
 spaces. Martin runs bounded working sessions with Crystelle, using the research to
 ask sharp business questions (pricing, reaching people who do not yet know they
-need an interior architect). First step: structure the research into session
-briefs. Until then, the [SEO log](../research/seo-research-log.md) and
-[website working notes](../working-notes/website/README.md) hold the material as is.
+need an interior architect). The [sessions-driven site map](https://github.com/martinmoradi/jukkai/issues/139)
+runs this track: [page files](../site/README.md) say what each page needs, and
+one ticket per session ships a page, aiming for about 48 h from session to online.
 
 ### Also this week
 
@@ -70,8 +71,10 @@ A new print campaign; its scope has not been discussed yet.
 - **Agent recommendation, not confirmed:** ship the bridge (track 1) before any
   standalone interior-architecture site, because content decisions, not code, are
   the bottleneck and they belong to track 3.
-- **Open:** Studio Terrasson edit scope and method, migration timing, mail address
-  format, and how research becomes session briefs.
+- **Settled by Martin (2026-10-08):** research reaches Crystelle through the
+  sessions in map #139.
+- **Open:** Studio Terrasson edit scope and method (#143), migration timing and
+  mail address format.
 
 ## Constraints that still hold
 
