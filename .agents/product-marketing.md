@@ -1,6 +1,6 @@
 # Product Marketing Context
 
-_Last regenerated: 2026-10-08 from `docs/strategy/foundation.md` v1.11._
+_Last regenerated: 2026-10-08 from `docs/strategy/foundation.md` v1.12._
 
 ## Adapter contract
 

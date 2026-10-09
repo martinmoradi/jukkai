@@ -60,6 +60,9 @@ file short; change it in the same PR as any workflow or structure change.
   Before research, content or design work, read `docs/operations/method.md`:
   keep observations, proposals and decisions distinct. A draft or research
   finding is not approved content.
+- `docs/site/` holds one page file per target page: why it exists, what it
+  must prove, its evidence and its gaps. Read the page's file before content
+  or design work on it, and update it in the same PR.
 - SEO research follows `docs/research/seo-research-log.md` and its update
   protocol. `docs/archive/` is provenance; open it only when asked.
 
