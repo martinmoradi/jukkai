@@ -2,7 +2,7 @@
 
 **Status:** waiting on [#149](https://github.com/martinmoradi/jukkai/issues/149) for the
 story; a réalisation can ship first in [#155](https://github.com/martinmoradi/jukkai/issues/155).
-**URL:** open; creative title plus descriptive subtitle
+**URL:** open; descriptive title, creative name only as an optional eyebrow
 ([§8](../../strategy/foundation.md#8-seo-posture-and-ia-confidence-gate)).
 **Last reviewed:** 2026-10-08.
 

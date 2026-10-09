@@ -2,8 +2,9 @@
 
 **Status:** waiting on [#147](https://github.com/martinmoradi/jukkai/issues/147)
 (which segments, and whether it earns its own page), then
-[#148](https://github.com/martinmoradi/jukkai/issues/148) (the page itself). Until
-then it can live as a section of [Architecture](architecture/index.md) ([#142](https://github.com/martinmoradi/jukkai/issues/142)).
+[#148](https://github.com/martinmoradi/jukkai/issues/148) (the page itself). The
+Architecture slice does not start it ([#142](https://github.com/martinmoradi/jukkai/issues/142));
+until then, professional réalisations carry the B2B proof.
 **URL:** open. **Last reviewed:** 2026-10-08.
 
 ## Goal and segment
