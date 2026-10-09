@@ -27,7 +27,8 @@ which she considers mostly still right apart from its pricing.
 
 - Old prestations steps and verbatim UNAID (n°3505) and décennale wording:
   [carry-over inventory §3](../../research/carry-over-proof.md#3-credential-wording-on-prestations);
-  full text in the [crawl](../../reference/studioterrasson/prestations/content.md).
+  full text in the [October archive](/mnt/storage/jukkai/originals/projects/old-website/site-2026-10-08/pages/prestations/page.md) (the crawl
+  drops steps 4 to 6 and the UNAID paragraph).
 - Décennale current and UNAID active: Martin, 2026-10-08 (see the map).
 - Deliverables and client involvement made concrete:
   [run 47](../../research/seo-runs/041-050.md#47-studio-anata-inventory-and-content-journey--what-does-a-second-nonlocal-practice-add),

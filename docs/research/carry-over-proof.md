@@ -21,7 +21,7 @@
   animate into view. On prestations it lost the headings for steps 4 to 6 and the
   whole UNAID paragraph. On `/professionnel/` it lost 3 of the 13 project cards. On
   all 25 project pages, the caption text in the crawl matches the live page word for
-  word.
+  word. For full page text, prefer the archive's `page.md` files over the crawl.
 
 ## Headline counts
 
