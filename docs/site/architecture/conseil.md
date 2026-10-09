@@ -6,8 +6,8 @@
 
 ## Goal and segment
 
-Promote the advice and sourcing offer as a named, bounded mission, with
-the best fee-to-effort ratio of the three segments. It sits **after**
+Promote the advice and sourcing offer as a named, bounded mission. Working
+hypothesis: it has the best fee-to-effort ratio of the three segments. It sits **after**
 the responsibility proof and is never the front door. It reads as an architecte
 d'intérieur's expertise (her eye, her selection, her sourcing), framed as
 « une mission déco avec l'exigence d'une architecte d'intérieur »

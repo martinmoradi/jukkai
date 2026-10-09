@@ -34,7 +34,8 @@ ce qui me concerne ? »
 
 ## Evidence
 
-- Old-site search visits are branded and land on the homepage:
+- Old-site search visits land mostly on the homepage, and every visible query is
+  branded (8 of 54 clicks explained; the rest is unknown):
   [run 8](../research/seo-runs/001-010.md#8-studio-terrasson-gsc--what-already-attracts-search-visits),
   [run 21](../research/seo-runs/021-030.md#21-backlinks--which-relationships-and-old-destinations-merit-preservation).
 - Shared-brand and homepage-entry specimens:
@@ -54,7 +55,7 @@ ce qui me concerne ? »
 ## Open gaps
 
 - **The story's copy and tone (untracked):** it has to work for both the ceiling
-  segment and this year's need for any viable mission. Not a deep grilling (Martin);
+  segment and the suitable smaller missions that stay welcome. Not a deep grilling (Martin);
   it can be drafted against the working shape above. No ticket yet.
 - **Architecture is under-presented live:** the interior-design section points to the
   [Architecture page](architecture/index.md), built in [#155](https://github.com/martinmoradi/jukkai/issues/155).

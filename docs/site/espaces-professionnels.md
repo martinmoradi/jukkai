@@ -10,8 +10,9 @@ until then, professional réalisations carry the B2B proof.
 ## Goal and segment
 
 Attract and reassure the B2B end of the ceiling segment, an explicit growth target
-([foundation §6](../strategy/foundation.md#6-audiences)). The fee-to-effort economics
-favour it: similar effort on larger works. Today B2B arrives through referrals, so the
+([foundation §6](../strategy/foundation.md#6-audiences)). Working hypothesis: its
+fee-to-effort economics are better (larger works for comparable effort); #147 tests
+it against past projects. Today B2B arrives through referrals, so the
 page's first reader is a professional who was sent the link; search comes second.
 Keyword-first titles are allowed here ([§4](../strategy/foundation.md#4-brand-and-name-architecture)).
 
