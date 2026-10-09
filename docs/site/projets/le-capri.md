@@ -32,7 +32,7 @@ becomes a short continuity chapter, not a second page
 
 - The _Waouh_ page (Restaurant Le Capri, Fougères (35), 7 images; not on the logo
   wall): [carry-over inventory](../../research/carry-over-proof.md#professionnel-professionnel),
-  [crawl](../../reference/studioterrasson/professionnel--waouh/content.md).
+  [October archive](/mnt/storage/jukkai/originals/projects/old-website/site-2026-10-08/projects/professionnel/waouh/page.md).
 - Restaurant searches mix design and fit-out providers; volumes unavailable:
   [runs 11–13](../../research/seo-runs/011-020.md#11-restaurant-architecture-rennes--does-a-b2b-need-change-the-results).
 
