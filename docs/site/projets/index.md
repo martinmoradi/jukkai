@@ -35,6 +35,8 @@ and to contact.
   whole master batch ([project masters](../../../media/README.md#project-masters)),
   not by porting the old page. The old page's image choices, captions and texts are
   reference, not truth. Crystelle reviews the draft on a preview page.
+- **Image rights (Martin, 2026-10-11):** Crystelle holds usage rights for every
+  image in the project master batches. Credits still apply.
 - **Watermarked old-site images** remain a fallback only for a project without
   masters.
 - **Years** are always recorded, and shown only where they serve: recent work,
@@ -66,6 +68,6 @@ in this list has a full-resolution master batch.
 - Image selection per project from its master batch (Martin and agents, then
   Crystelle on the preview). Capture years in `projects.csv` are a starting point
   for the year fact, not proof of the delivery year.
-- Licence terms for Le Capri 2025 and the 2024 house set (Martin).
+- Licence terms for the 2024 house set, which is not in the master batches (Martin).
 - Facts per project: year, commune, scope, mission depth (Martin, during #155).
 - Each project's visitor question: found in later récit sessions.

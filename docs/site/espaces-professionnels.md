@@ -54,7 +54,8 @@ travaillent et ceux qui y sont accueillis ? »
 ## Open gaps
 
 - **#147:** one or two target segments, the proof each needs, and whether this is a page.
-- **#148:** the projects, their briefs and permissions. Réalisations from
+- **#148:** the projects and their briefs; image rights for the master batches are
+  confirmed (Martin, 2026-10-11). Réalisations from
   [#155](https://github.com/martinmoradi/jukkai/issues/155) to draw on: [Le Capri](projets/le-capri.md)
   2025, SECIB (two sites, a repeat client), the Bakelite offices, Hôtel La
   Marébaudière (clean HD files) and the La Mézière crèche.
