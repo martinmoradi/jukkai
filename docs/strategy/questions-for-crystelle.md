@@ -42,7 +42,8 @@ not a second task queue.
 
 - **Visits:** actual public Galerie opening/visit arrangements and hours. Existing
   architecture appointments in the office do not establish walk-in availability.
-- **Photos and projects:** selected assets, rights/consent, project location/type,
+- **Photos and projects:** selected assets (usage rights for the project master
+  batches are confirmed, Martin, 2026-10-11), project location/type,
   naming/privacy constraints and sufficient facts for the story. July's Annexe D
   shortlist and photography dates are historical candidates, not a content freeze.
 - **Public offer details:** current scope, name, duration and price of entry missions;
