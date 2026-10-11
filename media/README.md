@@ -44,8 +44,10 @@ recovery. Its adjacent inventories preserve the original-to-current path mapping
 
 The received project batches are `belle-epoque`, `le-capri`,
 `to-identify/photos1` and `to-identify/unknown-new`. These labels preserve intake
-context; Crystelle still owns project identification, image selection, photographer
-credits and publication permission. Preserve both original and retouched files.
+context; Crystelle still owns project identification, image selection and
+photographer credits. Usage rights are confirmed for images that are also in
+[Project masters](#project-masters); others stay unconfirmed. Preserve both
+original and retouched files.
 
 ## Project masters
 
@@ -67,9 +69,11 @@ C. Ablain shoots, are new to the archive. `manifest.csv` is the current count.
   dimensions and orientation, capture date and camera from EXIF, old-site title.
   It reverses the rename and links copies elsewhere in the archive by checksum.
 
-The whole batch is the starting material for a project page. The old site's image
-choices, captions and texts are reference, not truth; Crystelle reviews new drafts
-on a preview. Capture years hint at project years but do not prove them.
+Crystelle holds usage rights for every image here (Martin, 11 October 2026);
+credits still apply. The whole batch is the starting material for a project page.
+The old site's image choices, captions and texts are reference, not truth;
+Crystelle reviews new drafts on a preview. Capture years hint at project years but
+do not prove them.
 
 Folder names contain private clients' names. Keep them internal: give exported
 website inputs descriptive names without client identity, because Astro keeps the

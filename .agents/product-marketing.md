@@ -90,8 +90,10 @@ booking; confirm the lead sequence before describing it.
   simulator, complete portfolio or bespoke testimonials are not launch prerequisites.
 
 Good finished-Galerie photography is lacking. Martin plans selected interior-design
-images and photographs of newly received artworks. Selection and publication rights
-remain to confirm. Do not make a Galerie photograph mandatory for the hero.
+images and photographs of newly received artworks. Usage rights for the
+interior-design project masters are confirmed (Martin, 2026-10-11); artwork
+photograph rights remain to confirm. Do not make a Galerie photograph mandatory
+for the hero.
 Existing brand masters and contact-card work are useful; provisional visual studies
 do not automatically become approved website design.
 
