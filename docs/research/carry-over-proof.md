@@ -17,6 +17,11 @@
     `originals/projects/old-website/site-2026-10-08/`, plus the received project
     batches under `originals/projects/received/`. Findings in
     [§4](#4-archive-review-credits-originals-and-image-quality).
+  - Project masters (2026-10-11): the photographs copied from Crystelle's server
+    project folders, under `media/projects/` on Storage
+    ([project masters](../../media/README.md#project-masters)). They supersede
+    the October archive's image findings where the two disagree; see
+    [§5](#5-project-masters-update).
 - **Crawl gap found:** the crawl's text extraction drops Elementor elements that
   animate into view. On prestations it lost the headings for steps 4 to 6 and the
   whole UNAID paragraph. On `/professionnel/` it lost 3 of the 13 project cards. On
@@ -142,41 +147,45 @@ The crawl gives the alt text. The filenames are from the live page. The
 - _name_: general knowledge of an organisation with that name. The logo itself
   does not confirm that it is the same organisation.
 - _uncertain_: an unconfirmed classification.
+- _records_: Crystelle's server project folders or received batches, confirmed by
+  Martin on 2026-10-11 ([§5](#5-project-masters-update)).
 
-|   # | Alt text (crawl)              | File **(live)**                   | Client                              | Sector                                        | Basis                                                                                              |
-| --: | ----------------------------- | --------------------------------- | ----------------------------------- | --------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-|   1 | Université Rennes 1 (logo) 01 | `universite_rennes_1_logo-01.png` | Université de Rennes 1              | education                                     | name                                                                                               |
-|   2 | My Digital School 01          | `my-digital-school-01.png`        | My Digital School                   | education                                     | project pages _Cabane en Bois_, _En Silence_                                                       |
-|   3 | Ihcef                         | `ihcef.png`                       | IHCEF                               | education (uncertain)                         | uncertain; _Cabane en Bois_ files are named `ihecf-…` while its caption names an accounting school |
-|   4 | Aftec 01                      | `aftec-01.png`                    | AFTEC                               | education (uncertain)                         | name, uncertain                                                                                    |
-|   5 | Crechendo                     | `crechendo.png`                   | Crechendo (micro-crèches)           | childcare                                     | project pages _Bleu de Prusse_, _De Vert et de Bois_, _Menthe à l'Eau_                             |
-|   6 | Neotoa 01                     | `neotoa-01.png`                   | Neotoa                              | social housing                                | name                                                                                               |
-|   7 | Marignan 01                   | `marignan-01.png`                 | Marignan                            | property development (uncertain)              | name, uncertain                                                                                    |
-|   8 | Pigeault 01                   | `pigeault-01.png`                 | Pigeault                            | property development (uncertain)              | name, uncertain                                                                                    |
-|   9 | Secib Logo 01                 | `secib-logo-01.png`               | SECIB Immobilier                    | offices/services (real-estate agency offices) | project pages _Caractère_, _Pop Color_                                                             |
-|  10 | Bakelite 01                   | `bakelite-01.png`                 | Bakelite Architecture               | offices/services (architecture practice)      | project page _Orange Dynamique_                                                                    |
-|  11 | Abe 01                        | `abe-01.png`                      | ABE (Atelier Bouvier Environnement) | offices/services                              | project page _Géométrie Invariable_, matched through its `…-abe-N` filenames                       |
-|  12 | 1000ty Services [récupéré] 01 | `1000ty-services-recupere-01.png` | 1000ty Services                     | offices/services (uncertain)                  | name only, uncertain                                                                               |
-|  13 | Monnier 01                    | `monnier-01.png`                  | Monnier Conception                  | retail (kitchen and bath showroom)            | project page _Plein les Yeux_                                                                      |
-|  14 | Tapis Chic 01                 | `tapis-chic-01.png`               | Tapis Chic                          | retail (uncertain)                            | name only, uncertain                                                                               |
-|  15 | La Marebaudiere               | `la-marebaudiere.png`             | Hôtel La Marébaudière               | hospitality                                   | project page _Pause Bretonne_                                                                      |
-|  16 | L Atelier 01                  | `l_atelier-01.png`                | Restaurant L'Atelier                | hospitality                                   | project page _La Fonderie_                                                                         |
-|  17 | Dometlux 01                   | `dometlux-01.png`                 | Dometlux                            | other/unknown                                 | name only                                                                                          |
-|  18 | Chp                           | `chp.png`                         | CHP                                 | other/unknown                                 | the acronym alone does not identify the organisation                                               |
-|  19 | Bwood                         | `bwood.png`                       | Bwood                               | other/unknown                                 | name only                                                                                          |
+|   # | Alt text (crawl)              | File **(live)**                   | Client                              | Sector                                        | Basis                                                                                                                                                                      |
+| --: | ----------------------------- | --------------------------------- | ----------------------------------- | --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|   1 | Université Rennes 1 (logo) 01 | `universite_rennes_1_logo-01.png` | Université de Rennes 1              | education                                     | records: the tiers-lieu shoot (2026)                                                                                                                                       |
+|   2 | My Digital School 01          | `my-digital-school-01.png`        | My Digital School                   | education                                     | project pages _Cabane en Bois_, _En Silence_                                                                                                                               |
+|   3 | Ihcef                         | `ihcef.png`                       | IHECF                               | education                                     | records: the server folder `ihecf` holds one 2019 shoot covering both _En Silence_ and _Cabane en Bois_, with IHECF signage in frame; both captions name My Digital School |
+|   4 | Aftec 01                      | `aftec-01.png`                    | AFTEC                               | education (uncertain)                         | name, uncertain                                                                                                                                                            |
+|   5 | Crechendo                     | `crechendo.png`                   | Crechendo (micro-crèches)           | childcare                                     | project pages _Bleu de Prusse_, _De Vert et de Bois_, _Menthe à l'Eau_                                                                                                     |
+|   6 | Neotoa 01                     | `neotoa-01.png`                   | Neotoa                              | social housing                                | name                                                                                                                                                                       |
+|   7 | Marignan 01                   | `marignan-01.png`                 | Marignan                            | property development (uncertain)              | name, uncertain                                                                                                                                                            |
+|   8 | Pigeault 01                   | `pigeault-01.png`                 | Pigeault                            | property development (uncertain)              | name, uncertain                                                                                                                                                            |
+|   9 | Secib Logo 01                 | `secib-logo-01.png`               | SECIB Immobilier                    | offices/services (real-estate agency offices) | project pages _Caractère_, _Pop Color_                                                                                                                                     |
+|  10 | Bakelite 01                   | `bakelite-01.png`                 | Bakelite Architecture               | offices/services (architecture practice)      | project page _Orange Dynamique_                                                                                                                                            |
+|  11 | Abe 01                        | `abe-01.png`                      | ABE (Atelier Bouvier Environnement) | offices/services                              | project page _Géométrie Invariable_, matched through its `…-abe-N` filenames                                                                                               |
+|  12 | 1000ty Services [récupéré] 01 | `1000ty-services-recupere-01.png` | 1000ty Services                     | offices/services (uncertain)                  | name only, uncertain                                                                                                                                                       |
+|  13 | Monnier 01                    | `monnier-01.png`                  | Monnier Conception                  | retail (kitchen and bath showroom)            | project page _Plein les Yeux_                                                                                                                                              |
+|  14 | Tapis Chic 01                 | `tapis-chic-01.png`               | Tapis Chic                          | retail (rug showroom)                         | records: received 2021 showroom snapshots                                                                                                                                  |
+|  15 | La Marebaudiere               | `la-marebaudiere.png`             | Hôtel La Marébaudière               | hospitality                                   | project page _Pause Bretonne_                                                                                                                                              |
+|  16 | L Atelier 01                  | `l_atelier-01.png`                | Restaurant L'Atelier                | hospitality                                   | project page _La Fonderie_                                                                                                                                                 |
+|  17 | Dometlux 01                   | `dometlux-01.png`                 | Dometlux                            | other/unknown                                 | name only                                                                                                                                                                  |
+|  18 | Chp                           | `chp.png`                         | CHP Saint-Grégoire                  | healthcare (private hospital)                 | records: server folders for a maternity room and a VIP lounge                                                                                                              |
+|  19 | Bwood                         | `bwood.png`                       | Bwood                               | building (house builder)                      | records: a 2024 house built for sale (Martin)                                                                                                                              |
 
 **Tally (uncertain in brackets):**
 
 | Sector               | Clients |
 | -------------------- | ------- |
-| education            | 2 (+2)  |
+| education            | 3 (+1)  |
 | childcare            | 1       |
+| healthcare           | 1       |
 | social housing       | 1       |
+| building             | 1       |
 | property development | 0 (+2)  |
 | offices/services     | 3 (+1)  |
-| retail               | 1 (+1)  |
+| retail               | 2       |
 | hospitality          | 2       |
-| other/unknown        | 3       |
+| other/unknown        | 1       |
 
 Logo files as served are raster PNGs, 445 to 768 px wide (the crawl's
 placeholder viewBoxes). Restaurant Le Capri (_Waouh_) has a project page but no
@@ -254,6 +263,8 @@ sheets; received files were matched to old-site images by EXIF capture time, the
 checked visually. Which received batch belongs to which private client stays out of
 this public repo. Quality tiers are an agent assessment, not a selection: choosing
 belongs to [#142](https://github.com/martinmoradi/jukkai/issues/142).
+The project masters later superseded the originals findings: see
+[§5](#5-project-masters-update).
 
 ### Credits
 
@@ -266,25 +277,25 @@ belongs to [#142](https://github.com/martinmoradi/jukkai/issues/142).
   Terrasson » on a 2017 photo taken at Plélan-le-Grand.
 - **Ablain shoot dates (EXIF):** _Pause Bretonne_ 2017-05, _Wood Loft_ 2017,
   _Pop Color_ 2017-12, _Caractère_ 2018-10, _Belle Époque_ 2019-11.
-- **Other photographers in received material:** Julie Brichet (Le Capri 2025, « all
-  rights reserved » in EXIF); Julie Dan, whose 2023 files carry the EXIF artist
-  « Julie Lumen » (team shoot, and a 2024 house shoot with a burned-in watermark);
-  Sowphoto (2021 team photo). One unpublished 2024 house set has no credit metadata.
+- **Other photographers in received material:** Julie Brichet (Le Capri 2025 and
+  the 2026 tiers-lieu, « all rights reserved » in EXIF); Julie Dan, whose 2023 files
+  carry the EXIF artist « Julie Lumen » (team shoot, and a 2024 portrait session of
+  Crystelle inside the 2024 house, with a burned-in watermark); Sowphoto (2021 team
+  photo). The 2024 house's own interior set has no credit metadata.
 
 ### Originals and upgrades
 
-| Page                                                                                                            | Best source found                                                                                                     |
-| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| _Belle Époque_                                                                                                  | Received HD: 29 files up to 6720 px, no watermark; all 9 old images plus about 19 new ones                            |
-| _Pause Bretonne_                                                                                                | Received HD: 20 files, 5760–6720 px, no watermark; all 11 old images plus 9 new ones                                  |
-| _Pop Color_                                                                                                     | Received set is the same 1329 px files, plus 7 unpublished frames: no upgrade                                         |
-| _Arrondir les Angles_                                                                                           | Received phone originals (4032 px, 2023), retouched crops and before/worksite photos                                  |
-| _Caractère_, _Wood Loft_, _Voir Rouge_, _Orange Dynamique_, _De Vert et de Bois_, _Waouh_, the two school pages | 1329 px watermarked web exports only; masters not located (one _Wood Loft_ HD frame sits in the _Belle Époque_ batch) |
+| Page                                                                                                            | Best source found                                                                           |
+| --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| _Belle Époque_                                                                                                  | Received HD: 29 files up to 6720 px, no watermark; all 9 old images plus about 19 new ones  |
+| _Pause Bretonne_                                                                                                | Received HD: 20 files, 5760–6720 px, no watermark; all 11 old images plus 9 new ones        |
+| _Pop Color_                                                                                                     | Received set is the same 1329 px files, plus 7 unpublished frames; masters found later (§5) |
+| _Arrondir les Angles_                                                                                           | Received phone originals (4032 px, 2023), retouched crops and before/worksite photos        |
+| _Caractère_, _Wood Loft_, _Voir Rouge_, _Orange Dynamique_, _De Vert et de Bois_, _Waouh_, the two school pages | 1329 px watermarked web exports in the archive; masters found later (§5)                    |
 
 New material with no old page: the 2025 Le Capri restaurant (professional shoot,
-a different project from _Waouh_), a 2024 house renovation with a timber-clad
-extension (usable photos, rights unknown) and a 2021 rug-showroom fit-out
-(snapshots only).
+a different project from _Waouh_), a 2024 house with a timber-clad extension and a
+2021 rug-showroom fit-out (snapshots only). The masters add more (§5).
 
 ### Image quality by page (agent assessment)
 
@@ -316,3 +327,67 @@ extension (usable photos, rights unknown) and a 2021 rug-showroom fit-out
   not reuse it.
 - The blog has six generic 2023 articles and three unpublished drafts. Only the
   eco-kitchen article has links ([run 21](seo-runs/021-030.md#21-backlinks--which-relationships-and-old-destinations-merit-preservation)).
+
+## 5. Project masters update
+
+Added 2026-10-11 from the [project masters](../../media/README.md#project-masters):
+402 files in 19 batches, reviewed as contact sheets. Crystelle holds usage rights
+for all of them; credits still apply (Martin, 2026-10-11). Batches are named here by
+old-site title or by a public-safe description, never by their private folder key.
+Quality notes are an agent assessment, not a selection.
+
+| Project                                    | Files | Long edge (px) | Shot (EXIF) | Source and quality                                |
+| ------------------------------------------ | ----: | -------------- | ----------- | ------------------------------------------------- |
+| _Belle Époque_                             |    28 | 5323–6720      | 2019-11     | C. Ablain                                         |
+| _Orange Dynamique_ (Bakelite)              |     6 | 6366–6720      | 2019-11     | C. Ablain                                         |
+| _Bleu de Prusse_ (Cesson crèche)           |    17 | 3684–4032      | 2020-01     | Phone snapshots                                   |
+| _De Vert et de Bois_ (La Mézière crèche)   |     8 | 6720           | 2018-09     | C. Ablain                                         |
+| _Sa Majesté l'Escalier_                    |    12 | 4943–5992      | 2021-04     | Camera, no credit; wide, estate-agent style       |
+| _Wood Loft_                                |    29 | 3689–5760      | 2017-01     | C. Ablain                                         |
+| _Tout en Lumière_                          |    12 | 5020           | 2021-06     | Camera, no credit; wide, estate-agent style       |
+| _En Silence_ and _Cabane en Bois_ (IHECF)  |    20 | 6525–6720      | 2019-05     | C. Ablain; one shoot covering both old pages      |
+| _Pause Bretonne_ (La Marébaudière)         |    20 | 5760–6720      | 2017-05     | C. Ablain                                         |
+| _Voir Rouge_                               |    37 | 5215–6720      | 2017-05     | C. Ablain; a whole house, with bold themed murals |
+| _Waouh_ (Le Capri cabaret room)            |     7 | 6720           | 2018-09     | C. Ablain                                         |
+| _Arrondir les Angles_                      |    17 | 2571–4032      | 2023-03     | Retouched phone photos of a strong design         |
+| _Pop Color_ (SECIB, city centre)           |    17 | 6544–6720      | 2017-12     | C. Ablain                                         |
+| _Caractère_ (SECIB, station)               |     7 | 6514–6720      | 2018-10     | C. Ablain                                         |
+| Le Capri restaurant, no old page           |    72 | 3856–6016      | 2025-10     | Julie Brichet                                     |
+| Université de Rennes 1 tiers-lieu, no page |    45 | 3826–6016      | 2026        | Julie Brichet; © 2026, delivered 2026-10-09       |
+| House for the builder Bwood, no page       |    27 | 3543           | 2024        | Camera, no credit; staged for sale                |
+| CHP Saint-Grégoire VIP lounge, no page     |    15 | 2067–5184      | 2015–2016   | Phone and compact snapshots                       |
+| CHP Saint-Grégoire maternity room, no page |     6 | 4512–5184      | 2018-10     | Compact snapshots                                 |
+
+C. Ablain attributions rest on the watermarks and file names of the old pages
+(§1, §4); the masters carry no credit metadata.
+
+### What the masters change
+
+- **Masters exist for every old page in the July keep list** and for _Pop Color_,
+  which the archive review had found no upgrade for.
+- **Three professional batches have no old page:** the Université de Rennes 1
+  tiers-lieu (Crystelle contracted by the university; Martin), the most recent
+  work in the archive and a strong professional shoot; and the two CHP
+  Saint-Grégoire spaces, whose snapshots support breadth rather than a réalisation.
+- **The 2024 house is a builder's project:** Bwood, a house builder on the logo
+  wall, built it for a client who meant to sell it (Martin, details unconfirmed).
+  The photos are staged for sale. Crystelle's part in it is unconfirmed.
+
+### Facts that conflict or date the material
+
+- **The 2024 house EXIF date is wrong:** the camera clock reads 2016-11, but edits
+  are dated March 2024 and the worksite photos January 2024.
+- **The first Le Capri shoot is dated 2018-09,** about seven years before the 2025
+  shoot. The foundation calls the return « roughly ten years » later; the year of the
+  first intervention is unconfirmed. The legacy portfolio describes that work as a
+  50-seat cabaret room (« Création de cabaret »).
+- **IHECF or My Digital School:** the old captions name My Digital School for both
+  school pages; the server folder and the signage in the photos say IHECF. Martin
+  goes with IHECF (2026-10-11).
+- Capture months hint at delivery years; they do not prove them.
+
+### Process proof
+
+The received batches also hold worksite photos: before and during the works for
+_Arrondir les Angles_, and demolition and January 2024 worksite photos for the
+2024 house. They can show site follow-up on [Missions](../site/architecture/missions.md).
