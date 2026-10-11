@@ -41,8 +41,9 @@ and to contact.
   masters.
 - **Years** are always recorded, and shown only where they serve: recent work,
   repeat clients, any figure.
-- **The index is curated,** with a recent project leading; no particulier /
-  professionnel split.
+- **The index is curated** and leads with the best work; recency is one factor
+  among others (Martin, 2026-10-11, revising « a recent project leading »). No
+  particulier / professionnel split.
 - **3D renders,** once Crystelle supplies them, may sit beside photos, labelled.
 - Old captions are sources: their « astuces » become problem-led material, not text.
 
