@@ -2,7 +2,7 @@
 
 **Status:** format and selection principle decided in [#142](https://github.com/martinmoradi/jukkai/issues/142);
 build in [#155](https://github.com/martinmoradi/jukkai/issues/155). **URL:** `/projets/`
-(index) and `/projets/<descriptive-slug>/` per project. **Last reviewed:** 2026-10-08.
+(index) and `/projets/<descriptive-slug>/` per project. **Last reviewed:** 2026-10-11.
 
 ## Goal and segment
 
@@ -31,9 +31,12 @@ and to contact.
 - **Images by role,** not projects by tier: _hero_ (clean, at least 2400 px),
   _gallery_ (at least 1300 px, straight, uncluttered), _detail_ and _astuce_ (small,
   any sharp image of a strong design). Revisit as masters turn up.
-- **Watermarked old-site images are allowed** until masters arrive. Asking for
-  masters happens with a preview page in front of Crystelle; aim to replace them
-  within about two months.
+- **Masters first (Martin, 2026-10-11):** draft each réalisation from its project's
+  whole master batch ([project masters](../../../media/README.md#project-masters)),
+  not by porting the old page. The old page's image choices, captions and texts are
+  reference, not truth. Crystelle reviews the draft on a preview page.
+- **Watermarked old-site images** remain a fallback only for a project without
+  masters.
 - **Years** are always recorded, and shown only where they serve: recent work,
   repeat clients, any figure.
 - **The index is curated,** with a recent project leading; no particulier /
@@ -46,8 +49,8 @@ and to contact.
 Residential: Belle Époque, Sa Majesté l'Escalier, Tout en Lumière, Wood Loft, Voir
 Rouge, Arrondir les Angles. Professional: Le Capri 2025, SECIB (two sites, one
 réalisation), Bakelite offices, Hôtel La Marébaudière, the La Mézière crèche.
-Conditional on rights: an unpublished 2024 house renovation. Clean HD files exist
-for Belle Époque, La Marébaudière and Le Capri 2025.
+Conditional on rights: an unpublished 2024 house renovation. Every other project
+in this list has a full-resolution master batch.
 
 ## Evidence
 
@@ -60,7 +63,9 @@ for Belle Époque, La Marébaudière and Le Capri 2025.
 
 ## Open gaps
 
-- Masters for the Ablain shoots (Crystelle, prompted by the preview).
+- Image selection per project from its master batch (Martin and agents, then
+  Crystelle on the preview). Capture years in `projects.csv` are a starting point
+  for the year fact, not proof of the delivery year.
 - Licence terms for Le Capri 2025 and the 2024 house set (Martin).
 - Facts per project: year, commune, scope, mission depth (Martin, during #155).
 - Each project's visitor question: found in later récit sessions.

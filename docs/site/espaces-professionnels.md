@@ -47,7 +47,9 @@ travaillent et ceux qui y sont accueillis ? »
   ([§10](../strategy/foundation.md#10-proof-bank)).
 - Most professional photographs are C. Ablain's, often with a burned-in credit
   ([inventory §4](../research/carry-over-proof.md#4-archive-review-credits-originals-and-image-quality)):
-  credit her in captions; watermarked files are allowed until masters arrive.
+  credit her in captions. Masters of her SECIB, Bakelite, La Mézière, La
+  Marébaudière and 2018 Le Capri shoots now exist
+  ([project masters](../../media/README.md#project-masters)).
 
 ## Open gaps
 
