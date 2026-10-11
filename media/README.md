@@ -2,7 +2,7 @@
 
 **Status:** current storage workflow, approved by Martin on 15 September 2026.
 **Owns:** photographic sources, selected edits and local intake.
-**Last reviewed:** 15 September 2026, consolidation of the September production folders.
+**Last reviewed:** 11 October 2026, intake of the project master batches.
 **Revisit when:** a backup destination or publishing workflow changes.
 
 ## Find an image
@@ -14,14 +14,16 @@
   artwork titles, project identities, credits and permissions remain unknown.
 - `/mnt/storage/jukkai/` owns originals and selected editable masters. Mount Storage
   before copying into it; never create an archive under an unmounted mountpoint.
+- `/mnt/storage/jukkai/media/projects/` holds whole project photo batches; see
+  [Project masters](#project-masters). Start there for any project page.
 - `incoming/` is ignored temporary intake. Empty it after verified promotion.
 - `apps/marketing/src/assets/` contains the committed inputs the website actually
   builds from. CI needs neither this local shelf nor Storage.
 
 Archive paths in the catalog are relative to its single `archiveRoot`. Library
 paths are relative to this directory. Checksums identify file bytes, not visual
-similarity or approval. Project batches preserve received filenames and retouches;
-old-site recoveries remain separate from photographer-supplied images.
+similarity or approval. Received project batches preserve their filenames and
+retouches; old-site recoveries remain separate from photographer-supplied images.
 
 The [September consolidation receipt](/mnt/storage/jukkai/records/migration-2026-09/REPORT.md)
 records the verified moves, deletions, remaining exceptions and measured space
@@ -34,6 +36,7 @@ recovery. Its adjacent inventories preserve the original-to-current path mapping
 | `photoshoot-09-09-26/`                | Complete capture groups in Rio, Crystelle/Orange, Crystelle/Sunshine, Crystelle/Composition, Laura, Artworks and Scenes. Original filenames and bytes stay intact. |
 | `originals/projects/`                 | Received project batches and separate old-website recovery.                                                                                                        |
 | `media/`                              | Selected artwork, scene, portrait, decoration and motion packages. Native names are preserved; flattened results live in `exports/`.                               |
+| `media/projects/`                     | Whole project master batches, renamed and indexed; see [Project masters](#project-masters).                                                                        |
 | `campaigns/tendances-2026-10/`        | Final Tendances v10 editable master and any required resources.                                                                                                    |
 | `design-resources/fonts/`             | Retained working font files; original trial/license distinctions still apply. Installed fonts and the site's generated font pipeline have separate roles.          |
 | `records/2026-09-production/`         | Useful historical notes, source indexes, scripts and exact historical website inputs. Consult the current catalog before following old paths.                      |
@@ -43,6 +46,33 @@ The received project batches are `belle-epoque`, `le-capri`,
 `to-identify/photos1` and `to-identify/unknown-new`. These labels preserve intake
 context; Crystelle still owns project identification, image selection, photographer
 credits and publication permission. Preserve both original and retouched files.
+
+## Project masters
+
+`media/projects/` holds every photograph Martin copied from Crystelle's server
+project folders in October 2026: 405 full-resolution files across 19 projects,
+untriaged. 164 are byte-identical to files in `originals/projects/received/`; the
+rest, including most C. Ablain shoots, are new to the archive.
+
+- One flat folder per project, keyed by client or place:
+  `<project>/<project>-NNN.jpg`, numbered in capture order (delivered order when
+  capture dates are missing). Two campaigns at one place carry their capture year,
+  e.g. `le-capri-2018` and `le-capri-2025`.
+- `projects.csv` lists each project with its image count, capture years, old-site
+  title and URL, the captured old page under `docs/reference/studioterrasson/`,
+  its `docs/site/` page file when one exists, and its original server folder. Find
+  a project by its old-site name here, e.g. Wood Loft is `fourage`.
+- `manifest.csv` has one row per image: new and original path, SHA-256, upright
+  dimensions and orientation, capture date and camera from EXIF, old-site title.
+  It reverses the rename and links copies elsewhere in the archive by checksum.
+
+The whole batch is the starting material for a project page. The old site's image
+choices, captions and texts are reference, not truth; Crystelle reviews new drafts
+on a preview. Capture years hint at project years but do not prove them.
+
+Folder names contain private clients' names. Keep them internal: give exported
+website inputs descriptive names without client identity, because Astro keeps the
+source filename in public image URLs.
 
 ## Use or revise an asset
 
