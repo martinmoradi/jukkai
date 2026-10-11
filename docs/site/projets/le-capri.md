@@ -39,14 +39,15 @@ becomes a short continuity chapter, not a second page
 ## Constraints
 
 - The _Waouh_ caption names the owner: naming anyone needs their agreement.
-- Credits and image permissions for every photograph.
+- Credits for every photograph. Usage rights for both shoots are confirmed
+  (Martin, 2026-10-11).
 - Professional relevance is shown through uses and choices, not through photographs alone
   ([architecture brief](../../working-notes/website/architecture-content-proof-brief.md#applying-the-practice-comparisons)).
 
 ## Open gaps (#149)
 
 - The brief, constraints, key choices, responsibility and result of the new work.
-- Permissions for the 2025 professional shoot (Julie Brichet, « all rights reserved »
-  in the files): licence terms to confirm. The photographs themselves are strong
+- The credit line for the 2025 professional shoot (Julie Brichet, « all rights
+  reserved » in the files). The photographs themselves are strong
   ([inventory §4](../../research/carry-over-proof.md#4-archive-review-credits-originals-and-image-quality)).
 - What the story teaches the template: which fields every later story needs.
