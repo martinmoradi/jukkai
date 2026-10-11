@@ -1,7 +1,8 @@
 # Projets
 
 **Status:** format and selection principle decided in [#142](https://github.com/martinmoradi/jukkai/issues/142);
-build in [#155](https://github.com/martinmoradi/jukkai/issues/155). **URL:** `/projets/`
+image qualification in [#157](https://github.com/martinmoradi/jukkai/issues/157); build in
+[#155](https://github.com/martinmoradi/jukkai/issues/155). **URL:** `/projets/`
 (index) and `/projets/<descriptive-slug>/` per project. **Last reviewed:** 2026-10-11.
 
 ## Goal and segment
@@ -49,16 +50,26 @@ and to contact.
 
 ## Provisional list (judge it on preview pages)
 
-Residential: Belle Époque, Sa Majesté l'Escalier, Tout en Lumière, Wood Loft, Voir
-Rouge, Arrondir les Angles. Professional: Le Capri 2025, SECIB (two sites, one
-réalisation), Bakelite offices, Hôtel La Marébaudière, the La Mézière crèche.
-Conditional on rights: an unpublished 2024 house renovation. Every other project
-in this list has a full-resolution master batch.
+Picked on 2026-10-08 from the old site's 1329 px exports, before the masters
+arrived. [#157](https://github.com/martinmoradi/jukkai/issues/157) re-judges it from
+the master batches; Martin picks the first wave there.
+
+- **Kept from #142:** residential: Belle Époque, Sa Majesté l'Escalier, Tout en
+  Lumière, Wood Loft, Voir Rouge, Arrondir les Angles. Professional: Le Capri 2025,
+  SECIB (two sites, one réalisation), Bakelite offices, Hôtel La Marébaudière, the
+  La Mézière crèche.
+- **Surfaced by the masters, not selected** (agent recommendation,
+  [inventory §5](../../research/carry-over-proof.md#5-project-masters-update)): the
+  Université de Rennes 1 tiers-lieu (2026, professional shoot), IHECF (one shoot
+  covering both old school pages) and the 2024 house for the builder Bwood, which is
+  no longer conditional: its photos are in the master batches.
+- **Weaker on the masters** (agent assessment): Sa Majesté l'Escalier and Tout en
+  Lumière have wide, estate-agent-style photos.
 
 ## Evidence
 
 - Pages, credits, originals, quality tiers and conflicting facts:
-  [carry-over inventory](../../research/carry-over-proof.md), §4 in particular.
+  [carry-over inventory](../../research/carry-over-proof.md), §§4–5 in particular.
 - Project pages rank for problem queries:
   [run 35](../../research/seo-runs/031-040.md#35-cktfc-ranking-footprint--which-pages-connect-service-project-and-explanatory-discovery),
   [run 38](../../research/seo-runs/031-040.md#38-older-house-renovation-serp--how-do-guidance-and-visual-projects-connect-to-professional-help),
@@ -66,9 +77,9 @@ in this list has a full-resolution master batch.
 
 ## Open gaps
 
-- Image selection per project from its master batch (Martin and agents, then
-  Crystelle on the preview). Capture years in `projects.csv` are a starting point
-  for the year fact, not proof of the delivery year.
-- Licence terms for the 2024 house set, which is not in the master batches (Martin).
-- Facts per project: year, commune, scope, mission depth (Martin, during #155).
+- Image selection per project from its master batch: [#157](https://github.com/martinmoradi/jukkai/issues/157),
+  then Crystelle on the preview. Capture years in `projects.csv` are a starting
+  point for the year fact, not proof of the delivery year.
+- Facts per project: year, commune, scope, mission depth. Martin has warned
+  Crystelle he will ask; drafts go ahead with what is known (Martin, 2026-10-11).
 - Each project's visitor question: found in later récit sessions.
