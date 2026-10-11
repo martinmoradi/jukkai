@@ -5,7 +5,7 @@
 [#148](https://github.com/martinmoradi/jukkai/issues/148) (the page itself). The
 Architecture slice does not start it ([#142](https://github.com/martinmoradi/jukkai/issues/142));
 until then, professional réalisations carry the B2B proof.
-**URL:** open. **Last reviewed:** 2026-10-08.
+**URL:** open. **Last reviewed:** 2026-10-11.
 
 ## Goal and segment
 
@@ -32,6 +32,9 @@ travaillent et ceux qui y sont accueillis ? »
 
 - 13 professional project pages, the 19-client wall (8 of those clients with project
   pages) and photo credits: [carry-over inventory §§1–2](../research/carry-over-proof.md#professionnel-professionnel).
+  Project folders and Martin identify five more wall clients, among them the
+  Université de Rennes 1, CHP Saint-Grégoire (healthcare) and Bwood (a house builder):
+  [§5](../research/carry-over-proof.md#5-project-masters-update).
 - Needs across restaurants, offices, medical and childcare premises, with no sector
   priority established:
   [runs 11–18](../research/seo-runs/011-020.md#11-restaurant-architecture-rennes--does-a-b2b-need-change-the-results),
@@ -48,8 +51,10 @@ travaillent et ceux qui y sont accueillis ? »
 - Most professional photographs are C. Ablain's, often with a burned-in credit
   ([inventory §4](../research/carry-over-proof.md#4-archive-review-credits-originals-and-image-quality)):
   credit her in captions. Masters of her SECIB, Bakelite, La Mézière, La
-  Marébaudière and 2018 Le Capri shoots now exist
-  ([project masters](../../media/README.md#project-masters)).
+  Marébaudière, IHECF and 2018 Le Capri shoots now exist
+  ([project masters](../../media/README.md#project-masters),
+  [inventory §5](../research/carry-over-proof.md#5-project-masters-update)). Julie
+  Brichet shot Le Capri 2025 and the Université de Rennes 1 tiers-lieu.
 
 ## Open gaps
 
@@ -58,5 +63,10 @@ travaillent et ceux qui y sont accueillis ? »
   confirmed (Martin, 2026-10-11). Réalisations from
   [#155](https://github.com/martinmoradi/jukkai/issues/155) to draw on: [Le Capri](projets/le-capri.md)
   2025, SECIB (two sites, a repeat client), the Bakelite offices, Hôtel La
-  Marébaudière (clean HD files) and the La Mézière crèche.
+  Marébaudière and the La Mézière crèche. The masters add the Université de Rennes 1
+  tiers-lieu (2026) and IHECF; [#157](https://github.com/martinmoradi/jukkai/issues/157)
+  qualifies them.
+- **For #147:** builders and developers as a segment. Bwood, a house builder, is behind
+  the 2024 house built for sale, and the wall also shows two possible property developers
+  and a social landlord (agent observation, not a direction).
 - Whether the logo wall is still accurate and fine to reuse (Martin).

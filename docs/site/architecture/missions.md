@@ -1,6 +1,6 @@
 # Architecture — Missions
 
-**Status:** build in [#155](https://github.com/martinmoradi/jukkai/issues/155). **URL:** a section of [Architecture](index.md). **Last reviewed:** 2026-10-08.
+**Status:** build in [#155](https://github.com/martinmoradi/jukkai/issues/155). **URL:** a section of [Architecture](index.md). **Last reviewed:** 2026-10-11.
 
 ## Goal and segment
 
@@ -53,6 +53,8 @@ which she considers mostly still right apart from its pricing.
   old site's unused plans and 3D reviews
   ([inventory §4](../../research/carry-over-proof.md#4-archive-review-credits-originals-and-image-quality)),
   then the 3D renders Crystelle agreed to supply for the « se projeter » step.
+  Worksite and demolition photos from two received batches can show site follow-up
+  ([inventory §5](../../research/carry-over-proof.md#process-proof)).
   Never reuse the old page's AI-generated living-room image.
 - What the client organises alone after a design-only mission (Crystelle; can be
   absorbed into [#146](https://github.com/martinmoradi/jukkai/issues/146)).
