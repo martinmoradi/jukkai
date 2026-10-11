@@ -4,7 +4,7 @@
 story; a réalisation can ship first in [#155](https://github.com/martinmoradi/jukkai/issues/155).
 **URL:** open; descriptive title, creative name only as an optional eyebrow
 ([§8](../../strategy/foundation.md#8-seo-posture-and-ia-confidence-gate)).
-**Last reviewed:** 2026-10-08.
+**Last reviewed:** 2026-10-11.
 
 ## Goal and segment
 
@@ -31,7 +31,9 @@ becomes a short continuity chapter, not a second page
 ## Evidence
 
 - The _Waouh_ page (Restaurant Le Capri, Fougères (35), 7 images; not on the logo
-  wall): [carry-over inventory](../../research/carry-over-proof.md#professionnel-professionnel),
+  wall), whose master batch dates its shoot to 2018-09; the legacy portfolio calls
+  it a 50-seat cabaret room: [carry-over inventory](../../research/carry-over-proof.md#professionnel-professionnel)
+  and [§5](../../research/carry-over-proof.md#5-project-masters-update),
   [October archive](/mnt/storage/jukkai/originals/projects/old-website/site-2026-10-08/projects/professionnel/waouh/page.md).
 - Restaurant searches mix design and fit-out providers; volumes unavailable:
   [runs 11–13](../../research/seo-runs/011-020.md#11-restaurant-architecture-rennes--does-a-b2b-need-change-the-results).
@@ -50,4 +52,7 @@ becomes a short continuity chapter, not a second page
 - The credit line for the 2025 professional shoot (Julie Brichet, « all rights
   reserved » in the files). The photographs themselves are strong
   ([inventory §4](../../research/carry-over-proof.md#4-archive-review-credits-originals-and-image-quality)).
+- The year of the first intervention. The foundation says « roughly ten years »
+  before the new work, but the first shoot is dated 2018-09, about seven years
+  before the 2025 shoot (Martin or Crystelle).
 - What the story teaches the template: which fields every later story needs.
