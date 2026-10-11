@@ -50,9 +50,10 @@ credits and publication permission. Preserve both original and retouched files.
 ## Project masters
 
 `media/projects/` holds every photograph Martin copied from Crystelle's server
-project folders in October 2026: 405 full-resolution files across 19 projects,
-untriaged. 164 are byte-identical to files in `originals/projects/received/`; the
-rest, including most C. Ablain shoots, are new to the archive.
+project folders in October 2026: about 400 full-resolution files across 19
+projects, untriaged apart from a few unusable portraits removed. 164 are
+byte-identical to files in `originals/projects/received/`; the rest, including most
+C. Ablain shoots, are new to the archive. `manifest.csv` is the current count.
 
 - One flat folder per project, keyed by client or place:
   `<project>/<project>-NNN.jpg`, numbered in capture order (delivered order when
