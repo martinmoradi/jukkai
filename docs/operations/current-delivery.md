@@ -19,8 +19,10 @@ decisions live in GitHub issues.
   interior-architecture side. She accepts older material being shown for now.
 - The Galerie is open but still settling in (Martin, 2026-10-08): artworks are
   installed, Crystelle is starting Saturdays, and full swing is a few weeks away.
-  Hours are not confirmed. Martin: the Galerie opens on 2026-10-09. The live site
-  still says it opens in October 2026; the fix ships with the MVP release.
+  Martin: the Galerie opens on 2026-10-09. Hours (Martin, 2026-10-12): Galerie
+  Wednesday to Saturday 10h30–12h30 and 14h–18h, other days by appointment; the
+  studio works Monday to Friday. The live site still says it opens in October
+  2026; the fix ships with the MVP release.
 - The SEO research is done and was presented to Crystelle on 2026-10-01
   ([package](../working-notes/website/research-presentation-production.md)).
 
