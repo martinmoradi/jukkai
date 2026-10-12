@@ -55,6 +55,7 @@ correspondence. The [5 October meeting notes](../working-notes/mail-calendar-mee
 are the brief. The 2026-10-07 design session produced a proposed
 [setup](mail.md) and [migration runbook](mail-migration-runbook.md) (#136): Martin
 prepares remotely, then one office day switches mail, devices and calendar sync.
+Runbook step A1 is done (2026-10-12): `martin@jukkai.fr` is the second super admin.
 Replacing Karlia is a separate question with no decision.
 
 ### 3. Content that converts (paced by Crystelle)
