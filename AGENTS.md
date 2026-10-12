@@ -82,5 +82,5 @@ The five default roles plus Jukkai's `spec`, `ready-for-supervised-agent`,
 
 ### Domain docs
 
-Single-context: root `CONTEXT.md` (glossary only) plus `docs/adr/`. See
+Single-context: root `GLOSSARY.md` (glossary only) plus `docs/adr/`. See
 `docs/agents/domain.md`.
