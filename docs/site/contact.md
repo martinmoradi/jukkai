@@ -43,7 +43,9 @@ ends here; a contact is the site's conversion
 ## Open gaps
 
 - **Stale live copy:** « L'ouverture officielle … est prévue en octobre 2026 ». Martin.
-- **Galerie hours and visits:** Martin, then [#150](https://github.com/martinmoradi/jukkai/issues/150).
+- **Galerie visits:** hours are known (Martin, 2026-10-12; see
+  [current delivery](../operations/current-delivery.md)); what a visit offers comes from
+  [#150](https://github.com/martinmoradi/jukkai/issues/150).
 - **The first-contact sequence:** what happens after a call and when a meeting is
   offered. Comes from [#146](https://github.com/martinmoradi/jukkai/issues/146).
 - How travel varies by mission (untracked; likely #146 or #145).

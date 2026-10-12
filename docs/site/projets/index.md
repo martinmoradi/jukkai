@@ -3,7 +3,7 @@
 **Status:** format and selection principle decided in [#142](https://github.com/martinmoradi/jukkai/issues/142);
 image qualification in [#157](https://github.com/martinmoradi/jukkai/issues/157); build in
 [#155](https://github.com/martinmoradi/jukkai/issues/155). **URL:** `/projets/`
-(index) and `/projets/<descriptive-slug>/` per project. **Last reviewed:** 2026-10-11.
+(index) and `/projets/<descriptive-slug>/` per project. **Last reviewed:** 2026-10-12.
 
 ## Goal and segment
 
@@ -51,8 +51,10 @@ and to contact.
 ## Provisional list (judge it on preview pages)
 
 Picked on 2026-10-08 from the old site's 1329 px exports, before the masters
-arrived. [#157](https://github.com/martinmoradi/jukkai/issues/157) re-judges it from
-the master batches; Martin picks the first wave there.
+arrived. **Every master batch is eligible** (Martin, 2026-10-12): Martin selects from
+them with Crystelle's trust, and batches with only phone photos stay eligible as
+professional proof. How the selection is prepared is being reworked from
+[#157](https://github.com/martinmoradi/jukkai/issues/157).
 
 - **Kept from #142:** residential: Belle Époque, Sa Majesté l'Escalier, Tout en
   Lumière, Wood Loft, Voir Rouge, Arrondir les Angles. Professional: Le Capri 2025,
