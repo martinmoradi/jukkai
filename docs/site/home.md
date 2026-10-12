@@ -1,7 +1,7 @@
 # Home
 
-**Status:** live (magazine edition); target story **untracked**. **URL:** `/`.
-**Last reviewed:** 2026-10-08.
+**Status:** live (magazine edition); rebuild shaped in [#164](https://github.com/martinmoradi/jukkai/issues/164). **URL:** `/`.
+**Last reviewed:** 2026-10-13.
 
 ## Goal and segment
 
@@ -17,6 +17,14 @@ Working shape: a hero, then what Jukkai is, then an interior-design section and 
 Galerie section, each with its call to action, then a sample of existing Google
 review excerpts. The reviews are for trust, not search: Google shows no review
 stars for a business's own reviews on its own site.
+
+**Re-mapped (Martin, 2026-10-12/13):** the current homepage, a two-day sprint about
+the Galerie, is not preserved; its Galerie content moves to the [Galerie page](galerie.md).
+The bar is a designer's hand: thoughtful motion, a real grid, negative space. Images
+are Editorial Images only; B2B work belongs when the image is editorial, with the
+proof in the caption. The main call to action books a first call. Tentative: the hero
+keeps the authored edit of strong stills, improved by cutting between interiors and
+artworks; a manifesto, testimonials and a Q&A are judged on the prototype ([#164](https://github.com/martinmoradi/jukkai/issues/164)).
 
 ## Visitor question
 
@@ -54,14 +62,13 @@ ce qui me concerne ? »
 
 ## Open gaps
 
-- **The story's copy and tone (untracked):** it has to work for both the ceiling
-  segment and the suitable smaller missions that stay welcome. Not a deep grilling (Martin);
-  it can be drafted against the working shape above. No ticket yet.
+- **The story's copy and tone:** it has to work for both the ceiling segment and the
+  suitable smaller missions that stay welcome. Drafted in the prototype ([#164](https://github.com/martinmoradi/jukkai/issues/164)),
+  then built in the Jukkai v1 tickets.
 - **Architecture is under-presented live:** the interior-design section points to the
-  [Architecture page](architecture/index.md), built in [#155](https://github.com/martinmoradi/jukkai/issues/155).
+  [Architecture page](architecture/index.md), built in the Jukkai v1 tickets.
 - **Stale live copy:** « La Galerie ouvre en octobre 2026 » and « Bientôt, les portes
-  s'ouvrent ». The Galerie is open. Martin chose to fix it with the MVP release
-  rather than as a separate patch (2026-10-08).
+  s'ouvrent ». The Galerie opened on 2026-10-09; [#162](https://github.com/martinmoradi/jukkai/issues/162) fixes it on its own.
 - **Review excerpts:** exact, source-checked excerpts from the Google profile
   ([§10](../strategy/foundation.md#10-proof-bank)); Martin.
 - People: portraits of Crystelle and Laura, and the image selection (Martin).
