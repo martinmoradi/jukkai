@@ -37,7 +37,8 @@ Run `gh issue view <number> --comments`.
 
 Use GitHub's native sub-issues and blocking relationships, not `Part of` or
 `Blocked by` prose as the source of truth. This section is used by `/wayfinder`.
-No map is active; find one with `gh issue list --label wayfinder:map --state open`.
+The active map is #139 (sessions-driven site); list open maps with
+`gh issue list --label wayfinder:map --state open`.
 Refer to issues by linked title in human-facing text.
 
 - Map: `wayfinder:map` and `spec`, without an execution-readiness label.
