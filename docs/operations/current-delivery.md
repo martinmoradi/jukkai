@@ -1,7 +1,7 @@
 # Current delivery: October transition
 
 **Status:** current. **Owns:** what is being worked on now and why.
-**Last reviewed:** 2026-10-08 with Martin, after charting the sessions-driven site map.
+**Last reviewed:** 2026-10-13 with Martin, after re-mapping the sessions-driven site map.
 **Revisit when:** a track below ships, changes priority or gains a decision.
 
 Business facts stay in [the foundation](../strategy/foundation.md); open work and
@@ -22,7 +22,7 @@ decisions live in GitHub issues.
   Martin: the Galerie opens on 2026-10-09. Hours (Martin, 2026-10-12): Galerie
   Wednesday to Saturday 10h30–12h30 and 14h–18h, other days by appointment; the
   studio works Monday to Friday. The live site still says it opens in October
-  2026; the fix ships with the MVP release.
+  2026; [#162](https://github.com/martinmoradi/jukkai/issues/162) fixes it on its own.
 - The SEO research is done and was presented to Crystelle on 2026-10-01
   ([package](../working-notes/website/research-presentation-production.md)).
 
@@ -37,8 +37,10 @@ Terrasson visitors should find Jukkai.
   (réalisations), shown on Jukkai itself rather than linked back to
   studioterrasson.fr. Crystelle asked for interior design on Jukkai; prestations is
   the old page her clients praise. Shaped in [#142](https://github.com/martinmoradi/jukkai/issues/142),
-  built in [#155](https://github.com/martinmoradi/jukkai/issues/155), aiming at an
-  MVP release that also fixes the stale Galerie opening copy.
+  then widened (2026-10-13) to a Jukkai that feels complete without the sessions:
+  homepage, interior design, projects, B2B and contact, published piece by piece.
+  Next: the image tier list ([#157](https://github.com/martinmoradi/jukkai/issues/157)) and the homepage prototype ([#164](https://github.com/martinmoradi/jukkai/issues/164)), then a
+  Jukkai v1 spec and tickets.
 - **Studio Terrasson:** at least a banner, current contact details and a section
   pointing to Jukkai. Scope and method are decided in
   [#143](https://github.com/martinmoradi/jukkai/issues/143); the 2026-10-08 full
@@ -65,8 +67,9 @@ higher-commitment B2C and specialised work such as restaurants and professional
 spaces. Martin runs bounded working sessions with Crystelle, using the research to
 ask sharp business questions (pricing, reaching people who do not yet know they
 need an interior architect). The [sessions-driven site map](https://github.com/martinmoradi/jukkai/issues/139)
-runs this track: [page files](../site/README.md) say what each page needs, and
-one ticket per session ships a page, aiming for about 48 h from session to online.
+runs this track: [page files](../site/README.md) say what each page needs, pages ship
+from existing material, and each session improves pages already published. Questions
+only Crystelle can answer collect in [one issue](https://github.com/martinmoradi/jukkai/issues/165).
 
 ### Also this week
 
@@ -82,6 +85,10 @@ build handoff live in [the campaign README](../../brand/campaigns/tendances-2026
   the bottleneck and they belong to track 3.
 - **Settled by Martin (2026-10-08):** research reaches Crystelle through the
   sessions in map #139.
+- **Settled by Martin (2026-10-12/13):** publish whenever it makes the live site
+  better; the first slice feels complete without the sessions; the design system is
+  extracted from the chosen homepage direction. The full record is the
+  [re-mapping comment](https://github.com/martinmoradi/jukkai/issues/139#issuecomment-6133687435).
 - **Open:** Studio Terrasson edit scope and method (#143), migration timing and
   mail address format.
 
