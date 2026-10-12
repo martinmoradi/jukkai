@@ -11,7 +11,7 @@ below and look at their proofs before proposing a new layout.
 | ---------------------------------------------------------------------- | ----------- | ------------------------- | ------------------ |
 | [`mlle-adele-2026-09`](mlle-adele-2026-09/README.md)                   | Mlle Adèle  | 65 × 265 mm « chandelle » | Sent for September |
 | [`tendances-2026-10`](tendances-2026-10/README.md)                     | Tendances   | 180 × 126 mm half page    | Sent for October   |
-| [`tendances-2026-quarter-page`](tendances-2026-quarter-page/README.md) | Tendances   | 88 × 126 mm quarter page  | Brief not started  |
+| [`tendances-2026-quarter-page`](tendances-2026-quarter-page/README.md) | Tendances   | 88 × 126 mm quarter page  | Brief written      |
 
 ## Folder convention
 
