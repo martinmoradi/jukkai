@@ -4,7 +4,7 @@
 the proof. **Material due 2026-10-13.**
 **Owns:** the brief, the build handoff, what was built, its accepted values and
 where its files live.
-**Last reviewed:** 2026-10-12, after the build.
+**Last reviewed:** 2026-10-12, after the neutral-black rebuild.
 **Revisit when:** Crystelle greenlights or asks for changes, the file is sent, or a
 printed copy arrives.
 
@@ -80,7 +80,9 @@ As retouched (build), in the photo native on Storage:
 - Live masked adjustments: ceiling relit −0.7 EV; back wall white balance −0.22,
   which removes the spotlights' yellow cast from the wall and its paintings
   (towards fidelity); plinth faces +0.45 EV with the artworks masked out; floor
-  edges −0.35 EV; left window reveal −0.6 EV; a gentle global S curve.
+  edges −0.35 EV; left window reveal −0.6 EV; a gentle global S curve; ceiling
+  saturation −80 %, added with the neutral black (photo v05) so the ceiling under
+  the gradient reads charcoal rather than brown.
 - No artwork repainted, removed, moved or added. No depth-of-field blur was added:
   the phone's own falloff is enough at print size.
 
@@ -116,11 +118,11 @@ Crystelle's greenlight is pending.
 | Trim         | 88 × 126 mm, no bleed; MediaBox = TrimBox 249.449 × 357.165 pt. The layout is set at 304.8 dpi so both sides are whole pixels; at 300 dpi Affinity rounded the page up to 88.05 × 126.07 mm |
 | Insets       | 5.0 mm left, right and top; the descriptor and the address share the 83.0 mm right edge                                                                                                     |
 | Photo        | 88 × 115 mm at the top, full source width (6124 px); content shifted down 4.50 mm into the extended ceiling, which crops the bottom of the plinths                                          |
-| Top gradient | House rich black, full width, 0–32 mm: 72 % at 0, 66 % at 8, 56 % at 16, 42 % at 22, 24 % at 26, 8 % at 29 and 0 at 32 mm                                                                   |
-| Band         | House rich black C14 M34 J38 N90, full width, 115–126 mm                                                                                                                                    |
+| Top gradient | Neutral rich black, full width, 0–32 mm: 72 % at 0, 66 % at 8, 56 % at 16, 42 % at 22, 24 % at 26, 8 % at 29 and 0 at 32 mm                                                                 |
+| Band         | Neutral rich black C30 M20 J20 N100 (170 % ink), full width, 115–126 mm; FOGRA39 predicts L\* 13, a\* 0, b\* −1                                                                             |
 | Headline     | Voyage Bold 24 / 21.5 pt, ivory, x 5.0 mm; cap top 5.0 mm; baselines 10.93, 18.51 and 26.10 mm                                                                                              |
 | Descriptor   | PP Frama Medium 7 / 9.5 pt capitals, tracking +80, ivory, two lines right-aligned to 83.0 mm; baselines 22.76 and 26.10 mm, the second on the headline's last line                          |
-| Wordmark     | `jukkai-wordmark-primary-no-byline.svg` as native curves (non-zero fill), house rich black, 32.8 mm wide; x 5.0, top 99.56, j foot 112.50 mm                                                |
+| Wordmark     | `jukkai-wordmark-primary-no-byline.svg` as native curves (non-zero fill), neutral rich black, 32.8 mm wide; x 5.0, top 99.56, j foot 112.50 mm                                              |
 | Byline       | Live PP Frama Regular 6.5 pt, tracking +19, N100; x 8.46 mm; baseline 112.50 mm on the j foot; ends flush with the i at 37.82 mm                                                            |
 | Band text    | PP Frama Medium 8 pt, ivory; `jukkai.fr` at x 5.0, address right-aligned to 83.0 mm; baseline 120.85 mm, descenders 4.5 mm above the trim                                                   |
 | Clearances   | Headline to the small face painting 2.1 mm; descriptor to the glass 2 mm; k and i stems to the vases ≥ 1.8 mm; i to the white bee frame 1.5 mm                                              |
@@ -138,10 +140,18 @@ Crystelle's greenlight is pending.
   white bee frame.
 - **Byline +19, not +35 (build):** at this wordmark size, +35 overhangs the i by
   0.8 mm; +19 ends flush with it.
-- **Byline in N100 (build):** small text on the plinth follows the business
-  card's flat-black rule; the wordmark stays rich black.
-- **Band in house rich black (Martin's allowed option):** mostly K, so the
-  reversed ivory stays clean.
+- **Neutral rich black C30 M20 J20 N100 for the band, top gradient and wordmark,
+  not house rich black (Martin, after the first proof).** House rich black is
+  warm by recipe (M34 J38 under N90); across a full-width band it read as brown,
+  and FOGRA39 predicts it prints that way (L\* 21, a\* +3, b\* +4). The neutral
+  black prints L\* 13, a\* 0, b\* −1 and is mostly K, so the reversed ivory stays
+  clean. Martin chose it, with the ceiling desaturated, from three renders in
+  `review/colour-options-A-B-C.jpg`: current, neutral black, and neutral black with a
+  neutral ceiling. The house rich black itself is unchanged.
+- **Byline in N100 (build, within Martin's neutral-black direction):** he asked for
+  one neutral black across the wordmark and byline. A 6.5 pt regular weight in four
+  inks would fringe at any misregistration, so the byline stays on the black plate,
+  as on the business card. N100 is neutral too (L\* 16).
 
 ## Delivery
 
@@ -150,6 +160,9 @@ Crystelle's greenlight is pending.
   embedded as subsets; no RGB. Transparency is flattened, so the photo and the
   gradient area are 300 ppi CMYK images while all text stays vector. Highest ink
   coverage 296 %.
+- On export Affinity re-separates the placed CMYK photo with less black (floor K
+  21 % → 12 %), so the PDF prints about 2 L\* lighter than the placed TIFF in the
+  midtones. Barely visible; not corrected.
 - The proof is a render of the PDF itself (Ghostscript CMYK, converted through
   FOGRA39 to sRGB). It matches Affinity's own render within 2 levels.
 - Proof checks done by the build agent at 300 dpi: byline and band text legible;
@@ -162,26 +175,29 @@ In this folder:
 
 | File                                 | Role                                                                              | SHA-256     |
 | ------------------------------------ | --------------------------------------------------------------------------------- | ----------- |
-| `jukkai-tendances-2026-11.pdf`       | **File to send.** PDF/X-1a:2003, exported 2026-10-12 18:36 from layout native v03 | `28277674…` |
-| `jukkai-tendances-2026-11-proof.jpg` | 1117 × 1600 px render of that PDF                                                 | `46e0596b…` |
+| `jukkai-tendances-2026-11.pdf`       | **File to send.** PDF/X-1a:2003, exported 2026-10-12 19:35 from layout native v04 | `c9774624…` |
+| `jukkai-tendances-2026-11-proof.jpg` | 1117 × 1600 px render of that PDF                                                 | `db92f8e1…` |
 | `tendances-media-kit-2024.pdf`       | The publisher's spec sheet                                                        | `d26b8d9d…` |
 
 Full SHA-256 of the file to send:
-`2827767414c853f384bb07f63f39dce466027fd8317055eb42d0c27417455913`.
+`c9774624fce8b88aafea03442c1d2d9282698e3ccab092ab535d27d9ada16afd`. It replaces an
+earlier export (`28277674…`, in Git history) that was never sent: house rich black,
+and print photo v01 without the window-reveal burn, because the scripted photo swap
+had silently done nothing.
 
 On Storage, under `/mnt/storage/jukkai/campaigns/tendances-2026-11/`, with every
 file's SHA-256 in `SHA256SUMS` there:
 
-| Path                                                                                      | Role                                                                                                                          |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `jukkai-tendances-2026-11-v03.af`                                                         | **Layout native**, 5.9 MB, CMYK FOGRA39 at 304.8 dpi, photo embedded; exported the PDF. `0b354831…`                           |
-| `jukkai-tendances-2026-11-photo-v04.af`                                                   | **Photo native**, 425 MB: embedded RAW layer, ceiling layer and the masked adjustments. `386de9a4…`                           |
-| `jukkai-tendances-2026-11-print-photo-v02.af`, `print-photo-88x115-300ppi-fogra39-v2.tif` | The 88 × 115 mm crop at 300 ppi, sharpened and converted to FOGRA39: the image placed in the layout. `92f5c170…`, `0dbb5d5d…` |
-| `photo-master-crop-88x115-full.jpg`                                                       | The same crop flattened at full resolution (6124 × 8003, Adobe RGB), for reuse. `5a905109…`                                   |
-| `build/`                                                                                  | Ceiling layer PNG, adjustment masks, the scripts that made them and the wordmark path data                                    |
-| `review/`                                                                                 | The descriptor A/B mock and review renders                                                                                    |
-| `comps/`                                                                                  | Direction comps from the brief                                                                                                |
-| Other `*.af` and `print-photo-*.tif`                                                      | Iterations: layout v01–v02 (300 dpi page, earlier photo), photo v01 (develop only) to v03, print photo v01                    |
+| Path                                                                                      | Role                                                                                                                                            |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `jukkai-tendances-2026-11-v04.af`                                                         | **Layout native**, 5.9 MB, CMYK FOGRA39 at 304.8 dpi, photo embedded; exported the PDF. `258dd4c9…`                                             |
+| `jukkai-tendances-2026-11-photo-v05.af`                                                   | **Photo native**, 426 MB: embedded RAW layer, ceiling layer and the masked adjustments. `92ef8775…`                                             |
+| `jukkai-tendances-2026-11-print-photo-v03.af`, `print-photo-88x115-300ppi-fogra39-v3.tif` | The 88 × 115 mm crop at 300 ppi, sharpened and converted to FOGRA39: the image placed in the layout. `61611e3e…`, `9fadebe4…`                   |
+| `photo-master-crop-88x115-full.jpg`                                                       | The same crop from photo v04 (before the ceiling desaturation), flattened at 6124 × 8003, Adobe RGB, for reuse. `5a905109…`                     |
+| `build/`                                                                                  | Ceiling layer PNG, adjustment masks, the scripts that made them and the wordmark path data                                                      |
+| `review/`                                                                                 | The descriptor A/B mock, the colour A/B/C renders and review renders                                                                            |
+| `comps/`                                                                                  | Direction comps from the brief                                                                                                                  |
+| Other `*.af` and `print-photo-*.tif`                                                      | Iterations: layout v01–v03 (house rich black, print photo v01; v01–v02 at a 300 dpi page), photo v01 (develop only) to v04, print photo v01–v02 |
 
 The print crop takes rows 87 to 8090 of the extended photo canvas (6124 × 8556).
 
@@ -204,11 +220,11 @@ sheet Tendances sent Crystelle for this booking.
 
 ## Open
 
-- Crystelle's greenlight on the proof, including the French and the descriptor
-  beside the headline.
+- Crystelle's greenlight on the proof, including the French, the descriptor
+  beside the headline and the neutral black.
 - Send the PDF to Tendances by 2026-10-13; record the date and any publisher
   feedback here.
-- On the printed copy, check the N100 byline against the rich-black wordmark and
-  the reversed 8 pt ivory on the band.
+- On the printed copy, check that the band and top read neutral, and the
+  reversed 8 pt ivory on the band.
 - The Desktop session `~/Desktop/jukkai-tendances-2026-11/` stays until the
   greenlight, for small tweaks; empty it afterwards per the media workflow.

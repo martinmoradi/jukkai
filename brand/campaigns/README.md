@@ -36,7 +36,9 @@ on Storage under `/mnt/storage/jukkai/campaigns/` when its files are large.
   and title as a small-caps line under the headline.
 - **Colour:** ivory C10 M10 J20 N0 and house rich black C14 M34 J38 N90 come from the
   Mlle Adèle ad and the [business card](../card/README.md#colour). The October navy
-  was derived from its photo, not a house colour.
+  was derived from its photo, not a house colour. November used a neutral rich black
+  C30 M20 J20 N100 for its band, gradient and wordmark, because house rich black
+  read brown across a full-width band.
 - **Photographs:** choose from [media/catalog.json](../../media/README.md); originals
   and print TIFFs are on Storage.
 - **Contact details:** printed ads used `jukkai.fr` and the Châteaugiron address,
