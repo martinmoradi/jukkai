@@ -7,11 +7,11 @@ or a shared constant changes.
 Start here for any magazine ad or printed promotion. Read the campaign READMEs
 below and look at their proofs before proposing a new layout.
 
-| Folder                                               | Publication | Format                    | Status             |
-| ---------------------------------------------------- | ----------- | ------------------------- | ------------------ |
-| [`mlle-adele-2026-09`](mlle-adele-2026-09/README.md) | Mlle Adèle  | 65 × 265 mm « chandelle » | Sent for September |
-| [`tendances-2026-10`](tendances-2026-10/README.md)   | Tendances   | 180 × 126 mm half page    | Sent for October   |
-| [`tendances-2026-11`](tendances-2026-11/README.md)   | Tendances   | 88 × 126 mm quarter page  | Brief written      |
+| Folder                                               | Publication | Format                    | Status                    |
+| ---------------------------------------------------- | ----------- | ------------------------- | ------------------------- |
+| [`mlle-adele-2026-09`](mlle-adele-2026-09/README.md) | Mlle Adèle  | 65 × 265 mm « chandelle » | Sent for September        |
+| [`tendances-2026-10`](tendances-2026-10/README.md)   | Tendances   | 180 × 126 mm half page    | Sent for October          |
+| [`tendances-2026-11`](tendances-2026-11/README.md)   | Tendances   | 88 × 126 mm quarter page  | Brief written; due 13 Oct |
 
 ## Folder convention
 
