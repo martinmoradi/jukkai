@@ -1,10 +1,10 @@
 # Mail migration runbook
 
 **Status:** proposed for [#136](https://github.com/martinmoradi/jukkai/issues/136);
-not started. Target state: [mail setup](mail.md).
+A1 done on 2026-10-12, the rest not started. Target state: [mail setup](mail.md).
 **Owns:** the one-off move from OVH (`studioterrasson.fr`) to Google Workspace
 (`jukkai.fr`), in three phases.
-**Last reviewed:** 2026-10-07, before any step was run.
+**Last reviewed:** 2026-10-12, after A1 and Martin's first facts.
 **Revisit when:** a step fails or Google changes a screen; once Phase C ends, this
 becomes provenance and [mail setup](mail.md) records what is live.
 
@@ -16,8 +16,10 @@ confirms: test it rather than rely on it.
 ## Before anything: facts to collect
 
 - [ ] Workspace edition, plan (Flexible or Annual) and renewal date: Admin console →
-      Billing.
-- [ ] Who holds super admin today (presumably Crystelle's account).
+      Billing. Martin, 2026-10-12: Business Starter, paid monthly, one paid seat.
+      Still open: whether "paid monthly" is the Flexible plan or an annual plan paid
+      monthly, and the renewal date if annual.
+- [x] Who holds super admin today: Crystelle's account, plus `martin@` since A1.
 - [ ] DNS host for each domain. `jukkai.fr` is on Cloudflare
       ([production](production.md)); `studioterrasson.fr` is presumably on OVH.
 - [ ] OVH mail offer (MX Plan, Email Pro, Exchange or Zimbra) and IMAP host; size of
@@ -38,18 +40,24 @@ Everything here runs while OVH keeps delivering mail as today.
 
 ### A1. Martin's admin account (needs Crystelle's account once, at home)
 
-- [ ] Add Cloud Identity Free: Billing → Buy or upgrade → Cloud Identity → Cloud
+Done on 2026-10-12 from Crystelle's laptop, then Martin's computer (Martin's report).
+
+- [x] Add Cloud Identity Free: Billing → Buy or upgrade → Cloud Identity → Cloud
       Identity Free → Get Started; keep "Switch off Auto-Assign" checked
       ([add licences](https://docs.cloud.google.com/identity/docs/how-to/add-cloud-identity-licenses)).
-- [ ] Turn off automatic Workspace licensing, so new users get the free licence.
-      From then on, assign Workspace licences by hand (Laura, in A3).
-- [ ] Create `martin@jukkai.fr`, assign the Super Admin role, sign in, enrol 2-step
-      verification and save backup codes in Martin's Bitwarden.
-- [ ] **Test (unverified):** the Admin console works fully from
-      `martin@`, including Data import and Billing. If not, fall back to Crystelle's
-      account with her backup codes stored safely, and note it in [mail setup](mail.md).
+- [x] Turn off automatic Workspace licensing, so new users get the free licence.
+      From then on, assign Workspace licences by hand (Laura, in A3). Martin had to
+      switch it off by hand.
+- [x] Create `martin@jukkai.fr`, assign the Super Admin role, sign in, enrol 2-step
+      verification and save backup codes in Martin's Bitwarden. It holds Cloud
+      Identity Free only; the paid seat count stayed at one. The role is under
+      Directory → Users → the user → Admin roles and privileges.
+- [x] **Test:** the Admin console works fully from `martin@`, including Data import
+      and Billing. Passed on 2026-10-12: both open from `martin@`. No import has run
+      from it yet; the first is the A6 rehearsal.
 - [ ] Crystelle's account: 2-step verification with phone prompts; backup codes in
-      her Bitwarden.
+      her Bitwarden. Martin, 2026-10-12: 2-step verification is on. Prompt method
+      and backup codes not yet confirmed.
 
 ### A2. `jukkai.fr` hygiene (Cloudflare DNS)
 
