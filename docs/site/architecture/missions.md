@@ -1,6 +1,6 @@
 # Architecture — Missions
 
-**Status:** build in [#155](https://github.com/martinmoradi/jukkai/issues/155). **URL:** a section of [Architecture](index.md). **Last reviewed:** 2026-10-11.
+**Status:** built in the Jukkai v1 tickets. **URL:** a section of [Architecture](index.md). **Last reviewed:** 2026-10-11.
 
 ## Goal and segment
 

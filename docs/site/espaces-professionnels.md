@@ -61,7 +61,7 @@ travaillent et ceux qui y sont accueillis ? »
 - **#147:** one or two target segments, the proof each needs, and whether this is a page.
 - **#148:** the projects and their briefs; image rights for the master batches are
   confirmed (Martin, 2026-10-11). Réalisations from
-  [#155](https://github.com/martinmoradi/jukkai/issues/155) to draw on: [Le Capri](projets/le-capri.md)
+  the Jukkai v1 tickets to draw on: [Le Capri](projets/le-capri.md)
   2025, SECIB (two sites, a repeat client), the Bakelite offices, Hôtel La
   Marébaudière and the La Mézière crèche. The masters add the Université de Rennes 1
   tiers-lieu (2026) and IHECF; [#157](https://github.com/martinmoradi/jukkai/issues/157)
