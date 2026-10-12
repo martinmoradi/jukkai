@@ -1,13 +1,19 @@
 # Tendances — November 2026 quarter page
 
-**Status:** brief written; build not started. **Material due 2026-10-13.**
-**Owns:** the brief, constraints and build handoff for the third print ad.
-**Last reviewed:** 2026-10-12, after the grilling session with Martin.
-**Revisit when:** the build agent returns a proof or Crystelle asks for changes.
+**Status:** built 2026-10-12; the PDF is ready to send once Crystelle greenlights
+the proof. **Material due 2026-10-13.**
+**Owns:** the brief, the build handoff, what was built, its accepted values and
+where its files live.
+**Last reviewed:** 2026-10-12, after the build.
+**Revisit when:** Crystelle greenlights or asks for changes, the file is sent, or a
+printed copy arrives.
 
-Labels below: **Martin** means settled by him in the 2026-10-12 session;
-**provisional** means an agent recommendation he went along with, which the build
-may revise. All public French goes to Crystelle with the proof.
+![Proof](jukkai-tendances-2026-11-proof.jpg)
+
+Labels below: **Martin** means settled by him on 2026-10-12, in the grilling
+session or during the build; **provisional** means an agent recommendation he went
+along with; **build** means chosen by the build agent from measurements on the
+photo, within the brief. All public French goes to Crystelle with the proof.
 
 ## Brief
 
@@ -29,8 +35,10 @@ may revise. All public French goes to Crystelle with the proof.
 
 ## Copy
 
-> **Du petit cadeau / au grand coup / de cœur.** _(Martin; line breaks open)_
-> GALERIE D'ART & ARCHITECTURE D'INTÉRIEUR _(provisional)_
+As set in the file:
+
+> **Du petit cadeau / au grand coup / de cœur.** _(Martin)_
+> GALERIE D’ART & / ARCHITECTURE D’INTÉRIEUR _(provisional wording)_
 > jukkai (wordmark) · BY CRYSTELLE TERRASSON
 > jukkai.fr · 26 bis rue au Prévôt · Châteaugiron
 
@@ -59,7 +67,24 @@ may revise. All public French goes to Crystelle with the proof.
   them only towards fidelity. Artists' works stay recognisable and the photo stays
   an honest picture of the Galerie.
 
-## Layout
+As retouched (build), in the photo native on Storage:
+
+- Developed in Affinity 3.3.1 from the DNG and kept as an embedded live RAW layer:
+  white balance 0.60, exposure +0.35, highlights −0.25, shadows +0.10, clarity
+  +0.08; Adobe RGB, 16-bit.
+- Ceiling: track rails and spots removed, and the plain ceiling extended 400 px
+  (4.5 mm in the ad) above the frame from a surface fitted to the ceiling's own
+  tone, with matched grain. The dark meeting-room box ends at its top corner,
+  found by extending its two measured edges. This one pixel layer was computed
+  outside Affinity from an export of the RAW layer, then loaded as a layer.
+- Live masked adjustments: ceiling relit −0.7 EV; back wall white balance −0.22,
+  which removes the spotlights' yellow cast from the wall and its paintings
+  (towards fidelity); plinth faces +0.45 EV with the artworks masked out; floor
+  edges −0.35 EV; left window reveal −0.6 EV; a gentle global S curve.
+- No artwork repainted, removed, moved or added. No depth-of-field blur was added:
+  the phone's own falloff is enough at print size.
+
+## Layout handoff
 
 Rough direction comps (ImageMagick, not design) are on Storage under
 `/mnt/storage/jukkai/campaigns/tendances-2026-11/comps/`; `comp-03` and
@@ -81,14 +106,84 @@ Rough direction comps (ImageMagick, not design) are on Storage under
 - Colours: ivory C10 M10 J20 N0; house rich black C14 M34 J38 N90. Small reversed
   type on the band needs a black built mostly on K to avoid misregistration fringes.
 
+## Accepted values
+
+Built 2026-10-12 and measured from renders of the native and of the PDF.
+Crystelle's greenlight is pending.
+
+| Element      | Value                                                                                                                                                                                       |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Trim         | 88 × 126 mm, no bleed; MediaBox = TrimBox 249.449 × 357.165 pt. The layout is set at 304.8 dpi so both sides are whole pixels; at 300 dpi Affinity rounded the page up to 88.05 × 126.07 mm |
+| Insets       | 5.0 mm left, right and top; the descriptor and the address share the 83.0 mm right edge                                                                                                     |
+| Photo        | 88 × 115 mm at the top, full source width (6124 px); content shifted down 4.50 mm into the extended ceiling, which crops the bottom of the plinths                                          |
+| Top gradient | House rich black, full width, 0–32 mm: 72 % at 0, 66 % at 8, 56 % at 16, 42 % at 22, 24 % at 26, 8 % at 29 and 0 at 32 mm                                                                   |
+| Band         | House rich black C14 M34 J38 N90, full width, 115–126 mm                                                                                                                                    |
+| Headline     | Voyage Bold 24 / 21.5 pt, ivory, x 5.0 mm; cap top 5.0 mm; baselines 10.93, 18.51 and 26.10 mm                                                                                              |
+| Descriptor   | PP Frama Medium 7 / 9.5 pt capitals, tracking +80, ivory, two lines right-aligned to 83.0 mm; baselines 22.76 and 26.10 mm, the second on the headline's last line                          |
+| Wordmark     | `jukkai-wordmark-primary-no-byline.svg` as native curves (non-zero fill), house rich black, 32.8 mm wide; x 5.0, top 99.56, j foot 112.50 mm                                                |
+| Byline       | Live PP Frama Regular 6.5 pt, tracking +19, N100; x 8.46 mm; baseline 112.50 mm on the j foot; ends flush with the i at 37.82 mm                                                            |
+| Band text    | PP Frama Medium 8 pt, ivory; `jukkai.fr` at x 5.0, address right-aligned to 83.0 mm; baseline 120.85 mm, descenders 4.5 mm above the trim                                                   |
+| Clearances   | Headline to the small face painting 2.1 mm; descriptor to the glass 2 mm; k and i stems to the vases ≥ 1.8 mm; i to the white bee frame 1.5 mm                                              |
+
+### Changes from the handoff
+
+- **Descriptor beside the headline's last line, on the dark wall (Martin, during
+  the build).** Measured on the DNG: at full width the wordmark's i falls in a
+  2.5 mm gap between the blue vase and the white bee frame, so the signature cannot
+  drop lower, and a descriptor under the headline would sit on the paintings.
+  Keeping it there meant shrinking the photo to about 95.5 % and retouching in
+  strips of floor, window, glass and part of a lamp. The comps were zoomed in,
+  which hid this. The option mock is in `review/` on Storage.
+- **Wordmark 32.8 mm, not ~35 (build):** the widest that keeps the i clear of the
+  white bee frame.
+- **Byline +19, not +35 (build):** at this wordmark size, +35 overhangs the i by
+  0.8 mm; +19 ends flush with it.
+- **Byline in N100 (build):** small text on the plinth follows the business
+  card's flat-black rule; the wordmark stays rich black.
+- **Band in house rich black (Martin's allowed option):** mostly K, so the
+  reversed ivory stays clean.
+
 ## Delivery
 
-- PDF/X-1a:2003 from Affinity, CMYK FOGRA39, fonts embedded, 88 × 126 mm, plus a
-  ~1600 px JPG proof, as for [October](../tendances-2026-10/README.md). Natives and
-  iterations go to the Storage folder above; Affinity reads only Desktop paths
-  ([media workflow](../../../media/README.md#use-or-revise-an-asset)).
-- Proof checks: byline and band text legible at 100 % print size; headline clean
-  over the gradient; no text over busy artwork; no single artwork dominating.
+- PDF/X-1a:2003 from Affinity 3.3.1 with the same preset as October: CMYK with the
+  Coated FOGRA39 output intent; Voyage Bold, PP Frama Medium and PP Frama Regular
+  embedded as subsets; no RGB. Transparency is flattened, so the photo and the
+  gradient area are 300 ppi CMYK images while all text stays vector. Highest ink
+  coverage 296 %.
+- The proof is a render of the PDF itself (Ghostscript CMYK, converted through
+  FOGRA39 to sRGB). It matches Affinity's own render within 2 levels.
+- Proof checks done by the build agent at 300 dpi: byline and band text legible;
+  headline clean over the gradient; no text over artwork; no single artwork
+  dominating. Not done: a physical proof, and Crystelle's read of the French.
+
+## Files
+
+In this folder:
+
+| File                                 | Role                                                                              | SHA-256     |
+| ------------------------------------ | --------------------------------------------------------------------------------- | ----------- |
+| `jukkai-tendances-2026-11.pdf`       | **File to send.** PDF/X-1a:2003, exported 2026-10-12 18:36 from layout native v03 | `28277674…` |
+| `jukkai-tendances-2026-11-proof.jpg` | 1117 × 1600 px render of that PDF                                                 | `46e0596b…` |
+| `tendances-media-kit-2024.pdf`       | The publisher's spec sheet                                                        | `d26b8d9d…` |
+
+Full SHA-256 of the file to send:
+`2827767414c853f384bb07f63f39dce466027fd8317055eb42d0c27417455913`.
+
+On Storage, under `/mnt/storage/jukkai/campaigns/tendances-2026-11/`, with every
+file's SHA-256 in `SHA256SUMS` there:
+
+| Path                                                                                      | Role                                                                                                                          |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `jukkai-tendances-2026-11-v03.af`                                                         | **Layout native**, 5.9 MB, CMYK FOGRA39 at 304.8 dpi, photo embedded; exported the PDF. `0b354831…`                           |
+| `jukkai-tendances-2026-11-photo-v04.af`                                                   | **Photo native**, 425 MB: embedded RAW layer, ceiling layer and the masked adjustments. `386de9a4…`                           |
+| `jukkai-tendances-2026-11-print-photo-v02.af`, `print-photo-88x115-300ppi-fogra39-v2.tif` | The 88 × 115 mm crop at 300 ppi, sharpened and converted to FOGRA39: the image placed in the layout. `92f5c170…`, `0dbb5d5d…` |
+| `photo-master-crop-88x115-full.jpg`                                                       | The same crop flattened at full resolution (6124 × 8003, Adobe RGB), for reuse. `5a905109…`                                   |
+| `build/`                                                                                  | Ceiling layer PNG, adjustment masks, the scripts that made them and the wordmark path data                                    |
+| `review/`                                                                                 | The descriptor A/B mock and review renders                                                                                    |
+| `comps/`                                                                                  | Direction comps from the brief                                                                                                |
+| Other `*.af` and `print-photo-*.tif`                                                      | Iterations: layout v01–v02 (300 dpi page, earlier photo), photo v01 (develop only) to v03, print photo v01                    |
+
+The print crop takes rows 87 to 8090 of the extended photo canvas (6124 × 8556).
 
 ## From the media kit
 
@@ -109,4 +204,11 @@ sheet Tendances sent Crystelle for this booking.
 
 ## Open
 
-- Crystelle's greenlight on the finished proof.
+- Crystelle's greenlight on the proof, including the French and the descriptor
+  beside the headline.
+- Send the PDF to Tendances by 2026-10-13; record the date and any publisher
+  feedback here.
+- On the printed copy, check the N100 byline against the rich-black wordmark and
+  the reversed 8 pt ivory on the band.
+- The Desktop session `~/Desktop/jukkai-tendances-2026-11/` stays until the
+  greenlight, for small tweaks; empty it afterwards per the media workflow.
