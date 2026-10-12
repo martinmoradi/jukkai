@@ -4,8 +4,8 @@ How the engineering skills should consume this repo's domain documentation when 
 
 ## Before exploring, read these
 
-- **`CONTEXT.md`** at the repo root, or
-- **`CONTEXT-MAP.md`** at the repo root if it exists. It points at one `CONTEXT.md` per context. Read each one relevant to the topic.
+- **`GLOSSARY.md`** at the repo root, or
+- **`GLOSSARY-MAP.md`** at the repo root if it exists. It points at one `GLOSSARY.md` per context. Read each one relevant to the topic.
 - **`docs/adr/`**. Read ADRs that touch the area you're about to work in. In multi-context repos, also check `src/<context>/docs/adr/` for context-scoped decisions.
 
 If any of these files don't exist, **proceed silently**. Don't flag their absence; don't suggest creating them upfront. The `/domain-modeling` skill (reached via `/grill-with-docs` and `/improve-codebase-architecture`) creates them lazily when terms or decisions actually get resolved.
@@ -16,35 +16,35 @@ This repo currently uses one shared domain glossary and one shared ADR folder:
 
 ```text
 /
-|-- CONTEXT.md
+|-- GLOSSARY.md
 |-- docs/adr/
 |   |-- 0001-example-decision.md
 |   `-- 0002-example-decision.md
 `-- apps/
 ```
 
-That means domain terms and durable decisions apply across the repo unless a future `CONTEXT-MAP.md` says otherwise.
+That means domain terms and durable decisions apply across the repo unless a future `GLOSSARY-MAP.md` says otherwise.
 
 ## Multi-context layout
 
-If the repo later grows into multiple distinct product or business contexts, add `CONTEXT-MAP.md` at the root and point it at per-context glossaries:
+If the repo later grows into multiple distinct product or business contexts, add `GLOSSARY-MAP.md` at the root and point it at per-context glossaries:
 
 ```text
 /
-|-- CONTEXT-MAP.md
+|-- GLOSSARY-MAP.md
 |-- docs/adr/                          # system-wide decisions
 `-- src/
     |-- ordering/
-    |   |-- CONTEXT.md
+    |   |-- GLOSSARY.md
     |   `-- docs/adr/                  # context-specific decisions
     `-- billing/
-        |-- CONTEXT.md
+        |-- GLOSSARY.md
         `-- docs/adr/
 ```
 
 ## Use the glossary's vocabulary
 
-When your output names a domain concept in an issue title, refactor proposal, hypothesis, or test name, use the term as defined in `CONTEXT.md`. Don't drift to synonyms the glossary explicitly avoids.
+When your output names a domain concept in an issue title, refactor proposal, hypothesis, or test name, use the term as defined in `GLOSSARY.md`. Don't drift to synonyms the glossary explicitly avoids.
 
 If the concept you need isn't in the glossary yet, either you're inventing language the project doesn't use or there's a real gap. Reconsider the term, or note it for `/domain-modeling`.
 
