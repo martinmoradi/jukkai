@@ -70,7 +70,7 @@ one ticket per session ships a page, aiming for about 48 h from session to onlin
 ### Also this week
 
 A Tendances quarter-page ad for the end-of-year shopping issue; its brief and
-build handoff live in [the campaign README](../../brand/campaigns/tendances-2026-quarter-page/README.md).
+build handoff live in [the campaign README](../../brand/campaigns/tendances-2026-11/README.md).
 
 ## Decision status
 

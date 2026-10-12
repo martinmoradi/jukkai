@@ -57,7 +57,7 @@ may revise; **draft** means agent-written public French awaiting Crystelle.
 ## Layout
 
 Rough direction comps (ImageMagick, not design) are on Storage under
-`/mnt/storage/jukkai/campaigns/tendances-2026-quarter-page/comps/`; `comp-03` and
+`/mnt/storage/jukkai/campaigns/tendances-2026-11/comps/`; `comp-03` and
 `comp-04` show the chosen direction, `comp-01` and `comp-02` the options it beat.
 
 | Element    | Direction                                                                                                                                                                              | Status      |
