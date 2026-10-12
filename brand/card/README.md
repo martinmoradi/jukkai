@@ -360,7 +360,7 @@ the same numbers.
 
 ## Colour
 
-Reused unchanged from the `mlle-adele-chandelle` ad so the two pieces separate
+Reused unchanged from the [Mlle Adèle ad](../campaigns/mlle-adele-2026-09/README.md) so the two pieces separate
 identically:
 
 | Role             | Value                       | Used for                            |
