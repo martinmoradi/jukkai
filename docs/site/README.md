@@ -2,7 +2,7 @@
 
 **Status:** current. **Owns:** the target sitemap: one file per page, each holding
 why the page exists, what it must prove and what is still missing.
-**Last reviewed:** 2026-10-08, created for [#141](https://github.com/martinmoradi/jukkai/issues/141).
+**Last reviewed:** 2026-10-13, after the map's re-mapping. Created for [#141](https://github.com/martinmoradi/jukkai/issues/141).
 **Revisit when:** a session ticket closes, a page ships or a page is added or dropped.
 
 The destination of the [sessions-driven site map](https://github.com/martinmoradi/jukkai/issues/139).
@@ -33,8 +33,8 @@ Settled by Martin on 2026-10-08 (see the map):
 
 ## Working principles
 
-Martin, 2026-10-08. Items 1 and 2 are a direction, not decisions; items 3 and 4
-are settled.
+Martin, 2026-10-08 and 2026-10-13. Items 1 and 2 are a direction, not decisions;
+items 3 to 5 are settled.
 
 1. **The homepage tells the Jukkai story:** what Jukkai is, with interior design and
    the Galerie side by side, then routes to each. It is not a catalogue of offers;
@@ -48,6 +48,9 @@ are settled.
 4. **The aim** is Awwwards honourable-mention quality, clear for visitors and designed
    for growth. Old-site content and assets are reused where worth it, never ported
    one to one.
+5. **Publish whenever it makes the live site better.** The first slice, every page
+   but the Galerie's depth, ships piece by piece from existing material; Crystelle
+   sessions then improve published pages (2026-10-13).
 
 Settled in the map: Jukkai shows its curated past projects itself and does not link
 back to studioterrasson.fr.
@@ -61,18 +64,18 @@ back to studioterrasson.fr.
 
 ## Page tree
 
-| File                                                           | Page                         | Status                                                                                                                               |
-| -------------------------------------------------------------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| [home](home.md)                                                | `/`                          | live (magazine edition); target story drafted against the working shape, **untracked**                                               |
-| [architecture](architecture/index.md)                          | Architecture intérieure      | build in [#155](https://github.com/martinmoradi/jukkai/issues/155)                                                                   |
-| · [missions](architecture/missions.md)                         | section                      | build in #155                                                                                                                        |
-| · [budget et honoraires](architecture/budget-et-honoraires.md) | section                      | fee basis buildable now; budget story waiting on [#146](https://github.com/martinmoradi/jukkai/issues/146)                           |
-| · [conseil / mission déco](architecture/conseil.md)            | section                      | waiting on [#145](https://github.com/martinmoradi/jukkai/issues/145)                                                                 |
-| [espaces professionnels](espaces-professionnels.md)            | page or section              | waiting on [#147](https://github.com/martinmoradi/jukkai/issues/147), then [#148](https://github.com/martinmoradi/jukkai/issues/148) |
-| [projets](projets/index.md)                                    | `/projets/` and réalisations | images qualified in [#157](https://github.com/martinmoradi/jukkai/issues/157), then build in #155                                    |
-| · [Le Capri](projets/le-capri.md)                              | réalisation, then récit      | réalisation in #155; récit waiting on [#149](https://github.com/martinmoradi/jukkai/issues/149)                                      |
-| [galerie](galerie.md)                                          | `/galerie/` (proposed)       | live as homepage content; page waiting on [#150](https://github.com/martinmoradi/jukkai/issues/150)                                  |
-| [contact](contact.md)                                          | `/contact/`                  | live                                                                                                                                 |
+| File                                                           | Page                         | Status                                                                                                                                                                         |
+| -------------------------------------------------------------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [home](home.md)                                                | `/`                          | live (magazine edition); rebuild shaped in [#164](https://github.com/martinmoradi/jukkai/issues/164)                                                                           |
+| [architecture](architecture/index.md)                          | Architecture intérieure      | Jukkai v1 tickets, after #157 and #164                                                                                                                                         |
+| · [missions](architecture/missions.md)                         | section                      | Jukkai v1 tickets                                                                                                                                                              |
+| · [budget et honoraires](architecture/budget-et-honoraires.md) | section                      | fee basis buildable now; budget story waiting on [#146](https://github.com/martinmoradi/jukkai/issues/146)                                                                     |
+| · [conseil / mission déco](architecture/conseil.md)            | section                      | waiting on [#145](https://github.com/martinmoradi/jukkai/issues/145)                                                                                                           |
+| [espaces professionnels](espaces-professionnels.md)            | page or section              | B2B in Jukkai v1 from proof; segments in [#147](https://github.com/martinmoradi/jukkai/issues/147), then [#148](https://github.com/martinmoradi/jukkai/issues/148) improves it |
+| [projets](projets/index.md)                                    | `/projets/` and réalisations | tiers and Placements in [#157](https://github.com/martinmoradi/jukkai/issues/157), then Jukkai v1 tickets                                                                      |
+| · [Le Capri](projets/le-capri.md)                              | réalisation, then récit      | réalisation in Jukkai v1; récit waiting on [#149](https://github.com/martinmoradi/jukkai/issues/149)                                                                           |
+| [galerie](galerie.md)                                          | `/galerie/` (proposed)       | live as homepage content; moves to its own page with the new homepage; [#150](https://github.com/martinmoradi/jukkai/issues/150) improves it                                   |
+| [contact](contact.md)                                          | `/contact/`                  | live; call booking and contact path in Jukkai v1                                                                                                                               |
 
 **Outside these files:** Crystelle's Contact Card Page (`/contact/crystelle/`, live)
 follows the [contact-card guide](../operations/crystelle-contact-card.md). The site has

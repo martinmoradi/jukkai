@@ -1,9 +1,8 @@
 # Projets
 
 **Status:** format and selection principle decided in [#142](https://github.com/martinmoradi/jukkai/issues/142);
-image qualification in [#157](https://github.com/martinmoradi/jukkai/issues/157); build in
-[#155](https://github.com/martinmoradi/jukkai/issues/155). **URL:** `/projets/`
-(index) and `/projets/<descriptive-slug>/` per project. **Last reviewed:** 2026-10-12.
+image tiers and project Placements in [#157](https://github.com/martinmoradi/jukkai/issues/157); built in the Jukkai v1 tickets. **URL:** `/projets/`
+(index) and `/projets/<descriptive-slug>/` per project. **Last reviewed:** 2026-10-13.
 
 ## Goal and segment
 
@@ -20,6 +19,9 @@ and to contact.
 2. **Récit, later:** a session with Crystelle grows the same page into a case
    study answering one visitor question. [Le Capri](le-capri.md) is the first.
 
+A réalisation is full or short; a project can also appear only as a Proof Mention
+on another page (Martin, 2026-10-13; terms in `GLOSSARY.md`).
+
 ## Visitor question
 
 « Son travail me plaît-il, et a-t-elle déjà résolu une situation comme la mienne ? »
@@ -32,6 +34,9 @@ and to contact.
 - **Images by role,** not projects by tier: _hero_ (clean, at least 2400 px),
   _gallery_ (at least 1300 px, straight, uncluttered), _detail_ and _astuce_ (small,
   any sharp image of a strong design). Revisit as masters turn up.
+- **Tiers and feeling (Martin, 2026-10-13):** images are graded S to D on the tier
+  list ([#157](https://github.com/martinmoradi/jukkai/issues/157)). A project page opens with an Editorial Image, then shows the space
+  through Documentary Images; never a clinical gallery of whole rooms.
 - **Masters first (Martin, 2026-10-11):** draft each réalisation from its project's
   whole master batch ([project masters](../../../media/README.md#project-masters)),
   not by porting the old page. The old page's image choices, captions and texts are

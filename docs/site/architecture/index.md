@@ -1,7 +1,7 @@
 # Architecture intérieure
 
 **Status:** its own page, decided in [#142](https://github.com/martinmoradi/jukkai/issues/142);
-build in [#155](https://github.com/martinmoradi/jukkai/issues/155). The homepage
+built in the Jukkai v1 tickets. The homepage
 carries a short interior-design section that points here. **URL:** open.
 **Last reviewed:** 2026-10-08.
 
@@ -31,7 +31,7 @@ curated past projects, with Jukkai showing them itself. Sections, with their own
 | [Missions](missions.md)                                                      | What you do, what stays with me, why trust you | buildable now                               |
 | [Budget et honoraires](budget-et-honoraires.md)                              | How budget, works and fees fit together        | fee basis now; budget story waiting on #146 |
 | [Conseil / mission déco](conseil.md)                                         | Focused help without a full renovation         | waiting on #145                             |
-| Projects ([projets](../projets/index.md))                                    | Does her work appeal to me                     | build in #155                               |
+| Projects ([projets](../projets/index.md))                                    | Does her work appeal to me                     | Jukkai v1                                   |
 | Professional spaces ([espaces professionnels](../espaces-professionnels.md)) | A place like mine                              | section or page: #147                       |
 
 **Order:** responsibility proof comes before the advice offer (map, segment rule).
