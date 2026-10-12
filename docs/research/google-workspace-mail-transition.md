@@ -4,7 +4,8 @@
   [interpretation section](#implications-for-the-open-design-questions) is
   agent-authored and is labelled as such.
 - **Date:** 2026-10-07 (sources read that day. Google Admin Help pages showed
-  "Last updated 2026-10-07 UTC" unless another date is given).
+  "Last updated 2026-10-07 UTC" unless another date is given). One field test
+  by Martin was added on 2026-10-12 (section 11).
 - **Question:** What can Google Workspace, Gmail, Groups, OVHcloud and the
   devices actually do for moving Crystelle and Laura from OVH mail on
   `studioterrasson.fr` to two paid Workspace users on `jukkai.fr`? This covers
@@ -661,10 +662,12 @@ Sources:
   - Google's Cloud docs refer to "Google Workspace or Cloud Identity super admin
     accounts"
     ([super admin best practices](https://docs.cloud.google.com/resource-manager/docs/super-admin-best-practices)).
-  - **Unverified:** that a Cloud Identity Free user _inside a Workspace
-    organisation_ can be super admin and use the full Admin console. The parts
-    are documented separately but no page states the combination. Test it, or
-    ask Google support.
+  - No Google page states that a Cloud Identity Free user _inside a Workspace
+    organisation_ can be super admin and use the full Admin console; the parts
+    are documented separately. **Tested on 2026-10-12** (Martin's observation,
+    not a Google source): `martin@jukkai.fr`, on Cloud Identity Free in the
+    Jukkai organisation, holds Super Admin and opens Billing and Data import.
+    No import had been run from it at the time.
 - **Google's admin recommendations**
   ([admin security](https://knowledge.workspace.google.com/admin/users/security-best-practices-for-administrator-accounts)):
   - "Your organization should have more than one super administrator account,
