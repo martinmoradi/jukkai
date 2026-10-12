@@ -34,6 +34,8 @@ file short; change it in the same PR as any workflow or structure change.
 - Long-running processes use an owned non-default port. Check what is bound
   first, tell Martin the URL, and stop your process afterwards.
 - Browser automation uses `agent-browser`, not Chrome MCP or in-app browsers.
+- Before changing Turborepo config or commands, read the docs bundled with the
+  installed `turbo` (`node -p "require.resolve('turbo/package.json')"`).
 
 ## Marketing App
 
