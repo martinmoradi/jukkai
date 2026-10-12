@@ -5,8 +5,8 @@ These are Martin's decisions from the 2026-10-07 design session. Crystelle and L
 have not reviewed them; they see the result on the office day.
 **Owns:** the target Google Workspace setup: addresses, groups, sorting, access,
 administration and calendar.
-**Last reviewed:** 2026-10-07, design only. Nothing is live beyond Crystelle's user
-and the `admin@` alias.
+**Last reviewed:** 2026-10-12. Live so far: Crystelle's user, the `admin@` alias and
+`martin@jukkai.fr` (runbook A1, 2026-10-12).
 **Revisit when:** the setup is live (then record what was actually configured), a
 person or intern joins, or at the OVH renewal for `studioterrasson.fr` (about 2029).
 
@@ -100,6 +100,8 @@ consistently: a future CRM would build on it.
 
 - Super admins: Crystelle's account and `martin@jukkai.fr` (Cloud Identity Free).
   Both use 2-step verification with phone prompts; backup codes live in Bitwarden.
+  `martin@` has been live since 2026-10-12; its Admin console reaches Billing and
+  Data import.
 - Martin's account exists mainly so Crystelle's own account can always be
   recovered.
 - Interns never need an admin: Laura manages `etudes@` membership.
