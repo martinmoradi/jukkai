@@ -1,19 +1,23 @@
-# Tendances — quarter page (third ad)
+# Tendances — November 2026 quarter page
 
-**Status:** brief written; build not started. **Owns:** the brief, constraints and
-build handoff for the third print ad. **Last reviewed:** 2026-10-12, after the
-grilling session with Martin. **Revisit when:** the build agent returns a first
-proof, Crystelle reviews the copy, or the issue is known; rename the folder to
-`tendances-<yyyy-mm>` then.
+**Status:** brief written; build not started. **Material due 2026-10-13.**
+**Owns:** the brief, constraints and build handoff for the third print ad.
+**Last reviewed:** 2026-10-12, after the grilling session with Martin.
+**Revisit when:** the build agent returns a proof or Crystelle asks for changes.
 
 Labels below: **Martin** means settled by him in the 2026-10-12 session;
 **provisional** means an agent recommendation he went along with, which the build
-may revise; **draft** means agent-written public French awaiting Crystelle.
+may revise. All public French goes to Crystelle with the proof.
 
 ## Brief
 
-- **Publication:** Tendances Magazine, « 1/4 de page », a shopping-themed slot
-  (end-of-year issues). Issue and deadline unknown.
+- **Publication:** Tendances Magazine, November 2026 issue, « 1/4 de page »
+  (Martin). Material due 2026-10-13.
+- **Context (Martin):** a large holiday shopping section, about half the magazine.
+  The 2025 editions show local ads (apparel, saunas and the like) that are well
+  made, so the bar is polished, not loud.
+- **Approval (Martin):** Martin builds the finished ad; Crystelle greenlights it,
+  at most with small tweaks. She trusts him and knows time is short.
 - **Job (Martin):** build the Jukkai name and make people want to come. Beauty
   wins over commercial detail in any trade-off.
 - **Message:** a new Galerie in Châteaugiron where art spans every budget, from a
@@ -25,8 +29,8 @@ may revise; **draft** means agent-written public French awaiting Crystelle.
 
 ## Copy
 
-> **Du petit cadeau / au grand coup / de cœur.** _(draft; line breaks open)_
-> GALERIE D'ART & ARCHITECTURE D'INTÉRIEUR _(draft)_
+> **Du petit cadeau / au grand coup / de cœur.** _(Martin; line breaks open)_
+> GALERIE D'ART & ARCHITECTURE D'INTÉRIEUR _(provisional)_
 > jukkai (wordmark) · BY CRYSTELLE TERRASSON
 > jukkai.fr · 26 bis rue au Prévôt · Châteaugiron
 
@@ -34,7 +38,8 @@ may revise; **draft** means agent-written public French awaiting Crystelle.
   It uses the foundation's « coup de cœur » territory without sales vocabulary.
 - **Martin:** no hours (readers find them on jukkai.fr), no prices, no event
   promise. Crystelle's name must stay visible and readable.
-- Crystelle validates the exact French before export (foundation §11).
+- Crystelle sees the French in the finished proof and greenlights it
+  (foundation §11).
 
 ## Photograph
 
@@ -89,7 +94,8 @@ Rough direction comps (ImageMagick, not design) are on Storage under
 
 Source: [`tendances-media-kit-2024.pdf`](tendances-media-kit-2024.pdf), the
 publisher's "Contraintes techniques — formats 2024" sheet (InDesign export dated
-2023-11-28). It is the 2024 edition; whether it still applies in 2026 is unconfirmed.
+2023-11-28). It is the 2024 edition; Martin confirms it applies, as it is the
+sheet Tendances sent Crystelle for this booking.
 
 - **1/4 page: 88 × 126 mm, no bleed.** Same height as the October half page
   (180 × 126), less than half its width.
@@ -103,8 +109,4 @@ publisher's "Contraintes techniques — formats 2024" sheet (InDesign export dat
 
 ## Open
 
-- Issue (November or December) and material deadline.
-- Whether the 2024 spec still holds; confirm with Tendances when booking.
-- Crystelle's validation of the headline and descriptor French.
-- Whether Tendances groups quarter pages on a themed shopping page.
-- Who gives final approval: Crystelle, Martin, or both.
+- Crystelle's greenlight on the finished proof.
