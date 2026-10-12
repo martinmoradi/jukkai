@@ -15,6 +15,7 @@ or historical material.
 | SEO research and evidence                 | [SEO research log](research/seo-research-log.md)           | The specific run it links to                                               |
 | Mail and calendar transition              | [Mail setup](operations/mail.md)                           | [Migration runbook](operations/mail-migration-runbook.md)                  |
 | Release and production                    | [Production](operations/production.md)                     | [CI](operations/ci.md)                                                     |
+| A print ad or campaign                    | [Campaigns index](../brand/campaigns/README.md)            | The campaign's README, then its proof                                      |
 | Contact details or portrait               | [Contact-card guide](operations/crystelle-contact-card.md) |                                                                            |
 | Fonts                                     | [Fonts](operations/fonts.md)                               | [ADR-0003](adr/0003-build-time-generated-font-assets.md)                   |
 | Architecture or durable technical choices | [ADRs](adr/)                                               | [Domain guidance](agents/domain.md)                                        |

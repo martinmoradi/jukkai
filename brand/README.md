@@ -11,8 +11,9 @@ runtime asset directory.
 - `marks/wordmark/` - current wordmark exports and byline.
 - `marks/seal/` - current seal exports.
 - `card/` - editable business-card and print assets.
-- `ad/` - retained compact brand advertisement masters and handoffs; the final
-  Tendances production native lives on Storage under `campaigns/tendances-2026-10/`.
+- `campaigns/` - one folder per print ad: its brief, the file sent to the
+  publisher, a proof and pointers to large natives on Storage. Start at
+  [the campaigns index](campaigns/README.md).
 - `qr-codes/` - reproducible QR masters and convenience exports.
 - `source/` - non-current construction files, generators, captured references,
   and superseded studies. Never use this as the export folder.

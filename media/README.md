@@ -37,7 +37,7 @@ recovery. Its adjacent inventories preserve the original-to-current path mapping
 | `originals/projects/`                 | Received project batches and separate old-website recovery.                                                                                                        |
 | `media/`                              | Selected artwork, scene, portrait, decoration and motion packages. Native names are preserved; flattened results live in `exports/`.                               |
 | `media/projects/`                     | Whole project master batches, renamed and indexed; see [Project masters](#project-masters).                                                                        |
-| `campaigns/tendances-2026-10/`        | Final Tendances v10 editable master and any required resources.                                                                                                    |
+| `campaigns/`                          | Large print-ad natives, iterations and print files, one folder per ad; records in `brand/campaigns/`.                                                              |
 | `design-resources/fonts/`             | Retained working font files; original trial/license distinctions still apply. Installed fonts and the site's generated font pipeline have separate roles.          |
 | `records/2026-09-production/`         | Useful historical notes, source indexes, scripts and exact historical website inputs. Consult the current catalog before following old paths.                      |
 | `records/migration-2026-09/`          | Approved plan, original-to-current file maps, hashes, native validation and cleanup results.                                                                       |
