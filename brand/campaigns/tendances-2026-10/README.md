@@ -11,7 +11,7 @@ arrives or this layout is reused.
 
 - **Publication:** [Tendances Magazine](https://www.tendances-magazine.com/nos-editions-papier/).
 - **Format:** « demi page » 180 × 126 mm, no bleed, CMYK; see the
-  [2024 media kit](../tendances-2026-quarter-page/tendances-media-kit-2024.pdf).
+  [2024 media kit](../tendances-2026-11/tendances-media-kit-2024.pdf).
 - **Job:** announce the Galerie opening — Crystelle among the artworks, in her own voice.
 
 ## Exact copy
