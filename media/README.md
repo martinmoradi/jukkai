@@ -68,8 +68,7 @@ C. Ablain shoots, are new to the archive. `manifest.csv` is the current count.
   by hand where a camera clock was wrong), old-site titles and URLs, the captured
   old pages under `docs/reference/studioterrasson/`, its `docs/site/` page file when
   one exists, and its original server folder. Find a project by its old-site name
-  here, e.g. Pause Bretonne is `la-marebaudiere`. A batch covering two old pages
-  lists both, separated by `|`.
+  here. A batch covering two old pages lists both, separated by `|`.
 - `manifest.csv` has one row per image: new and original path, SHA-256, upright
   dimensions and orientation, capture date and camera from EXIF, old-site title.
   It reverses the rename and links copies elsewhere in the archive by checksum.
@@ -93,7 +92,9 @@ and near-duplicates (terms in `GLOSSARY.md`). `placements.json`, next to
 are agent proposals ([#157](https://github.com/martinmoradi/jukkai/issues/157)).
 Martin reviews them on a local board in `media/project-tiers/`, whose README says
 how to run it; the board's export in `media/project-tiers/exports/` is the decision
-record. None of it is committed: it names private clients.
+record. None of it is committed: it names private clients. The public outcome
+(formats and order, without client names) goes to
+[`docs/site/projets/index.md`](../docs/site/projets/index.md).
 
 ## Use or revise an asset
 
