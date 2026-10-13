@@ -2,7 +2,7 @@
 
 **Status:** current storage workflow, approved by Martin on 15 September 2026.
 **Owns:** photographic sources, selected edits and local intake.
-**Last reviewed:** 11 October 2026, intake of the project master batches.
+**Last reviewed:** 13 October 2026, image tiers for the project masters (#157).
 **Revisit when:** a backup destination or publishing workflow changes.
 
 ## Find an image
@@ -16,6 +16,8 @@
   before copying into it; never create an archive under an unmounted mountpoint.
 - `/mnt/storage/jukkai/media/projects/` holds whole project photo batches; see
   [Project masters](#project-masters). Start there for any project page.
+- `/mnt/storage/jukkai/media/project-tiers/` holds the tier board for those batches
+  and Martin's decision records; see [Tiers and Placements](#tiers-and-placements).
 - `incoming/` is ignored temporary intake. Empty it after verified promotion.
 - `apps/marketing/src/assets/` contains the committed inputs the website actually
   builds from. CI needs neither this local shelf nor Storage.
@@ -37,6 +39,7 @@ recovery. Its adjacent inventories preserve the original-to-current path mapping
 | `originals/projects/`                 | Received project batches and separate old-website recovery.                                                                                                        |
 | `media/`                              | Selected artwork, scene, portrait, decoration and motion packages. Native names are preserved; flattened results live in `exports/`.                               |
 | `media/projects/`                     | Whole project master batches, renamed and indexed; see [Project masters](#project-masters).                                                                        |
+| `media/project-tiers/`                | The local tier board, downscaled previews and decision records for the project masters; see [Tiers and Placements](#tiers-and-placements).                         |
 | `campaigns/`                          | Large print-ad natives, iterations and print files, one folder per ad; records in `brand/campaigns/`.                                                              |
 | `design-resources/fonts/`             | Retained working font files; original trial/license distinctions still apply. Installed fonts and the site's generated font pipeline have separate roles.          |
 | `records/2026-09-production/`         | Useful historical notes, source indexes, scripts and exact historical website inputs. Consult the current catalog before following old paths.                      |
@@ -61,10 +64,12 @@ C. Ablain shoots, are new to the archive. `manifest.csv` is the current count.
   `<project>/<project>-NNN.jpg`, numbered in capture order (delivered order when
   capture dates are missing). Two campaigns at one place carry their capture year,
   e.g. `le-capri-2018` and `le-capri-2025`.
-- `projects.csv` lists each project with its image count, capture years, old-site
-  title and URL, the captured old page under `docs/reference/studioterrasson/`,
-  its `docs/site/` page file when one exists, and its original server folder. Find
-  a project by its old-site name here, e.g. Wood Loft is `fourage`.
+- `projects.csv` lists each project with its image count, capture years (corrected
+  by hand where a camera clock was wrong), old-site titles and URLs, the captured
+  old pages under `docs/reference/studioterrasson/`, its `docs/site/` page file when
+  one exists, and its original server folder. Find a project by its old-site name
+  here, e.g. Pause Bretonne is `la-marebaudiere`. A batch covering two old pages
+  lists both, separated by `|`.
 - `manifest.csv` has one row per image: new and original path, SHA-256, upright
   dimensions and orientation, capture date and camera from EXIF, old-site title.
   It reverses the rename and links copies elsewhere in the archive by checksum.
@@ -78,6 +83,17 @@ do not prove them.
 Folder names contain private clients' names. Keep them internal: give exported
 website inputs descriptive names without client identity, because Astro keeps the
 source filename in public image URLs.
+
+### Tiers and Placements
+
+Each batch folder holds a `tiers.json`: an agent's first pass grading every image
+S to D or into the Affinity lane, with a one-line note, the Quick Fix badge, tags
+and near-duplicates (terms in `GLOSSARY.md`). `placements.json`, next to
+`projects.csv`, proposes each project's page format, Placements and images. Both
+are agent proposals ([#157](https://github.com/martinmoradi/jukkai/issues/157)).
+Martin reviews them on a local board in `media/project-tiers/`, whose README says
+how to run it; the board's export in `media/project-tiers/exports/` is the decision
+record. None of it is committed: it names private clients.
 
 ## Use or revise an asset
 
