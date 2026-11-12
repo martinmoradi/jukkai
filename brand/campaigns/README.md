@@ -12,7 +12,7 @@ below and look at their proofs before proposing a new layout.
 | [`mlle-adele-2026-09`](mlle-adele-2026-09/README.md) | Mlle Adèle  | 65 × 265 mm « chandelle » | Sent for September                     |
 | [`tendances-2026-10`](tendances-2026-10/README.md)   | Tendances   | 180 × 126 mm half page    | Sent for October                       |
 | [`tendances-2026-11`](tendances-2026-11/README.md)   | Tendances   | 88 × 126 mm quarter page  | Built; awaiting greenlight; due 13 Oct |
-| [`mlle-adele-2026-12`](mlle-adele-2026-12/README.md) | Mlle Adèle  | A4 full page, 5 mm bleed  | v02 proofed; awaiting review           |
+| [`mlle-adele-2026-12`](mlle-adele-2026-12/README.md) | Mlle Adèle  | A4 full page, 5 mm bleed  | v05 proofed; awaiting export           |
 
 ## Folder convention
 
