@@ -1,10 +1,10 @@
 # Mlle Adèle — full page, winter issue
 
-**Status:** v05 built and proofed on 2026-11-12. It awaits Martin's own export of
-the file to send, and Crystelle's read of the French.
+**Status:** the file to send was exported and verified on 2026-11-12. It awaits
+Crystelle's read of the French, then sending.
 **Owns:** the brief, the decisions, the build handoff, the values as built and where
 the files live.
-**Last reviewed:** 2026-11-12, after the v05 proof.
+**Last reviewed:** 2026-11-12, after verifying Martin's export.
 **Revisit when:** Martin or Crystelle asks for changes, the file is exported and
 sent, or a printed copy arrives.
 
@@ -233,23 +233,27 @@ top-left corner.
 
 ## Delivery
 
-- **The file to send** is exported by Martin by hand from `…-v05.af`:
-  - Affinity's PDF/X-1a:2003 preset, Coated FOGRA39 output intent.
-  - "Include bleed" ticked and every printer mark off; whole document.
-  - Saved as `jukkai-mlle-adele-2026-12-send.pdf`.
-
-  Affinity's scripting cannot reach the bleed tickbox. The review PDFs v01–v05 had
-  their bleed boxes added after export by the build agent, and still carry an
-  ArtBox the size of the media box. They are fine for proofing but not for sending.
-
-- **Expected:**
-  - MediaBox and BleedBox 623.622 × 870.236 pt, TrimBox inset 14.173 pt on each
-    side.
-  - Four fonts embedded.
-  - Only CMYK, no RGB.
-  - Maximum ink 300 %.
-  - The embedded photo equal to `print-photo-443-220x272-iso300-v05.tif` within JPEG
-    noise.
+- **The file to send** is `jukkai-mlle-adele-2026-12.pdf`. Martin exported it by hand
+  from `jukkai-mlle-adele-2026-12-v05.af`, because Affinity's scripting cannot reach
+  the bleed tickbox:
+  - preset PDF/X-1a:2003, Coated FOGRA39 output intent;
+  - "Include bleed" ticked, every printer mark off, whole document.
+- **Verified on that file:**
+  - It declares PDF/X-1a:2003 with the output condition "Coated FOGRA39 (ISO
+    12647-2:2004)".
+  - Page boxes: MediaBox 623.622 × 870.236 pt (A4 plus 5 mm bleed), TrimBox inset
+    14.17 pt; no ArtBox or BleedBox entries.
+  - All four fonts are embedded as subsets.
+  - No RGB, no ICC-based colour, no spot colours.
+- **Verified against v05:**
+  - The embedded photo is identical to the v05 review PDF's, a 2640 × 3265 CMYK
+    JPEG. Its channel means equal `print-photo-443-220x272-iso300-v05.tif` (C 34.0,
+    M 40.8, Y 49.4, K 35.0) once the CMYK JPEG's inverted storage is allowed for.
+  - Rendered at 304.8 dpi with Ghostscript, it is pixel-identical to the v05 review
+    PDF.
+  - Maximum total ink 300.0 %; 0.17 % of the trim is above 290 %.
+- The review PDFs v01–v05 had bleed boxes added after export by the build agent, and
+  still carry an ArtBox the size of the media box. Proofing only; never send them.
 - **Rendering artefact:** Ghostscript at exactly 300 dpi draws 1 px white lines across
   the photo. They are not in the file; render at 120, 304.8 or 600 dpi. In Martin's
   shell `gs` is a git alias, so use `/usr/bin/gs`.
@@ -258,9 +262,10 @@ top-left corner.
 
 In this folder:
 
-| File                                  | Role                                                        | SHA-256     |
-| ------------------------------------- | ----------------------------------------------------------- | ----------- |
-| `jukkai-mlle-adele-2026-12-proof.jpg` | 1131 × 1600 px render of the v05 review PDF through FOGRA39 | `4be7fa9f…` |
+| File                                  | Role                                                                                              | SHA-256     |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------- | ----------- |
+| `jukkai-mlle-adele-2026-12.pdf`       | **File to send.** PDF/X-1a:2003, exported by Martin from layout v05, 2026-11-12                   | `f12133a6…` |
+| `jukkai-mlle-adele-2026-12-proof.jpg` | 1131 × 1600 px render of the v05 review PDF through FOGRA39 (pixel-identical to the file to send) | `4be7fa9f…` |
 
 The Affinity session is `~/Desktop/jukkai-mlle-adele-full-page/` until the file is
 sent. It holds:
@@ -282,9 +287,8 @@ On Storage under `/mnt/storage/jukkai/campaigns/mlle-adele-2026-12/`:
 
 - Crystelle's read of the French and her greenlight. The French has not changed
   since v02.
-- Martin's export of the file to send, then a check of its boxes, fonts and inks
-  against v05.
-- Send the file to Mlle Adèle, then record the date and the file's SHA-256 here.
+- Send the file to Mlle Adèle and record the date here. Full SHA-256 of the file to
+  send: `f12133a67f0fe56496201c607ebdab5c11f4144fef06ee1720b5bece9231cb64`.
 - Mirror the session to Storage and empty the Desktop folder.
 - The issue month and page side, if Mlle Adèle can say. Martin asked for the
   profile; they do not give one.
