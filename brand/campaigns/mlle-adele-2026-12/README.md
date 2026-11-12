@@ -1,10 +1,10 @@
 # Mlle Adèle — full page, winter issue
 
-**Status:** the file to send was exported and verified on 2026-11-12. It awaits
+**Status:** v06, revised after a cross-review, was exported and verified on 2026-11-12. It awaits
 Crystelle's read of the French, then sending.
 **Owns:** the brief, the decisions, the build handoff, the values as built and where
 the files live.
-**Last reviewed:** 2026-11-12, after verifying Martin's export.
+**Last reviewed:** 2026-11-12, after verifying Martin's v06 export.
 **Revisit when:** Martin or Crystelle asks for changes, the file is exported and
 sent, or a printed copy arrives.
 
@@ -89,16 +89,16 @@ Martin chose D2 from sketch comps: B1–B3, the ivory-plate family, and D1–D2,
 the headline on the photo. He preferred B3, asked whether the headline could sit on
 the photo so the image takes more of the page, then chose D2.
 
-| Element    | Direction                                                                                                                  | Status      |
-| ---------- | -------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| Trim       | 210 × 297 mm, 5 mm bleed on every side, no crop marks or frame lines                                                       | Spec        |
-| Photo      | Full bleed from the top bleed edge to 267 mm, 220 mm wide; ceiling and track lights kept; plinths centred left             | Martin      |
-| Band       | House ivory C10 M10 J20 N0, full width, 267 mm to the bottom bleed edge                                                    | Martin      |
-| Headline   | Ivory on the floor, three lines, left at the 16 mm inset, about 28 pt; PP Hatton Light with Light Italic for « Le voici. » | Provisional |
-| Body       | Ivory on the floor in a right column from 118 mm, PP Frama Regular, last baseline shared with the headline's               | Provisional |
-| Signature  | `jukkai-wordmark-primary-no-byline.svg` with live `BY CRYSTELLE TERRASSON`, left in the band                               | Provisional |
-| Descriptor | `GALERIE D'ART & ARCHITECTURE D'INTÉRIEUR`, PP Frama Medium capitals, tracked, right-aligned in the band                   | Provisional |
-| Address    | `jukkai.fr · 26 bis rue au Prévôt · Châteaugiron`, PP Frama Regular, right-aligned under the descriptor                    | Provisional |
+| Element    | Direction                                                                                                                                | Status      |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| Trim       | 210 × 297 mm, 5 mm bleed on every side, no crop marks or frame lines                                                                     | Spec        |
+| Photo      | Full bleed from the top bleed edge to 267 mm, 220 mm wide; ceiling and track lights kept; plinths centred left                           | Martin      |
+| Band       | House ivory C10 M10 J20 N0, full width, 267 mm to the bottom bleed edge                                                                  | Martin      |
+| Headline   | Ivory on the floor, three lines, left at the 16 mm inset, 28 pt; PP Hatton Medium with Medium Italic for « Le voici. » (Light until v05) | Provisional |
+| Body       | Ivory on the floor in a right column from 111 mm, PP Frama Regular 10 / 13 pt, last baseline shared with the headline's                  | Provisional |
+| Signature  | `jukkai-wordmark-primary-no-byline.svg` with live `BY CRYSTELLE TERRASSON`, left in the band                                             | Provisional |
+| Descriptor | `GALERIE D'ART & ARCHITECTURE D'INTÉRIEUR`, PP Frama Medium capitals, tracked, right-aligned in the band                                 | Provisional |
+| Address    | `jukkai.fr · 26 bis rue au Prévôt · Châteaugiron`, PP Frama Regular, right-aligned under the descriptor                                  | Provisional |
 
 - Hatton **Light**, not the September Ultralight: light type reversed out of a
   four-colour photo loses Ultralight hairlines to misregistration (provisional).
@@ -110,18 +110,22 @@ the photo so the image takes more of the page, then chose D2.
 
 ## Retouch as built
 
-Photo native v07, in Affinity 3.3.1 from the JPEG: 16-bit, with Display P3 kept until
+Photo native v08, in Affinity 3.3.1 from the JPEG: 16-bit, with Display P3 kept until
 print. Each adjustment is a live layer with an editable 16-bit mask, except the navy
 noise layer.
 
 - **Colour balance:**
-  - Levels R gamma 1.08, B gamma 0.917 with input white 0.912.
+  - Levels R gamma 1.08, B gamma 1.00 with input white 0.912. The B gamma was 0.917
+    until v07; the cross-review asked for more warmth.
   - Curves master (0.10, 0.115), (0.50, 0.547), (0.80, 0.852).
-  - The lit wall went from L\* 84, b\* +22 to L\* 89–91, b\* +10. Painting whites read
-    neutral.
+  - On the final PDF proof, the lit wall reads b\* +13.3 (source +22; v05 +10.6), and
+    the wall in falloff under the paintings +19. The white marks and the face
+    painting's whites stay neutral (b\* +0.4 to +0.6).
+  - A masked, colour-only correction keeps the navy at a\* −0.9, b\* −5.2; the warmer
+    balance had turned it teal.
 - **Orange room:** protected by the inverse balance, then +0.15 EV.
 - **Navy box:** +0.35 EV.
-- **Ceiling:** −0.5 EV fading to −0.3 EV, balanced to b\* +8 to +9. Near-clipped
+- **Ceiling:** −0.5 EV fading to −0.3 EV, balanced just below the wall (b\* about +12). Near-clipped
   highlights (spot lenses, wall hot spots) are neutralised; the coloured lamps are
   masked out.
 - **Plinths:** +0.6 EV in the middle third, falling to +0.35 EV at their silhouettes.
@@ -143,12 +147,14 @@ noise layer.
   - Points, in → out on L\*/100: 0 → 0.087, 0.15 → 0.207, 0.42 → 0.479,
     0.70 → 0.752, 0.90 → 0.921, 1 → 1.
   - Why: see "Printing condition and ink" below.
-- **Floor warmth (provisional):** a colour-only layer on the oak floor, a\* ×1.45 and
-  b\* ×1.19. It puts back half the warmth that the corrected separation removed.
+- **Floor warmth (provisional):** a colour-only layer on the oak floor, now a\* ×1.60
+  and b\* ×1.04 after the warmer balance. It puts back half the warmth that the
+  corrected separation removed. Behind the text the floor reads L\* 35–37, a\* 6.5,
+  b\* 21.8.
 - **Unchanged:** verticals measured within 0.12°, so no rotation. No artwork was
   repainted, removed, moved or added.
 
-**Print photo v05:**
+**Print photo v06:**
 
 - Crops source rows 190–3978 at full width and resamples them to 2640 × 3264 px.
   That is 12 px/mm, so it sits pixel-exact on the layout's grid.
@@ -156,25 +162,27 @@ noise layer.
 - Separation: LittleCMS to **ISO Coated v2 300% (ECI)**, relative colorimetric with
   black-point compensation. Maximum ink 298 %.
 
-## Layout as built (v05)
+The navy noise layer was regenerated after the colour-balance change.
 
-v05 is v02 with the print photo swapped; type, band and wordmark are unchanged since
-v02. Measured on Ghostscript renders of the PDF. Positions in mm from the trim's
+## Layout as built (v06-MR)
+
+v06-MR is v05 with print photo v06, the Hatton Medium headline and the 10 pt body.
+The band and wordmark are unchanged since v02. Measured on Ghostscript renders of the PDF. Positions in mm from the trim's
 top-left corner.
 
-| Element    | Value                                                                                                                                                  |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Document   | CMYK FOGRA39 at 304.8 dpi (12 px/mm), so the trim (2520 × 3564 px) and the 60 px bleed are whole pixels                                                |
-| Photo      | −5 to 215 mm across, −5 to 267 mm down                                                                                                                 |
-| Band       | Ivory C10 M10 J20 N0, from 267 mm to the bottom bleed edge                                                                                             |
-| Headline   | PP Hatton Light and Light Italic, 28 / 30 pt, ivory; the J's ink at x 16.0; baselines 236.83, 247.42 and 258.00                                        |
-| Body       | PP Frama Regular 9.5 / 12.4 pt, ivory, column 118.0–195.5, five lines, last baseline 258.00; no line ends on « à »                                     |
-| Wordmark   | Native curves, house rich black C14 M34 J38 N90, 40.0 mm wide at x 16.0, j foot at 290.00                                                              |
-| Byline     | PP Frama Regular 7.031 pt, tracking +80, N100; B stem on the u's left stem, N's right edge on the i stem, baseline on the j foot                       |
-| Descriptor | PP Frama Medium 6.8 pt capitals, tracking +80, N100, ink ending at 194.0, baseline 285.96 on the wordmark's baseline                                   |
-| Address    | PP Frama Regular 8.5 pt, N100, ink ending at 194.0, baseline 290.00                                                                                    |
-| Clearances | Headline cap top to the front plinth 7.6 mm; text to the band 8.3 mm or more; side text 16 mm from the trim; address descenders 6.3 mm from the bottom |
-| Legibility | On the v05 FOGRA39 proof the floor reads L\* 35.5–37 (a\* 6.7, b\* 20) behind the text; the text reads L\* 91                                          |
+| Element    | Value                                                                                                                                                    |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Document   | CMYK FOGRA39 at 304.8 dpi (12 px/mm), so the trim (2520 × 3564 px) and the 60 px bleed are whole pixels                                                  |
+| Photo      | −5 to 215 mm across, −5 to 267 mm down                                                                                                                   |
+| Band       | Ivory C10 M10 J20 N0, from 267 mm to the bottom bleed edge                                                                                               |
+| Headline   | PP Hatton Medium and Medium Italic, 28 / 30 pt, ivory; the J's ink at x 16.0; baselines 236.83, 247.42 and 258.00; widest line ends at 94.3              |
+| Body       | PP Frama Regular 10 / 13 pt, ivory, column 111.0–194.0 (ink ≤ 192.1), five lines, last baseline 258.00, 16.8 mm from the headline; no line ends on « à » |
+| Wordmark   | Native curves, house rich black C14 M34 J38 N90, 40.0 mm wide at x 16.0, j foot at 290.00                                                                |
+| Byline     | PP Frama Regular 7.031 pt, tracking +80, N100; B stem on the u's left stem, N's right edge on the i stem, baseline on the j foot                         |
+| Descriptor | PP Frama Medium 6.8 pt capitals, tracking +80, N100, ink ending at 194.0, baseline 285.96 on the wordmark's baseline                                     |
+| Address    | PP Frama Regular 8.5 pt, N100, ink ending at 194.0, baseline 290.00                                                                                      |
+| Clearances | Headline cap top to the front plinth 7.6 mm; text to the band 8.3 mm or more; side text 16 mm from the trim; address descenders 6.3 mm from the bottom   |
+| Legibility | Floor behind the text L\* 35–37 against text at L\* 91. Thinnest reversed strokes: Hatton Medium 0.19 mm (Light was 0.16), Frama Regular 10 pt 0.27 mm   |
 
 ### Changes from the handoff
 
@@ -187,9 +195,34 @@ top-left corner.
   - The handoff's ~30 mm wordmark looked timid on a full page.
   - The byline's ~6.5 pt was an art-direction error: it forced +134 tracking. At +80,
     matching the descriptor, it fits at 7.03 pt.
-- **Body column widened to 195.5 mm, with a break after « d'intérieur. » (build).**
-  No-break spaces after both « à » pushed « cœur. » to the last line in a 76 mm
-  column. Only the hanging period of line 4 passes 194 mm, by 0.74 mm.
+- **Body column widened to 195.5 mm, with a break after « d'intérieur. » (build,
+  v02).** No-break spaces after both « à » pushed « cœur. » to the last line in a
+  76 mm column. In v06 the column moved to 111–194 mm and every line ends inside 194.
+
+### Changes from the cross-review (v06)
+
+Martin had the PR reviewed by another model with a fresh context. Its four
+suggestions, and what was done with them (agent decisions; Martin exported v06-MR):
+
+1. **Heavier body text: Frama Medium 10 / 13 pt.** It became **Regular** 10 / 13 pt.
+   Medium matched the headline's weight and pulled the eye from it (variants LM and
+   MM). Regular at 10 pt has 0.27 mm strokes, enough for reversed type.
+2. **Warmer wall, b\* about +14 to +15.** Done, to +13.3 on the lit wall. Painting
+   whites stay neutral. The wall in falloff reaches +19, which reads as light falling
+   off at page size.
+3. **More headline presence without more size.** Done: Hatton Medium. It is also
+   more robust reversed out of the photo (0.19 mm hairlines).
+4. **Scale the photo up 8–12 %, anchored bottom-left.** Declined after comps:
+   - At 108 % the track lights sit half-cut on the top trim.
+   - At 112 % the ceiling and lights are gone. The picture becomes a wall of art
+     rather than a room to walk into, and the orange room (the studio hint) shrinks
+     to a sliver.
+   - The headline already has 7.6 mm of air below the plinths.
+
+   The comp is `scale-compare` in the scratch comps, not kept.
+
+The four variants (LR, LM, MR, MM) are natives in the session; the review sheets are
+in `review/`.
 
 ## Printing condition and ink
 
@@ -234,7 +267,7 @@ top-left corner.
 ## Delivery
 
 - **The file to send** is `jukkai-mlle-adele-2026-12.pdf`. Martin exported it by hand
-  from `jukkai-mlle-adele-2026-12-v05.af`, because Affinity's scripting cannot reach
+  from `jukkai-mlle-adele-2026-12-v06-MR.af`, because Affinity's scripting cannot reach
   the bleed tickbox:
   - preset PDF/X-1a:2003, Coated FOGRA39 output intent;
   - "Include bleed" ticked, every printer mark off, whole document.
@@ -243,15 +276,18 @@ top-left corner.
     12647-2:2004)".
   - Page boxes: MediaBox 623.622 × 870.236 pt (A4 plus 5 mm bleed), TrimBox inset
     14.17 pt; no ArtBox or BleedBox entries.
-  - All four fonts are embedded as subsets.
+  - All four fonts are embedded as subsets: Hatton Medium and Medium Italic, Frama
+    Regular and Medium.
   - No RGB, no ICC-based colour, no spot colours.
-- **Verified against v05:**
-  - The embedded photo is identical to the v05 review PDF's, a 2640 × 3265 CMYK
-    JPEG. Its channel means equal `print-photo-443-220x272-iso300-v05.tif` (C 34.0,
-    M 40.8, Y 49.4, K 35.0) once the CMYK JPEG's inverted storage is allowed for.
-  - Rendered at 304.8 dpi with Ghostscript, it is pixel-identical to the v05 review
-    PDF.
-  - Maximum total ink 300.0 %; 0.17 % of the trim is above 290 %.
+- **Verified against the v06 print photo:**
+  - The embedded photo is a 2640 × 3265 CMYK JPEG. Its channel means equal
+    `print-photo-443-220x272-iso300-v06.tif` (C 33.5, M 40.1, Y 52.6, K 35.7) within
+    0.02, once the CMYK JPEG's inverted storage is allowed for.
+  - Maximum total ink 300.0 %; 0.16 % of the trim is above 290 %.
+  - The bleed is printed on all four sides. The only unprinted pixels are 425 photo
+    highlights on the left edge, which continue inside the trim.
+- v05 was exported and verified the same way, then replaced after the cross-review.
+  Its SHA-256 was `f12133a6…`; it is in Git history.
 - The review PDFs v01–v05 had bleed boxes added after export by the build agent, and
   still carry an ArtBox the size of the media box. Proofing only; never send them.
 - **Rendering artefact:** Ghostscript at exactly 300 dpi draws 1 px white lines across
@@ -262,17 +298,17 @@ top-left corner.
 
 In this folder:
 
-| File                                  | Role                                                                                              | SHA-256     |
-| ------------------------------------- | ------------------------------------------------------------------------------------------------- | ----------- |
-| `jukkai-mlle-adele-2026-12.pdf`       | **File to send.** PDF/X-1a:2003, exported by Martin from layout v05, 2026-11-12                   | `f12133a6…` |
-| `jukkai-mlle-adele-2026-12-proof.jpg` | 1131 × 1600 px render of the v05 review PDF through FOGRA39 (pixel-identical to the file to send) | `4be7fa9f…` |
+| File                                  | Role                                                                               | SHA-256     |
+| ------------------------------------- | ---------------------------------------------------------------------------------- | ----------- |
+| `jukkai-mlle-adele-2026-12.pdf`       | **File to send.** PDF/X-1a:2003, exported by Martin from layout v06-MR, 2026-11-12 | `0f0266b5…` |
+| `jukkai-mlle-adele-2026-12-proof.jpg` | 1131 × 1600 px render of the file to send through FOGRA39                          | `35f6945f…` |
 
 The Affinity session is `~/Desktop/jukkai-mlle-adele-full-page/` until the file is
 sent. It holds:
 
-- layout natives v01–v05;
-- photo natives v01 (the alternate) and 443-v01–v07;
-- print photos v01–v03 (FOGRA39) and v04–v05 (ISO Coated v2 300%);
+- layout natives v01–v05 and the v06 variants LR, LM, MR and MM (MR is final);
+- photo natives v01 (the alternate) and 443-v01–v08;
+- print photos v01–v03 (FOGRA39) and v04–v06 (ISO Coated v2 300%);
 - review PDFs, `review/` renders, `profiles/`, and `build/` masks, scripts and
   parameters. It is mirrored to Storage with SHA-256 sums once the
   file is sent.
@@ -288,7 +324,7 @@ On Storage under `/mnt/storage/jukkai/campaigns/mlle-adele-2026-12/`:
 - Crystelle's read of the French and her greenlight. The French has not changed
   since v02.
 - Send the file to Mlle Adèle and record the date here. Full SHA-256 of the file to
-  send: `f12133a67f0fe56496201c607ebdab5c11f4144fef06ee1720b5bece9231cb64`.
+  send: `0f0266b527e6349e006397ceb15198128bdc490bf54ff34e7d464942a25089c7`.
 - Mirror the session to Storage and empty the Desktop folder.
 - The issue month and page side, if Mlle Adèle can say. Martin asked for the
   profile; they do not give one.
