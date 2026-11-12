@@ -75,6 +75,8 @@ only Crystelle can answer collect in [one issue](https://github.com/martinmoradi
 
 A Tendances quarter-page ad for the November shopping issue, due 13 October; its brief and
 build handoff live in [the campaign README](../../brand/campaigns/tendances-2026-11/README.md).
+A full-page Mlle Adèle ad, due as soon as it is ready; its brief and decisions live in
+[the campaign README](../../brand/campaigns/mlle-adele-2026-12/README.md).
 
 ## Decision status
 
