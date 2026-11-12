@@ -1,11 +1,11 @@
 # Mlle Adèle — full page, winter issue
 
-**Status:** v07 (v06 plus the Galerie hours) was exported and verified on 2026-11-12. Three
-headline variants (v08 A–C) are built for Crystelle to choose from. Then her read of
-the French, and sending.
+**Status:** v08-C, v07 with Crystelle's chosen headline « Les intérieurs, je les
+dessine. L'art, je l'expose. », was exported and verified on 2026-11-12. Martin sent it
+to Crystelle; it awaits her greenlight, then sending.
 **Owns:** the brief, the decisions, the build handoff, the values as built and where
 the files live.
-**Last reviewed:** 2026-11-12, after verifying Martin's v07 export.
+**Last reviewed:** 2026-11-12, after verifying Martin's v08-C export.
 **Revisit when:** Martin or Crystelle asks for changes, the file is exported and
 sent, or a printed copy arrives.
 
@@ -37,7 +37,7 @@ within the brief. All public French goes to Crystelle with the proof.
 
 Agent draft; Martin: "the copy is nice". Crystelle validates the French.
 
-> **Je vous réservais / quelque chose. / _Le voici._**
+> **Les intérieurs, / je les dessine. / _L’art, je l’expose._**
 >
 > À Châteaugiron, j'ai ouvert une galerie d'art au cœur de mon studio d'architecture
 > d'intérieur. Des artistes que j'aime, des œuvres à offrir ou à s'offrir, du petit
@@ -48,8 +48,11 @@ Agent draft; Martin: "the copy is nice". Crystelle validates the French.
 > jukkai.fr · 26 bis rue au Prévôt · Châteaugiron
 > Du mercredi au samedi · 10h30–12h30 et 14h–18h, ou sur rendez-vous
 
-- The headline answers September's « Ici, je vous réserve quelque chose. » for the
-  same readers, and still reads on its own (provisional).
+- **Headline (Martin's words, Crystelle's choice, 2026-11-12):** it says in one
+  breath that Jukkai is both the studio and the Galerie. It replaced the agent's
+  « Je vous réservais / quelque chose. / _Le voici._ » (v02–v07), which answered
+  September's « Ici, je vous réserve quelque chose. ». See "Headline variants
+  (v08)" below.
 - « À offrir ou à s'offrir » nods to gifts for a winter issue without dating the ad;
   « du petit cadeau au grand coup de cœur » and « on ne chuchote pas » carry the
   Tendances and October lines (provisional).
@@ -101,7 +104,7 @@ the photo so the image takes more of the page, then chose D2.
 | Trim       | 210 × 297 mm, 5 mm bleed on every side, no crop marks or frame lines                                                                     | Spec         |
 | Photo      | Full bleed from the top bleed edge to 267 mm, 220 mm wide; ceiling and track lights kept; plinths centred left                           | Martin       |
 | Band       | House ivory C10 M10 J20 N0, full width, 267 mm to the bottom bleed edge                                                                  | Martin       |
-| Headline   | Ivory on the floor, three lines, left at the 16 mm inset, 28 pt; PP Hatton Medium with Medium Italic for « Le voici. » (Light until v05) | Provisional  |
+| Headline   | Ivory on the floor, three lines, left at the 16 mm inset, 28 pt; PP Hatton Medium with Medium Italic for the last line (Light until v05) | Provisional  |
 | Body       | Ivory on the floor in a right column from 111 mm, PP Frama Regular 10 / 13 pt, last baseline shared with the headline's                  | Provisional  |
 | Signature  | `jukkai-wordmark-primary-no-byline.svg` with live `BY CRYSTELLE TERRASSON`, left in the band                                             | Provisional  |
 | Info block | Descriptor, address and hours in three lines, left-aligned on the body column (111 mm) in the band                                       | Martin (v07) |
@@ -245,8 +248,8 @@ of three lines: descriptor, address, hours.
 
 On 2026-11-12 Martin wrote three other headlines to replace « Je vous réservais
 quelque chose. Le voici. ». Each one is its own native, built from v07 with only
-the headline changed. Martin exports them for print and Crystelle chooses.
-`jukkai-mlle-adele-2026-12.pdf` stays the v07 file until she does.
+the headline changed. Martin exported all three for print; **Crystelle chose C**, and
+its PDF became the file to send.
 
 | Native                  | Headline as set                                           |
 | ----------------------- | --------------------------------------------------------- |
@@ -269,6 +272,10 @@ the headline changed. Martin exports them for print and Crystelle chooses.
     les dessine. ». Crystelle can drop it.
 - **For Crystelle's read:** in A, the body's first sentence repeats « une galerie
   d’art » straight after the headline.
+- **C as built**, measured on the PDF at 304.8 dpi: cap top 229.2 mm, as in v07;
+  lines end at 81.5, 81.3 and 86.4 mm, so 24.6 mm of floor separate the headline
+  from the body (v07: 16.8); the italic L's foot sets the 16.0 mm edge, the roman
+  stems sit at 16.4–16.7; last baseline 258.00 with the body's.
 
 ## Printing condition and ink
 
@@ -313,8 +320,8 @@ the headline changed. Martin exports them for print and Crystelle chooses.
 ## Delivery
 
 - **The file to send** is `jukkai-mlle-adele-2026-12.pdf`. Martin exported it by hand
-  from `jukkai-mlle-adele-2026-12-v07.af`, because Affinity's scripting cannot reach
-  the bleed tickbox:
+  from `jukkai-mlle-adele-2026-12-v08-C-interieurs.af`, because Affinity's scripting
+  cannot reach the bleed tickbox:
   - preset PDF/X-1a:2003, Coated FOGRA39 output intent;
   - "Include bleed" ticked, every printer mark off, whole document.
 - **Verified on that file:**
@@ -325,7 +332,7 @@ the headline changed. Martin exports them for print and Crystelle chooses.
   - All four fonts are embedded as subsets: Hatton Medium and Medium Italic, Frama
     Regular and Medium.
   - No RGB, no ICC-based colour, no spot colours.
-- **Verified against the v06 print photo** (both v06-MR and v07 carry it):
+- **Verified against the v06 print photo** (v06-MR, v07 and v08-C all carry it):
   - The embedded photo is a 2640 × 3265 CMYK JPEG. Its channel means equal
     `print-photo-443-220x272-iso300-v06.tif` (C 33.5, M 40.1, Y 52.6, K 35.7) within
     0.02, once the CMYK JPEG's inverted storage is allowed for.
@@ -336,9 +343,14 @@ the headline changed. Martin exports them for print and Crystelle chooses.
   verified above. Rendered at 304.8 dpi, the pages differ only inside the information
   block (x 111–194 mm, y 280–291 mm). The band text extracts exactly as written, with
   en dashes and middle dots.
-- **Earlier exports, verified the same way and replaced, both in Git history:**
+- **Verified against v07:** the embedded photo JPEG is byte-identical. Rendered at
+  304.8 dpi, the pages differ only inside the headline (x 16.0–94.2 mm, y
+  229.2–260.3 mm). The headline extracts as « Les intérieurs, / je les dessine. /
+  L’art, je l’expose. », with typographic apostrophes.
+- **Earlier exports, verified the same way and replaced, all in Git history:**
   - v05 (`f12133a6…`), replaced after the cross-review;
-  - v06-MR (`0f0266b5…`), replaced when the hours were added.
+  - v06-MR (`0f0266b5…`), replaced when the hours were added;
+  - v07 (`ec6887ff…`), replaced when Crystelle chose headline C.
 - The review PDFs v01–v05 had bleed boxes added after export by the build agent, and
   still carry an ArtBox the size of the media box. Proofing only; never send them.
 - **Rendering artefact:** Ghostscript at exactly 300 dpi draws 1 px white lines across
@@ -349,10 +361,10 @@ the headline changed. Martin exports them for print and Crystelle chooses.
 
 In this folder:
 
-| File                                  | Role                                                                            | SHA-256     |
-| ------------------------------------- | ------------------------------------------------------------------------------- | ----------- |
-| `jukkai-mlle-adele-2026-12.pdf`       | **File to send.** PDF/X-1a:2003, exported by Martin from layout v07, 2026-11-12 | `ec6887ff…` |
-| `jukkai-mlle-adele-2026-12-proof.jpg` | 1131 × 1600 px render of the file to send through FOGRA39                       | `7faf9486…` |
+| File                                  | Role                                                                              | SHA-256     |
+| ------------------------------------- | --------------------------------------------------------------------------------- | ----------- |
+| `jukkai-mlle-adele-2026-12.pdf`       | **File to send.** PDF/X-1a:2003, exported by Martin from layout v08-C, 2026-11-12 | `8389939d…` |
+| `jukkai-mlle-adele-2026-12-proof.jpg` | 1131 × 1600 px render of the file to send through FOGRA39                         | `545d1781…` |
 
 The Affinity session is `~/Desktop/jukkai-mlle-adele-full-page/` until the file is
 sent. It holds:
@@ -373,10 +385,10 @@ On Storage under `/mnt/storage/jukkai/campaigns/mlle-adele-2026-12/`:
 
 ## Open
 
-- Crystelle's choice among v07 and the v08 headlines, her read of the French and
-  her greenlight. The body French has not changed since v02.
+- Crystelle's greenlight on v08-C. She chose its headline; the body French has not
+  changed since v02.
 - Send the file to Mlle Adèle and record the date here. Full SHA-256 of the file to
-  send: `ec6887ffc3209759093cec1cc40f86bac5f3a7ff20c662292a000db5ea97a749`.
+  send: `8389939db1c5452d734ee174a98d1ab81defc8dd5f5231f6f53d6250f4302ee9`.
 - Mirror the session to Storage and empty the Desktop folder.
 - The issue month and page side, if Mlle Adèle can say. Martin asked for the
   profile; they do not give one.
