@@ -1,10 +1,10 @@
 # Mlle Adèle — full page, winter issue
 
-**Status:** v02 built and proofed on 2026-11-12. It awaits Martin's review,
-Crystelle's read of the French, and Martin's own export of the file to send.
+**Status:** v05 built and proofed on 2026-11-12. It awaits Martin's own export of
+the file to send, and Crystelle's read of the French.
 **Owns:** the brief, the decisions, the build handoff, the values as built and where
 the files live.
-**Last reviewed:** 2026-11-12, after the v02 proof.
+**Last reviewed:** 2026-11-12, after the v05 proof.
 **Revisit when:** Martin or Crystelle asks for changes, the file is exported and
 sent, or a printed copy arrives.
 
@@ -61,6 +61,15 @@ Agent draft; Martin: "the copy is nice". Crystelle validates the French.
   room through the doorway on the right. Work from `LONG_EXPOSURE-02.ORIGINAL.jpg`:
   Pixel Long Exposure mode keeps no RAW, so the source is a 3064 × 4080, 8-bit,
   Display P3 JPEG. It gives about 354 ppi across the 220 mm bled width.
+- **No RAW (Martin, kept knowingly):**
+  - Martin had RAW switched on, but the Pixel's Portrait and Long Exposure modes save
+    JPEG only. In this session only the frames marked RAW have a DNG beside them.
+  - No RAW frame matches this viewpoint; the closest, `192257470`, looks along the
+    glass and is busier.
+  - Checks on the print file: no banding in the wall or ceiling gradients, even with
+    contrast exaggerated. The phone's sharpening halos are about 0.1 mm at print size.
+    Colour blotches in the navy box were smoothed (see below).
+  - For future shoots meant for print, use the standard Photo mode.
 - **Alternate:** `PXL_20261111_200252342`, from the same spot but tighter. Martin's
   first idea; it lacks the floor that D2 needs for text without cutting the ceiling.
 - **Retouch direction (provisional):**
@@ -101,8 +110,9 @@ the photo so the image takes more of the page, then chose D2.
 
 ## Retouch as built
 
-Photo native v04, in Affinity 3.3.1 from the JPEG: 16-bit, with Display P3 kept until
-print. Each adjustment is a live layer with an editable 16-bit mask.
+Photo native v07, in Affinity 3.3.1 from the JPEG: 16-bit, with Display P3 kept until
+print. Each adjustment is a live layer with an editable 16-bit mask, except the navy
+noise layer.
 
 - **Colour balance:**
   - Levels R gamma 1.08, B gamma 0.917 with input white 0.912.
@@ -123,18 +133,33 @@ print. Each adjustment is a live layer with an editable 16-bit mask.
 - **The edge-on side of a canvas hung on the navy box:** toned −1 EV and −50 %
   saturation. It read as a bright blue line down the box edge. Agent's call, not
   removed.
+- **Navy box colour noise (build):**
+  - The phone's JPEG and the +0.35 EV lift left low-frequency blue and purple
+    blotches, visible only with contrast exaggerated.
+  - A colour-only blur (100 px) inside the navy mask, lightness kept. It is a baked
+    layer: regenerate it if the layers under it change.
+- **Press compensation (build, on Martin's evidence):** a top Curves layer in Lab,
+  lightness only.
+  - Points, in → out on L\*/100: 0 → 0.087, 0.15 → 0.207, 0.42 → 0.479,
+    0.70 → 0.752, 0.90 → 0.921, 1 → 1.
+  - Why: see "Printing condition and ink" below.
+- **Floor warmth (provisional):** a colour-only layer on the oak floor, a\* ×1.45 and
+  b\* ×1.19. It puts back half the warmth that the corrected separation removed.
 - **Unchanged:** verticals measured within 0.12°, so no rotation. No artwork was
   repainted, removed, moved or added.
 
-The print photo crops source rows 190–3978 at full width and resamples them to
-2640 × 3264 px. That is 12 px/mm, so it sits pixel-exact on the layout's grid.
-Sharpening is an unsharp mask of 0.8 px at 70 %. The conversion to Coated FOGRA39
-used LittleCMS, relative colorimetric with black-point compensation; perceptual
-measured nearly identical. Maximum ink is 327.5 % in the TIFF.
+**Print photo v05:**
 
-## Layout as built (v02)
+- Crops source rows 190–3978 at full width and resamples them to 2640 × 3264 px.
+  That is 12 px/mm, so it sits pixel-exact on the layout's grid.
+- Sharpening: unsharp mask 0.8 px at 70 %.
+- Separation: LittleCMS to **ISO Coated v2 300% (ECI)**, relative colorimetric with
+  black-point compensation. Maximum ink 298 %.
 
-Measured on Ghostscript renders of the v02 PDF. Positions in mm from the trim's
+## Layout as built (v05)
+
+v05 is v02 with the print photo swapped; type, band and wordmark are unchanged since
+v02. Measured on Ghostscript renders of the PDF. Positions in mm from the trim's
 top-left corner.
 
 | Element    | Value                                                                                                                                                  |
@@ -149,7 +174,7 @@ top-left corner.
 | Descriptor | PP Frama Medium 6.8 pt capitals, tracking +80, N100, ink ending at 194.0, baseline 285.96 on the wordmark's baseline                                   |
 | Address    | PP Frama Regular 8.5 pt, N100, ink ending at 194.0, baseline 290.00                                                                                    |
 | Clearances | Headline cap top to the front plinth 7.6 mm; text to the band 8.3 mm or more; side text 16 mm from the trim; address descenders 6.3 mm from the bottom |
-| Legibility | On the FOGRA39 proof the floor reads L\* 34–36 behind the text, and the text reads L\* 91                                                              |
+| Legibility | On the v05 FOGRA39 proof the floor reads L\* 35.5–37 (a\* 6.7, b\* 20) behind the text; the text reads L\* 91                                          |
 
 ### Changes from the handoff
 
@@ -166,24 +191,68 @@ top-left corner.
   No-break spaces after both « à » pushed « cœur. » to the last line in a 76 mm
   column. Only the hanging period of line 4 passes 194 mm, by 0.74 mm.
 
+## Printing condition and ink
+
+- **Evidence (Martin):**
+  - Mlle Adèle and Tendances do not give an ICC profile.
+  - September's Mlle Adèle ad printed very dark, but the printer admitted a fault, so
+    it is not evidence.
+  - The Tendances ads printed slightly dark: "could use a bit more light overall".
+- **Hidden reconversion, found during the build:**
+  - In v01–v02, the script that loaded the print TIFF into the layout silently
+    reconverted its CMYK. Floor black fell about 23 %, total ink was capped near
+    300 %, and the photo read about 2 L\* lighter (4 in deep shadow).
+  - It is very likely why November's PDF was "about 2 L\* lighter than the placed
+    TIFF". So the pipeline that printed slightly dark already had this lift.
+  - From v03 the layout carries the TIFF's exact inks. Checked on the PDF's
+    embedded image: a mean difference of 0.35 levels, JPEG noise only.
+- **Ink limit:** with exact inks, a FOGRA39 separation reached 330 % in the navy.
+  The printer and its limit are unknown, and free magazines are often web offset with
+  a 300 % limit. The photo is therefore separated with ECI's ISO Coated v2 300%:
+  FOGRA39 characterisation, 300 % total ink.
+  - File: `ISOcoated_v2_300_eci.icc` from eci.org's `eci_offset_2009.zip`, SHA-256
+    `c6b4b62f…`.
+  - The layout and the PDF output intent stay Coated FOGRA39: same printing
+    condition.
+- **Press compensation:** sized so that the v05 PDF reads lighter than the v02 PDF,
+  which used November's pipeline. Measured on PDF-rendered screen proofs, v02 → v05:
+
+  | Area                  | Change in L\* |
+  | --------------------- | ------------- |
+  | Wall falloff          | +2.5          |
+  | Face painting         | +3 to +3.4    |
+  | Floor behind the text | +3.6          |
+  | Navy                  | +3.4          |
+  | Front plinth          | +3.5          |
+  | Lit wall              | +0.5          |
+  - Removing the reconversion also turned the navy bluer and the floor less orange.
+    Half the floor warmth was put back (v05).
+
+- **The bet:** if the press matches FOGRA39, the print comes out a touch airier than
+  the proof. If it prints darker like Tendances, the compensation cancels it.
+
 ## Delivery
 
-- **The file to send** is exported by Martin from Affinity's PDF/X-1a:2003 preset,
-  with "Include bleed" ticked and every printer mark off. Affinity's scripting cannot
-  reach the bleed tickbox. The v01 and v02 review PDFs had their bleed boxes added
-  after export by the build agent, and still carry an ArtBox the size of the media
-  box. That is fine for proofing but not for sending.
-- **Expected page boxes:** MediaBox and BleedBox 623.622 × 870.236 pt, with the
-  TrimBox inset 14.173 pt on each side. Coated FOGRA39 output intent, fonts embedded,
-  no RGB.
-- **Photo inks:** on export Affinity re-separates the placed CMYK photo with less
-  black, as in November. The floor's K drops from about 57 % to 46 % and maximum ink
-  falls from 327.5 % to 297 %. The proof is rendered from the PDF, so it shows what
-  prints.
+- **The file to send** is exported by Martin by hand from `…-v05.af`:
+  - Affinity's PDF/X-1a:2003 preset, Coated FOGRA39 output intent.
+  - "Include bleed" ticked and every printer mark off; whole document.
+  - Saved as `jukkai-mlle-adele-2026-12-send.pdf`.
+
+  Affinity's scripting cannot reach the bleed tickbox. The review PDFs v01–v05 had
+  their bleed boxes added after export by the build agent, and still carry an
+  ArtBox the size of the media box. They are fine for proofing but not for sending.
+
+- **Expected:**
+  - MediaBox and BleedBox 623.622 × 870.236 pt, TrimBox inset 14.173 pt on each
+    side.
+  - Four fonts embedded.
+  - Only CMYK, no RGB.
+  - Maximum ink 300 %.
+  - The embedded photo equal to `print-photo-443-220x272-iso300-v05.tif` within JPEG
+    noise.
 - **Rendering artefact:** Ghostscript at exactly 300 dpi draws 1 px white lines across
-  the photo. They are not in the file; render at 304.8 or 600 dpi.
-- **Colour profile:** FOGRA39 is an assumption; Mlle Adèle named no profile. In CMYK
-  the orange room loses some saturation and the navy lifts to about L\* 15.
+  the photo. They are not in the file; render at 120, 304.8 or 600 dpi. In Martin's
+  shell `gs` is a git alias, so use `/usr/bin/gs`.
 
 ## Files
 
@@ -191,13 +260,17 @@ In this folder:
 
 | File                                  | Role                                                        | SHA-256     |
 | ------------------------------------- | ----------------------------------------------------------- | ----------- |
-| `jukkai-mlle-adele-2026-12-proof.jpg` | 1131 × 1600 px render of the v02 review PDF through FOGRA39 | `feec0592…` |
+| `jukkai-mlle-adele-2026-12-proof.jpg` | 1131 × 1600 px render of the v05 review PDF through FOGRA39 | `4be7fa9f…` |
 
 The Affinity session is `~/Desktop/jukkai-mlle-adele-full-page/` until the file is
-sent. It holds the layout natives v01–v02, photo natives v01 (alternate) and
-443-v01–v04, print photos v01–v02, review PDFs, `review/` renders and `build/`
-masks, scripts and parameters. It is mirrored to Storage with SHA-256 sums once the
-file is sent.
+sent. It holds:
+
+- layout natives v01–v05;
+- photo natives v01 (the alternate) and 443-v01–v07;
+- print photos v01–v03 (FOGRA39) and v04–v05 (ISO Coated v2 300%);
+- review PDFs, `review/` renders, `profiles/`, and `build/` masks, scripts and
+  parameters. It is mirrored to Storage with SHA-256 sums once the
+  file is sent.
 
 On Storage under `/mnt/storage/jukkai/campaigns/mlle-adele-2026-12/`:
 
@@ -207,10 +280,13 @@ On Storage under `/mnt/storage/jukkai/campaigns/mlle-adele-2026-12/`:
 
 ## Open
 
-- Martin's review of the v02 proof.
-- Crystelle's read of the French and her greenlight.
+- Crystelle's read of the French and her greenlight. The French has not changed
+  since v02.
 - Martin's export of the file to send, then a check of its boxes, fonts and inks
-  against v02.
+  against v05.
 - Send the file to Mlle Adèle, then record the date and the file's SHA-256 here.
 - Mirror the session to Storage and empty the Desktop folder.
-- The issue month, page side and printing profile, if Mlle Adèle can say.
+- The issue month and page side, if Mlle Adèle can say. Martin asked for the
+  profile; they do not give one.
+- When the printed issue arrives, compare it with the proof under daylight and
+  record whether the press compensation was right, too little or too much.
