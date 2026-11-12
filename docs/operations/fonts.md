@@ -174,6 +174,46 @@ Issue #13 is a human-in-the-loop operator slice, not a `skill:tdd` slice. Its
 meaningful proof is real Cloudflare Pages secret configuration, production or
 preview build logs, and deployed browser verification without leaking secrets.
 
+## Interim Registry — since 2026-11-12
+
+**Status:** temporary. **Revisit when:** `@mm/fonts` runs on a new host.
+
+The `@mm/fonts` registry ran on a Hetzner VPS behind the Cloudflare Tunnel
+`cloudflared-martinmoradi`. That tunnel has been down since 2026-11-04, because
+the hosting account was closing over an expired card. From then on, every Pages
+build failed at `fonts:prefetch` with HTTP 530 (Cloudflare error 1033).
+
+Until the registry is back, a stand-in serves the same Set:
+
+- **Worker `jukkai-fonts-interim`**, in Martin's Cloudflare account, at
+  `https://jukkai-fonts-interim.moradi-martin.workers.dev`. It answers only the
+  two `GET` routes that `fonts-prefetch.ts` calls, for the snapshot and the
+  font files, and it checks the bearer token in its `FETCH_TOKEN` secret.
+- **Private R2 bucket `jukkai-fonts-interim`**, same account. It holds
+  `sets/jukkai-starter/4/snapshot.json` and the 32 fonts under
+  `sets/jukkai-starter/4/fonts/<sha256>.woff2`, 1.6 MB in all.
+- **Seeded from the last good prefetch on Martin's machine.** The snapshot was
+  rebuilt from the generated manifest, and prefetch still verifies every font
+  against its digest. A fresh prefetch from the Worker matched the registry's
+  output byte for byte.
+- **Pages:** `MM_FONTS_SERVICE_URL` and `MM_FONTS_FETCH_TOKEN` point at the
+  Worker in both preview and production. The `MM_FONTS_ACCESS_*` variables
+  remain because the script requires them; the Worker ignores them.
+- **Locally:** `~/.config/fonts/jukkai.env` points at the Worker. The registry
+  values are kept in `jukkai.env.bak-2026-11-12-vps`.
+- **Cost:** within the free tiers. The Worker runs on the Workers Free plan,
+  which refuses requests past 100,000 a day instead of billing, and R2 is read
+  only through the Worker. Each build makes 33 reads, against 10 million free a
+  month.
+
+**Limits:** the stand-in serves only `jukkai-starter@4`. A Set version bump has
+to wait for the registry, or its files must be uploaded to the bucket the same
+way.
+
+**To return to the registry:** restore the URL and token from the backup env
+file in Pages and locally, retry a Pages build, then delete the Worker and the
+bucket.
+
 ## Verification
 
 Use the linked issue suite as the verification ladder:
