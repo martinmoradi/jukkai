@@ -1,7 +1,8 @@
 # Mlle Adèle — full page, winter issue
 
-**Status:** v07 (v06 plus the Galerie hours) was exported and verified on 2026-11-12. It awaits
-Crystelle's read of the French, then sending.
+**Status:** v07 (v06 plus the Galerie hours) was exported and verified on 2026-11-12. Three
+headline variants (v08 A–C) are built for Crystelle to choose from. Then her read of
+the French, and sending.
 **Owns:** the brief, the decisions, the build handoff, the values as built and where
 the files live.
 **Last reviewed:** 2026-11-12, after verifying Martin's v07 export.
@@ -240,6 +241,35 @@ of three lines: descriptor, address, hours.
 - **Address and hours at 7.4 pt, not 8.5.** That is the largest size at which the
   hours fit on one line inside 194 mm without tightening the tracking.
 
+### Headline variants (v08)
+
+On 2026-11-12 Martin wrote three other headlines to replace « Je vous réservais
+quelque chose. Le voici. ». Each one is its own native, built from v07 with only
+the headline changed. Martin exports them for print and Crystelle chooses.
+`jukkai-mlle-adele-2026-12.pdf` stays the v07 file until she does.
+
+| Native                  | Headline as set                                           |
+| ----------------------- | --------------------------------------------------------- |
+| `…-v08-A-galerie.af`    | Une galerie d’art ? / _C’était dans / mes plans._         |
+| `…-v08-B-pieces.af`     | Pièces à vivre, / pièces uniques. / _Même adresse._       |
+| `…-v08-C-interieurs.af` | Les intérieurs, / je les dessine. / _L’art, je l’expose._ |
+
+- **Martin's words.** He gave the lines and the breaks marked with slashes.
+- **Agent's changes, within his brief to adjust for fit:**
+  - Every variant keeps v07's three lines, 28 / 30 pt, the leftmost ink at
+    16.0 mm and the last baseline at 258.00, shared with the body's. The cap top
+    and the clearance to the plinths are unchanged.
+  - The last idea goes in Medium Italic, as « Le voici. » did.
+  - A: on two lines, « C’était dans mes plans. » runs to 122 mm at 28 pt, past the
+    body column at 111 mm, so it breaks after « dans ». The widest line now ends
+    at 100.0 mm (v07: 94.3), which leaves 11 mm before the body.
+  - A: the space before « ? » is a no-break space kerned −0.1 em to thin-space
+    width. Hatton has no U+202F, and Affinity would substitute another font.
+  - C: a comma was added in « L’art, je l’expose. » to mirror « Les intérieurs, je
+    les dessine. ». Crystelle can drop it.
+- **For Crystelle's read:** in A, the body's first sentence repeats « une galerie
+  d’art » straight after the headline.
+
 ## Printing condition and ink
 
 - **Evidence (Martin):**
@@ -327,7 +357,8 @@ In this folder:
 The Affinity session is `~/Desktop/jukkai-mlle-adele-full-page/` until the file is
 sent. It holds:
 
-- layout natives v01–v05, the v06 variants LR, LM, MR and MM, and v07 (final) with v07-B;
+- layout natives v01–v05, the v06 variants LR, LM, MR and MM, v07 with v07-B, and the
+  headline variants v08-A, v08-B and v08-C;
 - photo natives v01 (the alternate) and 443-v01–v08;
 - print photos v01–v03 (FOGRA39) and v04–v06 (ISO Coated v2 300%);
 - review PDFs, `review/` renders, `profiles/`, and `build/` masks, scripts and
@@ -342,8 +373,8 @@ On Storage under `/mnt/storage/jukkai/campaigns/mlle-adele-2026-12/`:
 
 ## Open
 
-- Crystelle's read of the French and her greenlight. The French has not changed
-  since v02.
+- Crystelle's choice among v07 and the v08 headlines, her read of the French and
+  her greenlight. The body French has not changed since v02.
 - Send the file to Mlle Adèle and record the date here. Full SHA-256 of the file to
   send: `ec6887ffc3209759093cec1cc40f86bac5f3a7ff20c662292a000db5ea97a749`.
 - Mirror the session to Storage and empty the Desktop folder.
